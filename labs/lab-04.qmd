@@ -93,7 +93,7 @@ Today's data set is part of the [TidyTuesday College tuition, diversity, and pay
 The information in this data set was collected from the [PayScale College Salary Report](https://www.payscale.com/college-salary-report/bachelors).
 
 | variable                  | class     | description                                                                      |
-|:--------------------------|:----------|:---------------------------------------------------------------------------------|
+|:-------------|:-------------|:-------------------------------------------|
 | rank                      | double    | Potential salary rank within state                                               |
 | name                      | character | Name of school                                                                   |
 | state_name                | character | state name                                                                       |
@@ -165,7 +165,7 @@ The response from ChatGPT shown below would receive partial credit. For each con
 > *It's important to note that these assumptions may not always hold perfectly in real-world data, and minor violations may not necessarily invalidate your model. However, if you detect significant violations of these assumptions, you may need to consider alternative modeling techniques or transformations of your data to address the issues.*
 
 ::: render-commit-push
-✅ ⬆️ **Team Member 2**: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
+✅ ⬆️ **Team Member 2**: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
 :::
 
 ::: pull
@@ -192,7 +192,7 @@ Next, let's consider how well the model fits the relationship between the early 
 -   Calculate RMSE and interpret it in the context of the data.
 
 ::: render-commit-push
-**Team Member 3**: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
+**Team Member 3**: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
 :::
 
 ::: pull
@@ -206,7 +206,7 @@ Next, let's consider how well the model fits the relationship between the early 
 Do you think the model is useful for understanding and predicting the typical early career pay for alumni at a university? Briefly explain your reasoning.
 
 ::: render-commit-push
-**Team Member 4**: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
+**Team Member 4**: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
 :::
 
 ::: pull
@@ -223,7 +223,7 @@ Fit another model which predicts the typical early career pay using only the per
 -   Which model do you think is better - this model or the model fit in Exercise 1? Explain your response showing any analysis used to make the decision.
 
 ::: render-commit-push
-**Team Member 1**: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and the rest of the team can see the completed lab.
+**Team Member 1**: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and the rest of the team can see the completed lab.
 :::
 
 ::: pull
