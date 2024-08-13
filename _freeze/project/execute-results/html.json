@@ -1,0 +1,15 @@
+{
+  "hash": "8402c6dfd4019b975387209dac5fadaf",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Final project\n---\n\n\n\n\nTo be posted.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

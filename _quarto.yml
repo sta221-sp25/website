@@ -59,7 +59,7 @@ website:
           text: R resources
       - section: Project
         contents:
-        - href: project-instructions.qmd
+        - href: project.qmd
           text: Instructions
         - href: project-tips.qmd
           text: Tips + resources
