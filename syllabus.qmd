@@ -10,14 +10,11 @@ format:
 
 ### Class meetings
 
-|             |        |                     |                  |
-|-------------|--------|---------------------|------------------|
-| **Lecture** |        |                     |                  |
-|             |        |                     |                  |
-| **Lab**     | Lab 01 | Tue 10:05 - 11:20am | Reuben-Cooke 129 |
-|             | Lab 02 | Tue 11:45am - 1pm   | LSRC A155        |
-|             |        |                     |                  |
-|             |        |                     |                  |
+|             |        |                         |                   |
+|-------------|--------|-------------------------|-------------------|
+| **Lecture** |        | Tue & Thu 11:45am - 1pm | Old Chemistry 116 |
+| **Lab**     | Lab 01 | Mon 11:45am - 1pm       | LSRC A247         |
+|             | Lab 02 | Mon 4:40 - 5:55pm       | Old Chemistry 101 |
 
 ### Teaching team
 
@@ -32,6 +29,16 @@ format:
 ::: {.callout-note appearance="simple" icon="false"}
 Click here for schedule of office hours.
 :::
+
+## Course description
+
+In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.
+
+Topics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.
+
+### Prerequisites
+
+Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.
 
 ## Course Learning Objectives
 
