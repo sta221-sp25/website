@@ -1,1 +1,1 @@
-Sitemap: https://aesthetic-jalebi-197d5a.netlify.app/sitemap.xml
+Sitemap: https://sta221-fa24.netlify.app/sitemap.xml
