@@ -2,7 +2,7 @@
 
 # Fall 2024
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bebb2437-53bf-4f05-a2f3-424f965f62e2/deploy-status)](https://app.netlify.com/sites/sta210-fa23/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/96cad683-cf19-4c47-ba1c-00ea6c56c8ea/deploy-status)](https://app.netlify.com/sites/sta221-fa24/deploys)
 
 :link: [sta210-fa24.netlify.app](https://sta210-fa24.netlify.app/)
 
