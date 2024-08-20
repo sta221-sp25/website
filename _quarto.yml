@@ -3,17 +3,17 @@ project:
 
 website:
   page-navigation: true
-  title: "STA 210 - Fall 2023"
-  description: "Homepage for STA 210 - Regression Analysis at Duke University, Fall 2023"
-  site-url: https://sta210-fa23.netlify.app
+  title: "STA 221 - Fall 2024"
+  description: "Homepage for STA 221 - Regression Analysis: Theory and Applications at Duke University, Fall 2023"
+  site-url: https://sta221-fa24.netlify.app
 
-  repo-url: https://github.com/sta210-fa23/website
-  repo-actions: [edit, issue]
+  repo-url: https://github.com/sta221-fa24/website
+  repo-actions: [issue]
   
   page-footer:
     background: "#7eb7c2"
     left: |
-      &copy; Copyright 2022, Maria Tackett
+      &copy; Copyright 2024, Maria Tackett
     right: |
       This site is built with [Quarto](https://quarto.org/)
 
@@ -23,30 +23,31 @@ website:
     align: center
     tools: 
       - icon: github
-        href: https://github.com/sta210-fa23
+        href: https://github.com/sta210-fa24
         text: "GitHub organization"
       - icon: code-square
         href: https://cmgr.oit.duke.edu/containers
         text: "RStudio Containers"
-      - icon: person-fill
-        text: "Sakai"
+      - icon: chat-dots-fill
+        href: https://edstem.org/us/courses/62513/discussion/
+      - icon: check-square-fill
         menu:
-          - text: Sakai
-            url: https://sakai.duke.edu/portal/site/f2e8b7dc-61e6-4431-9b5c-29f8411ee5db
-          - text: Ed Discussion 
-            url: https://edstem.org/us/courses/44523/discussion/
-          - text: Gradescope 
-            url: https://www.gradescope.com/courses/584312
+          - text: Canvas
+            url: https://canvas.duke.edu/courses/38867
+          - text: Gradescope
+            url: https://www.gradescope.com/courses/829034
     style: "docked"
     search: true
     collapse-level: 1
     contents: 
-      - href: schedule.qmd
-        text: Schedule
+      - href: overview.qmd
+        text: Overview
       - href: syllabus.qmd
         text: Syllabus
       - href: support.qmd
         text: Support
+      - href: index.qmd
+        text: Schedule 
       - href: links.qmd
         text: Useful links
       - section: Computing
@@ -63,10 +64,35 @@ website:
           text: Instructions
         - href: project-tips.qmd
           text: Tips + resources
-      - href: stats-experience.qmd
-        text: Statistics experience
-      - href: https://docs.google.com/spreadsheets/d/1dUD4SOpM79BL2kdvue9I2TP-ibcdxfpOIkHkMreYx64/edit?usp=sharing
-        text: Lecture recordings
+      - section: Homework
+        contents:
+        - href: hw/hw-01.qmd
+          text: HW 01
+        - href: hw/hw-02.qmd
+          text: HW 02
+        - href: hw/hw-03.qmd
+          text: HW 03
+        - href: hw/hw-04.qmd
+          text: HW 04
+        - href: hw/stats-experience.qmd
+          text: Statistics experience
+      - section: Labs
+        contents: 
+        - href: labs/lab-01.qmd
+          text: Lab 01
+        - href: labs/lab-02.qmd
+          text: Lab 02
+        - href: labs/lab-03.qmd
+          text: Lab 03
+        - href: labs/lab-04.qmd
+          text: Lab 04
+        - href: labs/lab-05.qmd
+          text: Lab 05
+        - href: labs/lab-06.qmd
+          text: Lab 06
+        - href: labs/lab-07.qmd
+          text: Lab 07
+        
 
 format:
   html:

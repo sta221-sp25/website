@@ -1,5 +1,5 @@
 ---
-title: "Schedule"
+title: "STA 221 - Regression Analysis: Theory and Applications"
 navbar: false
 editor: visual
 freeze: false

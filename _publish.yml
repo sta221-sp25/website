@@ -1,4 +1,4 @@
 - source: project
   netlify:
     - id: bebb2437-53bf-4f05-a2f3-424f965f62e2
-      url: 'https://sta210-fa23.netlify.app'
+      url: 'https://sta221-fa24.netlify.app'

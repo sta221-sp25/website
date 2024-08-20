@@ -1,7 +1,6 @@
 ---
-title: STA 221 Syllabus DRAFT
+title: STA 221 Syllabus
 format:
-  docx: default
   html: default
   pdf: default
 ---
@@ -10,11 +9,11 @@ format:
 
 ### Class meetings
 
-|             |        |                         |                   |
-|-------------|--------|-------------------------|-------------------|
-| **Lecture** |        | Tue & Thu 11:45am - 1pm | Old Chemistry 116 |
-| **Lab**     | Lab 01 | Mon 11:45am - 1pm       | LSRC A247         |
-|             | Lab 02 | Mon 4:40 - 5:55pm       | Old Chemistry 101 |
+|             |                         |                   |
+|-------------|-------------------------|-------------------|
+| **Lecture** | Tue & Thu 11:45am - 1pm | Old Chemistry 116 |
+| **Lab 01**  | Mon 11:45am - 1pm       | LSRC A247         |
+| **Lab 02**  | Mon 4:40 - 5:55pm       | Old Chemistry 101 |
 
 ### Teaching team
 
@@ -25,10 +24,6 @@ format:
 | TBD                 | TA         | TBD          |
 | TBD                 | TA         | TBD          |
 | TBD                 | TA         | TBD          |
-
-::: {.callout-note appearance="simple" icon="false"}
-Click here for schedule of office hours.
-:::
 
 ## Course description
 
@@ -51,21 +46,11 @@ By the end of the semester, you will be able to...
 -   effectively communicate statistical results to a general audience.
 -   assess the ethical considerations and implications of analysis decisions.
 
+## Course materials
+
+While there is no official textbook for the course; readings will primarily be made available as they are assigned. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the [computing page](computing-access.qmd) for more information.
+
 ## Course community
-
-### Duke Community Standard
-
-All students must adhere to the [Duke Community Standard(DCS)](https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.
-
-To uphold the Duke Community Standard, students agree:
-
-> -   I will not lie, cheat, or steal in my academic endeavors;
-> -   I will conduct myself honorably in all my endeavors;and
-> -   I will act if the Standard is compromised.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_KN97j30ST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
-</iframe>
 
 ### Inclusive community
 
@@ -78,7 +63,7 @@ Furthermore, I would like to create a learning environment for my students that 
 
 ### Pronouns
 
-Pronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. Please update your gender pronouns in Duke Hub. You can learn more at the [Center for Sexual and Gender Diversity's website](https://students.duke.edu/belonging/icr/csgd/pronouns/).
+Pronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. Please update your gender pronouns in Duke Hub. You can find instructions to do so [here](https://students.duke.edu/belonging/icr/csgd/pronouns/dukehub-zoom/). You can learn more at the [Center for Sexual and Gender Diversity's website](https://students.duke.edu/belonging/icr/csgd/pronouns/).
 
 ### Accessibility
 
@@ -88,11 +73,29 @@ The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) 
 
 ### Communication
 
-All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website, \[ADD URL\]
+All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website, [sta221-fa24.netlify.app](https://sta221-fa24.netlify.app).
 
 Links to Zoom meetings may be found in Canvas. Periodic announcements will be sent via email and will also be available through Ed Discussion and Canvas Announcements. Please check your email regularly to ensure you have the latest announcements for the course.
 
-### Getting help in the course
+### Email
+
+If you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at [maria.tackett\@duke.edu](mailto:maria.tackett@duke.edu). **If you email me, please include "STA 221" in the subject line.** Barring extenuating circumstances, I will respond to STA 221 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
+
+## Five tips for success
+
+Your success on this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TAs and I will help you be providing you with materials and answering questions and setting a pace, but for this to work you must do the following:
+
+1.  Complete all the preparation work before class.
+
+2.  Ask questions. As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you're not sure about the homework, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.
+
+3.  Do the readings and other preparation work.
+
+4.  Do the homework and lab.The earlier you start, the better. It's not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material, and imagine how they might be changed (to make questions for an exam, for example.)
+
+5.  Don't procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don't let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.
+
+## Getting help in the course
 
 -   If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend *office hours*[^1] to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. You are encouraged to use them!
@@ -100,29 +103,17 @@ Links to Zoom meetings may be found in Canvas. Periodic announcements will be se
 
 [^1]: Office hours are times the teaching team set aside each week to meet with students. [Click here](https://academicguides.duke.edu/reasons-to-attend-office-hours/) to learn more about how to effectively use office hours.
 
-### Email
-
-If you have questions about assignment extensions, accommodations, or any other matter not approporiate for the public forum, please email me direclty at [maria.tackett\@duke.edu](mailto:maria.tackett@duke.edu). **If you email me, please include "STA 221" in the subject line.** Barring extenuating circumstances, I will respond to STA 221 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
-
 Check out the [Support](support.qmd) page for more resources.
 
-## Textbook
+## What to expect in the course
 
-While there is no official textbook for the course, readings will primarily be assigned from the following texts (all freely available online).
-
--   [R for Data Science](https://r4ds.had.co.nz/) by Garret Grolemund and Hadley Wickham
-
--   [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) by Mine Çetinkaya-Rundel and Johanna Hardin
-
--   [Beyond Multiple Linear Regression](https://bookdown.org/roback/bookdown-BeyondMLR/) by Paul Roback and Julie Legler
-
-## Lectures and labs
+### Lectures and labs
 
 Lectures and labs are designed to be interactive, so you gain experience applying new concepts and learning from each other. My role as instructor is to introduce you to new methods, tools, and techniques, but it is up to you to take them and make use of them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will be working on a variety of tasks and activities during the lectures and labs. You are expected to prepare for class by completing assigned readings, attend all lecture and lab sessions, and meaningfully contribute to in-class exercises and discussion. Additionally, some lectures will feature application exercises that will be graded based on completing what we do in class.
 
 You are expected to bring a laptop, tablet, or Chromebook to each class so that you can participate in the in-class exercises. Please make sure your device is fully charged before you come to class, as the number of outlets in the classroom will not be sufficient to accommodate everyone.
 
-## Teams
+### Teams
 
 You will be assigned to a team at the beginning of the semester. You are encouraged to sit with your teammates in lecture and you will also work with them in the lab sessions. All team members are expected to contribute equally to the completion of the group activities, labs and the final project. You will be asked to complete teamwork evaluations and self-reflections throughout the semester. Failure to adequately contribute to an assignment can result in a penalty to your score relative to the team's overall mark.
 
@@ -152,7 +143,21 @@ There will be two exams in this course. Each exam will include a closed-notes in
 
 ### Project
 
-The purpose of the [final project](/project/) is to apply what you've learned throughout the semester to analyze an interesting data-driven research question. The project will be completed with your lab teams, and each team will present their work through a written report and presentation. More information about the project will be provided during the semester.
+The purpose of the final project is to apply what you've learned throughout the semester to analyze an interesting data-driven research question. The project will be completed with your lab teams, and each team will present their work through a written report and presentation. More information about the project will be provided during the semester. You can learn more on the [final project](project.qmd) page.
+
+### Participation (Application exercises + teamwork)
+
+#### Application exercises
+
+You will get the most out of the course if you actively participate in class and when working with your team. Parts of some lectures will be dedicated to working on Application Exercises (AEs). AEs are submitted by pushing your work to the relevant GitHub repo. AEs from Tuesday lectures should be submitted by Friday by 11:59p ET, and AEs from Thursday lectures are should be submitted by Sunday at 11:59p ET. Because AEs are intended for in-class activities, there are no extensions given on AEs.
+
+AEs will be graded based on making a good-faith effort in attempting all questions covered in class. You are welcome to, but not required, to work on AEs beyond lecture.
+
+*Successful on-time effort on at least 80% of AEs will result in full credit for AEs in the final course grade.*
+
+#### Teamwork
+
+Given the collaborative nature of statistics and data science work, teamwork will be a key part of this course. You will work in teams for in-class activities, lab assignments, and the final course project. There will be periodic peer and self-evaluations to reflect on the team's collaboration. These evaluations will be counted as part of the participation grade.
 
 ## Grading
 
@@ -194,21 +199,21 @@ The final letter grade will be determined based on the following thresholds:
 
 </center>
 
-## Five tips for success
-
-Your success on this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TAs and I will help you be providing you with materials and answering questions and setting a pace, but for this to work you must do the following:
-
-1.  Complete all the preparation work before class.
-
-2.  Ask questions. As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you're not sure about the homework, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.
-
-3.  Do the readings and other preparation work.
-
-4.  Do the homework and lab.The earlier you start, the better. It's not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material, and imagine how they might be changed (to make questions for an exam, for example.)
-
-5.  Don't procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don't let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.
-
 ## Course policies
+
+### Duke Community Standard
+
+All students must adhere to the [Duke Community Standard(DCS)](https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.
+
+To uphold the Duke Community Standard, students agree:
+
+> -   I will not lie, cheat, or steal in my academic endeavors;
+> -   I will conduct myself honorably in all my endeavors;and
+> -   I will act if the Standard is compromised.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_KN97j30ST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
 
 ### Academic honesty
 
@@ -298,6 +303,14 @@ There are times may need help with the class that is beyond what can be provided
 
 ## Important dates
 
-\[UPDATE DATES FOR FALL 2024\]
+-   **August 26**: Classes begin
+-   **September 2**: Labor Day. No classes
+-   **September 6**: Drop/Add ends
+-   **October 14 - 15**: Fall Break. No classes
+-   **November 8**: Last day to withdraw with "W"
+-   **November 27 - 29**: Thanksgiving recess
+-   **December 6**: Classes end
+-   **December 7 - 10**: Reading period
+-   **December 11 - 16**: Final exam period
 
 [Click here](https://registrar.duke.edu/2024-2025-academic-calendar) for the full Duke academic calendar.
