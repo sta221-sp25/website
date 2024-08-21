@@ -17,21 +17,21 @@ format:
 
 ### Teaching team
 
-+---------------------+------------+----------------------------------+
-| Name                | Role       | Office Hours                     |
-+=====================+============+==================================+
-| Prof. Maria Tackett | Instructor | Mon 1:30 - 2:30pm, Old Chem 118B |
-|                     |            |                                  |
-|                     |            | Thu 3 - 4pm, Old Chem 118B       |
-+---------------------+------------+----------------------------------+
-| TBD                 | Head TA    | TBD                              |
-+---------------------+------------+----------------------------------+
-| TBD                 | TA         | TBD                              |
-+---------------------+------------+----------------------------------+
-| TBD                 | TA         | TBD                              |
-+---------------------+------------+----------------------------------+
-| TBD                 | TA         | TBD                              |
-+---------------------+------------+----------------------------------+
++---------------------+---------------+----------------------------------+
+| Name                | Role          | Office Hours                     |
++=====================+===============+==================================+
+| Prof. Maria Tackett | Instructor    | Mon 1:30 - 2:30pm, Old Chem 118B |
+|                     |               |                                  |
+|                     |               | Thu 3 - 4pm, Old Chem 118B       |
++---------------------+---------------+----------------------------------+
+| TBD                 | Head TA       | TBD                              |
++---------------------+---------------+----------------------------------+
+| TBD                 | TA            | TBD                              |
++---------------------+---------------+----------------------------------+
+| TBD                 | TA            | TBD                              |
++---------------------+---------------+----------------------------------+
+| TBD                 | TA            | TBD                              |
++---------------------+---------------+----------------------------------+
 
 ## Course description
 
@@ -91,7 +91,7 @@ If you have questions about assignment extensions, accommodations, or any other 
 
 ## Five tips for success
 
-Your success on this course depends very much on you and the effort you put into it. The course has been organized so that the burden of learning is on you. Your TAs and I will help you be providing you with materials and answering questions and setting a pace, but for this to work you must do the following:
+Your success on this course depends very much on you and the effort you put into it. Your TAs and I will help you be providing you with materials and answering questions and setting a pace, but for this to work you must do the following:
 
 1.  Complete all the preparation work before class.
 
@@ -285,7 +285,9 @@ More details on Trinity attendance policies are available [here](https://trinity
 
 ### Lecture recording request
 
-Lectures will be recorded on Panopto and will be made available to students with an excused absence upon request. Videos shared with such students will be available for a week after the lecture date. To request a particular lecture's video, please fill out the form at \[INSERT LINK\]. Please submit the form within 24 hours of missing lecture to ensure you have sufficient time to watch the recording. Please also make sure that any official documentation, such as STINFs, Dean's excuses, NOVAPs, and quarantine/removal from class notices from student health are also uploaded to the form.
+Lectures will be recorded on Panopto and will be made available to students with an excused absence upon request. Videos shared with such students will be available for a week after the lecture date. To request a particular lecture's video, please fill out the form at the link below. Please submit the form within 24 hours of missing lecture to ensure you have sufficient time to watch the recording. Please also make sure that any official documentation, such as STINFs, Dean's excuses, NOVAPs, and quarantine/removal from class notices from student health are also uploaded to the form.
+
+🔗 <https://forms.office.com/r/Y46k4dqRLY>
 
 About one week before each exam, the class recordings will be available to all students. These recordings will be available until the start of the exam.
 
