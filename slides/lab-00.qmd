@@ -20,7 +20,7 @@ knitr:
     width: 200
 ---
 
-# Welcome to STA 221! 
+# Welcome to STA 221!
 
 ## Meet your TAs!
 
@@ -48,13 +48,11 @@ countdown::countdown(minutes  = 3)
 
 -   Review lecture content, as needed (\~ 10 minutes)
 
--   Work on the lab assignment (individual for the first few weeks, but in teams for the rest of the semester)
+-   Work on the lab assignment (individual for Lab 01 and in teams for the remainder of the semester)
 
--   Start each lab by finding your assignment repo in the course GitHub organization
+-   Starting with Lab 01, you will find the starter materials for lab in your repo in the course GitHub organization.
 
-    -   More about this in Lab 01
-
-# Any questions? 
+# Any questions?
 
 ## Today's lab {.midi}
 
