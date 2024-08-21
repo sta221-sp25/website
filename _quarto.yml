@@ -11,14 +11,14 @@ website:
   repo-actions: [issue]
   
   page-footer:
-    background: "#7eb7c2"
+    background: "#497E99"
     left: |
       &copy; Copyright 2024, Maria Tackett
     right: |
       This site is built with [Quarto](https://quarto.org/)
 
   sidebar:
-    background: "#7eb7c2"
+    background: "#407E99"
     logo: "images/logo.png"
     align: center
     tools: 
