@@ -664,5 +664,131 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/01-welcome.html#meet-prof.-tackett",
+    "href": "slides/01-welcome.html#meet-prof.-tackett",
+    "title": "Welcome to STA 221!",
+    "section": "Meet Prof. Tackett!",
+    "text": "Meet Prof. Tackett!\n\n\nEducation and career journey\n\nBS in Math and MS in Statistics from University of Tennessee\nStatistician at Capital One\nPhD in Statistics from University of Virginia\nAssistant Professor of the Practice, Department of Statistical Science at Duke\n\nWork focuses on statistics education and sense of belonging in introductory math and statistics classes\nCo-leader of the Bass Connections team Mental Health and the Justice System in Durham County\nMom of 19-month-old twins 🙂"
+  },
+  {
+    "objectID": "slides/01-welcome.html#teaching-assistants-tas",
+    "href": "slides/01-welcome.html#teaching-assistants-tas",
+    "title": "Welcome to STA 221!",
+    "section": "Teaching Assistants (TAs)",
+    "text": "Teaching Assistants (TAs)"
+  },
+  {
+    "objectID": "slides/01-welcome.html#what-is-regression-analysis",
+    "href": "slides/01-welcome.html#what-is-regression-analysis",
+    "title": "Welcome to STA 221!",
+    "section": "What is regression analysis?",
+    "text": "What is regression analysis?\n\n\n“In statistical modeling, regression analysis is a set of statistical processes for estimating the relationships among variables. It includes many techniques for modeling and analyzing several variables, when the focus is on the relationship between a dependent variable and one or more independent variables (or ‘predictors’). More specifically, regression analysis helps one understand how the typical value of the dependent variable (or ‘criterion variable’) changes when any one of the independent variables is varied, while the other independent variables are held fixed.”\n\nSource: Wikipedia (previous definition)"
+  },
+  {
+    "objectID": "slides/01-welcome.html#examples-of-regression-in-practice",
+    "href": "slides/01-welcome.html#examples-of-regression-in-practice",
+    "title": "Welcome to STA 221!",
+    "section": "Examples of regression in practice",
+    "text": "Examples of regression in practice\n\n\nNew Yorkers Will Pay $56 A Month To Trim A Minute Off Their Commute\nHow FiveThirtyEight’s 2020 Presidential Forecast Works — And What’s Different Because Of COVID-19\nEffect of Forensic Evidence on Criminal Justice Case Processing\nWhy it’s so freaking hard to make a good COVID-19 model (from March 2020)"
+  },
+  {
+    "objectID": "slides/01-welcome.html#what-is-the-course",
+    "href": "slides/01-welcome.html#what-is-the-course",
+    "title": "Welcome to STA 221!",
+    "section": "What is the course?",
+    "text": "What is the course?"
+  },
+  {
+    "objectID": "slides/01-welcome.html#course-faq",
+    "href": "slides/01-welcome.html#course-faq",
+    "title": "Welcome to STA 221!",
+    "section": "Course FAQ ",
+    "text": "Course FAQ \nQ - What background is assumed for the course?\nA - Introductory statistics or probability course at Duke\n\nQ - Will we be doing computing?\nA - Yes. We will use the computing language R for analysis, Quarto for writing up results, and GitHub for version control and collaboration\n\n\nQ - Will we learn the mathematical theory of regression?\nA - Yes and No. The course is primarily focused on application; however, we will discuss some of the mathematics of simple linear regression. There a 0.5-credit course STA 211: Mathematics of Regression to take simultaneously or after this course to dive into more of the mathematics."
+  },
+  {
+    "objectID": "slides/01-welcome.html#course-learning-objectives",
+    "href": "slides/01-welcome.html#course-learning-objectives",
+    "title": "Welcome to STA 221!",
+    "section": "Course learning objectives ",
+    "text": "Course learning objectives \nBy the end of the semester, you will be able to…\n\nanalyze real-world data to answer questions about multivariable relationships.\nuse R to fit and evaluate linear and logistic regression models.\nassess whether a proposed model is appropriate and describe its limitations.\nuse Quarto to write reproducible reports and GitHub for version control and collaboration.\neffectively communicate statistical results through writing and oral presentations."
+  },
+  {
+    "objectID": "slides/01-welcome.html#course-topics",
+    "href": "slides/01-welcome.html#course-topics",
+    "title": "Welcome to STA 221!",
+    "section": "Course topics ",
+    "text": "Course topics \n\n\nUnit 1: Quantitative Response Variable\n\nSimple Linear Regression\nMultiple Linear Regression\n\n\nUnit 2: Categorical Response Variable\n\nLogistic Regression\nMultinomial logistic regression\n\n\nUnit 3: Looking Ahead\n\nSpecial topics\nPresenting statistical results"
+  },
+  {
+    "objectID": "slides/01-welcome.html#classroom-community",
+    "href": "slides/01-welcome.html#classroom-community",
+    "title": "Welcome to STA 221!",
+    "section": "Classroom community",
+    "text": "Classroom community\n\n\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\nIf you have a name that differs from those that appear in your official Duke records, please let me know.\nPlease let me know your preferred pronouns, if you are comfortable sharing.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it."
+  },
+  {
+    "objectID": "slides/01-welcome.html#accessibility",
+    "href": "slides/01-welcome.html#accessibility",
+    "title": "Welcome to STA 221!",
+    "section": "Accessibility",
+    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nIf you have documented accommodations from SDAO, please send the documentation as soon as possible.\nI am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
+  },
+  {
+    "objectID": "slides/01-welcome.html#course-toolkit",
+    "href": "slides/01-welcome.html#course-toolkit",
+    "title": "Welcome to STA 221!",
+    "section": "Course toolkit",
+    "text": "Course toolkit\n\nCourse website: https://sta221-fa24.netlify.app\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/38867\n\nGradebook\nAnnouncements\nGradescope\nEd Discussion\n\nGitHub: https://github.com/sta221-fa24\n\nDistribute assignments\nPlatform for version control and collaboration"
+  },
+  {
+    "objectID": "slides/01-welcome.html#computing-toolkit",
+    "href": "slides/01-welcome.html#computing-toolkit",
+    "title": "Welcome to STA 221!",
+    "section": "Computing toolkit",
+    "text": "Computing toolkit\n\n\n\n\n\n\n\n\n\n\n\nAll analyses using R, a statistical programming language\nWrite reproducible reports in Quarto\nAccess RStudio through STA 210 Docker Containers \n\n\n\n\n\n\n\n\n\n\n\n\nAccess assignments\nFacilitates version control and collaboration\nAll work in STA 210 course organization"
+  },
+  {
+    "objectID": "slides/01-welcome.html#get-in-groups-for-syllabus-activity",
+    "href": "slides/01-welcome.html#get-in-groups-for-syllabus-activity",
+    "title": "Welcome to STA 221!",
+    "section": "get in groups for syllabus activity",
+    "text": "get in groups for syllabus activity\n\n\nWhat to expect in labs vs. lectures\nHomework and labs\nExam + final project\nApplication exercises + teamwork\nAcademic integrity - collaborating + sharing code\nAcademic integrity - AI policy\nStrategies for seeking help in the course\nLate waiver\nAttendance + lecture recording request"
+  },
+  {
+    "objectID": "slides/01-welcome.html#lets-discuss-the-syllabus",
+    "href": "slides/01-welcome.html#lets-discuss-the-syllabus",
+    "title": "Welcome to STA 221!",
+    "section": "Let’s discuss the syllabus",
+    "text": "Let’s discuss the syllabus"
+  },
+  {
+    "objectID": "slides/01-welcome.html#grading",
+    "href": "slides/01-welcome.html#grading",
+    "title": "Welcome to STA 221!",
+    "section": "Grading",
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n35%\n\n\nFinal project\n15%\n\n\nLab\n15%\n\n\nExam 01\n15%\n\n\nExam 02\n15%\n\n\nApplication Exercises\n2.5%\n\n\nTeamwork\n2.5%"
+  },
+  {
+    "objectID": "slides/01-welcome.html#five-tips-for-success-in-sta-221",
+    "href": "slides/01-welcome.html#five-tips-for-success-in-sta-221",
+    "title": "Welcome to STA 221!",
+    "section": "Five tips for success in STA 221",
+    "text": "Five tips for success in STA 221\n\nComplete all the preparation work (readings and videos) before class.\nAsk questions.\nDo the homework and labs; get started on homework early when possible.\nDon’t procrastinate and don’t let a week pass by with lingering questions.\nStay up-to-date on announcements on Ed Discussion and sent via email."
+  },
+  {
+    "objectID": "slides/01-welcome.html#application-exercise",
+    "href": "slides/01-welcome.html#application-exercise",
+    "title": "Welcome to STA 221!",
+    "section": "Application exercise",
+    "text": "Application exercise\n\n📋 AE 01 - Movie Budgets and Revenues"
+  },
+  {
+    "objectID": "slides/01-welcome.html#for-this-week",
+    "href": "slides/01-welcome.html#for-this-week",
+    "title": "Welcome to STA 221!",
+    "section": "For this week…",
+    "text": "For this week…\n\nRead the syllabus\n\nSee the course schedule for an overview of the semester\nLabs start this week!\n\nSection 001: Labs on Tuesday\nSection 002: Labs on Thursday\n\nThis week’s lab is focused on introductions and computing\nWednesday’s lecture: The Big Picture\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
   }
 ]
