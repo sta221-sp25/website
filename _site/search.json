@@ -124,14 +124,14 @@
     "href": "slides/01-welcome.html#teaching-assistants-tas",
     "title": "Welcome to STA 221!",
     "section": "Teaching Assistants (TAs)",
-    "text": "Teaching Assistants (TAs)"
+    "text": "Teaching Assistants (TAs)\n\nKat Husar (PhD): Head TA + Lab 02 leader\nJon Campbell (MS): Lab 01 leader\nIshrit Gupta (UG): Lab 01 helper\nAlan Wang (UG): Lab 02 helper"
   },
   {
     "objectID": "slides/01-welcome.html#what-is-regression-analysis",
     "href": "slides/01-welcome.html#what-is-regression-analysis",
     "title": "Welcome to STA 221!",
     "section": "What is regression analysis?",
-    "text": "What is regression analysis?\n\n\n“In statistical modeling, regression analysis is a set of statistical processes for estimating the relationships among variables. It includes many techniques for modeling and analyzing several variables, when the focus is on the relationship between a dependent variable and one or more independent variables (or ‘predictors’). More specifically, regression analysis helps one understand how the typical value of the dependent variable (or ‘criterion variable’) changes when any one of the independent variables is varied, while the other independent variables are held fixed.”\n\nSource: Wikipedia (previous definition)"
+    "text": "What is regression analysis?\n\n\nRegression analysis is a statistical method used to examine the relationship between a response variable and one or more predictor variables. It is used for predicting future values, understanding relationships between variables, and identifying key predictors. It also helps in modeling trends, assessing the impact of changes, and detecting outliers in data.\n\nSource: ChatGPT (with modification)"
   },
   {
     "objectID": "slides/01-welcome.html#examples-of-regression-in-practice",
@@ -158,22 +158,22 @@
     "objectID": "slides/01-welcome.html#course-learning-objectives",
     "href": "slides/01-welcome.html#course-learning-objectives",
     "title": "Welcome to STA 221!",
-    "section": "Course learning objectives ",
-    "text": "Course learning objectives \nBy the end of the semester, you will be able to…\n\nanalyze real-world data to answer questions about multivariable relationships.\nuse R to fit and evaluate linear and logistic regression models.\nassess whether a proposed model is appropriate and describe its limitations.\nuse Quarto to write reproducible reports and GitHub for version control and collaboration.\neffectively communicate statistical results through writing and oral presentations."
+    "section": "Course learning objectives",
+    "text": "Course learning objectives\nBy the end of the semester, you will be able to…\n\nanalyze data to explore real-world multivariable relationships.\nfit, interpret, and draw conclusions from linear and logistic regression models.\nimplement a reproducible analysis workflow using R for analysis, Quarto to write reports and GitHub for version control and collaboration.\nexplain the mathematical foundations of linear and logistic regression.\neffectively communicate statistical results to a general audience.\nassess the ethical considerations and implications of analysis decisions."
   },
   {
     "objectID": "slides/01-welcome.html#course-topics",
     "href": "slides/01-welcome.html#course-topics",
     "title": "Welcome to STA 221!",
-    "section": "Course topics ",
-    "text": "Course topics \n\n\nUnit 1: Quantitative Response Variable\n\nSimple Linear Regression\nMultiple Linear Regression\n\n\nUnit 2: Categorical Response Variable\n\nLogistic Regression\nMultinomial logistic regression\n\n\nUnit 3: Looking Ahead\n\nSpecial topics\nPresenting statistical results"
+    "section": "Course topics",
+    "text": "Course topics\n\n\n\n\nLinear regression\n\nCoefficient estimation and interpretation\nPrediction\nModel assessment\nMatrix representation of regression\nEstimators\nModel conditions and diagnostics\nDifferent types of predictor variables\n\n\n\n\n\nLogistic regression\n\nCoefficient estimation and interpretation\nPrediction\nModel assessment\nInference\n\n\n\n\nGeneral topics\n\nComputing using R and GitHub\nPresenting statistical results\nCollaboration and teamwork\n\n:::\n:::\n:::\n\nCourse overview\n\n\n\nCourse toolkit\n\nWebsite: https://sta221-fa24.netlify.app\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/38867\n\nGradebook\nAnnouncements\nGradescope\nEd Discussion\n\nGitHub: https://github.com/sta221-fa24\n\nDistribute assignments\nPlatform for version control and collaboration\n\n\n\n\nComputing toolkit\n\n\n\n\n\n\n\n\n\n\n\nAll analyses using R, a statistical programming language\nWrite reproducible reports in Quarto\nAccess RStudio through STA 210 Docker Containers \n\n\n\n\n\n\n\n\n\n\n\n\nAccess assignments\nFacilitates version control and collaboration\nAll work in STA 221 course organization\n\n\n\n\n\nClassroom community\n\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\nIf you have a name that differs from those that appear in your official Duke records, please let me know.\nPlease let me know your preferred pronouns, if you are comfortable sharing.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it.\n\n\n\n\nAccessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nIf you have documented accommodations from SDAO, please send the documentation as soon as possible.\nI am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don’t hesitate to let me know.\n\n\n\nSyllabus activity\n\n\nIntroduce yourself to your group members.\nChoose a reporter. This person will share the group’s summary with the class.\nRead the portion of the syllabus assigned to your group.\nDiscuss the key points and questions.\nThe report will share the group’s summary of key points and remaining questions with the class.\n\n\n\n\nSyllabus activity assignments\n\nWhat to expect in labs vs. lectures\nHomework and labs\nExam + final project\nApplication exercises + teamwork\nAcademic integrity - collaborating + sharing code\nAcademic integrity - AI policy\nStrategies for seeking help in the course\nLate waiver\nAttendance + lecture recording request\n\n\n\nSyllabus activity report out\n\n\n\nGrading\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n25%\n\n\nFinal project\n15%\n\n\nLab\n15%\n\n\nExam 01\n20%\n\n\nExam 02\n20%\n\n\nParticipation (AEs and teamwork)\n5%\n\n\n\n\n\nFive tips for success in STA 221\n\nComplete all the preparation work before class.\nAsk questions in class, office hours, and on Ed Discussion.\nDo the homework and labs; get started on homework early when possible.\nDon’t procrastinate and don’t let a week pass by with lingering questions.\nStay up-to-date on announcements on Ed Discussion and sent via email.\n\n\n\n\nQuestions?\nRaise your hand or post under the Lectures channel on Ed Discussion.\n\n\n\nReproducible workflow\n\n\n\nReproducibility checklist\n\nWhat does it mean for an analysis to be reproducible?\n\n\nNear term goals:\n✔️ Can the tables and figures be exactly reproduced from the code and data?\n✔️ Does the code actually do what you think it does?\n✔️ In addition to what was done, is it clear why it was done?\n\n\nLong term goals:\n✔️ Can the code be used for other data?\n✔️ Can you extend the code to do other things?\n\n\n\nWhy is reproducibility important?\n\nResults produced are more reliable and trustworthy [@ostblom2022]\nFacilitates more effective collaboration [@ostblom2022]\nContributing to science, which builds and organizes knowledge in terms of testable hypotheses [@alexander2023]\nPossible to identify and correct errors or biases in the analysis process [@alexander2023]\n\n\n\nWhen things go wrong\n\n\n\nReproducibility error\nConsequence\nSource(s)\n\n\n\n\nLimitations in Excel data formats\nLoss of 16,000 COVID case records in the UK\n(Kelion 2020)\n\n\nAutomatic formatting in Excel\nImportant genes disregarded in scientific studies\n(Ziemann, Eren, and El-Osta 2016)\n\n\nDeletion of a cell caused rows to shift\nMix-up of which patient group received the treatment\n(Wallensteen et al. 2018)\n\n\nUsing binary instead of explanatory labels\nMix-up of the intervention with the control group\n(Aboumatar and Wise 2019)\n\n\nUsing the same notation for missing data and zero values\nPaper retraction\n(Whitehouse et al. 2021)\n\n\nIncorrectly copying data in a spreadsheet\nDelay in the opening of a hospital\n(Picken 2020)\n\n\n\nSource: @ostblom2022\n\n\nToolkit\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub\n\n\n\nR and RStudio\n\nR is a statistical programming language\nRStudio is a convenient interface for R (an integrated development environment, IDE)\n\n\n\n\nSource: Statistical Inference via Data Science\n\n\n\n\n\nRStudio IDE\n\n\n\n\n\n\n\nQuarto\n\nFully reproducible reports – the analysis is run from the beginning each time you render\nCode goes in chunks and narrative goes outside of chunks\nVisual editor to make document editing experience similar to a word processor (Google docs, Word, Pages, etc.)\n\n\n\nQuarto\n\n\n\n\n\n\n\nHow will we use Quarto?\n\nEvery application exercise and assignment is written in a Quarto document\nYou’ll have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester\n\n\n\n\nVersion control with git and GitHub\n\n\n\nWhat is versioning?\n\n\n\n\n\n\n\n\n\nWhat is versioning?\nwith human readable messages\n\n\n\n\n\n\n\n\nWhy do we need version control?\n\n\n\n\n\n\n\n\nProvides a clear record of how the analysis methods evolved. This makes analysis auditable and thus more trustworthy and reliable. [@ostblom2022]\n\n\n\ngit and GitHub\n\n\n\n\n\n\ngit is a version control system – like “Track Changes” features from Microsoft Word.\nGitHub is the home for your git-based projects on the internet (like DropBox but much better).\nThere are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.\n\n\n\nThis week\n\nComplete Lab 00 tasks\nReview syllabus\nComplete readings to prepare for Thursday’s lecture\nThursday: Review of simple linear regression\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
   },
   {
     "objectID": "slides/01-welcome.html#classroom-community",
     "href": "slides/01-welcome.html#classroom-community",
     "title": "Welcome to STA 221!",
     "section": "Classroom community",
-    "text": "Classroom community\n\n\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\nIf you have a name that differs from those that appear in your official Duke records, please let me know.\nPlease let me know your preferred pronouns, if you are comfortable sharing.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it."
+    "text": "Classroom community\n\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\nIf you have a name that differs from those that appear in your official Duke records, please let me know.\nPlease let me know your preferred pronouns, if you are comfortable sharing.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it."
   },
   {
     "objectID": "slides/01-welcome.html#accessibility",
@@ -187,14 +187,14 @@
     "href": "slides/01-welcome.html#course-toolkit",
     "title": "Welcome to STA 221!",
     "section": "Course toolkit",
-    "text": "Course toolkit\n\nCourse website: https://sta221-fa24.netlify.app\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/38867\n\nGradebook\nAnnouncements\nGradescope\nEd Discussion\n\nGitHub: https://github.com/sta221-fa24\n\nDistribute assignments\nPlatform for version control and collaboration"
+    "text": "Course toolkit\n\nWebsite: https://sta221-fa24.netlify.app\n\nCentral hub for the course!\nTour of the website\n\nCanvas: https://canvas.duke.edu/courses/38867\n\nGradebook\nAnnouncements\nGradescope\nEd Discussion\n\nGitHub: https://github.com/sta221-fa24\n\nDistribute assignments\nPlatform for version control and collaboration"
   },
   {
     "objectID": "slides/01-welcome.html#computing-toolkit",
     "href": "slides/01-welcome.html#computing-toolkit",
     "title": "Welcome to STA 221!",
     "section": "Computing toolkit",
-    "text": "Computing toolkit\n\n\n\n\n\n\n\n\n\n\n\nAll analyses using R, a statistical programming language\nWrite reproducible reports in Quarto\nAccess RStudio through STA 210 Docker Containers \n\n\n\n\n\n\n\n\n\n\n\n\nAccess assignments\nFacilitates version control and collaboration\nAll work in STA 210 course organization"
+    "text": "Computing toolkit\n\n\n\n\n\n\n\n\n\n\n\nAll analyses using R, a statistical programming language\nWrite reproducible reports in Quarto\nAccess RStudio through STA 210 Docker Containers \n\n\n\n\n\n\n\n\n\n\n\n\nAccess assignments\nFacilitates version control and collaboration\nAll work in STA 221 course organization"
   },
   {
     "objectID": "slides/01-welcome.html#get-in-groups-for-syllabus-activity",
@@ -215,14 +215,14 @@
     "href": "slides/01-welcome.html#grading",
     "title": "Welcome to STA 221!",
     "section": "Grading",
-    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n35%\n\n\nFinal project\n15%\n\n\nLab\n15%\n\n\nExam 01\n15%\n\n\nExam 02\n15%\n\n\nApplication Exercises\n2.5%\n\n\nTeamwork\n2.5%"
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n25%\n\n\nFinal project\n15%\n\n\nLab\n15%\n\n\nExam 01\n20%\n\n\nExam 02\n20%\n\n\nParticipation (AEs and teamwork)\n5%"
   },
   {
     "objectID": "slides/01-welcome.html#five-tips-for-success-in-sta-221",
     "href": "slides/01-welcome.html#five-tips-for-success-in-sta-221",
     "title": "Welcome to STA 221!",
     "section": "Five tips for success in STA 221",
-    "text": "Five tips for success in STA 221\n\nComplete all the preparation work (readings and videos) before class.\nAsk questions.\nDo the homework and labs; get started on homework early when possible.\nDon’t procrastinate and don’t let a week pass by with lingering questions.\nStay up-to-date on announcements on Ed Discussion and sent via email."
+    "text": "Five tips for success in STA 221\n\nComplete all the preparation work before class.\nAsk questions in class, office hours, and on Ed Discussion.\nDo the homework and labs; get started on homework early when possible.\nDon’t procrastinate and don’t let a week pass by with lingering questions.\nStay up-to-date on announcements on Ed Discussion and sent via email."
   },
   {
     "objectID": "slides/01-welcome.html#application-exercise",
@@ -790,5 +790,152 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/01-welcome.html#check-in-on-ed-discussion",
+    "href": "slides/01-welcome.html#check-in-on-ed-discussion",
+    "title": "Welcome to STA 221!",
+    "section": "Check-in on Ed Discussion!",
+    "text": "Check-in on Ed Discussion!\n\nClick on the link or scan the QR code to answer the Ed Discussion poll\nhttps://edstem.org/us/courses/62513/discussion/625046"
+  },
+  {
+    "objectID": "slides/01-welcome.html#what-is-sta-221",
+    "href": "slides/01-welcome.html#what-is-sta-221",
+    "title": "Welcome to STA 221!",
+    "section": "What is STA 221?",
+    "text": "What is STA 221?\n\n\n\nPrerequisites: Introductory statistics or probability course and linear algebra\nRecommended corequisite: Probability course at Duke"
+  },
+  {
+    "objectID": "slides/01-welcome.html#syllabus-activity",
+    "href": "slides/01-welcome.html#syllabus-activity",
+    "title": "Welcome to STA 221!",
+    "section": "Syllabus activity",
+    "text": "Syllabus activity\n\n\nIntroduce yourself to your group members.\nChoose a reporter. This person will share the group’s summary with the class.\nRead the portion of the syllabus assigned to your group.\nDiscuss the key points and questions.\nThe report will share the group’s summary of key points and remaining questions with the class."
+  },
+  {
+    "objectID": "slides/01-welcome.html#section",
+    "href": "slides/01-welcome.html#section",
+    "title": "Welcome to STA 221!",
+    "section": "",
+    "text": "What to expect in labs vs. lectures\nHomework and labs\nExam + final project\nApplication exercises + teamwork\nAcademic integrity - collaborating + sharing code\nAcademic integrity - AI policy\nStrategies for seeking help in the course\nLate waiver\nAttendance + lecture recording request"
+  },
+  {
+    "objectID": "slides/01-welcome.html#report-out",
+    "href": "slides/01-welcome.html#report-out",
+    "title": "Welcome to STA 221!",
+    "section": "Report out",
+    "text": "Report out"
+  },
+  {
+    "objectID": "slides/01-welcome.html#reproducibility-checklist",
+    "href": "slides/01-welcome.html#reproducibility-checklist",
+    "title": "Welcome to STA 221!",
+    "section": "Reproducibility checklist",
+    "text": "Reproducibility checklist\n\nWhat does it mean for an analysis to be reproducible?\n\n\nNear term goals:\n✔️ Can the tables and figures be exactly reproduced from the code and data?\n✔️ Does the code actually do what you think it does?\n✔️ In addition to what was done, is it clear why it was done?\n\n\nLong term goals:\n✔️ Can the code be used for other data?\n✔️ Can you extend the code to do other things?"
+  },
+  {
+    "objectID": "slides/01-welcome.html#why-is-reproducibility-important",
+    "href": "slides/01-welcome.html#why-is-reproducibility-important",
+    "title": "Welcome to STA 221!",
+    "section": "Why is reproducibility important?",
+    "text": "Why is reproducibility important?\n\nResults produced are more reliable and trustworthy [@ostblom2022]\nFacilitates more effective collaboration [@ostblom2022]\nContributing to science, which builds and organizes knowledge in terms of testable hypotheses [@alexander2023]\nPossible to identify and correct errors or biases in the analysis process [@alexander2023]"
+  },
+  {
+    "objectID": "slides/01-welcome.html#when-things-go-wrong",
+    "href": "slides/01-welcome.html#when-things-go-wrong",
+    "title": "Welcome to STA 221!",
+    "section": "When things go wrong",
+    "text": "When things go wrong\n\n\n\nReproducibility error\nConsequence\nSource(s)\n\n\n\n\nLimitations in Excel data formats\nLoss of 16,000 COVID case records in the UK\n(Kelion 2020)\n\n\nAutomatic formatting in Excel\nImportant genes disregarded in scientific studies\n(Ziemann, Eren, and El-Osta 2016)\n\n\nDeletion of a cell caused rows to shift\nMix-up of which patient group received the treatment\n(Wallensteen et al. 2018)\n\n\nUsing binary instead of explanatory labels\nMix-up of the intervention with the control group\n(Aboumatar and Wise 2019)\n\n\nUsing the same notation for missing data and zero values\nPaper retraction\n(Whitehouse et al. 2021)\n\n\nIncorrectly copying data in a spreadsheet\nDelay in the opening of a hospital\n(Picken 2020)\n\n\n\nSource: @ostblom2022"
+  },
+  {
+    "objectID": "slides/01-welcome.html#toolkit",
+    "href": "slides/01-welcome.html#toolkit",
+    "title": "Welcome to STA 221!",
+    "section": "Toolkit",
+    "text": "Toolkit\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub"
+  },
+  {
+    "objectID": "slides/01-welcome.html#r-and-rstudio",
+    "href": "slides/01-welcome.html#r-and-rstudio",
+    "title": "Welcome to STA 221!",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\nR is a statistical programming language\nRStudio is a convenient interface for R (an integrated development environment, IDE)\n\n\n\n\nSource: Statistical Inference via Data Science"
+  },
+  {
+    "objectID": "slides/01-welcome.html#rstudio-ide",
+    "href": "slides/01-welcome.html#rstudio-ide",
+    "title": "Welcome to STA 221!",
+    "section": "RStudio IDE",
+    "text": "RStudio IDE"
+  },
+  {
+    "objectID": "slides/01-welcome.html#quarto",
+    "href": "slides/01-welcome.html#quarto",
+    "title": "Welcome to STA 221!",
+    "section": "Quarto",
+    "text": "Quarto\n\nFully reproducible reports – the analysis is run from the beginning each time you render\nCode goes in chunks and narrative goes outside of chunks\nVisual editor to make document editing experience similar to a word processor (Google docs, Word, Pages, etc.)"
+  },
+  {
+    "objectID": "slides/01-welcome.html#quarto-1",
+    "href": "slides/01-welcome.html#quarto-1",
+    "title": "Welcome to STA 221!",
+    "section": "Quarto",
+    "text": "Quarto"
+  },
+  {
+    "objectID": "slides/01-welcome.html#how-will-we-use-quarto",
+    "href": "slides/01-welcome.html#how-will-we-use-quarto",
+    "title": "Welcome to STA 221!",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery application exercise and assignment is written in a Quarto document\nYou’ll have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "slides/01-welcome.html#what-is-versioning",
+    "href": "slides/01-welcome.html#what-is-versioning",
+    "title": "Welcome to STA 221!",
+    "section": "What is versioning?",
+    "text": "What is versioning?"
+  },
+  {
+    "objectID": "slides/01-welcome.html#what-is-versioning-1",
+    "href": "slides/01-welcome.html#what-is-versioning-1",
+    "title": "Welcome to STA 221!",
+    "section": "What is versioning?",
+    "text": "What is versioning?\nwith human readable messages"
+  },
+  {
+    "objectID": "slides/01-welcome.html#why-do-we-need-version-control",
+    "href": "slides/01-welcome.html#why-do-we-need-version-control",
+    "title": "Welcome to STA 221!",
+    "section": "Why do we need version control?",
+    "text": "Why do we need version control?\n\n\n\n\n\n\n\n\nProvides a clear record of how the analysis methods evolved. This makes analysis auditable and thus more trustworthy and reliable. [@ostblom2022]"
+  },
+  {
+    "objectID": "slides/01-welcome.html#git-and-github",
+    "href": "slides/01-welcome.html#git-and-github",
+    "title": "Welcome to STA 221!",
+    "section": "git and GitHub",
+    "text": "git and GitHub\n\n\n\n\n\n\ngit is a version control system – like “Track Changes” features from Microsoft Word.\nGitHub is the home for your git-based projects on the internet (like DropBox but much better).\nThere are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull."
+  },
+  {
+    "objectID": "slides/01-welcome.html#this-week",
+    "href": "slides/01-welcome.html#this-week",
+    "title": "Welcome to STA 221!",
+    "section": "This week",
+    "text": "This week\n\nComplete Lab 00 tasks\nReview syllabus\nComplete readings to prepare for Thursday’s lecture\nThursday: Review of simple linear regression\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "slides/01-welcome.html#syllabus-activity-assignments",
+    "href": "slides/01-welcome.html#syllabus-activity-assignments",
+    "title": "Welcome to STA 221!",
+    "section": "Syllabus activity assignments",
+    "text": "Syllabus activity assignments\n\nWhat to expect in labs vs. lectures\nHomework and labs\nExam + final project\nApplication exercises + teamwork\nAcademic integrity - collaborating + sharing code\nAcademic integrity - AI policy\nStrategies for seeking help in the course\nLate waiver\nAttendance + lecture recording request"
+  },
+  {
+    "objectID": "slides/01-welcome.html#syllabus-activity-report-out",
+    "href": "slides/01-welcome.html#syllabus-activity-report-out",
+    "title": "Welcome to STA 221!",
+    "section": "Syllabus activity report out",
+    "text": "Syllabus activity report out"
   }
 ]

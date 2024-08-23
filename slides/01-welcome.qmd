@@ -41,23 +41,44 @@ knitr:
 
 ## Teaching Assistants (TAs)
 
-# Check-in on Ed Discussion!
+-   Kat Husar (PhD): Head TA + Lab 02 leader
 
-Click on the link and answer the Ed Discussion poll
+-   Jon Campbell (MS): Lab 01 leader
 
--   [Section 001 (10:05am lecture](https://edstem.org/us/courses/44523/discussion/3346720))
+-   Ishrit Gupta (UG): Lab 01 helper
 
-<!--# update link + add qr code if possible-->
+-   Alan Wang (UG): Lab 02 helper
 
-# Regression analysis
+## Check-in on Ed Discussion!
+
+::: question
+Click on the link or scan the QR code to answer the Ed Discussion poll
+
+<https://edstem.org/us/courses/62513/discussion/625046>
+
+<center>\
+![](images/01/ed-discussion-qr-lec-01.png){width="30%"}</center>
+:::
+
+# Regression Analysis
+
+---
+
+![Source: [*R for Data Science*](https://r4ds.hadley.nz/) with additions from *The Art of Statistics: How to Learn from Data*.](images/01/data-analysis-life-cycle.png){alt="Source: R for Data Science with additions from The Art of Statistics: How to Learn from Data."}
+
+---
+
+![Source:[*R for Data Science*](https://r4ds.hadley.nz/)](images/01/whole-game.png){alt="Source:R for Data Science"}
 
 ## What is regression analysis?
 
-::: {style="font-size: 0.85em;"}
-> "In statistical modeling, regression analysis is a set of statistical processes for estimating the relationships among variables. It includes many techniques for modeling and analyzing several variables, when ***the focus is on the relationship between a dependent variable and one or more independent variables (or 'predictors')***. More specifically, regression analysis helps one understand how the typical value of the dependent variable (or 'criterion variable') changes when any one of the independent variables is varied, while the other independent variables are held fixed."
+<div>
 
-Source: [Wikipedia](https://en.wikipedia.org/wiki/Regression_analysis) (previous definition)
-:::
+> *Regression analysis is a statistical method used to **examine the relationship between a response variable and one or more predictor variables.** It is used for predicting future values, understanding relationships between variables, and identifying key predictors. It also helps in modeling trends, assessing the impact of changes, and detecting outliers in data.*
+
+Source: ChatGPT (with modification)
+
+</div>
 
 ## Examples of regression in practice
 
@@ -75,102 +96,73 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Regression_analysis) (previous
 
 # STA 221
 
-## What is the course? 
+## What is STA 221?
 
 <!--# something about being a blend of sta210 + sta 211-->
 
 <!--# maybe show the regression equation + matrix-->
 
-## Course FAQ <!--# udpate this--> {.midi}
+<!--# Use ipad to draw circles-->
 
-**Q - What background is assumed for the course?**
+**Prerequisites:** Introductory statistics or probability course [**and**]{.underline} linear algebra
 
-A - Introductory statistics or probability course at Duke
+**Recommended corequisite:** Probability course at Duke
 
-. . .
-
-**Q - Will we be doing computing?**
-
-A - Yes. We will use the computing language R for analysis, Quarto for writing up results, and GitHub for version control and collaboration
-
-. . .
-
-**Q - Will we learn the mathematical theory of regression?**
-
-A - Yes and No. The course is primarily focused on application; however, we will discuss some of the mathematics of simple linear regression. There a 0.5-credit course [STA 211: Mathematics of Regression](https://stat.duke.edu/courses/mathematics-regression) to take simultaneously or after this course to dive into more of the mathematics.
-
-------------------------------------------------------------------------
-
-## Course learning objectives <!--# update--> {.midi}
+## Course learning objectives {.midi}
 
 By the end of the semester, you will be able to...
 
--   analyze real-world data to answer questions about multivariable relationships.
+-   analyze data to explore real-world multivariable relationships.
+-   fit, interpret, and draw conclusions from linear and logistic regression models.
+-   implement a reproducible analysis workflow using R for analysis, Quarto to write reports and GitHub for version control and collaboration.
+-   explain the mathematical foundations of linear and logistic regression.
+-   effectively communicate statistical results to a general audience.
+-   assess the ethical considerations and implications of analysis decisions.
 
--   use R to fit and evaluate linear and logistic regression models.
-
--   assess whether a proposed model is appropriate and describe its limitations.
-
--   use Quarto to write reproducible reports and GitHub for version control and collaboration.
-
--   effectively communicate statistical results through writing and oral presentations.
-
-## Course topics <!--# update--> {.midi}
+## Course topics {.midi}
 
 ::: columns
-::: {.column width="50%"}
-**Unit 1: Quantitative Response Variable**
+::: {.column width="48%"}
+::: {.fragment fragment-index="1"}
+### Linear regression
 
--   Simple Linear Regression
-
--   Multiple Linear Regression
-
-<br>
-
-**Unit 2: Categorical Response Variable**
-
--   Logistic Regression
--   Multinomial logistic regression
+-   Coefficient estimation and interpretation
+-   Prediction
+-   Model assessment
+-   Matrix representation of regression
+-   Estimators
+-   Model conditions and diagnostics
+-   Different types of predictor variables
+:::
 :::
 
-::: {.column width="50%"}
-**Unit 3: Looking Ahead**
+::: {.column width="48%"}
+::: {.fragment fragment-index="2"}
+### Logistic regression
 
--   Special topics
+-   Coefficient estimation and interpretation
+-   Prediction
+-   Model assessment
+-   Inference
+:::
 
+::: {.fragment fragment-index="3"}
+<hr>
+
+### General topics
+
+-   Computing using R and GitHub
 -   Presenting statistical results
+-   Collaboration and teamwork
+:::
 :::
 :::
 
 # Course overview
 
-## Classroom community 
-
-<!--# maybe restructure this-->
-
-::: small
-It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
-
--   If you have a name that differs from those that appear in your official Duke records, please let me know.
-
--   Please let me know your preferred pronouns, if you are comfortable sharing.
-
--   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.
-
--   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it.
-:::
-
-## Accessibility
-
--   The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
-
--   If you have documented accommodations from SDAO, please send the documentation as soon as possible.
-
--   I am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don't hesitate to let me know.
-
 ## Course toolkit {.midi}
 
--   **Course website**: <https://sta221-fa24.netlify.app>
+-   **Website**: <https://sta221-fa24.netlify.app>
     -   Central hub for the course!
     -   **Tour of the website**
 -   **Canvas**: <https://canvas.duke.edu/courses/38867>
@@ -209,14 +201,44 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 -   Facilitates version control and collaboration
 
--   All work in [STA 210 course organization](https://github.com/sta210-fa23)
+-   All work in [STA 221 course organization](https://github.com/sta221-fa24)
 :::
 :::
 :::
 
-## get in groups for syllabus activity
+## Classroom community
 
-<!--# activity instructions-->
+::: small
+It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
+
+-   If you have a name that differs from those that appear in your official Duke records, please let me know.
+
+-   Please let me know your preferred pronouns, if you are comfortable sharing.
+
+-   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.
+
+-   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it.
+:::
+
+## Accessibility
+
+-   The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
+
+-   If you have documented accommodations from SDAO, please send the documentation as soon as possible.
+
+-   I am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don't hesitate to let me know.
+
+## Syllabus activity
+
+::: question
+1.  Introduce yourself to your group members.
+2.  Choose a reporter. This person will share the group's summary with the class.
+3.  Read the portion of the syllabus assigned to your group.
+4.  Discuss the key points and questions.
+5.  The report will share the group's summary of key points and remaining questions with the class.
+:::
+
+## Syllabus activity assignments 
 
 -   What to expect in labs vs. lectures
 
@@ -236,27 +258,26 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 -   Attendance + lecture recording request
 
-## Let's discuss the syllabus
+## Syllabus activity report out
 
 <!--# repeat previous list with incremental reveal-->
 
 ## Grading
 
-| Category              | Percentage |
-|-----------------------|------------|
-| Homework              | 35%        |
-| Final project         | 15%        |
-| Lab                   | 15%        |
-| Exam 01               | 15%        |
-| Exam 02               | 15%        |
-| Application Exercises | 2.5%       |
-| Teamwork              | 2.5%       |
+| Category                         | Percentage |
+|----------------------------------|------------|
+| Homework                         | 25%        |
+| Final project                    | 15%        |
+| Lab                              | 15%        |
+| Exam 01                          | 20%        |
+| Exam 02                          | 20%        |
+| Participation (AEs and teamwork) | 5%         |
 
 ## Five tips for success in STA 221
 
-1.  Complete all the preparation work (readings and videos) before class.
+1.  Complete all the preparation work before class.
 
-2.  Ask questions.
+2.  Ask questions in class, office hours, and on Ed Discussion.
 
 3.  Do the homework and labs; get started on homework early when possible.
 
@@ -268,32 +289,141 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 Raise your hand or post under the Lectures channel on Ed Discussion.
 
-<!--# do the computing stuff here-->
+# Reproducible workflow 
 
-# Let's look at some data!
+## Reproducibility checklist
 
-## Application exercise
-
-::: appex
-📋 [AE 01 - Movie Budgets and Revenues](https://sta210-fa23.netlify.app/ae/ae-01-movies.html)
+::: question
+What does it mean for an analysis to be reproducible?
 :::
 
-# This week
+. . .
 
-## For this week...
+**Near term goals**:
 
--   Read the [syllabus](https://sta210-fa23.netlify.app/syllabus)
+✔️ Can the tables and figures be exactly reproduced from the code and data?
 
--   
+✔️ Does the code actually do what you think it does?
 
--   See the [course schedule](https://sta210-fa23.netlify.app/schedule) for an overview of the semester
+✔️ In addition to what was done, is it clear *why* it was done?
 
--   Labs start this week!
+. . .
 
-    -   Section 001: Labs on Tuesday
+**Long term goals**:
 
-    -   Section 002: Labs on Thursday
+✔️ Can the code be used for other data?
 
--   This week's lab is focused on introductions and computing
+✔️ Can you extend the code to do other things?
 
--   Wednesday's lecture: The Big Picture
+## Why is reproducibility important?
+
+-   Results produced are more reliable and trustworthy [@ostblom2022]
+
+-   Facilitates more effective collaboration [@ostblom2022]
+
+-   Contributing to science, which builds and organizes knowledge in terms of testable hypotheses [@alexander2023]
+
+-   Possible to identify and correct errors or biases in the analysis process [@alexander2023]
+
+## When things go wrong {.smallest}
+
+| Reproducibility error                                    | Consequence                                          | Source(s)                                                                                                       |
+|-------------------|------------------|-----------------------------------|
+| Limitations in Excel data formats                        | Loss of 16,000 COVID case records in the UK          | ([Kelion 2020](https://www.bbc.com/news/technology-54423988))                                                   |
+| Automatic formatting in Excel                            | Important genes disregarded in scientific studies    | ([Ziemann, Eren, and El-Osta 2016](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7)) |
+| Deletion of a cell caused rows to shift                  | Mix-up of which patient group received the treatment | ([Wallensteen et al. 2018](https://pubmed.ncbi.nlm.nih.gov/27373757/))                                          |
+| Using binary instead of explanatory labels               | Mix-up of the intervention with the control group    | ([Aboumatar and Wise 2019](https://jamanetwork.com/journals/jama/fullarticle/2752474))                          |
+| Using the same notation for missing data and zero values | Paper retraction                                     | ([Whitehouse et al. 2021](https://www.nature.com/articles/s41586-021-03656-3))                                  |
+| Incorrectly copying data in a spreadsheet                | Delay in the opening of a hospital                   | ([Picken 2020](https://www.bbc.com/news/uk-scotland-edinburgh-east-fife-53893101))                              |
+
+Source: @ostblom2022
+
+## Toolkit
+
+-   **Scriptability** $\rightarrow$ R
+
+-   **Literate programming** (code, narrative, output in one place) $\rightarrow$ Quarto
+
+-   **Version control** $\rightarrow$ Git / GitHub
+
+## R and RStudio
+
+-   R is a statistical programming language
+
+-   RStudio is a convenient interface for R (an integrated development environment, IDE)
+
+![Source: [Statistical Inference via Data Science](https://moderndive.com/1-getting-started.html)](images/01/r_vs_rstudio_1.png){alt="Source: Statistical Inference via Data Science" fig-align="center"}
+
+------------------------------------------------------------------------
+
+## RStudio IDE
+
+![](images/01/rstudio-panes.png){fig-align="center"}
+
+## Quarto
+
+-   Fully reproducible reports -- the analysis is run from the beginning each time you render
+
+-   Code goes in chunks and narrative goes outside of chunks
+
+-   Visual editor to make document editing experience similar to a word processor (Google docs, Word, Pages, etc.)
+
+## Quarto
+
+![](images/01/quarto.png){fig-align="center"}
+
+## How will we use Quarto?
+
+-   Every application exercise and assignment is written in a Quarto document
+
+-   You'll have a template Quarto document to start with
+
+-   The amount of scaffolding in the template will decrease over the semester
+
+# Version control with git and GitHub
+
+## What is versioning?
+
+<br>
+
+![](images/01/lego-steps.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+## What is versioning?
+
+with human readable messages
+
+![](images/01/lego-steps-commit-messages.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+## Why do we need version control?
+
+::: columns
+::: {.column width="50%"}
+![](images/01/phd_comics_vc.gif){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+Provides a clear record of how the analysis methods evolved. This makes analysis auditable and thus more trustworthy and reliable. [@ostblom2022]
+:::
+:::
+
+## git and GitHub
+
+![](images/01/git-github.png){fig-align="center"}
+
+-   **git** is a version control system -- like "Track Changes" features from Microsoft Word.
+-   **GitHub** is the home for your git-based projects on the internet (like DropBox but much better).
+-   There are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.
+
+## This week
+
+-   Complete [Lab 00 tasks](https://sta221-fa24.netlify.app/labs/lab-00)
+
+-   Review [syllabus](https://sta221-fa24.netlify.app/syllabus)
+
+-   Complete readings to prepare for Thursday's lecture
+
+-   Thursday: Review of simple linear regression
