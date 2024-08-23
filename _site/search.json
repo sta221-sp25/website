@@ -276,7 +276,7 @@
   {
     "objectID": "overview.html",
     "href": "overview.html",
-    "title": "STa 221 - Regression Analysis: Theory and Applications",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
     "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
     "crumbs": [
@@ -286,7 +286,7 @@
   {
     "objectID": "overview.html#pre-requisites",
     "href": "overview.html#pre-requisites",
-    "title": "STa 221 - Regression Analysis: Theory and Applications",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
     "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
     "crumbs": [
@@ -296,9 +296,9 @@
   {
     "objectID": "overview.html#teaching-assistants",
     "href": "overview.html#teaching-assistants",
-    "title": "STa 221 - Regression Analysis: Theory and Applications",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nLab\nOffice Hours\n\n\nKat Husar\nHead TA\nLab 02L leader\n\n\n\nJon Campbell\nLab 01L leader\n\n\n\nIshrit Gupta\nLab 01L helper\n\n\n\nAlan Wang\nLab 02L helper",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\nKat Husar\nHead TA\nLab 02L leader\n\n\n\nJon Campbell\nLab 01L leader\n\n\n\nIshrit Gupta\nLab 01L helper\n\n\n\nAlan Wang\nLab 02L helper\nMon & Wed 10 - 11am, Old Chem 203B",
     "crumbs": [
       "Overview"
     ]

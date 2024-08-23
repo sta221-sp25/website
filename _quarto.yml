@@ -58,12 +58,6 @@ website:
           text: Troubleshooting
         - href: computing-r-resources.qmd
           text: R resources
-      - section: Project
-        contents:
-        - href: project.qmd
-          text: Instructions
-        - href: project-tips.qmd
-          text: Tips + resources
       - section: Homework
         contents:
         - href: hw/hw-01.qmd
@@ -92,6 +86,12 @@ website:
           text: Lab 06
         - href: labs/lab-07.qmd
           text: Lab 07
+      - section: Project
+        contents:
+        - href: project.qmd
+          text: Instructions
+        - href: project-tips.qmd
+          text: Tips + resources
         
 
 format:
