@@ -280,7 +280,7 @@ Every student is expected to attend and participate in lecture and labs. There m
 
 More details on Trinity attendance policies are available [here](https://trinity.duke.edu/undergraduate/academic-policies/class-attendance-and-missed-work).
 
-#### <!--Attendance Policy Related to COVID Symptoms, Exposure, or Infection-->
+<!--# Attendance Policy Related to COVID Symptoms, Exposure, or Infection-->
 
 <!--Student health, safety, and well-being are the university's top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have tested positive for COVID-19 or have possible symptoms and have not yet been tested. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health (dshcheckin@duke.edu, 919-681-9355). Learn more about current university policy related to COVID-19 at coronavirus.duke.edu.-->
 

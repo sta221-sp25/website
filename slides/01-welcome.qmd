@@ -10,7 +10,7 @@ format:
     theme: slides.scss
     multiplex: false
     transition: fade
-    slide-number: false
+    slide-number: true
     incremental: false 
     chalkboard: true
 execute:
@@ -20,6 +20,7 @@ knitr:
   opts_chunk: 
     R.options:      
     width: 200
+bibliography: references.bib
 ---
 
 # Welcome!
@@ -62,13 +63,13 @@ Click on the link or scan the QR code to answer the Ed Discussion poll
 
 # Regression Analysis
 
----
+------------------------------------------------------------------------
 
-![Source: [*R for Data Science*](https://r4ds.hadley.nz/) with additions from *The Art of Statistics: How to Learn from Data*.](images/01/data-analysis-life-cycle.png){alt="Source: R for Data Science with additions from The Art of Statistics: How to Learn from Data."}
+![Source: R for Data Science with additions from The Art of Statistics: How to Learn from Data.](images/01/data-analysis-life-cycle.png)
 
----
+------------------------------------------------------------------------
 
-![Source:[*R for Data Science*](https://r4ds.hadley.nz/)](images/01/whole-game.png){alt="Source:R for Data Science"}
+![Source:R for Data Science](images/01/whole-game.png)
 
 ## What is regression analysis?
 
@@ -80,19 +81,43 @@ Source: ChatGPT (with modification)
 
 </div>
 
-## Examples of regression in practice
+## Example: Rent vs. commute time
 
-<!--# choose one example, show a visualization and equation, and then show the underlying matrices-->
+[New Yorkers Will Pay \$56 A Month To Trim A Minute Off Their Commute](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/)
 
--   [New Yorkers Will Pay \$56 A Month To Trim A Minute Off Their Commute](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/)
+. . .
 
--   [How FiveThirtyEight's 2020 Presidential Forecast Works --- And What's Different Because Of COVID-19](https://fivethirtyeight.com/features/how-fivethirtyeights-2020-presidential-forecast-works-and-whats-different-because-of-covid-19/)
+$$
+\text{rent} = \beta_0 + \beta_1 ~ \text{commute_time} + \epsilon
+$$
 
--   [Effect of Forensic Evidence on Criminal Justice Case Processing](https://onlinelibrary.wiley.com/doi/10.1111/1556-4029.12020)
+<br>
 
--   [Why it's so freaking hard to make a good COVID-19 model](https://fivethirtyeight.com/features/why-its-so-freaking-hard-to-make-a-good-covid-19-model/) (from March 2020)
+. . .
 
-<!--# update these?-->
+$$
+\begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix} = 
+\begin{bmatrix}
+1 & x_1 \\
+1 & x_2 \\
+\vdots & \vdots \\
+1 & x_n
+\end{bmatrix}
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\end{bmatrix} +  \begin{bmatrix}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_n
+\end{bmatrix}
+$$
 
 # STA 221
 
@@ -124,6 +149,7 @@ By the end of the semester, you will be able to...
 ::: columns
 ::: {.column width="48%"}
 ::: {.fragment fragment-index="1"}
+
 ### Linear regression
 
 -   Coefficient estimation and interpretation
@@ -136,8 +162,9 @@ By the end of the semester, you will be able to...
 :::
 :::
 
-::: {.column width="48%"}
-::: {.fragment fragment-index="2"}
+::: {.column width="48%"} 
+::: {.fragment fragment-index="2"} 
+
 ### Logistic regression
 
 -   Coefficient estimation and interpretation
@@ -147,13 +174,11 @@ By the end of the semester, you will be able to...
 :::
 
 ::: {.fragment fragment-index="3"}
-<hr>
 
 ### General topics
-
 -   Computing using R and GitHub
 -   Presenting statistical results
--   Collaboration and teamwork
+-   Collaboration and teamwork 
 :::
 :::
 :::
@@ -238,29 +263,47 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 5.  The report will share the group's summary of key points and remaining questions with the class.
 :::
 
-## Syllabus activity assignments 
+## Syllabus activity assignments
 
--   What to expect in labs vs. lectures
+-   Group 1: [What to expect in lectures and labs](https://sta221-fa24.netlify.app/syllabus#lectures-and-labs)
 
--   Homework and labs
+-   Group 2: [Homework and lab assignments](https://sta221-fa24.netlify.app/syllabus#labs)
 
--   Exam + final project
+-   Group 3: [Exams and project](https://sta221-fa24.netlify.app/syllabus#exams)
 
--   Application exercises + teamwork
+-   Group 4: [Participation (Application exercises + teamwork)](https://sta221-fa24.netlify.app/syllabus#participation-application-exercises-teamwork)
 
--   Academic integrity - collaborating + sharing code
+-   Group 5: [Academic honesty (except AI policy)](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
 
--   Academic integrity - AI policy
+-   Group 6: [Artificial intelligence policy](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
 
--   Strategies for seeking help in the course
+-   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
 
--   Late waiver
+-   Group 8: [Attendance and lecture recording request](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
 
--   Attendance + lecture recording request
+-   Group 9: [Getting help in the course](https://sta221-fa24.netlify.app/syllabus#getting-help-in-the-course)
 
 ## Syllabus activity report out
 
-<!--# repeat previous list with incremental reveal-->
+::: incremental
+-   Group 1: [What to expect in lectures and labs](https://sta221-fa24.netlify.app/syllabus#lectures-and-labs)
+
+-   Group 2: [Homework and lab assignments](https://sta221-fa24.netlify.app/syllabus#labs)
+
+-   Group 3: [Exams and project](https://sta221-fa24.netlify.app/syllabus#exams)
+
+-   Group 4: [Participation (Application exercises + teamwork)](https://sta221-fa24.netlify.app/syllabus#participation-application-exercises-teamwork)
+
+-   Group 5: [Academic honesty (except AI policy)](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+
+-   Group 6: [Artificial intelligence policy](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+
+-   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
+
+-   Group 8: [Attendance and lecture recording request](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
+
+-   Group 9: [Getting help in the course](https://sta221-fa24.netlify.app/syllabus#getting-help-in-the-course)
+:::
 
 ## Grading
 
@@ -272,6 +315,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 | Exam 01                          | 20%        |
 | Exam 02                          | 20%        |
 | Participation (AEs and teamwork) | 5%         |
+| Total | 100%         |
 
 ## Five tips for success in STA 221
 
@@ -289,7 +333,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 Raise your hand or post under the Lectures channel on Ed Discussion.
 
-# Reproducible workflow 
+# Reproducible workflow
 
 ## Reproducibility checklist
 
@@ -325,19 +369,6 @@ What does it mean for an analysis to be reproducible?
 
 -   Possible to identify and correct errors or biases in the analysis process [@alexander2023]
 
-## When things go wrong {.smallest}
-
-| Reproducibility error                                    | Consequence                                          | Source(s)                                                                                                       |
-|-------------------|------------------|-----------------------------------|
-| Limitations in Excel data formats                        | Loss of 16,000 COVID case records in the UK          | ([Kelion 2020](https://www.bbc.com/news/technology-54423988))                                                   |
-| Automatic formatting in Excel                            | Important genes disregarded in scientific studies    | ([Ziemann, Eren, and El-Osta 2016](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7)) |
-| Deletion of a cell caused rows to shift                  | Mix-up of which patient group received the treatment | ([Wallensteen et al. 2018](https://pubmed.ncbi.nlm.nih.gov/27373757/))                                          |
-| Using binary instead of explanatory labels               | Mix-up of the intervention with the control group    | ([Aboumatar and Wise 2019](https://jamanetwork.com/journals/jama/fullarticle/2752474))                          |
-| Using the same notation for missing data and zero values | Paper retraction                                     | ([Whitehouse et al. 2021](https://www.nature.com/articles/s41586-021-03656-3))                                  |
-| Incorrectly copying data in a spreadsheet                | Delay in the opening of a hospital                   | ([Picken 2020](https://www.bbc.com/news/uk-scotland-edinburgh-east-fife-53893101))                              |
-
-Source: @ostblom2022
-
 ## Toolkit
 
 -   **Scriptability** $\rightarrow$ R
@@ -352,7 +383,7 @@ Source: @ostblom2022
 
 -   RStudio is a convenient interface for R (an integrated development environment, IDE)
 
-![Source: [Statistical Inference via Data Science](https://moderndive.com/1-getting-started.html)](images/01/r_vs_rstudio_1.png){alt="Source: Statistical Inference via Data Science" fig-align="center"}
+![Source: Statistical Inference via Data Science](images/01/r_vs_rstudio_1.png){fig-align="center"}
 
 ------------------------------------------------------------------------
 
@@ -424,6 +455,8 @@ Provides a clear record of how the analysis methods evolved. This makes analysis
 
 -   Review [syllabus](https://sta221-fa24.netlify.app/syllabus)
 
--   Complete readings to prepare for Thursday's lecture
+-   Complete reading to prepare for Thursday's lecture
 
--   Thursday: Review of simple linear regression
+-   Thursday's lecture: Simple linear regression
+
+## References
