@@ -29,9 +29,9 @@ format:
 | Kat Husar           | Head TA\       | Tue 1:30 - 3:30pm, TBD             |
 |                     | Lab 02L leader |                                    |
 +---------------------+----------------+------------------------------------+
-| Jon Campbell        | Lab 01L leader |                                    |
+| Jon Campbell        | Lab 01L leader | Tue & Thu 9 - 10am, Old Chem 025   |
 +---------------------+----------------+------------------------------------+
-| Ishrit Gupta        | Lab 01L helper |                                    |
+| Ishrit Gupta        | Lab 01L helper | Fri 1- 3pm, Old Chem 203B          |
 +---------------------+----------------+------------------------------------+
 | Alan Wang           | Lab 02L helper | Mon & Wed 10 - 11am, Old Chem 203B |
 +---------------------+----------------+------------------------------------+
