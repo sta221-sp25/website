@@ -28,7 +28,7 @@ R is the name of the programming language itself and RStudio is a convenient int
 
 -   Go to <https://cmgr.oit.duke.edu/containers>. You will log in using your NetID credentials.
 
--   Click "Reserve STA 221" to reserve an RStudio container. Be sure you reserve the container for STA 221 to ensure you have the computing set up you need for the class.
+-   Click "**Reserve STA 210**" to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.
 
 You only need to reserve a container once per semester.
 
@@ -70,7 +70,7 @@ You will authenticate GitHub using SSH. Below are an outline of the authenticati
 You only need to do this authentication process one time on a single system.
 :::
 
--   **Step 0:** Open your `STA 221` RStudio container.
+-   **Step 0:** Open your `STA 210` RStudio container.
 -   **Step 1**: Type `credentials::ssh_setup_github()` into the **console** on the bottom left of the RStudio environment.
 -   **Step 2**: R will ask "No SSH key found. Generate one now?" Click 1 for yes.
 -   **Step 3**: You will generate a key. It will begin with "ssh-rsa...." R will then ask "Would you like to open a browser now?" Click 1 for yes.
