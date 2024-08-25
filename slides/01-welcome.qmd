@@ -123,11 +123,39 @@ $$
 
 ## What is STA 221?
 
-<!--# something about being a blend of sta210 + sta 211-->
+<br>
 
-<!--# maybe show the regression equation + matrix-->
+::: columns
+::: {.column width="40%"}
+<center>
 
-<!--# Use ipad to draw circles-->
+<h2><font color="#993399"> STA 210 </font></h2>
+
+Application
+
+</center>
+:::
+
+::: {.column width="10%"}
+<center>
+
+<h2><font color="#993399">+</font></h2>
+
+</center>
+:::
+
+::: {.column width="40%"}
+<center>
+
+<h2><font color="#993399">STA 211</font></h2>
+
+Theory
+
+</center>
+:::
+:::
+
+<br>
 
 **Prerequisites:** Introductory statistics or probability course [**and**]{.underline} linear algebra
 
@@ -149,8 +177,7 @@ By the end of the semester, you will be able to...
 ::: columns
 ::: {.column width="48%"}
 ::: {.fragment fragment-index="1"}
-
-### Linear regression
+### Linear regression {style="color: #993399"}
 
 -   Coefficient estimation and interpretation
 -   Prediction
@@ -162,10 +189,9 @@ By the end of the semester, you will be able to...
 :::
 :::
 
-::: {.column width="48%"} 
-::: {.fragment fragment-index="2"} 
-
-### Logistic regression
+::: {.column width="48%"}
+::: {.fragment fragment-index="2"}
+### Logistic regression {style="color: #993399"}
 
 -   Coefficient estimation and interpretation
 -   Prediction
@@ -174,11 +200,11 @@ By the end of the semester, you will be able to...
 :::
 
 ::: {.fragment fragment-index="3"}
+### General topics {style="color: #993399"}
 
-### General topics
 -   Computing using R and GitHub
 -   Presenting statistical results
--   Collaboration and teamwork 
+-   Collaboration and teamwork
 :::
 :::
 :::
@@ -212,7 +238,7 @@ By the end of the semester, you will be able to...
 
 -   Write reproducible reports in Quarto
 
--   Access RStudio through [STA 210 Docker Containers](https://cmgr.oit.duke.edu/containers) <!--# UPDATE THIS-->
+-   Access RStudio through [STA 210 Docker Containers](https://cmgr.oit.duke.edu/containers)
 :::
 :::
 
@@ -315,7 +341,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 | Exam 01                          | 20%        |
 | Exam 02                          | 20%        |
 | Participation (AEs and teamwork) | 5%         |
-| Total | 100%         |
+| Total                            | 100%       |
 
 ## Five tips for success in STA 221
 
