@@ -201,7 +201,7 @@
     "href": "slides/01-welcome.html#syllabus-activity",
     "title": "Welcome to STA 221!",
     "section": "Syllabus activity",
-    "text": "Syllabus activity\n\n\nIntroduce yourself to your group members.\nChoose a reporter. This person will share the group’s summary with the class.\nRead the portion of the syllabus assigned to your group.\nDiscuss the key points and questions.\nThe report will share the group’s summary of key points and remaining questions with the class."
+    "text": "Syllabus activity\n\n\nIntroduce yourself to your group members.\nChoose a reporter. This person will share the group’s summary with the class.\nRead the portion of the syllabus assigned to your group.\nDiscuss the key points and questions you my have.\nThe reporter will share a summary with the class."
   },
   {
     "objectID": "slides/01-welcome.html#syllabus-activity-assignments",
@@ -334,7 +334,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR) review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Matrix representation + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned\n\n\n4\nM\nSep 16\nLab: Multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNA\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nDistribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\nNA",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR) review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Matrix representation + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned\n\n\n4\nM\nSep 16\nLab: Multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNA\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nDistribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period\nNA",
     "crumbs": [
       "Schedule"
     ]
@@ -373,141 +373,32 @@
     ]
   },
   {
-    "objectID": "hw/stats-experience.html",
-    "href": "hw/stats-experience.html",
-    "title": "Statistics Experience",
+    "objectID": "prepare/prepare-aug29.html",
+    "href": "prepare/prepare-aug29.html",
+    "title": "Prepare for August 29 lecture",
+    "section": "",
+    "text": "📖 Read Simple Linear Regression\n✅ Complete Lab 00 tasks"
+  },
+  {
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "Statistics experience"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03",
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 06"
-    ]
-  },
-  {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 05"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "",
-    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today."
-  },
-  {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment."
-  },
-  {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step."
-  },
-  {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
-  },
-  {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 03"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 01",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 01"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 07"
+      "HW 01"
     ]
   },
   {
@@ -541,25 +432,141 @@
     ]
   },
   {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01",
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 07"
     ]
   },
   {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02",
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 04"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 01",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 03"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "",
+    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today."
+  },
+  {
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment."
+  },
+  {
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step."
+  },
+  {
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
+  },
+  {
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 05"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/stats-experience.html",
+    "href": "hw/stats-experience.html",
+    "title": "Statistics Experience",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "Statistics experience"
     ]
   },
   {
@@ -881,5 +888,257 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/02-slr-review.html#announcements",
+    "href": "slides/02-slr-review.html#announcements",
+    "title": "Simple linear regression review",
+    "section": "Announcements",
+    "text": "Announcements\n\nNo labs on Mon, Sep 2 (Labor Day)\nWe will start application exercises on Tue, Sep 3\n\nMake sure you have accepted invite to GitHub course organization"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#topics",
+    "href": "slides/02-slr-review.html#topics",
+    "title": "Simple linear regression review",
+    "section": "Topics",
+    "text": "Topics\n\nHow regression is used to understand the relationship between multiple variables\nLeast squares estimation for the slope and intercept\nInterpret the slope and intercept\nPredict the response given a value of the predictor"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#computing-set-up",
+    "href": "slides/02-slr-review.html#computing-set-up",
+    "title": "Simple linear regression review",
+    "section": "Computing set up",
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)        # for data wrangling\nlibrary(broom)            # for formatting regression output\nlibrary(fivethirtyeight)  # for the fandango dataset\nlibrary(knitr)            # for formatting tables\nlibrary(patchwork)        # for arranging graphs\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 16))\n\n# set default figure parameters for knitr\nknitr::opts_chunk$set(\n  fig.width = 8,\n  fig.asp = 0.618,\n  fig.retina = 3,\n  dpi = 300,\n  out.width = \"80%\"\n)"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#movie-scores",
+    "href": "slides/02-slr-review.html#movie-scores",
+    "title": "Simple linear regression review",
+    "section": "Movie scores",
+    "text": "Movie scores\n\n\n\nData behind the FiveThirtyEight story Be Suspicious Of Online Movie Ratings, Especially Fandango’s\nIn the fivethirtyeight package: fandango\nContains every film released in 2014 and 2015 that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#data-prep",
+    "href": "slides/02-slr-review.html#data-prep",
+    "title": "Simple linear regression review",
+    "section": "Data prep",
+    "text": "Data prep\n\nRename Rotten Tomatoes columns as critics and audience\nRename the dataset as movie_scores\n\n\nmovie_scores &lt;- fandango |&gt;\n  rename(critics = rottentomatoes, \n         audience = rottentomatoes_user)"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#data-overview",
+    "href": "slides/02-slr-review.html#data-overview",
+    "title": "Simple linear regression review",
+    "section": "Data overview",
+    "text": "Data overview\n\nglimpse(movie_scores)\n\nRows: 146\nColumns: 23\n$ film                       &lt;chr&gt; \"Avengers: Age of Ultron\", \"Cinderella\", \"A…\n$ year                       &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 2015, 2…\n$ critics                    &lt;int&gt; 74, 85, 80, 18, 14, 63, 42, 86, 99, 89, 84,…\n$ audience                   &lt;int&gt; 86, 80, 90, 84, 28, 62, 53, 64, 82, 87, 77,…\n$ metacritic                 &lt;int&gt; 66, 67, 64, 22, 29, 50, 53, 81, 81, 80, 71,…\n$ metacritic_user            &lt;dbl&gt; 7.1, 7.5, 8.1, 4.7, 3.4, 6.8, 7.6, 6.8, 8.8…\n$ imdb                       &lt;dbl&gt; 7.8, 7.1, 7.8, 5.4, 5.1, 7.2, 6.9, 6.5, 7.4…\n$ fandango_stars             &lt;dbl&gt; 5.0, 5.0, 5.0, 5.0, 3.5, 4.5, 4.0, 4.0, 4.5…\n$ fandango_ratingvalue       &lt;dbl&gt; 4.5, 4.5, 4.5, 4.5, 3.0, 4.0, 3.5, 3.5, 4.0…\n$ rt_norm                    &lt;dbl&gt; 3.70, 4.25, 4.00, 0.90, 0.70, 3.15, 2.10, 4…\n$ rt_user_norm               &lt;dbl&gt; 4.30, 4.00, 4.50, 4.20, 1.40, 3.10, 2.65, 3…\n$ metacritic_norm            &lt;dbl&gt; 3.30, 3.35, 3.20, 1.10, 1.45, 2.50, 2.65, 4…\n$ metacritic_user_nom        &lt;dbl&gt; 3.55, 3.75, 4.05, 2.35, 1.70, 3.40, 3.80, 3…\n$ imdb_norm                  &lt;dbl&gt; 3.90, 3.55, 3.90, 2.70, 2.55, 3.60, 3.45, 3…\n$ rt_norm_round              &lt;dbl&gt; 3.5, 4.5, 4.0, 1.0, 0.5, 3.0, 2.0, 4.5, 5.0…\n$ rt_user_norm_round         &lt;dbl&gt; 4.5, 4.0, 4.5, 4.0, 1.5, 3.0, 2.5, 3.0, 4.0…\n$ metacritic_norm_round      &lt;dbl&gt; 3.5, 3.5, 3.0, 1.0, 1.5, 2.5, 2.5, 4.0, 4.0…\n$ metacritic_user_norm_round &lt;dbl&gt; 3.5, 4.0, 4.0, 2.5, 1.5, 3.5, 4.0, 3.5, 4.5…\n$ imdb_norm_round            &lt;dbl&gt; 4.0, 3.5, 4.0, 2.5, 2.5, 3.5, 3.5, 3.5, 3.5…\n$ metacritic_user_vote_count &lt;int&gt; 1330, 249, 627, 31, 88, 34, 17, 124, 62, 54…\n$ imdb_user_vote_count       &lt;int&gt; 271107, 65709, 103660, 3136, 19560, 39373, …\n$ fandango_votes             &lt;int&gt; 14846, 12640, 12055, 1793, 1021, 397, 252, …\n$ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5…"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#movie-scores-data",
+    "href": "slides/02-slr-review.html#movie-scores-data",
+    "title": "Simple linear regression review",
+    "section": "Movie scores data",
+    "text": "Movie scores data\nThe data set contains the “Tomatometer” score (critics) and audience score (audience) for 146 movies rated on rottentomatoes.com."
+  },
+  {
+    "objectID": "slides/02-slr-review.html#movie-ratings-data",
+    "href": "slides/02-slr-review.html#movie-ratings-data",
+    "title": "Simple linear regression review",
+    "section": "Movie ratings data",
+    "text": "Movie ratings data\nGoal: Fit a line to describe the relationship between the critics score and audience score."
+  },
+  {
+    "objectID": "slides/02-slr-review.html#why-fit-a-line",
+    "href": "slides/02-slr-review.html#why-fit-a-line",
+    "title": "Simple linear regression review",
+    "section": "Why fit a line?",
+    "text": "Why fit a line?\nWe fit a line to accomplish one or both of the following:\n\n\nPrediction\n\nWhat is the audience score expected to be for an upcoming movie that received 35% from the critics?\n\n\n\n\nInference\n\nIs the critics score a useful predictor of the audience score? By how much is the audience score expected to change for each additional point in the critics score?"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#terminology",
+    "href": "slides/02-slr-review.html#terminology",
+    "title": "Simple linear regression review",
+    "section": "Terminology",
+    "text": "Terminology\n\n\n\nResponse, \\(Y\\): variable describing the outcome of interest\nPredictor, \\(X\\): variable we use to help understand the variability in the response"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#regression-model",
+    "href": "slides/02-slr-review.html#regression-model",
+    "title": "Simple linear regression review",
+    "section": "Regression model",
+    "text": "Regression model\nA regression model is a function that describes the relationship between the response, \\(Y\\), and the predictor, \\(X\\).\n\\[\\begin{aligned} Y &= \\color{black}{\\textbf{Model}} + \\text{Error} \\\\[8pt]\n&= \\color{black}{f(X)} + \\epsilon \\\\[8pt]\n& = \\color{black}{E(Y|X)} + \\epsilon \\\\[8pt]\n&= \\color{black}{\\mu_{Y|X}} + \\epsilon \\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#regression-model-1",
+    "href": "slides/02-slr-review.html#regression-model-1",
+    "title": "Simple linear regression review",
+    "section": "Regression model",
+    "text": "Regression model\n\n\n\\[\\begin{aligned} Y &= \\color{purple}{\\textbf{Model}} + \\text{Error} \\\\[8pt]\n&= \\color{purple}{f(X)} + \\epsilon \\\\[8pt]\n&= \\color{purple}{E(Y|X)} + \\epsilon \\\\[8pt]\n&= \\color{purple}{\\mu_{Y|X}} + \\epsilon \\end{aligned}\\]\n\n\n\n\n\n\n\n\n\n\n\n\\(E(Y|X) = \\mu_{Y|X}\\), the mean value of \\(Y\\) given a particular value of \\(X\\)."
+  },
+  {
+    "objectID": "slides/02-slr-review.html#regression-model-2",
+    "href": "slides/02-slr-review.html#regression-model-2",
+    "title": "Simple linear regression review",
+    "section": "Regression model",
+    "text": "Regression model\n\n\n\\[\n\\begin{aligned} Y &= \\color{purple}{\\textbf{Model}} + \\color{blue}{\\textbf{Error}} \\\\[8pt]\n&= \\color{purple}{f(X)} + \\color{blue}{\\epsilon}\\\\[8pt]\n&= \\color{purple}{E(Y|X)} + \\color{blue}{\\epsilon}\\\\[8pt]\n&= \\color{purple}{\\mu_{Y|X}} + \\color{blue}{\\epsilon} \\\\\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#slr-statistical-model",
+    "href": "slides/02-slr-review.html#slr-statistical-model",
+    "title": "Simple linear regression review",
+    "section": "SLR: Statistical model",
+    "text": "SLR: Statistical model\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\). \\[\\Large{Y = \\mathbf{\\beta_0 + \\beta_1 X} + \\epsilon}\\]\n\n\n\\(\\beta_1\\): True slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): True intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#slr-regression-equation",
+    "href": "slides/02-slr-review.html#slr-regression-equation",
+    "title": "Simple linear regression review",
+    "section": "SLR: Regression equation",
+    "text": "SLR: Regression equation\n\\[\\Large{\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 X}\\]\n\n\\(\\hat{\\beta}_1\\): Estimated slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\hat{\\beta}_0\\): Estimated intercept of the relationship between \\(X\\) and \\(Y\\)\nNo error term!"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#choosing-values-for-hatbeta_1-and-hatbeta_0",
+    "href": "slides/02-slr-review.html#choosing-values-for-hatbeta_1-and-hatbeta_0",
+    "title": "Simple linear regression review",
+    "section": "Choosing values for \\(\\hat{\\beta}_1\\) and \\(\\hat{\\beta}_0\\)",
+    "text": "Choosing values for \\(\\hat{\\beta}_1\\) and \\(\\hat{\\beta}_0\\)"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#residuals",
+    "href": "slides/02-slr-review.html#residuals",
+    "title": "Simple linear regression review",
+    "section": "Residuals",
+    "text": "Residuals\n\n\\[\\text{residual} = \\text{observed} - \\text{predicted} = y_i - \\hat{y}_i\\]"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#least-squares-line",
+    "href": "slides/02-slr-review.html#least-squares-line",
+    "title": "Simple linear regression review",
+    "section": "Least squares line",
+    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[e_i = \\text{observed} - \\text{predicted}\n= y_i - \\hat{y}_i\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe least squares line is the one that minimizes the sum of squared residuals"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#properties-of-least-squares-regression",
+    "href": "slides/02-slr-review.html#properties-of-least-squares-regression",
+    "title": "Simple linear regression review",
+    "section": "Properties of least squares regression",
+    "text": "Properties of least squares regression\n\n\nThe regression line goes through the center of mass point, the coordinates corresponding to average \\(X\\) and average \\(Y\\): \\(\\hat{\\beta}_0 = \\bar{Y} - \\hat{\\beta}_1\\bar{X}\\)\nThe slope has the same sign as the correlation coefficient: \\(\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}\\)\nThe sum of the residuals is approximately zero: \\(\\sum_{i = 1}^n e_i \\approx 0\\)\nThe residuals and \\(X\\) values are uncorrelated"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#estimating-the-slope",
+    "href": "slides/02-slr-review.html#estimating-the-slope",
+    "title": "Simple linear regression review",
+    "section": "Estimating the slope",
+    "text": "Estimating the slope\n\\[\\large{\\hat{\\beta}_1 = r \\frac{s_Y}{s_X}}\\]\n\n\n\\[\n\\begin{aligned} s_X = 30.1688  \\hspace{15mm} &s_Y =  20.0244 \\hspace{15mm} r  = 0.7814 \\\\[10pt]\\hat{\\beta}_1  &= 0.7814 \\times \\frac{20.0244}{30.1688} \\\\&= \\mathbf{0.5187}\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#estimating-the-intercept",
+    "href": "slides/02-slr-review.html#estimating-the-intercept",
+    "title": "Simple linear regression review",
+    "section": "Estimating the intercept",
+    "text": "Estimating the intercept\n\\[\\large{\\hat{\\beta}_0 = \\bar{Y} - \\hat{\\beta}_1\\bar{X}}\\]\n\n\n\\[\n\\begin{aligned}\\bar{x} = 60.8493 & \\hspace{15mm} \\bar{y} = 63.8767 \\hspace{15mm} \\hat{\\beta}_1 = 0.5187 \\\\[10pt]\n\\hat{\\beta}_0 &= 63.8767 - 0.5187 \\times 60.8493 \\\\\n&= \\mathbf{32.3142}\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#interpretation",
+    "href": "slides/02-slr-review.html#interpretation",
+    "title": "Simple linear regression review",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nQuestionSubmit\n\n\n\n\nSubmit your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/5181157"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#does-it-make-sense-to-interpret-the-intercept",
+    "href": "slides/02-slr-review.html#does-it-make-sense-to-interpret-the-intercept",
+    "title": "Simple linear regression review",
+    "section": "Does it make sense to interpret the intercept?",
+    "text": "Does it make sense to interpret the intercept?\n\n✅ The intercept is meaningful in the context of the data if\n\nthe predictor can feasibly take values equal to or near zero, or\nthere are values near zero in the observed data.\n\n\n\n🛑 Otherwise, the intercept may not be meaningful!"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#making-a-prediction",
+    "href": "slides/02-slr-review.html#making-a-prediction",
+    "title": "Simple linear regression review",
+    "section": "Making a prediction",
+    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#references",
+    "href": "slides/02-slr-review.html#references",
+    "title": "Simple linear regression review",
+    "section": "References",
+    "text": "References\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#univariate-exploratory-data-analysis-eda",
+    "href": "slides/02-slr-review.html#univariate-exploratory-data-analysis-eda",
+    "title": "Simple linear regression review",
+    "section": "Univariate exploratory data analysis (EDA)",
+    "text": "Univariate exploratory data analysis (EDA)\nThe data set contains the “Tomatometer” score (critics) and audience score (audience) for 146 movies rated on rottentomatoes.com."
+  },
+  {
+    "objectID": "slides/02-slr-review.html#bivariate-eda",
+    "href": "slides/02-slr-review.html#bivariate-eda",
+    "title": "Simple linear regression review",
+    "section": "Bivariate EDA",
+    "text": "Bivariate EDA"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#bivariate-eda-1",
+    "href": "slides/02-slr-review.html#bivariate-eda-1",
+    "title": "Simple linear regression review",
+    "section": "Bivariate EDA",
+    "text": "Bivariate EDA\nGoal: Fit a line to describe the relationship between the critics score and audience score."
+  },
+  {
+    "objectID": "slides/02-slr-review.html#slide-about-choosing-form-of-model-estimation",
+    "href": "slides/02-slr-review.html#slide-about-choosing-form-of-model-estimation",
+    "title": "Simple linear regression review",
+    "section": "Slide about choosing form of model + estimation",
+    "text": "Slide about choosing form of model + estimation"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#slr-statistical-model-population",
+    "href": "slides/02-slr-review.html#slr-statistical-model-population",
+    "title": "Simple linear regression review",
+    "section": "SLR: Statistical model (population)",
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\). \\[\\Large{Y = \\mathbf{\\beta_0 + \\beta_1 X} + \\epsilon}\\]\n\n\n\\(\\beta_1\\): True slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): True intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#slr-regression-equation-sample",
+    "href": "slides/02-slr-review.html#slr-regression-equation-sample",
+    "title": "Simple linear regression review",
+    "section": "SLR: Regression equation (sample)",
+    "text": "SLR: Regression equation (sample)\n\\[\\Large{\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 X}\\]\n\n\\(\\hat{\\beta}_1\\): Estimated slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\hat{\\beta}_0\\): Estimated intercept of the relationship between \\(X\\) and \\(Y\\)\nNo error term!"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#submit",
+    "href": "slides/02-slr-review.html#submit",
+    "title": "Simple linear regression review",
+    "section": "Submit",
+    "text": "Submit"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#new-page",
+    "href": "slides/02-slr-review.html#new-page",
+    "title": "Simple linear regression review",
+    "section": "new page",
+    "text": "new page\n\n\nSubmit your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?\n\n\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#submit-1",
+    "href": "slides/02-slr-review.html#submit-1",
+    "title": "Simple linear regression review",
+    "section": "Submit",
+    "text": "Submit"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#for-next-times",
+    "href": "slides/02-slr-review.html#for-next-times",
+    "title": "Simple linear regression review",
+    "section": "For next times",
+    "text": "For next times\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "slides/02-slr-review.html#for-next-time",
+    "href": "slides/02-slr-review.html#for-next-time",
+    "title": "Simple linear regression review",
+    "section": "For next time",
+    "text": "For next time\n\n\n\n\n🔗 STA 221 - Fall 2024"
   }
 ]
