@@ -1,5 +1,6 @@
 ---
 title: STA 221 Syllabus
+subtitle: Fall 2024
 format:
   html: default
   pdf: default
