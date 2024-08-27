@@ -61,6 +61,14 @@ Click on the link or scan the QR code to answer the Ed Discussion poll
 ![](images/01/ed-discussion-qr-lec-01.png){width="30%"}</center>
 :::
 
+## Topics
+
+-   Introduction to the course
+
+-   Syllabus activity
+
+-   Reproducibility
+
 # Regression Analysis
 
 ------------------------------------------------------------------------
