@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <title>STA 221 - Fall 2024 – Simple linear regression review</title>
+  <title>STA 221 - Fall 2024 – Simple linear regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -393,7 +393,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Simple linear regression review</h1>
+  <h1 class="title">Simple linear regression</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -409,10 +409,13 @@ Prof.&nbsp;Maria Tackett
 <h2>Announcements</h2>
 <ul>
 <li><p>No labs on Mon, Sep 2 (Labor Day)</p></li>
-<li><p>We will start application exercises on Tue, Sep 3</p>
+<li><p>Application exercises start Tue, Sep 3</p>
 <ul>
+<li>Bring fully-charged laptop or device with keyboard</li>
 <li>Make sure you have accepted invite to GitHub course organization</li>
 </ul></li>
+<li><p>See website for <a href="https://sta221-fa24.netlify.app/computing-r-resources">resources</a> to learn / review R</p></li>
+<li><p>Office hours start Tue, Sep 3</p></li>
 </ul>
 </section>
 <section>
@@ -530,32 +533,36 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 <h2>Univariate exploratory data analysis (EDA)</h2>
 <p>The data set contains the “Tomatometer” score (<strong><code>critics</code></strong>) and audience score (<strong><code>audience</code></strong>) for 146 movies rated on rottentomatoes.com.</p>
 
-<img data-src="02-slr-review_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="02-slr_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="bivariate-eda" class="slide level2">
 <h2>Bivariate EDA</h2>
 
-<img data-src="02-slr-review_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="02-slr_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="bivariate-eda-1" class="slide level2">
 <h2>Bivariate EDA</h2>
 <p><strong>Goal</strong>: Fit a line to describe the relationship between the critics score and audience score.</p>
 
-<img data-src="02-slr-review_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="02-slr_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="why-fit-a-line" class="slide level2">
 <h2>Why fit a line?</h2>
 <p>We fit a line to accomplish one or both of the following:</p>
+<p><br></p>
 <div class="fragment">
 <div style="color: #799100">
 <p><strong>Prediction</strong></p>
 </div>
-<p>What is the audience score expected to be for an upcoming movie that received 35% from the critics?<br>
-</p>
+<div class="question">
+<p>What is an example of a prediction question for this data set?</p>
+</div>
+<p><br></p>
 </div>
 <div class="fragment">
 <div style="color : #799100">
 <p><strong>Inference</strong></p>
 </div>
-<p>Is the critics score a useful predictor of the audience score? By how much is the audience score expected to change for each additional point in the critics score?<br>
-</p>
+<div class="question">
+<p>What is an example of an inference question for this data set?</p>
+</div>
 </div>
 </section>
 <section id="terminology" class="slide level2">
@@ -571,7 +578,7 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="02-slr-review_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+<p><img data-src="02-slr_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -599,7 +606,7 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="02-slr-review_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+<p><img data-src="02-slr_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -623,15 +630,23 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="02-slr-review_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:80.0%"></p>
+<p><img data-src="02-slr_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="slide-about-choosing-form-of-model-estimation" class="slide level2">
-<h2>Slide about choosing form of model + estimation</h2>
+<section id="determine-fx" class="slide level2">
+<h2>Determine <span class="math inline">\(f(X)\)</span></h2>
+<ul>
+<li><p><strong>Goal</strong>: Determine <span class="math inline">\(f(X)\)</span></p></li>
+<li><p>How do we determine <span class="math inline">\(f(X)\)</span></p>
+<ul>
+<li><p>Make an assumption about the functional form <span class="math inline">\(f(X)\)</span> (parametric model)</p></li>
+<li><p>Use the data to fit a model based on that form</p></li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section id="simple-linear-regression-slr" class="title-slide slide level1 center">
@@ -640,11 +655,11 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 </section>
 <section id="slr-statistical-model-population" class="slide level2">
 <h2>SLR: Statistical model (population)</h2>
-<p>When we have a quantitative response, <span class="math inline">\(Y\)</span>, and a single quantitative predictor, <span class="math inline">\(X\)</span>, we can use a <strong>simple linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. <span class="math display">\[\Large{Y = \mathbf{\beta_0 + \beta_1 X} + \epsilon}\]</span></p>
+<p>When we have a quantitative response, <span class="math inline">\(Y\)</span>, and a single quantitative predictor, <span class="math inline">\(X\)</span>, we can use a <strong>simple linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. <span class="math display">\[\large{Y = \mathbf{\beta_0 + \beta_1 X} + \epsilon}, \hspace{8mm} \epsilon \sim N(0, \sigma_{\epsilon}^2)\]</span></p>
 <div class="fragment">
 <ul>
-<li><span class="math inline">\(\beta_1\)</span>: True slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
-<li><span class="math inline">\(\beta_0\)</span>: True intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(\beta_1\)</span>: Population (true) slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(\beta_0\)</span>: Population (true) intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
 <li><span class="math inline">\(\epsilon\)</span>: Error</li>
 </ul>
 </div>
@@ -653,19 +668,19 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 <h2>SLR: Regression equation (sample)</h2>
 <p><span class="math display">\[\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}\]</span></p>
 <ul>
-<li><span class="math inline">\(\hat{\beta}_1\)</span>: Estimated slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
-<li><span class="math inline">\(\hat{\beta}_0\)</span>: Estimated intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(\hat{\beta}_1\)</span>: Estimated (sample) slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(\hat{\beta}_0\)</span>: Estimated (sample) intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
 <li>No error term!</li>
 </ul>
 </section>
 <section id="choosing-values-for-hatbeta_1-and-hatbeta_0" class="slide level2">
 <h2>Choosing values for <span class="math inline">\(\hat{\beta}_1\)</span> and <span class="math inline">\(\hat{\beta}_0\)</span></h2>
 
-<img data-src="02-slr-review_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="02-slr_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="residuals" class="slide level2">
 <h2>Residuals</h2>
 
-<img data-src="02-slr-review_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{residual} = \text{observed} - \text{predicted} = y_i - \hat{y}_i\]</span></p>
+<img data-src="02-slr_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{residual} = \text{observed} - \text{predicted} = y_i - \hat{y}_i\]</span></p>
 </section>
 <section id="least-squares-line" class="slide level2">
 <h2>Least squares line</h2>
@@ -681,6 +696,19 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 <ul>
 <li>The <strong>least squares line</strong> is the one that minimizes the sum of squared residuals</li>
 </ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><a href="https://introregression.netlify.app/98-appendix#sec-least-sq-math">Click here</a> for full calculations.</p>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="slope-and-intercept" class="title-slide slide level1 center">
@@ -769,9 +797,125 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 &amp;= 32.3142 + 0.5187 \times 70 \\
 &amp;= \mathbf{68.6232}
 \end{aligned}\]</span>
+</section></section>
+<section>
+<section id="linear-regression-in-r" class="title-slide slide level1 center">
+<h1>Linear regression in R</h1>
+
 </section>
-<section id="for-next-time" class="slide level2">
-<h2>For next time</h2>
+<section id="fit-the-model" class="slide level2">
+<h2>Fit the model</h2>
+<p>We use the <code>lm()</code> function to fit a linear regression model</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience <span class="sc">~</span> critics, <span class="at">data =</span> movie_scores)</span>
+<span id="cb5-2"><a></a>movie_fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = audience ~ critics, data = movie_scores)
+
+Coefficients:
+(Intercept)      critics  
+    32.3155       0.5187  </code></pre>
+</div>
+</div>
+</section>
+<section id="tidy-results" class="slide level2">
+<h2>Tidy results</h2>
+<p>We use the <code>tidy()</code> function from the <strong>broom</strong> R package to “tidy” the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience <span class="sc">~</span> critics, <span class="at">data =</span> movie_scores)</span>
+<span id="cb7-2"><a></a><span class="fu">tidy</span>(movie_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic  p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)   32.3      2.34        13.8 4.03e-28
+2 critics        0.519    0.0345      15.0 2.70e-31</code></pre>
+</div>
+</div>
+</section>
+<section id="format-results" class="slide level2">
+<h2>Format results</h2>
+<div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="|2,3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience <span class="sc">~</span> critics, <span class="at">data =</span> movie_scores)</span>
+<span id="cb9-2"><a></a><span class="fu">tidy</span>(movie_fit) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">32.316</td>
+<td style="text-align: right;">2.343</td>
+<td style="text-align: right;">13.795</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">critics</td>
+<td style="text-align: right;">0.519</td>
+<td style="text-align: right;">0.035</td>
+<td style="text-align: right;">15.028</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="prediction-1" class="slide level2">
+<h2>Prediction</h2>
+<p><strong>Single observation</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>new_movie <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics =</span> <span class="dv">70</span>)</span>
+<span id="cb10-2"><a></a><span class="fu">predict</span>(movie_fit, new_movie)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+68.62297 </code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="fragment">
+<p><strong>Multiple observations</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>more_new_movies <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics =</span> <span class="fu">c</span>(<span class="dv">24</span>,<span class="dv">70</span>, <span class="dv">85</span>))</span>
+<span id="cb12-2"><a></a><span class="fu">predict</span>(movie_fit, more_new_movies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1        2        3 
+44.76379 68.62297 76.40313 </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li>Described how regression is used to understand the relationship between multiple variables</li>
+<li>Used least squares to estimate the slope and intercept</li>
+<li>Interpreted the slope and intercept for simple linear regression</li>
+<li>Predicted the response given a value of the predictor</li>
+</ul>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
+<ul>
+<li><p>Model assessment for simple linear regression</p>
+<ul>
+<li>See <a href="../prepare/prepare-sep3.html">Sep 3 prepare</a></li>
+</ul></li>
+<li><p>Bring fully-charged laptop or device with keyboard for in-class application exercise (AE)</p></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../images/logo.png" class="slide-logo"></p>

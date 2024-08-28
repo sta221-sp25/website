@@ -13,8 +13,8 @@
     <lastmod>2024-08-02T13:51:04.396Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/02-slr-review.html</loc>
-    <lastmod>2024-08-26T16:29:33.214Z</lastmod>
+    <loc>https://sta221-fa24.netlify.app/slides/01-welcome.html</loc>
+    <lastmod>2024-08-27T15:10:05.476Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa24.netlify.app/slides/lab-00.html</loc>
@@ -29,60 +29,64 @@
     <lastmod>2024-08-20T15:51:39.996Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/hw/stats-experience.html</loc>
-    <lastmod>2024-08-20T16:07:27.411Z</lastmod>
+    <loc>https://sta221-fa24.netlify.app/prepare/prepare-sep3.html</loc>
+    <lastmod>2024-08-28T19:31:51.679Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/hw/hw-03.html</loc>
-    <lastmod>2024-08-20T16:07:30.066Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/hw/hw-04.html</loc>
-    <lastmod>2024-08-20T16:07:30.076Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-06.html</loc>
-    <lastmod>2024-08-13T20:18:33.093Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-05.html</loc>
-    <lastmod>2024-08-13T20:18:39.324Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-00.html</loc>
-    <lastmod>2024-08-25T18:08:58.361Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-03.html</loc>
-    <lastmod>2024-08-13T20:18:02.703Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-02.html</loc>
-    <lastmod>2024-08-13T20:17:52.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-01.html</loc>
-    <lastmod>2024-08-13T20:17:41.711Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-04.html</loc>
-    <lastmod>2024-08-13T20:18:12.513Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-07.html</loc>
-    <lastmod>2024-08-13T20:18:49.162Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/overview.html</loc>
-    <lastmod>2024-08-24T13:17:12.642Z</lastmod>
+    <loc>https://sta221-fa24.netlify.app/hw/hw-02.html</loc>
+    <lastmod>2024-08-20T16:07:30.052Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa24.netlify.app/hw/hw-01.html</loc>
     <lastmod>2024-08-20T16:07:17.847Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/hw/hw-02.html</loc>
-    <lastmod>2024-08-20T16:07:30.052Z</lastmod>
+    <loc>https://sta221-fa24.netlify.app/overview.html</loc>
+    <lastmod>2024-08-24T13:17:12.642Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/labs/lab-07.html</loc>
+    <lastmod>2024-08-13T20:18:49.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/labs/lab-04.html</loc>
+    <lastmod>2024-08-13T20:18:12.513Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/labs/lab-01.html</loc>
+    <lastmod>2024-08-13T20:17:41.711Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/labs/lab-02.html</loc>
+    <lastmod>2024-08-13T20:17:52.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/labs/lab-03.html</loc>
+    <lastmod>2024-08-13T20:18:02.703Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/labs/lab-00.html</loc>
+    <lastmod>2024-08-25T18:08:58.361Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/labs/lab-05.html</loc>
+    <lastmod>2024-08-13T20:18:39.324Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/labs/lab-06.html</loc>
+    <lastmod>2024-08-13T20:18:33.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/hw/hw-04.html</loc>
+    <lastmod>2024-08-20T16:07:30.076Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/hw/hw-03.html</loc>
+    <lastmod>2024-08-20T16:07:30.066Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-fa24.netlify.app/hw/stats-experience.html</loc>
+    <lastmod>2024-08-20T16:07:27.411Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa24.netlify.app/prepare/prepare-aug29.html</loc>
@@ -97,8 +101,8 @@
     <lastmod>2024-08-20T16:04:52.625Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/01-welcome.html</loc>
-    <lastmod>2024-08-27T15:10:05.476Z</lastmod>
+    <loc>https://sta221-fa24.netlify.app/slides/02-slr.html</loc>
+    <lastmod>2024-08-28T19:31:45.864Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-fa24.netlify.app/links.html</loc>

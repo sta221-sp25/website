@@ -1,5 +1,5 @@
 ---
-title: "Simple linear regression review"
+title: "Simple linear regression"
 author: "Prof. Maria Tackett"
 date: "2024-08-29"
 date-format: "MMM DD, YYYY"
@@ -27,9 +27,14 @@ bibliography: references.bib
 
 -   No labs on Mon, Sep 2 (Labor Day)
 
--   We will start application exercises on Tue, Sep 3
+-   Application exercises start Tue, Sep 3
 
+    -   Bring fully-charged laptop or device with keyboard
     -   Make sure you have accepted invite to GitHub course organization
+
+-   See website for [resources](https://sta221-fa24.netlify.app/computing-r-resources) to learn / review R
+
+-   Office hours start Tue, Sep 3
 
 # Questions from last class?
 
@@ -168,13 +173,19 @@ p
 
 We fit a line to accomplish one or both of the following:
 
+<br>
+
 . . .
 
 ::: {style="color: #799100"}
 **Prediction**
 :::
 
-What is the audience score expected to be for an upcoming movie that received 35% from the critics?\
+::: question
+What is an example of a prediction question for this data set?
+:::
+
+<br>
 
 . . .
 
@@ -182,7 +193,9 @@ What is the audience score expected to be for an upcoming movie that received 35
 **Inference**
 :::
 
-Is the critics score a useful predictor of the audience score? By how much is the audience score expected to change for each additional point in the critics score?\
+::: question
+What is an example of an inference question for this data set?
+:::
 
 ## Terminology
 
@@ -273,26 +286,34 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
 :::
 :::
 
-## Slide about choosing form of model + estimation 
+## Determine $f(X)$ 
+
+-   **Goal**: Determine $f(X)$
+
+-   How do we determine $f(X)$
+
+    -   Make an assumption about the functional form $f(X)$ (parametric model)
+
+    -   Use the data to fit a model based on that form
 
 # Simple linear regression (SLR)
 
 ## SLR: Statistical model (population)
 
-When we have a quantitative response, $Y$, and a single quantitative predictor, $X$, we can use a **simple linear regression** model to describe the relationship between $Y$ and $X$. $$\Large{Y = \mathbf{\beta_0 + \beta_1 X} + \epsilon}$$
+When we have a quantitative response, $Y$, and a single quantitative predictor, $X$, we can use a **simple linear regression** model to describe the relationship between $Y$ and $X$. $$\large{Y = \mathbf{\beta_0 + \beta_1 X} + \epsilon}, \hspace{8mm} \epsilon \sim N(0, \sigma_{\epsilon}^2)$$
 
 . . .
 
--   $\beta_1$: True slope of the relationship between $X$ and $Y$
--   $\beta_0$: True intercept of the relationship between $X$ and $Y$
+-   $\beta_1$: Population (true) slope of the relationship between $X$ and $Y$
+-   $\beta_0$: Population (true) intercept of the relationship between $X$ and $Y$
 -   $\epsilon$: Error
 
 ## SLR: Regression equation (sample)
 
 $$\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}$$
 
--   $\hat{\beta}_1$: Estimated slope of the relationship between $X$ and $Y$
--   $\hat{\beta}_0$: Estimated intercept of the relationship between $X$ and $Y$
+-   $\hat{\beta}_1$: Estimated (sample) slope of the relationship between $X$ and $Y$
+-   $\hat{\beta}_0$: Estimated (sample) intercept of the relationship between $X$ and $Y$
 -   No error term!
 
 ## Choosing values for $\hat{\beta}_1$ and $\hat{\beta}_0$
@@ -338,6 +359,10 @@ $$e_i = \text{observed} - \text{predicted}
 $$e^2_1 + e^2_2 + \dots + e^2_n$$
 
 -   The **least squares line** is the one that minimizes the sum of squared residuals
+
+::: callout-note
+[Click here](https://introregression.netlify.app/98-appendix#sec-least-sq-math) for full calculations.
+:::
 
 ```{r}
 #| echo: false
@@ -439,4 +464,71 @@ Suppose that a movie has a critics score of 70. According to this model, what is
 &= \mathbf{68.6232}
 \end{aligned}
 ```
-## For next time
+# Linear regression in R
+
+## Fit the model 
+
+We use the `lm()` function to fit a linear regression model
+
+```{r}
+movie_fit <- lm(audience ~ critics, data = movie_scores)
+movie_fit
+```
+
+## Tidy results
+
+We use the `tidy()` function from the **broom** R package to "tidy" the data.
+
+```{r}
+#| code-line-numbers: "|2"
+movie_fit <- lm(audience ~ critics, data = movie_scores)
+tidy(movie_fit)
+```
+
+## Format results
+
+<div>
+
+```{r}
+#| code-line-numbers: "|2,3"
+movie_fit <- lm(audience ~ critics, data = movie_scores)
+tidy(movie_fit) |>
+  kable(digits = 3)
+```
+
+</div>
+
+## Prediction 
+
+**Single observation**
+
+```{r}
+new_movie <- tibble(critics = 70)
+predict(movie_fit, new_movie)
+```
+
+<br>
+
+. . .
+
+**Multiple observations**
+
+```{r}
+more_new_movies <- tibble(critics = c(24,70, 85))
+predict(movie_fit, more_new_movies)
+```
+
+## Recap
+
+-   Described how regression is used to understand the relationship between multiple variables
+-   Used least squares to estimate the slope and intercept
+-   Interpreted the slope and intercept for simple linear regression
+-   Predicted the response given a value of the predictor
+
+## Next time
+
+-   Model assessment for simple linear regression
+
+    -   See [Sep 3 prepare](../prepare/prepare-sep3.html)
+
+-   Bring fully-charged laptop or device with keyboard for in-class application exercise (AE)
