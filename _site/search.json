@@ -642,18 +642,40 @@
     "href": "computing-r-resources.html",
     "title": "Resources for learning R",
     "section": "",
-    "text": "R for Data Science by Hadley Wickham & Garrett Grolemund\nTidy Modeling with R by Max Kuhn & Julia Silge",
+    "text": "Below are freely available resources to learn or review the following in R: data wrangling, data visualization, Quarto basics.",
     "crumbs": [
       "Computing",
       "R resources"
     ]
   },
   {
-    "objectID": "computing-r-resources.html#books-free-online",
-    "href": "computing-r-resources.html#books-free-online",
+    "objectID": "computing-r-resources.html#in-depth-introduction",
+    "href": "computing-r-resources.html#in-depth-introduction",
     "title": "Resources for learning R",
-    "section": "",
-    "text": "R for Data Science by Hadley Wickham & Garrett Grolemund\nTidy Modeling with R by Max Kuhn & Julia Silge",
+    "section": "In-depth introduction",
+    "text": "In-depth introduction\nCoursera: Data Visualization and Transformation with R by Mine Çetinkaya-Rundel and Elijah Meyer\n\nIncludes videos, readings, practice exercise, quizzes, and other resources\nYou can select content within the modules you want to complete.\nFocus on Modules 2 and 3. Review the content in Module 1 as needed.s\nClick here for instructions to register for Coursera for free as a Duke student",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#in-depth-review",
+    "href": "computing-r-resources.html#in-depth-review",
+    "title": "Resources for learning R",
+    "section": "In-depth review",
+    "text": "In-depth review\nData Science with R videos by Mine Çetinkaya-Rundel and Elijah Meyer\n\nVideos from the data science Coursera course\nFocus on videos on visualizing and summarizing data\nYou need to join the Coursera course to access the files from the code along videos.\n\nLearn R: An interactive introduction to data analysis with R\n\nHands-on tutorial that can be completed within the site (no RStudio required)\nFocus on Chapters 4 - 6",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#shorter-review",
+    "href": "computing-r-resources.html#shorter-review",
+    "title": "Resources for learning R",
+    "section": "Shorter review",
+    "text": "Shorter review\nR for Data Science (2nd ed) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\n\nFocus on Chapters 1 - 3, 10",
     "crumbs": [
       "Computing",
       "R resources"
@@ -664,7 +686,7 @@
     "href": "computing-r-resources.html#additional-resources",
     "title": "Resources for learning R",
     "section": "Additional resources",
-    "text": "Additional resources\n\nPosit Cheatsheets\nR workshops and resources by Duke Center for Data and Visualization Sciences.",
+    "text": "Additional resources\n\nTidy Modeling with R by Max Kuhn & Julia Silge\nPosit Cheatsheets\nR workshops by Duke Center for Data and Visualization Sciences",
     "crumbs": [
       "Computing",
       "R resources"
