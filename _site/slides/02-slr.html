@@ -793,7 +793,8 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 </section>
 <section id="fit-the-model" class="slide level2">
 <h2>Fit the model</h2>
-<p>We use the <code>lm()</code> function to fit a linear regression model</p>
+<p>Use the <code>lm()</code> function to fit a linear regression model</p>
+<p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience <span class="sc">~</span> critics, <span class="at">data =</span> movie_scores)</span>
 <span id="cb5-2"><a></a>movie_fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -810,7 +811,8 @@ Coefficients:
 </section>
 <section id="tidy-results" class="slide level2">
 <h2>Tidy results</h2>
-<p>We use the <code>tidy()</code> function from the <strong>broom</strong> R package to “tidy” the data.</p>
+<p>Use the <code>tidy()</code> function from the <strong>broom</strong> R package to “tidy” the data</p>
+<p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience <span class="sc">~</span> critics, <span class="at">data =</span> movie_scores)</span>
 <span id="cb7-2"><a></a><span class="fu">tidy</span>(movie_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -825,6 +827,8 @@ Coefficients:
 </section>
 <section id="format-results" class="slide level2">
 <h2>Format results</h2>
+<p>Use the <code>kable()</code> function from the <strong>knitr</strong> package to neatly format the results</p>
+<p><br></p>
 <div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9" data-code-line-numbers="|2,3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience <span class="sc">~</span> critics, <span class="at">data =</span> movie_scores)</span>
@@ -864,6 +868,8 @@ Coefficients:
 </section>
 <section id="prediction-1" class="slide level2">
 <h2>Prediction</h2>
+<p>Use the <code>predict()</code> function to calculate predictions for new observations</p>
+<p><br></p>
 <p><strong>Single observation</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>new_movie <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics =</span> <span class="dv">70</span>)</span>
@@ -1098,7 +1104,7 @@ Coefficients:
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

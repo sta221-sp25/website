@@ -476,6 +476,13 @@
     ]
   },
   {
+    "objectID": "prepare/prepare-sep3.html",
+    "href": "prepare/prepare-sep3.html",
+    "title": "Prepare for September 3 lecture",
+    "section": "",
+    "text": "📖 Read Section 4.7: Model Assessment\n✅ Go through R resource (optional)"
+  },
+  {
     "objectID": "hw/hw-02.html",
     "href": "hw/hw-02.html",
     "title": "HW 02",
@@ -924,28 +931,28 @@
     "href": "slides/02-slr.html#fit-the-model",
     "title": "Simple linear regression",
     "section": "Fit the model",
-    "text": "Fit the model\nWe use the lm() function to fit a linear regression model\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\nmovie_fit\n\n\nCall:\nlm(formula = audience ~ critics, data = movie_scores)\n\nCoefficients:\n(Intercept)      critics  \n    32.3155       0.5187"
+    "text": "Fit the model\nUse the lm() function to fit a linear regression model\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\nmovie_fit\n\n\nCall:\nlm(formula = audience ~ critics, data = movie_scores)\n\nCoefficients:\n(Intercept)      critics  \n    32.3155       0.5187"
   },
   {
     "objectID": "slides/02-slr.html#tidy-results",
     "href": "slides/02-slr.html#tidy-results",
     "title": "Simple linear regression",
     "section": "Tidy results",
-    "text": "Tidy results\nWe use the tidy() function from the broom R package to “tidy” the data.\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   32.3      2.34        13.8 4.03e-28\n2 critics        0.519    0.0345      15.0 2.70e-31"
+    "text": "Tidy results\nUse the tidy() function from the broom R package to “tidy” the data\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   32.3      2.34        13.8 4.03e-28\n2 critics        0.519    0.0345      15.0 2.70e-31"
   },
   {
     "objectID": "slides/02-slr.html#format-results",
     "href": "slides/02-slr.html#format-results",
     "title": "Simple linear regression",
     "section": "Format results",
-    "text": "Format results\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics\n0.519\n0.035\n15.028\n0"
+    "text": "Format results\nUse the kable() function from the knitr package to neatly format the results\n\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics\n0.519\n0.035\n15.028\n0"
   },
   {
     "objectID": "slides/02-slr.html#prediction-1",
     "href": "slides/02-slr.html#prediction-1",
     "title": "Simple linear regression",
     "section": "Prediction",
-    "text": "Prediction\nSingle observation\n\nnew_movie &lt;- tibble(critics = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297 \n\n\n\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297 \n\n\n\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
   },
   {
     "objectID": "slides/02-slr.html#recap",
