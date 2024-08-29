@@ -875,7 +875,7 @@
     "href": "slides/02-slr.html#least-squares-line",
     "title": "Simple linear regression",
     "section": "Least squares line",
-    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[e_i = \\text{observed} - \\text{predicted}\n= y_i - \\hat{y}_i\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe least squares line is the one that minimizes the sum of squared residuals\n\n\n\n\n\n\n\nNote\n\n\nClick here for full calculations."
+    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[e_i = \\text{observed} - \\text{predicted}\n= y_i - \\hat{y}_i\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe least squares line is the one that minimizes the sum of squared residuals\n\nClick here for full calculations."
   },
   {
     "objectID": "slides/02-slr.html#properties-of-least-squares-regression",

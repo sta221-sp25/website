@@ -286,7 +286,7 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
 :::
 :::
 
-## Determine $f(X)$ 
+## Determine $f(X)$
 
 -   **Goal**: Determine $f(X)$
 
@@ -360,9 +360,7 @@ $$e^2_1 + e^2_2 + \dots + e^2_n$$
 
 -   The **least squares line** is the one that minimizes the sum of squared residuals
 
-::: callout-note
 [Click here](https://introregression.netlify.app/98-appendix#sec-least-sq-math) for full calculations.
-:::
 
 ```{r}
 #| echo: false
@@ -466,7 +464,7 @@ Suppose that a movie has a critics score of 70. According to this model, what is
 ```
 # Linear regression in R
 
-## Fit the model 
+## Fit the model
 
 We use the `lm()` function to fit a linear regression model
 
@@ -498,7 +496,7 @@ tidy(movie_fit) |>
 
 </div>
 
-## Prediction 
+## Prediction
 
 **Single observation**
 
