@@ -27,7 +27,7 @@ format:
 |                     |                |                                    |
 |                     |                | *or by appointment*                |
 +---------------------+----------------+------------------------------------+
-| Kat Husar           | Head TA\       | Tue 1:30 - 3:30pm, TBD             |
+| Kat Husar           | Head TA\       | Tue 1:30 - 3:30pm, Old Chem 220    |
 |                     | Lab 02L leader |                                    |
 +---------------------+----------------+------------------------------------+
 | Jon Campbell        | Lab 01L leader | Tue & Thu 9 - 10am, Old Chem 025   |
