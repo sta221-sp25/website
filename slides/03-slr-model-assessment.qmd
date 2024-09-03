@@ -97,27 +97,23 @@ duke_forest_aug <- augment(duke_forest_fit)
 
 # Application exercise
 
-<!-- ## Getting started -->
+::: appex
+📋 <https://sta221-fa24.netlify.app/ae/ae-01-slr.html>
+:::
 
-<!-- \[ instructions on cloning github repo and starting rstudio project\] -->
+## Clone repo + Start new RStudio project {.midi}
 
-<!-- ## Exploratory data analysis -->
+-   Go to the course organization. Click on the repo with the prefix `ae-01`. It contains the starter documents you need to complete the AE.
 
-<!-- -   Univariate EDA -->
+-   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you’ll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
 
-<!-- -   Bivariate EDA -->
+-   In RStudio, go to *File* → *New Project* → *Version Control* → *Git*.
 
-<!-- <!--# stop here and describe the relationship-->
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*.
 
---\>
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
 
-<!-- -   Fit the model -->
-
-<!-- -   Interpret the slope and intercept -->
-
-<!-- <!--# stop here and describe the relationship-->
-
---\>
+-   Click `ae-01.qmd` to open the template Quarto file. This is where you will write up your code and narrative for the AE.
 
 # Model assessment
 
@@ -283,7 +279,7 @@ $$\large{R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}}$$
 What is the range of $R^2$? Does $R^2$ have units?
 :::
 
-## Interpreting $R^2$ {.smaller}
+## Interpreting \$R\^2\$ {.smaller}
 
 ```{r}
 #| echo: false
@@ -292,24 +288,32 @@ df_fit_rsq <- round(glance(duke_forest_fit)$r.squared, 3) * 100
 
 ```
 
-::: poll
-🗳️ **Discussion**
+::: panel-tabset
+## Question
 
+::: appex
+Submit your response to the following question on Ed Discussion.
+
+::: midi
 The $R^2$ of the model for price from area of houses in Duke Forest is `r df_fit_rsq`%. Which of the following is the correct interpretation of this value?
 
 1.  Area correctly predicts `r df_fit_rsq`% of price for houses in Duke Forest.
 2.  `r df_fit_rsq`% of the variability in price for houses in Duke Forest can be explained by area.
-3.  `r df_fit_rsq`% of the variability in area for houses in Duke Forest can be explained by price
+3.  `r df_fit_rsq`% of the variability in area for houses in Duke Forest can be explained by price.
 4.  `r df_fit_rsq`% of the time price for houses in Duke Forest can be predicted by area.
-:::
 
-<br>
-
-. . .
-
-::: question
 Do you think this model is useful for explaining variability in the price of Duke Forest houses?
 :::
+:::
+
+## Submit
+
+```{=html}
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/629888" width="100%"></iframe>
+```
+:::
+
+🔗 <https://edstem.org/us/courses/62513/discussion/629888>
 
 # Using R
 
@@ -369,3 +373,5 @@ glance(duke_forest_fit)$r.squared
 -   Used analysis of variance to partition variability in the response variable
 
 ## Next class
+
+-   Matrix representation of simple linear regression

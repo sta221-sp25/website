@@ -453,21 +453,24 @@ Prof.&nbsp;Maria Tackett
 </div></div>
 <p><strong>Goal</strong>: Use the area (in square feet) to understand variability in the price of houses in Duke Forest.</p>
 </section></section>
+<section>
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
-<!-- ## Getting started -->
-<!-- \[ instructions on cloning github repo and starting rstudio project\] -->
-<!-- ## Exploratory data analysis -->
-<!-- -   Univariate EDA -->
-<!-- -   Bivariate EDA -->
-<!-- <!--# stop here and describe the relationship-->
-<p>–&gt;</p>
-<!-- -   Fit the model -->
-<!-- -   Interpret the slope and intercept -->
-<!-- <!--# stop here and describe the relationship-->
-<p>–&gt;</p>
+<div class="appex">
+<p>📋 <a href="https://sta221-fa24.netlify.app/ae/ae-01-slr.html" class="uri">https://sta221-fa24.netlify.app/ae/ae-01-slr.html</a></p>
+</div>
 </section>
-
+<section id="clone-repo-start-new-rstudio-project" class="slide level2 midi">
+<h2>Clone repo + Start new RStudio project</h2>
+<ul>
+<li><p>Go to the course organization. Click on the repo with the prefix <code>ae-01</code>. It contains the starter documents you need to complete the AE.</p></li>
+<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
+<li><p>In RStudio, go to <em>File</em> → <em>New Project</em> → <em>Version Control</em> → <em>Git</em>.</p></li>
+<li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>.</p></li>
+<li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
+<li><p>Click <code>ae-01.qmd</code> to open the template Quarto file. This is where you will write up your code and narrative for the AE.</p></li>
+</ul>
+</section></section>
 <section>
 <section id="model-assessment" class="title-slide slide level1 center">
 <h1>Model assessment</h1>
@@ -579,23 +582,31 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}}
 </div>
 </section>
 <section id="interpreting-r2" class="slide level2 smaller">
-<h2>Interpreting <span class="math inline">\(R^2\)</span></h2>
-<div class="poll">
-<p>🗳️ <strong>Discussion</strong></p>
+<h2>Interpreting $R^2$</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question</a></li><li><a href="#tabset-1-2">Submit</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="appex">
+<p>Submit your response to the following question on Ed Discussion.</p>
+<div class="midi">
 <p>The <span class="math inline">\(R^2\)</span> of the model for price from area of houses in Duke Forest is 44.5%. Which of the following is the correct interpretation of this value?</p>
 <ol type="1">
 <li>Area correctly predicts 44.5% of price for houses in Duke Forest.</li>
 <li>44.5% of the variability in price for houses in Duke Forest can be explained by area.</li>
-<li>44.5% of the variability in area for houses in Duke Forest can be explained by price</li>
+<li>44.5% of the variability in area for houses in Duke Forest can be explained by price.</li>
 <li>44.5% of the time price for houses in Duke Forest can be predicted by area.</li>
 </ol>
-</div>
-<p><br></p>
-<div class="fragment">
-<div class="question">
 <p>Do you think this model is useful for explaining variability in the price of Duke Forest houses?</p>
 </div>
 </div>
+</div>
+<div id="tabset-1-2">
+<iframe allowfullscreen="" frameborder="0" height="100%" mozallowfullscreen="" style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/629888" width="100%"></iframe>
+</div>
+</div>
+</div>
+<p>🔗 <a href="https://edstem.org/us/courses/62513/discussion/629888" class="uri">https://edstem.org/us/courses/62513/discussion/629888</a></p>
 </section></section>
 <section>
 <section id="using-r" class="title-slide slide level1 center">
@@ -678,6 +689,9 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}}
 </section>
 <section id="next-class" class="slide level2">
 <h2>Next class</h2>
+<ul>
+<li>Matrix representation of simple linear regression</li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../images/logo.png" class="slide-logo"></p>
