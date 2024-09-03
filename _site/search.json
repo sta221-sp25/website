@@ -726,9 +726,152 @@
   {
     "objectID": "labs/lab-01.html",
     "href": "labs/lab-01.html",
-    "title": "Lab 01",
+    "title": "Lab 01: Simple linear regression",
     "section": "",
-    "text": "To be posted.",
+    "text": "Due date\n\n\n\nThis lab is due on Thursday, September 12 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#learning-goals",
+    "href": "labs/lab-01.html#learning-goals",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the lab, you will…\n\nBe familiar with the workflow using RStudio and GitHub\nGain practice writing a reproducible report using Quarto\nPractice version control using GitHub\nBe able to create data visualizations using ggplot2 and use those visualizations to describe distributions\nBe gain to fit, interpret, and evaluate simple linear regression models",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#clone-the-repo-start-new-rstudio-project",
+    "href": "labs/lab-01.html#clone-the-repo-start-new-rstudio-project",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Clone the repo & start new RStudio project",
+    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta221-fa24 organization on GitHub.\nClick on the repo with the prefix lab-01-. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\nSee the Lab 00 instructions if you have not set up the SSH key or configured git.\n\nIn RStudio, go to File \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\n\n\n\n\n\n\nImportant\n\n\n\nYour lab TA will lead you through the Getting Started section.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#r-and-r-studio",
+    "href": "labs/lab-01.html#r-and-r-studio",
+    "title": "Lab 01: Simple linear regression",
+    "section": "R and R Studio",
+    "text": "R and R Studio\nBelow are the components of the RStudio IDE.\n\n\n\n\n\nBelow are the components of an Quarto (.Rmd) file.\n\n\n\n\n\n\nYAML\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nOpen the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document.\n\n\n\n\nCommitting changes\nNow, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on Diff. This shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\nIf you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, stage your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the Commit message box. Finally, click Commit. Note that every commit needs to have a commit message associated with it.\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration.\nIn the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\nPush changes\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\nIn order to push your changes to GitHub, you must have staged your commit to be pushed. click on Push.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-1",
+    "href": "labs/lab-01.html#exercise-1",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWe will begin with some exploratory data analysis (EDA). As a first step, let us take a quick summary look at the data using the glimpse function.\nViewing a summary of the data is a useful starting point for data analysis, especially if there are a large number of observations or variables.\n\nglimpse(parks)\n\n\nHow many observations are in the parks data frame?\nWhat information is provided in the data about the time and location of the measurements?",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-2",
+    "href": "labs/lab-01.html#exercise-2",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nThe predictor variable for this analysis spend_per_resident_data is quantitative; however, from the glimpse of the data in Exercise 1, we see its data type is chr (character) in R. We would expect it to be dbl (double), the data type for numeric data.\n\nWhy did spend_per_resident_data get read by R as a character data type instead of a double? Be specific.\nWhy do we need to convert spend_per_resident_data to a data type suitable for quantitative data? How might leaving it as a character variable hinder the analysis?",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-3",
+    "href": "labs/lab-01.html#exercise-3",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nUse the code below to convert spend_per_resident_data , so that it is correctly treated as quantitative data in R. Each line of code is numbered. Write a brief explanation of what each line of code does.\n\n\n\n\n\n\nTip\n\n\n\nSee Simple Linear Regression in R for an example of explaining code line by line.\n\n\n\n1parks &lt;- parks |&gt;\n  mutate(spend_per_resident_data = \n2           str_replace(spend_per_resident_data,\"\\\\$\", \"\")) |&gt;\n  mutate(spend_per_resident_data = \n3           as.numeric(spend_per_resident_data))\n\n\n1\n\n______\n\n2\n\n______\n\n3\n\n______\n\n\n\n\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the checkbox next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-4",
+    "href": "labs/lab-01.html#exercise-4",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nNext, we will get a visual idea of the distribution of the variables we are interested in. For this purpose, we will be using histograms. Fill in the code below to plot the histogram for the variable spend_per_resident_data .\n\n\n\n\n\n\nTip\n\n\n\nWhen performing data visualization, make sure that all your plots have clear and informative titles and axis labels. When investigating more complex relationships with many variables, this simple tip will save you and your readers a lot of time and confusion.\n\n\n\n\nggplot(data = ____, aes(x = ____)) +\n  geom_histogram() +\n  labs(x = \"_____\",\n       y = \"_____\", \n       title = \"_____\")\n\nThen, fill in the code below to calculate numerical summaries of the variable.\n\n\nparks |&gt;\n  skim(____) |&gt;\n  select(-skim_type, -skim_variable, -complete_rate,\n         - numeric.hist)\n\nComment on the features of the distribution of spend_per_resident_data by describing the shape, center, spread, and presence of potential outliers.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-5",
+    "href": "labs/lab-01.html#exercise-5",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nNext let’s explore the response variable, pct_near_park_points. Visualize the distribution of the variable and calculate summary statistics. Comment on the features of the distribution of pct_near_park_points.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-6",
+    "href": "labs/lab-01.html#exercise-6",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nVisualize the relationship between the two variables. Does there seem to be a relationship between spending and park access? What is the shape? Is it positive or negative?\n\nggplot(data = ____, aes(x = ____, y = ____)) +\n  geom_point() +\n    labs(x = \"_____\",\n       y = \"_____\", \n       title = \"_____\")",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-7",
+    "href": "labs/lab-01.html#exercise-7",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\nIn class, we have gone through the mathematical formulation of a simple linear regression. In particular, we observe \\(n\\) pairs of real numbers \\(\\{ (y_i, x_i) : i = 1, \\dotsc, n \\}\\). The simple linear regression model posits that the \\(i\\)th response \\(y_i\\) is related to the \\(i\\)th predictor variable \\(x_i\\) via the relation \\[y_i = \\beta_0 + \\beta_1 x_i + \\epsilon_i, \\quad \\epsilon_i \\overset{\\mathrm{iid}}{\\sim} \\mathcal{N}(0, \\sigma^2)\\] for some unknown regression coefficients \\((\\beta_0, \\beta_1)\\). This means that the expected value of each observation \\(y_i\\) lies on the regression line \\[ \\mathbb{E}[y_i] = \\beta_0 + \\beta_1 x_i. \\]\nAnswer the following general questions about the simple linear regression model.\n\nWhat does it mean for the expected value of \\(y_i\\) to be given by \\(\\beta_0 + \\beta_1 x_i\\)?\nWhat is the interpretation of the coefficients \\(\\beta_0\\) and \\(\\beta_i\\) in terms of the expected value of \\(y_i\\)?",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-8",
+    "href": "labs/lab-01.html#exercise-8",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nQuestion about calculating the model using matrices.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-9",
+    "href": "labs/lab-01.html#exercise-9",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nLet us now fit a linear regression model using the lm function. Nealty display the model output.\n\nInterpret the slope in the context of the data.\nDoes it make sense of the interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-10",
+    "href": "labs/lab-01.html#exercise-10",
+    "title": "Lab 01: Simple linear regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nDo you think that city expenditure is a useful predictor of park access? Briefly explain your response, reporting any summary statistics used to make your assessment.",
     "crumbs": [
       "Labs",
       "Lab 01"
