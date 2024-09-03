@@ -134,7 +134,7 @@ What indicates a good model fit? Higher or lower RMSE? Higher or lower $R^2$?
 ## RMSE
 
 $$
-RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}}
+RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n}}
 $$
 
 . . .
@@ -375,3 +375,4 @@ glance(duke_forest_fit)$r.squared
 ## Next class
 
 -   Matrix representation of simple linear regression
+    -   See [Sep 5 prepare](../prepare/prepare-sep5.html)
