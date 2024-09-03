@@ -1,5 +1,274 @@
 ---
-title: Lab 01
+title: "Lab 01: Simple linear regression"
+subtitle: "Park access"
+execute:
+  freeze: auto
+  echo: true
+  evaluate: true
+  warning: false
+  message: false
+format: html
 ---
 
-To be posted.
+::: callout-important
+## Due date
+
+This lab is due on **Thursday, September 12 at 11:59pm.** To be considered on time, the following must be done by the due date:
+
+-   Final `.qmd` and `.pdf` files pushed to your GitHub repo
+-   Final `.pdf` file submitted on Gradescope
+:::
+
+# Introduction
+
+This lab will go through much of the same workflow we've demonstrated in class. The main goal is to reinforce our demo of R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
+
+::: callout-note
+R is the name of the programming language itself and RStudio is a convenient interface.
+:::
+
+An additional goal is to reinforce git and GitHub, the collaboration and version control system that we will be using throughout the course.
+
+::: callout-note
+Git is a version control system (like "Track Changes" features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).
+:::
+
+To make versioning simpler, this and the next lab are individual labs. In the future, you'll learn about collaborating on GitHub and producing a single lab report for your lab team, but for now, concentrate on getting the basics down.
+
+## Learning goals
+
+By the end of the lab, you will...
+
+-   Be familiar with the workflow using RStudio and GitHub
+-   Gain practice writing a reproducible report using Quarto
+-   Practice version control using GitHub
+-   Be able to create data visualizations using `ggplot2` and use those visualizations to describe distributions
+-   Be gain to fit, interpret, and evaluate simple linear regression models
+
+# Getting Started
+
+## Clone the repo & start new RStudio project
+
+-   Go to the course organization at [github.com/sta221-fa24](https://github.com/sta221-fa24) organization on GitHub.
+-   Click on the repo with the prefix **lab-01-**. It contains the starter documents you need to complete the lab.
+-   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
+    -   See the [Lab 00 instructions](https://sta221-fa24.netlify.app/labs/lab-00#connect-rstudio-and-github) if you have not set up the SSH key or configured git.
+-   In RStudio, go to *File* $\rightarrow$ *New Project* $\rightarrow$ *Version Control* $\rightarrow$ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+-   Click `lab-01.qmd` to open the template Quarto file. This is where you will write up your code and narrative for the lab.
+
+::: callout-important
+Your lab TA will lead you through the Getting Started section.
+:::
+
+## R and R Studio
+
+Below are the components of the RStudio IDE.
+
+![](images/rstudio-panes.png){fig-alt="Screenshot of RStudio IDE" fig-align="center"}
+
+Below are the components of an Quarto (.Rmd) file.
+
+![](images/quarto.png){fig-alt="Screenshot of Quarto document and rendered PDF." fig-align="center"}
+
+### YAML
+
+The top portion of your Quarto file (between the three dashed lines) is called **YAML**. It stands for "YAML Ain't Markup Language". It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
+
+::: callout-important
+Open the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document.
+:::
+
+### Committing changes
+
+Now, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.
+
+If you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on **Diff**. This shows you the *diff*erence between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.
+
+If you're happy with these changes, we'll prepare the changes to be pushed to your remote repository. First, **stage** your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, "updated author name") in the **Commit message** box. Finally, click **Commit**. Note that every commit needs to have a commit message associated with it.
+
+You don't have to commit after every change, as this would get quite tedious. You should commit states that are *meaningful to you* for inspection, comparison, or restoration.
+
+In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.
+
+Now let's make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you're good to go!
+
+### Push changes
+
+Now that you have made an update and committed this change, it's time to push these changes to your repo on GitHub.
+
+In order to push your changes to GitHub, you must have **staged** your **commit** to be pushed. click on **Push**.
+
+# Packages
+
+We will use the following packages in today’s lab.
+
+```{r}
+#| label: packages
+
+library(tidyverse)
+library(skimr)
+library(tidymodels)
+```
+
+# Data: Access to parks
+
+Today’s data is about access to parks and other public amenities in the 100 most populated cities in the United States. The data were collected by the [Trust for Public Land](https://www.tpl.org/parks-and-an-equitable-recovery-parkscore-report), a non-profit organization that advocates for equitable access to outdoor spaces. The data set we’ll use in this lab includes part of the data used for analysis in the 2021 special report [*Parks and Equitable Recovery*](https://www.tpl.org/parks-and-an-equitable-recovery-parkscore-report); it was obtained from [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-06-22/readme.md).
+
+Use the code below to load the data into R.
+
+```{r}
+#| label: import-data
+
+parks <- read_csv('data/parks_clean.csv')
+```
+
+We will be looking at the following variables:
+
+-   `spend_per_resident_data`: Average spending per resident in US dollars
+-   `pct_near_park_points`: Points assigned to the city for the percentage of residents within a ten minute walk to a park
+
+[Click here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-06-22/readme.md) for a full data dictionary
+
+# Exercises
+
+**Goal:** We will be trying to understand how effective city investment is in ensuring widespread access to green areas in cities. While city investments clearly affect the creation and maintenance of parks, it is also essential that access to park facilities be equitably distributed across the population.
+
+------------------------------------------------------------------------
+
+Write all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically **render** your Quarto document to produce the updated PDF, **commit** the changes in the Git pane, and **push** the updated files to GitHub.
+
+::: callout-important
+Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (`|>`) and plus sign (`+`).
+:::
+
+## Exercise 1
+
+We will begin with some exploratory data analysis (EDA). As a first step, let us take a quick summary look at the data using the `glimpse` function.
+
+Viewing a summary of the data is a useful starting point for data analysis, especially if there are a large number of observations or variables.
+
+```{r}
+#| label: glimpse
+#| eval: false
+
+glimpse(parks)
+```
+
+-   How many observations are in the `parks` data frame?
+
+-   What information is provided in the data about the time and location of the measurements?
+
+## Exercise 2
+
+The predictor variable for this analysis `spend_per_resident_data` is quantitative; however, from the glimpse of the data in Exercise 1, we see its data type is `chr` (character) in R. We would expect it to be `dbl` (double), the data type for numeric data.
+
+-   Why did `spend_per_resident_data` get read by R as a character data type instead of a double? Be specific.
+
+-   Why do we need to convert `spend_per_resident_data` to a data type suitable for quantitative data? How might leaving it as a character variable hinder the analysis?
+
+## Exercise 3
+
+Use the code below to convert `spend_per_resident_data` , so that it is correctly treated as quantitative data in R. Each line of code is numbered. Write a brief explanation of what each line of code does.
+
+::: callout-tip
+See [Simple Linear Regression in R](https://introregression.netlify.app/04-slr#simple-linear-regression-in-r) for an example of explaining code line by line.
+:::
+
+```{r}
+#| eval: false
+parks <- parks |>  # <1>
+  mutate(spend_per_resident_data = 
+           str_replace(spend_per_resident_data,"\\$", "")) |> # <2>
+  mutate(spend_per_resident_data = 
+           as.numeric(spend_per_resident_data)) # <3>
+```
+
+1.  \_\_\_\_\_\_
+2.  \_\_\_\_\_\_
+3.  \_\_\_\_\_\_
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. "Completed exercises 1 - 3"), and push every file to GitHub by clicking the checkbox next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
+:::
+
+## Exercise 4
+
+Next, we will get a visual idea of the distribution of the variables we are interested in. For this purpose, we will be using histograms. Fill in the code below to plot the histogram for the variable `spend_per_resident_data` .
+
+::: callout-tip
+When performing data visualization, make sure that all your plots have clear and informative **titles** and **axis labels**. When investigating more complex relationships with many variables, this simple tip will save you and your readers a lot of time and confusion.
+:::
+
+<!--# maybe take out this-->
+
+```{r spend-histogram}
+#| eval: false
+ggplot(data = ____, aes(x = ____)) +
+  geom_histogram() +
+  labs(x = "_____",
+       y = "_____", 
+       title = "_____")
+```
+
+Then, fill in the code below to calculate numerical summaries of the variable.
+
+<!--# update the code to use summarize function-->
+
+```{r}
+#| label: spend-summary
+#| eval: false
+parks |>
+  skim(____) |>
+  select(-skim_type, -skim_variable, -complete_rate,
+         - numeric.hist)
+```
+
+Comment on the features of the distribution of `spend_per_resident_data` by describing the shape, center, spread, and presence of potential outliers.
+
+## Exercise 5
+
+Next let's explore the response variable, `pct_near_park_points`. Visualize the distribution of the variable and calculate summary statistics. Comment on the features of the distribution of `pct_near_park_points`.
+
+## Exercise 6
+
+Visualize the relationship between the two variables. Does there seem to be a relationship between spending and park access? What is the shape? Is it positive or negative?
+
+```{r scatterplot}
+#| eval: false
+ggplot(data = ____, aes(x = ____, y = ____)) +
+  geom_point() +
+    labs(x = "_____",
+       y = "_____", 
+       title = "_____")
+```
+
+## Exercise 7
+
+<!--# need to reword this to match the notes-->
+
+In class, we have gone through the mathematical formulation of a simple linear regression. In particular, we observe $n$ pairs of real numbers $\{ (y_i, x_i) : i = 1, \dotsc, n \}$. The simple linear regression model posits that the $i$^th^ **response** $y_i$ is related to the $i$^th^ **predictor variable** $x_i$ via the relation $$y_i = \beta_0 + \beta_1 x_i + \epsilon_i, \quad \epsilon_i \overset{\mathrm{iid}}{\sim} \mathcal{N}(0, \sigma^2)$$ for some unknown **regression coefficients** $(\beta_0, \beta_1)$. This means that the **expected value** of each observation $y_i$ lies on the **regression line** $$ \mathbb{E}[y_i] = \beta_0 + \beta_1 x_i. $$
+
+Answer the following general questions about the simple linear regression model.
+
+-   What does it mean for the expected value of $y_i$ to be given by $\beta_0 + \beta_1 x_i$?
+-   What is the interpretation of the coefficients $\beta_0$ and $\beta_i$ in terms of the expected value of $y_i$?
+
+## Exercise 8
+
+Question about calculating the model using matrices.
+
+## Exercise 9
+
+Let us now fit a linear regression model using the `lm` function. Nealty display the model output.
+
+-   Interpret the slope in the context of the data.
+
+-   Does it make sense of the interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not.
+
+## Exercise 10
+
+Do you think that city expenditure is a useful predictor of park access? Briefly explain your response, reporting any summary statistics used to make your assessment.
+
+# Submission
