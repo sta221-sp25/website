@@ -1508,5 +1508,152 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#announcements",
+    "href": "slides/04-slr-model-assessment-contd.html#announcements",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Announcements",
+    "text": "Announcements\n\nOffice hours start this week. See schedule on Overview page of the course website or on Canvas.\nLabs resume Monday, September 09"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#topics",
+    "href": "slides/04-slr-model-assessment-contd.html#topics",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Topics",
+    "text": "Topics\n\nEvaluate models using RMSE and \\(R^2\\)\nUse analysis of variance to partition variability in the response variable"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#computing-set-up",
+    "href": "slides/04-slr-model-assessment-contd.html#computing-set-up",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Computing set up",
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling (includes broom, yardstick, and other packages)\nlibrary(openintro)   # for the duke_forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme for ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#data-houses-in-duke-forest",
+    "href": "slides/04-slr-model-assessment-contd.html#data-houses-in-duke-forest",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Data: Houses in Duke Forest",
+    "text": "Data: Houses in Duke Forest\n\n\n\nData on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020\nScraped from Zillow\nSource: openintro::duke_forest\n\n\n\n\nGoal: Use the area (in square feet) to understand variability in the price of houses in Duke Forest."
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#two-statistics",
+    "href": "slides/04-slr-model-assessment-contd.html#two-statistics",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Two statistics",
+    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#rmse",
+    "href": "slides/04-slr-model-assessment-contd.html#rmse",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "RMSE",
+    "text": "RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\n\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the response variable\nThe value of RMSE is more useful for comparing across models than evaluating a single model (more on this when we get to regression with multiple predictors)"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#analysis-of-variance-anova",
+    "href": "slides/04-slr-model-assessment-contd.html#analysis-of-variance-anova",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "ANOVA",
+    "text": "ANOVA\nAnalysis of Variance (ANOVA): Technique to partition variability in \\(Y\\) by the sources of variability"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#total-variability-response",
+    "href": "slides/04-slr-model-assessment-contd.html#total-variability-response",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Total variability (Response)",
+    "text": "Total variability (Response)\n\n\nGoal: Quantify how much variability in price is accounted for by the model (area) and how much accounted for by factors not included in the model."
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#partition-sources-of-variability-in-price",
+    "href": "slides/04-slr-model-assessment-contd.html#partition-sources-of-variability-in-price",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Partition sources of variability in price",
+    "text": "Partition sources of variability in price"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#total-variability-response-1",
+    "href": "slides/04-slr-model-assessment-contd.html#total-variability-response-1",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Total variability (Response)",
+    "text": "Total variability (Response)\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#explained-variability-model",
+    "href": "slides/04-slr-model-assessment-contd.html#explained-variability-model",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Explained variability (Model)",
+    "text": "Explained variability (Model)\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#unexplained-variability-residuals",
+    "href": "slides/04-slr-model-assessment-contd.html#unexplained-variability-residuals",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Unexplained variability (Residuals)",
+    "text": "Unexplained variability (Residuals)\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#sum-of-squares",
+    "href": "slides/04-slr-model-assessment-contd.html#sum-of-squares",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Sum of Squares",
+    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]\n\n\n\n\n\n\nNote\n\n\nSee Appendix for proof of this equation."
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#r2",
+    "href": "slides/04-slr-model-assessment-contd.html#r2",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\nThe coefficient of determination \\(R^2\\) is the proportion of variation in the response, \\(Y\\), that is explained by the regression model\n\n\\[\\large{R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}}\\]\n\n\nWhat is the range of \\(R^2\\)? Does \\(R^2\\) have units?"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#interpreting-r2",
+    "href": "slides/04-slr-model-assessment-contd.html#interpreting-r2",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Interpreting $R^2$",
+    "text": "Interpreting $R^2$\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model for price from area of houses in Duke Forest is 44.5%. Which of the following is the correct interpretation of this value?\n\nArea correctly predicts 44.5% of price for houses in Duke Forest.\n44.5% of the variability in price for houses in Duke Forest can be explained by area.\n44.5% of the variability in area for houses in Duke Forest can be explained by price.\n44.5% of the time price for houses in Duke Forest can be predicted by area.\n\nDo you think this model is useful for explaining variability in the price of Duke Forest houses?\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/629888"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#augmented-data-frame",
+    "href": "slides/04-slr-model-assessment-contd.html#augmented-data-frame",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Augmented data frame",
+    "text": "Augmented data frame\nUse the augment() function from the broom package to add columns for predicted values, residuals, and other observation-level model statistics\n\n\nduke_forest_aug &lt;- augment(duke_forest_fit)\nduke_forest_aug\n\n# A tibble: 98 × 8\n     price  area  .fitted  .resid   .hat  .sigma   .cooksd .std.resid\n     &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1 1520000  6040 1079931. 440069. 0.133  162605. 0.604         2.80  \n 2 1030000  4475  830340. 199660. 0.0435 168386. 0.0333        1.21  \n 3  420000  1745  394951.  25049. 0.0226 169664. 0.000260      0.150 \n 4  680000  2091  450132. 229868. 0.0157 168011. 0.0150        1.37  \n 5  428500  1772  399257.  29243. 0.0220 169657. 0.000345      0.175 \n 6  456000  1950  427645.  28355. 0.0182 169659. 0.000266      0.170 \n 7 1270000  3909  740072. 529928. 0.0250 160502. 0.130         3.18  \n 8  557450  2841  569744. -12294. 0.0102 169679. 0.0000277    -0.0732\n 9  697500  3924  742465. -44965. 0.0254 169620. 0.000948     -0.270 \n10  650000  2173  463209. 186791. 0.0145 168582. 0.00912       1.11  \n# ℹ 88 more rows"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#finding-rmse-in-r",
+    "href": "slides/04-slr-model-assessment-contd.html#finding-rmse-in-r",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Finding RMSE in R",
+    "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard     167067.\n\n\n\n\nDo you think this model is useful for predicting the price of Duke Forest houses?"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#finding-r2-in-r",
+    "href": "slides/04-slr-model-assessment-contd.html#finding-r2-in-r",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Finding \\(R^2\\) in R",
+    "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.445\n\n\n\n\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\):\n\nglance(duke_forest_fit)$r.squared\n\n[1] 0.4451945"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#recap",
+    "href": "slides/04-slr-model-assessment-contd.html#recap",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Recap",
+    "text": "Recap\n\nEvaluated models using RMSE and \\(R^2\\)\nUsed analysis of variance to partition variability in the response variable\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#next-class",
+    "href": "slides/04-slr-model-assessment-contd.html#next-class",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Next class",
+    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Sep 5 prepare\n\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#partition-variability-in-price",
+    "href": "slides/04-slr-model-assessment-contd.html#partition-variability-in-price",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Partition variability in price",
+    "text": "Partition variability in price\nFor now, let’s focus on two observations"
   }
 ]
