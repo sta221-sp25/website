@@ -4,7 +4,7 @@ subtitle: "Park access"
 execute:
   freeze: auto
   echo: true
-  evaluate: true
+  eval: false
   warning: false
   message: false
 format: html
@@ -117,7 +117,7 @@ Use the code below to load the data into R.
 ```{r}
 #| label: import-data
 
-parks <- read_csv('data/parks_clean.csv')
+parks <- read_csv('data/parks.csv')
 ```
 
 We will be looking at the following variables:
@@ -208,9 +208,8 @@ Now let's conduct bivariate exploratory data analysis and examine the relationsh
 
 -   Make a scatterplot to visualize the relationship between the two variables.
 
-```{=html}
 <!-- -->
-```
+
 -   Does there seem to be a relationship between spending and park access? If so, what is the shape and direction of the relationship?
 
 ::: render-commit-push
@@ -232,9 +231,8 @@ Answer the following questions about simple linear regression. Your response sho
 
 -   What does it mean for the expected value of $Y$ to be given by $\beta_0 + \beta_1 X$?
 
-```{=html}
 <!-- -->
-```
+
 -   What is the interpretation of the coefficients $\beta_0$ and $\beta_i$ in terms of the expected value of $Y$?
 
 ## Exercise 8
@@ -253,9 +251,8 @@ Now let's fit a linear regression model using the `lm()` function in R.
 
 -   Fit the model and neatly display the output using 4 digits.
 
-```{=html}
 <!-- -->
-```
+
 -   Interpret the slope in the context of the data.
 
 -   Does it make sense of the interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not.
