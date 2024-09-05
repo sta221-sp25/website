@@ -266,10 +266,6 @@ $$
 \end{aligned}
 $$
 
-::: callout-note
-See Appendix for proof of this equation.
-:::
-
 ## $R^2$
 
 The **coefficient of determination** $R^2$ is the proportion of variation in the response, $Y$, that is explained by the regression model

@@ -27,7 +27,8 @@ d |>
   select(-`Maria's notes`) |>
   mutate(
     date = as.Date(date),
-    week = ifelse(is.na(week), "", week)
+    week = ifelse(is.na(week), "", week),
+    dow = ifelse(is.na(dow), "", dow)
   ) |>
   gt() |>
   text_transform(cells_body(columns = c(prepare)),

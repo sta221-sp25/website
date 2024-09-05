@@ -412,30 +412,15 @@ Prof.&nbsp;Maria Tackett
 <ul>
 <li>Model from</li>
 <li>Least square estimate</li>
-<li>Fitted (predicted) values</li>
+<li>Predicted (fitted) values</li>
 <li>Residuals</li>
 </ul></li>
 <li>Matrix representation in R</li>
 </ul>
 </section>
-<section id="computing-set-up" class="slide level2">
-<h2>Computing set up</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># load packages</span></span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)   <span class="co"># for data wrangling and visualization</span></span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(tidymodels)  <span class="co"># for modeling (includes broom, yardstick, and other packages)</span></span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(openintro)   <span class="co"># for the duke_forest dataset</span></span>
-<span id="cb1-5"><a></a><span class="fu">library</span>(scales)      <span class="co"># for pretty axis labels</span></span>
-<span id="cb1-6"><a></a><span class="fu">library</span>(knitr)       <span class="co"># for pretty tables</span></span>
-<span id="cb1-7"><a></a><span class="fu">library</span>(patchwork)   <span class="co"># arrange plots</span></span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a><span class="co"># set default theme for ggplot2</span></span>
-<span id="cb1-10"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
 <section>
-<section id="matrix-form-for-simple-linear-regression" class="title-slide slide level1 center">
-<h1>Matrix form for simple linear regression</h1>
+<section id="matrix-representation-of-simple-linear-regression" class="title-slide slide level1 center">
+<h1>Matrix representation of simple linear regression</h1>
 
 </section>
 <section id="slr-statistical-model-population" class="slide level2">
@@ -510,6 +495,33 @@ SSR = \sum_{i=1}^ne_i^2 = \mathbf{e}^T\mathbf{e} = (\mathbf{y} - \hat{\mathbf{y}
 <p>We want to find values of <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}\)</span> that minimize the sum of squared residuals <span class="math display">\[
 \begin{aligned}
 \mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
+\end{aligned}
+\]</span></p>
+</section>
+<section id="minimize-sum-of-squared-residuals-1" class="slide level2">
+<h2>Minimize sum of squared residuals</h2>
+<p>We want to find values of <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}\)</span> that minimize the sum of squared residuals <span class="math display">\[
+\begin{aligned}
+\mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
+&amp;= (\mathbf{y}^T - \boldsymbol{\beta}^T\mathbf{X}^T)(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\\[10pt]
+\end{aligned}
+\]</span></p>
+</section>
+<section id="minimize-sum-of-squared-residuals-2" class="slide level2">
+<h2>Minimize sum of squared residuals</h2>
+<p>We want to find values of <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}\)</span> that minimize the sum of squared residuals <span class="math display">\[
+\begin{aligned}
+\mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
+&amp;= (\mathbf{y}^T - \boldsymbol{\beta}^T\mathbf{X}^T)(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\\[10pt]
+&amp;=\mathbf{y}^T\mathbf{y} - \mathbf{y}^T\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}\\[10pt]
+\end{aligned}
+\]</span></p>
+</section>
+<section id="minimize-sum-of-squared-residuals-3" class="slide level2">
+<h2>Minimize sum of squared residuals</h2>
+<p>We want to find values of <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}\)</span> that minimize the sum of squared residuals <span class="math display">\[
+\begin{aligned}
+\mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
 &amp;= (\mathbf{y}^T - \boldsymbol{\beta}^T\mathbf{X}^T)(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\\[10pt]
 &amp;=\mathbf{y}^T\mathbf{y} - \mathbf{y}^T\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}\\[10pt]
 &amp;=\mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}
@@ -534,9 +546,14 @@ SSR = \mathbf{e}^T\mathbf{e} =\mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mat
 \color{#993399}{\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}}
 \]</span></p>
 </div>
+</section></section>
+<section>
+<section id="matrix-representation-in-r" class="title-slide slide level1 center">
+<h1>Matrix representation in R</h1>
+
 </section>
-<section id="matrix-form-in-r" class="slide level2">
-<h2>Matrix form in R</h2>
+<section id="obtain-mathbfy-vector" class="slide level2">
+<h2>Obtain <span class="math inline">\(\mathbf{y}\)</span> vector</h2>
 <p>Let’s go back to the Duke Forest data. We want to use the matrix representation to fit a model of the form:</p>
 <p><span class="math display">\[
 price = \beta_0 + \beta_1 ~ area + \epsilon, \hspace{5mm} \epsilon \sim N(0, \sigma^2_\epsilon)
@@ -544,13 +561,13 @@ price = \beta_0 + \beta_1 ~ area + \epsilon, \hspace{5mm} \epsilon \sim N(0, \si
 <div class="fragment">
 <p>Get <span class="math inline">\(\mathbf{y}\)</span> the vector of responses</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>y <span class="ot">&lt;-</span> duke_forest<span class="sc">$</span>price</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>y <span class="ot">&lt;-</span> duke_forest<span class="sc">$</span>price</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
 <p>Let’s look at the first 10 observations of <span class="math inline">\(y\)</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>y[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>y[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 1520000 1030000  420000  680000  428500  456000 1270000  557450  697500
 [10]  650000</code></pre>
@@ -558,16 +575,16 @@ price = \beta_0 + \beta_1 ~ area + \epsilon, \hspace{5mm} \epsilon \sim N(0, \si
 </div>
 </div>
 </section>
-<section id="matrix-form-in-r-1" class="slide level2">
-<h2>Matrix form in R</h2>
+<section id="obtain-mathbfx-matrix" class="slide level2">
+<h2>Obtain <span class="math inline">\(\mathbf{X}\)</span> matrix</h2>
 <p>Use the <code>model.matrix()</code> function to get <span class="math inline">\(\mathbf{X}\)</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>Let’s look at the first 10 rows of <span class="math inline">\(\mathbf{X}\)</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>X[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>X[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   (Intercept) area
 1            1 6040
@@ -584,19 +601,19 @@ price = \beta_0 + \beta_1 ~ area + \epsilon, \hspace{5mm} \epsilon \sim N(0, \si
 </div>
 </div>
 </section>
-<section id="matrix-form-in-r-2" class="slide level2">
-<h2>Matrix form in R</h2>
+<section id="calculate-hatboldsymbolbeta" class="slide level2">
+<h2>Calculate <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
 <p>Matrix functions in R. Let <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span> be matrices</p>
 <ul>
-<li><p><code>t(A)</code>: transpose <span class="math inline">\(\mathbf{A}\)</span></p></li>
-<li><p><code>A %*% B</code>: multiply <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span></p></li>
-<li><p><code>solve(A)</code>: inverse of <span class="math inline">\(\mathbf{A}\)</span></p></li>
+<li><code>t(A)</code>: transpose <span class="math inline">\(\mathbf{A}\)</span></li>
+<li><code>solve(A)</code>: inverse of <span class="math inline">\(\mathbf{A}\)</span></li>
+<li><code>A %*% B</code>: multiply <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span></li>
 </ul>
 <div class="fragment">
 <p>Now let’s calculate <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>beta_hat <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X)<span class="sc">%*%</span>X)<span class="sc">%*%</span><span class="fu">t</span>(X)<span class="sc">%*%</span>y</span>
-<span id="cb8-2"><a></a>beta_hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>beta_hat <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X)<span class="sc">%*%</span>X)<span class="sc">%*%</span><span class="fu">t</span>(X)<span class="sc">%*%</span>y</span>
+<span id="cb7-2"><a></a>beta_hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   [,1]
 (Intercept) 116652.3251
@@ -608,8 +625,8 @@ area           159.4833</code></pre>
 <section id="compare-to-result-from-lm" class="slide level2">
 <h2>Compare to result from <code>lm</code></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>duke_forest_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span>
-<span id="cb10-2"><a></a><span class="fu">tidy</span>(duke_forest_model) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>duke_forest_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span>
+<span id="cb9-2"><a></a><span class="fu">tidy</span>(duke_forest_model) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -643,7 +660,7 @@ area           159.4833</code></pre>
 <p><br></p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>beta_hat </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>beta_hat </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   [,1]
 (Intercept) 116652.3251
@@ -651,12 +668,64 @@ area           159.4833</code></pre>
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="predicted-values-and-residuals" class="title-slide slide level1 center">
+<h1>Predicted values and residuals</h1>
+
+</section>
+<section id="predicted-fitted-values" class="slide level2">
+<h2>Predicted (fitted) values</h2>
+<p>Now that we have <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>, let’s predict values of <span class="math inline">\(\mathbf{y}\)</span> using the model</p>
+<p><span class="math display">\[
+\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}} = \underbrace{\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T}_{\mathbf{H}}\mathbf{y} = \mathbf{H}\mathbf{y}
+\]</span></p>
+<div class="fragment">
+<p><strong>Hat matrix</strong>: <span class="math inline">\(\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\)</span></p>
+<ul>
+<li><span class="math inline">\(\mathbf{H}\)</span> is an <span class="math inline">\(n\times n\)</span> matrix</li>
+</ul>
+<!-- -->
+<ul>
+<li>Maps vector of observed values <span class="math inline">\(\mathbf{y}\)</span> to a vector of fitted values <span class="math inline">\(\hat{\mathbf{y}}\)</span></li>
+</ul>
+</div>
+</section>
+<section id="residuals" class="slide level2">
+<h2>Residuals</h2>
+<p>Recall that the residuals are the difference between the observed and predicted values</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathbf{e} &amp;= \mathbf{y} - \hat{\mathbf{y}}\\[10pt]
+&amp; = \mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}} \\[10pt]
+&amp; = \mathbf{y} - \mathbf{H}\mathbf{y} \\[10pt]
+&amp; = (\mathbf{I} - \mathbf{H})\mathbf{y}
+\end{aligned}
+\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\color{#993399}{\mathbf{e} = (\mathbf{I} - \mathbf{H})\mathbf{y}}
+\]</span></p>
+</div>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
 <ul>
-<li><p>Evaluated models using RMSE and <span class="math inline">\(R^2\)</span></p></li>
-<li><p>Used analysis of variance to partition variability in the response variable</p></li>
+<li>Introduced matrix representation for simple linear regression
+<ul>
+<li>Model from</li>
+<li>Least square estimate</li>
+<li>Predicted (fitted) values</li>
+<li>Residuals</li>
+</ul></li>
+<li>Used R for matrix calculations</li>
+</ul>
+</section>
+<section id="next-class" class="slide level2">
+<h2>Next class</h2>
+<ul>
+<li><p>Multiple linear regression</p></li>
+<li><p>See <a href="../prepare/prepare-sep10.html">Sep 10 prepare</a></p></li>
 </ul>
 
 <div class="quarto-auto-generated-content">
