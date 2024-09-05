@@ -33,7 +33,7 @@ An additional goal is to reinforce git and GitHub, the collaboration and version
 Git is a version control system (like "Track Changes" features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).
 :::
 
-To make versioning simpler, this and the next lab are individual labs. In the future, you'll learn about collaborating on GitHub and producing a single lab report for your lab team, but for now, concentrate on getting the basics down.
+To make versioning simpler, is individual. In the future, you'll learn about collaborating on GitHub and producing a single lab report for your lab team, but for now, concentrate on getting the basics down.
 
 ## Learning goals
 
@@ -43,7 +43,7 @@ By the end of the lab, you will...
 -   Gain practice writing a reproducible report using Quarto
 -   Practice version control using GitHub
 -   Be able to create data visualizations using `ggplot2` and use those visualizations to describe distributions
--   Be gain to fit, interpret, and evaluate simple linear regression models
+-   Be able to fit, interpret, and evaluate simple linear regression models
 
 # Getting Started
 
@@ -57,10 +57,6 @@ By the end of the lab, you will...
 -   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
 -   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
 -   Click `lab-01.qmd` to open the template Quarto file. This is where you will write up your code and narrative for the lab.
-
-::: callout-important
-Your lab TA will lead you through the Getting Started section.
-:::
 
 ## R and R Studio
 
@@ -108,8 +104,8 @@ We will use the following packages in today’s lab.
 #| label: packages
 
 library(tidyverse)
-library(skimr)
-library(tidymodels)
+library(tidymodels) # contains broom, yardstick, and other modeling packages
+library(knitr)
 ```
 
 # Data: Access to parks
@@ -133,7 +129,7 @@ We will be looking at the following variables:
 
 # Exercises
 
-**Goal:** We will be trying to understand how effective city investment is in ensuring widespread access to green areas in cities. While city investments clearly affect the creation and maintenance of parks, it is also essential that access to park facilities be equitably distributed across the population.
+**Goal:** We will be trying to understand how effective city investment on its residents is in ensuring widespread access to green areas in cities. While city investments clearly affect the creation and maintenance of parks, it is also essential that access to park facilities be equitably distributed across the population.
 
 ------------------------------------------------------------------------
 
@@ -162,23 +158,18 @@ glimpse(parks)
 
 ## Exercise 2
 
-The predictor variable for this analysis `spend_per_resident_data` is quantitative; however, from the glimpse of the data in Exercise 1, we see its data type is `chr` (character) in R. We would expect it to be `dbl` (double), the data type for numeric data.
+The predictor variable for this analysis, `spend_per_resident_data`, is quantitative; however, from the glimpse of the data in Exercise 1, we see its data type is `chr` (character) in R. We would expect it to be `dbl` (double), the data type for numeric data.
 
--   Why did `spend_per_resident_data` get read by R as a character data type instead of a double? Be specific.
-
--   Why do we need to convert `spend_per_resident_data` to a data type suitable for quantitative data? How might leaving it as a character variable hinder the analysis?
+Why did `spend_per_resident_data` get read by R as a character data type instead of a double? Be specific.
 
 ## Exercise 3
 
-Use the code below to convert `spend_per_resident_data` , so that it is correctly treated as quantitative data in R. Each line of code is numbered. Write a brief explanation of what each line of code does.
-
-::: callout-tip
-See [Simple Linear Regression in R](https://introregression.netlify.app/04-slr#simple-linear-regression-in-r) for an example of explaining code line by line.
-:::
+Use the code below to transform `spend_per_resident_data` , so that it is correctly treated as quantitative data in R. Write a brief explanation of what each numbered line of code does.
 
 ```{r}
 #| eval: false
-parks <- parks |>  # <1>
+parks <- # <1>
+  parks |>  
   mutate(spend_per_resident_data = 
            str_replace(spend_per_resident_data,"\\$", "")) |> # <2>
   mutate(spend_per_resident_data = 
@@ -195,80 +186,106 @@ This is a good place to render, commit, and push changes to your lab-01 repo on 
 
 ## Exercise 4
 
-Next, we will get a visual idea of the distribution of the variables we are interested in. For this purpose, we will be using histograms. Fill in the code below to plot the histogram for the variable `spend_per_resident_data` .
+We will start with univariate exploratory data analysis and examine the distributions fo the variables of interest. We will visualize the variables of interest using histograms and calculate summary statistics.
+
+-   Make a histogram of `spend_per_resident_data` and calculate summary statistics for this variable.
+
+-   Comment on the features of the distribution of `spend_per_resident_data` by describing the shape, center, spread, and presence of potential outliers.
 
 ::: callout-tip
-When performing data visualization, make sure that all your plots have clear and informative **titles** and **axis labels**. When investigating more complex relationships with many variables, this simple tip will save you and your readers a lot of time and confusion.
+When performing data visualization, make sure that all your plots have clear and informative **titles** and **axis labels**. When investigating more complex relationships with many variables, this simple tip will save you and your readers a lot of time and confusion.\
+\
+See [AE 01](../ae/ae-01-slr.html) for example code.
 :::
-
-<!--# maybe take out this-->
-
-```{r spend-histogram}
-#| eval: false
-ggplot(data = ____, aes(x = ____)) +
-  geom_histogram() +
-  labs(x = "_____",
-       y = "_____", 
-       title = "_____")
-```
-
-Then, fill in the code below to calculate numerical summaries of the variable.
-
-<!--# update the code to use summarize function-->
-
-```{r}
-#| label: spend-summary
-#| eval: false
-parks |>
-  skim(____) |>
-  select(-skim_type, -skim_variable, -complete_rate,
-         - numeric.hist)
-```
-
-Comment on the features of the distribution of `spend_per_resident_data` by describing the shape, center, spread, and presence of potential outliers.
 
 ## Exercise 5
 
-Next let's explore the response variable, `pct_near_park_points`. Visualize the distribution of the variable and calculate summary statistics. Comment on the features of the distribution of `pct_near_park_points`.
+Next let's explore the response variable, `pct_near_park_points`. Visualize the distribution of the variable and calculate summary statistics. Describe the distribution `pct_near_park_points`.
 
 ## Exercise 6
 
-Visualize the relationship between the two variables. Does there seem to be a relationship between spending and park access? What is the shape? Is it positive or negative?
+Now let's conduct bivariate exploratory data analysis and examine the relationship between the two variables.
 
-```{r scatterplot}
-#| eval: false
-ggplot(data = ____, aes(x = ____, y = ____)) +
-  geom_point() +
-    labs(x = "_____",
-       y = "_____", 
-       title = "_____")
+-   Make a scatterplot to visualize the relationship between the two variables.
+
+```{=html}
+<!-- -->
 ```
+-   Does there seem to be a relationship between spending and park access? If so, what is the shape and direction of the relationship?
+
+::: render-commit-push
+This is a another good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. "Completed exercises 4 - 6"), and push every file to GitHub by clicking the checkbox next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.
+:::
 
 ## Exercise 7
 
 <!--# need to reword this to match the notes-->
 
-In class, we have gone through the mathematical formulation of a simple linear regression. In particular, we observe $n$ pairs of real numbers $\{ (y_i, x_i) : i = 1, \dotsc, n \}$. The simple linear regression model posits that the $i$^th^ **response** $y_i$ is related to the $i$^th^ **predictor variable** $x_i$ via the relation $$y_i = \beta_0 + \beta_1 x_i + \epsilon_i, \quad \epsilon_i \overset{\mathrm{iid}}{\sim} \mathcal{N}(0, \sigma^2)$$ for some unknown **regression coefficients** $(\beta_0, \beta_1)$. This means that the **expected value** of each observation $y_i$ lies on the **regression line** $$ \mathbb{E}[y_i] = \beta_0 + \beta_1 x_i. $$
+In class, we have gone through the mathematical formulation of a simple linear regression. In particular, given a response variable $Y$ and predictor variable $X$, the simple linear regression model is $$Y = \beta_0 + \beta_1 X + \epsilon, \quad \epsilon \sim N(0, \sigma_\epsilon^2)$$
 
-Answer the following general questions about the simple linear regression model.
+for some unknown **regression coefficients** $(\beta_0, \beta_1)$. This means that the **expected value** of each observation lies on the **regression line**
 
--   What does it mean for the expected value of $y_i$ to be given by $\beta_0 + \beta_1 x_i$?
--   What is the interpretation of the coefficients $\beta_0$ and $\beta_i$ in terms of the expected value of $y_i$?
+\
+$$ E(Y|X) = \beta_0 + \beta_1 X$$
+
+Answer the following questions about simple linear regression. Your response should be in terms simple linear regression, in general. It should <u>not</u> be specific to the parks data.
+
+-   What does it mean for the expected value of $Y$ to be given by $\beta_0 + \beta_1 X$?
+
+```{=html}
+<!-- -->
+```
+-   What is the interpretation of the coefficients $\beta_0$ and $\beta_i$ in terms of the expected value of $Y$?
 
 ## Exercise 8
 
-Question about calculating the model using matrices.
+We've seen that we can use matrices to represent the simple linear model from the previous exercise. In particular
+
+$$
+\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
+$$
+
+Estimate regression coefficients $\hat{\boldsymbol{\beta}}$ using the matrix representation. Show your work and/or code to get the answer.
 
 ## Exercise 9
 
-Let us now fit a linear regression model using the `lm` function. Nealty display the model output.
+Now let's fit a linear regression model using the `lm()` function in R.
 
+-   Fit the model and neatly display the output using 4 digits.
+
+```{=html}
+<!-- -->
+```
 -   Interpret the slope in the context of the data.
 
 -   Does it make sense of the interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not.
 
 ## Exercise 10
 
-Do you think that city expenditure is a useful predictor of park access? Briefly explain your response, reporting any summary statistics used to make your assessment.
+Do you think that city expenditure on residents is a useful predictor of park access? Briefly explain your response, reporting any statistics used to make your assessment.
+
+::: render-commit-push
+You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that [all]{.underline} documents are updated in your repo on GitHub. The PDF document you submit to Gradescope should be identical to the one in your GitHub repo.
+:::
 
 # Submission
+
+In this class, we’ll be submitting PDF documents to Gradescope.
+
+::: callout-warning
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
+
+Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
+:::
+
+To submit your assignment:
+
+-   Access Gradescope through the course Canvas site.
+
+-   Click on the assignment, and you’ll be prompted to submit it.
+
+-   Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).
+
+-   Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* section.
+
+# Grading

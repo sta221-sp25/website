@@ -743,7 +743,7 @@
     "href": "labs/lab-01.html#learning-goals",
     "title": "Lab 01: Simple linear regression",
     "section": "Learning goals",
-    "text": "Learning goals\nBy the end of the lab, you will…\n\nBe familiar with the workflow using RStudio and GitHub\nGain practice writing a reproducible report using Quarto\nPractice version control using GitHub\nBe able to create data visualizations using ggplot2 and use those visualizations to describe distributions\nBe gain to fit, interpret, and evaluate simple linear regression models",
+    "text": "Learning goals\nBy the end of the lab, you will…\n\nBe familiar with the workflow using RStudio and GitHub\nGain practice writing a reproducible report using Quarto\nPractice version control using GitHub\nBe able to create data visualizations using ggplot2 and use those visualizations to describe distributions\nBe able to fit, interpret, and evaluate simple linear regression models",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -754,7 +754,7 @@
     "href": "labs/lab-01.html#clone-the-repo-start-new-rstudio-project",
     "title": "Lab 01: Simple linear regression",
     "section": "Clone the repo & start new RStudio project",
-    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta221-fa24 organization on GitHub.\nClick on the repo with the prefix lab-01-. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\nSee the Lab 00 instructions if you have not set up the SSH key or configured git.\n\nIn RStudio, go to File \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\n\n\n\n\n\n\nImportant\n\n\n\nYour lab TA will lead you through the Getting Started section.",
+    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta221-fa24 organization on GitHub.\nClick on the repo with the prefix lab-01-. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\nSee the Lab 00 instructions if you have not set up the SSH key or configured git.\n\nIn RStudio, go to File \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -787,7 +787,7 @@
     "href": "labs/lab-01.html#exercise-2",
     "title": "Lab 01: Simple linear regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nThe predictor variable for this analysis spend_per_resident_data is quantitative; however, from the glimpse of the data in Exercise 1, we see its data type is chr (character) in R. We would expect it to be dbl (double), the data type for numeric data.\n\nWhy did spend_per_resident_data get read by R as a character data type instead of a double? Be specific.\nWhy do we need to convert spend_per_resident_data to a data type suitable for quantitative data? How might leaving it as a character variable hinder the analysis?",
+    "text": "Exercise 2\nThe predictor variable for this analysis, spend_per_resident_data, is quantitative; however, from the glimpse of the data in Exercise 1, we see its data type is chr (character) in R. We would expect it to be dbl (double), the data type for numeric data.\nWhy did spend_per_resident_data get read by R as a character data type instead of a double? Be specific.",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -798,7 +798,7 @@
     "href": "labs/lab-01.html#exercise-3",
     "title": "Lab 01: Simple linear regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nUse the code below to convert spend_per_resident_data , so that it is correctly treated as quantitative data in R. Each line of code is numbered. Write a brief explanation of what each line of code does.\n\n\n\n\n\n\nTip\n\n\n\nSee Simple Linear Regression in R for an example of explaining code line by line.\n\n\n\n1parks &lt;- parks |&gt;\n  mutate(spend_per_resident_data = \n2           str_replace(spend_per_resident_data,\"\\\\$\", \"\")) |&gt;\n  mutate(spend_per_resident_data = \n3           as.numeric(spend_per_resident_data))\n\n\n1\n\n______\n\n2\n\n______\n\n3\n\n______\n\n\n\n\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the checkbox next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
+    "text": "Exercise 3\nUse the code below to transform spend_per_resident_data , so that it is correctly treated as quantitative data in R. Write a brief explanation of what each numbered line of code does.\n\n1parks &lt;-\n  parks |&gt;  \n  mutate(spend_per_resident_data = \n2           str_replace(spend_per_resident_data,\"\\\\$\", \"\")) |&gt;\n  mutate(spend_per_resident_data = \n3           as.numeric(spend_per_resident_data))\n\n\n1\n\n______\n\n2\n\n______\n\n3\n\n______\n\n\n\n\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the checkbox next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -809,7 +809,7 @@
     "href": "labs/lab-01.html#exercise-4",
     "title": "Lab 01: Simple linear regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\nNext, we will get a visual idea of the distribution of the variables we are interested in. For this purpose, we will be using histograms. Fill in the code below to plot the histogram for the variable spend_per_resident_data .\n\n\n\n\n\n\nTip\n\n\n\nWhen performing data visualization, make sure that all your plots have clear and informative titles and axis labels. When investigating more complex relationships with many variables, this simple tip will save you and your readers a lot of time and confusion.\n\n\n\n\nggplot(data = ____, aes(x = ____)) +\n  geom_histogram() +\n  labs(x = \"_____\",\n       y = \"_____\", \n       title = \"_____\")\n\nThen, fill in the code below to calculate numerical summaries of the variable.\n\n\nparks |&gt;\n  skim(____) |&gt;\n  select(-skim_type, -skim_variable, -complete_rate,\n         - numeric.hist)\n\nComment on the features of the distribution of spend_per_resident_data by describing the shape, center, spread, and presence of potential outliers.",
+    "text": "Exercise 4\nWe will start with univariate exploratory data analysis and examine the distributions fo the variables of interest. We will visualize the variables of interest using histograms and calculate summary statistics.\n\nMake a histogram of spend_per_resident_data and calculate summary statistics for this variable.\nComment on the features of the distribution of spend_per_resident_data by describing the shape, center, spread, and presence of potential outliers.\n\n\n\n\n\n\n\nTip\n\n\n\nWhen performing data visualization, make sure that all your plots have clear and informative titles and axis labels. When investigating more complex relationships with many variables, this simple tip will save you and your readers a lot of time and confusion.\n\nSee AE 01 for example code.",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -820,7 +820,7 @@
     "href": "labs/lab-01.html#exercise-5",
     "title": "Lab 01: Simple linear regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\nNext let’s explore the response variable, pct_near_park_points. Visualize the distribution of the variable and calculate summary statistics. Comment on the features of the distribution of pct_near_park_points.",
+    "text": "Exercise 5\nNext let’s explore the response variable, pct_near_park_points. Visualize the distribution of the variable and calculate summary statistics. Describe the distribution pct_near_park_points.",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -831,7 +831,7 @@
     "href": "labs/lab-01.html#exercise-6",
     "title": "Lab 01: Simple linear regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\nVisualize the relationship between the two variables. Does there seem to be a relationship between spending and park access? What is the shape? Is it positive or negative?\n\nggplot(data = ____, aes(x = ____, y = ____)) +\n  geom_point() +\n    labs(x = \"_____\",\n       y = \"_____\", \n       title = \"_____\")",
+    "text": "Exercise 6\nNow let’s conduct bivariate exploratory data analysis and examine the relationship between the two variables.\n\nMake a scatterplot to visualize the relationship between the two variables.\n\n\n\nDoes there seem to be a relationship between spending and park access? If so, what is the shape and direction of the relationship?\n\n\nThis is a another good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 - 6”), and push every file to GitHub by clicking the checkbox next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -842,7 +842,7 @@
     "href": "labs/lab-01.html#exercise-7",
     "title": "Lab 01: Simple linear regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nIn class, we have gone through the mathematical formulation of a simple linear regression. In particular, we observe \\(n\\) pairs of real numbers \\(\\{ (y_i, x_i) : i = 1, \\dotsc, n \\}\\). The simple linear regression model posits that the \\(i\\)th response \\(y_i\\) is related to the \\(i\\)th predictor variable \\(x_i\\) via the relation \\[y_i = \\beta_0 + \\beta_1 x_i + \\epsilon_i, \\quad \\epsilon_i \\overset{\\mathrm{iid}}{\\sim} \\mathcal{N}(0, \\sigma^2)\\] for some unknown regression coefficients \\((\\beta_0, \\beta_1)\\). This means that the expected value of each observation \\(y_i\\) lies on the regression line \\[ \\mathbb{E}[y_i] = \\beta_0 + \\beta_1 x_i. \\]\nAnswer the following general questions about the simple linear regression model.\n\nWhat does it mean for the expected value of \\(y_i\\) to be given by \\(\\beta_0 + \\beta_1 x_i\\)?\nWhat is the interpretation of the coefficients \\(\\beta_0\\) and \\(\\beta_i\\) in terms of the expected value of \\(y_i\\)?",
+    "text": "Exercise 7\n\nIn class, we have gone through the mathematical formulation of a simple linear regression. In particular, given a response variable \\(Y\\) and predictor variable \\(X\\), the simple linear regression model is \\[Y = \\beta_0 + \\beta_1 X + \\epsilon, \\quad \\epsilon \\sim N(0, \\sigma_\\epsilon^2)\\]\nfor some unknown regression coefficients \\((\\beta_0, \\beta_1)\\). This means that the expected value of each observation lies on the regression line\n\n\\[ E(Y|X) = \\beta_0 + \\beta_1 X\\]\nAnswer the following questions about simple linear regression. Your response should be in terms simple linear regression, in general. It should not be specific to the parks data.\n\nWhat does it mean for the expected value of \\(Y\\) to be given by \\(\\beta_0 + \\beta_1 X\\)?\n\n\n\nWhat is the interpretation of the coefficients \\(\\beta_0\\) and \\(\\beta_i\\) in terms of the expected value of \\(Y\\)?",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -853,7 +853,7 @@
     "href": "labs/lab-01.html#exercise-8",
     "title": "Lab 01: Simple linear regression",
     "section": "Exercise 8",
-    "text": "Exercise 8\nQuestion about calculating the model using matrices.",
+    "text": "Exercise 8\nWe’ve seen that we can use matrices to represent the simple linear model from the previous exercise. In particular\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon}\n\\]\nEstimate regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) using the matrix representation. Show your work and/or code to get the answer.",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -864,7 +864,7 @@
     "href": "labs/lab-01.html#exercise-9",
     "title": "Lab 01: Simple linear regression",
     "section": "Exercise 9",
-    "text": "Exercise 9\nLet us now fit a linear regression model using the lm function. Nealty display the model output.\n\nInterpret the slope in the context of the data.\nDoes it make sense of the interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not.",
+    "text": "Exercise 9\nNow let’s fit a linear regression model using the lm() function in R.\n\nFit the model and neatly display the output using 4 digits.\n\n\n\nInterpret the slope in the context of the data.\nDoes it make sense of the interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not.",
     "crumbs": [
       "Labs",
       "Lab 01"
@@ -875,7 +875,7 @@
     "href": "labs/lab-01.html#exercise-10",
     "title": "Lab 01: Simple linear regression",
     "section": "Exercise 10",
-    "text": "Exercise 10\nDo you think that city expenditure is a useful predictor of park access? Briefly explain your response, reporting any summary statistics used to make your assessment.",
+    "text": "Exercise 10\nDo you think that city expenditure on residents is a useful predictor of park access? Briefly explain your response, reporting any statistics used to make your assessment.\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that all documents are updated in your repo on GitHub. The PDF document you submit to Gradescope should be identical to the one in your GitHub repo.",
     "crumbs": [
       "Labs",
       "Lab 01"
