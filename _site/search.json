@@ -1536,14 +1536,14 @@
     "href": "slides/04-slr-matrix.html#least-squares-estimators",
     "title": "SLR: Matrix representation",
     "section": "Least squares estimators",
-    "text": "Least squares estimators\n\\[\nSSR = \\mathbf{e}^T\\mathbf{e} =\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\]\n\n\nThe least squares estimators must satisfy\n\\[\n\\frac{\\partial SSR}{\\partial \\boldsymbol{\\beta}} = -2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = 0\n\\]\n\n\n\n\\[\n\\color{#993399}{\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}\n\\]"
+    "text": "Least squares estimators\n\\[\nSSR = \\mathbf{e}^T\\mathbf{e} =\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\]\n\n\nThe least squares estimators must satisfy\n\\[\n\\nabla_{\\boldsymbol{\\beta}} SSR = -2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = 0\n\\]\n\n\n\n\\[\n\\color{#993399}{\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}\n\\]"
   },
   {
     "objectID": "slides/04-slr-matrix.html#did-we-find-a-minimum",
     "href": "slides/04-slr-matrix.html#did-we-find-a-minimum",
     "title": "SLR: Matrix representation",
     "section": "Did we find a minimum?",
-    "text": "Did we find a minimum?\n\\[\n\\frac{\\partial^2 SSR}{\\partial \\boldsymbol{\\beta}^2} \\propto  2\\mathbf{X}^T\\mathbf{X} = 0\n\\]\n\n\n\\(\\mathbf{X}\\) is full rank \\(\\Rightarrow\\) \\(\\mathbf{X}^T\\mathbf{X}\\) is positive definite\nTherefore we have found the minimizing point"
+    "text": "Did we find a minimum?\n\\[\n\\nabla^2_{\\beta} SSR \\propto  2\\mathbf{X}^T\\mathbf{X} = 0\n\\]\n\n\n\\(\\mathbf{X}\\) is full rank \\(\\Rightarrow\\) \\(\\mathbf{X}^T\\mathbf{X}\\) is positive definite\nTherefore we have found the minimizing point"
   },
   {
     "objectID": "slides/04-slr-matrix.html#obtain-mathbfy-vector",
@@ -1578,7 +1578,7 @@
     "href": "slides/04-slr-matrix.html#predicted-fitted-values",
     "title": "SLR: Matrix representation",
     "section": "Predicted (fitted) values",
-    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\)\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\n\n\n\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)"
+    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\)\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)"
   },
   {
     "objectID": "slides/04-slr-matrix.html#residuals",

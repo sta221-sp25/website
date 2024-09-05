@@ -537,7 +537,7 @@ SSR = \mathbf{e}^T\mathbf{e} =\mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mat
 <div class="fragment">
 <p>The least squares estimators must satisfy</p>
 <p><span class="math display">\[
-\frac{\partial SSR}{\partial \boldsymbol{\beta}} = -2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = 0
+\nabla_{\boldsymbol{\beta}} SSR = -2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = 0
 \]</span></p>
 <p><br></p>
 </div>
@@ -550,7 +550,7 @@ SSR = \mathbf{e}^T\mathbf{e} =\mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mat
 <section id="did-we-find-a-minimum" class="slide level2">
 <h2>Did we find a minimum?</h2>
 <p><span class="math display">\[
-\frac{\partial^2 SSR}{\partial \boldsymbol{\beta}^2} \propto  2\mathbf{X}^T\mathbf{X} = 0
+\nabla^2_{\beta} SSR \propto  2\mathbf{X}^T\mathbf{X} = 0
 \]</span></p>
 <p><br></p>
 <ul>
@@ -697,9 +697,6 @@ area           159.4833</code></pre>
 <p><strong>Hat matrix</strong>: <span class="math inline">\(\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\)</span></p>
 <ul>
 <li><span class="math inline">\(\mathbf{H}\)</span> is an <span class="math inline">\(n\times n\)</span> matrix</li>
-</ul>
-<!-- -->
-<ul>
 <li>Maps vector of observed values <span class="math inline">\(\mathbf{y}\)</span> to a vector of fitted values <span class="math inline">\(\hat{\mathbf{y}}\)</span></li>
 </ul>
 </div>

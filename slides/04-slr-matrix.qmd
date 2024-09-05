@@ -192,7 +192,7 @@ $$
 The least squares estimators must satisfy
 
 $$
-\frac{\partial SSR}{\partial \boldsymbol{\beta}} = -2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = 0
+\nabla_{\boldsymbol{\beta}} SSR = -2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = 0
 $$
 
 <br>
@@ -206,7 +206,7 @@ $$
 ## Did we find a minimum? 
 
 $$
-\frac{\partial^2 SSR}{\partial \boldsymbol{\beta}^2} \propto  2\mathbf{X}^T\mathbf{X} = 0
+\nabla^2_{\beta} SSR \propto  2\mathbf{X}^T\mathbf{X} = 0
 $$
 
 <br>
@@ -308,9 +308,6 @@ $$
 **Hat matrix**: $\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T$
 
 -   $\mathbf{H}$ is an $n\times n$ matrix
-
-<!-- -->
-
 -   Maps vector of observed values $\mathbf{y}$ to a vector of fitted values $\hat{\mathbf{y}}$
 
 ## Residuals
