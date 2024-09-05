@@ -1710,13 +1710,55 @@
     "href": "slides/04-slr-matrix.html#sum-of-squared-residuals",
     "title": "SLR: Matrix representation",
     "section": "Sum of squared residuals",
-    "text": "Sum of squared residuals\nWe will use the sum of squared residuals (also called “sum of squared error”) to find the least squares line:\n\\[\nSSR = \\sum_{i=1}^ne_i^2 = \\boldsymbol{e}^T\\boldsymbol{e} = (\\mathbf{y} - \\hat{\\mathbf{y}})^T(\\mathbf{y} - \\hat{\\mathbf{y}})\n\\]\n\n\n\nWhat is the dimension of SSR?\nWhat is \\(\\hat{\\mathbf{y}}\\) in terms of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), and/or \\(\\boldsymbol{\\beta}\\) ?"
+    "text": "Sum of squared residuals\nWe will use the sum of squared residuals (also called “sum of squared error”) to find the least squares line:\n\\[\nSSR = \\sum_{i=1}^ne_i^2 = \\mathbf{e}^T\\mathbf{e} = (\\mathbf{y} - \\hat{\\mathbf{y}})^T(\\mathbf{y} - \\hat{\\mathbf{y}})\n\\]\n\n\n\nWhat is the dimension of SSR?\nWhat is \\(\\hat{\\mathbf{y}}\\) in terms of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), and/or \\(\\boldsymbol{\\beta}\\) ?"
   },
   {
     "objectID": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals",
     "href": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals",
     "title": "SLR: Matrix representation",
     "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\nWe want to find \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes the sum of squared residuals \\[\n\\begin{aligned}\n\\boldsymbol{e}^T\\boldsymbol{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
+    "text": "Minimize sum of squared residuals\nWe want to find values of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimize the sum of squared residuals \\[\n\\begin{aligned}\n\\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals-1",
+    "href": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals-1",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\n\\[\nSSR = \\mathbf{e}^T\\mathbf{e} =\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\]\n\n\nThe least squares estimators must satisfy\n\\[\n\\frac{\\partial SSR}{\\partial \\boldsymbol{\\beta}} = -2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = 0\n\\]\n\n\n\\[\n\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#least-squares-estimators",
+    "href": "slides/04-slr-matrix.html#least-squares-estimators",
+    "title": "SLR: Matrix representation",
+    "section": "Least squares estimators",
+    "text": "Least squares estimators\n\\[\nSSR = \\mathbf{e}^T\\mathbf{e} =\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\]\n\n\nThe least squares estimators must satisfy\n\\[\n\\frac{\\partial SSR}{\\partial \\boldsymbol{\\beta}} = -2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = 0\n\\]\n\n\n\n\\[\n\\color{#993399}{\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#matrix-form-in-r",
+    "href": "slides/04-slr-matrix.html#matrix-form-in-r",
+    "title": "SLR: Matrix representation",
+    "section": "Matrix form in R",
+    "text": "Matrix form in R\nLet’s go back to the Duke Forest data. We want to use the matrix representation to fit a model of the form:\n\\[\nprice = \\beta_0 + \\beta_1 ~ area + \\epsilon, \\hspace{5mm} \\epsilon \\sim N(0, \\sigma^2_\\epsilon)\n\\]\n\nGet \\(\\mathbf{y}\\) the vector of responses\n\ny &lt;- duke_forest$price\n\n\n\nLet’s look at the first 10 observations of \\(y\\)\n\ny[1:10]\n\n [1] 1520000 1030000  420000  680000  428500  456000 1270000  557450  697500\n[10]  650000"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#matrix-form-in-r-1",
+    "href": "slides/04-slr-matrix.html#matrix-form-in-r-1",
+    "title": "SLR: Matrix representation",
+    "section": "Matrix form in R",
+    "text": "Matrix form in R\nUse the model.matrix() function to get \\(\\mathbf{X}\\)\n\nX &lt;- model.matrix(price ~ area, data = duke_forest)\n\n\nLet’s look at the first 10 rows of \\(\\mathbf{X}\\)\n\nX[1:10,]\n\n   (Intercept) area\n1            1 6040\n2            1 4475\n3            1 1745\n4            1 2091\n5            1 1772\n6            1 1950\n7            1 3909\n8            1 2841\n9            1 3924\n10           1 2173"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#matrix-form-in-r-2",
+    "href": "slides/04-slr-matrix.html#matrix-form-in-r-2",
+    "title": "SLR: Matrix representation",
+    "section": "Matrix form in R",
+    "text": "Matrix form in R\nMatrix functions in R. Let \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\) be matrices\n\nt(A): transpose \\(\\mathbf{A}\\)\nA %*% B: multiply \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\)\nsolve(A): inverse of \\(\\mathbf{A}\\)\n\n\nNow let’s calculate \\(\\hat{\\boldsymbol{\\beta}}\\)\n\nbeta_hat &lt;- solve(t(X)%*%X)%*%t(X)%*%y\nbeta_hat\n\n                   [,1]\n(Intercept) 116652.3251\narea           159.4833"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#compare-to-result-from-lm",
+    "href": "slides/04-slr-matrix.html#compare-to-result-from-lm",
+    "title": "SLR: Matrix representation",
+    "section": "Compare to result from lm",
+    "text": "Compare to result from lm\n\nduke_forest_model &lt;- lm(price ~ area, data = duke_forest)\ntidy(duke_forest_model) |&gt; kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.325\n53302.463\n2.188\n0.031\n\n\narea\n159.483\n18.171\n8.777\n0.000\n\n\n\n\n\n\n\n\nbeta_hat \n\n                   [,1]\n(Intercept) 116652.3251\narea           159.4833"
   }
 ]

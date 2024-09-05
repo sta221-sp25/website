@@ -131,7 +131,7 @@ What are the dimensions of $\mathbf{y}$, $\mathbf{X}$, $\boldsymbol{\beta}$, and
 We will use the sum of squared residuals (also called "sum of squared error") to find the least squares line:
 
 $$
-SSR = \sum_{i=1}^ne_i^2 = \boldsymbol{e}^T\boldsymbol{e} = (\mathbf{y} - \hat{\mathbf{y}})^T(\mathbf{y} - \hat{\mathbf{y}})
+SSR = \sum_{i=1}^ne_i^2 = \mathbf{e}^T\mathbf{e} = (\mathbf{y} - \hat{\mathbf{y}})^T(\mathbf{y} - \hat{\mathbf{y}})
 $$
 
 <br>
@@ -144,14 +144,112 @@ $$
 
 ## Minimize sum of squared residuals
 
-We want to find $\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}$ that minimizes the sum of squared residuals $$
+We want to find values of $\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}$ that minimize the sum of squared residuals $$
 \begin{aligned}
-\boldsymbol{e}^T\boldsymbol{e} &= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
+\mathbf{e}^T\mathbf{e} &= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
 &= (\mathbf{y}^T - \boldsymbol{\beta}^T\mathbf{X}^T)(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\\[10pt]
 &=\mathbf{y}^T\mathbf{y} - \mathbf{y}^T\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}\\[10pt]
 &=\mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}
 \end{aligned}
 $$
+
+## Least squares estimators
+
+$$
+SSR = \mathbf{e}^T\mathbf{e} =\mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}
+$$
+
+<br>
+
+. . .
+
+The least squares estimators must satisfy
+
+$$
+\frac{\partial SSR}{\partial \boldsymbol{\beta}} = -2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = 0
+$$
+
+<br>
+
+. . .
+
+$$
+\color{#993399}{\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}}
+$$
+
+## Matrix form in R
+
+Let's go back to the Duke Forest data. We want to use the matrix representation to fit a model of the form:
+
+$$
+price = \beta_0 + \beta_1 ~ area + \epsilon, \hspace{5mm} \epsilon \sim N(0, \sigma^2_\epsilon)
+$$
+
+. . .
+
+Get $\mathbf{y}$ the vector of responses
+
+```{r}
+y <- duke_forest$price
+```
+
+. . .
+
+Let's look at the first 10 observations of $y$
+
+```{r}
+y[1:10]
+```
+
+## Matrix form in R
+
+Use the `model.matrix()` function to get $\mathbf{X}$
+
+```{r}
+X <- model.matrix(price ~ area, data = duke_forest)
+```
+
+. . .
+
+Let's look at the first 10 rows of $\mathbf{X}$
+
+```{r}
+X[1:10,]
+```
+
+## Matrix form in R
+
+Matrix functions in R. Let $\mathbf{A}$ and $\mathbf{B}$ be matrices
+
+-   `t(A)`: transpose $\mathbf{A}$
+
+-   `A %*% B`: multiply $\mathbf{A}$ and $\mathbf{B}$
+
+-   `solve(A)`: inverse of $\mathbf{A}$
+
+. . .
+
+Now let's calculate $\hat{\boldsymbol{\beta}}$
+
+```{r}
+beta_hat <- solve(t(X)%*%X)%*%t(X)%*%y
+beta_hat
+```
+
+## Compare to result from `lm`
+
+```{r}
+duke_forest_model <- lm(price ~ area, data = duke_forest)
+tidy(duke_forest_model) |> kable(digits = 3)
+```
+
+<br>
+
+. . .
+
+```{r}
+beta_hat 
+```
 
 ## Recap
 
