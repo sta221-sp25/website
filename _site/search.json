@@ -1655,5 +1655,68 @@
     "title": "SLR: Model Assessment cont’d",
     "section": "Partition variability in price",
     "text": "Partition variability in price\nFor now, let’s focus on two observations"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#regression-model",
+    "href": "slides/04-slr-model-assessment-contd.html#regression-model",
+    "title": "SLR: Model Assessment cont’d",
+    "section": "Regression model",
+    "text": "Regression model\n\nduke_forest_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(duke_forest_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.325\n53302.463\n2.188\n0.031\n\n\narea\n159.483\n18.171\n8.777\n0.000\n\n\n\n\n\n\n\nWe fit a model but is it any good?"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#topics",
+    "href": "slides/04-slr-matrix.html#topics",
+    "title": "SLR: Matrix representation",
+    "section": "Topics",
+    "text": "Topics\n\nMatrix representation for simple linear regression\n\nModel from\nLeast square estimate\nFitted (predicted) values\nResiduals\n\nMatrix representation in R"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#computing-set-up",
+    "href": "slides/04-slr-matrix.html#computing-set-up",
+    "title": "SLR: Matrix representation",
+    "section": "Computing set up",
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling (includes broom, yardstick, and other packages)\nlibrary(openintro)   # for the duke_forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme for ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#slr-statistical-model-population",
+    "href": "slides/04-slr-matrix.html#slr-statistical-model-population",
+    "title": "SLR: Matrix representation",
+    "section": "SLR: Statistical model (population)",
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\). \\[\\large{Y = \\mathbf{\\beta_0 + \\beta_1 X} + \\epsilon}, \\hspace{8mm} \\epsilon \\sim N(0, \\sigma_{\\epsilon}^2)\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form",
+    "href": "slides/04-slr-matrix.html#slr-in-matrix-form",
+    "title": "SLR: Matrix representation",
+    "section": "SLR in matrix form",
+    "text": "SLR in matrix form\nSuppose we have \\(n\\) observations.\n\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 & \\dots &x_1 \\\\\n\\vdots & \\ddots & \\vdots \\\\\n1 & \\dots & x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), and \\(\\boldsymbol{\\epsilon}\\)?"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#least-squares",
+    "href": "slides/04-slr-matrix.html#least-squares",
+    "title": "SLR: Matrix representation",
+    "section": "Least squares",
+    "text": "Least squares\nWe want to find \\(\\hat{\\boldsymbol{\\beta}}\\)"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#recap",
+    "href": "slides/04-slr-matrix.html#recap",
+    "title": "SLR: Matrix representation",
+    "section": "Recap",
+    "text": "Recap\n\nEvaluated models using RMSE and \\(R^2\\)\nUsed analysis of variance to partition variability in the response variable\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#sum-of-squared-residuals",
+    "href": "slides/04-slr-matrix.html#sum-of-squared-residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Sum of squared residuals",
+    "text": "Sum of squared residuals\nWe will use the sum of squared residuals (also called “sum of squared error”) to find the least squares line:\n\\[\nSSR = \\sum_{i=1}^ne_i^2 = \\boldsymbol{e}^T\\boldsymbol{e} = (\\mathbf{y} - \\hat{\\mathbf{y}})^T(\\mathbf{y} - \\hat{\\mathbf{y}})\n\\]\n\n\n\nWhat is the dimension of SSR?\nWhat is \\(\\hat{\\mathbf{y}}\\) in terms of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), and/or \\(\\boldsymbol{\\beta}\\) ?"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals",
+    "href": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\nWe want to find \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes the sum of squared residuals \\[\n\\begin{aligned}\n\\boldsymbol{e}^T\\boldsymbol{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
   }
 ]

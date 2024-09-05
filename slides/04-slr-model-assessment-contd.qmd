@@ -1,5 +1,5 @@
 ---
-title: "SLR: Model Assessment cont'd"
+title: "SLR: Model assessment cont'd"
 author: "Prof. Maria Tackett"
 date: "2024-09-05"
 date-format: "MMM DD, YYYY"
@@ -95,7 +95,7 @@ duke_forest_fit <- lm(price ~ area, data = duke_forest)
 duke_forest_aug <- augment(duke_forest_fit)
 ```
 
-## Regression model 
+## Regression model
 
 ```{r}
 duke_forest_fit <- lm(price ~ area, data = duke_forest)
