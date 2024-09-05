@@ -95,9 +95,9 @@ y_n
 \hspace{3mm}
 \underbrace{
 \begin{bmatrix}
-1 & \dots &x_1 \\
-\vdots & \ddots & \vdots \\
-1 & \dots & x_n
+1 &x_1 \\
+\vdots &  \vdots \\
+1 &  x_n
 \end{bmatrix}
 }_{\mathbf{X}}
 \hspace{2mm}
@@ -127,7 +127,7 @@ What are the dimensions of $\mathbf{y}$, $\mathbf{X}$, $\boldsymbol{\beta}$, and
 
 ## Sum of squared residuals
 
-We will use the sum of squared residuals (also called "sum of squared error") to find the least squares line:
+We use the sum of squared residuals (also called "sum of squared error") to find the least squares line:
 
 $$
 SSR = \sum_{i=1}^ne_i^2 = \mathbf{e}^T\mathbf{e} = (\mathbf{y} - \hat{\mathbf{y}})^T(\mathbf{y} - \hat{\mathbf{y}})
@@ -215,11 +215,13 @@ $$
 
 . . .
 
-Get $\mathbf{y}$ the vector of responses
+Get $\mathbf{y}$, the vector of responses
 
 ```{r}
 y <- duke_forest$price
 ```
+
+<br>
 
 . . .
 
@@ -237,6 +239,8 @@ Use the `model.matrix()` function to get $\mathbf{X}$
 X <- model.matrix(price ~ area, data = duke_forest)
 ```
 
+<br>
+
 . . .
 
 Let's look at the first 10 rows of $\mathbf{X}$
@@ -245,7 +249,7 @@ Let's look at the first 10 rows of $\mathbf{X}$
 X[1:10,]
 ```
 
-## Calculate $\hat{\boldsymbol{\beta}}$ 
+## Calculate $\hat{\boldsymbol{\beta}}$
 
 Matrix functions in R. Let $\mathbf{A}$ and $\mathbf{B}$ be matrices
 
@@ -293,9 +297,8 @@ $$
 
 -   $\mathbf{H}$ is an $n\times n$ matrix
 
-```{=html}
 <!-- -->
-```
+
 -   Maps vector of observed values $\mathbf{y}$ to a vector of fitted values $\hat{\mathbf{y}}$
 
 ## Residuals

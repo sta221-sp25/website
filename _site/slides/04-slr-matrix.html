@@ -448,9 +448,9 @@ y_n
 \hspace{3mm}
 \underbrace{
 \begin{bmatrix}
-1 &amp; \dots &amp;x_1 \\
-\vdots &amp; \ddots &amp; \vdots \\
-1 &amp; \dots &amp; x_n
+1 &amp;x_1 \\
+\vdots &amp;  \vdots \\
+1 &amp;  x_n
 \end{bmatrix}
 }_{\mathbf{X}}
 \hspace{2mm}
@@ -478,7 +478,7 @@ y_n
 </section>
 <section id="sum-of-squared-residuals" class="slide level2">
 <h2>Sum of squared residuals</h2>
-<p>We will use the sum of squared residuals (also called “sum of squared error”) to find the least squares line:</p>
+<p>We use the sum of squared residuals (also called “sum of squared error”) to find the least squares line:</p>
 <p><span class="math display">\[
 SSR = \sum_{i=1}^ne_i^2 = \mathbf{e}^T\mathbf{e} = (\mathbf{y} - \hat{\mathbf{y}})^T(\mathbf{y} - \hat{\mathbf{y}})
 \]</span></p>
@@ -559,10 +559,11 @@ SSR = \mathbf{e}^T\mathbf{e} =\mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mat
 price = \beta_0 + \beta_1 ~ area + \epsilon, \hspace{5mm} \epsilon \sim N(0, \sigma^2_\epsilon)
 \]</span></p>
 <div class="fragment">
-<p>Get <span class="math inline">\(\mathbf{y}\)</span> the vector of responses</p>
+<p>Get <span class="math inline">\(\mathbf{y}\)</span>, the vector of responses</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>y <span class="ot">&lt;-</span> duke_forest<span class="sc">$</span>price</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br></p>
 </div>
 <div class="fragment">
 <p>Let’s look at the first 10 observations of <span class="math inline">\(y\)</span></p>
@@ -581,6 +582,7 @@ price = \beta_0 + \beta_1 ~ area + \epsilon, \hspace{5mm} \epsilon \sim N(0, \si
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br></p>
 <div class="fragment">
 <p>Let’s look at the first 10 rows of <span class="math inline">\(\mathbf{X}\)</span></p>
 <div class="cell" data-layout-align="center">

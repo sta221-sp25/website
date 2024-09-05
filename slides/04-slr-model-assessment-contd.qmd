@@ -266,6 +266,12 @@ $$
 \end{aligned}
 $$
 
+<br>
+
+::: callout-note
+See [Sum of Squares](https://introregression.netlify.app/98-appendix#sum-of-squares) for mathematical details showing $SST = SSM + SSR$.
+:::
+
 ## $R^2$
 
 The **coefficient of determination** $R^2$ is the proportion of variation in the response, $Y$, that is explained by the regression model
@@ -320,7 +326,7 @@ Do you think this model is useful for explaining variability in the price of Duk
 
 ## Augmented data frame
 
-Use the `augment()` function from the **broom** package to add columns for predicted values, residuals, and other observation-level model statistics
+Use the `augment()` function from the **broom** package (part of **tidymodels**) to add columns for predicted values, residuals, and other observation-level model statistics
 
 . . .
 
@@ -341,7 +347,7 @@ rmse(duke_forest_aug, truth = price, estimate = .fitted)
 <br>
 
 ::: question
-Do you think this model is useful for predicting the price of Duke Forest houses?
+What does this value mean?
 :::
 
 ## Finding $R^2$ in R
@@ -357,7 +363,7 @@ rsq(duke_forest_aug, truth = price, estimate = .fitted)
 
 . . .
 
-Alternatively, use `glance()` to construct a single row summary of the model fit, including $R^2$:
+Alternatively, use `glance()` to construct a single row summary of the model fit, including $R^2$
 
 ```{r}
 #| echo: true

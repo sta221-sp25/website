@@ -561,6 +561,20 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 \color{#407E99}{\sum_{i=1}^n(y_i - \bar{y})^2} \hspace{5mm}&amp;= &amp;\color{#993399}{\sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2} &amp;\hspace{5mm}+ &amp;\color{#8BB174}{\sum_{i = 1}^{n}(y_i - \hat{y}_i)^2}
 \end{aligned}
 \]</span></p>
+<p><br></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>See <a href="https://introregression.netlify.app/98-appendix#sum-of-squares">Sum of Squares</a> for mathematical details showing <span class="math inline">\(SST = SSM + SSR\)</span>.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="r2" class="slide level2">
 <h2><span class="math inline">\(R^2\)</span></h2>
@@ -606,7 +620,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </section>
 <section id="augmented-data-frame" class="slide level2">
 <h2>Augmented data frame</h2>
-<p>Use the <code>augment()</code> function from the <strong>broom</strong> package to add columns for predicted values, residuals, and other observation-level model statistics</p>
+<p>Use the <code>augment()</code> function from the <strong>broom</strong> package (part of <strong>tidymodels</strong>) to add columns for predicted values, residuals, and other observation-level model statistics</p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>duke_forest_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(duke_forest_fit)</span>
@@ -644,7 +658,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 <p><br></p>
 <div class="question">
-<p>Do you think this model is useful for predicting the price of Duke Forest houses?</p>
+<p>What does this value mean?</p>
 </div>
 </section>
 <section id="finding-r2-in-r" class="slide level2">
@@ -661,7 +675,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 <p><br></p>
 <div class="fragment">
-<p>Alternatively, use <code>glance()</code> to construct a single row summary of the model fit, including <span class="math inline">\(R^2\)</span>:</p>
+<p>Alternatively, use <code>glance()</code> to construct a single row summary of the model fit, including <span class="math inline">\(R^2\)</span></p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">glance</span>(duke_forest_fit)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

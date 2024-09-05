@@ -1207,7 +1207,7 @@
     "href": "slides/04-slr-model-assessment-contd.html#sum-of-squares",
     "title": "SLR: Model assessment cont’d",
     "section": "Sum of Squares",
-    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]"
+    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\nNote\n\n\nSee Sum of Squares for mathematical details showing \\(SST = SSM + SSR\\)."
   },
   {
     "objectID": "slides/04-slr-model-assessment-contd.html#r2",
@@ -1228,21 +1228,21 @@
     "href": "slides/04-slr-model-assessment-contd.html#augmented-data-frame",
     "title": "SLR: Model assessment cont’d",
     "section": "Augmented data frame",
-    "text": "Augmented data frame\nUse the augment() function from the broom package to add columns for predicted values, residuals, and other observation-level model statistics\n\n\nduke_forest_aug &lt;- augment(duke_forest_fit)\nduke_forest_aug\n\n# A tibble: 98 × 8\n     price  area  .fitted  .resid   .hat  .sigma   .cooksd .std.resid\n     &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1 1520000  6040 1079931. 440069. 0.133  162605. 0.604         2.80  \n 2 1030000  4475  830340. 199660. 0.0435 168386. 0.0333        1.21  \n 3  420000  1745  394951.  25049. 0.0226 169664. 0.000260      0.150 \n 4  680000  2091  450132. 229868. 0.0157 168011. 0.0150        1.37  \n 5  428500  1772  399257.  29243. 0.0220 169657. 0.000345      0.175 \n 6  456000  1950  427645.  28355. 0.0182 169659. 0.000266      0.170 \n 7 1270000  3909  740072. 529928. 0.0250 160502. 0.130         3.18  \n 8  557450  2841  569744. -12294. 0.0102 169679. 0.0000277    -0.0732\n 9  697500  3924  742465. -44965. 0.0254 169620. 0.000948     -0.270 \n10  650000  2173  463209. 186791. 0.0145 168582. 0.00912       1.11  \n# ℹ 88 more rows"
+    "text": "Augmented data frame\nUse the augment() function from the broom package (part of tidymodels) to add columns for predicted values, residuals, and other observation-level model statistics\n\n\nduke_forest_aug &lt;- augment(duke_forest_fit)\nduke_forest_aug\n\n# A tibble: 98 × 8\n     price  area  .fitted  .resid   .hat  .sigma   .cooksd .std.resid\n     &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1 1520000  6040 1079931. 440069. 0.133  162605. 0.604         2.80  \n 2 1030000  4475  830340. 199660. 0.0435 168386. 0.0333        1.21  \n 3  420000  1745  394951.  25049. 0.0226 169664. 0.000260      0.150 \n 4  680000  2091  450132. 229868. 0.0157 168011. 0.0150        1.37  \n 5  428500  1772  399257.  29243. 0.0220 169657. 0.000345      0.175 \n 6  456000  1950  427645.  28355. 0.0182 169659. 0.000266      0.170 \n 7 1270000  3909  740072. 529928. 0.0250 160502. 0.130         3.18  \n 8  557450  2841  569744. -12294. 0.0102 169679. 0.0000277    -0.0732\n 9  697500  3924  742465. -44965. 0.0254 169620. 0.000948     -0.270 \n10  650000  2173  463209. 186791. 0.0145 168582. 0.00912       1.11  \n# ℹ 88 more rows"
   },
   {
     "objectID": "slides/04-slr-model-assessment-contd.html#finding-rmse-in-r",
     "href": "slides/04-slr-model-assessment-contd.html#finding-rmse-in-r",
     "title": "SLR: Model assessment cont’d",
     "section": "Finding RMSE in R",
-    "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard     167067.\n\n\n\n\nDo you think this model is useful for predicting the price of Duke Forest houses?"
+    "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard     167067.\n\n\n\n\nWhat does this value mean?"
   },
   {
     "objectID": "slides/04-slr-model-assessment-contd.html#finding-r2-in-r",
     "href": "slides/04-slr-model-assessment-contd.html#finding-r2-in-r",
     "title": "SLR: Model assessment cont’d",
     "section": "Finding \\(R^2\\) in R",
-    "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.445\n\n\n\n\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\):\n\nglance(duke_forest_fit)$r.squared\n\n[1] 0.4451945"
+    "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.445\n\n\n\n\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\)\n\nglance(duke_forest_fit)$r.squared\n\n[1] 0.4451945"
   },
   {
     "objectID": "slides/04-slr-model-assessment-contd.html#recap",
@@ -1494,14 +1494,14 @@
     "href": "slides/04-slr-matrix.html#slr-in-matrix-form",
     "title": "SLR: Matrix representation",
     "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nSuppose we have \\(n\\) observations.\n\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 & \\dots &x_1 \\\\\n\\vdots & \\ddots & \\vdots \\\\\n1 & \\dots & x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), and \\(\\boldsymbol{\\epsilon}\\)?"
+    "text": "SLR in matrix form\nSuppose we have \\(n\\) observations.\n\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), and \\(\\boldsymbol{\\epsilon}\\)?"
   },
   {
     "objectID": "slides/04-slr-matrix.html#sum-of-squared-residuals",
     "href": "slides/04-slr-matrix.html#sum-of-squared-residuals",
     "title": "SLR: Matrix representation",
     "section": "Sum of squared residuals",
-    "text": "Sum of squared residuals\nWe will use the sum of squared residuals (also called “sum of squared error”) to find the least squares line:\n\\[\nSSR = \\sum_{i=1}^ne_i^2 = \\mathbf{e}^T\\mathbf{e} = (\\mathbf{y} - \\hat{\\mathbf{y}})^T(\\mathbf{y} - \\hat{\\mathbf{y}})\n\\]\n\n\n\nWhat is the dimension of SSR?\nWhat is \\(\\hat{\\mathbf{y}}\\) in terms of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), and/or \\(\\boldsymbol{\\beta}\\) ?"
+    "text": "Sum of squared residuals\nWe use the sum of squared residuals (also called “sum of squared error”) to find the least squares line:\n\\[\nSSR = \\sum_{i=1}^ne_i^2 = \\mathbf{e}^T\\mathbf{e} = (\\mathbf{y} - \\hat{\\mathbf{y}})^T(\\mathbf{y} - \\hat{\\mathbf{y}})\n\\]\n\n\n\nWhat is the dimension of SSR?\nWhat is \\(\\hat{\\mathbf{y}}\\) in terms of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), and/or \\(\\boldsymbol{\\beta}\\) ?"
   },
   {
     "objectID": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals",
@@ -1543,14 +1543,14 @@
     "href": "slides/04-slr-matrix.html#obtain-mathbfy-vector",
     "title": "SLR: Matrix representation",
     "section": "Obtain \\(\\mathbf{y}\\) vector",
-    "text": "Obtain \\(\\mathbf{y}\\) vector\nLet’s go back to the Duke Forest data. We want to use the matrix representation to fit a model of the form:\n\\[\nprice = \\beta_0 + \\beta_1 ~ area + \\epsilon, \\hspace{5mm} \\epsilon \\sim N(0, \\sigma^2_\\epsilon)\n\\]\n\nGet \\(\\mathbf{y}\\) the vector of responses\n\ny &lt;- duke_forest$price\n\n\n\nLet’s look at the first 10 observations of \\(y\\)\n\ny[1:10]\n\n [1] 1520000 1030000  420000  680000  428500  456000 1270000  557450  697500\n[10]  650000"
+    "text": "Obtain \\(\\mathbf{y}\\) vector\nLet’s go back to the Duke Forest data. We want to use the matrix representation to fit a model of the form:\n\\[\nprice = \\beta_0 + \\beta_1 ~ area + \\epsilon, \\hspace{5mm} \\epsilon \\sim N(0, \\sigma^2_\\epsilon)\n\\]\n\nGet \\(\\mathbf{y}\\), the vector of responses\n\ny &lt;- duke_forest$price\n\n\n\n\nLet’s look at the first 10 observations of \\(y\\)\n\ny[1:10]\n\n [1] 1520000 1030000  420000  680000  428500  456000 1270000  557450  697500\n[10]  650000"
   },
   {
     "objectID": "slides/04-slr-matrix.html#obtain-mathbfx-matrix",
     "href": "slides/04-slr-matrix.html#obtain-mathbfx-matrix",
     "title": "SLR: Matrix representation",
     "section": "Obtain \\(\\mathbf{X}\\) matrix",
-    "text": "Obtain \\(\\mathbf{X}\\) matrix\nUse the model.matrix() function to get \\(\\mathbf{X}\\)\n\nX &lt;- model.matrix(price ~ area, data = duke_forest)\n\n\nLet’s look at the first 10 rows of \\(\\mathbf{X}\\)\n\nX[1:10,]\n\n   (Intercept) area\n1            1 6040\n2            1 4475\n3            1 1745\n4            1 2091\n5            1 1772\n6            1 1950\n7            1 3909\n8            1 2841\n9            1 3924\n10           1 2173"
+    "text": "Obtain \\(\\mathbf{X}\\) matrix\nUse the model.matrix() function to get \\(\\mathbf{X}\\)\n\nX &lt;- model.matrix(price ~ area, data = duke_forest)\n\n\n\nLet’s look at the first 10 rows of \\(\\mathbf{X}\\)\n\nX[1:10,]\n\n   (Intercept) area\n1            1 6040\n2            1 4475\n3            1 1745\n4            1 2091\n5            1 1772\n6            1 1950\n7            1 3909\n8            1 2841\n9            1 3924\n10           1 2173"
   },
   {
     "objectID": "slides/04-slr-matrix.html#calculate-hatboldsymbolbeta",
