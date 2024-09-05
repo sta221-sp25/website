@@ -203,6 +203,18 @@ $$
 \color{#993399}{\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}}
 $$
 
+## Did we find a minimum? 
+
+$$
+\frac{\partial^2 SSR}{\partial \boldsymbol{\beta}^2} \propto  2\mathbf{X}^T\mathbf{X} = 0
+$$
+
+<br>
+
+-   $\mathbf{X}$ is full rank $\Rightarrow$ $\mathbf{X}^T\mathbf{X}$ is positive definite
+
+-   Therefore we have found the minimizing point
+
 # Matrix representation in R
 
 ## Obtain $\mathbf{y}$ vector
