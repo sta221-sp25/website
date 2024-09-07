@@ -512,219 +512,373 @@
     "text": "Today’s lab\nThe rest of the today’s lab is focused on setting up the computing for the course and completing the class survey. Click the link below for the Lab 00 instructions. The instructions are available on the course website.\n\n🔗 sta221-fa24.netlify.app/labs/lab-00.html\n\n\n\n\n🔗 STA 221 - Fall 2024"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Matrix representation + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned\n\n\n4\nM\nSep 16\nLab: Multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nDistribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
-    "crumbs": [
-      "Schedule"
-    ]
+    "objectID": "slides/04-slr-model-assessment-contd.html#announcements",
+    "href": "slides/04-slr-model-assessment-contd.html#announcements",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Announcements",
+    "text": "Announcements\n\nOffice hours start this week. See schedule on Overview page of the course website or on Canvas.\nLabs resume Monday, September 09"
   },
   {
-    "objectID": "computing-r-resources.html",
-    "href": "computing-r-resources.html",
-    "title": "Resources for learning R",
+    "objectID": "slides/04-slr-model-assessment-contd.html#topics",
+    "href": "slides/04-slr-model-assessment-contd.html#topics",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Topics",
+    "text": "Topics\n\nEvaluate models using RMSE and \\(R^2\\)\nUse analysis of variance to partition variability in the response variable"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#computing-set-up",
+    "href": "slides/04-slr-model-assessment-contd.html#computing-set-up",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Computing set up",
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling (includes broom, yardstick, and other packages)\nlibrary(openintro)   # for the duke_forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme for ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#data-houses-in-duke-forest",
+    "href": "slides/04-slr-model-assessment-contd.html#data-houses-in-duke-forest",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Data: Houses in Duke Forest",
+    "text": "Data: Houses in Duke Forest\n\n\n\nData on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020\nScraped from Zillow\nSource: openintro::duke_forest\n\n\n\n\nGoal: Use the area (in square feet) to understand variability in the price of houses in Duke Forest."
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#regression-model",
+    "href": "slides/04-slr-model-assessment-contd.html#regression-model",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Regression model",
+    "text": "Regression model\n\nduke_forest_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(duke_forest_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.325\n53302.463\n2.188\n0.031\n\n\narea\n159.483\n18.171\n8.777\n0.000\n\n\n\n\n\n\n\nWe fit a model but is it any good?"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#two-statistics",
+    "href": "slides/04-slr-model-assessment-contd.html#two-statistics",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Two statistics",
+    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#rmse",
+    "href": "slides/04-slr-model-assessment-contd.html#rmse",
+    "title": "SLR: Model assessment cont’d",
+    "section": "RMSE",
+    "text": "RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\n\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the response variable\nThe value of RMSE is more useful for comparing across models than evaluating a single model (more on this when we get to regression with multiple predictors)"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#analysis-of-variance-anova",
+    "href": "slides/04-slr-model-assessment-contd.html#analysis-of-variance-anova",
+    "title": "SLR: Model assessment cont’d",
+    "section": "ANOVA",
+    "text": "ANOVA\nAnalysis of Variance (ANOVA): Technique to partition variability in \\(Y\\) by the sources of variability"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#total-variability-response",
+    "href": "slides/04-slr-model-assessment-contd.html#total-variability-response",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Total variability (Response)",
+    "text": "Total variability (Response)\n\n\nGoal: Quantify how much variability in price is accounted for by the model (area) and how much accounted for by factors not included in the model."
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#partition-variability-in-price",
+    "href": "slides/04-slr-model-assessment-contd.html#partition-variability-in-price",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Partition variability in price",
+    "text": "Partition variability in price\nFor now, let’s focus on two observations"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#total-variability-response-1",
+    "href": "slides/04-slr-model-assessment-contd.html#total-variability-response-1",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Total variability (Response)",
+    "text": "Total variability (Response)\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#explained-variability-model",
+    "href": "slides/04-slr-model-assessment-contd.html#explained-variability-model",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Explained variability (Model)",
+    "text": "Explained variability (Model)\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#unexplained-variability-residuals",
+    "href": "slides/04-slr-model-assessment-contd.html#unexplained-variability-residuals",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Unexplained variability (Residuals)",
+    "text": "Unexplained variability (Residuals)\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#sum-of-squares",
+    "href": "slides/04-slr-model-assessment-contd.html#sum-of-squares",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Sum of Squares",
+    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\nNote\n\n\nSee Sum of Squares for mathematical details showing \\(SST = SSM + SSR\\)."
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#r2",
+    "href": "slides/04-slr-model-assessment-contd.html#r2",
+    "title": "SLR: Model assessment cont’d",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\nThe coefficient of determination \\(R^2\\) is the proportion of variation in the response, \\(Y\\), that is explained by the regression model\n\n\\[\\large{R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}}\\]\n\n\nWhat is the range of \\(R^2\\)? Does \\(R^2\\) have units?"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#interpreting-r2",
+    "href": "slides/04-slr-model-assessment-contd.html#interpreting-r2",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Interpreting $R^2$",
+    "text": "Interpreting $R^2$\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model for price from area of houses in Duke Forest is 44.5%. Which of the following is the correct interpretation of this value?\n\nArea correctly predicts 44.5% of price for houses in Duke Forest.\n44.5% of the variability in price for houses in Duke Forest can be explained by area.\n44.5% of the variability in area for houses in Duke Forest can be explained by price.\n44.5% of the time price for houses in Duke Forest can be predicted by area.\n\nDo you think this model is useful for explaining variability in the price of Duke Forest houses?\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/629888"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#augmented-data-frame",
+    "href": "slides/04-slr-model-assessment-contd.html#augmented-data-frame",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Augmented data frame",
+    "text": "Augmented data frame\nUse the augment() function from the broom package (part of tidymodels) to add columns for predicted values, residuals, and other observation-level model statistics\n\n\nduke_forest_aug &lt;- augment(duke_forest_fit)\nduke_forest_aug\n\n# A tibble: 98 × 8\n     price  area  .fitted  .resid   .hat  .sigma   .cooksd .std.resid\n     &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1 1520000  6040 1079931. 440069. 0.133  162605. 0.604         2.80  \n 2 1030000  4475  830340. 199660. 0.0435 168386. 0.0333        1.21  \n 3  420000  1745  394951.  25049. 0.0226 169664. 0.000260      0.150 \n 4  680000  2091  450132. 229868. 0.0157 168011. 0.0150        1.37  \n 5  428500  1772  399257.  29243. 0.0220 169657. 0.000345      0.175 \n 6  456000  1950  427645.  28355. 0.0182 169659. 0.000266      0.170 \n 7 1270000  3909  740072. 529928. 0.0250 160502. 0.130         3.18  \n 8  557450  2841  569744. -12294. 0.0102 169679. 0.0000277    -0.0732\n 9  697500  3924  742465. -44965. 0.0254 169620. 0.000948     -0.270 \n10  650000  2173  463209. 186791. 0.0145 168582. 0.00912       1.11  \n# ℹ 88 more rows"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#finding-rmse-in-r",
+    "href": "slides/04-slr-model-assessment-contd.html#finding-rmse-in-r",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Finding RMSE in R",
+    "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard     167067.\n\n\n\n\nWhat does this value mean?"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#finding-r2-in-r",
+    "href": "slides/04-slr-model-assessment-contd.html#finding-r2-in-r",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Finding \\(R^2\\) in R",
+    "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.445\n\n\n\n\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\)\n\nglance(duke_forest_fit)$r.squared\n\n[1] 0.4451945"
+  },
+  {
+    "objectID": "slides/04-slr-model-assessment-contd.html#recap",
+    "href": "slides/04-slr-model-assessment-contd.html#recap",
+    "title": "SLR: Model assessment cont’d",
+    "section": "Recap",
+    "text": "Recap\n\nEvaluated models using RMSE and \\(R^2\\)\nUsed analysis of variance to partition variability in the response variable\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "computing-access.html",
+    "href": "computing-access.html",
+    "title": "Computing access",
     "section": "",
-    "text": "Below are freely available resources to learn or review the following in R: data wrangling, data visualization, Quarto basics.",
+    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA210 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA210 under My reservations to access the RStudio instance you’ll use for the course.",
     "crumbs": [
       "Computing",
-      "R resources"
+      "Access"
     ]
   },
   {
-    "objectID": "computing-r-resources.html#in-depth-introduction",
-    "href": "computing-r-resources.html#in-depth-introduction",
-    "title": "Resources for learning R",
-    "section": "In-depth introduction",
-    "text": "In-depth introduction\nCoursera: Data Visualization and Transformation with R by Mine Çetinkaya-Rundel and Elijah Meyer\n\nIncludes videos, readings, practice exercise, quizzes, and other resources\nYou can select content within the modules you want to complete.\nFocus on Modules 2 and 3. Review the content in Module 1 as needed.s\nClick here for instructions to register for Coursera for free as a Duke student",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "computing-r-resources.html#in-depth-review",
-    "href": "computing-r-resources.html#in-depth-review",
-    "title": "Resources for learning R",
-    "section": "In-depth review",
-    "text": "In-depth review\nData Science with R videos by Mine Çetinkaya-Rundel and Elijah Meyer\n\nVideos from the data science Coursera course\nFocus on videos on visualizing and summarizing data\nYou need to join the Coursera course to access the files from the code along videos.\n\nLearn R: An interactive introduction to data analysis with R\n\nHands-on tutorial that can be completed within the site (no RStudio required)\nFocus on Chapters 4 - 6",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "computing-r-resources.html#shorter-review",
-    "href": "computing-r-resources.html#shorter-review",
-    "title": "Resources for learning R",
-    "section": "Shorter review",
-    "text": "Shorter review\nR for Data Science (2nd ed) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\n\nFocus on Chapters 1 - 3, 10",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "computing-r-resources.html#additional-resources",
-    "href": "computing-r-resources.html#additional-resources",
-    "title": "Resources for learning R",
-    "section": "Additional resources",
-    "text": "Additional resources\n\nTidy Modeling with R by Max Kuhn & Julia Silge\nPosit Cheatsheets\nR workshops by Duke Center for Data and Visualization Sciences",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "ae/ae-01-slr.html",
-    "href": "ae/ae-01-slr.html",
-    "title": "AE 01: Simple linear regression",
+    "objectID": "support.html",
+    "href": "support.html",
+    "title": "Course support",
     "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-01 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\nThis AE will not count towards your participation grade.\nlibrary(tidyverse)    # data wrangling and visualization\nlibrary(tidymodels)   # broom and yardstick package\nlibrary(openintro)    # duke_forest dataset\nlibrary(knitr)        # format output\nlibrary(scales)       # format plot axes\nlibrary(skimr)        # quickly calculate summary statistics"
+    "text": "We expect everyone will have questions at some point in the semester, so we want to make sure you can identify when that is and feel comfortable seeking help.",
+    "crumbs": [
+      "Support"
+    ]
   },
   {
-    "objectID": "ae/ae-01-slr.html#exercise-1",
-    "href": "ae/ae-01-slr.html#exercise-1",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nWhat are 1 - 2 observations about the distribution of price?"
+    "objectID": "support.html#lectures-and-labs",
+    "href": "support.html#lectures-and-labs",
+    "title": "Course support",
+    "section": "Lectures and labs",
+    "text": "Lectures and labs\nIf you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
+    "crumbs": [
+      "Support"
+    ]
   },
   {
-    "objectID": "ae/ae-01-slr.html#exercise-2",
-    "href": "ae/ae-01-slr.html#exercise-2",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nVisualize the distribution of area and calculate summary statistics.\n\n# add code here\n\n\n# add code here"
+    "objectID": "support.html#office-hours",
+    "href": "support.html#office-hours",
+    "title": "Course support",
+    "section": "Office hours",
+    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. A lot of questions are most effectively answered in-person, so office hours are a valuable resource. I encourage you to take advantage of them!\nMake a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here.",
+    "crumbs": [
+      "Support"
+    ]
   },
   {
-    "objectID": "ae/ae-01-slr.html#exercise-3",
-    "href": "ae/ae-01-slr.html#exercise-3",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nWhat are 1 - 2 observations about the distribution of area?"
+    "objectID": "support.html#ed-discussion",
+    "href": "support.html#ed-discussion",
+    "title": "Course support",
+    "section": "Ed Discussion",
+    "text": "Ed Discussion\nOutside of class and office hours, any general questions about course content or assignments should be posted on Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on Ed Discussion before adding a new question. If you know the answer to a question that is posted, I encourage you to respond!",
+    "crumbs": [
+      "Support"
+    ]
   },
   {
-    "objectID": "ae/ae-01-slr.html#exercise-4",
-    "href": "ae/ae-01-slr.html#exercise-4",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nFill in the code to visualize the relationship between price and area. What are 1 - 2 observations about the relationship between these two variables?\n\n\n\n\n\n\nImportant\n\n\n\nRemove #|eval: false after you have filled in the code!\n\n\n\nggplot(duke_forest, aes(x = ____, y = ____)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"_______\",\n    y = \"_________\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
+    "objectID": "support.html#email",
+    "href": "support.html#email",
+    "title": "Course support",
+    "section": "Email",
+    "text": "Email\nIf you have questions about personal matters that are not appropriate for the class discussion forum (e.g. illness, accommodations, etc.), you may me at maria.tackett@duke.edu. If you email me, please include “STA 221” in the subject line. Barring extenuating circumstances, I will respond to STA 221 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.",
+    "crumbs": [
+      "Support"
+    ]
   },
   {
-    "objectID": "ae/ae-01-slr.html#exercise-5",
-    "href": "ae/ae-01-slr.html#exercise-5",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nYou want to fit a model of the form\n\\[\nprice = \\beta_0 + \\beta_1 ~ area + \\epsilon, \\hspace{5mm} \\epsilon \\sim N(0, \\sigma^2_\\epsilon)\n\\]\nWould a model of this form be a reasonable fit for the data? Why or why not?"
+    "objectID": "support.html#academic-support",
+    "href": "support.html#academic-support",
+    "title": "Course support",
+    "section": "Academic support",
+    "text": "Academic support\nThere are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The Academic Resource Center (ARC) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact ARC@duke.edu, 919-684-5917.",
+    "crumbs": [
+      "Support"
+    ]
   },
   {
-    "objectID": "ae/ae-01-slr.html#exercise-6",
-    "href": "ae/ae-01-slr.html#exercise-6",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nFit the linear model described in the previous exercise and neatly display the output.\nSee notes for example code.\n\n# add code here"
+    "objectID": "support.html#mental-health-and-wellness",
+    "href": "support.html#mental-health-and-wellness",
+    "title": "Course support",
+    "section": "Mental health and wellness",
+    "text": "Mental health and wellness\n\nDukeReach: Provides comprehensive outreach services to identify and support students in managing all aspects of well being. If you have concerns about a student’s behavior or health visit the website for resources and assistance. Go to studentaffairs.duke.edu/dukereach\nCounseling and Psychological Services (CAPS): CAPS services include individual, group, and couples counseling services, health coaching, psychiatric services, and workshops and discussions. (919) 660-1000 or students.duke.edu/wellness/caps\nTimelyCare (formerly known as Blue Devils Care): An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling. bluedevilscare.duke.edu",
+    "crumbs": [
+      "Support"
+    ]
   },
   {
-    "objectID": "ae/ae-01-slr.html#exercise-7",
-    "href": "ae/ae-01-slr.html#exercise-7",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nInterpret the slope in the context of the data.\nInterpret the slope in terms of area increasing by 100 sqft.\nWhich interpretation do you think is more meaningful in practice?"
+    "objectID": "support.html#technology-accommodations",
+    "href": "support.html#technology-accommodations",
+    "title": "Course support",
+    "section": "Technology accommodations",
+    "text": "Technology accommodations\nHighly aided students who have limited access to computers may request loaner laptops through the DukeLIFE Technology Assistance Program. Please note that supplies are limited.\nNote that we will be using Duke’s computational resources in this course. These resources are freely available to you. As long as your computer can connect to the internet and open a browser window, you can perform the necessary computing for this course. All software we use is open-source and/or freely available.",
+    "crumbs": [
+      "Support"
+    ]
   },
   {
-    "objectID": "ae/ae-01-slr.html#exercise-8",
-    "href": "ae/ae-01-slr.html#exercise-8",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\nDoes it make sense to interpret the intercept? If so, interpret it in the context of the data. Otherwise, explain why not."
+    "objectID": "support.html#course-materials-costs",
+    "href": "support.html#course-materials-costs",
+    "title": "Course support",
+    "section": "Course materials costs",
+    "text": "Course materials costs\nThere are no costs associated with this course. All readings will come from freely available, open resources (open-source textbooks, journal articles, etc.).",
+    "crumbs": [
+      "Support"
+    ]
   },
   {
-    "objectID": "prepare/prepare-aug29.html",
-    "href": "prepare/prepare-aug29.html",
-    "title": "Prepare for August 29 lecture",
+    "objectID": "support.html#assistance-with-zoom-or-canvas",
+    "href": "support.html#assistance-with-zoom-or-canvas",
+    "title": "Course support",
+    "section": "Assistance with Zoom or Canvas",
+    "text": "Assistance with Zoom or Canvas\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom here and for Canvas here.\nZoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person.",
+    "crumbs": [
+      "Support"
+    ]
+  },
+  {
+    "objectID": "prepare/prepare-sep5.html",
+    "href": "prepare/prepare-sep5.html",
+    "title": "Prepare for September 5 lecture",
     "section": "",
-    "text": "📖 Read Simple Linear Regression\n✅ Complete Lab 00 tasks"
+    "text": "Review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nVector geometry: [slides][video]\nMatrix multiplication: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
   },
   {
-    "objectID": "prepare/prepare-sep10.html",
-    "href": "prepare/prepare-sep10.html",
-    "title": "Prepare for September 10 lecture",
+    "objectID": "prepare/prepare-sep3.html",
+    "href": "prepare/prepare-sep3.html",
+    "title": "Prepare for September 3 lecture",
     "section": "",
-    "text": "Review class notes and readings on simple linear regression.\nWe will extend what we’ve done thus far to multiple linear regression, with 2 or more predictors."
+    "text": "📖 Read Section 4.7: Model Assessment\n✅ Go through R resource (optional)"
   },
   {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02",
+    "objectID": "hw/stats-experience.html",
+    "href": "hw/stats-experience.html",
+    "title": "Statistics Experience",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "Statistics experience"
     ]
   },
   {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01",
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 03"
     ]
   },
   {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
     "section": "",
-    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "text": "To be posted.",
     "crumbs": [
-      "Overview"
+      "Homework",
+      "HW 04"
     ]
   },
   {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\nKat Husar\nHead TA\nLab 02L leader\nTue 1:30 - 3:30pm, Old Chem 220\n\n\n\nJon Campbell\nLab 01L leader\nTue & Thu 9 - 10am, Old Chem 025\n\n\n\nIshrit Gupta\nLab 01L helper\nFri 1- 3pm, Old Chem 203B\n\n\n\nAlan Wang\nLab 02L helper\nMon & Wed 10 - 11am, Old Chem 203B",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 07"
+      "Lab 06"
     ]
   },
   {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 05"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "",
+    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today."
+  },
+  {
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment."
+  },
+  {
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step."
+  },
+  {
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 03"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
     ]
   },
   {
@@ -882,374 +1036,255 @@
     ]
   },
   {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 03"
+      "Lab 07"
     ]
   },
   {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Welcome + Getting Started",
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today."
-  },
-  {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment."
-  },
-  {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step."
-  },
-  {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
-  },
-  {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
-    "section": "",
-    "text": "To be posted.",
+    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
     "crumbs": [
-      "Labs",
-      "Lab 05"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "To be posted.",
+    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
     "crumbs": [
-      "Labs",
-      "Lab 06"
+      "Overview"
     ]
   },
   {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\nKat Husar\nHead TA\nLab 02L leader\nTue 1:30 - 3:30pm, Old Chem 220\n\n\n\nJon Campbell\nLab 01L leader\nTue & Thu 9 - 10am, Old Chem 025\n\n\n\nIshrit Gupta\nLab 01L helper\nFri 1- 3pm, Old Chem 203B\n\n\n\nAlan Wang\nLab 02L helper\nMon & Wed 10 - 11am, Old Chem 203B",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 04"
+      "HW 01"
     ]
   },
   {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03",
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/stats-experience.html",
-    "href": "hw/stats-experience.html",
-    "title": "Statistics Experience",
+    "objectID": "prepare/prepare-sep10.html",
+    "href": "prepare/prepare-sep10.html",
+    "title": "Prepare for September 10 lecture",
     "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "Statistics experience"
-    ]
+    "text": "Review class notes and readings on simple linear regression.\nWe will extend what we’ve done thus far to multiple linear regression, with 2 or more predictors."
   },
   {
-    "objectID": "prepare/prepare-sep3.html",
-    "href": "prepare/prepare-sep3.html",
-    "title": "Prepare for September 3 lecture",
+    "objectID": "prepare/prepare-aug29.html",
+    "href": "prepare/prepare-aug29.html",
+    "title": "Prepare for August 29 lecture",
     "section": "",
-    "text": "📖 Read Section 4.7: Model Assessment\n✅ Go through R resource (optional)"
+    "text": "📖 Read Simple Linear Regression\n✅ Complete Lab 00 tasks"
   },
   {
-    "objectID": "prepare/prepare-sep5.html",
-    "href": "prepare/prepare-sep5.html",
-    "title": "Prepare for September 5 lecture",
+    "objectID": "ae/ae-01-slr.html",
+    "href": "ae/ae-01-slr.html",
+    "title": "AE 01: Simple linear regression",
     "section": "",
-    "text": "Review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nVector geometry: [slides][video]\nMatrix multiplication: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-01 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\nThis AE will not count towards your participation grade.\nlibrary(tidyverse)    # data wrangling and visualization\nlibrary(tidymodels)   # broom and yardstick package\nlibrary(openintro)    # duke_forest dataset\nlibrary(knitr)        # format output\nlibrary(scales)       # format plot axes\nlibrary(skimr)        # quickly calculate summary statistics"
   },
   {
-    "objectID": "support.html",
-    "href": "support.html",
-    "title": "Course support",
+    "objectID": "ae/ae-01-slr.html#exercise-1",
+    "href": "ae/ae-01-slr.html#exercise-1",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWhat are 1 - 2 observations about the distribution of price?"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-2",
+    "href": "ae/ae-01-slr.html#exercise-2",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nVisualize the distribution of area and calculate summary statistics.\n\n# add code here\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-3",
+    "href": "ae/ae-01-slr.html#exercise-3",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWhat are 1 - 2 observations about the distribution of area?"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-4",
+    "href": "ae/ae-01-slr.html#exercise-4",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nFill in the code to visualize the relationship between price and area. What are 1 - 2 observations about the relationship between these two variables?\n\n\n\n\n\n\nImportant\n\n\n\nRemove #|eval: false after you have filled in the code!\n\n\n\nggplot(duke_forest, aes(x = ____, y = ____)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"_______\",\n    y = \"_________\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-5",
+    "href": "ae/ae-01-slr.html#exercise-5",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nYou want to fit a model of the form\n\\[\nprice = \\beta_0 + \\beta_1 ~ area + \\epsilon, \\hspace{5mm} \\epsilon \\sim N(0, \\sigma^2_\\epsilon)\n\\]\nWould a model of this form be a reasonable fit for the data? Why or why not?"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-6",
+    "href": "ae/ae-01-slr.html#exercise-6",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nFit the linear model described in the previous exercise and neatly display the output.\nSee notes for example code.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-7",
+    "href": "ae/ae-01-slr.html#exercise-7",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\nInterpret the slope in the context of the data.\nInterpret the slope in terms of area increasing by 100 sqft.\nWhich interpretation do you think is more meaningful in practice?"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-8",
+    "href": "ae/ae-01-slr.html#exercise-8",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nDoes it make sense to interpret the intercept? If so, interpret it in the context of the data. Otherwise, explain why not."
+  },
+  {
+    "objectID": "computing-r-resources.html",
+    "href": "computing-r-resources.html",
+    "title": "Resources for learning R",
     "section": "",
-    "text": "We expect everyone will have questions at some point in the semester, so we want to make sure you can identify when that is and feel comfortable seeking help.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#lectures-and-labs",
-    "href": "support.html#lectures-and-labs",
-    "title": "Course support",
-    "section": "Lectures and labs",
-    "text": "Lectures and labs\nIf you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#office-hours",
-    "href": "support.html#office-hours",
-    "title": "Course support",
-    "section": "Office hours",
-    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. A lot of questions are most effectively answered in-person, so office hours are a valuable resource. I encourage you to take advantage of them!\nMake a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#ed-discussion",
-    "href": "support.html#ed-discussion",
-    "title": "Course support",
-    "section": "Ed Discussion",
-    "text": "Ed Discussion\nOutside of class and office hours, any general questions about course content or assignments should be posted on Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on Ed Discussion before adding a new question. If you know the answer to a question that is posted, I encourage you to respond!",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#email",
-    "href": "support.html#email",
-    "title": "Course support",
-    "section": "Email",
-    "text": "Email\nIf you have questions about personal matters that are not appropriate for the class discussion forum (e.g. illness, accommodations, etc.), you may me at maria.tackett@duke.edu. If you email me, please include “STA 221” in the subject line. Barring extenuating circumstances, I will respond to STA 221 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#academic-support",
-    "href": "support.html#academic-support",
-    "title": "Course support",
-    "section": "Academic support",
-    "text": "Academic support\nThere are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The Academic Resource Center (ARC) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact ARC@duke.edu, 919-684-5917.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#mental-health-and-wellness",
-    "href": "support.html#mental-health-and-wellness",
-    "title": "Course support",
-    "section": "Mental health and wellness",
-    "text": "Mental health and wellness\n\nDukeReach: Provides comprehensive outreach services to identify and support students in managing all aspects of well being. If you have concerns about a student’s behavior or health visit the website for resources and assistance. Go to studentaffairs.duke.edu/dukereach\nCounseling and Psychological Services (CAPS): CAPS services include individual, group, and couples counseling services, health coaching, psychiatric services, and workshops and discussions. (919) 660-1000 or students.duke.edu/wellness/caps\nTimelyCare (formerly known as Blue Devils Care): An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling. bluedevilscare.duke.edu",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#technology-accommodations",
-    "href": "support.html#technology-accommodations",
-    "title": "Course support",
-    "section": "Technology accommodations",
-    "text": "Technology accommodations\nHighly aided students who have limited access to computers may request loaner laptops through the DukeLIFE Technology Assistance Program. Please note that supplies are limited.\nNote that we will be using Duke’s computational resources in this course. These resources are freely available to you. As long as your computer can connect to the internet and open a browser window, you can perform the necessary computing for this course. All software we use is open-source and/or freely available.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#course-materials-costs",
-    "href": "support.html#course-materials-costs",
-    "title": "Course support",
-    "section": "Course materials costs",
-    "text": "Course materials costs\nThere are no costs associated with this course. All readings will come from freely available, open resources (open-source textbooks, journal articles, etc.).",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "support.html#assistance-with-zoom-or-canvas",
-    "href": "support.html#assistance-with-zoom-or-canvas",
-    "title": "Course support",
-    "section": "Assistance with Zoom or Canvas",
-    "text": "Assistance with Zoom or Canvas\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom here and for Canvas here.\nZoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person.",
-    "crumbs": [
-      "Support"
-    ]
-  },
-  {
-    "objectID": "computing-access.html",
-    "href": "computing-access.html",
-    "title": "Computing access",
-    "section": "",
-    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA210 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA210 under My reservations to access the RStudio instance you’ll use for the course.",
+    "text": "Below are freely available resources to learn or review the following in R: data wrangling, data visualization, Quarto basics.",
     "crumbs": [
       "Computing",
-      "Access"
+      "R resources"
     ]
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#announcements",
-    "href": "slides/04-slr-model-assessment-contd.html#announcements",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Announcements",
-    "text": "Announcements\n\nOffice hours start this week. See schedule on Overview page of the course website or on Canvas.\nLabs resume Monday, September 09"
+    "objectID": "computing-r-resources.html#in-depth-introduction",
+    "href": "computing-r-resources.html#in-depth-introduction",
+    "title": "Resources for learning R",
+    "section": "In-depth introduction",
+    "text": "In-depth introduction\nCoursera: Data Visualization and Transformation with R by Mine Çetinkaya-Rundel and Elijah Meyer\n\nIncludes videos, readings, practice exercise, quizzes, and other resources\nYou can select content within the modules you want to complete.\nFocus on Modules 2 and 3. Review the content in Module 1 as needed.s\nClick here for instructions to register for Coursera for free as a Duke student",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#topics",
-    "href": "slides/04-slr-model-assessment-contd.html#topics",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Topics",
-    "text": "Topics\n\nEvaluate models using RMSE and \\(R^2\\)\nUse analysis of variance to partition variability in the response variable"
+    "objectID": "computing-r-resources.html#in-depth-review",
+    "href": "computing-r-resources.html#in-depth-review",
+    "title": "Resources for learning R",
+    "section": "In-depth review",
+    "text": "In-depth review\nData Science with R videos by Mine Çetinkaya-Rundel and Elijah Meyer\n\nVideos from the data science Coursera course\nFocus on videos on visualizing and summarizing data\nYou need to join the Coursera course to access the files from the code along videos.\n\nLearn R: An interactive introduction to data analysis with R\n\nHands-on tutorial that can be completed within the site (no RStudio required)\nFocus on Chapters 4 - 6",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#computing-set-up",
-    "href": "slides/04-slr-model-assessment-contd.html#computing-set-up",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling (includes broom, yardstick, and other packages)\nlibrary(openintro)   # for the duke_forest dataset\nlibrary(scales)      # for pretty axis labels\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme for ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "objectID": "computing-r-resources.html#shorter-review",
+    "href": "computing-r-resources.html#shorter-review",
+    "title": "Resources for learning R",
+    "section": "Shorter review",
+    "text": "Shorter review\nR for Data Science (2nd ed) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\n\nFocus on Chapters 1 - 3, 10",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#data-houses-in-duke-forest",
-    "href": "slides/04-slr-model-assessment-contd.html#data-houses-in-duke-forest",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Data: Houses in Duke Forest",
-    "text": "Data: Houses in Duke Forest\n\n\n\nData on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020\nScraped from Zillow\nSource: openintro::duke_forest\n\n\n\n\nGoal: Use the area (in square feet) to understand variability in the price of houses in Duke Forest."
+    "objectID": "computing-r-resources.html#additional-resources",
+    "href": "computing-r-resources.html#additional-resources",
+    "title": "Resources for learning R",
+    "section": "Additional resources",
+    "text": "Additional resources\n\nTidy Modeling with R by Max Kuhn & Julia Silge\nPosit Cheatsheets\nR workshops by Duke Center for Data and Visualization Sciences",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#regression-model",
-    "href": "slides/04-slr-model-assessment-contd.html#regression-model",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Regression model",
-    "text": "Regression model\n\nduke_forest_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(duke_forest_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.325\n53302.463\n2.188\n0.031\n\n\narea\n159.483\n18.171\n8.777\n0.000\n\n\n\n\n\n\n\nWe fit a model but is it any good?"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Matrix representation + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned\n\n\n4\nM\nSep 16\nLab: Multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nDistribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "crumbs": [
+      "Schedule"
+    ]
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#two-statistics",
-    "href": "slides/04-slr-model-assessment-contd.html#two-statistics",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Two statistics",
-    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)"
+    "objectID": "slides/lab-01.html#getting-started",
+    "href": "slides/lab-01.html#getting-started",
+    "title": "Lab 01",
+    "section": "Getting started",
+    "text": "Getting started\nAsk your TA if\n\nYou do not have a lab-01 repo in the GitHub course organization: github.com/sta221-fa24\nYou need help cloning the repo and starting a new RStudio project"
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#rmse",
-    "href": "slides/04-slr-model-assessment-contd.html#rmse",
-    "title": "SLR: Model assessment cont’d",
-    "section": "RMSE",
-    "text": "RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\n\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the response variable\nThe value of RMSE is more useful for comparing across models than evaluating a single model (more on this when we get to regression with multiple predictors)"
+    "objectID": "slides/lab-01.html#tips-for-working-on-lab",
+    "href": "slides/lab-01.html#tips-for-working-on-lab",
+    "title": "Lab 01",
+    "section": "Tips for working on lab",
+    "text": "Tips for working on lab\n\nYou do not have to finish the lab in class, they will always be due Thursday at 11:59pm. One work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when a TA can help you on the spot and leave the narrative writing until later.\nDo not pressure each other to finish early (particularly once you start working on teams); use the time wisely to really learn the material and produce a quality report."
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#analysis-of-variance-anova",
-    "href": "slides/04-slr-model-assessment-contd.html#analysis-of-variance-anova",
-    "title": "SLR: Model assessment cont’d",
-    "section": "ANOVA",
-    "text": "ANOVA\nAnalysis of Variance (ANOVA): Technique to partition variability in \\(Y\\) by the sources of variability"
+    "objectID": "slides/lab-01.html#workflow-and-formatting",
+    "href": "slides/lab-01.html#workflow-and-formatting",
+    "title": "Lab 01",
+    "section": "Workflow and formatting",
+    "text": "Workflow and formatting\nPart of the lab grade is for “workflow and formatting” assessing the reproducible workflow and document format. This includes\n\nHaving at least 3 informative commit messages (practicing version control)\n\nThere are markers in Lab 01 to help you incorporate version control in your workflow\n\nThe PDF is neatly organized document with clear exercise headings and readable code and narrative\nYour name and the date are updated at the top of the document."
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#total-variability-response",
-    "href": "slides/04-slr-model-assessment-contd.html#total-variability-response",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Total variability (Response)",
-    "text": "Total variability (Response)\n\n\nGoal: Quantify how much variability in price is accounted for by the model (area) and how much accounted for by factors not included in the model."
+    "objectID": "slides/lab-01.html#when-youre-done-with-lab",
+    "href": "slides/lab-01.html#when-youre-done-with-lab",
+    "title": "Lab 01",
+    "section": "When you’re done with lab",
+    "text": "When you’re done with lab\n\nMake sure all your final changes have been pushed to your GitHub repo\nSubmit your final PDF to Gradescope\n\nAccess Gradescope through the course Canvas site\nMark the pages associated with each exercise."
   },
   {
-    "objectID": "slides/04-slr-model-assessment-contd.html#partition-variability-in-price",
-    "href": "slides/04-slr-model-assessment-contd.html#partition-variability-in-price",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Partition variability in price",
-    "text": "Partition variability in price\nFor now, let’s focus on two observations"
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#total-variability-response-1",
-    "href": "slides/04-slr-model-assessment-contd.html#total-variability-response-1",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Total variability (Response)",
-    "text": "Total variability (Response)\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#explained-variability-model",
-    "href": "slides/04-slr-model-assessment-contd.html#explained-variability-model",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Explained variability (Model)",
-    "text": "Explained variability (Model)\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#unexplained-variability-residuals",
-    "href": "slides/04-slr-model-assessment-contd.html#unexplained-variability-residuals",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Unexplained variability (Residuals)",
-    "text": "Unexplained variability (Residuals)\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#sum-of-squares",
-    "href": "slides/04-slr-model-assessment-contd.html#sum-of-squares",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Sum of Squares",
-    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\nNote\n\n\nSee Sum of Squares for mathematical details showing \\(SST = SSM + SSR\\)."
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#r2",
-    "href": "slides/04-slr-model-assessment-contd.html#r2",
-    "title": "SLR: Model assessment cont’d",
-    "section": "\\(R^2\\)",
-    "text": "\\(R^2\\)\nThe coefficient of determination \\(R^2\\) is the proportion of variation in the response, \\(Y\\), that is explained by the regression model\n\n\\[\\large{R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}}\\]\n\n\nWhat is the range of \\(R^2\\)? Does \\(R^2\\) have units?"
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#interpreting-r2",
-    "href": "slides/04-slr-model-assessment-contd.html#interpreting-r2",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Interpreting $R^2$",
-    "text": "Interpreting $R^2$\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model for price from area of houses in Duke Forest is 44.5%. Which of the following is the correct interpretation of this value?\n\nArea correctly predicts 44.5% of price for houses in Duke Forest.\n44.5% of the variability in price for houses in Duke Forest can be explained by area.\n44.5% of the variability in area for houses in Duke Forest can be explained by price.\n44.5% of the time price for houses in Duke Forest can be predicted by area.\n\nDo you think this model is useful for explaining variability in the price of Duke Forest houses?\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/629888"
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#augmented-data-frame",
-    "href": "slides/04-slr-model-assessment-contd.html#augmented-data-frame",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Augmented data frame",
-    "text": "Augmented data frame\nUse the augment() function from the broom package (part of tidymodels) to add columns for predicted values, residuals, and other observation-level model statistics\n\n\nduke_forest_aug &lt;- augment(duke_forest_fit)\nduke_forest_aug\n\n# A tibble: 98 × 8\n     price  area  .fitted  .resid   .hat  .sigma   .cooksd .std.resid\n     &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1 1520000  6040 1079931. 440069. 0.133  162605. 0.604         2.80  \n 2 1030000  4475  830340. 199660. 0.0435 168386. 0.0333        1.21  \n 3  420000  1745  394951.  25049. 0.0226 169664. 0.000260      0.150 \n 4  680000  2091  450132. 229868. 0.0157 168011. 0.0150        1.37  \n 5  428500  1772  399257.  29243. 0.0220 169657. 0.000345      0.175 \n 6  456000  1950  427645.  28355. 0.0182 169659. 0.000266      0.170 \n 7 1270000  3909  740072. 529928. 0.0250 160502. 0.130         3.18  \n 8  557450  2841  569744. -12294. 0.0102 169679. 0.0000277    -0.0732\n 9  697500  3924  742465. -44965. 0.0254 169620. 0.000948     -0.270 \n10  650000  2173  463209. 186791. 0.0145 168582. 0.00912       1.11  \n# ℹ 88 more rows"
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#finding-rmse-in-r",
-    "href": "slides/04-slr-model-assessment-contd.html#finding-rmse-in-r",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Finding RMSE in R",
-    "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard     167067.\n\n\n\n\nWhat does this value mean?"
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#finding-r2-in-r",
-    "href": "slides/04-slr-model-assessment-contd.html#finding-r2-in-r",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Finding \\(R^2\\) in R",
-    "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(duke_forest_aug, truth = price, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.445\n\n\n\n\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\)\n\nglance(duke_forest_fit)$r.squared\n\n[1] 0.4451945"
-  },
-  {
-    "objectID": "slides/04-slr-model-assessment-contd.html#recap",
-    "href": "slides/04-slr-model-assessment-contd.html#recap",
-    "title": "SLR: Model assessment cont’d",
-    "section": "Recap",
-    "text": "Recap\n\nEvaluated models using RMSE and \\(R^2\\)\nUsed analysis of variance to partition variability in the response variable\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+    "objectID": "slides/lab-01.html#lab-01-park-access",
+    "href": "slides/lab-01.html#lab-01-park-access",
+    "title": "Lab 01",
+    "section": "Lab 01: Park access",
+    "text": "Lab 01: Park access\nToday’s lab focuses on exploratory data analysis and simple linear regression, content from Weeks 01 and 02 in the course.\n🔗 sta221-fa24.netlify.app/labs/lab-01.html\n\n\n\n\n🔗 STA 221 - Fall 2024"
   },
   {
     "objectID": "slides/02-slr.html#announcements",
