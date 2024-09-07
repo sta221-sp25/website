@@ -1,6 +1,6 @@
 ---
 title: "Lab 01"
-subtitle: "Exploratory data analysis"
+subtitle: "Simple linear regression"
 author: "September 9, 2024"
 footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
 logo: "../images/logo.png"
