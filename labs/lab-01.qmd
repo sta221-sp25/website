@@ -64,7 +64,7 @@ Below are the components of the RStudio IDE.
 
 ![](images/rstudio-panes.png){fig-alt="Screenshot of RStudio IDE" fig-align="center"}
 
-Below are the components of an Quarto (.Rmd) file.
+Below are the components of an Quarto (`.qmd`) file.
 
 ![](images/quarto.png){fig-alt="Screenshot of Quarto document and rendered PDF." fig-align="center"}
 
@@ -227,24 +227,20 @@ Answer the following questions about simple linear regression. Your response sho
 
 ## Exercise 8
 
-We've seen that we can use matrices to represent the simple linear model from the previous exercise. In particular
+In class we've seen how matrices can be used to represent the simple linear model from the previous exercise. In particular
 
 $$
 \mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
 $$
 
-Estimate regression coefficients $\hat{\boldsymbol{\beta}}$ for the model using `spend_per_resident_data` to explain variabilty in `park_near_pct_points` using the matrix representation. Show your work and/or code to get the answer.
+Recall that the goal is to fit a model that uses `spend_per_resident_data` to explain variability in `park_near_pct_points.`Estimate regression coefficients $\hat{\boldsymbol{\beta}}$ for the model using the matrix representation. Show any work and/or code used to get the answer.
 
 ## Exercise 9
 
-Now let's fit a linear regression model using the `lm()` function in R.
+Now let's fit the model using the `lm()` function in R.
 
 -   Fit the model and neatly display the output using 4 digits.
-
-<!-- -->
-
 -   Interpret the slope in the context of the data.
-
 -   Does it make sense of the interpret the intercept? If so, interpret the intercept in the context of the data. Otherwise, explain why not.
 
 ## Exercise 10
@@ -257,7 +253,7 @@ You’re done and ready to submit your work! render, commit, and push all remain
 
 # Submission
 
-In this class, we’ll be submitting PDF documents to Gradescope.
+You will submit the PDF documents for labs, homework, and exams in to Gradescope as part of your final submission.
 
 ::: callout-warning
 Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
@@ -267,7 +263,7 @@ Remember – you must turn in a PDF file to the Gradescope page before the submi
 
 To submit your assignment:
 
--   Access Gradescope through the course Canvas site.
+-   Access Gradescope through the menu on the [STA 221 Canvas site.](https://canvas.duke.edu/courses/38867)
 
 -   Click on the assignment, and you’ll be prompted to submit it.
 
@@ -276,3 +272,19 @@ To submit your assignment:
 -   Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* section.
 
 # Grading
+
+| Component             | Points |
+|:----------------------|:-------|
+| Ex 1                  | 2      |
+| Ex 2                  | 2      |
+| Ex 3                  | 3      |
+| Ex 4                  | 5      |
+| Ex 5                  | 5      |
+| Ex 6                  | 5      |
+| Ex 7                  | 6      |
+| Ex 8                  | 5      |
+| Ex 9                  | 8      |
+| Ex 10                 | 5      |
+| Workflow & formatting | 4      |
+
+The "Workflow & formatting" grade is to assess the reproducible workflow and document format. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date in the YAML.
