@@ -21,7 +21,7 @@ knitr:
     width: 200
 ---
 
-## Getting started 
+## Getting started
 
 Ask your TA if
 
@@ -31,7 +31,7 @@ Ask your TA if
 
 ## Tips for working on lab
 
--   You do not have to finish the lab in class, they will always be due **Thursday at 11:59pm**. One work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when a TA can help you on the spot and leave the narrative writing until later.
+-   You do not have to finish the lab in class, they will always be due **Thursdays at 11:59pm**. One work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when a TA can help you on the spot and leave the narrative writing until later.
 
 -   Do not pressure each other to finish early (particularly once you start working on teams); use the time wisely to really learn the material and produce a quality report.
 
@@ -42,7 +42,7 @@ Part of the lab grade is for "workflow and formatting" assessing the reproducibl
 -   Having at least 3 informative commit messages (practicing version control)
     -   There are markers in Lab 01 to help you incorporate version control in your workflow
 -   The PDF is neatly organized document with clear exercise headings and readable code and narrative
--    Your name and the date are updated at the top of the document.
+-   The name (first and last) and date are updated at the top of the document.
 
 ## **When you're done with lab**
 
