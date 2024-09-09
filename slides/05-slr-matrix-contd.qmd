@@ -59,7 +59,6 @@ knitr::opts_chunk$set(
     -   Least square estimate
     -   Predicted (fitted) values
     -   Residuals
--   Matrix representation in R
 
 ```{r packages}
 #| echo: false
@@ -243,12 +242,12 @@ $$
 $$
 \begin{aligned}
 \nabla_{\boldsymbol{\beta}} SSR &= \nabla_{\boldsymbol{\beta}}( \mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}) = 0 \\[10pt]
-& = \nabla_\boldsymbol{\beta} \hspace{1mm} \mathbf{y}^T\mathbf{y} - 2\nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} \\[10pt]
-&= 0 - \underbrace{2\mathbf{X}^T\mathbf{y}}_{\text{Prop }1} + \underbrace{2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}}_{\text{Prop }2}
+& = \nabla_\boldsymbol{\beta} \hspace{1mm} \mathbf{y}^T\mathbf{y} - 2\nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = 0 \\[10pt]
+&= 0 - \underbrace{2\mathbf{X}^T\mathbf{y}}_{\text{Prop }1} + \underbrace{2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}}_{\text{Prop }2} = 0 \\[10pt]
+&\Rightarrow \mathbf{X}^T\mathbf{y} = \mathbf{X}^T\mathbf{X}\boldsymbol{\beta} \\[10pt]
+&\Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}
 \end{aligned}
 $$
-
-<!--# finish adding the steps here-->
 
 . . .
 

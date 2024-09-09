@@ -427,7 +427,6 @@ Prof.&nbsp;Maria Tackett
 <li>Predicted (fitted) values</li>
 <li>Residuals</li>
 </ul></li>
-<li>Matrix representation in R</li>
 </ul>
 </section>
 <section>
@@ -556,7 +555,8 @@ SSR = \mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^
 \begin{aligned}
 \mathbf{x}^T\mathbf{z} &amp;= \begin{bmatrix}x_1 &amp; x_2 &amp; \dots &amp;x_k\end{bmatrix}
 \begin{bmatrix}z_1 \\ z_2 \\ \vdots \\z_k\end{bmatrix} \\[10pt]
-&amp;= x_1z_1 + x_2z_2 + \dots + x_kz_k
+&amp;= x_1z_1 + x_2z_2 + \dots + x_kz_k \\
+&amp;= \sum_{i=1}^k x_iz_i
 \end{aligned}
 \]</span></p>
 </section>
@@ -597,11 +597,12 @@ SSR = \mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^
 <p><span class="math display">\[
 \begin{aligned}
 \nabla_{\boldsymbol{\beta}} SSR &amp;= \nabla_{\boldsymbol{\beta}}( \mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}) = 0 \\[10pt]
-&amp; = \nabla_\boldsymbol{\beta} \hspace{1mm} \mathbf{y}^T\mathbf{y} - 2\nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} \\[10pt]
-&amp;= 0 - \underbrace{2\mathbf{X}^T\mathbf{y}}_{\text{Prop }1} + \underbrace{2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}}_{\text{Prop }2}
+&amp; = \nabla_\boldsymbol{\beta} \hspace{1mm} \mathbf{y}^T\mathbf{y} - 2\nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = 0 \\[10pt]
+&amp;= 0 - \underbrace{2\mathbf{X}^T\mathbf{y}}_{\text{Prop }1} + \underbrace{2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}}_{\text{Prop }2} = 0 \\[10pt]
+&amp;\Rightarrow \mathbf{X}^T\mathbf{y} = \mathbf{X}^T\mathbf{X}\boldsymbol{\beta} \\[10pt]
+&amp;\Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}
 \end{aligned}
 \]</span></p>
-<!--# finish adding the steps here-->
 <div class="fragment">
 <p><span class="math display">\[
 \color{#993399}{\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}}
