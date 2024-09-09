@@ -203,7 +203,8 @@ $$
 \begin{aligned}
 \mathbf{x}^T\mathbf{z} &= \begin{bmatrix}x_1 & x_2 & \dots &x_k\end{bmatrix} 
  \begin{bmatrix}z_1 \\ z_2 \\ \vdots \\z_k\end{bmatrix} \\[10pt]
- &= x_1z_1 + x_2z_2 + \dots + x_kz_k
+ &= x_1z_1 + x_2z_2 + \dots + x_kz_k \\
+&= \sum_{i=1}^k x_iz_i
 \end{aligned}
 $$
 
