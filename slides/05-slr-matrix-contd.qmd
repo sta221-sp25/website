@@ -14,6 +14,7 @@ format:
     slide-number: true
     incremental: false 
     chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -120,7 +121,7 @@ $$
 <br>
 
 -   $\mathbf{y}$: $n\times 1$ vector of responses
--   $\mathbf{X}$: $n \times 2$ design matrix <!--# another way to describe this without using design matrix?-->
+-   $\mathbf{X}$: $n \times 2$ design matrix
 -   $\boldsymbol{\beta}$: $2 \times 1$ vector of coefficients
 -   $\boldsymbol{\epsilon}$: $n \times 1$ vector of error terms
 
@@ -132,26 +133,15 @@ SSR = \sum_{i=1}^n e_i^2 = \mathbf{e}^T\mathbf{e} &= (\mathbf{y} - \mathbf{X}\bo
 \end{aligned}
 $$
 
-Minimize sum of squared residuals $$
-\begin{aligned}
-SSR = \mathbf{e}^T\mathbf{e} &= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
-&= (\mathbf{y}^T - \boldsymbol{\beta}^T\mathbf{X}^T)(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\\[10pt]
-\end{aligned}
-$$
-
 ## Minimize sum of squared residuals
 
 $$
 \begin{aligned}
 \mathbf{e}^T\mathbf{e} &= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
-&= (\mathbf{y}^T - \boldsymbol{\beta}^T\mathbf{X}^T)(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\\[10pt]
-&=\mathbf{y}^T\mathbf{y} - \mathbf{y}^T\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}\\[10pt]
+&\class{fragment}{= (\mathbf{y}^T - \boldsymbol{\beta}^T\mathbf{X}^T)(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})}\\[10pt]
+&\class{fragment}{=\mathbf{y}^T\mathbf{y} - \mathbf{y}^T\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}}\\[10pt]
 \end{aligned}
 $$
-
-. . .
-
-$\mathbf{y}^T\mathbf{X}\boldsymbol{\beta}$ and $\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y}$ are scalars. Therefore, $\mathbf{y}^T\mathbf{X}\boldsymbol{\beta} = (\mathbf{y}^T\mathbf{X}\boldsymbol{\beta})^T = \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y}$
 
 ## Minimize sum of squared residuals
 
@@ -176,10 +166,23 @@ $$
 
 Let $\mathbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\x_k\end{bmatrix}$be a $k \times 1$ vector and $f(\mathbf{x})$ be a function of $\mathbf{x}$.
 
+. . .
+
 Then $\nabla_\mathbf{x}f$, the **gradient** of $f$ with respect to $\mathbf{x}$ is
 
 $$
 \nabla_\mathbf{x}f = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}
+$$
+
+## Side note: Vector operations
+
+Th **Hessian** matrix, $\nabla_\mathbf{x}^2f$ is a $k \times k$ matrix of partial second derivatives
+
+$$
+\nabla_{\mathbf{x}}^2f = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} & \frac{\partial^2f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2f}{\partial x_1\partial x_k} \\ 
+\frac{\partial^2f}{\partial\ x_2 \partial x_1} & \frac{\partial^2f}{\partial x_2^2} & \dots & \frac{\partial^2f}{\partial x_2 \partial x_k} \\
+\vdots & \vdots & \ddots & \vdots \\ 
+\frac{\partial^2f}{\partial x_k\partial x_1} & \frac{\partial^2f}{\partial x_k\partial x_2} & \dots & \frac{\partial^2f}{\partial x_k^2} \end{bmatrix}
 $$
 
 ## Side note: Vector operations
@@ -200,19 +203,19 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{x}^T\mathbf{z} &= \begin{bmatrix}x_1 & x_2 & \dots &x_k\end{bmatrix} 
- \begin{bmatrix}z_1 \\ z_2 \\ \vdots \\z_k\end{bmatrix} \\[10pt]
- &= x_1z_1 + x_2z_2 + \dots + x_kz_k \\
-&= \sum_{i=1}^k x_iz_i
+\mathbf{x}^T\mathbf{z} &= \class{fragment}{\begin{bmatrix}x_1 & x_2 & \dots &x_k\end{bmatrix}
+ \begin{bmatrix}z_1 \\ z_2 \\ \vdots \\z_k\end{bmatrix}} \\[10pt]
+ &\class{fragment}{= x_1z_1 + x_2z_2 + \dots + x_kz_k} \\
+&\class{fragment}{= \sum_{i=1}^k x_iz_i}
 \end{aligned}
 $$
 
 ## Side note: Proposition 1 {.midi}
 
 $$
-\nabla_\mathbf{x}\hspace{1mm}\mathbf{x}^T\mathbf{z} = \begin{bmatrix}\frac{\partial \mathbf{x}^T\mathbf{z}}{\partial x_1} \\ \frac{\partial \mathbf{x}^T\mathbf{z}}{\partial x_2} \\ \vdots \\ \frac{\partial \mathbf{x}^T\mathbf{z}}{\partial x_k}\end{bmatrix}  
-= \begin{bmatrix}\frac{\partial}{\partial x_1} (x_1z_1 + x_2z_2 + \dots + x_kz_k) \\ \frac{\partial}{\partial x_2} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\\ \vdots \\ \frac{\partial}{\partial x_k} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\end{bmatrix}
- = \begin{bmatrix} z_1 \\ z_2 \\ \vdots \\ z_k\end{bmatrix} = \mathbf{z}
+\nabla_\mathbf{x}\hspace{1mm}\mathbf{x}^T\mathbf{z} = \class{fragment}{\begin{bmatrix}\frac{\partial \mathbf{x}^T\mathbf{z}}{\partial x_1} \\ \frac{\partial \mathbf{x}^T\mathbf{z}}{\partial x_2} \\ \vdots \\ \frac{\partial \mathbf{x}^T\mathbf{z}}{\partial x_k}\end{bmatrix}}  
+= \class{fragment}{\begin{bmatrix}\frac{\partial}{\partial x_1} (x_1z_1 + x_2z_2 + \dots + x_kz_k) \\ \frac{\partial}{\partial x_2} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\\ \vdots \\ \frac{\partial}{\partial x_k} (x_1z_1 + x_2z_2 + \dots + x_kz_k)\end{bmatrix}}
+ = \class{fragment}{\begin{bmatrix} z_1 \\ z_2 \\ \vdots \\ z_k\end{bmatrix} = \mathbf{z}}
 $$
 
 ## Side note: Vector + matrix operations
@@ -235,115 +238,28 @@ $$
 $$
 :::
 
-## Side note: Proposition 2
-
 ## Find the least squares estimators
 
 $$
 \begin{aligned}
-\nabla_{\boldsymbol{\beta}} SSR &= \nabla_{\boldsymbol{\beta}}( \mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}) = 0 \\[10pt]
-& = \nabla_\boldsymbol{\beta} \hspace{1mm} \mathbf{y}^T\mathbf{y} - 2\nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = 0 \\[10pt]
-&= 0 - \underbrace{2\mathbf{X}^T\mathbf{y}}_{\text{Prop }1} + \underbrace{2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}}_{\text{Prop }2} = 0 \\[10pt]
-&\Rightarrow \mathbf{X}^T\mathbf{y} = \mathbf{X}^T\mathbf{X}\boldsymbol{\beta} \\[10pt]
-&\Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}
+\nabla_{\boldsymbol{\beta}} SSR &= \nabla_{\boldsymbol{\beta}}( \mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta})  \\[10pt]
+& \class{fragment}{= \nabla_\boldsymbol{\beta} \hspace{1mm} \mathbf{y}^T\mathbf{y} - 2\nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}} \\[10pt]
+&\class{fragment}{= 0 - 2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}}\class{fragment}{=0} \\[10pt]
+&\class{fragment}{\Rightarrow \mathbf{X}^T\mathbf{y} = \mathbf{X}^T\mathbf{X}\boldsymbol{\beta}} \\[10pt]
+&\class{fragment}{\Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}} \\[10pt]
+&\class{fragment}{\color{#993399}{\Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = \hat{\boldsymbol{\beta}}}}
 \end{aligned}
-$$
-
-. . .
-
-$$
-\color{#993399}{\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}}
 $$
 
 ## Did we find a minimum?
 
 $$
-\nabla^2_{\beta} SSR \propto  2\mathbf{X}^T\mathbf{X} = 0
+\begin{aligned}
+\nabla^2_{\boldsymbol{\beta}} SSR &= \nabla_{\boldsymbol{\beta}} (-2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}) \\[10pt]
+&\class{fragment}{=-2\nabla_{\boldsymbol{\beta}}\mathbf{X}^T\mathbf{y} + 2\nabla_{\boldsymbol{\beta}}(\mathbf{X}^T\mathbf{X}\mathbf{\beta})} \\[10pt]
+ &\class{fragment}{\propto \mathbf{X}^T\mathbf{X}}\class{fragment}{ > 0}
+\end{aligned}
 $$
-
-<br>
-
--   $\mathbf{X}$ is full rank $\Rightarrow$ $\mathbf{X}^T\mathbf{X}$ is positive definite
-
--   Therefore we have found the minimizing point
-
-# Matrix representation in R
-
-## Obtain $\mathbf{y}$ vector
-
-Let's go back to the Duke Forest data. We want to use the matrix representation to fit a model of the form:
-
-$$
-price = \beta_0 + \beta_1 ~ area + \epsilon, \hspace{5mm} \epsilon \sim N(0, \sigma^2_\epsilon)
-$$
-
-. . .
-
-Get $\mathbf{y}$, the vector of responses
-
-```{r}
-y <- duke_forest$price
-```
-
-<br>
-
-. . .
-
-Let's look at the first 10 observations of $y$
-
-```{r}
-y[1:10]
-```
-
-## Obtain $\mathbf{X}$ matrix
-
-Use the `model.matrix()` function to get $\mathbf{X}$
-
-```{r}
-X <- model.matrix(price ~ area, data = duke_forest)
-```
-
-<br>
-
-. . .
-
-Let's look at the first 10 rows of $\mathbf{X}$
-
-```{r}
-X[1:10,]
-```
-
-## Calculate $\hat{\boldsymbol{\beta}}$
-
-Matrix functions in R. Let $\mathbf{A}$ and $\mathbf{B}$ be matrices
-
--   `t(A)`: transpose $\mathbf{A}$
--   `solve(A)`: inverse of $\mathbf{A}$
--   `A %*% B`: multiply $\mathbf{A}$ and $\mathbf{B}$
-
-. . .
-
-Now let's calculate $\hat{\boldsymbol{\beta}}$
-
-```{r}
-beta_hat <- solve(t(X)%*%X)%*%t(X)%*%y
-beta_hat
-```
-
-## Compare to result from `lm`
-
-```{r}
-duke_forest_model <- lm(price ~ area, data = duke_forest)
-tidy(duke_forest_model) |> kable(digits = 3)
-```
-
-<br>
-
-. . .
-
-```{r}
-beta_hat 
-```
 
 # Predicted values and residuals
 
@@ -359,8 +275,11 @@ $$
 
 **Hat matrix**: $\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T$
 
+. . .
+
 -   $\mathbf{H}$ is an $n\times n$ matrix
 -   Maps vector of observed values $\mathbf{y}$ to a vector of fitted values $\hat{\mathbf{y}}$
+-   It is only a function of $\mathbf{X}$ not $\mathbf{y}$
 
 ## Residuals
 
@@ -369,29 +288,17 @@ Recall that the residuals are the difference between the observed and predicted 
 $$
 \begin{aligned}
 \mathbf{e} &= \mathbf{y} - \hat{\mathbf{y}}\\[10pt]
-& = \mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}} \\[10pt]
-& = \mathbf{y} - \mathbf{H}\mathbf{y} \\[10pt]
-& = (\mathbf{I} - \mathbf{H})\mathbf{y}
+&\class{fragment}{ = \mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}} \\[10pt]
+&\class{fragment}{ = \mathbf{y} - \mathbf{H}\mathbf{y}} \\[20pt]
+\class{fragment}{\color{#993399}{\mathbf{e}}} &\class{fragment}{\color{#993399}{=(\mathbf{I} - \mathbf{H})\mathbf{y}}} \\[10pt]
 \end{aligned}
-$$
-
-. . .
-
-$$
-\color{#993399}{\mathbf{e} = (\mathbf{I} - \mathbf{H})\mathbf{y}}
 $$
 
 ## Recap
 
 -   Introduced matrix representation for simple linear regression
+
     -   Model from
     -   Least square estimate
     -   Predicted (fitted) values
     -   Residuals
--   Used R for matrix calculations
-
-## Next class
-
--   Multiple linear regression
-
--   See [Sep 10 prepare](../prepare/prepare-sep10.html)

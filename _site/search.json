@@ -113,6 +113,132 @@
     ]
   },
   {
+    "objectID": "slides/05-slr-matrix-contd.html#announcements",
+    "href": "slides/05-slr-matrix-contd.html#announcements",
+    "title": "SLR: Matrix representation",
+    "section": "Announcements",
+    "text": "Announcements\n\nLab 01 due on Thursday, September 12 at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#topics",
+    "href": "slides/05-slr-matrix-contd.html#topics",
+    "title": "SLR: Matrix representation",
+    "section": "Topics",
+    "text": "Topics\n\nMatrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#slr-in-matrix-form",
+    "href": "slides/05-slr-matrix-contd.html#slr-in-matrix-form",
+    "title": "SLR: Matrix representation",
+    "section": "SLR in matrix form",
+    "text": "SLR in matrix form\nSuppose we have \\(n\\) observations, a quantitative response variable, and a single predictor\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\n\\(\\mathbf{y}\\): \\(n\\times 1\\) vector of responses\n\\(\\mathbf{X}\\): \\(n \\times 2\\) design matrix\n\\(\\boldsymbol{\\beta}\\): \\(2 \\times 1\\) vector of coefficients\n\\(\\boldsymbol{\\epsilon}\\): \\(n \\times 1\\) vector of error terms"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals",
+    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\nGoal: Find values of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimize the sum of squared residuals \\[\n\\begin{aligned}\nSSR = \\sum_{i=1}^n e_i^2 = \\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-1",
+    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-1",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\n\\[\n\\begin{aligned}\n\\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})}\\\\[10pt]\n&\\class{fragment}{=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}}\\\\[10pt]\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-2",
+    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-2",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\n\\[\n\\begin{aligned}\n\\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-3",
+    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-3",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\nThe estimate of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimize SSR is the one such that\n\\[\n\\nabla_{\\boldsymbol{\\beta}} SSR = \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) = 0\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations",
+    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\n\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations-1",
+    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\nTh Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations-2",
+    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations-2",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\n\n\n\nProposition 1\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^T\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{z} = \\mathbf{z}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-proposition-1",
+    "href": "slides/05-slr-matrix-contd.html#side-note-proposition-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Proposition 1",
+    "text": "Side note: Proposition 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^T\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-proposition-1-1",
+    "href": "slides/05-slr-matrix-contd.html#side-note-proposition-1-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Proposition 1",
+    "text": "Side note: Proposition 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^T\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-matrix-operations",
+    "href": "slides/05-slr-matrix-contd.html#side-note-vector-matrix-operations",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector + matrix operations",
+    "text": "Side note: Vector + matrix operations\n\n\n\nProposition 2\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^T \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
+    "href": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
+    "title": "SLR: Matrix representation",
+    "section": "Find the least squares estimators",
+    "text": "Find the least squares estimators\n\\[\n\\begin{aligned}\n\\nabla_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta})  \\\\[10pt]\n& \\class{fragment}{= \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\mathbf{y}^T\\mathbf{y} - 2\\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{= 0 - 2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}}\\class{fragment}{=0} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow \\mathbf{X}^T\\mathbf{y} = \\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{\\color{#993399}{\\Rightarrow (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} = \\hat{\\boldsymbol{\\beta}}}}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
+    "href": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
+    "title": "SLR: Matrix representation",
+    "section": "Did we find a minimum?",
+    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{=-2\\nabla_{\\boldsymbol{\\beta}}\\mathbf{X}^T\\mathbf{y} + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^T\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&\\class{fragment}{\\propto \\mathbf{X}^T\\mathbf{X}}\\class{fragment}{ &gt; 0}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#predicted-fitted-values",
+    "href": "slides/05-slr-matrix-contd.html#predicted-fitted-values",
+    "title": "SLR: Matrix representation",
+    "section": "Predicted (fitted) values",
+    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\)\n\n\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)\nIt is only a function of \\(\\mathbf{X}\\) not \\(\\mathbf{y}\\)"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#residuals",
+    "href": "slides/05-slr-matrix-contd.html#residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Residuals",
+    "text": "Residuals\nRecall that the residuals are the difference between the observed and predicted values\n\\[\n\\begin{aligned}\n\\mathbf{e} &= \\mathbf{y} - \\hat{\\mathbf{y}}\\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}}} \\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{H}\\mathbf{y}} \\\\[20pt]\n\\class{fragment}{\\color{#993399}{\\mathbf{e}}} &\\class{fragment}{\\color{#993399}{=(\\mathbf{I} - \\mathbf{H})\\mathbf{y}}} \\\\[10pt]\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#recap",
+    "href": "slides/05-slr-matrix-contd.html#recap",
+    "title": "SLR: Matrix representation",
+    "section": "Recap",
+    "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel from\nLeast square estimate\nPredicted (fitted) values\nResiduals\n\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
     "objectID": "slides/03-slr-model-assessment.html#announcements",
     "href": "slides/03-slr-model-assessment.html#announcements",
     "title": "SLR: Model Assessment",
@@ -1246,7 +1372,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Matrix representation + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned, Lab 01 due\n\n\n4\nM\nSep 16\nLab: Multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nDistribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Assessment + Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned, Lab 01 due\n\n\n4\nM\nSep 16\nLab 02: Multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nDistribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -1515,7 +1641,7 @@
     "href": "slides/04-slr-matrix.html#topics",
     "title": "SLR: Matrix representation",
     "section": "Topics",
-    "text": "Topics\n\nMatrix representation for simple linear regression\n\nModel from\nLeast square estimate\nPredicted (fitted) values\nResiduals\n\nMatrix representation in R"
+    "text": "Topics\n\nMatrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals\n\nMatrix representation in R"
   },
   {
     "objectID": "slides/04-slr-matrix.html#slr-statistical-model-population",
@@ -1635,6 +1761,167 @@
     "title": "SLR: Matrix representation",
     "section": "Next class",
     "text": "Next class\n\nMultiple linear regression\nSee Sep 10 prepare\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "slides/05-mlr.html#topics",
+    "href": "slides/05-mlr.html#topics",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Topics",
+    "text": "Topics\n\nExploratory data analysis for multiple linear regression\nFitting the least squares line\nInterpreting coefficients for quantitative predictors\nPrediction"
+  },
+  {
+    "objectID": "slides/05-mlr.html#computing-setup",
+    "href": "slides/05-mlr.html#computing-setup",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Computing setup",
+    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))"
+  },
+  {
+    "objectID": "slides/05-mlr.html#data-peer-to-peer-lender",
+    "href": "slides/05-mlr.html#data-peer-to-peer-lender",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Data: Peer-to-peer lender",
+    "text": "Data: Peer-to-peer lender\nToday’s data is a sample of 50 loans made through a peer-to-peer lending club. The data is in the loan50 data frame in the openintro R package.\n\n\n# A tibble: 50 × 4\n   annual_income debt_to_income verified_income interest_rate\n           &lt;dbl&gt;          &lt;dbl&gt; &lt;fct&gt;                   &lt;dbl&gt;\n 1         59000         0.558  Not Verified            10.9 \n 2         60000         1.31   Not Verified             9.92\n 3         75000         1.06   Verified                26.3 \n 4         75000         0.574  Not Verified             9.92\n 5        254000         0.238  Not Verified             9.43\n 6         67000         1.08   Source Verified          9.92\n 7         28800         0.0997 Source Verified         17.1 \n 8         80000         0.351  Not Verified             6.08\n 9         34000         0.698  Not Verified             7.97\n10         80000         0.167  Source Verified         12.6 \n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-mlr.html#variables",
+    "href": "slides/05-mlr.html#variables",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Variables",
+    "text": "Variables\nPredictors:\n\n\nannual_income: Annual income\ndebt_to_income: Debt-to-income ratio, i.e. the percentage of a borrower’s total debt divided by their total income\nverified_income: Whether borrower’s income source and amount have been verified (Not Verified, Source Verified, Verified)\n\n\nOutcome: interest_rate: Interest rate for the loan"
+  },
+  {
+    "objectID": "slides/05-mlr.html#outcome-interest_rate",
+    "href": "slides/05-mlr.html#outcome-interest_rate",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Outcome: interest_rate",
+    "text": "Outcome: interest_rate\n\n\n\n\n\n\nMin\nMedian\nMax\nIQR\n\n\n\n\n5.31\n9.93\n26.3\n5.755"
+  },
+  {
+    "objectID": "slides/05-mlr.html#predictors",
+    "href": "slides/05-mlr.html#predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Predictors",
+    "text": "Predictors"
+  },
+  {
+    "objectID": "slides/05-mlr.html#data-manipulation-1-rescale-income",
+    "href": "slides/05-mlr.html#data-manipulation-1-rescale-income",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Data manipulation 1: Rescale income",
+    "text": "Data manipulation 1: Rescale income\n\nloan50 &lt;- loan50 |&gt;\n  mutate(annual_income_th = annual_income / 1000)\n\n\n\n\nWhy did we rescale income?"
+  },
+  {
+    "objectID": "slides/05-mlr.html#outcome-vs.-predictors",
+    "href": "slides/05-mlr.html#outcome-vs.-predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Outcome vs. predictors",
+    "text": "Outcome vs. predictors\n\n\nGoal: Use these predictors in a single model to understand variability in interest rate.\n\n\n\nWhy do we want to use a single model versus 3 separate simple linear regression models?"
+  },
+  {
+    "objectID": "slides/05-mlr.html#multiple-linear-regression-mlr",
+    "href": "slides/05-mlr.html#multiple-linear-regression-mlr",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression (MLR)",
+    "text": "Multiple linear regression (MLR)\nBased on the analysis goals, we will use a multiple linear regression model of the following form\n\\[\n\\begin{aligned}\\text{interest_rate} ~ =\n\\beta_0 & + \\beta_1 ~ \\text{debt_to_income} \\\\ & + \\beta_2 ~ \\text{verified_income} \\\\ &+ \\beta_3~ \\text{annual_income_th} \\\\\n& +\\epsilon, \\quad \\epsilon \\sim N(0, \\sigma^2_{\\epsilon})\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/05-mlr.html#multiple-linear-regression-1",
+    "href": "slides/05-mlr.html#multiple-linear-regression-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression",
+    "text": "Multiple linear regression\nRecall: The simple linear regression model\n\\[\nY = \\beta_0 + \\beta_1~ X + \\epsilon, \\quad \\epsilon \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\n\nThe form of the multiple linear regression model is\n\\[\nY = \\beta_0 + \\beta_1X_1 +  \\dots + \\beta_pX_p + \\epsilon, \\quad \\epsilon \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\n\n\n\nTherefore,\n\\[\nE(Y|X_1, \\ldots, X_p) = \\beta_0 + \\beta_1X_1 +  \\dots + \\beta_pX_p\n\\]"
+  },
+  {
+    "objectID": "slides/05-mlr.html#fitting-the-least-squares-line",
+    "href": "slides/05-mlr.html#fitting-the-least-squares-line",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Fitting the least squares line",
+    "text": "Fitting the least squares line\nSimilar to simple linear regression, we want to find estimates for \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) that minimize\n\\[\n\\sum_{i=1}^{n}e_i^2 = \\sum_{i=1}^n[y_i - \\hat{y}_i]^2 = \\sum_{i=1}^n[y_i - (\\beta_0 + \\beta_1x_{i1} + \\dots + \\beta_px_{ip})]^2\n\\]\n\n\nThe calculations can be very tedious, especially if \\(p\\) is large"
+  },
+  {
+    "objectID": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression",
+    "href": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Matrix form of multiple linear regression",
+    "text": "Matrix form of multiple linear regression\nSuppose we have \\(n\\) observations, a quantitative response variable, and a single predictor\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_{11} & \\dots & x_{1p}\\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n1 &  x_{n1} & \\dots &x_{np}\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\vdots \\\\\n\\beta_p\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\)?"
+  },
+  {
+    "objectID": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression-1",
+    "href": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Matrix form of multiple linear regression",
+    "text": "Matrix form of multiple linear regression\nAs with simple linear regression, we have\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\nGeneralizing the derivations from SLR to \\(p &gt; 2\\), we have\n\\[\n\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\n\\]\nas before."
+  },
+  {
+    "objectID": "slides/05-mlr.html#model-fit-in-r",
+    "href": "slides/05-mlr.html#model-fit-in-r",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model fit in R",
+    "text": "Model fit in R\n\nint_fit &lt;- lm(interest_rate ~ debt_to_income + verified_income  + annual_income_th,\n              data = loan50)\n\ntidy(int_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n10.726\n1.507\n7.116\n0.000\n\n\ndebt_to_income\n0.671\n0.676\n0.993\n0.326\n\n\nverified_incomeSource Verified\n2.211\n1.399\n1.581\n0.121\n\n\nverified_incomeVerified\n6.880\n1.801\n3.820\n0.000\n\n\nannual_income_th\n-0.021\n0.011\n-1.804\n0.078"
+  },
+  {
+    "objectID": "slides/05-mlr.html#model-equation",
+    "href": "slides/05-mlr.html#model-equation",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model equation",
+    "text": "Model equation\n\\[\n\\begin{align}\\hat{\\text{interest_rate}} =  10.726 &+0.671 \\times \\text{debt_to_income}\\\\\n&+ 2.211 \\times \\text{source_verified}\\\\  \n&+ 6.880 \\times \\text{verified}\\\\\n& -0.021 \\times \\text{annual_income_th}\n\\end{align}\n\\]\n\n\n\n\n\n\nNote\n\n\nWe will talk about why there are two terms in the model for verified_income soon!"
+  },
+  {
+    "objectID": "slides/05-mlr.html#interpreting-hatbeta_j",
+    "href": "slides/05-mlr.html#interpreting-hatbeta_j",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)\n\nThe estimated coefficient \\(\\hat{\\beta}_j\\) is the expected change in the mean of \\(Y\\) when \\(X_j\\) increases by one unit, holding the values of all other predictor variables constant.\n\n\n\nExample: The estimated coefficient for debt_to_income is 0.671. This means for each point in an borrower’s debt to income ratio, the interest rate on the loan is expected to be greater by 0.671%, holding annual income and income verification constant."
+  },
+  {
+    "objectID": "slides/05-mlr.html#interpreting-hatbeta_j-1",
+    "href": "slides/05-mlr.html#interpreting-hatbeta_j-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)\n\nThe estimated coefficient for annual_income_th is -0.021. Interpret this coefficient in the context of the data.\n\n\n\n\nWhy do we need to include a statement about holding all other predictors constant?"
+  },
+  {
+    "objectID": "slides/05-mlr.html#interpreting-hatbeta_0",
+    "href": "slides/05-mlr.html#interpreting-hatbeta_0",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_0\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n10.726\n1.507\n7.116\n0.000\n7.690\n13.762\n\n\ndebt_to_income\n0.671\n0.676\n0.993\n0.326\n-0.690\n2.033\n\n\nverified_incomeSource Verified\n2.211\n1.399\n1.581\n0.121\n-0.606\n5.028\n\n\nverified_incomeVerified\n6.880\n1.801\n3.820\n0.000\n3.253\n10.508\n\n\nannual_income_th\n-0.021\n0.011\n-1.804\n0.078\n-0.043\n0.002\n\n\n\n\n\n\n\n\nDescribe the subset of borrowers who are expected to get an interest rate of 10.726% based on our model. Is this interpretation meaningful? Why or why not?"
+  },
+  {
+    "objectID": "slides/05-mlr.html#prediction",
+    "href": "slides/05-mlr.html#prediction",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction",
+    "text": "Prediction\n\nWhat is the predicted interest rate for an borrower with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000?\n\n\n\n10.726 + 0.671 * 0.558 + 2.211 * 0 + 6.880 * 0 - 0.021 * 59\n\n[1] 9.861418\n\n\n\nThe predicted interest rate for an borrower with with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000 is 9.86%."
+  },
+  {
+    "objectID": "slides/05-mlr.html#prediction-in-r",
+    "href": "slides/05-mlr.html#prediction-in-r",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction in R",
+    "text": "Prediction in R\nJust like with simple linear regression, we can use the predict() function in R to calculate the appropriate intervals for our predicted values:\n\nnew_borrower &lt;- tibble(\n  debt_to_income  = 0.558, \n  verified_income = \"Not Verified\", \n  annual_income_th = 59\n)\n\npredict(int_fit, new_borrower)\n\n       1 \n9.890888 \n\n\n\n\n\n\n\n\nNote\n\n\nDifference in predicted value due to rounding the coefficients on the previous slide."
+  },
+  {
+    "objectID": "slides/05-mlr.html#cautions",
+    "href": "slides/05-mlr.html#cautions",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Cautions",
+    "text": "Cautions\n\nDo not extrapolate! Because there are multiple predictor variables, there is the potential to extrapolate in many directions\nThe multiple regression model only shows association, not causality\n\nTo show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study"
+  },
+  {
+    "objectID": "slides/05-mlr.html#recap",
+    "href": "slides/05-mlr.html#recap",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Recap",
+    "text": "Recap\n\nShowed exploratory data analysis for multiple linear regression\nUsed least squares to fit the regression line\nInterpreted the coefficients for quantitative predictors\nPredicted the response for new observations"
+  },
+  {
+    "objectID": "slides/05-mlr.html#next-class",
+    "href": "slides/05-mlr.html#next-class",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Next class",
+    "text": "Next class\n\nMore on multiple linear regression\n\nCategorical predictors\nModel assessment\nGeometric interpretation (as time permits)\n\nSee Sep 12 prepare\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
   },
   {
     "objectID": "links.html",
@@ -1816,201 +2103,5 @@
       "Computing",
       "Troubleshooting"
     ]
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#announcements",
-    "href": "slides/05-slr-matrix-contd.html#announcements",
-    "title": "SLR: Matrix representation",
-    "section": "Announcements",
-    "text": "Announcements\n\nLab 01 due on Thursday, September 12 at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#topics",
-    "href": "slides/05-slr-matrix-contd.html#topics",
-    "title": "SLR: Matrix representation",
-    "section": "Topics",
-    "text": "Topics\n\nMatrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#slr-in-matrix-form",
-    "href": "slides/05-slr-matrix-contd.html#slr-in-matrix-form",
-    "title": "SLR: Matrix representation",
-    "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nSuppose we have \\(n\\) observations, a quantitative response variable, and a single predictor\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\n\\(\\mathbf{y}\\): \\(n\\times 1\\) vector of responses\n\\(\\mathbf{X}\\): \\(n \\times 2\\) design matrix \n\\(\\boldsymbol{\\beta}\\): \\(2 \\times 1\\) vector of coefficients\n\\(\\boldsymbol{\\epsilon}\\): \\(n \\times 1\\) vector of error terms"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#sum-of-squared-residuals",
-    "href": "slides/05-slr-matrix-contd.html#sum-of-squared-residuals",
-    "title": "SLR: Matrix representation",
-    "section": "Sum of squared residuals",
-    "text": "Sum of squared residuals\nWe use the sum of squared residuals (also called “sum of squared error”) to find the least squares line:\n\\[\nSSR = \\sum_{i=1}^ne_i^2 = \\mathbf{e}^T\\mathbf{e} = (\\mathbf{y} - \\hat{\\mathbf{y}})^T(\\mathbf{y} - \\hat{\\mathbf{y}})\n\\]\n\n\n\nWhat is the dimension of SSR?\nWhat is \\(\\hat{\\mathbf{y}}\\) in terms of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), and/or \\(\\boldsymbol{\\beta}\\) ?"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals",
-    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals",
-    "title": "SLR: Matrix representation",
-    "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\nGoal: Find values of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimize the sum of squared residuals \\[\n\\begin{aligned}\nSSR = \\sum_{i=1}^n e_i^2 = \\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n\\end{aligned}\n\\]\nMinimize sum of squared residuals \\[\n\\begin{aligned}\nSSR = \\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-1",
-    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-1",
-    "title": "SLR: Matrix representation",
-    "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\n\\[\n\\begin{aligned}\n\\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n\\end{aligned}\n\\]\n\n\\(\\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta}\\) and \\(\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y}\\) are scalars. Therefore, \\(\\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} = (\\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta})^T = \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y}\\)"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-2",
-    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-2",
-    "title": "SLR: Matrix representation",
-    "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\n\\[\n\\begin{aligned}\n\\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-3",
-    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-3",
-    "title": "SLR: Matrix representation",
-    "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\nThe estimate of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimize SSR is the one such that\n\\[\n\\nabla_{\\boldsymbol{\\beta}} SSR = \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) = 0\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#least-squares-estimators",
-    "href": "slides/05-slr-matrix-contd.html#least-squares-estimators",
-    "title": "SLR: Matrix representation",
-    "section": "Least squares estimators",
-    "text": "Least squares estimators\n\\[\nSSR = \\mathbf{e}^T\\mathbf{e} =\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\]\n\n\nThe least squares estimators must satisfy\n\n\n\n\\[\n\\color{#993399}{\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
-    "href": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
-    "title": "SLR: Matrix representation",
-    "section": "Did we find a minimum?",
-    "text": "Did we find a minimum?\n\\[\n\\nabla^2_{\\beta} SSR \\propto  2\\mathbf{X}^T\\mathbf{X} = 0\n\\]\n\n\n\\(\\mathbf{X}\\) is full rank \\(\\Rightarrow\\) \\(\\mathbf{X}^T\\mathbf{X}\\) is positive definite\nTherefore we have found the minimizing point"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#obtain-mathbfy-vector",
-    "href": "slides/05-slr-matrix-contd.html#obtain-mathbfy-vector",
-    "title": "SLR: Matrix representation",
-    "section": "Obtain \\(\\mathbf{y}\\) vector",
-    "text": "Obtain \\(\\mathbf{y}\\) vector\nLet’s go back to the Duke Forest data. We want to use the matrix representation to fit a model of the form:\n\\[\nprice = \\beta_0 + \\beta_1 ~ area + \\epsilon, \\hspace{5mm} \\epsilon \\sim N(0, \\sigma^2_\\epsilon)\n\\]\n\nGet \\(\\mathbf{y}\\), the vector of responses\n\ny &lt;- duke_forest$price\n\n\n\n\nLet’s look at the first 10 observations of \\(y\\)\n\ny[1:10]\n\n [1] 1520000 1030000  420000  680000  428500  456000 1270000  557450  697500\n[10]  650000"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#obtain-mathbfx-matrix",
-    "href": "slides/05-slr-matrix-contd.html#obtain-mathbfx-matrix",
-    "title": "SLR: Matrix representation",
-    "section": "Obtain \\(\\mathbf{X}\\) matrix",
-    "text": "Obtain \\(\\mathbf{X}\\) matrix\nUse the model.matrix() function to get \\(\\mathbf{X}\\)\n\nX &lt;- model.matrix(price ~ area, data = duke_forest)\n\n\n\nLet’s look at the first 10 rows of \\(\\mathbf{X}\\)\n\nX[1:10,]\n\n   (Intercept) area\n1            1 6040\n2            1 4475\n3            1 1745\n4            1 2091\n5            1 1772\n6            1 1950\n7            1 3909\n8            1 2841\n9            1 3924\n10           1 2173"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#calculate-hatboldsymbolbeta",
-    "href": "slides/05-slr-matrix-contd.html#calculate-hatboldsymbolbeta",
-    "title": "SLR: Matrix representation",
-    "section": "Calculate \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Calculate \\(\\hat{\\boldsymbol{\\beta}}\\)\nMatrix functions in R. Let \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\) be matrices\n\nt(A): transpose \\(\\mathbf{A}\\)\nsolve(A): inverse of \\(\\mathbf{A}\\)\nA %*% B: multiply \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\)\n\n\nNow let’s calculate \\(\\hat{\\boldsymbol{\\beta}}\\)\n\nbeta_hat &lt;- solve(t(X)%*%X)%*%t(X)%*%y\nbeta_hat\n\n                   [,1]\n(Intercept) 116652.3251\narea           159.4833"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#compare-to-result-from-lm",
-    "href": "slides/05-slr-matrix-contd.html#compare-to-result-from-lm",
-    "title": "SLR: Matrix representation",
-    "section": "Compare to result from lm",
-    "text": "Compare to result from lm\n\nduke_forest_model &lt;- lm(price ~ area, data = duke_forest)\ntidy(duke_forest_model) |&gt; kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.325\n53302.463\n2.188\n0.031\n\n\narea\n159.483\n18.171\n8.777\n0.000\n\n\n\n\n\n\n\n\nbeta_hat \n\n                   [,1]\n(Intercept) 116652.3251\narea           159.4833"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#predicted-fitted-values",
-    "href": "slides/05-slr-matrix-contd.html#predicted-fitted-values",
-    "title": "SLR: Matrix representation",
-    "section": "Predicted (fitted) values",
-    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\)\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#residuals",
-    "href": "slides/05-slr-matrix-contd.html#residuals",
-    "title": "SLR: Matrix representation",
-    "section": "Residuals",
-    "text": "Residuals\nRecall that the residuals are the difference between the observed and predicted values\n\\[\n\\begin{aligned}\n\\mathbf{e} &= \\mathbf{y} - \\hat{\\mathbf{y}}\\\\[10pt]\n& = \\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}} \\\\[10pt]\n& = \\mathbf{y} - \\mathbf{H}\\mathbf{y} \\\\[10pt]\n& = (\\mathbf{I} - \\mathbf{H})\\mathbf{y}\n\\end{aligned}\n\\]\n\n\\[\n\\color{#993399}{\\mathbf{e} = (\\mathbf{I} - \\mathbf{H})\\mathbf{y}}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#recap",
-    "href": "slides/05-slr-matrix-contd.html#recap",
-    "title": "SLR: Matrix representation",
-    "section": "Recap",
-    "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel from\nLeast square estimate\nPredicted (fitted) values\nResiduals\n\nUsed R for matrix calculations"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#next-class",
-    "href": "slides/05-slr-matrix-contd.html#next-class",
-    "title": "SLR: Matrix representation",
-    "section": "Next class",
-    "text": "Next class\n\nMultiple linear regression\nSee Sep 10 prepare\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#vector-and-matrix-operations",
-    "href": "slides/05-slr-matrix-contd.html#vector-and-matrix-operations",
-    "title": "SLR: Matrix representation",
-    "section": "Vector and matrix operations",
-    "text": "Vector and matrix operations\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\). Then \\(\\nabla_xf\\), the gradient of \\(\\mathbf{f}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_xf = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]\n$$\n$$"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-and-matrix-operations",
-    "href": "slides/05-slr-matrix-contd.html#side-note-vector-and-matrix-operations",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Vector and matrix operations",
-    "text": "Side note: Vector and matrix operations\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-and-matrix-operations-1",
-    "href": "slides/05-slr-matrix-contd.html#side-note-vector-and-matrix-operations-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Vector and matrix operations",
-    "text": "Side note: Vector and matrix operations\n\n\n\nProposition 1\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{z} = \\mathbf{z}\n\\]\n\n\n\n\n\\[\n\\mathbf{x}^T\\mathbf{z} = \\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations",
-    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Vector operations",
-    "text": "Side note: Vector operations\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations-1",
-    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Vector operations",
-    "text": "Side note: Vector operations\n\n\n\nProposition 1\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^T\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{z} = \\mathbf{z}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-proposition-1",
-    "href": "slides/05-slr-matrix-contd.html#side-note-proposition-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Proposition 1",
-    "text": "Side note: Proposition 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^T\\mathbf{z} &= \\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix} \\\\[10pt]\n&= x_1z_1 + x_2z_2 + \\dots + x_kz_k \\\\\n&= \\sum_{i=1}^k x_iz_i\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-proposition-1-1",
-    "href": "slides/05-slr-matrix-contd.html#side-note-proposition-1-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Proposition 1",
-    "text": "Side note: Proposition 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^T\\mathbf{z} = \\begin{bmatrix}\\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_k}\\end{bmatrix}  \n= \\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}\n= \\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-matrix-operations",
-    "href": "slides/05-slr-matrix-contd.html#side-note-vector-matrix-operations",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Vector + matrix operations",
-    "text": "Side note: Vector + matrix operations\n\n\n\nProposition 2\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^T \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-proposition-2",
-    "href": "slides/05-slr-matrix-contd.html#side-note-proposition-2",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Proposition 2",
-    "text": "Side note: Proposition 2"
-  },
-  {
-    "objectID": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
-    "href": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
-    "title": "SLR: Matrix representation",
-    "section": "Find the least squares estimators",
-    "text": "Find the least squares estimators\n\\[\n\\begin{aligned}\n\\nabla_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) = 0 \\\\[10pt]\n& = \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\mathbf{y}^T\\mathbf{y} - 2\\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = 0 \\\\[10pt]\n&= 0 - \\underbrace{2\\mathbf{X}^T\\mathbf{y}}_{\\text{Prop }1} + \\underbrace{2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}}_{\\text{Prop }2} = 0 \\\\[10pt]\n&\\Rightarrow \\mathbf{X}^T\\mathbf{y} = \\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} \\\\[10pt]\n&\\Rightarrow (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\n\n\\[\n\\color{#993399}{\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}\n\\]"
   }
 ]
