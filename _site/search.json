@@ -215,7 +215,7 @@
     "href": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
     "title": "SLR: Matrix representation",
     "section": "Did we find a minimum?",
-    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{=-2\\nabla_{\\boldsymbol{\\beta}}\\mathbf{X}^T\\mathbf{y} + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^T\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&\\class{fragment}{\\propto \\mathbf{X}^T\\mathbf{X}}\\class{fragment}{ &gt; 0}\n\\end{aligned}\n\\]"
+    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{=-2\\nabla_{\\boldsymbol{\\beta}}\\mathbf{X}^T\\mathbf{y} + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^T\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&\\class{fragment}{\\propto \\mathbf{X}^T\\mathbf{X}}\\class{fragment}{ &gt; 0}\n\\end{aligned}\n\\]\n\nShow the details in HW 01"
   },
   {
     "objectID": "slides/05-slr-matrix-contd.html#predicted-fitted-values",
@@ -896,115 +896,98 @@
     "text": "Review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nVector geometry: [slides][video]\nMatrix multiplication: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
   },
   {
-    "objectID": "prepare/prepare-sep3.html",
-    "href": "prepare/prepare-sep3.html",
-    "title": "Prepare for September 3 lecture",
+    "objectID": "prepare/prepare-sep12.html",
+    "href": "prepare/prepare-sep12.html",
+    "title": "Prepare for September 12 lecture",
     "section": "",
-    "text": "📖 Read Section 4.7: Model Assessment\n✅ Go through R resource (optional)"
+    "text": "📖 Read Multiple Linear Regression\n✅ Review Vector Geometry [slides][video]1\n🎥: Watch Geometric interpretation of least squares"
   },
   {
-    "objectID": "hw/stats-experience.html",
-    "href": "hw/stats-experience.html",
-    "title": "Statistics Experience",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "Statistics experience"
-    ]
+    "objectID": "prepare/prepare-sep12.html#footnotes",
+    "href": "prepare/prepare-sep12.html#footnotes",
+    "title": "Prepare for September 12 lecture",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFrom Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University↩︎"
   },
   {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03",
+    "objectID": "prepare/prepare-sep10.html",
+    "href": "prepare/prepare-sep10.html",
+    "title": "Prepare for September 10 lecture",
     "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
+    "text": "Review class notes and readings on simple linear regression.\nWe will extend what we’ve done thus far to multiple linear regression, with 2 or more predictors."
   },
   {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 04"
+      "HW 02"
     ]
   },
   {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\nKat Husar\nHead TA\nLab 02L leader\nTue 1:30 - 3:30pm, Old Chem 220\n\n\n\nJon Campbell\nLab 01L leader\nTue & Thu 9 - 10am, Old Chem 025\n\n\n\nIshrit Gupta\nLab 01L helper\nFri 1- 3pm, Old Chem 203B\n\n\n\nAlan Wang\nLab 02L helper\nMon & Wed 10 - 11am, Old Chem 203B",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 06"
+      "Lab 07"
     ]
   },
   {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 05"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "",
-    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today."
-  },
-  {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment."
-  },
-  {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step."
-  },
-  {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
-  },
-  {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 03"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
+      "Lab 04"
     ]
   },
   {
@@ -1162,85 +1145,116 @@
     ]
   },
   {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 07"
+      "Lab 03"
     ]
   },
   {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Welcome + Getting Started",
     "section": "",
-    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
+    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today."
   },
   {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment."
+  },
+  {
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step."
+  },
+  {
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
+  },
+  {
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
     "section": "",
-    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "text": "To be posted.",
     "crumbs": [
-      "Overview"
+      "Labs",
+      "Lab 05"
     ]
   },
   {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\nKat Husar\nHead TA\nLab 02L leader\nTue 1:30 - 3:30pm, Old Chem 220\n\n\n\nJon Campbell\nLab 01L leader\nTue & Thu 9 - 10am, Old Chem 025\n\n\n\nIshrit Gupta\nLab 01L helper\nFri 1- 3pm, Old Chem 203B\n\n\n\nAlan Wang\nLab 02L helper\nMon & Wed 10 - 11am, Old Chem 203B",
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
+    "section": "",
+    "text": "To be posted.",
     "crumbs": [
-      "Overview"
+      "Labs",
+      "Lab 06"
     ]
   },
   {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01",
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02",
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "prepare/prepare-sep10.html",
-    "href": "prepare/prepare-sep10.html",
-    "title": "Prepare for September 10 lecture",
+    "objectID": "hw/stats-experience.html",
+    "href": "hw/stats-experience.html",
+    "title": "Statistics Experience",
     "section": "",
-    "text": "Review class notes and readings on simple linear regression.\nWe will extend what we’ve done thus far to multiple linear regression, with 2 or more predictors."
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "Statistics experience"
+    ]
+  },
+  {
+    "objectID": "prepare/prepare-sep3.html",
+    "href": "prepare/prepare-sep3.html",
+    "title": "Prepare for September 3 lecture",
+    "section": "",
+    "text": "📖 Read Section 4.7: Model Assessment\n✅ Go through R resource (optional)"
   },
   {
     "objectID": "prepare/prepare-aug29.html",
@@ -1372,7 +1386,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Assessment + Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned, Lab 01 due\n\n\n4\nM\nSep 16\nLab 02: Multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nDistribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Predictors + geometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned, Lab 01 due\n\n\n4\nM\nSep 16\nLab 02: Multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nDistribution of residuals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]

@@ -263,6 +263,8 @@ $$
 \end{aligned}
 $$
 
+<center><b>Show the details in HW 01</b></center>
+
 # Predicted values and residuals
 
 ## Predicted (fitted) values

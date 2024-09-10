@@ -361,10 +361,10 @@ tidy(int_fit, conf.int = TRUE) |>
 
 . . .
 
-<br>
-
 ::: question
+::: midi
 Describe the subset of borrowers who are expected to get an interest rate of 10.726% based on our model. Is this interpretation meaningful? Why or why not?
+:::
 :::
 
 ## Prediction
