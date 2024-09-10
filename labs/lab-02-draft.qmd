@@ -1,0 +1,113 @@
+---
+title: "Lab 02: Multiple Linear Regression"
+author: "Add your name here"
+date: today
+execute:
+  freeze: auto
+  echo: true
+  evaluate: true
+  warning: false
+  message: false
+format: html
+---
+
+::: callout-important
+## Date due
+
+-   Add dates
+-   Add dates
+:::
+
+# Multiple Linear Regression
+
+In this lab, we will go through a data analysis routine based on the multiple linear regression (MLR) topics we have seen in class. We will sprinkle in some regression theory as well.
+
+## Packages
+
+For today's lab, we will be using the following packages.
+
+```{r packages}
+library(tidyverse)
+library(skimr)
+library(broom)
+```
+
+## Data
+
+Today's data was pulled from the [National Database of Childcare Prices](https://www.dol.gov/agencies/wb/topics/featured-childcare), and appeared on May 9^th^ on [TidyTuesdays](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-05-09). We will be focusing on a subset of the data collecting information about childcare costs and labor market information across the 100 North Carolina counties.
+
+For this lab, we will use our data via a **test/train split**. We will be using part of our observations to fit a regression model and the remaining part to check the preictive power of the model we fit.
+
+```{r import-data}
+childcare <- read_csv('data/lab-02_childcare-costs_train.csv')
+```
+
+Below, you will find a table containing the variable descriptions for the dataset. \[TODO: Add table\]
+
+Our goal will be to understand what factors determine the cost of childcare for school-aged children in North Carolina. As an outcome variable, we will be using `mcsa`, the weekly full-time median price charged by childcare centers for children between 6 and 17.
+
+## Exercises
+
+### Exercise 1
+
+Let us start by inspecting the data. *TODO: ask for standard summaries/visualizations of data*
+
+### Exercise 2
+
+There are many potentially interesting covariates in the data. To start, we will be doing some *feature design and selection*. In other words, we will be choosing and/or constructing some variables among the ones available that we will use as predictors for `mcsa`. We will use a total of **five** dependent variables.
+
+First, let's select some variables from the data. Choose **five** variables that you would like to use as predictor, list them below and briefly explain why you expect the chosen variables to be relevant predictors.
+
+### Exercise 3
+
+Given your choices in the above exercise, you will be asked to design new dependent variables from the ones available if you believe it is needed. This procedure is useful when using a variable as-is can give rise to interpretation issues.
+
+::: {.callout-tip title="Example"}
+Say we believe that the amount of households with two working parents increases demand for childcare services, and hence their price. We have the column `h_6to17_both_work` encoding the number of such households per county. But counties are inherently differently sized, and raw population count may be misleading, since having a larger count does not imply such type of household is more prevalent.
+
+A reasonable thing would be creating a variable encoding the *proportion* of households with both parents working. We could do this by creating a variable `p_6to17_both_work`:
+
+```{r}
+#| eval: false
+childcare |> mutate(p_6to17_both_work = h_6to17_both_work / households)
+```
+:::
+
+For your selected variables, create new variables if you believe some transformation is appropriate. Once you are done, create a trimmed dataset `childcare_small` including only the outcome variable `mcsa` and the variables you intend to use in your regression analysis.
+
+### Exercise 4
+
+Choose one of your predictor variables and visualize the relation between childcare costs and the chosen variable using a scatterplot. Comment on the visual relation you observe: does your independent variable seem to explained any of the observed values of `mcsa`?
+
+### Exercise 5
+
+Represent the regression model you intend to use in matrix-vector form. Write the regression model, make the dimensions of all quantities explicit and describe what each symbol you use represents.
+
+### Exercise 6
+
+Use `lm` to fit the regression model you described in the previous exercise, and store your results in a variable called `childcare_lm`.
+
+### Exercise 7
+
+We can now assess the overall fit of your regression model. Using the information included in `childcare_lm`, answer the following questions. In answering, make sure to reference the relevant statistics you used to draw your conclusions and show any calculations you make.
+
+-   *How much of the variation in the childcare costs is explained by your chosen explanatory variables?*
+-   *Do you have reason to believe your model explains a significant portion of the variation in the data?*
+
+### Exercise 8
+
+Display and interpret the regression coefficients you obtained from the `lm` fit. Comment on the direction and the size of the relationships.
+
+### Exercise 9
+
+Let us now explore the predictive power of our fitted model on the test set. Let's first load the test data.
+
+```{r load-test-data}
+childcare_test = read_csv('data/lab-02_childcare-costs_test.csv')
+```
+
+Use the `predict` function method to compute fitted values for childcare costs, and store them in an object called `childcare_test_fitted`.
+
+### Exercise 10
+
+Compute the standard deviation of `mcsa` and the RMSE for the test set, and compare the two values. Are they appreciably different? What does this suggest about the predictive power of our model?
