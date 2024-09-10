@@ -356,7 +356,7 @@ Prof.&nbsp;Maria Tackett
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
 <ul>
-<li>Matrix representation for simple linear regression
+<li>Matrix representation of simple linear regression
 <ul>
 <li>Model form</li>
 <li>Least square estimate</li>
@@ -417,7 +417,7 @@ y_n
 </section>
 <section id="minimize-sum-of-squared-residuals" class="slide level2">
 <h2>Minimize sum of squared residuals</h2>
-<p><strong>Goal</strong>: Find values of <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}\)</span> that minimize the sum of squared residuals <span class="math display">\[
+<p><strong>Goal</strong>: Find <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}\)</span> that minimizes the sum of squared residuals <span class="math display">\[
 \begin{aligned}
 SSR = \sum_{i=1}^n e_i^2 = \mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
 \end{aligned}
@@ -446,7 +446,7 @@ SSR = \sum_{i=1}^n e_i^2 = \mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X
 </section>
 <section id="minimize-sum-of-squared-residuals-3" class="slide level2">
 <h2>Minimize sum of squared residuals</h2>
-<p>The estimate of <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}\)</span> that minimize SSR is the one such that</p>
+<p>The estimate of <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}\)</span> that minimizes SSR is the one such that</p>
 <p><span class="math display">\[
 \nabla_{\boldsymbol{\beta}} SSR = \nabla_{\boldsymbol{\beta}}( \mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}) = 0
 \]</span></p>
@@ -527,6 +527,9 @@ SSR = \sum_{i=1}^n e_i^2 = \mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X
 </div>
 </div>
 </div>
+<center>
+Proof in HW 01
+</center>
 </section>
 <section id="find-the-least-squares-estimators" class="slide level2">
 <h2>Find the least squares estimators</h2>
@@ -535,9 +538,9 @@ SSR = \sum_{i=1}^n e_i^2 = \mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X
 \nabla_{\boldsymbol{\beta}} SSR &amp;= \nabla_{\boldsymbol{\beta}}( \mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta})  \\[10pt]
 &amp; \class{fragment}{= \nabla_\boldsymbol{\beta} \hspace{1mm} \mathbf{y}^T\mathbf{y} - 2\nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}} \\[10pt]
 &amp;\class{fragment}{= 0 - 2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}}\class{fragment}{=0} \\[10pt]
-&amp;\class{fragment}{\Rightarrow \mathbf{X}^T\mathbf{y} = \mathbf{X}^T\mathbf{X}\boldsymbol{\beta}} \\[10pt]
-&amp;\class{fragment}{\Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}} \\[10pt]
-&amp;\class{fragment}{\color{#993399}{\Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = \hat{\boldsymbol{\beta}}}}
+&amp;\class{fragment}{\Rightarrow \mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = \mathbf{X}^T\mathbf{y}} \\[10pt]
+&amp;\class{fragment}{\Rightarrow   (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}} \\[10pt]
+&amp;\class{fragment}{\color{#993399}{\Rightarrow \hat{\boldsymbol{\beta}} =  (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}}}
 \end{aligned}
 \]</span></p>
 </section>

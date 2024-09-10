@@ -55,7 +55,7 @@ knitr::opts_chunk$set(
 
 ## Topics
 
--   Matrix representation for simple linear regression
+-   Matrix representation of simple linear regression
     -   Model form
     -   Least square estimate
     -   Predicted (fitted) values
@@ -127,7 +127,7 @@ $$
 
 ## Minimize sum of squared residuals
 
-**Goal**: Find values of $\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}$ that minimize the sum of squared residuals $$
+**Goal**: Find $\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}$ that minimizes the sum of squared residuals $$
 \begin{aligned}
 SSR = \sum_{i=1}^n e_i^2 = \mathbf{e}^T\mathbf{e} &= (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T(\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \\[10pt]
 \end{aligned}
@@ -156,7 +156,7 @@ $$
 
 ## Minimize sum of squared residuals
 
-The estimate of $\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}$ that minimize SSR is the one such that
+The estimate of $\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\ \beta_1 \end{bmatrix}$ that minimizes SSR is the one such that
 
 $$
 \nabla_{\boldsymbol{\beta}} SSR = \nabla_{\boldsymbol{\beta}}( \mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}) = 0
@@ -238,6 +238,8 @@ $$
 $$
 :::
 
+<center>Proof in HW 01</center>
+
 ## Find the least squares estimators
 
 $$
@@ -245,9 +247,9 @@ $$
 \nabla_{\boldsymbol{\beta}} SSR &= \nabla_{\boldsymbol{\beta}}( \mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta})  \\[10pt]
 & \class{fragment}{= \nabla_\boldsymbol{\beta} \hspace{1mm} \mathbf{y}^T\mathbf{y} - 2\nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \nabla_\boldsymbol{\beta} \hspace{1mm} \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}} \\[10pt]
 &\class{fragment}{= 0 - 2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}}\class{fragment}{=0} \\[10pt]
-&\class{fragment}{\Rightarrow \mathbf{X}^T\mathbf{y} = \mathbf{X}^T\mathbf{X}\boldsymbol{\beta}} \\[10pt]
-&\class{fragment}{\Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}} \\[10pt]
-&\class{fragment}{\color{#993399}{\Rightarrow (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = \hat{\boldsymbol{\beta}}}}
+&\class{fragment}{\Rightarrow \mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = \mathbf{X}^T\mathbf{y}} \\[10pt]
+&\class{fragment}{\Rightarrow   (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}} \\[10pt]
+&\class{fragment}{\color{#993399}{\Rightarrow \hat{\boldsymbol{\beta}} =  (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}}}
 \end{aligned}
 $$
 

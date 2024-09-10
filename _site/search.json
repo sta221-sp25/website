@@ -124,7 +124,7 @@
     "href": "slides/05-slr-matrix-contd.html#topics",
     "title": "SLR: Matrix representation",
     "section": "Topics",
-    "text": "Topics\n\nMatrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+    "text": "Topics\n\nMatrix representation of simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
   },
   {
     "objectID": "slides/05-slr-matrix-contd.html#slr-in-matrix-form",
@@ -138,7 +138,7 @@
     "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals",
     "title": "SLR: Matrix representation",
     "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\nGoal: Find values of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimize the sum of squared residuals \\[\n\\begin{aligned}\nSSR = \\sum_{i=1}^n e_i^2 = \\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n\\end{aligned}\n\\]"
+    "text": "Minimize sum of squared residuals\nGoal: Find \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes the sum of squared residuals \\[\n\\begin{aligned}\nSSR = \\sum_{i=1}^n e_i^2 = \\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-1",
@@ -159,7 +159,7 @@
     "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-3",
     "title": "SLR: Matrix representation",
     "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\nThe estimate of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimize SSR is the one such that\n\\[\n\\nabla_{\\boldsymbol{\\beta}} SSR = \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) = 0\n\\]"
+    "text": "Minimize sum of squared residuals\nThe estimate of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes SSR is the one such that\n\\[\n\\nabla_{\\boldsymbol{\\beta}} SSR = \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) = 0\n\\]"
   },
   {
     "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations",
@@ -201,14 +201,14 @@
     "href": "slides/05-slr-matrix-contd.html#side-note-vector-matrix-operations",
     "title": "SLR: Matrix representation",
     "section": "Side note: Vector + matrix operations",
-    "text": "Side note: Vector + matrix operations\n\n\n\nProposition 2\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^T \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]"
+    "text": "Side note: Vector + matrix operations\n\n\n\nProposition 2\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^T \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\n\n\n\nProof in HW 01"
   },
   {
     "objectID": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
     "href": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
     "title": "SLR: Matrix representation",
     "section": "Find the least squares estimators",
-    "text": "Find the least squares estimators\n\\[\n\\begin{aligned}\n\\nabla_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta})  \\\\[10pt]\n& \\class{fragment}{= \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\mathbf{y}^T\\mathbf{y} - 2\\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{= 0 - 2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}}\\class{fragment}{=0} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow \\mathbf{X}^T\\mathbf{y} = \\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{\\color{#993399}{\\Rightarrow (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} = \\hat{\\boldsymbol{\\beta}}}}\n\\end{aligned}\n\\]"
+    "text": "Find the least squares estimators\n\\[\n\\begin{aligned}\n\\nabla_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta})  \\\\[10pt]\n& \\class{fragment}{= \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\mathbf{y}^T\\mathbf{y} - 2\\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{= 0 - 2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}}\\class{fragment}{=0} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow \\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = \\mathbf{X}^T\\mathbf{y}} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow   (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}} \\\\[10pt]\n&\\class{fragment}{\\color{#993399}{\\Rightarrow \\hat{\\boldsymbol{\\beta}} =  (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}}\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
