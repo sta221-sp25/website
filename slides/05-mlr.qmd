@@ -243,7 +243,7 @@ The calculations can be very tedious, especially if $p$ is large
 
 ## Matrix form of multiple linear regression
 
-Suppose we have $n$ observations, a quantitative response variable, and a single predictor$$
+Suppose we have $n$ observations, a quantitative response variable, and $p$ \> 1 predictors $$
 \underbrace{
 \begin{bmatrix}
 y_1 \\

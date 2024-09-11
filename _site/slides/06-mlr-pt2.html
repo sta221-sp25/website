@@ -387,6 +387,8 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
@@ -395,6 +397,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Multiple linear regression (MLR)</h1>
+  <p class="subtitle">Categorical predictors + Assessment</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -406,13 +409,32 @@ Prof.&nbsp;Maria Tackett
 
   <p class="date">Sep 10, 2024</p>
 </section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
+<ul>
+<li><p>Lab 01 due on <strong>TODAY at 11:59pm</strong></p>
+<ul>
+<li><p>Push work to GitHub repo</p></li>
+<li><p>Submit final PDF on Gradescope + mark pages for each question</p></li>
+</ul></li>
+<li><p>HW 01 due <strong>Thursday, September 19 at 11:59pm</strong></p>
+<ul>
+<li>Will be released after class</li>
+</ul></li>
+<li><p>Team labs start on Monday</p></li>
+</ul>
+</section>
+<section id="hw-01" class="slide level2">
+<h2>HW 01</h2>
+<!--# Add-->
+</section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
 <ul>
-<li><p>Exploratory data analysis for multiple linear regression</p></li>
-<li><p>Fitting the least squares line</p></li>
-<li><p>Interpreting coefficients for quantitative predictors</p></li>
-<li><p>Prediction</p></li>
+<li><p>Categorical predictors and interaction terms</p></li>
+<li><p>Assess model fit using RSME and <span class="math inline">\(R^2\)</span></p></li>
+<li><p>Compare models using <span class="math inline">\(Adj. R^2\)</span></p></li>
+<li><p>Geometric interpretation <!--# ?--></p></li>
 </ul>
 </section>
 <section id="computing-setup" class="slide level2">
@@ -425,15 +447,11 @@ Prof.&nbsp;Maria Tackett
 <span id="cb1-5"><a></a><span class="fu">library</span>(patchwork)</span>
 <span id="cb1-6"><a></a><span class="fu">library</span>(knitr)</span>
 <span id="cb1-7"><a></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
-<span id="cb1-10"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a></a><span class="fu">library</span>(viridis) <span class="co">#adjust color palette</span></span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
+<span id="cb1-11"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section>
-<section id="considering-multiple-variables" class="title-slide slide level1 center">
-<h1>Considering multiple variables</h1>
-
 </section>
 <section id="data-peer-to-peer-lender" class="slide level2">
 <h2>Data: Peer-to-peer lender</h2>
@@ -441,18 +459,18 @@ Prof.&nbsp;Maria Tackett
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 50 × 4
-   annual_income debt_to_income verified_income interest_rate
-           &lt;dbl&gt;          &lt;dbl&gt; &lt;fct&gt;                   &lt;dbl&gt;
- 1         59000         0.558  Not Verified            10.9 
- 2         60000         1.31   Not Verified             9.92
- 3         75000         1.06   Verified                26.3 
- 4         75000         0.574  Not Verified             9.92
- 5        254000         0.238  Not Verified             9.43
- 6         67000         1.08   Source Verified          9.92
- 7         28800         0.0997 Source Verified         17.1 
- 8         80000         0.351  Not Verified             6.08
- 9         34000         0.698  Not Verified             7.97
-10         80000         0.167  Source Verified         12.6 
+   annual_income_th debt_to_income verified_income interest_rate
+              &lt;dbl&gt;          &lt;dbl&gt; &lt;fct&gt;                   &lt;dbl&gt;
+ 1             59           0.558  Not Verified            10.9 
+ 2             60           1.31   Not Verified             9.92
+ 3             75           1.06   Verified                26.3 
+ 4             75           0.574  Not Verified             9.92
+ 5            254           0.238  Not Verified             9.43
+ 6             67           1.08   Source Verified          9.92
+ 7             28.8         0.0997 Source Verified         17.1 
+ 8             80           0.351  Not Verified             6.08
+ 9             34           0.698  Not Verified             7.97
+10             80           0.167  Source Verified         12.6 
 # ℹ 40 more rows</code></pre>
 </div>
 </div>
@@ -462,179 +480,26 @@ Prof.&nbsp;Maria Tackett
 <p><strong>Predictors</strong>:</p>
 <div>
 <ul>
-<li><code>annual_income</code>: Annual income</li>
+<li><code>annual_income_th</code>: Annual income (in $1000s)</li>
 <li><code>debt_to_income</code>: Debt-to-income ratio, i.e.&nbsp;the percentage of a borrower’s total debt divided by their total income</li>
 <li><code>verified_income</code>: Whether borrower’s income source and amount have been verified (<code>Not Verified</code>, <code>Source Verified</code>, <code>Verified</code>)</li>
 </ul>
 </div>
-<p><strong>Outcome</strong>: <code>interest_rate</code>: Interest rate for the loan</p>
+<p><strong>Response</strong>: <code>interest_rate</code>: Interest rate for the loan</p>
 </section>
-<section id="outcome-interest_rate" class="slide level2">
-<h2>Outcome: <code>interest_rate</code></h2>
+<section id="response-vs.-predictors" class="slide level2 small">
+<h2>Response vs.&nbsp;predictors</h2>
 
-<img data-src="05-mlr_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><div class="cell">
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Min</th>
-<th style="text-align: right;">Median</th>
-<th style="text-align: right;">Max</th>
-<th style="text-align: right;">IQR</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">5.31</td>
-<td style="text-align: right;">9.93</td>
-<td style="text-align: right;">26.3</td>
-<td style="text-align: right;">5.755</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<img data-src="06-mlr-pt2_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><p><strong>Goal</strong>: Use these predictors in a single model to understand variability in interest rate.</p>
 </section>
-<section id="predictors" class="slide level2 small">
-<h2>Predictors</h2>
-
-<img data-src="05-mlr_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:100.0%" class="r-stretch"></section>
-<section id="data-manipulation-1-rescale-income" class="slide level2">
-<h2>Data manipulation 1: Rescale income</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>loan50 <span class="ot">&lt;-</span> loan50 <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">mutate</span>(<span class="at">annual_income_th =</span> annual_income <span class="sc">/</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-
-<img data-src="05-mlr_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
-<div class="question">
-<p>Why did we rescale income?</p>
-</div>
-</div>
-</section>
-<section id="outcome-vs.-predictors" class="slide level2 small">
-<h2>Outcome vs.&nbsp;predictors</h2>
-
-<img data-src="05-mlr_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><div class="fragment">
-<p><strong>Goal</strong>: Use these predictors in a single model to understand variability in interest rate.</p>
-</div>
-<div class="fragment">
-<div class="question">
-<p>Why do we want to use a single model versus 3 separate simple linear regression models?</p>
-</div>
-</div>
-</section></section>
-<section>
-<section id="multiple-linear-regression" class="title-slide slide level1 center">
-<h1>Multiple linear regression</h1>
-
-</section>
-<section id="multiple-linear-regression-mlr" class="slide level2 smaller">
-<h2>Multiple linear regression (MLR)</h2>
-<p>Based on the analysis goals, we will use a <strong>multiple linear regression</strong> model of the following form</p>
-<p><span class="math display">\[
-\begin{aligned}\text{interest_rate} ~ =
-\beta_0 &amp; + \beta_1 ~ \text{debt_to_income} \\ &amp; + \beta_2 ~ \text{verified_income} \\ &amp;+ \beta_3~ \text{annual_income_th} \\
-&amp; +\epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
-\end{aligned}
-\]</span></p>
-</section>
-<section id="multiple-linear-regression-1" class="slide level2">
-<h2>Multiple linear regression</h2>
-<p><strong>Recall:</strong> The simple linear regression model</p>
-<p><span class="math display">\[
-Y = \beta_0 + \beta_1~ X + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
-\]</span></p>
-<div class="fragment">
-<p>The form of the multiple linear regression model is</p>
-<p><span class="math display">\[
-Y = \beta_0 + \beta_1X_1 +  \dots + \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
-\]</span></p>
-<p><br></p>
-</div>
-<div class="fragment">
-<p>Therefore,</p>
-<p><span class="math display">\[
-E(Y|X_1, \ldots, X_p) = \beta_0 + \beta_1X_1 +  \dots + \beta_pX_p
-\]</span></p>
-</div>
-</section>
-<section id="fitting-the-least-squares-line" class="slide level2">
-<h2>Fitting the least squares line</h2>
-<p>Similar to simple linear regression, we want to find estimates for <span class="math inline">\(\beta_0, \beta_1, \ldots, \beta_p\)</span> that minimize</p>
-<p><span class="math display">\[
-\sum_{i=1}^{n}e_i^2 = \sum_{i=1}^n[y_i - \hat{y}_i]^2 = \sum_{i=1}^n[y_i - (\beta_0 + \beta_1x_{i1} + \dots + \beta_px_{ip})]^2
-\]</span></p>
-<p><br></p>
-<div class="fragment">
-<p>The calculations can be very tedious, especially if <span class="math inline">\(p\)</span> is large</p>
-</div>
-</section>
-<section id="matrix-form-of-multiple-linear-regression" class="slide level2">
-<h2>Matrix form of multiple linear regression</h2>
-<p>Suppose we have <span class="math inline">\(n\)</span> observations, a quantitative response variable, and <span class="math inline">\(p\)</span> &gt; 1 predictors <span class="math display">\[
-\underbrace{
-\begin{bmatrix}
-y_1 \\
-\vdots \\
-y_n
-\end{bmatrix} }_
-{\mathbf{y}} \hspace{3mm}
-=
-\hspace{3mm}
-\underbrace{
-\begin{bmatrix}
-1 &amp;x_{11} &amp; \dots &amp; x_{1p}\\
-\vdots &amp; \vdots &amp;\ddots &amp; \vdots \\
-1 &amp;  x_{n1} &amp; \dots &amp;x_{np}
-\end{bmatrix}
-}_{\mathbf{X}}
-\hspace{2mm}
-\underbrace{
-\begin{bmatrix}
-\beta_0 \\
-\beta_1 \\
-\vdots \\
-\beta_p
-\end{bmatrix}
-}_{\boldsymbol{\beta}}
-\hspace{3mm}
-+
-\hspace{3mm}
-\underbrace{
-\begin{bmatrix}
-\epsilon_1 \\
-\vdots\\
-\epsilon_n
-\end{bmatrix}
-}_\boldsymbol{\epsilon}
-\]</span></p>
-<div class="question">
-<p>What are the dimensions of <span class="math inline">\(\mathbf{y}\)</span>, <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\boldsymbol{\epsilon}\)</span>?</p>
-</div>
-</section>
-<section id="matrix-form-of-multiple-linear-regression-1" class="slide level2">
-<h2>Matrix form of multiple linear regression</h2>
-<p>As with simple linear regression, we have</p>
-<p><span class="math display">\[
-\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
-\]</span></p>
-<div class="fragment">
-<p>Generalizing the derivations from SLR to <span class="math inline">\(p &gt; 2\)</span>, we have</p>
-<p><span class="math display">\[
-\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}
-\]</span></p>
-<p>as before.</p>
-</div>
-</section>
-<section id="model-fit-in-r" class="slide level2 smaller">
+<section id="model-fit-in-r" class="slide level2">
 <h2>Model fit in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>int_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_income <span class="sc">+</span> verified_income  <span class="sc">+</span> annual_income_th,</span>
-<span id="cb4-2"><a></a>              <span class="at">data =</span> loan50)</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="fu">tidy</span>(int_fit) <span class="sc">|&gt;</span></span>
-<span id="cb4-5"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>int_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_income <span class="sc">+</span> verified_income  <span class="sc">+</span> annual_income_th,</span>
+<span id="cb3-2"><a></a>              <span class="at">data =</span> loan50)</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="fu">tidy</span>(int_fit) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <colgroup>
@@ -694,74 +559,140 @@ y_n
 </div>
 </div>
 </section>
-<section id="model-equation" class="slide level2">
-<h2>Model equation</h2>
+<section>
+<section id="categorical-predictors" class="title-slide slide level1 center">
+<h1>Categorical predictors</h1>
+
+</section>
+<section id="matrix-form-of-multiple-linear-regression" class="slide level2">
+<h2>Matrix form of multiple linear regression</h2>
 <p><span class="math display">\[
-\begin{align}\hat{\text{interest_rate}} =  10.726 &amp;+0.671 \times \text{debt_to_income}\\
-&amp;+ 2.211 \times \text{source_verified}\\  
-&amp;+ 6.880 \times \text{verified}\\
-&amp; -0.021 \times \text{annual_income_th}
-\end{align}
+\underbrace{
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix} }_
+{\mathbf{y}} \hspace{3mm}
+=
+\hspace{3mm}
+\underbrace{
+\begin{bmatrix}
+1 &amp;x_{11} &amp; \dots &amp; x_{1p}\\
+\vdots &amp; \vdots &amp;\ddots &amp; \vdots \\
+1 &amp;  x_{n1} &amp; \dots &amp;x_{np}
+\end{bmatrix}
+}_{\mathbf{X}}
+\hspace{2mm}
+\underbrace{
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_p
+\end{bmatrix}
+}_{\boldsymbol{\beta}}
+\hspace{3mm}
++
+\hspace{3mm}
+\underbrace{
+\begin{bmatrix}
+\epsilon_1 \\
+\vdots\\
+\epsilon_n
+\end{bmatrix}
+}_\boldsymbol{\epsilon}
 \]</span></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<center>
+How might we include a categorical predictor with <span class="math inline">\(k\)</span> levels in the design matrix, <span class="math inline">\(\mathbf{X}\)</span> ?
+</center>
+</section>
+<section id="indicator-variables" class="slide level2 midi">
+<h2>Indicator variables</h2>
+<p>Suppose we want to predict the amount of sleep a Duke student gets based on whether they are in Pratt (Prat Yes/ No are the only two options). Consider the model</p>
+<p><span class="math display">\[
+Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1}(Pratt_i = \texttt{No})
+\]</span></p>
+<div class="question">
+<ul>
+<li><p>Write out the design matrix for this hypothesized linear model.</p></li>
+<li><p>Demonstrate that the design matrix is not of full column rank (that is, affirmatively provide one of the columns in terms of the others).</p></li>
+<li><p>Use this intuition to explain why when we include categorical predictors, we cannot include both indicators for every level of the variable <em>and</em> an intercept.</p></li>
+</ul>
 </div>
-<p><strong>Note</strong></p>
+</section>
+<section id="indicator-variables-1" class="slide level2">
+<h2>Indicator variables</h2>
+<ul>
+<li><p>Suppose there is a categorical variable with <span class="math inline">\(k\)</span> levels</p></li>
+<li><p>We can make K indicator variables from the data - one indicator for each level</p></li>
+<li><p>An <strong>indicator (dummy) variable</strong> takes values 1 or 0</p>
+<ul>
+<li><p>1 if the observation belongs to that level</p></li>
+<li><p>0 if the observation does not belong to that level</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="create-indicator-variables-for-verified_income" class="slide level2">
+<h2>Create indicator variables for <code>verified_income</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>loan50 <span class="ot">&lt;-</span> loan50 <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-3"><a></a>    <span class="at">not_verified =</span> <span class="fu">if_else</span>(verified_income <span class="sc">==</span> <span class="st">"Not Verified"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb4-4"><a></a>    <span class="at">source_verified =</span> <span class="fu">if_else</span>(verified_income <span class="sc">==</span> <span class="st">"Source Verified"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb4-5"><a></a>    <span class="at">verified =</span> <span class="fu">if_else</span>(verified_income <span class="sc">==</span> <span class="st">"Verified"</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb4-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-content">
-<p>We will talk about why there are two terms in the model for <code>verified_income</code> soon!</p>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  verified_income not_verified source_verified verified
+  &lt;fct&gt;                  &lt;dbl&gt;           &lt;dbl&gt;    &lt;dbl&gt;
+1 Not Verified               1               0        0
+2 Verified                   0               0        1
+3 Source Verified            0               1        0</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="interpreting-hatbeta_j" class="slide level2">
-<h2>Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
+<section id="indicator-variables-in-the-model" class="slide level2 midi">
+<h2>Indicator variables in the model</h2>
 <ul>
-<li>The estimated coefficient <span class="math inline">\(\hat{\beta}_j\)</span> is the expected change in the mean of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X_j\)</span> increases by one unit, <i><b>holding the values of all other predictor variables constant</b></i>.</li>
+<li>We will use <span class="math inline">\(k-1\)</span> of the indicator variables in the model.</li>
+<li>The <strong>baseline</strong> is the category that doesn’t have a term in the model.</li>
+<li>The coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.</li>
 </ul>
 <div class="fragment">
-<ul>
-<li><strong>Example:</strong> The estimated coefficient for <code>debt_to_income</code> is 0.671. This means for each point in an borrower’s debt to income ratio, the interest rate on the loan is expected to be greater by 0.671%, holding annual income and income verification constant.</li>
-</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>loan50 <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a></a>  <span class="fu">select</span>(verified_income, source_verified, verified) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  verified_income source_verified verified
+  &lt;fct&gt;                     &lt;dbl&gt;    &lt;dbl&gt;
+1 Not Verified                  0        0
+2 Verified                      0        1
+3 Source Verified               1        0</code></pre>
+</div>
+</div>
 </div>
 </section>
-<section id="interpreting-hatbeta_j-1" class="slide level2">
-<h2>Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
-<div class="question">
-<p>The estimated coefficient for <code>annual_income_th</code> is -0.021. Interpret this coefficient in the context of the data.</p>
-</div>
-<p><br></p>
-<!--# Make ed discussion poll-->
-<div class="question">
-<p>Why do we need to include a statement about holding all other predictors constant?</p>
-</div>
-</section>
-<section id="interpreting-hatbeta_0" class="slide level2">
-<h2>Interpreting <span class="math inline">\(\hat{\beta}_0\)</span></h2>
+<section id="interpreting-verified_income" class="slide level2 small">
+<h2>Interpreting <code>verified_income</code></h2>
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 35%">
-<col style="width: 10%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 9%">
-<col style="width: 10%">
-<col style="width: 11%">
-</colgroup>
+<table class="caption-top" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
 </tr>
 </thead>
 <tbody>
@@ -784,22 +715,22 @@ y_n
 <td style="text-align: right;">2.033</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">verified_incomeSource Verified</td>
-<td style="text-align: right;">2.211</td>
-<td style="text-align: right;">1.399</td>
-<td style="text-align: right;">1.581</td>
-<td style="text-align: right;">0.121</td>
-<td style="text-align: right;">-0.606</td>
-<td style="text-align: right;">5.028</td>
+<td style="text-align: left; background-color: rgba(220, 229, 178, 255) !important;">verified_incomeSource Verified</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">2.211</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">1.399</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">1.581</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">0.121</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">-0.606</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">5.028</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">verified_incomeVerified</td>
-<td style="text-align: right;">6.880</td>
-<td style="text-align: right;">1.801</td>
-<td style="text-align: right;">3.820</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">3.253</td>
-<td style="text-align: right;">10.508</td>
+<td style="text-align: left; background-color: rgba(220, 229, 178, 255) !important;">verified_incomeVerified</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">6.880</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">1.801</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">3.820</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">0.000</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">3.253</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">10.508</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">annual_income_th</td>
@@ -812,91 +743,188 @@ y_n
 </tr>
 </tbody>
 </table>
+
+
+</div>
+</div>
+<div class="fragment">
+<div>
+<ul>
+<li class="fragment">The baseline category is <code>Not verified</code>.</li>
+<li class="fragment">People with source verified income are expected to take a loan with an interest rate that is 2.211% higher, on average, than the rate on loans to those whose income is not verified, holding all else constant.</li>
+</ul>
 </div>
 </div>
 <div class="fragment">
 <div class="question">
-<div class="midi">
-<p>Describe the subset of borrowers who are expected to get an interest rate of 10.726% based on our model. Is this interpretation meaningful? Why or why not?</p>
+<p>Interpret the coefficient of <code>Verified</code> in the context of the data.</p>
 </div>
 </div>
-</div>
+</section></section>
+<section>
+<section id="interaction-terms" class="title-slide slide level1 center">
+<h1>Interaction terms</h1>
+
 </section>
-<section id="prediction" class="slide level2">
-<h2>Prediction</h2>
-<div class="question">
-<p>What is the predicted interest rate for an borrower with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000?</p>
-</div>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fl">10.726</span> <span class="sc">+</span> <span class="fl">0.671</span> <span class="sc">*</span> <span class="fl">0.558</span> <span class="sc">+</span> <span class="fl">2.211</span> <span class="sc">*</span> <span class="dv">0</span> <span class="sc">+</span> <span class="fl">6.880</span> <span class="sc">*</span> <span class="dv">0</span> <span class="sc">-</span> <span class="fl">0.021</span> <span class="sc">*</span> <span class="dv">59</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9.861418</code></pre>
-</div>
-</div>
-<div class="fragment">
-<p>The predicted interest rate for an borrower with with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000 is 9.86%.</p>
-</div>
-</section>
-<section id="prediction-in-r" class="slide level2 midi">
-<h2>Prediction in R</h2>
-<p>Just like with simple linear regression, we can use the <code>predict()</code> function in R to calculate the appropriate intervals for our predicted values:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>new_borrower <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb7-2"><a></a>  <span class="at">debt_to_income  =</span> <span class="fl">0.558</span>, </span>
-<span id="cb7-3"><a></a>  <span class="at">verified_income =</span> <span class="st">"Not Verified"</span>, </span>
-<span id="cb7-4"><a></a>  <span class="at">annual_income_th =</span> <span class="dv">59</span></span>
-<span id="cb7-5"><a></a>)</span>
-<span id="cb7-6"><a></a></span>
-<span id="cb7-7"><a></a><span class="fu">predict</span>(int_fit, new_borrower)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       1 
-9.890888 </code></pre>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Difference in predicted value due to rounding the coefficients on the previous slide.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="cautions" class="slide level2">
-<h2>Cautions</h2>
+<section id="interaction-terms-1" class="slide level2">
+<h2>Interaction terms</h2>
 <ul>
-<li><strong>Do not extrapolate!</strong> Because there are multiple predictor variables, there is the potential to extrapolate in many directions</li>
-<li>The multiple regression model only shows <strong>association, not causality</strong>
+<li>Sometimes the relationship between a predictor variable and the response depends on the value of another predictor variable.</li>
+<li>This is an <strong>interaction effect</strong>.</li>
+<li>To account for this, we can include <strong>interaction terms</strong> in the model.</li>
+</ul>
+</section>
+<section id="interest-rate-vs.-annual-income" class="slide level2">
+<h2>Interest rate vs.&nbsp;annual income</h2>
+<p>The lines are not parallel indicating there is an <strong>interaction effect</strong>. The slope of annual income differs based on the income verification.</p>
+
+<img data-src="06-mlr-pt2_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="interaction-term-in-model" class="slide level2 smaller">
+<h2>Interaction term in model</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>int_fit_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_income <span class="sc">+</span> verified_income <span class="sc">+</span> annual_income_th <span class="sc">+</span> verified_income <span class="sc">*</span> annual_income_th,</span>
+<span id="cb8-2"><a></a>      <span class="at">data =</span> loan50)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">9.560</td>
+<td style="text-align: right;">2.034</td>
+<td style="text-align: right;">4.700</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">debt_to_income</td>
+<td style="text-align: right;">0.691</td>
+<td style="text-align: right;">0.685</td>
+<td style="text-align: right;">1.009</td>
+<td style="text-align: right;">0.319</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">verified_incomeSource Verified</td>
+<td style="text-align: right;">3.577</td>
+<td style="text-align: right;">2.539</td>
+<td style="text-align: right;">1.409</td>
+<td style="text-align: right;">0.166</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">verified_incomeVerified</td>
+<td style="text-align: right;">9.923</td>
+<td style="text-align: right;">3.654</td>
+<td style="text-align: right;">2.716</td>
+<td style="text-align: right;">0.009</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">annual_income_th</td>
+<td style="text-align: right;">-0.007</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">-0.341</td>
+<td style="text-align: right;">0.735</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(220, 229, 178, 255) !important;">verified_incomeSource Verified:annual_income_th</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">-0.016</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">0.026</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">-0.643</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">0.523</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(220, 229, 178, 255) !important;">verified_incomeVerified:annual_income_th</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">-0.032</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">0.033</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">-0.979</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">0.333</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="interpreting-interaction-terms" class="slide level2">
+<h2>Interpreting interaction terms</h2>
 <ul>
-<li>To show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study</li>
+<li>What the interaction means: The effect of annual income on the interest rate differs by -0.016 when the income is source verified compared to when it is not verified, holding all else constant.</li>
+<li>Interpreting <code>annual_income</code> for source verified: If the income is source verified, we expect the interest rate to decrease by 0.023% (-0.007 + -0.016) for each additional thousand dollars in annual income, holding all else constant.</li>
+</ul>
+</section></section>
+<section>
+<section id="model-assessment-and-comparison" class="title-slide slide level1 center">
+<h1>Model assessment and comparison</h1>
+
+</section>
+<section id="rmse-r2" class="slide level2">
+<h2>RMSE &amp; <span class="math inline">\(R^2\)</span></h2>
+<ul>
+<li><p><strong>Root mean square error, RMSE</strong>: A measure of the average error (average difference between observed and predicted values of the outcome)</p></li>
+<li><p><strong>R-squared</strong>, <span class="math inline">\(R^2\)</span> : Percentage of variability in the outcome explained by the regression model</p></li>
+</ul>
+</section>
+<section id="comparing-models" class="slide level2">
+<h2>Comparing models</h2>
+<div>
+<ul>
+<li class="fragment"><p>When comparing models, do we prefer the model with the lower or higher RMSE?</p></li>
+<li class="fragment"><p>Though we use <span class="math inline">\(R^2\)</span> to assess the model fit, it is generally unreliable for comparing models with different number of predictors. Why?</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(R^2\)</span> will stay the same or increase as we add more variables to the model . Let’s show why this is true.</p></li>
+<li class="fragment"><p>If we only use <span class="math inline">\(R^2\)</span> to choose a best fit model, we will be prone to choose the model with the most predictor variables.</p></li>
 </ul></li>
+</ul>
+</div>
+</section>
+<section id="adjusted-r2" class="slide level2">
+<h2>Adjusted <span class="math inline">\(R^2\)</span></h2>
+<ul>
+<li><strong>Adjusted</strong> <span class="math inline">\(R^2\)</span>: measure that includes a penalty for unnecessary predictor variables</li>
+<li>Similar to <span class="math inline">\(R^2\)</span>, it is a measure of the amount of variation in the response that is explained by the regression model</li>
+</ul>
+</section>
+<section id="r2-and-adjusted-r2" class="slide level2">
+<h2><span class="math inline">\(R^2\)</span> and Adjusted <span class="math inline">\(R^2\)</span></h2>
+<p><span class="math display">\[R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}\]</span></p>
+<p><br></p>
+<div class="fragment">
+<p><span class="math display">\[R^2_{adj} = 1 - \frac{SSR/(n-p-1)}{SST/(n-1)}\]</span></p>
+<p>where</p>
+<ul>
+<li><p><span class="math inline">\(n\)</span> is the number of observations used to fit the model</p></li>
+<li><p><span class="math inline">\(p\)</span> is the number of terms (not including the intercept) in the model</p></li>
+</ul>
+</div>
+</section>
+<section id="using-r2-and-adjusted-r2" class="slide level2">
+<h2>Using <span class="math inline">\(R^2\)</span> and Adjusted <span class="math inline">\(R^2\)</span></h2>
+<ul>
+<li>Adjusted <span class="math inline">\(R^2\)</span> can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment!</li>
+<li>Use <span class="math inline">\(R^2\)</span> when describing the relationship between the response and predictor variables</li>
 </ul>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
 <ul>
-<li><p>Showed exploratory data analysis for multiple linear regression</p></li>
-<li><p>Used least squares to fit the regression line</p></li>
-<li><p>Interpreted the coefficients for quantitative predictors</p></li>
-<li><p>Predicted the response for new observations</p></li>
+<li><p>Interpreted categorical predictors and interaction terms</p></li>
+<li><p>Assessed model fit using RSME and <span class="math inline">\(R^2\)</span></p></li>
+<li><p>Compared models using <span class="math inline">\(Adj. R^2\)</span></p></li>
 </ul>
 </section>
 <section id="next-class" class="slide level2">
 <h2>Next class</h2>
 <ul>
-<li><p>More on multiple linear regression</p>
-<ul>
-<li><p>Categorical predictors</p></li>
-<li><p>Model assessment</p></li>
-<li><p>Geometric interpretation (as time permits)</p></li>
-</ul></li>
-<li><p>See Sep 12 prepare</p></li>
+<li>Inference for regression</li>
 </ul>
 
 <div class="quarto-auto-generated-content">
