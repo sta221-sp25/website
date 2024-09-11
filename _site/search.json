@@ -1016,7 +1016,7 @@
     "href": "labs/lab-00.html#connect-rstudio-and-github",
     "title": "Lab 00: Welcome + Getting Started",
     "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
   },
   {
     "objectID": "labs/lab-03.html",
@@ -2145,5 +2145,89 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "hw/hw-01-draft.html",
+    "href": "hw/hw-01-draft.html",
+    "title": "HW 01: Simple linear regression",
+    "section": "",
+    "text": "Due date\n\n\n\nThis assignment is due on Thursday, September 19 at 11:59pm."
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-1",
+    "href": "hw/hw-01-draft.html#exercise-1",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\na. Show that the hat matrix \\(\\mathbf{H}\\) is symmetric \\((\\mathbf{H}^T = \\mathbf{H})\\) and idempotent \\((\\mathbf{H}^2 = \\mathbf{H})\\).\nb. Show that \\((\\mathbf{I} - \\mathbf{H})\\) is symmetric and idempotent."
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-2",
+    "href": "hw/hw-01-draft.html#exercise-2",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nGiven \\(\\mathbf{x}\\) is a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) is a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\), show\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n(Proposition 2 from class)"
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-3",
+    "href": "hw/hw-01-draft.html#exercise-3",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n[Need to add more here]\nExpalin how we know that this is a minimum.\nWhat would this mean about the predictors in multiple linear regression?"
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-4",
+    "href": "hw/hw-01-draft.html#exercise-4",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nProve that the maximum value of \\(R^2\\) must be less than 1 if the data contains observations such that there are different observed values of the response for the same value of the predictor (e.g., observations \\((x_i, y_i)\\) and \\((x_j, y_j)\\) are such that \\(x_i = x_j\\) and \\(y_i \\neq y_j\\) )."
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#data",
+    "href": "hw/hw-01-draft.html#data",
+    "title": "HW 01: Simple linear regression",
+    "section": "Data",
+    "text": "Data\nThe datasets wi-icecover.csv and wi-air-temperature.csv contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota for days in 1885 through 2019. The data were obtained from the ntl_icecover and ntl_airtemp data frames in the lterdatasampler R package. They were originally collected at a US Long Term Ecological Research program (LTER) Network.\n\nicecover &lt;- read_csv(\"data/wi-icecover.csv\")\nairtemp &lt;- read_csv(\"data/wi-air-temperature.csv\")\n\nThe analysis will focus on the following variables:\n\nyear: a number denoting the year of observation\nlakeid: a factor denoting the lake name\nice_duration: a number denoting the number of days between the freeze and ice breakup dates of each lake\nave_air_temp_adjusted: a number denoting the air temperature in degrees Celsius, collected in Madison, WI and adjusted for biases \n\n\n\n\n\n\n\nAnalysis goal\n\n\n\nThe goal of this analysis is to use linear regression explain variabiltiy in ice duration for lakes in Madison, Wisconsin based on air temperature. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these two factors to better understand how quickly the climate is changing."
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-5",
+    "href": "hw/hw-01-draft.html#exercise-5",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nLet’s start by looking at the response variable ice_duration.\n\nCreate side-by-side boxplots to visualize the distribution of ice_duration for each lake. \nVisualize the distribution of ice duration over time for each lake. \nThe current data is currently structured such there are separate measurements for each lake in a given year. We will combine the data such that there is one row per year that contains the average ice duration across the two lakes.\n\nEvaluate the analysis decision to combine the data in this way."
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-6",
+    "href": "hw/hw-01-draft.html#exercise-6",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nNext, let’s combine the ice duration and air temperature data into a single analysis data frame.\n\nFill in the code below to create a new data frame, icecover_avg, of the average ice duration by lake and year.\n\nicecover_avg &lt;- icecover |&gt;\n  group_by(____, _____) |&gt;\n  summarise(avg_ice_duration = mean(_____))\n\n\nThen join icecover_avg and airtemp to create a new data frame. The new data frame should have 268  observations.\n\nVisualize the relationship between the air temperature and average ice duration. Do you think a linear model would be a good fit to capture the relationship between the two variables?\n\n\nNow is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates."
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-7",
+    "href": "hw/hw-01-draft.html#exercise-7",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nWe will fit a model using the average air temperature to explain variability in ice duration that takes the form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\nState the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\) for this analysis. Your answer should have exact value given this data set.\nFind the estimated regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) using the matrix representation of the model. Show the code used to get the answer."
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-8",
+    "href": "hw/hw-01-draft.html#exercise-8",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nFit the model from the previous exercise using the lm function. Neatly display the results using 3 digits.\nInterpret the slope in the context of the data.\n\n\nNow is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates."
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-9",
+    "href": "hw/hw-01-draft.html#exercise-9",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nCalculate \\(R^2\\) for the model in the previous exercise and interpret it in the context of the data.\nBriefly comment on the model fit based on \\(R^2\\)."
+  },
+  {
+    "objectID": "hw/hw-01-draft.html#exercise-10",
+    "href": "hw/hw-01-draft.html#exercise-10",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nYou are asked to use a reproducible workflow for all of your work in the class, and the goal of this question to is better understand potential real-world implications of doing (or not) so. Below are some real-life examples in which having a non-reproducible workflow resulted in errors that impacted research or public records.\n\nSource: @ostblom2022\n\n\nReproducibility error\nConsequence\nSource(s)\n\n\n\n\nLimitations in Excel data formats\nLoss of 16,000 COVID case records in the UK\n(Kelion 2020)\n\n\nAutomatic formatting in Excel\nImportant genes disregarded in scientific studies\n(Ziemann, Eren, and El-Osta 2016)\n\n\nDeletion of a cell caused rows to shift\nMix-up of which patient group received the treatment\n(Wallensteen et al. 2018)\n\n\nUsing binary instead of explanatory labels\nMix-up of the intervention with the control group\n(Aboumatar and Wise 2019)\n\n\nUsing the same notation for missing data and zero values\nPaper retraction\n(Whitehouse et al. 2021)\n\n\nIncorrectly copying data in a spreadsheet\nDelay in the opening of a hospital\n(Picken 2020)\n\n\n\nChoose one of the scenarios from the table and read the linked article discussing what went wrong. Then,\n\nBriefly describe what went wrong, i.e., what part of the process of was not reproducible and what error or impact that had.\nDescribe one way the researchers could have made the process reproducible."
   }
 ]

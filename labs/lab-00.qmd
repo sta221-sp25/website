@@ -87,7 +87,7 @@ Type the following lines of code in the **console** in RStudio filling in your n
 ```{r eval=FALSE}
 usethis::use_git_config(
   user.name = "Your name", 
-  user.email = "Email associated with your GitHub account"")
+  user.email = "Email associated with your GitHub account")
 ```
 
 For example, mine would be

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 00: Welcome + Getting Started – STA 221 - Fall 2024</title>
+<title>HW 01: Simple linear regression – STA 221 - Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,6 +101,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -113,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 00: Welcome + Getting Started</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">HW 01: Simple linear regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -344,26 +373,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#computing" id="toc-computing" class="nav-link" data-scroll-target="#computing">Computing</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><strong>Introduction</strong></a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><strong>Learning goals</strong></a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><strong>Getting started</strong></a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual exercises</a>
   <ul class="collapse">
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  </ul></li>
+  <li><a href="#applied-exercises" id="toc-applied-exercises" class="nav-link" data-scroll-target="#applied-exercises">Applied exercises</a>
   <ul class="collapse">
-  <li><a href="#reserve-rstudio-container" id="toc-reserve-rstudio-container" class="nav-link" data-scroll-target="#reserve-rstudio-container">Reserve RStudio container</a></li>
-  <li><a href="#open-rstudio-container" id="toc-open-rstudio-container" class="nav-link" data-scroll-target="#open-rstudio-container">Open RStudio container</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5"><strong>Exercise 5</strong></a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
+  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
   </ul></li>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github">Git and GitHub</a>
-  <ul class="collapse">
-  <li><a href="#sign-up-for-github-account" id="toc-sign-up-for-github-account" class="nav-link" data-scroll-target="#sign-up-for-github-account">Sign up for GitHub account</a></li>
-  </ul></li>
-  <li><a href="#connect-rstudio-and-github" id="toc-connect-rstudio-and-github" class="nav-link" data-scroll-target="#connect-rstudio-and-github">Connect RStudio and GitHub</a>
-  <ul class="collapse">
-  <li><a href="#set-up-your-ssh-key" id="toc-set-up-your-ssh-key" class="nav-link" data-scroll-target="#set-up-your-ssh-key">Set up your SSH Key</a></li>
-  <li><a href="#configure-git" id="toc-configure-git" class="nav-link" data-scroll-target="#configure-git">Configure git</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#submit-github-username" id="toc-submit-github-username" class="nav-link" data-scroll-target="#submit-github-username">Submit GitHub username</a></li>
-  <li><a href="#sta-221-student-survey" id="toc-sta-221-student-survey" class="nav-link" data-scroll-target="#sta-221-student-survey">STA 221 Student Survey</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa24/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -372,7 +404,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 00: Welcome + Getting Started</h1>
+<h1 class="title">HW 01: Simple linear regression</h1>
+<p class="subtitle lead">Ice duration and air temperature in Madison, WI</p>
 </div>
 
 
@@ -395,146 +428,268 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Due date
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Please complete all today’s lab tasks before leaving lab today.</p>
+<p>This assignment is due on <strong>Thursday, September 19 at 11:59pm.</strong></p>
 </div>
 </div>
 <section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>The goal of today’s lab is to briefly introduce you to the computing tools we’ll use in the course, set up your computing access, and complete the STA 221 student survey. We will talk more about these computing tools in lecture.</p>
+<h1><strong>Introduction</strong></h1>
+<p>You will use simple linear regression to analyze the relationship between air temperature and ice duration for two lakes in Wisconsin. You will also show some of the math behind these models.</p>
 </section>
-<section id="computing" class="level1">
-<h1>Computing</h1>
-<section id="rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>R is the name of the programming language itself and RStudio is a convenient interface.</p>
-</div>
-</div>
-<section id="reserve-rstudio-container" class="level3">
-<h3 class="anchored" data-anchor-id="reserve-rstudio-container">Reserve RStudio container</h3>
+<section id="learning-goals" class="level1">
+<h1><strong>Learning goals</strong></h1>
+<p>In this assignment, you will…</p>
 <ul>
-<li><p>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a>. You will log in using your NetID credentials.</p></li>
-<li><p>Click “<strong>Reserve STA 210</strong>” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.</p></li>
-</ul>
-<p>You only need to reserve a container once per semester.</p>
-</section>
-<section id="open-rstudio-container" class="level3">
-<h3 class="anchored" data-anchor-id="open-rstudio-container">Open RStudio container</h3>
-<ul>
-<li><p>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and log in with your Duke NetID and Password.</p></li>
-<li><p>Click <code>STA210</code> to log into the Docker container. You should now see the RStudio environment.</p></li>
+<li><p>use matrix operations to show results about simple linear regression.</p></li>
+<li><p>conduct exploratory data analysis.</p></li>
+<li><p>fit and interpret simple linear regression models.</p></li>
+<li><p>evaluate model fit.</p></li>
+<li><p>continue developing a workflow for reproducible data analysis.</p></li>
 </ul>
 </section>
-</section>
-<section id="git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-and-github">Git and GitHub</h2>
-<p>In addition to R and RStudio, we will use git and GitHub for version control and collaboration.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Git is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).</p>
-</div>
-</div>
-<section id="sign-up-for-github-account" class="level3">
-<h3 class="anchored" data-anchor-id="sign-up-for-github-account">Sign up for GitHub account</h3>
-<p>You will need a GitHub account to access the assignments, project, and in-class exercises for the course.</p>
+<section id="getting-started" class="level1">
+<h1><strong>Getting started</strong></h1>
 <ul>
-<li>If you do not have a GitHub account, go to <a href="https://github.com" class="uri">https://github.com</a> and sign up for an account.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://happygitwithr.com/github-acct#username-advice">Click here</a> for advice on choosing a username.</p>
-</div>
-</div>
-<ul>
-<li>If you already have a GitHub account, you can move on to the next step.</li>
+<li><p>Go to the <a href="https://www.github.com/sta221-fa24">sta221-fa24</a> organization on GitHub. Click on the repo with the prefix <strong>hw-01</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta221-fa24.netlify.app/labs/lab-01#clone-the-repo-start-new-rstudio-project">Lab 01 instructions</a> for details on cloning a repo, starting a new project in R, and configuring git.</p></li>
 </ul>
 </section>
-</section>
-<section id="connect-rstudio-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="connect-rstudio-and-github">Connect RStudio and GitHub</h2>
-<p>Now that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.</p>
-<section id="set-up-your-ssh-key" class="level3">
-<h3 class="anchored" data-anchor-id="set-up-your-ssh-key">Set up your SSH Key</h3>
-<p>You will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You only need to do this authentication process one time on a single system.</p>
-</div>
-</div>
-<ul>
-<li><strong>Step 0:</strong> Open your <code>STA 210</code> RStudio container.</li>
-<li><strong>Step 1</strong>: Type <code>credentials::ssh_setup_github()</code> into the <strong>console</strong> on the bottom left of the RStudio environment.</li>
-<li><strong>Step 2</strong>: R will ask “No SSH key found. Generate one now?” Click 1 for yes.</li>
-<li><strong>Step 3</strong>: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.</li>
-<li><strong>Step 4</strong>: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., <code>sta221</code>)</li>
-</ul>
-</section>
-<section id="configure-git" class="level3">
-<h3 class="anchored" data-anchor-id="configure-git">Configure git</h3>
-<p>The last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.</p>
-<p>To do so, you will use the <code>use_git_config()</code> function from the <code>usethis</code> package.</p>
-<p>Type the following lines of code in the <strong>console</strong> in RStudio filling in your name and the email address associated with your GitHub account.</p>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>The following packages will be used in this assignment:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>For example, mine would be</p>
+</section>
+<section id="conceptual-exercises" class="level1">
+<h1>Conceptual exercises</h1>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.<br>
+<br>
+You may write the answers for conceptual exercises by hand or type them in your Quarto document.</p>
+</div>
+</div>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>a. Show that the hat matrix <span class="math inline">\(\mathbf{H}\)</span> is symmetric <span class="math inline">\((\mathbf{H}^T = \mathbf{H})\)</span> and idempotent <span class="math inline">\((\mathbf{H}^2 = \mathbf{H})\)</span>.</p>
+<p>b. Show that <span class="math inline">\((\mathbf{I} - \mathbf{H})\)</span> is symmetric and idempotent.</p>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Given <span class="math inline">\(\mathbf{x}\)</span> is a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{A}\)</span> is a <span class="math inline">\(k \times k\)</span> matrix, such that <span class="math inline">\(\mathbf{A}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span>, show</p>
+<p><span class="math display">\[
+\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{A}\mathbf{x} = 2\mathbf{A}\mathbf{x}
+\]</span></p>
+<p>(<a href="https://sta221-fa24.netlify.app/slides/05-slr-matrix-contd#/side-note-vector-matrix-operations">Proposition 2</a> from class)</p>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>[Need to add more here]</p>
+<p>Expalin how we know that this is a minimum.</p>
+<p>What would this mean about the predictors in multiple linear regression?</p>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Prove that the maximum value of <span class="math inline">\(R^2\)</span> must be less than 1 if the data contains observations such that there are different observed values of the response for the same value of the predictor (e.g., observations <span class="math inline">\((x_i, y_i)\)</span> and <span class="math inline">\((x_j, y_j)\)</span> are such that <span class="math inline">\(x_i = x_j\)</span> and <span class="math inline">\(y_i \neq y_j\)</span> ).</p>
+</section>
+</section>
+<section id="applied-exercises" class="level1">
+<h1>Applied exercises</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The applied exercises are focused on applying the concepts to analyze data.</p>
+<p>All work for the applied exercises must be typed in your Quarto document following a reproducible workflow.</p>
+<p>Write all narrative using complete sentences and include informative axis labels / titles on visualizations.</p>
+</div>
+</div>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The datasets <code>wi-icecover.csv</code> and <code>wi-air-temperature.csv</code> contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota for days in 1885 through 2019. The data were obtained from the <a href="https://lter.github.io/lterdatasampler/reference/ntl_icecover.html"><code>ntl_icecover</code></a> and <a href="https://lter.github.io/lterdatasampler/reference/ntl_airtemp.html"><code>ntl_airtemp</code></a> data frames in the <a href="https://lter.github.io/lterdatasampler/">lterdatasampler</a> R package. They were originally collected at a <a href="https://lternet.edu/">US Long Term Ecological Research program (LTER) Network</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Maria Tackett"</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"maria.tackett@duke.edu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>icecover <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wi-icecover.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>airtemp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wi-air-temperature.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>It may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week.</p>
+<p>The analysis will focus on the following variables:</p>
+<ul>
+<li><p><code>year</code>: a number denoting the year of observation</p></li>
+<li><p><code>lakeid</code>: a factor denoting the lake name</p></li>
+<li><p><code>ice_duration</code>: a number denoting the number of days between the freeze and ice breakup dates of each lake</p></li>
+<li><p><code>ave_air_temp_adjusted</code>: a number denoting the air temperature in degrees Celsius, collected in Madison, WI and adjusted for biases <!--# update this variable name and definition--></p></li>
+</ul>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analysis goal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The goal of this analysis is to use linear regression explain variabiltiy in ice duration for lakes in Madison, Wisconsin based on air temperature. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these two factors to better understand how quickly the climate is changing.</p>
+</div>
+</div>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5"><strong>Exercise 5</strong></h2>
+<p>Let’s start by looking at the response variable <code>ice_duration</code>.</p>
+<ol type="a">
+<li><p>Create side-by-side boxplots to visualize the distribution of <code>ice_duration</code> for each lake. <!--# add link to reference on side-by-side boxplots--></p></li>
+<li><p>Visualize the distribution of ice duration over time for each lake. <!--# add resource on line plot--></p></li>
+<li><p>The current data is currently structured such there are separate measurements for each lake in a given year. We will combine the data such that there is one row per year that contains the average ice duration across the two lakes.</p></li>
+</ol>
+<p>Evaluate the analysis decision to combine the data in this way.</p>
+<!--# Need to reword this question-->
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>Next, let’s combine the ice duration and air temperature data into a single analysis data frame.</p>
+<ol type="a">
+<li><p>Fill in the code below to create a new data frame, <code>icecover_avg</code>, of the average ice duration by lake and year.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>icecover_avg <span class="ot">&lt;-</span> icecover <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(____, _____) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_ice_duration =</span> <span class="fu">mean</span>(_____))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ol>
+<p>Then join <code>icecover_avg</code> and <code>airtemp</code> to create a new data frame. The new data frame should have 268 <!--# check this number--> observations.</p>
+<ol start="2" type="a">
+<li>Visualize the relationship between the air temperature and average ice duration. Do you think a linear model would be a good fit to capture the relationship between the two variables?</li>
+</ol>
+<div class="render-commit-push">
+<p>Now is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates.</p>
+</div>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>We will fit a model using the average air temperature to explain variability in ice duration that takes the form</p>
+<p><span class="math display">\[
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
+\]</span></p>
+<ol type="a">
+<li>State the dimensions of <span class="math inline">\(\mathbf{y}\)</span>, <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\boldsymbol{\epsilon}\)</span> for this analysis. Your answer should have exact value given this data set.</li>
+<li>Find the estimated regression coefficients <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> using the matrix representation of the model. Show the code used to get the answer.</li>
+</ol>
+</section>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<ol type="a">
+<li><p>Fit the model from the previous exercise using the <code>lm</code> function. Neatly display the results using 3 digits.</p></li>
+<li><p>Interpret the slope in the context of the data.</p></li>
+</ol>
+<div class="render-commit-push">
+<p>Now is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates.</p>
+</div>
+</section>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<ol type="a">
+<li><p>Calculate <span class="math inline">\(R^2\)</span> for the model in the previous exercise and interpret it in the context of the data.</p></li>
+<li><p>Briefly comment on the model fit based on <span class="math inline">\(R^2\)</span>.</p></li>
+</ol>
+</section>
+<section id="exercise-10" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
+<p>You are asked to use a reproducible workflow for all of your work in the class, and the goal of this question to is better understand potential real-world implications of doing (or not) so. Below are some real-life examples in which having a non-reproducible workflow resulted in errors that impacted research or public records.</p>
+<table class="caption-top table">
+<caption>Source: <span class="citation" data-cites="ostblom2022">@ostblom2022</span></caption>
+<thead>
+<tr class="header">
+<th>Reproducibility error</th>
+<th>Consequence</th>
+<th>Source(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Limitations in Excel data formats</td>
+<td>Loss of 16,000 COVID case records in the UK</td>
+<td>(<a href="https://www.bbc.com/news/technology-54423988">Kelion 2020</a>)</td>
+</tr>
+<tr class="even">
+<td>Automatic formatting in Excel</td>
+<td>Important genes disregarded in scientific studies</td>
+<td>(<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7">Ziemann, Eren, and El-Osta 2016</a>)</td>
+</tr>
+<tr class="odd">
+<td>Deletion of a cell caused rows to shift</td>
+<td>Mix-up of which patient group received the treatment</td>
+<td>(<a href="https://pubmed.ncbi.nlm.nih.gov/27373757/">Wallensteen et al.&nbsp;2018</a>)</td>
+</tr>
+<tr class="even">
+<td>Using binary instead of explanatory labels</td>
+<td>Mix-up of the intervention with the control group</td>
+<td>(<a href="https://jamanetwork.com/journals/jama/fullarticle/2752474">Aboumatar and Wise 2019</a>)</td>
+</tr>
+<tr class="odd">
+<td>Using the same notation for missing data and zero values</td>
+<td>Paper retraction</td>
+<td>(<a href="https://www.nature.com/articles/s41586-021-03656-3">Whitehouse et al.&nbsp;2021</a>)</td>
+</tr>
+<tr class="even">
+<td>Incorrectly copying data in a spreadsheet</td>
+<td>Delay in the opening of a hospital</td>
+<td>(<a href="https://www.bbc.com/news/uk-scotland-edinburgh-east-fife-53893101">Picken 2020</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>Choose one of the scenarios from the table and read the linked article discussing what went wrong. Then,</p>
+<ol type="a">
+<li><p>Briefly describe what went wrong, i.e., what part of the process of was not reproducible and what error or impact that had.</p></li>
+<li><p>Describe one way the researchers could have made the process reproducible.</p></li>
+</ol>
 </section>
 </section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
+</div>
+</div>
+<p>To submit your assignment:</p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/38867">STA 221 Canvas site.</a></p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
+</ul>
 </section>
-<section id="submit-github-username" class="level1">
-<h1>Submit GitHub username</h1>
-<p>Use the link below to submit your GitHub username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git.</p>
-<p>🔗 <a href="https://forms.office.com/r/RbdRjMgKv0" class="uri">https://forms.office.com/r/RbdRjMgKv0</a></p>
-</section>
-<section id="sta-221-student-survey" class="level1">
-<h1>STA 221 Student Survey</h1>
-<p>Use the link below to complete the STA 221 Student Survey. This survey will help me learn more about you, your interests, and your previous statistics and computing experience. I will also use the survey to form lab teams.</p>
-<p>🔗 <a href="https://forms.office.com/r/KVEWwuNgAq" class="uri">https://forms.office.com/r/KVEWwuNgAq</a></p>
+<section id="grading" class="level1">
+<h1>Grading</h1>
 
 
 </section>
