@@ -2057,18 +2057,25 @@
     "text": "Announcements\n\nLab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 due Thursday, September 19 at 11:59pm\n\nWill be released after class\n\nTeam labs start on Monday"
   },
   {
-    "objectID": "slides/06-mlr-pt2.html#hw-01",
-    "href": "slides/06-mlr-pt2.html#hw-01",
+    "objectID": "slides/06-mlr-pt2.html#homework",
+    "href": "slides/06-mlr-pt2.html#homework",
     "title": "Multiple linear regression (MLR)",
-    "section": "HW 01",
-    "text": "HW 01"
+    "section": "Homework",
+    "text": "Homework\nHomework will generally be split into two sections:\n\n1️⃣ Conceptual exercises\nThe conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.\n\nYou may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document."
+  },
+  {
+    "objectID": "slides/06-mlr-pt2.html#homework-1",
+    "href": "slides/06-mlr-pt2.html#homework-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Homework",
+    "text": "Homework\n2️⃣ Applied exercises\nThe applied exercises are focused on applying the concepts to analyze data.\nAll work for the applied exercises must be typed in your Quarto document following a reproducible workflow.\nWrite all narrative using complete sentences and include informative axis labels / titles on visualizations."
   },
   {
     "objectID": "slides/06-mlr-pt2.html#topics",
     "href": "slides/06-mlr-pt2.html#topics",
     "title": "Multiple linear regression (MLR)",
     "section": "Topics",
-    "text": "Topics\n\nCategorical predictors and interaction terms\nAssess model fit using RSME and \\(R^2\\)\nCompare models using \\(Adj. R^2\\)\nGeometric interpretation"
+    "text": "Topics\n\nCategorical predictors and interaction terms\nAssess model fit using RSME and \\(R^2\\)\nCompare models using \\(Adj. R^2\\)\nIntroduce LaTex"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#computing-setup",
@@ -2117,35 +2124,35 @@
     "href": "slides/06-mlr-pt2.html#indicator-variables",
     "title": "Multiple linear regression (MLR)",
     "section": "Indicator variables",
-    "text": "Indicator variables\nSuppose we want to predict the amount of sleep a Duke student gets based on whether they are in Pratt (Prat Yes/ No are the only two options). Consider the model\n\\[\nSleep_i = \\beta_0 + \\beta_1\\mathbf{1}(Pratt_i = \\texttt{Yes}) + \\beta_2\\mathbf{1}(Pratt_i = \\texttt{No})\n\\]\n\n\nWrite out the design matrix for this hypothesized linear model.\nDemonstrate that the design matrix is not of full column rank (that is, affirmatively provide one of the columns in terms of the others).\nUse this intuition to explain why when we include categorical predictors, we cannot include both indicators for every level of the variable and an intercept."
+    "text": "Indicator variables\nSuppose we want to predict the amount of sleep a Duke student gets based on whether they are in Pratt (Pratt Yes/ No are the only two options). Consider the model\n\\[\nSleep_i = \\beta_0 + \\beta_1\\mathbf{1}(Pratt_i = \\texttt{Yes}) + \\beta_2\\mathbf{1}(Pratt_i = \\texttt{No})\n\\]\n\n\nWrite out the design matrix for this hypothesized linear model.\nDemonstrate that the design matrix is not of full column rank (that is, affirmatively provide one of the columns in terms of the others).\nUse this intuition to explain why when we include categorical predictors, we cannot include both indicators for every level of the variable and an intercept."
   },
   {
     "objectID": "slides/06-mlr-pt2.html#indicator-variables-1",
     "href": "slides/06-mlr-pt2.html#indicator-variables-1",
     "title": "Multiple linear regression (MLR)",
     "section": "Indicator variables",
-    "text": "Indicator variables\n\nSuppose there is a categorical variable with \\(k\\) levels\nWe can make K indicator variables from the data - one indicator for each level\nAn indicator (dummy) variable takes values 1 or 0\n\n1 if the observation belongs to that level\n0 if the observation does not belong to that level"
+    "text": "Indicator variables\n\nSuppose there is a categorical variable with \\(k\\) levels\nWe can make \\(k\\) indicator variables from the data - one indicator for each level\nAn indicator (dummy) variable takes values 1 or 0\n\n1 if the observation belongs to that level\n0 if the observation does not belong to that level"
   },
   {
-    "objectID": "slides/06-mlr-pt2.html#create-indicator-variables-for-verified_income",
-    "href": "slides/06-mlr-pt2.html#create-indicator-variables-for-verified_income",
+    "objectID": "slides/06-mlr-pt2.html#indicator-variables-for-verified_income",
+    "href": "slides/06-mlr-pt2.html#indicator-variables-for-verified_income",
     "title": "Multiple linear regression (MLR)",
-    "section": "Create indicator variables for verified_income",
-    "text": "Create indicator variables for verified_income\n\nloan50 &lt;- loan50 |&gt;\n  mutate(\n    not_verified = if_else(verified_income == \"Not Verified\", 1, 0),\n    source_verified = if_else(verified_income == \"Source Verified\", 1, 0),\n    verified = if_else(verified_income == \"Verified\", 1, 0)\n  )\n\n\n\n\n# A tibble: 3 × 4\n  verified_income not_verified source_verified verified\n  &lt;fct&gt;                  &lt;dbl&gt;           &lt;dbl&gt;    &lt;dbl&gt;\n1 Not Verified               1               0        0\n2 Verified                   0               0        1\n3 Source Verified            0               1        0"
+    "section": "Indicator variables for verified_income",
+    "text": "Indicator variables for verified_income\n\nloan50 &lt;- loan50 |&gt;\n  mutate(\n    not_verified = if_else(verified_income == \"Not Verified\", 1, 0),\n    source_verified = if_else(verified_income == \"Source Verified\", 1, 0),\n    verified = if_else(verified_income == \"Verified\", 1, 0)\n  )\n\n\n\n\n# A tibble: 3 × 4\n  verified_income not_verified source_verified verified\n  &lt;fct&gt;                  &lt;dbl&gt;           &lt;dbl&gt;    &lt;dbl&gt;\n1 Not Verified               1               0        0\n2 Verified                   0               0        1\n3 Source Verified            0               1        0"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#indicator-variables-in-the-model",
     "href": "slides/06-mlr-pt2.html#indicator-variables-in-the-model",
     "title": "Multiple linear regression (MLR)",
     "section": "Indicator variables in the model",
-    "text": "Indicator variables in the model\n\nWe will use \\(k-1\\) of the indicator variables in the model.\nThe baseline is the category that doesn’t have a term in the model.\nThe coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.\n\n\n\nloan50 |&gt;\n  select(verified_income, source_verified, verified) |&gt;\n  slice(1, 3, 6)\n\n# A tibble: 3 × 3\n  verified_income source_verified verified\n  &lt;fct&gt;                     &lt;dbl&gt;    &lt;dbl&gt;\n1 Not Verified                  0        0\n2 Verified                      0        1\n3 Source Verified               1        0"
+    "text": "Indicator variables in the model\n\nWe will use \\(k-1\\) of the indicator variables in the model.\nThe baseline is the category that doesn’t have a term in the model.\nThe coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.\n\n\n\nloan50 |&gt;\n  select(verified_income, source_verified, verified) |&gt;\n  slice(1, 3, 6)\n\n# A tibble: 3 × 3\n  verified_income source_verified verified\n  &lt;fct&gt;                     &lt;dbl&gt;    &lt;dbl&gt;\n1 Not Verified                  0        0\n2 Verified                      0        1\n3 Source Verified               1        0\n\n\n\nTake a look at the design matrix in AE 02"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#interpreting-verified_income",
     "href": "slides/06-mlr-pt2.html#interpreting-verified_income",
     "title": "Multiple linear regression (MLR)",
     "section": "Interpreting verified_income",
-    "text": "Interpreting verified_income\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n10.726\n1.507\n7.116\n0.000\n7.690\n13.762\n\n\ndebt_to_income\n0.671\n0.676\n0.993\n0.326\n-0.690\n2.033\n\n\nverified_incomeSource Verified\n2.211\n1.399\n1.581\n0.121\n-0.606\n5.028\n\n\nverified_incomeVerified\n6.880\n1.801\n3.820\n0.000\n3.253\n10.508\n\n\nannual_income_th\n-0.021\n0.011\n-1.804\n0.078\n-0.043\n0.002\n\n\n\n\n\n\n\n\n\n\nThe baseline category is Not verified.\nPeople with source verified income are expected to take a loan with an interest rate that is 2.211% higher, on average, than the rate on loans to those whose income is not verified, holding all else constant.\n\n\n\n\n\nInterpret the coefficient of Verified in the context of the data."
+    "text": "Interpreting verified_income\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n10.726\n1.507\n7.116\n0.000\n7.690\n13.762\n\n\ndebt_to_income\n0.671\n0.676\n0.993\n0.326\n-0.690\n2.033\n\n\nverified_incomeSource Verified\n2.211\n1.399\n1.581\n0.121\n-0.606\n5.028\n\n\nverified_incomeVerified\n6.880\n1.801\n3.820\n0.000\n3.253\n10.508\n\n\nannual_income_th\n-0.021\n0.011\n-1.804\n0.078\n-0.043\n0.002\n\n\n\n\n\n\n\n\n\n\nThe baseline level is Not verified.\nPeople with source verified income are expected to take a loan with an interest rate that is 2.211% higher, on average, than the rate on loans to those whose income is not verified, holding all else constant.\n\n\n\n\n\nWhat is the expected interest rate for someone whose income is Verified, who has a debt-to-income ratio of 0 and annual income of $0?"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#interaction-terms-1",
@@ -2159,7 +2166,7 @@
     "href": "slides/06-mlr-pt2.html#interest-rate-vs.-annual-income",
     "title": "Multiple linear regression (MLR)",
     "section": "Interest rate vs. annual income",
-    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is an interaction effect. The slope of annual income differs based on the income verification."
+    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is a potential interaction effect. The slope of annual income differs based on the income verification."
   },
   {
     "objectID": "slides/06-mlr-pt2.html#interaction-term-in-model",
@@ -2208,14 +2215,28 @@
     "href": "slides/06-mlr-pt2.html#using-r2-and-adjusted-r2",
     "title": "Multiple linear regression (MLR)",
     "section": "Using \\(R^2\\) and Adjusted \\(R^2\\)",
-    "text": "Using \\(R^2\\) and Adjusted \\(R^2\\)\n\nAdjusted \\(R^2\\) can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment!\nUse \\(R^2\\) when describing the relationship between the response and predictor variables"
+    "text": "Using \\(R^2\\) and Adjusted \\(R^2\\)\n\nAdjusted \\(R^2\\) can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment!\nUse \\(R^2\\) when describing the relationship between the response and predictor variables\n\n\n\n📋 https://sta221-fa24.netlify.app/ae/ae-02-mlr"
+  },
+  {
+    "objectID": "slides/06-mlr-pt2.html#latex-in-this-class",
+    "href": "slides/06-mlr-pt2.html#latex-in-this-class",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Latex in this class",
+    "text": "Latex in this class\nFor this class you will need to be able to…\n\nProperly write mathematical symbols, e.g., \\(\\beta_1\\) not B1, \\(R^2\\) not R2\nWrite basic regression equations, e.g., \\(\\hat{y} = \\beta_0 + \\beta_1x_1 + \\beta_2x_2\\)\nWrite matrix equations: \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)\nWrite hypotheses (we’ll start this next week), e.g., \\(H_0: \\beta = 0\\)\n\nYou are welcome to but not required to write math proofs using LaTex."
+  },
+  {
+    "objectID": "slides/06-mlr-pt2.html#application-exercise-1",
+    "href": "slides/06-mlr-pt2.html#application-exercise-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Application exercise",
+    "text": "Application exercise\n\n📋 https://sta221-fa24.netlify.app/ae/ae-02-mlr"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#recap",
     "href": "slides/06-mlr-pt2.html#recap",
     "title": "Multiple linear regression (MLR)",
     "section": "Recap",
-    "text": "Recap\n\nInterpreted categorical predictors and interaction terms\nAssessed model fit using RSME and \\(R^2\\)\nCompared models using \\(Adj. R^2\\)"
+    "text": "Recap\n\nInterpreted categorical predictors and interaction terms\nAssessed model fit using RSME and \\(R^2\\)\nCompared models using \\(Adj. R^2\\)\nIntroduced LaTex"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#next-class",
