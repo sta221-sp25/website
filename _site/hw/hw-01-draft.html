@@ -457,29 +457,29 @@ Due date
 </div>
 <section id="introduction" class="level1">
 <h1><strong>Introduction</strong></h1>
-<p>You will use simple linear regression to analyze the relationship between air temperature and ice duration for two lakes in Wisconsin. You will also show some of the math behind these models.</p>
+<p>You will use simple linear regression to analyze the relationship between air temperature and ice duration for two lakes in Madison, Wisconsin. You will also explore the mathematical properties of simple linear regression models.</p>
 </section>
 <section id="learning-goals" class="level1">
 <h1><strong>Learning goals</strong></h1>
 <p>In this assignment, you will…</p>
 <ul>
-<li><p>use matrix operations to show results about simple linear regression.</p></li>
-<li><p>conduct exploratory data analysis.</p></li>
-<li><p>fit and interpret simple linear regression models.</p></li>
-<li><p>evaluate model fit.</p></li>
-<li><p>continue developing a workflow for reproducible data analysis.</p></li>
+<li>use matrix operations to show results about simple linear regression.</li>
+<li>conduct exploratory data analysis.</li>
+<li>fit and interpret simple linear regression models.</li>
+<li>evaluate model fit.</li>
+<li>continue developing a workflow for reproducible data analysis.</li>
 </ul>
 </section>
 <section id="getting-started" class="level1">
 <h1><strong>Getting started</strong></h1>
 <ul>
 <li><p>Go to the <a href="https://www.github.com/sta221-fa24">sta221-fa24</a> organization on GitHub. Click on the repo with the prefix <strong>hw-01</strong>. It contains the starter documents you need to complete the lab.</p></li>
-<li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta221-fa24.netlify.app/labs/lab-01#clone-the-repo-start-new-rstudio-project">Lab 01 instructions</a> for details on cloning a repo, starting a new project in R, and configuring git.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta221-fa24.netlify.app/labs/lab-01#clone-the-repo-start-new-rstudio-project">Lab 01 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
 </ul>
 </section>
 <section id="packages" class="level1">
 <h1>Packages</h1>
-<p>The following packages will be used in this assignment:</p>
+<p>The following packages are used in this assignment:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
@@ -512,8 +512,8 @@ Instructions
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Let <span class="math inline">\(\mathbf{x}\)</span> is a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{A}\)</span> is a <span class="math inline">\(k \times k\)</span> matrix, such that <span class="math inline">\(\mathbf{A}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span>.</p>
-<p>Show</p>
+<p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{A}\)</span> be a symmetric <span class="math inline">\(k \times k\)</span> matrix, such that <span class="math inline">\(\mathbf{A}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span>.</p>
+<p>Show that the gradient of <span class="math inline">\(\boldsymbol{x}^T\mathbf{A}\mathbf{x}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
 <p><span class="math display">\[
 \nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{A}\mathbf{x} = 2\mathbf{A}\mathbf{x}
 \]</span></p>
@@ -521,8 +521,8 @@ Instructions
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>In class we used the sum of squared residuals (SSR) to find an estimate of the coefficients <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}\)</span> . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of <span class="math inline">\(\boldsymbol{\beta}\)</span> that minimizes the SSR (rather than maximize).</p>
-<p>If the Hessian matrix <span class="math inline">\(\nabla_{\boldsymbol{\beta}}^2 SSR\)</span> is positive definite, then we know we have found the <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes SSR, i.e., the least squares estimator. Additionally, we have the following:</p>
+<p>In class we used the sum of squared residuals (SSR) to estimate the regression coefficients, <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}\)</span> . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of <span class="math inline">\(\boldsymbol{\beta}\)</span> that minimizes the SSR (rather than maximize).</p>
+<p>If the Hessian matrix <span class="math inline">\(\nabla_{\boldsymbol{\beta}}^2 SSR\)</span> is positive definite, then we know we have found the <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes SSR, i.e., the least squares estimator. Additionally, we have the following proposition:</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -562,17 +562,17 @@ Instructions
 </div>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The datasets <code>wi-icecover.csv</code> and <code>wi-air-temperature.csv</code> contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota for days in 1885 through 2019. The data were obtained from the <a href="https://lter.github.io/lterdatasampler/reference/ntl_icecover.html"><code>ntl_icecover</code></a> and <a href="https://lter.github.io/lterdatasampler/reference/ntl_airtemp.html"><code>ntl_airtemp</code></a> data frames in the <a href="https://lter.github.io/lterdatasampler/">lterdatasampler</a> R package. They were originally collected at a <a href="https://lternet.edu/">US Long Term Ecological Research program (LTER) Network</a>.</p>
+<p>The datasets <code>wi-icecover.csv</code> and <code>wi-air-temperature.csv</code> contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota (both in Madison, Wisonsin) for days in 1886 through 2019. The data were obtained from the <a href="https://lter.github.io/lterdatasampler/reference/ntl_icecover.html"><code>ntl_icecover</code></a> and <a href="https://lter.github.io/lterdatasampler/reference/ntl_airtemp.html"><code>ntl_airtemp</code></a> data frames in the <a href="https://lter.github.io/lterdatasampler/">lterdatasampler</a> R package. They were originally collected by the <a href="https://lternet.edu/">US Long Term Ecological Research program (LTER) Network</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>icecover <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wi-icecover.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>airtemp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wi-air-temperature.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The analysis will focus on the following variables:</p>
 <ul>
-<li><p><code>year</code>: a number denoting the year of observation</p></li>
-<li><p><code>lakeid</code>: a factor denoting the lake name</p></li>
+<li><p><code>year</code>: year of observation</p></li>
+<li><p><code>lakeid</code>: lake name</p></li>
 <li><p><code>ice_duration</code>: number of days between the freeze and ice breakup dates of each lake</p></li>
-<li><p><code>air_temp_avg</code>: yearly average air temperature in Madison, WI</p></li>
+<li><p><code>air_temp_avg</code>: yearly average air temperature in Madison, WI (degrees Celsius)</p></li>
 </ul>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -584,7 +584,7 @@ Analysis goal
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The goal of this analysis is to use linear regression explain variability in ice duration for lakes in Madison, Wisconsin based on air temperature. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these two factors to better understand how quickly the climate is changing.</p>
+<p>The goal of this analysis is to use linear regression explain variability in ice duration for lakes in Madison, WI based on air temperature. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these two factors to better understand the changing climate.</p>
 </div>
 </div>
 </section>
@@ -594,9 +594,9 @@ Analysis goal
 <ol type="a">
 <li><p>Create side-by-side boxplots to visualize the distribution of <code>ice_duration</code> for each lake.</p></li>
 <li><p>Visualize the distribution of ice duration over time for each lake.</p></li>
-<li><p>There are separate measurements for each lake in the <code>icecover</code> data frame. In this analysis, we will combine the data from both lakes and use the average ice duration each year for the analysis.</p></li>
+<li><p>There are separate measurements for each lake in the <code>icecover</code> data frame. In this analysis, we will combine the data from both lakes and use the average ice duration each year.</p>
+<p>Evaluate the analysis choice to use the average per year rather than the individual lake measurements. Some things to consider in your evaluation: <em>Does the average accurately reflects the ice duration for lakes in Madison, WI for that year? Will there be information loss? How might that impact (or not) the analysis conclusions? Etc.</em></p></li>
 </ol>
-<p>Evaluate the analysis choice to use the average per year rather than the individual lake measurements. Some things to consider in your evaluation: <em>Does the average accurately reflects the ice duration for lakes in Madison, WI for that year? Will there be information loss? How might that impact (or not) the analysis conclusions? Etc.</em></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -615,15 +615,15 @@ Tip
 <h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <p>Next, let’s combine the ice duration and air temperature data into a single analysis data frame.</p>
 <ol type="a">
-<li><p>Fill in the code below to create a new data frame, <code>icecover_avg</code>, of the average ice duration by lake and year.</p>
+<li><p>Fill in the code below to create a new data frame, <code>icecover_avg</code>, of the average ice duration by year.</p>
+<p>Then join <code>icecover_avg</code> and <code>airtemp</code> to create a new data frame. The new data frame should have 134 observations.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>icecover_avg <span class="ot">&lt;-</span> icecover <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(____, _____) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_ice_duration =</span> <span class="fu">mean</span>(_____)) <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(_____) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(_____) <span class="sc">|&gt;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ol>
-<p>Then join <code>icecover_avg</code> and <code>airtemp</code> to create a new data frame. The new data frame should have 134 observations.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -651,7 +651,7 @@ Important
 \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
 \]</span></p>
 <ol type="a">
-<li>State the dimensions of <span class="math inline">\(\mathbf{y}\)</span>, <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\boldsymbol{\epsilon}\)</span> for this analysis. Your answer should have exact value given this data set.</li>
+<li>State the dimensions of <span class="math inline">\(\mathbf{y}\)</span>, <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\boldsymbol{\epsilon}\)</span> for this analysis. Your answer should have exact values given this data set.</li>
 <li>Find the estimated regression coefficients <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> using the matrix representation of the model. Show the code used to get the answer.</li>
 </ol>
 </section>

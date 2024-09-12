@@ -12,31 +12,27 @@ This assignment is due on **Thursday, September 19 at 11:59pm.**
 
 # **Introduction**
 
-You will use simple linear regression to analyze the relationship between air temperature and ice duration for two lakes in Wisconsin. You will also show some of the math behind these models.
+You will use simple linear regression to analyze the relationship between air temperature and ice duration for two lakes in Madison, Wisconsin. You will also explore the mathematical properties of simple linear regression models.
 
 # **Learning goals**
 
 In this assignment, you will…
 
 -   use matrix operations to show results about simple linear regression.
-
 -   conduct exploratory data analysis.
-
 -   fit and interpret simple linear regression models.
-
 -   evaluate model fit.
-
 -   continue developing a workflow for reproducible data analysis.
 
 # **Getting started**
 
 -   Go to the [sta221-fa24](https://www.github.com/sta221-fa24) organization on GitHub. Click on the repo with the prefix **hw-01**. It contains the starter documents you need to complete the lab.
 
--   Clone the repo and start a new project in RStudio. See the [Lab 01 instructions](https://sta221-fa24.netlify.app/labs/lab-01#clone-the-repo-start-new-rstudio-project) for details on cloning a repo, starting a new project in R, and configuring git.
+-   Clone the repo and start a new project in RStudio. See the [Lab 01 instructions](https://sta221-fa24.netlify.app/labs/lab-01#clone-the-repo-start-new-rstudio-project) for details on cloning a repo and starting a new project in R.
 
 # Packages
 
-The following packages will be used in this assignment:
+The following packages are used in this assignment:
 
 ```{r}
 #| eval: false
@@ -66,9 +62,9 @@ b\. Show that $(\mathbf{I} - \mathbf{H})$ is symmetric and idempotent.
 
 ## Exercise 2
 
-Let $\mathbf{x}$ is a $k \times 1$ vector and $\mathbf{A}$ is a $k \times k$ matrix, such that $\mathbf{A}$ is not a function of $\mathbf{x}$.
+Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{A}$ be a symmetric $k \times k$ matrix, such that $\mathbf{A}$ is not a function of $\mathbf{x}$.
 
-Show
+Show that the gradient of $\boldsymbol{x}^T\mathbf{A}\mathbf{x}$ with respect to $\mathbf{x}$ is
 
 $$
 \nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{A}\mathbf{x} = 2\mathbf{A}\mathbf{x}
@@ -78,9 +74,9 @@ $$
 
 ## Exercise 3
 
-In class we used the sum of squared residuals (SSR) to find an estimate of the coefficients $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of $\boldsymbol{\beta}$ that minimizes the SSR (rather than maximize).
+In class we used the sum of squared residuals (SSR) to estimate the regression coefficients, $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of $\boldsymbol{\beta}$ that minimizes the SSR (rather than maximize).
 
-If the Hessian matrix $\nabla_{\boldsymbol{\beta}}^2 SSR$ is positive definite, then we know we have found the $\hat{\boldsymbol{\beta}}$ that minimizes SSR, i.e., the least squares estimator. Additionally, we have the following:
+If the Hessian matrix $\nabla_{\boldsymbol{\beta}}^2 SSR$ is positive definite, then we know we have found the $\hat{\boldsymbol{\beta}}$ that minimizes SSR, i.e., the least squares estimator. Additionally, we have the following proposition:
 
 ::: {.callout-note appearance="simple" icon="false"}
 ## Proposition
@@ -108,7 +104,7 @@ Write all narrative using complete sentences and include informative axis labels
 
 ## Data 
 
-The datasets `wi-icecover.csv` and `wi-air-temperature.csv` contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota for days in 1885 through 2019. The data were obtained from the [`ntl_icecover`](https://lter.github.io/lterdatasampler/reference/ntl_icecover.html) and [`ntl_airtemp`](https://lter.github.io/lterdatasampler/reference/ntl_airtemp.html) data frames in the [lterdatasampler](https://lter.github.io/lterdatasampler/) R package. They were originally collected at a [US Long Term Ecological Research program (LTER) Network](https://lternet.edu/).
+The datasets `wi-icecover.csv` and `wi-air-temperature.csv` contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota (both in Madison, Wisonsin) for days in 1886 through 2019. The data were obtained from the [`ntl_icecover`](https://lter.github.io/lterdatasampler/reference/ntl_icecover.html) and [`ntl_airtemp`](https://lter.github.io/lterdatasampler/reference/ntl_airtemp.html) data frames in the [lterdatasampler](https://lter.github.io/lterdatasampler/) R package. They were originally collected by the [US Long Term Ecological Research program (LTER) Network](https://lternet.edu/).
 
 ```{r}
 #| eval: false
@@ -119,18 +115,18 @@ airtemp <- read_csv("data/wi-air-temperature.csv")
 
 The analysis will focus on the following variables:
 
--   `year`: a number denoting the year of observation
+-   `year`: year of observation
 
--   `lakeid`: a factor denoting the lake name
+-   `lakeid`: lake name
 
 -   `ice_duration`: number of days between the freeze and ice breakup dates of each lake
 
--   `air_temp_avg`: yearly average air temperature in Madison, WI
+-   `air_temp_avg`: yearly average air temperature in Madison, WI (degrees Celsius)
 
 ::: {.callout-note icon="false"}
 ## Analysis goal
 
-The goal of this analysis is to use linear regression explain variability in ice duration for lakes in Madison, Wisconsin based on air temperature. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these two factors to better understand how quickly the climate is changing.
+The goal of this analysis is to use linear regression explain variability in ice duration for lakes in Madison, WI based on air temperature. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these two factors to better understand the changing climate.
 :::
 
 ## **Exercise 5**
@@ -141,9 +137,9 @@ a.  Create side-by-side boxplots to visualize the distribution of `ice_duration`
 
 b.  Visualize the distribution of ice duration over time for each lake.
 
-c.  There are separate measurements for each lake in the `icecover` data frame. In this analysis, we will combine the data from both lakes and use the average ice duration each year for the analysis.
+c.  There are separate measurements for each lake in the `icecover` data frame. In this analysis, we will combine the data from both lakes and use the average ice duration each year.
 
-Evaluate the analysis choice to use the average per year rather than the individual lake measurements. Some things to consider in your evaluation: *Does the average accurately reflects the ice duration for lakes in Madison, WI for that year? Will there be information loss? How might that impact (or not) the analysis conclusions? Etc.*
+    Evaluate the analysis choice to use the average per year rather than the individual lake measurements. Some things to consider in your evaluation: *Does the average accurately reflects the ice duration for lakes in Madison, WI for that year? Will there be information loss? How might that impact (or not) the analysis conclusions? Etc.*
 
 ::: callout-tip
 See the [ggplot2 reference](https://ggplot2.tidyverse.org/reference/index.html#geoms) for example code and plots.
@@ -153,18 +149,18 @@ See the [ggplot2 reference](https://ggplot2.tidyverse.org/reference/index.html#g
 
 Next, let's combine the ice duration and air temperature data into a single analysis data frame.
 
-a.  Fill in the code below to create a new data frame, `icecover_avg`, of the average ice duration by lake and year.
+a.  Fill in the code below to create a new data frame, `icecover_avg`, of the average ice duration by year.
+
+    Then join `icecover_avg` and `airtemp` to create a new data frame. The new data frame should have 134 observations.
 
     ```{r}
     #| eval: false
 
     icecover_avg <- icecover |>
-      group_by(____, _____) |>
-      summarise(avg_ice_duration = mean(_____)) |>
+      group_by(_____) |>
+      summarise(_____) |>
       ungroup()
     ```
-
-Then join `icecover_avg` and `airtemp` to create a new data frame. The new data frame should have 134 observations.
 
 ::: callout-important
 You will use the new data frame with average ice duration and average air temperature for the remainder of the assignment.
@@ -184,7 +180,7 @@ $$
 \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
 $$
 
-a.  State the dimensions of $\mathbf{y}$, $\mathbf{X}$, $\boldsymbol{\beta}$, $\boldsymbol{\epsilon}$ for this analysis. Your answer should have exact value given this data set.
+a.  State the dimensions of $\mathbf{y}$, $\mathbf{X}$, $\boldsymbol{\beta}$, $\boldsymbol{\epsilon}$ for this analysis. Your answer should have exact values given this data set.
 b.  Find the estimated regression coefficients $\hat{\boldsymbol{\beta}}$ using the matrix representation of the model. Show the code used to get the answer.
 
 ## Exercise 8
