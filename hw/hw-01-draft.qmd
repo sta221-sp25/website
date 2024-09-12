@@ -49,7 +49,7 @@ library(knitr)
 ::: {.callout-note icon="false"}
 ## Instructions
 
-The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question. \
+The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.\
 \
 **You may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.**
 :::
@@ -102,7 +102,7 @@ The applied exercises are focused on applying the concepts to analyze data.
 Write all narrative using complete sentences and include informative axis labels / titles on visualizations.
 :::
 
-## Data 
+## Data
 
 The datasets `wi-icecover.csv` and `wi-air-temperature.csv` contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota (both in Madison, Wisonsin) for days in 1886 through 2019. The data were obtained from the [`ntl_icecover`](https://lter.github.io/lterdatasampler/reference/ntl_icecover.html) and [`ntl_airtemp`](https://lter.github.io/lterdatasampler/reference/ntl_airtemp.html) data frames in the [lterdatasampler](https://lter.github.io/lterdatasampler/) R package. They were originally collected by the [US Long Term Ecological Research program (LTER) Network](https://lternet.edu/).
 
@@ -204,7 +204,7 @@ b.  Briefly comment on the model fit based on $R^2$.
 You are asked to use a reproducible workflow for all of your work in the class, and the goal of this question to is better understand potential real-world implications of doing (or not) so. Below are some real-life examples in which having a non-reproducible workflow resulted in errors that impacted research or public records.
 
 | Reproducibility error                                    | Consequence                                          | Source(s)                                                                                                       |
-|-------------------|------------------|-----------------------------------|
+|----------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | Limitations in Excel data formats                        | Loss of 16,000 COVID case records in the UK          | ([Kelion 2020](https://www.bbc.com/news/technology-54423988))                                                   |
 | Automatic formatting in Excel                            | Important genes disregarded in scientific studies    | ([Ziemann, Eren, and El-Osta 2016](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7)) |
 | Deletion of a cell caused rows to shift                  | Mix-up of which patient group received the treatment | ([Wallensteen et al. 2018](https://pubmed.ncbi.nlm.nih.gov/27373757/))                                          |
