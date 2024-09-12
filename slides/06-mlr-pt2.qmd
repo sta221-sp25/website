@@ -432,7 +432,7 @@ For this class you will need to be able to...
 
 You are welcome to but <u>not</u> required to write math proofs using LaTex.
 
-## Application exercise
+# Application exercise
 
 ::: appex
 📋 <https://sta221-fa24.netlify.app/ae/ae-02-mlr>
