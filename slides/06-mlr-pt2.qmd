@@ -50,11 +50,11 @@ Homework will generally be split into two sections:
 
 1️⃣ **Conceptual exercises**
 
-The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question. \
+The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.\
 \
 **You may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.**
 
-## Homework 
+## Homework
 
 2️⃣ **Applied exercises**
 
@@ -204,7 +204,7 @@ y_n
 }_\boldsymbol{\epsilon}
 $$
 
-<center>How might we include a categorical predictor with $k$ levels in the design matrix, $\mathbf{X}$ ? </center>
+<center>How might we include a categorical predictor with $k$ levels in the design matrix, $\mathbf{X}$ ?</center>
 
 ## Indicator variables {.midi}
 
@@ -217,13 +217,9 @@ $$
 ::: question
 -   Write out the design matrix for this hypothesized linear model.
 
--   Demonstrate that the design matrix is not of full column rank
-    (that is, affirmatively provide one of the columns in terms of
-    the others).
+-   Demonstrate that the design matrix is not of full column rank (that is, affirmatively provide one of the columns in terms of the others).
 
--   Use this intuition to explain why when we include categorical
-    predictors, we cannot include both indicators for every level of
-    the variable *and* an intercept.
+-   Use this intuition to explain why when we include categorical predictors, we cannot include both indicators for every level of the variable *and* an intercept.
 :::
 
 ## Indicator variables
@@ -366,13 +362,13 @@ tidy(int_fit_2) |>
 
 # Model assessment and comparison
 
-## RMSE & $R^2$ 
+## RMSE & $R^2$
 
 -   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
 
 -   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model
 
-## Comparing models 
+## Comparing models
 
 ::: incremental
 -   When comparing models, do we prefer the model with the lower or higher RMSE?
