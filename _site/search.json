@@ -1021,7 +1021,7 @@
     "href": "hw/hw-01.html#exercise-6",
     "title": "HW 01: Simple linear regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\nNext, let’s combine the ice duration and air temperature data into a single analysis data frame.\n\nFill in the code below to create a new data frame, icecover_avg, of the average ice duration by year.\nThen join icecover_avg and airtemp to create a new data frame. The new data frame should have 134 observations.\n\nicecover_avg &lt;- icecover |&gt;\n  group_by(_____) |&gt;\n  summarise(_____) |&gt;\n  ungroup()\n\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will use the new data frame with average ice duration and average air temperature for the remainder of the assignment.\n\n\n\nVisualize the relationship between the air temperature and average ice duration. Do you think a linear model would be a good fit to capture the relationship between the two variables?\n\n\nNow is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates.",
+    "text": "Exercise 6\nNext, let’s combine the ice duration and air temperature data into a single analysis data frame.\n\nFill in the code below to create a new data frame, icecover_avg, of the average ice duration by year.\nThen join icecover_avg and airtemp to create a new data frame. The new data frame should have 134 observations.\n\nicecover_avg &lt;- icecover |&gt;\n  group_by(_____) |&gt;\n  summarise(_____) |&gt;\n  ungroup()\n\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will use the new data frame with average ice duration and average air temperature for the remainder of the assignment.\n\n\n\nVisualize the relationship between the air temperature and average ice duration. Do you think a linear model would be a good fit to capture the relationship between the two variables? \n\n\nNow is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates.",
     "crumbs": [
       "Homework",
       "HW 01"
@@ -1072,137 +1072,226 @@
     ]
   },
   {
-    "objectID": "hw/hw-01-draft.html",
-    "href": "hw/hw-01-draft.html",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "Due date\n\n\n\nThis assignment is due on Thursday, September 19 at 11:59pm."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-1",
-    "href": "hw/hw-01-draft.html#exercise-1",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\na. Show that the hat matrix \\(\\mathbf{H}\\) is symmetric \\((\\mathbf{H}^T = \\mathbf{H})\\) and idempotent \\((\\mathbf{H}^2 = \\mathbf{H})\\).\nb. Show that \\((\\mathbf{I} - \\mathbf{H})\\) is symmetric and idempotent."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-2",
-    "href": "hw/hw-01-draft.html#exercise-2",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a symmetric \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\).\nShow that the gradient of \\(\\boldsymbol{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n(Proposition 2 from class)"
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-3",
-    "href": "hw/hw-01-draft.html#exercise-3",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nIn class we used the sum of squared residuals (SSR) to estimate the regression coefficients, \\(\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{Y}\\) . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of \\(\\boldsymbol{\\beta}\\) that minimizes the SSR (rather than maximize).\nIf the Hessian matrix \\(\\nabla_{\\boldsymbol{\\beta}}^2 SSR\\) is positive definite, then we know we have found the \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes SSR, i.e., the least squares estimator. Additionally, we have the following proposition:\n\n\n\n\n\n\nProposition\n\n\n\nA matrix \\(\\mathbf{A}\\) is positive definite if \\(\\mathbf{z}^T\\mathbf{A}\\mathbf{z} &gt; 0\\) , given \\(\\mathbf{z}\\) is a non-zero vector.\n\n\nShow that \\(\\nabla_{\\boldsymbol{\\beta}}^2 SSR\\) is positive definite."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-4",
-    "href": "hw/hw-01-draft.html#exercise-4",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nProve that the maximum value of \\(R^2\\) must be less than 1 if the data set contains observations such that there are different observed values of the response for the same value of the predictor (e.g., the dataset contains observations \\((x_i, y_i)\\) and \\((x_j, y_j)\\) such that \\(x_i = x_j\\) and \\(y_i \\neq y_j\\) )."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#data",
-    "href": "hw/hw-01-draft.html#data",
-    "title": "HW 01: Simple linear regression",
-    "section": "Data",
-    "text": "Data\nThe datasets wi-icecover.csv and wi-air-temperature.csv contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota (both in Madison, Wisonsin) for days in 1886 through 2019. The data were obtained from the ntl_icecover and ntl_airtemp data frames in the lterdatasampler R package. They were originally collected by the US Long Term Ecological Research program (LTER) Network.\n\nicecover &lt;- read_csv(\"data/wi-icecover.csv\")\nairtemp &lt;- read_csv(\"data/wi-air-temperature.csv\")\n\nThe analysis will focus on the following variables:\n\nyear: year of observation\nlakeid: lake name\nice_duration: number of days between the freeze and ice breakup dates of each lake\nair_temp_avg: yearly average air temperature in Madison, WI (degrees Celsius)\n\n\n\n\n\n\n\nAnalysis goal\n\n\n\nThe goal of this analysis is to use linear regression explain variability in ice duration for lakes in Madison, WI based on air temperature. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these two factors to better understand the changing climate."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-5",
-    "href": "hw/hw-01-draft.html#exercise-5",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nLet’s start by looking at the response variable ice_duration.\n\nCreate side-by-side boxplots to visualize the distribution of ice_duration for each lake.\nVisualize the distribution of ice duration over time for each lake.\nThere are separate measurements for each lake in the icecover data frame. In this analysis, we will combine the data from both lakes and use the average ice duration each year.\nEvaluate the analysis choice to use the average per year rather than the individual lake measurements. Some things to consider in your evaluation: Does the average accurately reflects the ice duration for lakes in Madison, WI for that year? Will there be information loss? How might that impact (or not) the analysis conclusions? Etc.\n\n\n\n\n\n\n\nTip\n\n\n\nSee the ggplot2 reference for example code and plots."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-6",
-    "href": "hw/hw-01-draft.html#exercise-6",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nNext, let’s combine the ice duration and air temperature data into a single analysis data frame.\n\nFill in the code below to create a new data frame, icecover_avg, of the average ice duration by year.\nThen join icecover_avg and airtemp to create a new data frame. The new data frame should have 134 observations.\n\nicecover_avg &lt;- icecover |&gt;\n  group_by(_____) |&gt;\n  summarise(_____) |&gt;\n  ungroup()\n\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will use the new data frame with average ice duration and average air temperature for the remainder of the assignment.\n\n\n\nVisualize the relationship between the air temperature and average ice duration. Do you think a linear model would be a good fit to capture the relationship between the two variables?\n\n\nNow is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-7",
-    "href": "hw/hw-01-draft.html#exercise-7",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 7",
-    "text": "Exercise 7\nWe will fit a model using the average air temperature to explain variability in ice duration that takes the form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\nState the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\) for this analysis. Your answer should have exact values given this data set.\nFind the estimated regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) using the matrix representation of the model. Show the code used to get the answer."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-8",
-    "href": "hw/hw-01-draft.html#exercise-8",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nFit the model from the previous exercise using the lm function. Neatly display the results using 3 digits.\nInterpret the slope in the context of the data.\n\n\nNow is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-9",
-    "href": "hw/hw-01-draft.html#exercise-9",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nCalculate \\(R^2\\) for the model in the previous exercise and interpret it in the context of the data.\nBriefly comment on the model fit based on \\(R^2\\)."
-  },
-  {
-    "objectID": "hw/hw-01-draft.html#exercise-10",
-    "href": "hw/hw-01-draft.html#exercise-10",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 10",
-    "text": "Exercise 10\nYou are asked to use a reproducible workflow for all of your work in the class, and the goal of this question to is better understand potential real-world implications of doing (or not) so. Below are some real-life examples in which having a non-reproducible workflow resulted in errors that impacted research or public records.\n\nSource: Ostblom and Timbers (2022)\n\n\nReproducibility error\nConsequence\nSource(s)\n\n\n\n\nLimitations in Excel data formats\nLoss of 16,000 COVID case records in the UK\n(Kelion 2020)\n\n\nAutomatic formatting in Excel\nImportant genes disregarded in scientific studies\n(Ziemann, Eren, and El-Osta 2016)\n\n\nDeletion of a cell caused rows to shift\nMix-up of which patient group received the treatment\n(Wallensteen et al. 2018)\n\n\nUsing binary instead of explanatory labels\nMix-up of the intervention with the control group\n(Aboumatar and Wise 2019)\n\n\nUsing the same notation for missing data and zero values\nPaper retraction\n(Whitehouse et al. 2021)\n\n\nIncorrectly copying data in a spreadsheet\nDelay in the opening of a hospital\n(Picken 2020)\n\n\n\nChoose one of the scenarios from the table and read the linked article discussing what went wrong. Then,\n\nBriefly describe what went wrong, i.e., what part of the process of was not reproducible and what error or impact that had.\nDescribe one way the researchers could have made the process reproducible."
-  },
-  {
-    "objectID": "labs/lab-02-draft.html",
-    "href": "labs/lab-02-draft.html",
-    "title": "Lab 02: Multiple Linear Regression",
-    "section": "",
-    "text": "Date due\n\n\n\n\nAdd dates\nAdd dates"
-  },
-  {
-    "objectID": "labs/lab-02-draft.html#packages",
-    "href": "labs/lab-02-draft.html#packages",
-    "title": "Lab 02: Multiple Linear Regression",
-    "section": "Packages",
-    "text": "Packages\nFor today’s lab, we will be using the following packages.\n\nlibrary(tidyverse)\nlibrary(skimr)\nlibrary(broom)"
-  },
-  {
-    "objectID": "labs/lab-02-draft.html#data",
-    "href": "labs/lab-02-draft.html#data",
-    "title": "Lab 02: Multiple Linear Regression",
-    "section": "Data",
-    "text": "Data\nToday’s data was pulled from the National Database of Childcare Prices, and appeared on May 9th on TidyTuesdays. We will be focusing on a subset of the data collecting information about childcare costs and labor market information across the 100 North Carolina counties.\nFor this lab, we will use our data via a test/train split. We will be using part of our observations to fit a regression model and the remaining part to check the preictive power of the model we fit.\n\nchildcare &lt;- read_csv('data/lab-02_childcare-costs_train.csv')\n\nBelow, you will find a table containing the variable descriptions for the dataset. [TODO: Add table]\nOur goal will be to understand what factors determine the cost of childcare for school-aged children in North Carolina. As an outcome variable, we will be using mcsa, the weekly full-time median price charged by childcare centers for children between 6 and 17."
-  },
-  {
-    "objectID": "labs/lab-02-draft.html#exercises",
-    "href": "labs/lab-02-draft.html#exercises",
-    "title": "Lab 02: Multiple Linear Regression",
-    "section": "Exercises",
-    "text": "Exercises\n\nExercise 1\nLet us start by inspecting the data. TODO: ask for standard summaries/visualizations of data\n\n\nExercise 2\nThere are many potentially interesting covariates in the data. To start, we will be doing some feature design and selection. In other words, we will be choosing and/or constructing some variables among the ones available that we will use as predictors for mcsa. We will use a total of five dependent variables.\nFirst, let’s select some variables from the data. Choose five variables that you would like to use as predictor, list them below and briefly explain why you expect the chosen variables to be relevant predictors.\n\n\nExercise 3\nGiven your choices in the above exercise, you will be asked to design new dependent variables from the ones available if you believe it is needed. This procedure is useful when using a variable as-is can give rise to interpretation issues.\n\n\n\n\n\n\nExample\n\n\n\nSay we believe that the amount of households with two working parents increases demand for childcare services, and hence their price. We have the column h_6to17_both_work encoding the number of such households per county. But counties are inherently differently sized, and raw population count may be misleading, since having a larger count does not imply such type of household is more prevalent.\nA reasonable thing would be creating a variable encoding the proportion of households with both parents working. We could do this by creating a variable p_6to17_both_work:\n\nchildcare |&gt; mutate(p_6to17_both_work = h_6to17_both_work / households)\n\n\n\nFor your selected variables, create new variables if you believe some transformation is appropriate. Once you are done, create a trimmed dataset childcare_small including only the outcome variable mcsa and the variables you intend to use in your regression analysis.\n\n\nExercise 4\nChoose one of your predictor variables and visualize the relation between childcare costs and the chosen variable using a scatterplot. Comment on the visual relation you observe: does your independent variable seem to explained any of the observed values of mcsa?\n\n\nExercise 5\nRepresent the regression model you intend to use in matrix-vector form. Write the regression model, make the dimensions of all quantities explicit and describe what each symbol you use represents.\n\n\nExercise 6\nUse lm to fit the regression model you described in the previous exercise, and store your results in a variable called childcare_lm.\n\n\nExercise 7\nWe can now assess the overall fit of your regression model. Using the information included in childcare_lm, answer the following questions. In answering, make sure to reference the relevant statistics you used to draw your conclusions and show any calculations you make.\n\nHow much of the variation in the childcare costs is explained by your chosen explanatory variables?\nDo you have reason to believe your model explains a significant portion of the variation in the data?\n\n\n\nExercise 8\nDisplay and interpret the regression coefficients you obtained from the lm fit. Comment on the direction and the size of the relationships.\n\n\nExercise 9\nLet us now explore the predictive power of our fitted model on the test set. Let’s first load the test data.\n\nchildcare_test = read_csv('data/lab-02_childcare-costs_test.csv')\n\nUse the predict function method to compute fitted values for childcare costs, and store them in an object called childcare_test_fitted.\n\n\nExercise 10\nCompute the standard deviation of mcsa and the RMSE for the test set, and compare the two values. Are they appreciably different? What does this suggest about the predictive power of our model?"
-  },
-  {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
-    "section": "",
-    "text": "To be posted.",
+    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
     "crumbs": [
-      "Labs",
-      "Lab 07"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\nKat Husar\nHead TA\nLab 02L leader\nTue 1:30 - 3:30pm, Old Chem 220\n\n\n\nJon Campbell\nLab 01L leader\nTue & Thu 9 - 10am, Old Chem 025\n\n\n\nIshrit Gupta\nLab 01L helper\nFri 1- 3pm, Old Chem 203B\n\n\n\nAlan Wang\nLab 02L helper\nMon & Wed 10 - 11am, Old Chem 203B",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 05"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "",
+    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today."
+  },
+  {
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment."
+  },
+  {
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step."
+  },
+  {
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Welcome + Getting Started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 03"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "",
+    "text": "Due date\n\n\n\nThis lab is due on Thursday, September 19 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-1",
+    "href": "labs/lab-02.html#exercise-1",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nLet’s start with some exploratory data analysis. Visualize the distribution of the response variable mcsa and calculate summary statistics. Describe the distribution of this variable, including the shape, center, spread, and presence of potential outliers.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-2",
+    "href": "labs/lab-02.html#exercise-2",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nAs you can see from the data dictionary in the README of the data folder, there are many interesting potential variables that could be included in the model to predict median childcare cost for school-aged children. Therefore, we will do some feature selection and feature design to choose potential predictors and construct new ones.\nAs a team, select four variables you want to use as predictors for the model. For each variable, state the variable name, definition, and a brief explanation about why your team hypothesizes this will be a relevant predictor of median childcare costs. The explanation may (but is not required to) include some short exploratory analysis.\n\nTeam Member 1: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 1- 2.\nTeam Member 2: It’s your turn! Type the team’s response to exercises 3 - 4.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-3",
+    "href": "labs/lab-02.html#exercise-3",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nOnce we’ve identified potential predictor variables, we often need to transform some variables (e.g., change raw counts into proportions) or create new ones (e.g., create a categorical variable out of quantitative data) before fitting the regression model. This process is particularly useful when putting a variable in the model “as-is” may result in interpretation issues.\nChoose one of the variables selected in the previous exercise. For this variable,\n\nTransform the variable or use it to create a new variable.\nBriefly explain your reasoning for the transformation or new variable.\nUse visualizations and/or summary statistics to display the distribution of the original variable and the transformed / newly created variable. Note: This is to help ensure the transformation / new variable is what you expect.\n\nAn example using h_6to17_both_work is below. Note you cannot use this variable for your transformation / new variable.\n\n\n\n\n\n\nExample\n\n\n\nSay we believe that the amount of households with two working parents increases demand for childcare services, and hence their price. We have the column h_6to17_both_work encoding the number of such households per county. The raw population count differs across county, so having a larger value of h_6to17_both_work may reflect population size and not necessarily imply the type of such household is more prevalent in the county.\nA reasonable thing would be creating a variable encoding the proportion of households with both parents working. We could do this by creating a variable p_6to17_both_work:\n\np_6to17_both_work = h_6to17_both_work / households\n\nIn this case, we would then use p_6to17_both_work not h_6to17_both_work as a predictor in the model.\n\n\nYou may decide to transform and/or create multiple new variables; however, you will only be graded on the one of them.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-4",
+    "href": "labs/lab-02.html#exercise-4",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nNow let’s conduct some bivariate exploratory data analysis. Visualize the relationship between the response variable and one of your predictor variables.\nWrite two distinct observations from the visualization.\n\nTeam Member 2: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 3 - 4.\nTeam Member 3: It’s your turn! Type the team’s response to exercises 5 - 6.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-5",
+    "href": "labs/lab-02.html#exercise-5",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nRepresent the regression model using the matrix representation. For each symbol in the model (1) describe what it represents and (2) state the dimensions. The description and dimensions should be in the context of these data, not in general.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-6",
+    "href": "labs/lab-02.html#exercise-6",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUse lm to fit the regression model you described in the previous exercise. Neatly display the model using a reasonable number of digits.\n\nInterpret the coefficients for each predictor in the context of the data.\nBased on your model, describe the counties represented by the intercept.\n\n\nTeam Member 3: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 5 - 6.\nTeam Member 4: It’s your turn! Type the team’s response to exercises 7 - 9.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-7",
+    "href": "labs/lab-02.html#exercise-7",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nNow let’s assess the fit of the model.\n\nHow much of the variation in the childcare costs is explained by your chosen predictor variables?\n\n\n\nBased on this, do you think the model explains a significant portion of the variability in childcare costs for school-aged children in North Carolina? Briefly explain.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-8",
+    "href": "labs/lab-02.html#exercise-8",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nNow let’s use the testing data to explore the predictive power of the model.\nUse the predict function to compute the predicted childcare costs for the observations in the testing data.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-9",
+    "href": "labs/lab-02.html#exercise-9",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nCompute the RMSE for the test set, and compare it to the standard deviation of the response variable mcsa.\n\nHow do these values compare?\nWhat does this suggest about the predictive power of the model?\n\n\nTeam Member 4: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and the rest of the team can see the completed lab.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the team’s completed lab!",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-10",
+    "href": "labs/lab-02.html#exercise-10",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nIf you haven’t already, make sure you have completed the team agreement (see the instructions in [Meet your team!]).",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#footnotes",
+    "href": "labs/lab-02.html#footnotes",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDon’t trust yourself to keep your hands off the keyboard? Put them in your pocket or cross your arms. No matter how silly it might feel, resist the urge to touch your keyboard until otherwise instructed!↩︎",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
     ]
   },
   {
@@ -1360,106 +1449,54 @@
     ]
   },
   {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 03"
+      "Lab 07"
     ]
   },
   {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Welcome + Getting Started",
+    "objectID": "labs/lab-02-draft.html",
+    "href": "labs/lab-02-draft.html",
+    "title": "Lab 02: Multiple Linear Regression",
     "section": "",
-    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today."
+    "text": "Date due\n\n\n\n\nAdd dates\nAdd dates"
   },
   {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment."
+    "objectID": "labs/lab-02-draft.html#packages",
+    "href": "labs/lab-02-draft.html#packages",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Packages",
+    "text": "Packages\nFor today’s lab, we will be using the following packages.\n\nlibrary(tidyverse)\nlibrary(skimr)\nlibrary(broom)"
   },
   {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step."
+    "objectID": "labs/lab-02-draft.html#data",
+    "href": "labs/lab-02-draft.html#data",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Data",
+    "text": "Data\nToday’s data was pulled from the National Database of Childcare Prices, and appeared on May 9th on TidyTuesdays. We will be focusing on a subset of the data collecting information about childcare costs and labor market information across the 100 North Carolina counties.\nFor this lab, we will use our data via a test/train split. We will be using part of our observations to fit a regression model and the remaining part to check the preictive power of the model we fit.\n\nchildcare &lt;- read_csv('data/lab-02_childcare-costs_train.csv')\n\nBelow, you will find a table containing the variable descriptions for the dataset. [TODO: Add table]\nOur goal will be to understand what factors determine the cost of childcare for school-aged children in North Carolina. As an outcome variable, we will be using mcsa, the weekly full-time median price charged by childcare centers for children between 6 and 17."
   },
   {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Welcome + Getting Started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week."
-  },
-  {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 05"
-    ]
-  },
-  {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 06"
-    ]
-  },
-  {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\nKat Husar\nHead TA\nLab 02L leader\nTue 1:30 - 3:30pm, Old Chem 220\n\n\n\nJon Campbell\nLab 01L leader\nTue & Thu 9 - 10am, Old Chem 025\n\n\n\nIshrit Gupta\nLab 01L helper\nFri 1- 3pm, Old Chem 203B\n\n\n\nAlan Wang\nLab 02L helper\nMon & Wed 10 - 11am, Old Chem 203B",
-    "crumbs": [
-      "Overview"
-    ]
+    "objectID": "labs/lab-02-draft.html#exercises",
+    "href": "labs/lab-02-draft.html#exercises",
+    "title": "Lab 02: Multiple Linear Regression",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1\nLet us start by inspecting the data. TODO: ask for standard summaries/visualizations of data\n\n\nExercise 2\nThere are many potentially interesting covariates in the data. To start, we will be doing some feature design and selection. In other words, we will be choosing and/or constructing some variables among the ones available that we will use as predictors for mcsa. We will use a total of five dependent variables.\nFirst, let’s select some variables from the data. Choose five variables that you would like to use as predictor, list them below and briefly explain why you expect the chosen variables to be relevant predictors.\n\n\nExercise 3\nGiven your choices in the above exercise, you will be asked to design new dependent variables from the ones available if you believe it is needed. This procedure is useful when using a variable as-is can give rise to interpretation issues.\n\n\n\n\n\n\nExample\n\n\n\nSay we believe that the amount of households with two working parents increases demand for childcare services, and hence their price. We have the column h_6to17_both_work encoding the number of such households per county. But counties are inherently differently sized, and raw population count may be misleading, since having a larger count does not imply such type of household is more prevalent.\nA reasonable thing would be creating a variable encoding the proportion of households with both parents working. We could do this by creating a variable p_6to17_both_work:\n\nchildcare |&gt; mutate(p_6to17_both_work = h_6to17_both_work / households)\n\n\n\nFor your selected variables, create new variables if you believe some transformation is appropriate. Once you are done, create a trimmed dataset childcare_small including only the outcome variable mcsa and the variables you intend to use in your regression analysis.\n\n\nExercise 4\nChoose one of your predictor variables and visualize the relation between childcare costs and the chosen variable using a scatterplot. Comment on the visual relation you observe: does your independent variable seem to explained any of the observed values of mcsa?\n\n\nExercise 5\nRepresent the regression model you intend to use in matrix-vector form. Write the regression model, make the dimensions of all quantities explicit and describe what each symbol you use represents.\n\n\nExercise 6\nUse lm to fit the regression model you described in the previous exercise, and store your results in a variable called childcare_lm.\n\n\nExercise 7\nWe can now assess the overall fit of your regression model. Using the information included in childcare_lm, answer the following questions. In answering, make sure to reference the relevant statistics you used to draw your conclusions and show any calculations you make.\n\nHow much of the variation in the childcare costs is explained by your chosen explanatory variables?\nDo you have reason to believe your model explains a significant portion of the variation in the data?\n\n\n\nExercise 8\nDisplay and interpret the regression coefficients you obtained from the lm fit. Comment on the direction and the size of the relationships.\n\n\nExercise 9\nLet us now explore the predictive power of our fitted model on the test set. Let’s first load the test data.\n\nchildcare_test = read_csv('data/lab-02_childcare-costs_test.csv')\n\nUse the predict function method to compute fitted values for childcare costs, and store them in an object called childcare_test_fitted.\n\n\nExercise 10\nCompute the standard deviation of mcsa and the RMSE for the test set, and compare the two values. Are they appreciably different? What does this suggest about the predictive power of our model?"
   },
   {
     "objectID": "hw/hw-04.html",
