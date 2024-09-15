@@ -1,6 +1,6 @@
 ---
 title: "Lab 02: Multiple Linear Regression"
-subtitle: "Park access"
+subtitle: "Childcare costs in North Carolina"
 execute:
   freeze: auto
   echo: true
@@ -9,6 +9,8 @@ execute:
   message: false
 format: html
 ---
+
+<!--# Next time do this lab using infant / toddler/ preschool costs-->
 
 ::: callout-important
 # Due date
@@ -21,7 +23,7 @@ This lab is due on **Thursday, September 19 at 11:59pm.** To be considered on ti
 
 # Multiple Linear Regression
 
-In this lab, you will use multiple linear regression to use county-level demographic and labor market factors to predict the median childcare cost for school-aged children. You will analyze data and explain how some concepts from regression theory apply to this analysis. You will also start working with your lab teams, write a team agreement, and be introduced to using GitHub for collaboration.
+In this lab, you will use multiple linear regression to predict a county's median childcare cost for school-age children based on demographic and labor market factors. You will also start working with your lab teams, write a team agreement, and be introduced to using GitHub for collaboration.
 
 # **Learning goals**
 
@@ -29,7 +31,7 @@ By the end of the lab you will be able to…
 
 -   use multiple linear regression to describe the relationship between a response variable and multiple predictor variables.
 -   interpret the coefficients of a multiple linear regression model.
--   use testing data to assess model performance.
+-   use testing data to assess a model's predictive performance.
 -   collaborate with others using a single Github repo.
 
 # **Meet your team!**
@@ -96,9 +98,9 @@ library(knitr)
 
 # Data
 
-Today's data was pulled from the [National Database of Childcare Prices](https://www.dol.gov/agencies/wb/topics/featured-childcare), and was featured on the data visualization challenge [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-05-09) in May 2023. This lab focuses on a subset of the data that contains information about childcare costs and labor market conditions across the 100 counties in North Carolina.
+Today's data was pulled from the [National Database of Childcare Prices](https://www.dol.gov/agencies/wb/topics/featured-childcare) and was featured on the data visualization challenge [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-05-09) in May 2023. This lab focuses on a subset of the data that contains information about childcare costs and labor market conditions across the 100 counties in North Carolina.
 
-You will work with two data sets in this analysis - a training set and a test set. You will primarily work with the **training** set, observations that are used to explore the data and fit the regression model. At the end of the analysis, you will use the **test** set of observations to assess the predictive power of the model. Observations are randomly assigned to the training and test sets, so each data set can be treated as being representative of the original data.
+You will work with two data sets in this analysis - a training set and a test set. You will primarily work with the **training** set, observations that are used to explore the data and fit the regression model. At the end of the analysis, you will use the **test** set of observations to assess the predictive power of the model. Observations are randomly assigned to the training and test sets, so each set can be treated as representative of the original data.
 
 ```{r}
 #| label: load-data
@@ -106,13 +108,13 @@ childcare_train <- read_csv("data/childcare-costs-train.csv")
 childcare_test <- read_csv("data/childcare-costs-test.csv")
 ```
 
-**The response variable for this analysis is `mcsa`**, defined as weekly, full-time median price charged for Center-Based Care for those who are school age (ages 6 - 17 years old) based on the results reported in the market rate survey report for the county.
+**The response variable for this analysis is `mcsa`**, defined as weekly, full-time median price charged for center-based care for those who are school age (ages 6 - 17 years old) based on the results reported in the market rate survey report for the county.
 
 The full data dictionary is available in the `README` of the `data` folder in your GitHub repo. You can also find the full data dictionary on the TidyTuesday page.
 
 # Exercises
 
-**Goal:** The goal of this analysis is to use various demographic and labor-market factors to predict the median price of childcare for school-aged children for counties in North Carolina.
+**Goal:** The goal of this analysis is to use various demographic and labor-market factors to predict the median price of childcare for school-age children for counties in North Carolina.
 
 ::: callout-important
 Write all code and narrative in your Quarto file. Write all narrative in complete sentences. Make sure the teaching team can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (`|>`) and plus sign (`+`).
@@ -128,9 +130,13 @@ Write all code and narrative in your Quarto file. Write all narrative in complet
 
 Let's start with some exploratory data analysis. Visualize the distribution of the response variable `mcsa` and calculate summary statistics. Describe the distribution of this variable, including the shape, center, spread, and presence of potential outliers.
 
+::: callout-important
+You will use the `childcare_train` for all analysis in Exercises 1 - 7.
+:::
+
 ## Exercise 2
 
-As you can see from the data dictionary in the `README` of the `data` folder, there are many interesting potential variables that could be included in the model to predict median childcare cost for school-aged children. Therefore, we will do some *feature selection* and *feature design* to choose potential predictors and construct new ones.
+As you can see from the data dictionary in the `README` of the `data` folder, there are many interesting potential variables that could be included in the model to predict median childcare cost for school-age children. Therefore, we will do some *feature selection* and *feature design* to choose potential predictors and construct new ones.
 
 As a team, select **four** variables you want to use as predictors for the model. For each variable, state the variable name, definition, and a brief explanation about why your team hypothesizes this will be a relevant predictor of median childcare costs. The explanation may (but is not required to) include some short exploratory analysis.
 
@@ -150,7 +156,7 @@ Once we've identified potential predictor variables, we often need to transform 
 
 Choose one of the variables selected in the previous exercise. For this variable,
 
--   Transform the variable or use it to create a new variable.
+-   Transform the variable or use it to create a new variable. Be sure to save the variable to the `childcare_train` data frame.
 
 -   Briefly explain your reasoning for the transformation or new variable.
 
@@ -173,6 +179,10 @@ In this case, we would then use `p_6to17_both_work` not `h_6to17_both_work` as a
 
 You may decide to transform and/or create multiple new variables; however, you will only be graded on the one of them.
 
+::: callout-important
+You will use the transformed / new variable (not the original variable) in the model!
+:::
+
 ## Exercise 4
 
 Now let's conduct some bivariate exploratory data analysis. Visualize the relationship between the response variable and one of your predictor variables.
@@ -191,15 +201,13 @@ Write two distinct observations from the visualization.
 
 ## Exercise 5
 
-Represent the regression model using the matrix representation. For each symbol in the model (1) describe what it represents and (2) state the dimensions. The description and dimensions should be in the context of these data, not in general.
+Use the matrix form of the model to represent the regression model with the variables you selected and transformed/created in exercises 2 and 3 as the predictors. For each symbol in the model (1) describe what it represents and (2) state the dimensions. The description and dimensions should be in the context of these data, not in general.
 
 ## Exercise 6
 
 Use `lm` to fit the regression model you described in the previous exercise. Neatly display the model using a reasonable number of digits.
 
--   Interpret the coefficients for each predictor in the context of the data.
-
--   Based on your model, describe the counties represented by the intercept.
+-   Interpret the coefficient for one predictor in the model.
 
 ::: render-commit-push
 **Team Member 3**: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.
@@ -217,26 +225,39 @@ Now let's assess the fit of the model.
 
 -   How much of the variation in the childcare costs is explained by your chosen predictor variables?
 
-```{=html}
 <!-- -->
-```
--   Based on this, do you think the model explains a significant portion of the variability in childcare costs for school-aged children in North Carolina? Briefly explain.
+
+-   Based on this, do you think the model explains a significant portion of the variability in childcare costs for school-age children in North Carolina? Briefly explain.
 
 ## Exercise 8
 
 Now let's use the testing data to explore the predictive power of the model.
 
-Use the `predict` function to compute the predicted childcare costs for the observations in the testing data.
+-   Add the variable you created in Exercise 3 to the testing data.
 
-<!--# may need to add something about how to store the data-->
+-   Then, use the code below to compute the predicted childcare costs for the observations in the testing data using the `predict` function.
+
+```{r}
+#| eval: false
+
+# compute predictions
+pred <- predict(childcare_fit, childcare_test)
+
+# add predictions to testing data set
+childcare_test <- childcare_test |>
+  mutate(pred = pred)
+```
 
 ## Exercise 9
 
-Compute the RMSE for the test set, and compare it to the standard deviation of the response variable `mcsa`.
+-   Compute the RMSE for the test set, and compare it to the standard deviation of the response variable `mcsa`.
 
+```{=html}
+<!-- -->
+```
 -   How do these values compare?
 
--   What does this suggest about the predictive power of the model?
+-   Based on this, how would assess the predictive power of the model?
 
 ::: render-commit-push
 **Team Member 4**: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and the rest of the team can see the completed lab.
@@ -248,7 +269,7 @@ Compute the RMSE for the test set, and compare it to the standard deviation of t
 
 ## Exercise 10
 
-If you haven't already, make sure you have completed the team agreement (see the instructions in [Meet your team!]).
+If you haven't already, make sure you have completed the team agreement (see the instructions in \[Meet your team!\]).
 
 # Wrapping up
 

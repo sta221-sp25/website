@@ -378,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-01.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-02.html">Lab 02</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Lab 02: Multiple Linear Regression</h1>
-<p class="subtitle lead">Park access</p>
+<p class="subtitle lead">Childcare costs in North Carolina</p>
 </div>
 
 
@@ -395,6 +395,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<!--# Next time do this lab using infant / toddler/ preschool costs-->
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -414,7 +415,7 @@ Due date
 </div>
 <section id="multiple-linear-regression" class="level1">
 <h1>Multiple Linear Regression</h1>
-<p>In this lab, you will use multiple linear regression to use county-level demographic and labor market factors to predict the median childcare cost for school-aged children. You will analyze data and explain how some concepts from regression theory apply to this analysis. You will also start working with your lab teams, write a team agreement, and be introduced to using GitHub for collaboration.</p>
+<p>In this lab, you will use multiple linear regression to predict a county’s median childcare cost for school-age children based on demographic and labor market factors. You will also start working with your lab teams, write a team agreement, and be introduced to using GitHub for collaboration.</p>
 </section>
 <section id="learning-goals" class="level1">
 <h1><strong>Learning goals</strong></h1>
@@ -422,7 +423,7 @@ Due date
 <ul>
 <li>use multiple linear regression to describe the relationship between a response variable and multiple predictor variables.</li>
 <li>interpret the coefficients of a multiple linear regression model.</li>
-<li>use testing data to assess model performance.</li>
+<li>use testing data to assess a model’s predictive performance.</li>
 <li>collaborate with others using a single Github repo.</li>
 </ul>
 </section>
@@ -492,18 +493,18 @@ Important
 </section>
 <section id="data" class="level1">
 <h1>Data</h1>
-<p>Today’s data was pulled from the <a href="https://www.dol.gov/agencies/wb/topics/featured-childcare">National Database of Childcare Prices</a>, and was featured on the data visualization challenge <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-05-09">TidyTuesday</a> in May 2023. This lab focuses on a subset of the data that contains information about childcare costs and labor market conditions across the 100 counties in North Carolina.</p>
-<p>You will work with two data sets in this analysis - a training set and a test set. You will primarily work with the <strong>training</strong> set, observations that are used to explore the data and fit the regression model. At the end of the analysis, you will use the <strong>test</strong> set of observations to assess the predictive power of the model. Observations are randomly assigned to the training and test sets, so each data set can be treated as being representative of the original data.</p>
+<p>Today’s data was pulled from the <a href="https://www.dol.gov/agencies/wb/topics/featured-childcare">National Database of Childcare Prices</a> and was featured on the data visualization challenge <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-05-09">TidyTuesday</a> in May 2023. This lab focuses on a subset of the data that contains information about childcare costs and labor market conditions across the 100 counties in North Carolina.</p>
+<p>You will work with two data sets in this analysis - a training set and a test set. You will primarily work with the <strong>training</strong> set, observations that are used to explore the data and fit the regression model. At the end of the analysis, you will use the <strong>test</strong> set of observations to assess the predictive power of the model. Observations are randomly assigned to the training and test sets, so each set can be treated as representative of the original data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>childcare_train <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/childcare-costs-train.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>childcare_test <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/childcare-costs-test.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>The response variable for this analysis is <code>mcsa</code></strong>, defined as weekly, full-time median price charged for Center-Based Care for those who are school age (ages 6 - 17 years old) based on the results reported in the market rate survey report for the county.</p>
+<p><strong>The response variable for this analysis is <code>mcsa</code></strong>, defined as weekly, full-time median price charged for center-based care for those who are school age (ages 6 - 17 years old) based on the results reported in the market rate survey report for the county.</p>
 <p>The full data dictionary is available in the <code>README</code> of the <code>data</code> folder in your GitHub repo. You can also find the full data dictionary on the TidyTuesday page.</p>
 </section>
 <section id="exercises" class="level1">
 <h1>Exercises</h1>
-<p><strong>Goal:</strong> The goal of this analysis is to use various demographic and labor-market factors to predict the median price of childcare for school-aged children for counties in North Carolina.</p>
+<p><strong>Goal:</strong> The goal of this analysis is to use various demographic and labor-market factors to predict the median price of childcare for school-age children for counties in North Carolina.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -524,10 +525,23 @@ Important
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
 <p>Let’s start with some exploratory data analysis. Visualize the distribution of the response variable <code>mcsa</code> and calculate summary statistics. Describe the distribution of this variable, including the shape, center, spread, and presence of potential outliers.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will use the <code>childcare_train</code> for all analysis in Exercises 1 - 7.</p>
+</div>
+</div>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>As you can see from the data dictionary in the <code>README</code> of the <code>data</code> folder, there are many interesting potential variables that could be included in the model to predict median childcare cost for school-aged children. Therefore, we will do some <em>feature selection</em> and <em>feature design</em> to choose potential predictors and construct new ones.</p>
+<p>As you can see from the data dictionary in the <code>README</code> of the <code>data</code> folder, there are many interesting potential variables that could be included in the model to predict median childcare cost for school-age children. Therefore, we will do some <em>feature selection</em> and <em>feature design</em> to choose potential predictors and construct new ones.</p>
 <p>As a team, select <strong>four</strong> variables you want to use as predictors for the model. For each variable, state the variable name, definition, and a brief explanation about why your team hypothesizes this will be a relevant predictor of median childcare costs. The explanation may (but is not required to) include some short exploratory analysis.</p>
 <div class="render-commit-push">
 <p><strong>Team Member 1</strong>: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</p>
@@ -542,7 +556,7 @@ Important
 <p>Once we’ve identified potential predictor variables, we often need to transform some variables (e.g., change raw counts into proportions) or create new ones (e.g., create a categorical variable out of quantitative data) before fitting the regression model. This process is particularly useful when putting a variable in the model “as-is” may result in interpretation issues.</p>
 <p>Choose one of the variables selected in the previous exercise. For this variable,</p>
 <ul>
-<li><p>Transform the variable or use it to create a new variable.</p></li>
+<li><p>Transform the variable or use it to create a new variable. Be sure to save the variable to the <code>childcare_train</code> data frame.</p></li>
 <li><p>Briefly explain your reasoning for the transformation or new variable.</p></li>
 <li><p>Use visualizations and/or summary statistics to display the distribution of the original variable and the transformed / newly created variable. <em>Note: This is to help ensure the transformation / new variable is what you expect.</em></p></li>
 </ul>
@@ -566,6 +580,19 @@ Example
 </div>
 </div>
 <p>You may decide to transform and/or create multiple new variables; however, you will only be graded on the one of them.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will use the transformed / new variable (not the original variable) in the model!</p>
+</div>
+</div>
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
@@ -581,14 +608,13 @@ Example
 </section>
 <section id="exercise-5" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<p>Represent the regression model using the matrix representation. For each symbol in the model (1) describe what it represents and (2) state the dimensions. The description and dimensions should be in the context of these data, not in general.</p>
+<p>Use the matrix form of the model to represent the regression model with the variables you selected and transformed/created in exercises 2 and 3 as the predictors. For each symbol in the model (1) describe what it represents and (2) state the dimensions. The description and dimensions should be in the context of these data, not in general.</p>
 </section>
 <section id="exercise-6" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <p>Use <code>lm</code> to fit the regression model you described in the previous exercise. Neatly display the model using a reasonable number of digits.</p>
 <ul>
-<li><p>Interpret the coefficients for each predictor in the context of the data.</p></li>
-<li><p>Based on your model, describe the counties represented by the intercept.</p></li>
+<li>Interpret the coefficient for one predictor in the model.</li>
 </ul>
 <div class="render-commit-push">
 <p><strong>Team Member 3</strong>: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</p>
@@ -606,21 +632,34 @@ Example
 </ul>
 <!-- -->
 <ul>
-<li>Based on this, do you think the model explains a significant portion of the variability in childcare costs for school-aged children in North Carolina? Briefly explain.</li>
+<li>Based on this, do you think the model explains a significant portion of the variability in childcare costs for school-age children in North Carolina? Briefly explain.</li>
 </ul>
 </section>
 <section id="exercise-8" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
 <p>Now let’s use the testing data to explore the predictive power of the model.</p>
-<p>Use the <code>predict</code> function to compute the predicted childcare costs for the observations in the testing data.</p>
-<!--# may need to add something about how to store the data-->
+<ul>
+<li><p>Add the variable you created in Exercise 3 to the testing data.</p></li>
+<li><p>Then, use the code below to compute the predicted childcare costs for the observations in the testing data using the <code>predict</code> function.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute predictions</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(childcare_fit, childcare_test)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add predictions to testing data set</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>childcare_test <span class="ot">&lt;-</span> childcare_test <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pred =</span> pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="exercise-9" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
-<p>Compute the RMSE for the test set, and compare it to the standard deviation of the response variable <code>mcsa</code>.</p>
+<ul>
+<li>Compute the RMSE for the test set, and compare it to the standard deviation of the response variable <code>mcsa</code>.</li>
+</ul>
+<!-- -->
 <ul>
 <li><p>How do these values compare?</p></li>
-<li><p>What does this suggest about the predictive power of the model?</p></li>
+<li><p>Based on this, how would assess the predictive power of the model?</p></li>
 </ul>
 <div class="render-commit-push">
 <p><strong>Team Member 4</strong>: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and the rest of the team can see the completed lab.</p>
