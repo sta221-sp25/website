@@ -98,7 +98,9 @@ library(knitr)
 
 # Data
 
-Today's data was pulled from the [National Database of Childcare Prices](https://www.dol.gov/agencies/wb/topics/featured-childcare) and was featured on the data visualization challenge [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-05-09) in May 2023. This lab focuses on a subset of the data that contains information about childcare costs and labor market conditions across the 100 counties in North Carolina.
+<!--# instead of using the average values, just choose a single year next time-->
+
+Today's data was pulled from the [National Database of Childcare Prices](https://www.dol.gov/agencies/wb/topics/featured-childcare) and was featured on the data visualization challenge [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-05-09) in May 2023. This lab focuses on a subset of the data that contains information about childcare costs and labor market conditions across the 100 counties in North Carolina. **This data set for this lab contains the average values for each variable across years 2008 - 2018.**
 
 You will work with two data sets in this analysis - a training set and a test set. You will primarily work with the **training** set, observations that are used to explore the data and fit the regression model. At the end of the analysis, you will use the **test** set of observations to assess the predictive power of the model. Observations are randomly assigned to the training and test sets, so each set can be treated as representative of the original data.
 
@@ -252,9 +254,8 @@ childcare_test <- childcare_test |>
 
 -   Compute the RMSE for the test set, and compare it to the standard deviation of the response variable `mcsa`.
 
-```{=html}
 <!-- -->
-```
+
 -   How do these values compare?
 
 -   Based on this, how would assess the predictive power of the model?
