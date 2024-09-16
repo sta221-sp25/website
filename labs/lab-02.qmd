@@ -203,12 +203,22 @@ Write two distinct observations from the visualization.
 
 ## Exercise 5
 
-Use the matrix form of the model to represent the regression model with the variables you selected and transformed/created in exercises 2 and 3 as the predictors. For each symbol in the model (1) describe what it represents and (2) state the dimensions. The description and dimensions should be in the context of these data, not in general.
+Use the matrix form of the model to represent the regression model with the variables you selected and transformed/created in exercises 2 and 3 as the predictors. For each symbol in the model
+
+-   describe what it represents, and
+-   state the dimensions.
+
+The description and dimensions should be in the context of these data, not in general.
 
 ## Exercise 6
 
-Use `lm` to fit the regression model you described in the previous exercise. Neatly display the model using a reasonable number of digits.
+Use `lm` to fit the regression model you described in the previous exercise.
 
+-   Neatly display the model using a reasonable number of digits.
+
+```{=html}
+<!-- -->
+```
 -   Interpret the coefficient for one predictor in the model.
 
 ::: render-commit-push
@@ -225,7 +235,7 @@ Use `lm` to fit the regression model you described in the previous exercise. Nea
 
 Now let's assess the fit of the model.
 
--   How much of the variation in the childcare costs is explained by your chosen predictor variables?
+-   How much of the variability in the childcare costs is explained by your chosen predictor variables?
 
 <!-- -->
 
@@ -308,16 +318,16 @@ To submit your assignment:
 
 | Component             | Points |
 |:----------------------|:-------|
-| Ex 1                  |        |
-| Ex 2                  |        |
-| Ex 3                  |        |
-| Ex 4                  |        |
-| Ex 5                  |        |
-| Ex 6                  |        |
-| Ex 7                  |        |
-| Ex 8                  |        |
-| Ex 9                  |        |
-| Ex 10                 |        |
-| Workflow & formatting |        |
+| Ex 1                  | 5      |
+| Ex 2                  | 5      |
+| Ex 3                  | 6      |
+| Ex 4                  | 4      |
+| Ex 5                  | 5      |
+| Ex 6                  | 4      |
+| Ex 7                  | 4      |
+| Ex 8                  | 2      |
+| Ex 9                  | 5      |
+| Ex 10                 | 5      |
+| Workflow & formatting | 5      |
 
 The “Workflow & formatting” grade is to assess the reproducible workflow and collaboration. This includes having at least one meaningful commit from each team member and updating the team name and date in the YAML.

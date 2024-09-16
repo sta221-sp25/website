@@ -1196,7 +1196,7 @@
     "href": "labs/lab-02.html#exercise-5",
     "title": "Lab 02: Multiple Linear Regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\nUse the matrix form of the model to represent the regression model with the variables you selected and transformed/created in exercises 2 and 3 as the predictors. For each symbol in the model (1) describe what it represents and (2) state the dimensions. The description and dimensions should be in the context of these data, not in general.",
+    "text": "Exercise 5\nUse the matrix form of the model to represent the regression model with the variables you selected and transformed/created in exercises 2 and 3 as the predictors. For each symbol in the model\n\ndescribe what it represents, and\nstate the dimensions.\n\nThe description and dimensions should be in the context of these data, not in general.",
     "crumbs": [
       "Labs",
       "Lab 02"
@@ -1207,7 +1207,7 @@
     "href": "labs/lab-02.html#exercise-6",
     "title": "Lab 02: Multiple Linear Regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\nUse lm to fit the regression model you described in the previous exercise. Neatly display the model using a reasonable number of digits.\n\nInterpret the coefficient for one predictor in the model.\n\n\nTeam Member 3: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 5 - 6.\nTeam Member 4: It’s your turn! Type the team’s response to exercises 7 - 9.",
+    "text": "Exercise 6\nUse lm to fit the regression model you described in the previous exercise.\n\nNeatly display the model using a reasonable number of digits.\n\n\n\nInterpret the coefficient for one predictor in the model.\n\n\nTeam Member 3: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 5 - 6.\nTeam Member 4: It’s your turn! Type the team’s response to exercises 7 - 9.",
     "crumbs": [
       "Labs",
       "Lab 02"
@@ -1218,7 +1218,7 @@
     "href": "labs/lab-02.html#exercise-7",
     "title": "Lab 02: Multiple Linear Regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\nNow let’s assess the fit of the model.\n\nHow much of the variation in the childcare costs is explained by your chosen predictor variables?\n\n\n\nBased on this, do you think the model explains a significant portion of the variability in childcare costs for school-age children in North Carolina? Briefly explain.",
+    "text": "Exercise 7\nNow let’s assess the fit of the model.\n\nHow much of the variability in the childcare costs is explained by your chosen predictor variables?\n\n\n\nBased on this, do you think the model explains a significant portion of the variability in childcare costs for school-age children in North Carolina? Briefly explain.",
     "crumbs": [
       "Labs",
       "Lab 02"
