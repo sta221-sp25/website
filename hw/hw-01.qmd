@@ -10,7 +10,7 @@ bibliography: references.bib
 This assignment is due on **Thursday, September 19 at 11:59pm.**
 :::
 
-# **Introduction**
+# Introduction
 
 You will use simple linear regression to analyze the relationship between air temperature and ice duration for two lakes in Madison, Wisconsin. You will also explore the mathematical properties of simple linear regression models.
 
@@ -218,6 +218,16 @@ b.  Describe one way the researchers could have made the process reproducible.
 Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
 
 Remember -- you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.
+
+If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.
+
+Instructions to combine PDFs:
+
+-   Preview (Mac): [support.apple.com/guide/preview/combine-pdfs-prvw43696/mac](https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac)
+
+-   Adobe (Mac or PC): [helpx.adobe.com/acrobat/using/merging-files-single-pdf.html](https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html)
+
+    -   Get free access to Adobe Acrobat as a Duke student: [oit.duke.edu/help/articles/kb0030141/](https://oit.duke.edu/help/articles/kb0030141/)
 :::
 
 To submit your assignment:
