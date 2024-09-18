@@ -216,9 +216,8 @@ Use `lm` to fit the regression model you described in the previous exercise.
 
 -   Neatly display the model using a reasonable number of digits.
 
-```{=html}
 <!-- -->
-```
+
 -   Interpret the coefficient for one predictor in the model.
 
 ::: render-commit-push
