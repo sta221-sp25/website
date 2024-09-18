@@ -20,7 +20,7 @@ This lab is due on **Thursday, September 26 at 11:59pm.** To be considered on ti
 -   Final `.pdf` file submitted on Gradescope
 :::
 
-# Multiple Linear Regression
+# Introduction
 
 In this lab you will use linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica. You will also use the data to check conditions about the distribution of the model residuals.
 
