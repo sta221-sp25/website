@@ -98,9 +98,9 @@ For more info: [sta221-fa24.netlify.app/hw/stats-experience](https://sta221-fa24
 
 -   Understand connection between distribution of residuals and inferential procedures
 
--   Conduct inference on the overall regression model
-
 -   Conduct inference on a single coefficient
+
+-   Conduct inference on the overall regression model
 
 ## Computing setup
 
@@ -217,37 +217,39 @@ For every additional 1,000 students, we expect the institution's total expenditu
 
 > For every additional 1,000 students, we expect the institution's total expenditures on football to increase by \$780,000, on average, holding institution type constant.
 
+. . .
+
 <br>
 
--   This estimate is valid for the single sample of `r nrow(football)` higher education institutions.
--   But what if we're not interested quantifying the relationship between enrollment, type and football expenditures for this single sample?
--   What if we want to say something about the relationship between these variables for all colleges and universities with football programs?
+-   This estimate is valid for the single sample of `r nrow(football)` higher education institutions in the 2019 - 2020 academic year.
+-   But what if we're not interested quantifying the relationship between student enrollment, institution type, and football expenditures for this single sample?
+-   What if we want to say something about the relationship between these variables for all colleges and universities with football programs and across different years?
 
 # Inference for regression
 
 ## Statistical inference
 
 ::: columns
-::: {.column width="60%"}
+::: {.column width="40%"}
 -   **Statistical inference** provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from
 
--   For our inferences to be valid, the sample should be random and representative of the population we're interested in
+-   For our inferences to be valid, the sample should be representative (ideally random) of the population we're interested in
 :::
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 ![Image source: Eugene Morgan © Penn State](images/08/inference.png){fig-align="center"}
 :::
 :::
 
 ## Inference for linear regression
 
--   Inference based on ANOVA
+-   **Inference based on ANOVA**
 
-    -   Hypothesis test for the overall regression models
+    -   Hypothesis test for the statistical significance of the overall regression model
 
-    -   Hypothesis test on a subset of coefficients
+    -   Hypothesis test for a subset of coefficients
 
--   Inference for a single coefficient $\beta_j$
+-   **Inference for a single coefficient** $\beta_j$
 
     -   Hypothesis test for a coefficient $\beta_j$
 
@@ -264,11 +266,15 @@ $$
 \end{aligned}
 $$
 
--   We have discussed multiple ways to find the least squares estimates of $\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\\beta_1\end{bmatrix}$.
+. . .
+
+::: incremental
+-   We have discussed multiple ways to find the least squares estimates of $\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\\beta_1\end{bmatrix}$
 
     -   None of these approaches depend on the distribution of $\boldsymbol{\epsilon}$
 
 -   Now we will use statistical inference to draw conclusions about $\boldsymbol{\beta}$ that depend on particular assumptions about the distribution of $\boldsymbol{\epsilon}$
+:::
 
 ## Linear regression model
 
@@ -279,11 +285,48 @@ $$
 
 such that the errors are independent and normally distributed.
 
+. . .
+
 -   **Independent**: Knowing the error term for one observation doesn't tell you anything about the error term for another observation
+-   **Normally distributed**: Tell us the shape of the distribution of residuals
 
-## Describing uncertainty
+::: question
+What else do we know about the distribution of the residuals based on this equation?
+:::
 
-## Mathematical representation, visualized {.midi}
+## Describing random phenomena
+
+::: incremental
+-   There is some uncertainty in the residuals (and the predicted responses), so we use mathematical models to describe that uncertainty.
+
+-   Some terminology:
+
+    -   **Sample space**: Set of all possible outcomes
+
+    -   **Random variable**: Function (mapping) from the sample space onto real numbers
+
+    -   **Event:** Subset of the sample space, i.e., a set of possible outcomes (possible values the random variable can take)
+
+    -   **Probability distribution function:** Mathematical function that produces probability of occurrences for events in the sample space
+:::
+
+## Example {.midi}
+
+Suppose we are tossing 2 fair coins with sides heads (H) and tails (T)
+
+::: incremental
+-   **Sample space**: {HH, HT, TH, TT}
+
+-   **Random variable**: $X$ : The number of heads in two coin tosses
+
+-   **Event:** We flip two coins and get 1 head
+
+-   **Probability distribution function:** $$P(X = x_i) = {2 \choose x_i}0.5^{x_i}{0.5}^{1-x_i}$$
+
+-   Now we can find $$P(X = 1) = {2 \choose 1}0.5^1{1 - 0.5}^1 = 0.5$$
+:::
+
+## Mathematical representation {.midi}
 
 $$
 \mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma_\epsilon^2\mathbf{I})
@@ -291,11 +334,43 @@ $$
 
 ![Image source: *Introduction to the Practice of Statistics (5th ed)*](images/08/regression.png){fig-align="center"}
 
-## What this means in matrix notation
+## Expected value
 
-<!--Use slides 4 - 8: https://www2.stat.duke.edu/courses/Fall23/sta211.01/Slides/Class5.pdf-->
+Let $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
 
-## Assumptions of regression
+<br>
+
+. . .
+
+Then $E(\mathbf{b}) = E\begin{bmatrix}b_1 \\ \vdots \\ b_p\end{bmatrix} = \begin{bmatrix}E(b_1) \\ \vdots \\ E(b_p)\end{bmatrix}$
+
+<br>
+
+. . .
+
+::: question
+Use this to find $E(\mathbf{y}|\mathbf{X})$.
+:::
+
+## Variance {.midi}
+
+Let $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}$ be a $p \times 1$ vector of *independent* random variables.
+
+<br>
+
+. . .
+
+Then $Var(\mathbf{b}) = \begin{bmatrix}Var(b_1) & 0 & \dots & 0 \\ 0 & Var(b_2) & \dots & 0 \\ \vdots & \vdots & \dots & \cdot \\ 0 & 0 & \dots & Var(b_p)\end{bmatrix}$
+
+<br>
+
+. . .
+
+::: question
+Use this to find $Var(\mathbf{y}|\mathbf{X})$.
+:::
+
+## Assumptions of regression {.midi}
 
 ::: columns
 ::: {.column width="50%"}
@@ -314,7 +389,7 @@ $$
 :::
 :::
 
-## Estimating $\sigma^2_{\epsilon}$
+## Estimating $\sigma^2_{\epsilon}$ {.midi}
 
 -   Once we fit the model, we can use the residuals to estimate $\sigma_{\epsilon}^2$
 
@@ -332,12 +407,258 @@ $$
 \hat{\sigma}_\epsilon = \sqrt{\frac{SSR}{n - p - 1}} 
 $$
 
+# Inference for a single coefficient
+
+## Inference for $\beta_j$
+
+We often want to conduct inference on individual model coefficients
+
+-   **Hypothesis test:** Is there a linear relationship between the response and $x_j$?
+
+-   **Confidence interval**: What is a plausible range of values $\beta_j$ can take?
+
+. . .
+
+But first we need to understand the distribution of $\hat{\beta}_j$
+
+## Sampling distribution of $\hat{\beta}$ {.midi}
+
+-   A **sampling distribution** is the probability distribution of a statistic based on a large number of random samples of size $n$ from a population
+
+-   The sampling distribution of $\hat{\boldsymbol{\beta}}$ is the probability distribution of the estimated coefficients if we repeatedly took samples of size $n$ and fit the regression model
+
+$$
+\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_\epsilon(\mathbf{X}^T\mathbf{X})^{-1})
+$$
+
+. . .
+
+The estimated coefficients $\hat{\boldsymbol{\beta}}$ are **normally distributed** with
+
+$$
+E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\boldsymbol{X}^T\boldsymbol{X})^{-1}
+$$
+
+## Sampling distribution of $\hat{\beta}_j$
+
+$$
+\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_\epsilon(\mathbf{X}^T\mathbf{X})^{-1})
+$$
+
+Let $\mathbf{C} = (\mathbf{X}^T\mathbf{X})^{-1}$. Then, for each coefficient $\hat{\beta}_j$,
+
+::: incremental
+-   $E(\hat{\beta}_j) = \boldsymbol{\beta}_j$, the $j^{th}$ element of $\boldsymbol{\beta}$
+
+-   $Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}$
+
+-   $Cov(\hat{\beta}_i, \hat{\beta}_j) = \sigma^2_{\epsilon}C_{ij}$
+:::
+
+# Hypothesis test for $\beta_j$
+
 ## Steps for a hypothesis test
 
 1.  State the null and alternative hypotheses.
 2.  Calculate a test statistic.
 3.  Calculate the p-value.
 4.  State the conclusion.
+
+## Hypothesis test for $\beta_j$: Hypotheses
+
+We will generally test the hypotheses:
+
+$$
+\begin{aligned}
+&H_0: \beta_j = 0 \\
+&H_a: \beta_j \neq 0
+\end{aligned}
+$$
+
+::: question
+State these hypotheses in words.
+:::
+
+## Hypothesis test for $\beta_j$: Test statistic {.midi}
+
+**Test statistic:** Number of standard errors the estimate is away from the null
+
+$$
+\text{Test Statstic} = \frac{\text{Estimate - Null}}{\text{Standard error}} \\
+$$
+
+. . .
+
+If $\sigma^2_{\epsilon}$ was known, the test statistic would be
+
+$$Z = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)} ~ = ~\frac{\hat{\beta}_j - 0}{\sqrt{\sigma^2_\epsilon C_{jj}}} ~\sim ~ N(0, 1)
+$$
+
+. . .
+
+In general, $\sigma^2_{\epsilon}$ is [not]{.underline} known, so we use $\hat{\sigma}_{\epsilon}^2$ to calculate $SE(\hat{\beta}_j)$
+
+$$T = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)} ~ = ~\frac{\hat{\beta}_j - 0}{\sqrt{\hat{\sigma}^2_\epsilon C_{jj}}} ~\sim ~ t_{n-p-1}
+$$
+
+## Hypothesis test for $\beta_j$: Test statistic
+
+-   The test statistic $T$ follows a $t$ distribution with $n - p -1$ degrees of freedom.
+
+-   We need to account for the additional variability introduced by calculating $SE(\hat{\beta}_j)$ using an estimated value instead of a constant
+
+## *t* vs. N(0,1)
+
+```{r}
+#| label: fig-normal-t-curves
+#| fig-cap: Standard normal vs. t distributions
+#| echo: false
+
+colors <- c("N(0,1)" = "black", 
+            "t, df = 2" = "red", 
+            "t, df = 5" = "blue",
+            "t, df = 10" = "darkgreen", 
+            "t, df = 30" = "purple")
+ggplot() + 
+  xlim(-5, 5) + 
+  geom_function(fun = dnorm, aes(color = "N(0,1)")) + 
+  geom_function(fun = dt,args = list(df = 2), aes(color = "t, df = 2")) +
+  geom_function(fun = dt,args = list(df = 5), aes(color = "t, df = 5")) + 
+  geom_function(fun = dt,args = list(df = 10), aes(color = "t, df = 10"))  +
+  geom_function(fun = dt,args = list(df = 30), aes(color ="t, df = 30")) + 
+  scale_color_manual(values = colors) +
+    labs(x = "", y = "", color = "") + 
+  theme_bw()
+```
+
+## Hypothesis test for $\beta_j$: P-value
+
+The **p-value** is the probability of observing a test statistic at least as extreme (in the direction of the alternative hypothesis) from the null value as the one observed
+
+$$
+p-value = P(|t| > |\text{test statistic}|),
+$$
+
+calculated from a $t$ distribution with $n- p - 1$ degrees of freedom
+
+. . .
+
+::: question
+Why do we take into account "extreme" on both the high and low ends?
+:::
+
+## Understanding the p-value
+
+| Magnitude of p-value    | Interpretation                        |
+|:------------------------|:--------------------------------------|
+| p-value \< 0.01         | strong evidence against $H_0$         |
+| 0.01 \< p-value \< 0.05 | moderate evidence against $H_0$       |
+| 0.05 \< p-value \< 0.1  | weak evidence against $H_0$           |
+| p-value \> 0.1          | effectively no evidence against $H_0$ |
+
+**These are general guidelines. The strength of evidence depends on the context of the problem.**
+
+## Hypothesis test for $\beta_j$: Conclusion
+
+-   The data provide convincing evidence that the population slope $\beta_1$ is different from 0.
+-   The data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest.
+
+# Application exercise
+
+# Confidence interval for $\beta_j$
+
+## Confidence interval for $\beta_j$
+
+::: incremental
+-   A plausible range of values for a population parameter is called a **confidence interval**
+
+-   Using only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net
+
+    -   We can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish
+
+    -   Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter
+:::
+
+## What "confidence" means
+
+::: incremental
+-   We will construct $C\%$ confidence intervals.
+
+    -   The confidence level impacts the width of the interval
+
+-   "Confident" means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate $C\%$ CIs for the coefficient of $x_j$, then $C\%$ of those intervals will contain the true value of the coefficient $\beta_j$
+
+-   Balance precision and accuracy when selecting a confidence level
+:::
+
+## Confidence interval for $\beta_j$
+
+$$
+\text{Estimate} \pm \text{ (critical value) } \times \text{SE}
+$$
+
+. . .
+
+$$
+\hat{\beta}_1 \pm t^* \times SE({\hat{\beta}_j})
+$$
+
+where $t^*$ is calculated from a $t$ distribution with $n-p-1$ degrees of freedom
+
+## Confidence interval: Critical value
+
+::: columns
+::: {.column width="60%"}
+::: {.fragment fragment-index="1"}
+```{r}
+#| echo: true
+
+# confidence level: 95%
+qt(0.975, df = nrow(football) - 2 - 1)
+```
+:::
+
+::: {.fragment fragment-index="2"}
+```{r}
+# confidence level: 90%
+qt(0.95, df = nrow(football) - 2 - 1)
+```
+:::
+
+::: {.fragment fragment-index="3"}
+```{r}
+# confidence level: 99%
+qt(0.995, df = nrow(football) - 2 - 1)
+```
+:::
+:::
+
+::: {.column width="40%"}
+:::
+:::
+
+## 95% CI for $\beta_j$: Calculation
+
+```{r}
+#| echo: false
+tidy(exp_fit) |> 
+  kable(digits = 3)
+```
+
+## 95% CI for $\beta_j$ in R
+
+```{r}
+#| echo: true
+
+tidy(exp_fit, conf.int = TRUE, conf.level = 0.95) |> 
+  kable(digits = 3)
+```
+
+<br>
+
+**Interpretation**: We are 95% confident that for each additional 1,000 students enrolled, the institution's expenditures on football will be greater by \$598,000 to \$963,000, on average, holding institution type constant.
+
+# Test for overall significance
 
 ## Test for overall significance: Hypotheses
 
@@ -361,7 +682,7 @@ $$
 \end{aligned}
 $$
 
-## Test for overall significance: Test statistic
+## Test for overall significance: Test statistic {.midi}
 
 ```{r}
 #| echo: false
@@ -459,18 +780,7 @@ $$
 
 -   State the conclusion in the context of the data.
 
-## Understanding the p-value
-
-| Magnitude of p-value    | Interpretation                        |
-|:------------------------|:--------------------------------------|
-| p-value \< 0.01         | strong evidence against $H_0$         |
-| 0.01 \< p-value \< 0.05 | moderate evidence against $H_0$       |
-| 0.05 \< p-value \< 0.1  | weak evidence against $H_0$           |
-| p-value \> 0.1          | effectively no evidence against $H_0$ |
-
-**These are general guidelines. The strength of evidence depends on the context of the problem.**
-
-## Test for overall significance: Conclusion
+## Test for overall significance: Conclusion {.midi}
 
 $$
 \begin{aligned}
@@ -488,225 +798,14 @@ football_anova |>
 What is the conclusion from this hypothesis test?
 :::
 
-# Inference for a single coefficient
+## Recap 
 
-## Inference for $\beta_j$
+-   Introduced statistical inference in the context of regression
 
-We often want to conduct inference on individual model coefficients
+-   Described the assumptions for regression
 
--   **Hypothesis test:** Is there a linear relationship between the response and $x_j$?
+-   Connected the distribution of residuals and inferential procedures
 
--   **Confidence interval**: What is a plausible range of values $\beta_j$ can take?
+-   Conducted inference on a single coefficient
 
-. . .
-
-But first we need to understand the distribution of $\hat{\beta}_j$
-
-## Sampling distribution of $\hat{\beta}$
-
--   A **sampling distribution** is the probability distribution of a statistic based on a large number of random samples of size $n$ from a population
-
--   The sampling distribution of $\hat{\boldsymbol{\beta}}$ is the probability distribution of the estimated coefficients if we repeatedly took samples of size $n$ and fit the regression model
-
-$$
-\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_\epsilon(\mathbf{X}^T\mathbf{X})^{-1})
-$$. . .
-
-The estimated coefficients $\hat{\boldsymbol{\beta}}$ are **normally distributed** with
-
-$$
-E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\boldsymbol{X}^T\boldsymbol{X})^{-1}
-$$
-
-## Sampling distribution of $\hat{\beta}_j$
-
-$$
-\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_\epsilon(\mathbf{X}^T\mathbf{X})^{-1})
-$$
-
-Let $\mathbf{C} = (\mathbf{X}^T\mathbf{X})^{-1}$. Then, for each coefficient $\hat{\beta}_j$,
-
--   $E(\hat{\beta}_j) = \boldsymbol{\beta}_j$, the $j^{th}$ element of $\boldsymbol{\beta}$
-
--   $Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}$
-
--   $Cov(\hat{\beta}_i, \hat{\beta}_j) = \sigma^2_{\epsilon}C_{ij}$
-
-    <center>We will use this sampling distribution for inference for $\beta_j$</center>
-
-## Hypothesis test for $\beta_j$: Hypotheses
-
-We will generally test the hypotheses:
-
-$$
-\begin{aligned}
-&H_0: \beta_j = 0 \\
-&H_a: \beta_j \neq 0
-\end{aligned}
-$$
-
-::: question
-State these hypotheses in words.
-:::
-
-## Hypothesis test for $\beta_j$: Test statistic
-
-**Test statistic:** Number of standard errors the estimate is away from the null
-
-$$
-\text{Test Statstic} = \frac{\text{Estimate - Null}}{\text{Standard error}} \\
-$$
-
-. . .
-
-If $\sigma^2_{\epsilon}$ was known, the test statistic would be
-
-$$Z = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)} ~ = ~\frac{\hat{\beta}_j - 0}{\sqrt{\sigma^2_\epsilon C_{jj}}} ~\sim ~ N(0, 1)
-$$
-
-. . .
-
-In general, $\sigma^2_{\epsilon}$ is [not]{.underline} known, so we use $\hat{\sigma}_{\epsilon}^2$ to calculate $SE(\hat{\beta}_j)$
-
-$$T = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)} ~ = ~\frac{\hat{\beta}_j - 0}{\sqrt{\hat{\sigma}^2_\epsilon C_{jj}}} ~\sim ~ t_{n-p-1}
-$$
-
-## Hypothesis test for $\beta_j$: Test statistic
-
--   The test statistic $T$ follows a $t$ distribution with $n - p -1$ degrees of freedom.
-
--   We need to account for the additional variability introduced by calculating $SE(\hat{\beta}_j)$ using an estimated value instead of a constant
-
-    . . .
-
-    ```{r}
-    #| label: fig-normal-t-curves
-    #| fig-cap: Standard normal vs. t distributions
-    #| echo: false
-
-    colors <- c("N(0,1)" = "black", 
-                "t, df = 2" = "red", 
-                "t, df = 5" = "blue",
-                "t, df = 10" = "darkgreen", 
-                "t, df = 30" = "purple")
-    ggplot() + 
-      xlim(-5, 5) + 
-      geom_function(fun = dnorm, aes(color = "N(0,1")) + 
-      geom_function(fun = dt,args = list(df = 2), aes(color = "t, df = 2")) +
-      geom_function(fun = dt,args = list(df = 5), aes(color = "t, df = 5")) + 
-      geom_function(fun = dt,args = list(df = 10), aes(color = "t, df = 10"))  +
-      geom_function(fun = dt,args = list(df = 30), aes(color ="t, df = 30")) + 
-      scale_color_manual(values = colors) +
-        labs(x = "", y = "", color = "") + 
-      theme_bw()
-    ```
-
-## Hypothesis test for $\beta_j$: P-value
-
-The **p-value** is the probability of observing a test statistic at least as extreme (in the direction of the alternative hypothesis) from the null value as the one observed
-
-$$
-p-value = P(|t| > |\text{test statistic}|),
-$$
-
-calculated from a $t$ distribution with $n- p - 1$ degrees of freedom
-
-. . .
-
-::: question
-Why do we take into account "extreme" on both the high and low ends?
-:::
-
-## Hypothesis test for $\beta_j$: Conclusion
-
--   The data provide convincing evidence that the population slope $\beta_1$ is different from 0.
--   The data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest.
-
-# Application exercise
-
-## Confidence interval for $\beta_j$
-
--   A plausible range of values for a population parameter is called a **confidence interval**
-
--   Using only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net
-
-    -   We can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish
-
-    -   Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter
-
-## What "confidence" means
-
--   We will construct $C\%$ confidence intervals.
-
-    -   The confidence level impacts the width of the interval
-
--   "Confident" means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate $C\%$ CIs for the coefficient of $x_j$, then $C\%$ of those intervals will contain the true value of the coefficient $\beta_j$
-
--   Balance precision and accuracy when selecting a confidence level
-
-## Confidence interval for $\beta_j$
-
-$$
-\text{Estimate} \pm \text{ (critical value) } \times \text{SE}
-$$
-
-. . .
-
-$$
-\hat{\beta}_1 \pm t^* \times SE({\hat{\beta}_j})
-$$
-
-where $t^*$ is calculated from a $t$ distribution with $n-p-1$ degrees of freedom
-
-## Confidence interval: Critical value
-
-::: columns
-::: {.column width="60%"}
-::: {.fragment fragment-index="1"}
-```{r}
-#| echo: true
-
-# confidence level: 95%
-qt(0.975, df = nrow(football) - 2 - 1)
-```
-:::
-
-::: {.fragment fragment-index="2"}
-```{r}
-# confidence level: 90%
-qt(0.95, df = nrow(football) - 2 - 1)
-```
-:::
-
-::: {.fragment fragment-index="3"}
-```{r}
-# confidence level: 99%
-qt(0.995, df = nrow(football) - 2 - 1)
-```
-:::
-:::
-
-::: {.column width="40%"}
-:::
-:::
-
-## 95% CI for $\beta_j$: Calculation
-
-```{r}
-#| echo: false
-tidy(exp_fit) |> 
-  kable(digits = 3)
-```
-
-## 95% CI for $\beta_j$ in R
-
-```{r}
-#| echo: true
-
-tidy(exp_fit, conf.int = TRUE, conf.level = 0.95) |> 
-  kable(digits = 3)
-```
-
-<br>
-
-**Interpretation**: We are 95% confident that for each additional 1,000 students enrolled, the institution's expenditures on football will be greater by \$598,000 to \$963,000, on average, holding institution type constant.
+-   Conducted inference on the overall regression model

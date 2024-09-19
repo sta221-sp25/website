@@ -554,25 +554,25 @@
     "text": "Reminder: course policies about assignments\n\nRead the feedback on Gradescope carefully! If you have questions about the comments, ask a member of the teaching team during office hours or before/after class.\nRegrade requests\n\nOpened 1 day after assignment is returned and due within 1 week\nOnly submit regrade request if there is an error in the grading not to dispute points or ask questions about grading.\nProf. Tackett or Kat (Head TA) will regrade the entire exercise being disputed, which could potentially result in a lower grade."
   },
   {
-    "objectID": "slides/08-inference.html#office-hours-availability",
-    "href": "slides/08-inference.html#office-hours-availability",
+    "objectID": "slides/08-inference.html#poll-office-hours-availability",
+    "href": "slides/08-inference.html#poll-office-hours-availability",
     "title": "Inference for regression",
-    "section": "Office hours availability",
-    "text": "Office hours availability"
+    "section": "Poll: Office hours availability",
+    "text": "Poll: Office hours availability"
   },
   {
     "objectID": "slides/08-inference.html#topics",
     "href": "slides/08-inference.html#topics",
     "title": "Inference for regression",
     "section": "Topics",
-    "text": "Topics\n\nUnderstand statistical inference in the context of regression\nDescribe the assumptions for regression\nUnderstand connection between distribution of residuals and inferential procedures\nConduct inference on the overall regression model\nConduct inference on a single coefficient"
+    "text": "Topics\n\nUnderstand statistical inference in the context of regression\nDescribe the assumptions for regression\nUnderstand connection between distribution of residuals and inferential procedures\nConduct inference on a single coefficient\nConduct inference on the overall regression model"
   },
   {
-    "objectID": "slides/08-inference.html#computational-setup",
-    "href": "slides/08-inference.html#computational-setup",
+    "objectID": "slides/08-inference.html#computing-setup",
+    "href": "slides/08-inference.html#computing-setup",
     "title": "Inference for regression",
-    "section": "Computational setup",
-    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(kableExtra)  \nlibrary(patchwork)   \n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 14))"
+    "section": "Computing setup",
+    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(kableExtra)  \nlibrary(patchwork)   \n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
     "objectID": "slides/08-inference.html#data-ncaa-football-expenditures",
@@ -607,56 +607,70 @@
     "href": "slides/08-inference.html#from-sample-to-population",
     "title": "Inference for regression",
     "section": "From sample to population",
-    "text": "From sample to population\n\nFor every additional 1,000 students, we expect the institution’s total expenditures on football to increase by $780,000, on average, holding institution type constant.\n\n\n\nThis estimate is valid for the single sample of 127 higher education institutions.\nBut what if we’re not interested quantifying the relationship between enrollment, type and football expenditures for this single sample?\nWhat if we want to say something about the relationship between these variables for all colleges and universities with football programs?"
+    "text": "From sample to population\n\nFor every additional 1,000 students, we expect the institution’s total expenditures on football to increase by $780,000, on average, holding institution type constant.\n\n\n\n\nThis estimate is valid for the single sample of 127 higher education institutions in the 2019 - 2020 academic year.\nBut what if we’re not interested quantifying the relationship between student enrollment, institution type, and football expenditures for this single sample?\nWhat if we want to say something about the relationship between these variables for all colleges and universities with football programs and across different years?"
   },
   {
     "objectID": "slides/08-inference.html#statistical-inference",
     "href": "slides/08-inference.html#statistical-inference",
     "title": "Inference for regression",
     "section": "Statistical inference",
-    "text": "Statistical inference\n\n\n\nStatistical inference provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be random and representative of the population we’re interested in\n\n\n\n\n\nImage source: Eugene Morgan © Penn State"
+    "text": "Statistical inference\n\n\n\nStatistical inference provides methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be representative (ideally random) of the population we’re interested in\n\n\n\n\n\nImage source: Eugene Morgan © Penn State"
   },
   {
     "objectID": "slides/08-inference.html#inference-for-linear-regression",
     "href": "slides/08-inference.html#inference-for-linear-regression",
     "title": "Inference for regression",
     "section": "Inference for linear regression",
-    "text": "Inference for linear regression\n\nInference based on ANOVA\n\nHypothesis test for the overall regression models\nHypothesis test on a subset of coefficients\n\nInference for a single coefficient \\(\\beta_j\\)\n\nHypothesis test for a coefficient \\(\\beta_j\\)\nConfidence interval for a coefficient \\(\\beta_j\\)"
+    "text": "Inference for linear regression\n\nInference based on ANOVA\n\nHypothesis test for the statistical significance of the overall regression model\nHypothesis test for a subset of coefficients\n\nInference for a single coefficient \\(\\beta_j\\)\n\nHypothesis test for a coefficient \\(\\beta_j\\)\nConfidence interval for a coefficient \\(\\beta_j\\)"
   },
   {
     "objectID": "slides/08-inference.html#linear-regression-model",
     "href": "slides/08-inference.html#linear-regression-model",
     "title": "Inference for regression",
     "section": "Linear regression model",
-    "text": "Linear regression model\n\\[\n\\begin{aligned}\n\\mathbf{y} &= Model + Error \\\\[5pt]\n&= f(\\mathbf{X}) + \\boldsymbol{\\epsilon} \\\\[5pt]\n&= E(\\mathbf{y}|\\mathbf{X}) + \\mathbf{\\epsilon} \\\\[5pt]\n&= \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon}\n\\end{aligned}\n\\]\n\nWe have discussed multiple ways to find the least squares estimates of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\\\beta_1\\end{bmatrix}\\).\n\nNone of these approaches depend on the distribution of \\(\\boldsymbol{\\epsilon}\\)\n\nNow we will use statistical inference to draw conclusions about \\(\\boldsymbol{\\beta}\\) that depend on particular assumptions about the distribution of \\(\\boldsymbol{\\epsilon}\\)"
+    "text": "Linear regression model\n\\[\n\\begin{aligned}\n\\mathbf{y} &= Model + Error \\\\[5pt]\n&= f(\\mathbf{X}) + \\boldsymbol{\\epsilon} \\\\[5pt]\n&= E(\\mathbf{y}|\\mathbf{X}) + \\mathbf{\\epsilon} \\\\[5pt]\n&= \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon}\n\\end{aligned}\n\\]\n\n\n\nWe have discussed multiple ways to find the least squares estimates of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\\\beta_1\\end{bmatrix}\\)\n\nNone of these approaches depend on the distribution of \\(\\boldsymbol{\\epsilon}\\)\n\nNow we will use statistical inference to draw conclusions about \\(\\boldsymbol{\\beta}\\) that depend on particular assumptions about the distribution of \\(\\boldsymbol{\\epsilon}\\)"
   },
   {
     "objectID": "slides/08-inference.html#linear-regression-model-1",
     "href": "slides/08-inference.html#linear-regression-model-1",
     "title": "Inference for regression",
     "section": "Linear regression model",
-    "text": "Linear regression model\n\\[\\begin{aligned}\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\hspace{8mm} \\boldsymbol{\\epsilon} \\sim N(0, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\end{aligned}\n\\]\nsuch that the errors are independent and normally distributed.\n\nIndependent: Knowing the error term for one observation doesn’t tell you anything about the error term for another observation"
+    "text": "Linear regression model\n\\[\\begin{aligned}\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\hspace{8mm} \\boldsymbol{\\epsilon} \\sim N(0, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\end{aligned}\n\\]\nsuch that the errors are independent and normally distributed.\n\n\nIndependent: Knowing the error term for one observation doesn’t tell you anything about the error term for another observation\nNormally distributed: Tell us the shape of the distribution of residuals\n\n\nWhat else do we know about the distribution of the residuals based on this equation?"
   },
   {
-    "objectID": "slides/08-inference.html#describing-uncertainty",
-    "href": "slides/08-inference.html#describing-uncertainty",
+    "objectID": "slides/08-inference.html#describing-random-phenomena",
+    "href": "slides/08-inference.html#describing-random-phenomena",
     "title": "Inference for regression",
-    "section": "Describing uncertainty",
-    "text": "Describing uncertainty"
+    "section": "Describing random phenomena",
+    "text": "Describing random phenomena\n\n\nThere is some uncertainty in the residuals (and the predicted responses), so we use mathematical models to describe that uncertainty.\nSome terminology:\n\nSample space: Set of all possible outcomes\nRandom variable: Function (mapping) from the sample space onto real numbers\nEvent: Subset of the sample space, i.e., a set of possible outcomes (possible values the random variable can take)\nProbability distribution function: Mathematical function that produces probability of occurrences for events in the sample space"
   },
   {
-    "objectID": "slides/08-inference.html#mathematical-representation-visualized",
-    "href": "slides/08-inference.html#mathematical-representation-visualized",
+    "objectID": "slides/08-inference.html#example",
+    "href": "slides/08-inference.html#example",
     "title": "Inference for regression",
-    "section": "Mathematical representation, visualized",
-    "text": "Mathematical representation, visualized\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma_\\epsilon^2\\mathbf{I})\n\\]\n\nImage source: Introduction to the Practice of Statistics (5th ed)"
+    "section": "Example",
+    "text": "Example\nSuppose we are tossing 2 fair coins with sides heads (H) and tails (T)\n\n\nSample space: {HH, HT, TH, TT}\nRandom variable: \\(X\\) : The number of heads in two coin tosses\nEvent: We flip two coins and get 1 head\nProbability distribution function: \\[P(X = x_i) = {2 \\choose x_i}0.5^{x_i}{0.5}^{1-x_i}\\]\nNow we can find \\[P(X = 1) = {2 \\choose 1}0.5^1{1 - 0.5}^1 = 0.5\\]"
   },
   {
-    "objectID": "slides/08-inference.html#what-this-means-in-matrix-notation",
-    "href": "slides/08-inference.html#what-this-means-in-matrix-notation",
+    "objectID": "slides/08-inference.html#mathematical-representation",
+    "href": "slides/08-inference.html#mathematical-representation",
     "title": "Inference for regression",
-    "section": "What this means in matrix notation",
-    "text": "What this means in matrix notation"
+    "section": "Mathematical representation",
+    "text": "Mathematical representation\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma_\\epsilon^2\\mathbf{I})\n\\]\n\nImage source: Introduction to the Practice of Statistics (5th ed)"
+  },
+  {
+    "objectID": "slides/08-inference.html#expected-value",
+    "href": "slides/08-inference.html#expected-value",
+    "title": "Inference for regression",
+    "section": "Expected value",
+    "text": "Expected value\nLet \\(\\mathbf{b} = \\begin{bmatrix}b_1 \\\\ \\vdots \\\\b_p\\end{bmatrix}\\) be a \\(p \\times 1\\) vector of random variables.\n\n\nThen \\(E(\\mathbf{b}) = E\\begin{bmatrix}b_1 \\\\ \\vdots \\\\ b_p\\end{bmatrix} = \\begin{bmatrix}E(b_1) \\\\ \\vdots \\\\ E(b_p)\\end{bmatrix}\\)\n\n\n\n\nUse this to find \\(E(\\mathbf{y}|\\mathbf{X})\\)."
+  },
+  {
+    "objectID": "slides/08-inference.html#variance",
+    "href": "slides/08-inference.html#variance",
+    "title": "Inference for regression",
+    "section": "Variance",
+    "text": "Variance\nLet \\(\\mathbf{b} = \\begin{bmatrix}b_1 \\\\ \\vdots \\\\b_p\\end{bmatrix}\\) be a \\(p \\times 1\\) vector of independent random variables.\n\n\nThen \\(Var(\\mathbf{b}) = \\begin{bmatrix}Var(b_1) & 0 & \\dots & 0 \\\\ 0 & Var(b_2) & \\dots & 0 \\\\ \\vdots & \\vdots & \\dots & \\cdot \\\\ 0 & 0 & \\dots & Var(b_p)\\end{bmatrix}\\)\n\n\n\n\nUse this to find \\(Var(\\mathbf{y}|\\mathbf{X})\\)."
   },
   {
     "objectID": "slides/08-inference.html#assumptions-of-regression",
@@ -673,11 +687,123 @@
     "text": "Estimating \\(\\sigma^2_{\\epsilon}\\)\n\nOnce we fit the model, we can use the residuals to estimate \\(\\sigma_{\\epsilon}^2\\)\n\\(\\hat{\\sigma}^2_{\\epsilon}\\) is needed for hypothesis testing and constructing confidence intervals for regression\n\n\\[\n\\hat{\\sigma}^2_\\epsilon = \\frac{\\sum_\\limits{i=1}^n(y_i - \\hat{y}_i)^2}{n-p-1} = \\frac{\\sum_\\limits{i=1}^ne_i^2}{n - p - 1} = \\frac{SSR}{n - p - 1}\n\\]\n\n\nThe regression standard error \\(\\hat{\\sigma}_{\\epsilon}\\) is a measure of the average distance between the observations and regression line\n\n\\[\n\\hat{\\sigma}_\\epsilon = \\sqrt{\\frac{SSR}{n - p - 1}}\n\\]"
   },
   {
+    "objectID": "slides/08-inference.html#inference-for-beta_j",
+    "href": "slides/08-inference.html#inference-for-beta_j",
+    "title": "Inference for regression",
+    "section": "Inference for \\(\\beta_j\\)",
+    "text": "Inference for \\(\\beta_j\\)\nWe often want to conduct inference on individual model coefficients\n\nHypothesis test: Is there a linear relationship between the response and \\(x_j\\)?\nConfidence interval: What is a plausible range of values \\(\\beta_j\\) can take?\n\n\nBut first we need to understand the distribution of \\(\\hat{\\beta}_j\\)"
+  },
+  {
+    "objectID": "slides/08-inference.html#sampling-distribution-of-hatbeta",
+    "href": "slides/08-inference.html#sampling-distribution-of-hatbeta",
+    "title": "Inference for regression",
+    "section": "Sampling distribution of \\(\\hat{\\beta}\\)",
+    "text": "Sampling distribution of \\(\\hat{\\beta}\\)\n\nA sampling distribution is the probability distribution of a statistic based on a large number of random samples of size \\(n\\) from a population\nThe sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\) is the probability distribution of the estimated coefficients if we repeatedly took samples of size \\(n\\) and fit the regression model\n\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2_\\epsilon(\\mathbf{X}^T\\mathbf{X})^{-1})\n\\]\n\nThe estimated coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) are normally distributed with\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta} \\hspace{10mm} Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2_{\\epsilon}(\\boldsymbol{X}^T\\boldsymbol{X})^{-1}\n\\]"
+  },
+  {
+    "objectID": "slides/08-inference.html#sampling-distribution-of-hatbeta_j",
+    "href": "slides/08-inference.html#sampling-distribution-of-hatbeta_j",
+    "title": "Inference for regression",
+    "section": "Sampling distribution of \\(\\hat{\\beta}_j\\)",
+    "text": "Sampling distribution of \\(\\hat{\\beta}_j\\)\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2_\\epsilon(\\mathbf{X}^T\\mathbf{X})^{-1})\n\\]\nLet \\(\\mathbf{C} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\). Then, for each coefficient \\(\\hat{\\beta}_j\\),\n\n\n\\(E(\\hat{\\beta}_j) = \\boldsymbol{\\beta}_j\\), the \\(j^{th}\\) element of \\(\\boldsymbol{\\beta}\\)\n\\(Var(\\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{jj}\\)\n\\(Cov(\\hat{\\beta}_i, \\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{ij}\\)"
+  },
+  {
     "objectID": "slides/08-inference.html#steps-for-a-hypothesis-test",
     "href": "slides/08-inference.html#steps-for-a-hypothesis-test",
     "title": "Inference for regression",
     "section": "Steps for a hypothesis test",
     "text": "Steps for a hypothesis test\n\nState the null and alternative hypotheses.\nCalculate a test statistic.\nCalculate the p-value.\nState the conclusion."
+  },
+  {
+    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-hypotheses",
+    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-hypotheses",
+    "title": "Inference for regression",
+    "section": "Hypothesis test for \\(\\beta_j\\): Hypotheses",
+    "text": "Hypothesis test for \\(\\beta_j\\): Hypotheses\nWe will generally test the hypotheses:\n\\[\n\\begin{aligned}\n&H_0: \\beta_j = 0 \\\\\n&H_a: \\beta_j \\neq 0\n\\end{aligned}\n\\]\n\nState these hypotheses in words."
+  },
+  {
+    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-test-statistic",
+    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-test-statistic",
+    "title": "Inference for regression",
+    "section": "Hypothesis test for \\(\\beta_j\\): Test statistic",
+    "text": "Hypothesis test for \\(\\beta_j\\): Test statistic\nTest statistic: Number of standard errors the estimate is away from the null\n\\[\n\\text{Test Statstic} = \\frac{\\text{Estimate - Null}}{\\text{Standard error}} \\\\\n\\]\n\nIf \\(\\sigma^2_{\\epsilon}\\) was known, the test statistic would be\n\\[Z = \\frac{\\hat{\\beta}_j - 0}{SE(\\hat{\\beta}_j)} ~ = ~\\frac{\\hat{\\beta}_j - 0}{\\sqrt{\\sigma^2_\\epsilon C_{jj}}} ~\\sim ~ N(0, 1)\n\\]\n\n\nIn general, \\(\\sigma^2_{\\epsilon}\\) is not known, so we use \\(\\hat{\\sigma}_{\\epsilon}^2\\) to calculate \\(SE(\\hat{\\beta}_j)\\)\n\\[T = \\frac{\\hat{\\beta}_j - 0}{SE(\\hat{\\beta}_j)} ~ = ~\\frac{\\hat{\\beta}_j - 0}{\\sqrt{\\hat{\\sigma}^2_\\epsilon C_{jj}}} ~\\sim ~ t_{n-p-1}\n\\]"
+  },
+  {
+    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-test-statistic-1",
+    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-test-statistic-1",
+    "title": "Inference for regression",
+    "section": "Hypothesis test for \\(\\beta_j\\): Test statistic",
+    "text": "Hypothesis test for \\(\\beta_j\\): Test statistic\n\nThe test statistic \\(T\\) follows a \\(t\\) distribution with \\(n - p -1\\) degrees of freedom.\nWe need to account for the additional variability introduced by calculating \\(SE(\\hat{\\beta}_j)\\) using an estimated value instead of a constant"
+  },
+  {
+    "objectID": "slides/08-inference.html#t-vs.-n01",
+    "href": "slides/08-inference.html#t-vs.-n01",
+    "title": "Inference for regression",
+    "section": "t vs. N(0,1)",
+    "text": "t vs. N(0,1)\n\n\nFigure 1: Standard normal vs. t distributions"
+  },
+  {
+    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-p-value",
+    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-p-value",
+    "title": "Inference for regression",
+    "section": "Hypothesis test for \\(\\beta_j\\): P-value",
+    "text": "Hypothesis test for \\(\\beta_j\\): P-value\nThe p-value is the probability of observing a test statistic at least as extreme (in the direction of the alternative hypothesis) from the null value as the one observed\n\\[\np-value = P(|t| &gt; |\\text{test statistic}|),\n\\]\ncalculated from a \\(t\\) distribution with \\(n- p - 1\\) degrees of freedom\n\n\nWhy do we take into account “extreme” on both the high and low ends?"
+  },
+  {
+    "objectID": "slides/08-inference.html#understanding-the-p-value",
+    "href": "slides/08-inference.html#understanding-the-p-value",
+    "title": "Inference for regression",
+    "section": "Understanding the p-value",
+    "text": "Understanding the p-value\n\n\n\nMagnitude of p-value\nInterpretation\n\n\n\n\np-value &lt; 0.01\nstrong evidence against \\(H_0\\)\n\n\n0.01 &lt; p-value &lt; 0.05\nmoderate evidence against \\(H_0\\)\n\n\n0.05 &lt; p-value &lt; 0.1\nweak evidence against \\(H_0\\)\n\n\np-value &gt; 0.1\neffectively no evidence against \\(H_0\\)\n\n\n\nThese are general guidelines. The strength of evidence depends on the context of the problem."
+  },
+  {
+    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-conclusion",
+    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-conclusion",
+    "title": "Inference for regression",
+    "section": "Hypothesis test for \\(\\beta_j\\): Conclusion",
+    "text": "Hypothesis test for \\(\\beta_j\\): Conclusion\n\nThe data provide convincing evidence that the population slope \\(\\beta_1\\) is different from 0.\nThe data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest."
+  },
+  {
+    "objectID": "slides/08-inference.html#confidence-interval-for-beta_j-1",
+    "href": "slides/08-inference.html#confidence-interval-for-beta_j-1",
+    "title": "Inference for regression",
+    "section": "Confidence interval for \\(\\beta_j\\)",
+    "text": "Confidence interval for \\(\\beta_j\\)\n\n\nA plausible range of values for a population parameter is called a confidence interval\nUsing only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net\n\nWe can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish\nSimilarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter"
+  },
+  {
+    "objectID": "slides/08-inference.html#what-confidence-means",
+    "href": "slides/08-inference.html#what-confidence-means",
+    "title": "Inference for regression",
+    "section": "What “confidence” means",
+    "text": "What “confidence” means\n\n\nWe will construct \\(C\\%\\) confidence intervals.\n\nThe confidence level impacts the width of the interval\n\n“Confident” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate \\(C\\%\\) CIs for the coefficient of \\(x_j\\), then \\(C\\%\\) of those intervals will contain the true value of the coefficient \\(\\beta_j\\)\nBalance precision and accuracy when selecting a confidence level"
+  },
+  {
+    "objectID": "slides/08-inference.html#confidence-interval-for-beta_j-2",
+    "href": "slides/08-inference.html#confidence-interval-for-beta_j-2",
+    "title": "Inference for regression",
+    "section": "Confidence interval for \\(\\beta_j\\)",
+    "text": "Confidence interval for \\(\\beta_j\\)\n\\[\n\\text{Estimate} \\pm \\text{ (critical value) } \\times \\text{SE}\n\\]\n\n\\[\n\\hat{\\beta}_1 \\pm t^* \\times SE({\\hat{\\beta}_j})\n\\]\nwhere \\(t^*\\) is calculated from a \\(t\\) distribution with \\(n-p-1\\) degrees of freedom"
+  },
+  {
+    "objectID": "slides/08-inference.html#confidence-interval-critical-value",
+    "href": "slides/08-inference.html#confidence-interval-critical-value",
+    "title": "Inference for regression",
+    "section": "Confidence interval: Critical value",
+    "text": "Confidence interval: Critical value\n\n\n\n\n# confidence level: 95%\nqt(0.975, df = nrow(football) - 2 - 1)\n\n[1] 1.97928\n\n\n\n\n\n# confidence level: 90%\nqt(0.95, df = nrow(football) - 2 - 1)\n\n[1] 1.657235\n\n\n\n\n\n# confidence level: 99%\nqt(0.995, df = nrow(football) - 2 - 1)\n\n[1] 2.61606"
+  },
+  {
+    "objectID": "slides/08-inference.html#ci-for-beta_j-calculation",
+    "href": "slides/08-inference.html#ci-for-beta_j-calculation",
+    "title": "Inference for regression",
+    "section": "95% CI for \\(\\beta_j\\): Calculation",
+    "text": "95% CI for \\(\\beta_j\\): Calculation\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0"
+  },
+  {
+    "objectID": "slides/08-inference.html#ci-for-beta_j-in-r",
+    "href": "slides/08-inference.html#ci-for-beta_j-in-r",
+    "title": "Inference for regression",
+    "section": "95% CI for \\(\\beta_j\\) in R",
+    "text": "95% CI for \\(\\beta_j\\) in R\n\ntidy(exp_fit, conf.int = TRUE, conf.level = 0.95) |&gt; \n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n13.426\n25.239\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n0.562\n0.999\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n-19.466\n-6.986\n\n\n\n\n\n\nInterpretation: We are 95% confident that for each additional 1,000 students enrolled, the institution’s expenditures on football will be greater by $598,000 to $963,000, on average, holding institution type constant."
   },
   {
     "objectID": "slides/08-inference.html#test-for-overall-significance-hypotheses",
@@ -708,13 +834,6 @@
     "text": "Test for overall significance: Conclusion\nThere are two parts to the conclusion\n\nMake a conclusion by comparing the p-value to a predetermined decision-making threshold called the significance level ( \\(\\alpha\\) level)\n\nIf \\(\\text{P-value} &lt; \\alpha\\): Reject \\(H_0\\)\nIf \\(\\text{P-value} \\geq \\alpha\\): Fal to reject \\(H_0\\)\n\nState the conclusion in the context of the data."
   },
   {
-    "objectID": "slides/08-inference.html#understanding-the-p-value",
-    "href": "slides/08-inference.html#understanding-the-p-value",
-    "title": "Inference for regression",
-    "section": "Understanding the p-value",
-    "text": "Understanding the p-value\n\n\n\nMagnitude of p-value\nInterpretation\n\n\n\n\np-value &lt; 0.01\nstrong evidence against \\(H_0\\)\n\n\n0.01 &lt; p-value &lt; 0.05\nmoderate evidence against \\(H_0\\)\n\n\n0.05 &lt; p-value &lt; 0.1\nweak evidence against \\(H_0\\)\n\n\np-value &gt; 0.1\neffectively no evidence against \\(H_0\\)\n\n\n\nThese are general guidelines. The strength of evidence depends on the context of the problem."
-  },
-  {
     "objectID": "slides/08-inference.html#test-for-overall-significance-conclusion-1",
     "href": "slides/08-inference.html#test-for-overall-significance-conclusion-1",
     "title": "Inference for regression",
@@ -722,102 +841,11 @@
     "text": "Test for overall significance: Conclusion\n\\[\n\\begin{aligned}\n&H_0: \\beta_1 = \\beta_2 = 0\\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\n\\]\n\nfootball_anova |&gt;\n  kable(digits = 3)\n\n\n\n\nSource\nDf\nSum Sq\nMean Sq\nF Stat\nPr(&gt; F)\n\n\n\n\nModel\n2\n7138.591\n3569.296\n26.628\n0\n\n\nResiduals\n124\n16621.344\n134.043\n\n\n\n\nTotal\n126\n23759.935\n\n\n\n\n\n\n\n\n\nWhat is the conclusion from this hypothesis test?"
   },
   {
-    "objectID": "slides/08-inference.html#inference-for-beta_j",
-    "href": "slides/08-inference.html#inference-for-beta_j",
+    "objectID": "slides/08-inference.html#recap",
+    "href": "slides/08-inference.html#recap",
     "title": "Inference for regression",
-    "section": "Inference for \\(\\beta_j\\)",
-    "text": "Inference for \\(\\beta_j\\)\nWe often want to conduct inference on individual model coefficients\n\nHypothesis test: Is there a linear relationship between the response and \\(x_j\\)?\nConfidence interval: What is a plausible range of values \\(\\beta_j\\) can take?\n\n\nBut first we need to understand the distribution of \\(\\hat{\\beta}_j\\)"
-  },
-  {
-    "objectID": "slides/08-inference.html#sampling-distribution-of-hatbeta",
-    "href": "slides/08-inference.html#sampling-distribution-of-hatbeta",
-    "title": "Inference for regression",
-    "section": "Sampling distribution of \\(\\hat{\\beta}\\)",
-    "text": "Sampling distribution of \\(\\hat{\\beta}\\)\n\nA sampling distribution is the probability distribution of a statistic based on a large number of random samples of size \\(n\\) from a population\nThe sampling distribution of \\(\\hat{\\boldsymbol{\\beta}}\\) is the probability distribution of the estimated coefficients if we repeatedly took samples of size \\(n\\) and fit the regression model\n\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2_\\epsilon(\\mathbf{X}^T\\mathbf{X})^{-1})\n\\]. . .\nThe estimated coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) are normally distributed with\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta} \\hspace{10mm} Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2_{\\epsilon}(\\boldsymbol{X}^T\\boldsymbol{X})^{-1}\n\\]"
-  },
-  {
-    "objectID": "slides/08-inference.html#sampling-distribution-of-hatbeta_j",
-    "href": "slides/08-inference.html#sampling-distribution-of-hatbeta_j",
-    "title": "Inference for regression",
-    "section": "Sampling distribution of \\(\\hat{\\beta}_j\\)",
-    "text": "Sampling distribution of \\(\\hat{\\beta}_j\\)\n\\[\n\\hat{\\boldsymbol{\\beta}} \\sim N(\\boldsymbol{\\beta}, \\sigma^2_\\epsilon(\\mathbf{X}^T\\mathbf{X})^{-1})\n\\]\nLet \\(\\mathbf{C} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\). Then, for each coefficient \\(\\hat{\\beta}_j\\),\n\n\\(E(\\hat{\\beta}_j) = \\boldsymbol{\\beta}_j\\), the \\(j^{th}\\) element of \\(\\boldsymbol{\\beta}\\)\n\\(Var(\\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{jj}\\)\n\\(Cov(\\hat{\\beta}_i, \\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{ij}\\)\n\nWe will use this sampling distribution for inference for \\(\\beta_j\\)"
-  },
-  {
-    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-hypotheses",
-    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-hypotheses",
-    "title": "Inference for regression",
-    "section": "Hypothesis test for \\(\\beta_j\\): Hypotheses",
-    "text": "Hypothesis test for \\(\\beta_j\\): Hypotheses\nWe will generally test the hypotheses:\n\\[\n\\begin{aligned}\n&H_0: \\beta_j = 0 \\\\\n&H_a: \\beta_j \\neq 0\n\\end{aligned}\n\\]\n\nState these hypotheses in words."
-  },
-  {
-    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-test-statistic",
-    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-test-statistic",
-    "title": "Inference for regression",
-    "section": "Hypothesis test for \\(\\beta_j\\): Test statistic",
-    "text": "Hypothesis test for \\(\\beta_j\\): Test statistic\nTest statistic: Number of standard errors the estimate is away from the null\n\\[\n\\text{Test Statstic} = \\frac{\\text{Estimate - Null}}{\\text{Standard error}} \\\\\n\\]\n\nIf \\(\\sigma^2_{\\epsilon}\\) was known, the test statistic would be\n\\[Z = \\frac{\\hat{\\beta}_j - 0}{SE(\\hat{\\beta}_j)} ~ = ~\\frac{\\hat{\\beta}_j - 0}{\\sqrt{\\sigma^2_\\epsilon C_{jj}}} ~\\sim ~ N(0, 1)\n\\]\n\n\nIn general, \\(\\sigma^2_{\\epsilon}\\) is not known, so we use \\(\\hat{\\sigma}_{\\epsilon}^2\\) to calculate \\(SE(\\hat{\\beta}_j)\\)\n\\[T = \\frac{\\hat{\\beta}_j - 0}{SE(\\hat{\\beta}_j)} ~ = ~\\frac{\\hat{\\beta}_j - 0}{\\sqrt{\\hat{\\sigma}^2_\\epsilon C_{jj}}} ~\\sim ~ t_{n-p-1}\n\\]"
-  },
-  {
-    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-test-statistic-1",
-    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-test-statistic-1",
-    "title": "Inference for regression",
-    "section": "Hypothesis test for \\(\\beta_j\\): Test statistic",
-    "text": "Hypothesis test for \\(\\beta_j\\): Test statistic\n\nThe test statistic \\(T\\) follows a \\(t\\) distribution with \\(n - p -1\\) degrees of freedom.\nWe need to account for the additional variability introduced by calculating \\(SE(\\hat{\\beta}_j)\\) using an estimated value instead of a constant\n. . .\n\n\n\n\n\n\n\n\nFigure 1: Standard normal vs. t distributions"
-  },
-  {
-    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-p-value",
-    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-p-value",
-    "title": "Inference for regression",
-    "section": "Hypothesis test for \\(\\beta_j\\): P-value",
-    "text": "Hypothesis test for \\(\\beta_j\\): P-value\nThe p-value is the probability of observing a test statistic at least as extreme (in the direction of the alternative hypothesis) from the null value as the one observed\n\\[\np-value = P(|t| &gt; |\\text{test statistic}|),\n\\]\ncalculated from a \\(t\\) distribution with \\(n- p - 1\\) degrees of freedom\n\n\nWhy do we take into account “extreme” on both the high and low ends?"
-  },
-  {
-    "objectID": "slides/08-inference.html#hypothesis-test-for-beta_j-conclusion",
-    "href": "slides/08-inference.html#hypothesis-test-for-beta_j-conclusion",
-    "title": "Inference for regression",
-    "section": "Hypothesis test for \\(\\beta_j\\): Conclusion",
-    "text": "Hypothesis test for \\(\\beta_j\\): Conclusion\n\nThe data provide convincing evidence that the population slope \\(\\beta_1\\) is different from 0.\nThe data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest."
-  },
-  {
-    "objectID": "slides/08-inference.html#confidence-interval-for-beta_j",
-    "href": "slides/08-inference.html#confidence-interval-for-beta_j",
-    "title": "Inference for regression",
-    "section": "Confidence interval for \\(\\beta_j\\)",
-    "text": "Confidence interval for \\(\\beta_j\\)\n\nA plausible range of values for a population parameter is called a confidence interval\nUsing only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net\n\nWe can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish\nSimilarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter"
-  },
-  {
-    "objectID": "slides/08-inference.html#what-confidence-means",
-    "href": "slides/08-inference.html#what-confidence-means",
-    "title": "Inference for regression",
-    "section": "What “confidence” means",
-    "text": "What “confidence” means\n\nWe will construct \\(C\\%\\) confidence intervals.\n\nThe confidence level impacts the width of the interval\n\n“Confident” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate \\(C\\%\\) CIs for the coefficient of \\(x_j\\), then \\(C\\%\\) of those intervals will contain the true value of the coefficient \\(\\beta_j\\)\nBalance precision and accuracy when selecting a confidence level"
-  },
-  {
-    "objectID": "slides/08-inference.html#confidence-interval-for-beta_j-1",
-    "href": "slides/08-inference.html#confidence-interval-for-beta_j-1",
-    "title": "Inference for regression",
-    "section": "Confidence interval for \\(\\beta_j\\)",
-    "text": "Confidence interval for \\(\\beta_j\\)\n\\[\n\\text{Estimate} \\pm \\text{ (critical value) } \\times \\text{SE}\n\\]\n\n\\[\n\\hat{\\beta}_1 \\pm t^* \\times SE({\\hat{\\beta}_j})\n\\]\nwhere \\(t^*\\) is calculated from a \\(t\\) distribution with \\(n-p-1\\) degrees of freedom"
-  },
-  {
-    "objectID": "slides/08-inference.html#confidence-interval-critical-value",
-    "href": "slides/08-inference.html#confidence-interval-critical-value",
-    "title": "Inference for regression",
-    "section": "Confidence interval: Critical value",
-    "text": "Confidence interval: Critical value\n\n\n\n\n# confidence level: 95%\nqt(0.975, df = nrow(football) - 2 - 1)\n\n[1] 1.97928\n\n\n\n\n\n# confidence level: 90%\nqt(0.95, df = nrow(football) - 2 - 1)\n\n[1] 1.657235\n\n\n\n\n\n# confidence level: 99%\nqt(0.995, df = nrow(football) - 2 - 1)\n\n[1] 2.61606"
-  },
-  {
-    "objectID": "slides/08-inference.html#ci-for-beta_j-calculation",
-    "href": "slides/08-inference.html#ci-for-beta_j-calculation",
-    "title": "Inference for regression",
-    "section": "95% CI for \\(\\beta_j\\): Calculation",
-    "text": "95% CI for \\(\\beta_j\\): Calculation\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0"
-  },
-  {
-    "objectID": "slides/08-inference.html#ci-for-beta_j-in-r",
-    "href": "slides/08-inference.html#ci-for-beta_j-in-r",
-    "title": "Inference for regression",
-    "section": "95% CI for \\(\\beta_j\\) in R",
-    "text": "95% CI for \\(\\beta_j\\) in R\n\ntidy(exp_fit, conf.int = TRUE, conf.level = 0.95) |&gt; \n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n13.426\n25.239\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n0.562\n0.999\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n-19.466\n-6.986\n\n\n\n\n\n\nInterpretation: We are 95% confident that for each additional 1,000 students enrolled, the institution’s expenditures on football will be greater by $598,000 to $963,000, on average, holding institution type constant.\n\n\n\n\n🔗 STA 221 - Fall 2024"
+    "section": "Recap",
+    "text": "Recap\n\nIntroduced statistical inference in the context of regression\nDescribed the assumptions for regression\nConnected the distribution of residuals and inferential procedures\nConducted inference on a single coefficient\nConducted inference on the overall regression model\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
   },
   {
     "objectID": "slides/02-slr.html#announcements",
@@ -2181,7 +2209,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned, Lab 01 due\n\n\n4\nM\nSep 16\nLab 02: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nANOVA + Geometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Lab 02 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned, Lab 03 due\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned, Lab 01 due\n\n\n4\nM\nSep 16\nLab 02: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nANOVA + Geometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nInference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Lab 02 due\n\n\n5\nM\nSep 23\nLab: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nMaximum Likelihood Estimation (MLE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nMLE and OLS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned, Lab 03 due\n\n\n6\nM\nSep 30\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nProperties of estimators cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Math details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nMLR: Wrap up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -3234,19 +3262,5 @@
       "Computing",
       "Troubleshooting"
     ]
-  },
-  {
-    "objectID": "slides/08-inference.html#poll-office-hours-availability",
-    "href": "slides/08-inference.html#poll-office-hours-availability",
-    "title": "Inference for regression",
-    "section": "Poll: Office hours availability",
-    "text": "Poll: Office hours availability"
-  },
-  {
-    "objectID": "slides/08-inference.html#computing-setup",
-    "href": "slides/08-inference.html#computing-setup",
-    "title": "Inference for regression",
-    "section": "Computing setup",
-    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(kableExtra)  \nlibrary(patchwork)   \n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   }
 ]
