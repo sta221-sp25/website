@@ -761,7 +761,7 @@
     "href": "slides/08-inference.html#hypothesis-test-for-beta_j-conclusion",
     "title": "Inference for regression",
     "section": "Hypothesis test for \\(\\beta_j\\): Conclusion",
-    "text": "Hypothesis test for \\(\\beta_j\\): Conclusion\nThere are two parts to the conclusion\n\nMake a conclusion by comparing the p-value to a predetermined decision-making threshold called the significance level ( \\(\\alpha\\) level)\n\nIf \\(\\text{P-value} &lt; \\alpha\\): Reject \\(H_0\\)\nIf \\(\\text{P-value} \\geq \\alpha\\): Fal to reject \\(H_0\\)\n\nState the conclusion in the context of the data"
+    "text": "Hypothesis test for \\(\\beta_j\\): Conclusion\nThere are two parts to the conclusion\n\nMake a conclusion by comparing the p-value to a predetermined decision-making threshold called the significance level ( \\(\\alpha\\) level)\n\nIf \\(\\text{P-value} &lt; \\alpha\\): Reject \\(H_0\\)\nIf \\(\\text{P-value} \\geq \\alpha\\): Fail to reject \\(H_0\\)\n\nState the conclusion in the context of the data"
   },
   {
     "objectID": "slides/08-inference.html#confidence-interval-for-beta_j-1",

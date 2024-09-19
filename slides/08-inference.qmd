@@ -334,7 +334,7 @@ $$
 
 ![Image source: *Introduction to the Practice of Statistics (5th ed)*](images/08/regression.png){fig-align="center"}
 
-## Expected value of $\mathbf{y}$ 
+## Expected value of $\mathbf{y}$
 
 Let $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
 
@@ -566,7 +566,7 @@ Why do we take into account "extreme" on both the high and low ends?
 
     -   If $\text{P-value} < \alpha$: Reject $H_0$
 
-    -   If $\text{P-value} \geq \alpha$: Fal to reject $H_0$
+    -   If $\text{P-value} \geq \alpha$: Fail to reject $H_0$
 
 -   State the conclusion in the context of the data
 
