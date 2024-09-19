@@ -43,7 +43,7 @@ bibliography: references.bib
 
 ## Homework submission {.midi}
 
-If you write your responses to Exercises 1  - 4 by hand, you will need to combine your written work to the completed PDF for Exercises 5 - 10 before submitting on Gradescope.
+If you write your responses to Exercises 1 - 4 by hand, you will need to combine your written work to the completed PDF for Exercises 5 - 10 before submitting on Gradescope.
 
 Instructions to combine PDFs:
 
@@ -169,7 +169,7 @@ where
 
 -   $p$ is the number of terms (not including the intercept) in the model
 
-## Compare models  {.midi}
+## Compare models {.midi}
 
 Which model would you select `int_fit` (main effects only) or `int_fit2` (main effects + interaction) based on...
 
@@ -220,7 +220,7 @@ glance(int_fit2)$adj.r.squared
 
 # Geometric interpretation
 
-## Geometry of least squares regression 
+## Geometry of least squares regression
 
 ::: incremental
 -   Let $\text{Col}(\mathbf{X})$ be the **column space** of $\mathbf{X}$: the set all possible linear combinations (span) of the columns of $\mathbf{X}$
@@ -232,7 +232,7 @@ glance(int_fit2)$adj.r.squared
     -   $\mathbf{z}$ is called a **projection** of $\mathbf{y}$ onto $\text{Col}(\mathbf{X})$ .
 :::
 
-## Geometry of least squares regression 
+## Geometry of least squares regression
 
 ::: incremental
 -   For any $\mathbf{z} = \mathbf{Xb}$ in $\text{Col}(\mathbf{X})$, the vector $\mathbf{e} = \mathbf{y} - \mathbf{Xb}$ is the difference between $\mathbf{y}$ and $\mathbf{Xb}$.
@@ -244,7 +244,7 @@ glance(int_fit2)$adj.r.squared
 -   **Recall**: If $\mathbf{e}$ is orthogonal to $\text{Col}(\mathbf{X})$, then the inner product of any vector in $\text{Col}(\mathbf{X})$ and $\mathbf{e}$ is 0 $\Rightarrow \mathbf{X}^T\mathbf{e} = \mathbf{0}$
 :::
 
-## Geometry of least squares regression 
+## Geometry of least squares regression
 
 -   Therefore, we have
 

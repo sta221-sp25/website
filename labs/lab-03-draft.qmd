@@ -94,19 +94,13 @@ Let's begin by exploring the relationship between between flipper length and bod
 ## Exercise 2
 
 Now let's look at the assumptions underlying the regression model. Consider the linear regression model\
-$$ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{N}(0, \sigma^2 \mathbf{I}_n) $${#eq-ols}
+$$ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{N}(0, \sigma^2 \mathbf{I}_n) $$ {#eq-ols}
 
 and let $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}$ be the least squares estimator. This model relies on four assumptions:
 
 -   **Linearity:** There is a linear relationship between the response and predictor variables.
-
-```{=html}
-<!-- -->
-```
 -   **Constant Variance:** The variability about the least squares line is generally constant.
-
 -   **Normality:** The distribution of the residuals is approximately normal.
-
 -   **Independence:** The residuals are independent from one another.
 
 For each condition, state the components of @eq-ols that are used to represent it.
@@ -147,7 +141,7 @@ Now let's set up the test of whether the flipper length has a statistically sign
 
 In the regression output from Exercise 1, you are provided the $p$-value for the test of significance of each individual coefficient.
 
--    Interpret the p-value in the context of these data.
+-   Interpret the p-value in the context of these data.
 
 -   Then use the p-value and a decision-making threshold of $\alpha = 0.5$ to draw a conclusion. State your conclusion in the context of the data.
 
@@ -161,7 +155,7 @@ Now let's construct the 95% confidence interval for the coefficient of flipper l
 
 -   Interpret the interval in the context of the data.
 
-## Exercise 10 
+## Exercise 10
 
 \[Something about writing the questions for the project.\]
 
