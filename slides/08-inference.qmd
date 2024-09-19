@@ -321,9 +321,9 @@ Suppose we are tossing 2 fair coins with sides heads (H) and tails (T)
 
 -   **Event:** We flip two coins and get 1 head
 
--   **Probability distribution function:** $$P(X = x_i) = {2 \choose x_i}0.5^{x_i}{0.5}^{1-x_i}$$
+-   **Probability distribution function:** $$P(X = x_i) = {2 \choose x_i}0.5^{x_i}{0.5}^{2-x_i}$$
 
--   Now we can find $$P(X = 1) = {2 \choose 1}0.5^1{1 - 0.5}^1 = 0.5$$
+-   Now we can find $$P(X = 1) = {2 \choose 1}0.5^1{0.5}^{2-1} = 0.5$$
 :::
 
 ## Mathematical representation {.midi}
@@ -334,7 +334,7 @@ $$
 
 ![Image source: *Introduction to the Practice of Statistics (5th ed)*](images/08/regression.png){fig-align="center"}
 
-## Expected value
+## Expected value of $\mathbf{y}$ 
 
 Let $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
 
@@ -560,10 +560,21 @@ Why do we take into account "extreme" on both the high and low ends?
 
 ## Hypothesis test for $\beta_j$: Conclusion
 
--   The data provide convincing evidence that the population slope $\beta_1$ is different from 0.
--   The data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest.
+**There are two parts to the conclusion**
+
+-   Make a conclusion by comparing the p-value to a predetermined decision-making threshold called the significance level ( $\alpha$ level)
+
+    -   If $\text{P-value} < \alpha$: Reject $H_0$
+
+    -   If $\text{P-value} \geq \alpha$: Fal to reject $H_0$
+
+-   State the conclusion in the context of the data
 
 # Application exercise
+
+::: appex
+📋 <https://sta221-fa24.netlify.app/ae/ae-03-inference>
+:::
 
 # Confidence interval for $\beta_j$
 
@@ -798,7 +809,7 @@ football_anova |>
 What is the conclusion from this hypothesis test?
 :::
 
-## Recap 
+## Recap
 
 -   Introduced statistical inference in the context of regression
 

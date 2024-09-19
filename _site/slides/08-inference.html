@@ -656,8 +656,8 @@ Prof.&nbsp;Maria Tackett
 <li class="fragment"><p><strong>Sample space</strong>: {HH, HT, TH, TT}</p></li>
 <li class="fragment"><p><strong>Random variable</strong>: <span class="math inline">\(X\)</span> : The number of heads in two coin tosses</p></li>
 <li class="fragment"><p><strong>Event:</strong> We flip two coins and get 1 head</p></li>
-<li class="fragment"><p><strong>Probability distribution function:</strong> <span class="math display">\[P(X = x_i) = {2 \choose x_i}0.5^{x_i}{0.5}^{1-x_i}\]</span></p></li>
-<li class="fragment"><p>Now we can find <span class="math display">\[P(X = 1) = {2 \choose 1}0.5^1{1 - 0.5}^1 = 0.5\]</span></p></li>
+<li class="fragment"><p><strong>Probability distribution function:</strong> <span class="math display">\[P(X = x_i) = {2 \choose x_i}0.5^{x_i}{0.5}^{2-x_i}\]</span></p></li>
+<li class="fragment"><p>Now we can find <span class="math display">\[P(X = 1) = {2 \choose 1}0.5^1{0.5}^{2-1} = 0.5\]</span></p></li>
 </ul>
 </div>
 </section>
@@ -668,8 +668,8 @@ Prof.&nbsp;Maria Tackett
 \]</span></p>
 
 <img data-src="images/08/regression.png" class="r-stretch quarto-figure-center"><p class="caption">Image source: <em>Introduction to the Practice of Statistics (5th ed)</em></p></section>
-<section id="expected-value" class="slide level2">
-<h2>Expected value</h2>
+<section id="expected-value-of-mathbfy" class="slide level2">
+<h2>Expected value of <span class="math inline">\(\mathbf{y}\)</span></h2>
 <p>Let <span class="math inline">\(\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of random variables.</p>
 <p><br></p>
 <div class="fragment">
@@ -884,14 +884,21 @@ p-value = P(|t| &gt; |\text{test statistic}|),
 </section>
 <section id="hypothesis-test-for-beta_j-conclusion" class="slide level2">
 <h2>Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Conclusion</h2>
+<p><strong>There are two parts to the conclusion</strong></p>
 <ul>
-<li>The data provide convincing evidence that the population slope <span class="math inline">\(\beta_1\)</span> is different from 0.</li>
-<li>The data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest.</li>
+<li><p>Make a conclusion by comparing the p-value to a predetermined decision-making threshold called the significance level ( <span class="math inline">\(\alpha\)</span> level)</p>
+<ul>
+<li><p>If <span class="math inline">\(\text{P-value} &lt; \alpha\)</span>: Reject <span class="math inline">\(H_0\)</span></p></li>
+<li><p>If <span class="math inline">\(\text{P-value} \geq \alpha\)</span>: Fal to reject <span class="math inline">\(H_0\)</span></p></li>
+</ul></li>
+<li><p>State the conclusion in the context of the data</p></li>
 </ul>
 </section></section>
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
-
+<div class="appex">
+<p>📋 <a href="https://sta221-fa24.netlify.app/ae/ae-03-inference" class="uri">https://sta221-fa24.netlify.app/ae/ae-03-inference</a></p>
+</div>
 </section>
 
 <section>

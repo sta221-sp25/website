@@ -649,7 +649,7 @@
     "href": "slides/08-inference.html#example",
     "title": "Inference for regression",
     "section": "Example",
-    "text": "Example\nSuppose we are tossing 2 fair coins with sides heads (H) and tails (T)\n\n\nSample space: {HH, HT, TH, TT}\nRandom variable: \\(X\\) : The number of heads in two coin tosses\nEvent: We flip two coins and get 1 head\nProbability distribution function: \\[P(X = x_i) = {2 \\choose x_i}0.5^{x_i}{0.5}^{1-x_i}\\]\nNow we can find \\[P(X = 1) = {2 \\choose 1}0.5^1{1 - 0.5}^1 = 0.5\\]"
+    "text": "Example\nSuppose we are tossing 2 fair coins with sides heads (H) and tails (T)\n\n\nSample space: {HH, HT, TH, TT}\nRandom variable: \\(X\\) : The number of heads in two coin tosses\nEvent: We flip two coins and get 1 head\nProbability distribution function: \\[P(X = x_i) = {2 \\choose x_i}0.5^{x_i}{0.5}^{2-x_i}\\]\nNow we can find \\[P(X = 1) = {2 \\choose 1}0.5^1{0.5}^{2-1} = 0.5\\]"
   },
   {
     "objectID": "slides/08-inference.html#mathematical-representation",
@@ -659,11 +659,11 @@
     "text": "Mathematical representation\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma_\\epsilon^2\\mathbf{I})\n\\]\n\nImage source: Introduction to the Practice of Statistics (5th ed)"
   },
   {
-    "objectID": "slides/08-inference.html#expected-value",
-    "href": "slides/08-inference.html#expected-value",
+    "objectID": "slides/08-inference.html#expected-value-of-mathbfy",
+    "href": "slides/08-inference.html#expected-value-of-mathbfy",
     "title": "Inference for regression",
-    "section": "Expected value",
-    "text": "Expected value\nLet \\(\\mathbf{b} = \\begin{bmatrix}b_1 \\\\ \\vdots \\\\b_p\\end{bmatrix}\\) be a \\(p \\times 1\\) vector of random variables.\n\n\nThen \\(E(\\mathbf{b}) = E\\begin{bmatrix}b_1 \\\\ \\vdots \\\\ b_p\\end{bmatrix} = \\begin{bmatrix}E(b_1) \\\\ \\vdots \\\\ E(b_p)\\end{bmatrix}\\)\n\n\n\n\nUse this to find \\(E(\\mathbf{y}|\\mathbf{X})\\)."
+    "section": "Expected value of \\(\\mathbf{y}\\)",
+    "text": "Expected value of \\(\\mathbf{y}\\)\nLet \\(\\mathbf{b} = \\begin{bmatrix}b_1 \\\\ \\vdots \\\\b_p\\end{bmatrix}\\) be a \\(p \\times 1\\) vector of random variables.\n\n\nThen \\(E(\\mathbf{b}) = E\\begin{bmatrix}b_1 \\\\ \\vdots \\\\ b_p\\end{bmatrix} = \\begin{bmatrix}E(b_1) \\\\ \\vdots \\\\ E(b_p)\\end{bmatrix}\\)\n\n\n\n\nUse this to find \\(E(\\mathbf{y}|\\mathbf{X})\\)."
   },
   {
     "objectID": "slides/08-inference.html#variance",
@@ -761,7 +761,7 @@
     "href": "slides/08-inference.html#hypothesis-test-for-beta_j-conclusion",
     "title": "Inference for regression",
     "section": "Hypothesis test for \\(\\beta_j\\): Conclusion",
-    "text": "Hypothesis test for \\(\\beta_j\\): Conclusion\n\nThe data provide convincing evidence that the population slope \\(\\beta_1\\) is different from 0.\nThe data provide convincing evidence of a linear relationship between area and price of houses in Duke Forest."
+    "text": "Hypothesis test for \\(\\beta_j\\): Conclusion\nThere are two parts to the conclusion\n\nMake a conclusion by comparing the p-value to a predetermined decision-making threshold called the significance level ( \\(\\alpha\\) level)\n\nIf \\(\\text{P-value} &lt; \\alpha\\): Reject \\(H_0\\)\nIf \\(\\text{P-value} \\geq \\alpha\\): Fal to reject \\(H_0\\)\n\nState the conclusion in the context of the data"
   },
   {
     "objectID": "slides/08-inference.html#confidence-interval-for-beta_j-1",
