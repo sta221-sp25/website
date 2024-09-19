@@ -77,30 +77,32 @@ For more info: [sta221-fa24.netlify.app/hw/stats-experience](https://sta221-fa24
 
 -   Lowest HW and lowest lab grade dropped at the end of the semester.
 
-## Reminder: course policies about assignments
+## Reminder: course policies about assignments {.midi}
 
--   **Read the feedback on Gradescope carefully!!** If you have questions about the comments, ask during office hours or before/after class.
+-   **Read the feedback on Gradescope carefully!** If you have questions about the comments, ask a member of the teaching team during office hours or before/after class.
 -   [Regrade requests](https://sta221-fa24.netlify.app/syllabus#regrade-requests)
     -   Opened 1 day after assignment is returned and due within 1 week
-    -   Only submit regrade if there is an error in the grading not to dispute points.
-    -   Prof. Tackett or Kat (Head TA) will regrade the entire exercise being disputed, which could potentially result in a lower grade
+    -   Only submit regrade request if there is an error in the grading not to dispute points or ask questions about grading.
+    -   Prof. Tackett or Kat (Head TA) will regrade the entire exercise being disputed, which could potentially result in a lower grade.
 
-## Office hours availability
+## Poll: Office hours availability
 
 ```{=html}
 <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUNURRQzlXME43RUJSVk9KT1pSVlpBRlZMSi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 ```
 ## Topics
 
--   Define mathematical models to conduct inference for the slope
+-   Understand statistical inference in the context of regression
 
--   Use mathematical models to
+-   Describe the assumptions for regression
 
-    -   calculate confidence interval for the slope
+-   Understand connection between distribution of residuals and inferential procedures
 
-    -   conduct a hypothesis test for the slope
+-   Conduct inference on the overall regression model
 
-## Computational setup
+-   Conduct inference on a single coefficient
+
+## Computing setup
 
 ```{r packages}
 #| echo: true
@@ -113,13 +115,13 @@ library(knitr)
 library(kableExtra)  
 library(patchwork)   
 
-# set default theme and larger font size for ggplot2
-ggplot2::theme_set(ggplot2::theme_bw(base_size = 14))
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
 ```
 
-## Data: NCAA Football expenditures
+## Data: NCAA Football expenditures {.midi}
 
-Today's data comes from [Equity in Athletics Data Analysis](https://ope.ed.gov/athletics/#/datafile/list) and includes information about sports expenditures and revenues for colleges and universities in the United States. this data set was featured in a [March 2022 Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md).
+Today's data come from [Equity in Athletics Data Analysis](https://ope.ed.gov/athletics/#/datafile/list) and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a [March 2022 Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md).
 
 We will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :
 
@@ -157,16 +159,6 @@ sports |>
 football <- read_csv("data/ncaa-football-exp.csv")
 ```
 
-Link to tidy tuesday data: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md>
-
-<!--# Use the tidytuesday sports data set-->
-
-<!--# filter out for sports == Football and for NCAA - Division 1 FBS-->
-
-<!--# Look first at relationship between total population (divide by 1000) and total expenditure-->
-
-<!--# Then look at total population and type of school (public private) and total expenditure)-->
-
 ## Univariate EDA
 
 ```{r}
@@ -174,7 +166,7 @@ Link to tidy tuesday data: <https://github.com/rfordatascience/tidytuesday/blob/
 
 p1 <- ggplot(data = football, aes(x = total_exp_m)) + 
   geom_histogram(fill = "steelblue", color = "black", binwidth = 5) + 
-  labs( x= "Total Football Expenditure (in $Millions)")
+  labs( x= "Total Football Expenditures (in $Millions)")
 
 p2 <- ggplot(data = football, aes(x = enrollment_th)) + 
   geom_histogram(binwidth = 5, fill = "steelblue", color = "black") +
@@ -195,8 +187,8 @@ p1 + (p2 / p3)
 p4 <- ggplot(data = football, aes(x = enrollment_th, y = total_exp_m)) +
   geom_point() +
   labs(x = "Total Student Enrollment (in Thousands)", 
-       y = "Total Football Expenditure (in $Millions)", 
-       title = "Football Expenditure vs. Enrollment")
+       y = "Total Football Expenditures (in $Millions)", 
+       title = "Football Expenditures vs. Enrollment")
 
 p5 <- ggplot(data = football, aes(x = type, y = total_exp_m, fill = type)) + 
   geom_boxplot() +

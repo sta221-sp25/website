@@ -436,35 +436,34 @@ Prof.&nbsp;Maria Tackett
 <li><p>Lowest HW and lowest lab grade dropped at the end of the semester.</p></li>
 </ul>
 </section>
-<section id="reminder-course-policies-about-assignments-1" class="slide level2">
+<section id="reminder-course-policies-about-assignments-1" class="slide level2 midi">
 <h2>Reminder: course policies about assignments</h2>
 <ul>
-<li><strong>Read the feedback on Gradescope carefully!!</strong> If you have questions about the comments, ask during office hours or before/after class.</li>
+<li><strong>Read the feedback on Gradescope carefully!</strong> If you have questions about the comments, ask a member of the teaching team during office hours or before/after class.</li>
 <li><a href="https://sta221-fa24.netlify.app/syllabus#regrade-requests">Regrade requests</a>
 <ul>
 <li>Opened 1 day after assignment is returned and due within 1 week</li>
-<li>Only submit regrade if there is an error in the grading not to dispute points.</li>
-<li>Prof.&nbsp;Tackett or Kat (Head TA) will regrade the entire exercise being disputed, which could potentially result in a lower grade</li>
+<li>Only submit regrade request if there is an error in the grading not to dispute points or ask questions about grading.</li>
+<li>Prof.&nbsp;Tackett or Kat (Head TA) will regrade the entire exercise being disputed, which could potentially result in a lower grade.</li>
 </ul></li>
 </ul>
 </section>
-<section id="office-hours-availability" class="slide level2">
-<h2>Office hours availability</h2>
+<section id="poll-office-hours-availability" class="slide level2">
+<h2>Poll: Office hours availability</h2>
 <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUNURRQzlXME43RUJSVk9KT1pSVlpBRlZMSi4u&amp;embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
 </section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
 <ul>
-<li><p>Define mathematical models to conduct inference for the slope</p></li>
-<li><p>Use mathematical models to</p>
-<ul>
-<li><p>calculate confidence interval for the slope</p></li>
-<li><p>conduct a hypothesis test for the slope</p></li>
-</ul></li>
+<li><p>Understand statistical inference in the context of regression</p></li>
+<li><p>Describe the assumptions for regression</p></li>
+<li><p>Understand connection between distribution of residuals and inferential procedures</p></li>
+<li><p>Conduct inference on the overall regression model</p></li>
+<li><p>Conduct inference on a single coefficient</p></li>
 </ul>
 </section>
-<section id="computational-setup" class="slide level2">
-<h2>Computational setup</h2>
+<section id="computing-setup" class="slide level2">
+<h2>Computing setup</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># load packages</span></span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)  </span>
@@ -473,13 +472,13 @@ Prof.&nbsp;Maria Tackett
 <span id="cb1-5"><a></a><span class="fu">library</span>(kableExtra)  </span>
 <span id="cb1-6"><a></a><span class="fu">library</span>(patchwork)   </span>
 <span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
-<span id="cb1-9"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">14</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a></a><span class="co"># set default theme in ggplot2</span></span>
+<span id="cb1-9"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="data-ncaa-football-expenditures" class="slide level2">
+<section id="data-ncaa-football-expenditures" class="slide level2 midi">
 <h2>Data: NCAA Football expenditures</h2>
-<p>Today’s data comes from <a href="https://ope.ed.gov/athletics/#/datafile/list">Equity in Athletics Data Analysis</a> and includes information about sports expenditures and revenues for colleges and universities in the United States. this data set was featured in a <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md">March 2022 Tidy Tuesday</a>.</p>
+<p>Today’s data come from <a href="https://ope.ed.gov/athletics/#/datafile/list">Equity in Athletics Data Analysis</a> and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md">March 2022 Tidy Tuesday</a>.</p>
 <p>We will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :</p>
 <ul>
 <li><p><code>total_exp_m</code>: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)</p></li>
@@ -489,11 +488,6 @@ Prof.&nbsp;Maria Tackett
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>football <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ncaa-football-exp.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Link to tidy tuesday data: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md" class="uri">https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md</a></p>
-<!--# Use the tidytuesday sports data set-->
-<!--# filter out for sports == Football and for NCAA - Division 1 FBS-->
-<!--# Look first at relationship between total population (divide by 1000) and total expenditure-->
-<!--# Then look at total population and type of school (public private) and total expenditure)-->
 </section>
 <section id="univariate-eda" class="slide level2">
 <h2>Univariate EDA</h2>

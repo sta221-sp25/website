@@ -551,7 +551,7 @@
     "href": "slides/08-inference.html#reminder-course-policies-about-assignments-1",
     "title": "Inference for regression",
     "section": "Reminder: course policies about assignments",
-    "text": "Reminder: course policies about assignments\n\nRead the feedback on Gradescope carefully!! If you have questions about the comments, ask during office hours or before/after class.\nRegrade requests\n\nOpened 1 day after assignment is returned and due within 1 week\nOnly submit regrade if there is an error in the grading not to dispute points.\nProf. Tackett or Kat (Head TA) will regrade the entire exercise being disputed, which could potentially result in a lower grade"
+    "text": "Reminder: course policies about assignments\n\nRead the feedback on Gradescope carefully! If you have questions about the comments, ask a member of the teaching team during office hours or before/after class.\nRegrade requests\n\nOpened 1 day after assignment is returned and due within 1 week\nOnly submit regrade request if there is an error in the grading not to dispute points or ask questions about grading.\nProf. Tackett or Kat (Head TA) will regrade the entire exercise being disputed, which could potentially result in a lower grade."
   },
   {
     "objectID": "slides/08-inference.html#office-hours-availability",
@@ -565,7 +565,7 @@
     "href": "slides/08-inference.html#topics",
     "title": "Inference for regression",
     "section": "Topics",
-    "text": "Topics\n\nDefine mathematical models to conduct inference for the slope\nUse mathematical models to\n\ncalculate confidence interval for the slope\nconduct a hypothesis test for the slope"
+    "text": "Topics\n\nUnderstand statistical inference in the context of regression\nDescribe the assumptions for regression\nUnderstand connection between distribution of residuals and inferential procedures\nConduct inference on the overall regression model\nConduct inference on a single coefficient"
   },
   {
     "objectID": "slides/08-inference.html#computational-setup",
@@ -579,7 +579,7 @@
     "href": "slides/08-inference.html#data-ncaa-football-expenditures",
     "title": "Inference for regression",
     "section": "Data: NCAA Football expenditures",
-    "text": "Data: NCAA Football expenditures\nToday’s data comes from Equity in Athletics Data Analysis and includes information about sports expenditures and revenues for colleges and universities in the United States. this data set was featured in a March 2022 Tidy Tuesday.\nWe will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :\n\ntotal_exp_m: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)\nenrollment_th: Total student enrollment in the 2019 - 2020 academic year (in thousands)\ntype: institution type (Public or Private)\n\n\nfootball &lt;- read_csv(\"data/ncaa-football-exp.csv\")\n\nLink to tidy tuesday data: https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md"
+    "text": "Data: NCAA Football expenditures\nToday’s data come from Equity in Athletics Data Analysis and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a March 2022 Tidy Tuesday.\nWe will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :\n\ntotal_exp_m: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)\nenrollment_th: Total student enrollment in the 2019 - 2020 academic year (in thousands)\ntype: institution type (Public or Private)\n\n\nfootball &lt;- read_csv(\"data/ncaa-football-exp.csv\")"
   },
   {
     "objectID": "slides/08-inference.html#univariate-eda",
@@ -3234,5 +3234,19 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/08-inference.html#poll-office-hours-availability",
+    "href": "slides/08-inference.html#poll-office-hours-availability",
+    "title": "Inference for regression",
+    "section": "Poll: Office hours availability",
+    "text": "Poll: Office hours availability"
+  },
+  {
+    "objectID": "slides/08-inference.html#computing-setup",
+    "href": "slides/08-inference.html#computing-setup",
+    "title": "Inference for regression",
+    "section": "Computing setup",
+    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(kableExtra)  \nlibrary(patchwork)   \n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   }
 ]
