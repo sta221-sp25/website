@@ -13,7 +13,7 @@ format: html
 ::: callout-important
 # Due date
 
-This lab is due on **Thursday, September 26 at 11:59pm.** To be considered on time, the following must be done by the due date:
+This lab is due on **Thursday, October 4 at 11:59pm.** To be considered on time, the following must be done by the due date:
 
 -   Final `.qmd` and `.pdf` files pushed to your team's GitHub repo
 
@@ -85,10 +85,12 @@ Write all code and narrative in your Quarto file. Write all narrative in complet
 
 ## Exercise 1
 
+<!--# add something about removing points with missing data-->
+
 Let's begin by exploring the relationship between between flipper length and body mass, while accounting for species.
 
 -   Visualize the relationship between flipper length and body mass. Then describe the relationship.
--   Fit the linear regression model between these three variables. Neatly display the results using three digits.
+-   Fit the main effects linear regression model (no interaction term) between these variables. Neatly display the results using three digits.
 -   Interpret the coefficient of flipper length in the context of the data.
 
 ## Exercise 2

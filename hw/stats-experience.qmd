@@ -128,4 +128,4 @@ Make sure the slide includes the information mentioned above and is easily reada
 
 ## Submission
 
-Submit the reflection as a PDF under the **Statistics Experience** assignment on Gradescope by **Tuesday, November 26 at 11:95pm.** Standard homework late policy applies.
+Submit the reflection as a PDF under the **Statistics Experience** assignment on Gradescope by **Tuesday, November 26 at 11:59pm.** Standard homework late policy applies.

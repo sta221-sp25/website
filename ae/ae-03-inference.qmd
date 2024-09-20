@@ -8,7 +8,7 @@ editor: visual
 ::: callout-important
 Go to the course GitHub organization and locate your ae-03 repo to get started.
 
-Render, commit, and push your responses to GitHub by the end of class to submit your AE.This AE will not count towards your participation grade.
+Render, commit, and push your responses to GitHub by the end of class to submit your AE.
 :::
 
 # Set up
