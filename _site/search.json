@@ -95,7 +95,150 @@
     "href": "project.html",
     "title": "Final project",
     "section": "",
-    "text": "To be posted.",
+    "text": "Research questions due Thursday, September 26\nProject proposal due Thursday, October 3\nExploratory data analysis due Thursday, October 31\nPresentation + Presentation comments Monday, November 11 (in lab)\nAnalysis draft + peer review Monday, November 25 (peer review in lab)\nRound 1 submission (optional) due Friday, December 6\nWritten report due Thursday, December 12\nReproducibility + organization due Thursday, December 12",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#project-milestones",
+    "href": "project.html#project-milestones",
+    "title": "Final project",
+    "section": "",
+    "text": "Research questions due Thursday, September 26\nProject proposal due Thursday, October 3\nExploratory data analysis due Thursday, October 31\nPresentation + Presentation comments Monday, November 11 (in lab)\nAnalysis draft + peer review Monday, November 25 (peer review in lab)\nRound 1 submission (optional) due Friday, December 6\nWritten report due Thursday, December 12\nReproducibility + organization due Thursday, December 12",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#introduction",
+    "href": "project.html#introduction",
+    "title": "Final project",
+    "section": "Introduction",
+    "text": "Introduction\nTL;DR: Pick a data set and do a regression analysis. That is your final project.\nThe goal of the final project is for you to use regression analysis to analyze a data set of your own choosing. The data set may already exist or you may collect your own data by scraping the web.\nChoose the data based on your group’s interests or work you all have done in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like!) and apply them to a data set to analyze it in a meaningful way.\nAll analyses must be done in RStudio using Quarto and GitHub, and your analysis and written report must be reproducible.\n\nLogistics\nYou will work on the project with your lab groups. The primary deliverables for the project are\n\nan in-person presentation about the exploratory data analysis and initial modeling\na written, reproducible final report detailing your analysis\na GitHub repository containing all work from the project\n\nThere are intermediate milestones and peer review assignments throughout the semester to help you work towards the final deliverables.",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#research-questions",
+    "href": "project.html#research-questions",
+    "title": "Final project",
+    "section": "Research questions",
+    "text": "Research questions\nThe goal of this milestone is to discuss topics and potential research questions your team is interested in investigating for the project. You are only identifying potential research questions; you do not need to have a data set identified at this point.\nIdentify three potential topics and research questions. Include the following for each question:\n\nA statement of the research question.\nThe target population of interest for this question.\nA statement about your motivation for investigating this research question and why this question is important.\nIdeas about the type of data you might use to answer this question. Note: These are your ideas about the type of data you could use. You do not need to have a data set at this point.\n\n\nSubmission\nWrite your responses in research-questions.qmd in your team’s project GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, Thursday, September 26 at 11:59pm.",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#project-proposal",
+    "href": "project.html#project-proposal",
+    "title": "Final project",
+    "section": "Project proposal",
+    "text": "Project proposal",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#eda",
+    "href": "project.html#eda",
+    "title": "Final project",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#draft-report-peer-review",
+    "href": "project.html#draft-report-peer-review",
+    "title": "Final project",
+    "section": "Analysis + peer review",
+    "text": "Analysis + peer review",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#written-report",
+    "href": "project.html#written-report",
+    "title": "Final project",
+    "section": "Written report",
+    "text": "Written report",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#round1-submission",
+    "href": "project.html#round1-submission",
+    "title": "Final project",
+    "section": "Round 1 submission (optional)",
+    "text": "Round 1 submission (optional)",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#presentation",
+    "href": "project.html#presentation",
+    "title": "Final project",
+    "section": "Presentation",
+    "text": "Presentation",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#reproducibility-organization",
+    "href": "project.html#reproducibility-organization",
+    "title": "Final project",
+    "section": "Reproducibility + organization",
+    "text": "Reproducibility + organization",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#peer-teamwork-evaluation",
+    "href": "project.html#peer-teamwork-evaluation",
+    "title": "Final project",
+    "section": "Peer teamwork evaluation",
+    "text": "Peer teamwork evaluation\nYou will be asked to fill out a survey where you rate the contribution and teamwork of each team member by assigning a contribution percentage for each team member. If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation. If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly.",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#overall-grading",
+    "href": "project.html#overall-grading",
+    "title": "Final project",
+    "section": "Overall grading",
+    "text": "Overall grading\nThe grade breakdown is as follows:\n\n\n\nTotal\n100 pts\n\n\n\n\nResearch question\n3 pts\n\n\nProject proposal\n10 pts\n\n\nExploratory data analysis\n15 pts\n\n\nPresentation\n10 pts\n\n\nPresentation comments\n2 pts\n\n\nDraft report + peer review\n15 pts\n\n\nWritten report\n40 pts\n\n\nReproducibility + organization\n5 pts\n\n\n\n\nGrading summary\nGrading of the project will take into account the following:\n\nContent - What is the quality of research and/or policy question and relevancy of data to those questions?\nCorrectness - Are statistical procedures carried out and explained correctly?\nWriting and Presentation - What is the quality of the statistical presentation, writing, and explanations?\nCreativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n\nA general breakdown of scoring is as follows:\n\n90%-100%: Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.\n80%-89%: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.\n70%-79%: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.\n60%-69%: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.\nBelow 60%: Student is not making a sufficient effort.",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#late-work-policy",
+    "href": "project.html#late-work-policy",
+    "title": "Final project",
+    "section": "Late work policy",
+    "text": "Late work policy\nThere is no late work accepted on the draft report or presentation. Other components of the project may be accepted up to 48 hours late. A 10% late deduction will apply for each 24-hour period late.\nBe sure to turn in your work early to avoid any technological mishaps.",
     "crumbs": [
       "Project",
       "Instructions"
@@ -1111,7 +1254,7 @@
     "href": "slides/lab-03.html#goals",
     "title": "Lab 03",
     "section": "Goals",
-    "text": "Goals\n\nTeam project\n\n\n\nLab 03: Palmer penguins"
+    "text": "Goals\n\nTeam project\nLab 03: Palmer penguins"
   },
   {
     "objectID": "slides/lab-03.html#lab-03-palmer-penguins",
@@ -1121,18 +1264,25 @@
     "text": "Lab 03: Palmer penguins\nLab 03 focuses on\n\nusing linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica.\nuse the data to check conditions about the distribution of the model residuals.\n\nUse this week to get started on the lab. We will continue discussing statistical inference in this week’s lectures, so this lab will be due on Thursday, October 3, 2024.\n🔗 https://sta221-fa24.netlify.app/labs/lab-03"
   },
   {
-    "objectID": "slides/lab-03.html#project",
-    "href": "slides/lab-03.html#project",
+    "objectID": "slides/lab-03.html#final-team-project",
+    "href": "slides/lab-03.html#final-team-project",
     "title": "Lab 03",
-    "section": "Project",
-    "text": "Project\nGoal: Use the methods from STA 221 to analyze data and answer a research question developed by your team.\nMilestones: There are periodic project milestones throughout the semester.\n\n[Add milestones]\nSubmission: All work for the project will be submitted in your team’s GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow often used in practice."
+    "section": "Final Team Project",
+    "text": "Final Team Project\nGoal: Use the methods from STA 221 to analyze data and answer a research question developed by your team\nPrimary deliverables:\n\nan in-person presentation about the exploratory data analysis and initial modeling\na written, reproducible final report detailing your analysis\na GitHub repository containing all work from the project\n\nSubmission: All work for the project will be submitted in your team’s GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow often used in practice."
   },
   {
-    "objectID": "slides/lab-03.html#project-research-question",
-    "href": "slides/lab-03.html#project-research-question",
+    "objectID": "slides/lab-03.html#final-team-project-1",
+    "href": "slides/lab-03.html#final-team-project-1",
     "title": "Lab 03",
-    "section": "Project: Research question",
-    "text": "Project: Research question\nToday’s goals: Develop three potential research questions your team may be interested in exploring.\nFor each research question: [include criteria]\nThe goal of this milestone is for you to develop research questions to motivate the research. You do not need to have a data set at this point."
+    "section": "Final team project",
+    "text": "Final team project\nMilestones: There are periodic project milestones throughout the semester to help you work towards the final deliverables:\n\nResearch questions (today’s lab)\nProject proposal (next week’s lab)\nExploratory data analysis draft\nPresentation + Presentation comments\nAnalysis draft + peer review\nRound 1 submission (optional)\nWritten report\nReproducibility + organization\n\nSee the Final Project Instructions for a timeline and details for each milestone."
+  },
+  {
+    "objectID": "slides/lab-03.html#project-research-questions",
+    "href": "slides/lab-03.html#project-research-questions",
+    "title": "Lab 03",
+    "section": "Project: Research questions",
+    "text": "Project: Research questions\nToday’s goals: Develop three potential research questions your team may be interested in exploring.\nThe goal of this milestone is for you to develop research questions to motivate the research. You do not need to have a data set at this point\nSee instructions here:"
   },
   {
     "objectID": "slides/lab-03.html#reminder-team-workflow",
