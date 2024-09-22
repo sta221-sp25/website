@@ -73,13 +73,13 @@ Use this week to get started on the lab. We will continue discussing statistical
 
 See the [Final Project Instructions](../project.html) for a timeline and details for each milestone.
 
-## Project: Research questions
+## Today: Research questions
 
-Today's goals: Develop three potential research questions your team may be interested in exploring.
+**Goal:** Develop three potential research questions your team may be interested in investigating.
 
-The goal of this milestone is for you to develop research questions to motivate the research. You do [**not**]{.underline} need to have a data set at this point
+You do [**not**]{.underline} need to have a data set at this point
 
-See instructions here:
+Full instructions here: [sta221-fa24.netlify.app/project#research-questions](https://sta221-fa24.netlify.app/project#research-questions)
 
 ## Reminder: Team workflow
 

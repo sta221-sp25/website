@@ -50,9 +50,9 @@ There are intermediate milestones and peer review assignments throughout the sem
 
 ## Research questions {#research-questions}
 
-The goal of this milestone is to discuss topics and potential research questions your team is interested in investigating for the project. You are only identifying potential research questions; you do not need to have a data set identified at this point.
+The goal of this milestone is to discuss topics and develop potential research questions your team is interested in investigating for the project. You are only developing potential research questions; you do not need to have a data set identified at this point.
 
-Identify three potential topics and research questions. Include the following for each question:
+Develop three potential topics and research questions. Include the following for each question:
 
 1.  A statement of the research question.
 2.  The target population of interest for this question.

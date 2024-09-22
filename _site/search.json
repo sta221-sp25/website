@@ -128,7 +128,7 @@
     "href": "project.html#research-questions",
     "title": "Final project",
     "section": "Research questions",
-    "text": "Research questions\nThe goal of this milestone is to discuss topics and potential research questions your team is interested in investigating for the project. You are only identifying potential research questions; you do not need to have a data set identified at this point.\nIdentify three potential topics and research questions. Include the following for each question:\n\nA statement of the research question.\nThe target population of interest for this question.\nA statement about your motivation for investigating this research question and why this question is important.\nIdeas about the type of data you might use to answer this question. Note: These are your ideas about the type of data you could use. You do not need to have a data set at this point.\n\n\nSubmission\nWrite your responses in research-questions.qmd in your team’s project GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, Thursday, September 26 at 11:59pm.",
+    "text": "Research questions\nThe goal of this milestone is to discuss topics and develop potential research questions your team is interested in investigating for the project. You are only developing potential research questions; you do not need to have a data set identified at this point.\nDevelop three potential topics and research questions. Include the following for each question:\n\nA statement of the research question.\nThe target population of interest for this question.\nA statement about your motivation for investigating this research question and why this question is important.\nIdeas about the type of data you might use to answer this question. Note: These are your ideas about the type of data you could use. You do not need to have a data set at this point.\n\n\nSubmission\nWrite your responses in research-questions.qmd in your team’s project GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, Thursday, September 26 at 11:59pm.",
     "crumbs": [
       "Project",
       "Instructions"
@@ -1278,11 +1278,11 @@
     "text": "Final team project\nMilestones: There are periodic project milestones throughout the semester to help you work towards the final deliverables:\n\nResearch questions (today’s lab)\nProject proposal (next week’s lab)\nExploratory data analysis draft\nPresentation + Presentation comments\nAnalysis draft + peer review\nRound 1 submission (optional)\nWritten report\nReproducibility + organization\n\nSee the Final Project Instructions for a timeline and details for each milestone."
   },
   {
-    "objectID": "slides/lab-03.html#project-research-questions",
-    "href": "slides/lab-03.html#project-research-questions",
+    "objectID": "slides/lab-03.html#today-research-questions",
+    "href": "slides/lab-03.html#today-research-questions",
     "title": "Lab 03",
-    "section": "Project: Research questions",
-    "text": "Project: Research questions\nToday’s goals: Develop three potential research questions your team may be interested in exploring.\nThe goal of this milestone is for you to develop research questions to motivate the research. You do not need to have a data set at this point\nSee instructions here:"
+    "section": "Today: Research questions",
+    "text": "Today: Research questions\nGoal: Develop three potential research questions your team may be interested in investigating.\nYou do not need to have a data set at this point\nFull instructions here: sta221-fa24.netlify.app/project#research-questions"
   },
   {
     "objectID": "slides/lab-03.html#reminder-team-workflow",
