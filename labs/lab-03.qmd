@@ -145,7 +145,7 @@ Now let's set up the test of whether the flipper length has a statistically sign
 
 -   Write the null and alternative hypotheses in words and in mathematical notation.
 
--   Show how the test statistic is computed specifically for this problem. In your response, show the code to obtain each relevant quantity in the formula for the test statistic using the matrix form of the model.
+-   Show how the test statistic is computed specifically for this problem. In your response, show the code to obtain each relevant quantity in the formula for the test statistic using the matrix form of the model. *Do [not]{.underline} merely refer to the values in the `lm` output. You must show how each value is computed using the matrix / vector calculations.*
 
 -   State the distribution of the test statistic under the null hypothesis for this problem.
 

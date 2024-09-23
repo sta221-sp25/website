@@ -399,10 +399,10 @@ window.Quarto = {
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><strong>Learning goals</strong></a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><strong>Getting started</strong></a></li>
   <li><a href="#workflow-using-git-and-github-as-a-team" id="toc-workflow-using-git-and-github-as-a-team" class="nav-link" data-scroll-target="#workflow-using-git-and-github-as-a-team"><strong>Workflow: Using Git and GitHub as a team</strong></a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
-  <ul class="collapse">
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
   <li><a href="#exercise-0" id="toc-exercise-0" class="nav-link" data-scroll-target="#exercise-0">Exercise 0</a></li>
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
@@ -414,8 +414,8 @@ window.Quarto = {
   <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
   <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
-  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
   </ul></li>
+  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul>
@@ -510,8 +510,9 @@ Important
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) <span class="co">#penguins data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
 <p>Today’s data include information about characteristics of three species of penguins living in Palmer Archipelago in Antarctica. The data were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr.&nbsp;Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>, a member of the <a href="https://lternet.edu/">Long Term Ecological Research Network</a> <span class="citation" data-cites="gorman2014">(<a href="#ref-gorman2014" role="doc-biblioref">Gorman, Williams, and Fraser 2014</a>)</span>.</p>
 <p>The data are in the <code>penguins</code> data frame in the <strong>palmerpenguins</strong> R package. This analysis will focus on the following variables:</p>
 <ul>
@@ -521,8 +522,8 @@ Important
 </ul>
 <p><a href="https://allisonhorst.github.io/palmerpenguins/reference/penguins.html">Click here</a> to see the full data dictionary.</p>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
 <p><strong>Goal:</strong> The goal of this analysis is to use multiples linear regression to draw conclusions about the relationship between penguins’ flipper length and body mass, while accounting for species.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -537,10 +538,22 @@ Important
 <p>Write all code and narrative in your Quarto file. Write all narrative in complete sentences. Make sure the teaching team can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (<code>|&gt;</code>) and plus sign (<code>+</code>).</p>
 </div>
 </div>
-</section>
 <section id="exercise-0" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-0">Exercise 0</h2>
 <p>There are two penguins in the data frame that do not have reported values for flipper length or body mass and thus will not be included in any analysis. Remove these observations from the data frame, so that we have an accurate count of the number of observations used for the analysis.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exericse 0 is not graded.</p>
+</div>
+</div>
 </section>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
@@ -590,7 +603,7 @@ Important
 <p>Now let’s set up the test of whether the flipper length has a statistically significant effect on body mass in this model.</p>
 <ul>
 <li><p>Write the null and alternative hypotheses in words and in mathematical notation.</p></li>
-<li><p>Show how the test statistic is computed specifically for this problem. In your response, show the code to obtain each relevant quantity in the formula for the test statistic using the matrix form of the model.</p></li>
+<li><p>Show how the test statistic is computed specifically for this problem. In your response, show the code to obtain each relevant quantity in the formula for the test statistic using the matrix form of the model. <em>Do <u>not</u> merely refer to the values in the <code>lm</code> output. You must show how each value is computed using the matrix / vector calculations.</em></p></li>
 <li><p>State the distribution of the test statistic under the null hypothesis for this problem.</p></li>
 </ul>
 </section>
@@ -614,10 +627,10 @@ Important
 <h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
 <p>Interpret the interval from the previous exercise in the context of the data.</p>
 </section>
-<section id="project" class="level2">
-<h2 class="anchored" data-anchor-id="project">Project</h2>
-<p>Complete the <a href="https://sta221-fa24.netlify.app/project#research-questions">project research questions</a> (due September 26) or <a href="https://sta221-fa24.netlify.app/project#project-proposal">proposal</a> (due October 3).</p>
 </section>
+<section id="project" class="level1">
+<h1>Project</h1>
+<p>Complete the <a href="https://sta221-fa24.netlify.app/project#research-questions">project research questions</a> (due September 26) or <a href="https://sta221-fa24.netlify.app/project#project-proposal">proposal</a> (due October 3).</p>
 </section>
 <section id="submission" class="level1">
 <h1>Submission</h1>
