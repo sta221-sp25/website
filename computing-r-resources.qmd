@@ -15,7 +15,7 @@ Below are freely available resources to learn or review the following in R: **da
 
 ## **In-depth review**
 
-[Data Science with R videos](Mine Çetinkaya-Rundel and Elijah Meyer) by Mine Çetinkaya-Rundel and Elijah Meyer
+[Data Science with R videos](https://warpwire.duke.edu/w/y2sIAA/) by Mine Çetinkaya-Rundel and Elijah Meyer
 
 -   Videos from the data science Coursera course
 
