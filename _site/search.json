@@ -128,7 +128,7 @@
     "href": "project.html#research-questions",
     "title": "Final project",
     "section": "Research questions",
-    "text": "Research questions\nThe goal of this milestone is to discuss topics and develop potential research questions your team is interested in investigating for the project. You are only developing potential research questions; you do not need to have a data set identified at this point.\nDevelop three potential topics and research questions. Include the following for each question:\n\nA statement of the research question.\nThe target population of interest for this question.\nA statement about your motivation for investigating this research question and why this question is important.\nIdeas about the type of data you might use to answer this question. Note: These are your ideas about the type of data you could use. You do not need to have a data set at this point.\n\n\nSubmission\nWrite your responses in research-questions.qmd in your team’s project GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, Thursday, September 26 at 11:59pm.",
+    "text": "Research questions\nThe goal of this milestone is to discuss topics and develop potential research questions your team is interested in investigating for the project. You are only developing potential research questions; you do not need to have a data set identified at this point.\nDevelop three potential research questions. Include the following for each question:\n\nA statement of the research question.\nThe target population of interest for this question.\nA statement about your motivation for investigating this research question and why this question is important.\nIdeas about the type of data you might use to answer this question. Note: These are your ideas about the type of data you could use. You do not need to have a data set at this point.\n\n\nSubmission\nWrite your responses in research-questions.qmd in your team’s project GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, Thursday, September 26 at 11:59pm.",
     "crumbs": [
       "Project",
       "Instructions"
@@ -139,7 +139,7 @@
     "href": "project.html#project-proposal",
     "title": "Final project",
     "section": "Project proposal",
-    "text": "Project proposal",
+    "text": "Project proposal\nThe purpose of the project proposal is for your team to identify the data set you’re interested in analyzing to investigate one of your potential research questions. You will also do some preliminary exploration of the response variable and begin thinking about the modeling strategy. If you’re unsure where to find data, you can use the list of potential data sources on the Tips + resources page as a starting point.\nThe data set must meet the following criteria:\n\nAt least 500 observations\nAt least 10 columns, such that at least 6 of the columns are useful and unique predictor variables.\n\ne.g., identifier variables such as “name”, “ID number”, etc. are [not]{.underline} useful predictor variables.\ne.g., if you have multiple columns with the same information (e.g. “state abbreviation” and “state name”), then they are not unique predictors.\n\nAt least one variable that can be identified as a reasonable response variable.\n\nThe response variable can be quantitative or categorical.\n\nA mix of quantitative and categorical variables that can be used as predictors.\nMay not be data that has previously been used in any course materials, or any derivation of data that has been used in course materials.\n\n\n\n\n\n\n\nTypes of data sets to avoid\n\n\n\n\nData that are likely violate the independence condition. Therefore, avoid data with repeated measures, data collected over time, etc.\nData sets in which there is no information about how the data were originally collected\nData sets in which there are missing or unclear definitions about the observations and/or variables\n\n\n\nAsk a member of the teaching team if you’re unsure whether your data set meets the criteria.\nThe proposal will include the following sections:\n\nSection 1: Introduction\n\n\n\n\n\n\nTip\n\n\n\nReuse and iterate on the work from the Research Questions milestone.\n\n\n\nAn introduction to the subject matter you’re investigating (citing any relevant literature)\nStatement of a well-developed research question.\nThe motivation for your research question and why it is important\nYour team’s hypotheses regarding the research question\n\nThis is a narrative about what you think regarding the research question, not formal statistical hypotheses.\n\n\n\n\nSection 2: Data description\n\nThe source of the data set\nA description of when and how the data were originally collected (by the original data curator, not necessarily how you found the data)\nA description of the observations and general characteristics being measured –&gt;\n\n\n\nSection 3: Initial exploratory data analysis\n\nDescription of data cleaning you need to do to prepare for analysis (can focus on the response variable for now), such as joining data sets, imputing missing values, variable transformation, creating a new variable, etc.\nVisualizations, summary statistics, and narrative to describe the distribution of the response variable.\n\n\n\nSection 4: Analysis approach\n\na description of the potential predictor variables of interest\nregression model technique (multiple linear regression or logistic regression for a categorical response variable\n\n\n\nData dictionary (aka code book)\nSubmit a data dictionary for all the variables in your data set in the README of the data folder. You do not need to include the data dictionary in the PDF document.\n\n\nSubmission\nWrite your narrative and analysis for Sections 1 - 4 in the proposal.qmd file in your team’s GitHub repo. Put the data set and the data dictionary in the data folder in the repo. Push the qmd and rendered pdf documents to GitHub by the deadline, Thursday, October 3 at 11:59pm.",
     "crumbs": [
       "Project",
       "Instructions"
@@ -150,7 +150,18 @@
     "href": "project.html#eda",
     "title": "Final project",
     "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\n\n\n\n\n\nTip\n\n\n\nReuse and iterate on the work from the previous milestones.\n\n\nThe purpose of this milestone is begin exploring the data and get early feedback on your data and analysis. You will submit a draft of the beginning of your report that includes the introduction and exploratory data analysis, with an emphasis on the EDA. It will also help you prepare for the presentation of the exploratory data analysis results.\nBelow is a brief description of the sections to include in this step:\n\nIntroduction\nThis section includes an introduction to the project motivation, background, data, and research question.\n\n\nExploratory data analysis\nThis section includes the following:\n\nDescription of the data set and key variables.\nExploratory data analysis of the response variable and key predictor variables.\n\nUnivariate EDA of the response and key predictor variables.\nBivariate EDA of the response and key predictor variables\nPotential interaction effects.\n\n\n\n\nSubmission\nWrite your draft introduction and exploratory data analysis in the written-report.qmd file in your team’s GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, Thursday, October 31 at 11:59pm.",
+    "crumbs": [
+      "Project",
+      "Instructions"
+    ]
+  },
+  {
+    "objectID": "project.html#presentation",
+    "href": "project.html#presentation",
+    "title": "Final project",
+    "section": "Presentation",
+    "text": "Presentation",
     "crumbs": [
       "Project",
       "Instructions"
@@ -168,17 +179,6 @@
     ]
   },
   {
-    "objectID": "project.html#written-report",
-    "href": "project.html#written-report",
-    "title": "Final project",
-    "section": "Written report",
-    "text": "Written report",
-    "crumbs": [
-      "Project",
-      "Instructions"
-    ]
-  },
-  {
     "objectID": "project.html#round1-submission",
     "href": "project.html#round1-submission",
     "title": "Final project",
@@ -190,11 +190,11 @@
     ]
   },
   {
-    "objectID": "project.html#presentation",
-    "href": "project.html#presentation",
+    "objectID": "project.html#written-report",
+    "href": "project.html#written-report",
     "title": "Final project",
-    "section": "Presentation",
-    "text": "Presentation",
+    "section": "Written report",
+    "text": "Written report",
     "crumbs": [
       "Project",
       "Instructions"
