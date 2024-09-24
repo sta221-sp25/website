@@ -395,6 +395,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Inference for regression</h1>
+  <p class="subtitle">cont’d</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -404,53 +405,21 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">Sep 19, 2024</p>
+  <p class="date">Sep 24, 2024</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li><p>Lab 02 due on <strong>TODAY at 11:59pm</strong></p></li>
-<li><p>HW 01 due <strong>TODAY at 11:59pm</strong></p></li>
+<li><p>Project</p>
+<ul>
+<li><p>Research questions due <strong>Thursday at 11:59pm</strong></p></li>
+<li><p>Proposal due Thursday, October 3 at 11:59pm</p></li>
+</ul></li>
+<li><p>Lab 03 due Thursday, October 3 at 11:59pm</p></li>
 <li><p><a href="https://sta221-fa24.netlify.app/hw/stats-experience">Statistics experience</a> due <strong>Tue, Nov 26 at 11:59pm</strong></p></li>
 </ul>
-</section>
-<section id="statistics-experience" class="slide level2">
-<h2>Statistics experience</h2>
-<p><strong>Goal:</strong> Engage with statistics / data science outside the classroom and connect your experience with what you’re learning in the course.</p>
-<p><strong>What:</strong> Have a statistics experience + create a slide reflecting on the experience. Counts as a homework grade.</p>
-<p><strong>When:</strong> Must do the activity this semester. Reflection due <strong>Tuesday, November 26 at 11:59pm</strong></p>
+<p><strong>6 at 11:59pm</strong></p>
 <p>For more info: <a href="https://sta221-fa24.netlify.app/hw/stats-experience">sta221-fa24.netlify.app/hw/stats-experience</a></p>
-</section>
-<section id="reminder-course-policies-about-assignments" class="slide level2">
-<h2>Reminder: course policies about assignments</h2>
-<ul>
-<li><p><a href="https://sta221-fa24.netlify.app/syllabus#late-work-policy">Late work</a></p>
-<ul>
-<li>HW and labs accepted up to 2 days late.</li>
-<li>5% deduction for each 24-hour period the assignment is late.</li>
-</ul></li>
-<li><p><a href="https://sta221-fa24.netlify.app/syllabus#waiver-for-extenuating-circumstances">One time late waiver</a></p>
-<ul>
-<li>Can use on HW and individual labs</li>
-</ul></li>
-<li><p>Lowest HW and lowest lab grade dropped at the end of the semester.</p></li>
-</ul>
-</section>
-<section id="reminder-course-policies-about-assignments-1" class="slide level2 midi">
-<h2>Reminder: course policies about assignments</h2>
-<ul>
-<li><strong>Read the feedback on Gradescope carefully!</strong> If you have questions about the comments, ask a member of the teaching team during office hours or before/after class.</li>
-<li><a href="https://sta221-fa24.netlify.app/syllabus#regrade-requests">Regrade requests</a>
-<ul>
-<li>Opened 1 day after assignment is returned and due within 1 week</li>
-<li>Only submit regrade request if there is an error in the grading not to dispute points or ask questions about grading.</li>
-<li>Prof.&nbsp;Tackett or Kat (Head TA) will regrade the entire exercise being disputed, which could potentially result in a lower grade.</li>
-</ul></li>
-</ul>
-</section>
-<section id="poll-office-hours-availability" class="slide level2">
-<h2>Poll: Office hours availability</h2>
-<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUNURRQzlXME43RUJSVk9KT1pSVlpBRlZMSi4u&amp;embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
 </section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
@@ -459,6 +428,7 @@ Prof.&nbsp;Maria Tackett
 <li><p>Describe the assumptions for regression</p></li>
 <li><p>Understand connection between distribution of residuals and inferential procedures</p></li>
 <li><p>Conduct inference on a single coefficient</p></li>
+<li><p>Conduct inference on the overall regression model</p></li>
 </ul>
 </section>
 <section id="computing-setup" class="slide level2">
@@ -491,11 +461,11 @@ Prof.&nbsp;Maria Tackett
 <section id="univariate-eda" class="slide level2">
 <h2>Univariate EDA</h2>
 
-<img data-src="08-inference_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="09-inference-pt2_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="bivariate-eda" class="slide level2">
 <h2>Bivariate EDA</h2>
 
-<img data-src="08-inference_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="09-inference-pt2_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="regression-model" class="slide level2">
 <h2>Regression model</h2>
 <div class="cell" data-layout-align="center">
@@ -542,26 +512,12 @@ Prof.&nbsp;Maria Tackett
 <p><br></p>
 <p>For every additional 1,000 students, we expect the institution’s total expenditures on football to increase by $780,000, on average, holding institution type constant.</p>
 </section>
-<section id="from-sample-to-population" class="slide level2 midi">
-<h2>From sample to population</h2>
-<blockquote>
-<p>For every additional 1,000 students, we expect the institution’s total expenditures on football to increase by $780,000, on average, holding institution type constant.</p>
-</blockquote>
-<div class="fragment">
-<p><br></p>
-<ul>
-<li>This estimate is valid for the single sample of 127 higher education institutions in the 2019 - 2020 academic year.</li>
-<li>But what if we’re not interested quantifying the relationship between student enrollment, institution type, and football expenditures for this single sample?</li>
-<li>What if we want to say something about the relationship between these variables for all colleges and universities with football programs and across different years?</li>
-</ul>
-</div>
-</section>
 <section>
 <section id="inference-for-regression" class="title-slide slide level1 center">
 <h1>Inference for regression</h1>
 
 </section>
-<section id="statistical-inference" class="slide level2">
+<section id="statistical-inference" class="slide level2 midi">
 <h2>Statistical inference</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -615,53 +571,8 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 </section>
-<section id="linear-regression-model-1" class="slide level2">
+<section id="linear-regression-model-1" class="slide level2 midi">
 <h2>Linear regression model</h2>
-<p><span class="math display">\[\begin{aligned}
-\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{8mm} \boldsymbol{\epsilon} \sim N(0, \sigma^2_{\epsilon}\mathbf{I})
-\end{aligned}
-\]</span></p>
-<p>such that the errors are independent and normally distributed.</p>
-<div class="fragment">
-<ul>
-<li><strong>Independent</strong>: Knowing the error term for one observation doesn’t tell you anything about the error term for another observation</li>
-<li><strong>Normally distributed</strong>: Tell us the shape of the distribution of residuals</li>
-</ul>
-<div class="question">
-<p>What else do we know about the distribution of the residuals based on this equation?</p>
-</div>
-</div>
-</section>
-<section id="describing-random-phenomena" class="slide level2">
-<h2>Describing random phenomena</h2>
-<div>
-<ul>
-<li class="fragment"><p>There is some uncertainty in the residuals (and the predicted responses), so we use mathematical models to describe that uncertainty.</p></li>
-<li class="fragment"><p>Some terminology:</p>
-<ul>
-<li class="fragment"><p><strong>Sample space</strong>: Set of all possible outcomes</p></li>
-<li class="fragment"><p><strong>Random variable</strong>: Function (mapping) from the sample space onto real numbers</p></li>
-<li class="fragment"><p><strong>Event:</strong> Subset of the sample space, i.e., a set of possible outcomes (possible values the random variable can take)</p></li>
-<li class="fragment"><p><strong>Probability distribution function:</strong> Mathematical function that produces probability of occurrences for events in the sample space</p></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="example" class="slide level2 midi">
-<h2>Example</h2>
-<p>Suppose we are tossing 2 fair coins with sides heads (H) and tails (T)</p>
-<div>
-<ul>
-<li class="fragment"><p><strong>Sample space</strong>: {HH, HT, TH, TT}</p></li>
-<li class="fragment"><p><strong>Random variable</strong>: <span class="math inline">\(X\)</span> : The number of heads in two coin tosses</p></li>
-<li class="fragment"><p><strong>Event:</strong> We flip two coins and get 1 head</p></li>
-<li class="fragment"><p><strong>Probability distribution function:</strong> <span class="math display">\[P(X = x_i) = {2 \choose x_i}0.5^{x_i}{0.5}^{2-x_i}\]</span></p></li>
-<li class="fragment"><p>Now we can find <span class="math display">\[P(X = 1) = {2 \choose 1}0.5^1{0.5}^{2-1} = 0.5\]</span></p></li>
-</ul>
-</div>
-</section>
-<section id="mathematical-representation" class="slide level2 midi">
-<h2>Mathematical representation</h2>
 <p><span class="math display">\[
 \mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma_\epsilon^2\mathbf{I})
 \]</span></p>
@@ -726,14 +637,12 @@ Prof.&nbsp;Maria Tackett
 <p><span class="math display">\[
 \hat{\sigma}^2_\epsilon = \frac{\sum_\limits{i=1}^n(y_i - \hat{y}_i)^2}{n-p-1} = \frac{\sum_\limits{i=1}^ne_i^2}{n - p - 1} = \frac{SSR}{n - p - 1}
 \]</span></p>
-<div class="fragment">
 <ul>
 <li>The <strong>regression standard error</strong> <span class="math inline">\(\hat{\sigma}_{\epsilon}\)</span> is a measure of the average distance between the observations and regression line</li>
 </ul>
 <p><span class="math display">\[
 \hat{\sigma}_\epsilon = \sqrt{\frac{SSR}{n - p - 1}}
 \]</span></p>
-</div>
 </section></section>
 <section>
 <section id="inference-for-a-single-coefficient" class="title-slide slide level1 center">
@@ -747,25 +656,7 @@ Prof.&nbsp;Maria Tackett
 <li><p><strong>Hypothesis test:</strong> Is there a linear relationship between the response and <span class="math inline">\(x_j\)</span>?</p></li>
 <li><p><strong>Confidence interval</strong>: What is a plausible range of values <span class="math inline">\(\beta_j\)</span> can take?</p></li>
 </ul>
-<div class="fragment">
 <p>But first we need to understand the distribution of <span class="math inline">\(\hat{\beta}_j\)</span></p>
-</div>
-</section>
-<section id="sampling-distribution-of-hatbeta" class="slide level2 midi">
-<h2>Sampling distribution of <span class="math inline">\(\hat{\beta}\)</span></h2>
-<ul>
-<li><p>A <strong>sampling distribution</strong> is the probability distribution of a statistic based on a large number of random samples of size <span class="math inline">\(n\)</span> from a population</p></li>
-<li><p>The sampling distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the probability distribution of the estimated coefficients if we repeatedly took samples of size <span class="math inline">\(n\)</span> and fit the regression model</p></li>
-</ul>
-<p><span class="math display">\[
-\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_\epsilon(\mathbf{X}^T\mathbf{X})^{-1})
-\]</span></p>
-<div class="fragment">
-<p>The estimated coefficients <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> are <strong>normally distributed</strong> with</p>
-<p><span class="math display">\[
-E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\boldsymbol{X}^T\boldsymbol{X})^{-1}
-\]</span></p>
-</div>
 </section>
 <section id="sampling-distribution-of-hatbeta_j" class="slide level2">
 <h2>Sampling distribution of <span class="math inline">\(\hat{\beta}_j\)</span></h2>
@@ -798,46 +689,29 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 <section id="hypothesis-test-for-beta_j-hypotheses" class="slide level2">
 <h2>Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Hypotheses</h2>
 <p>We will generally test the hypotheses:</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;H_0: \beta_j = 0 \\
-&amp;H_a: \beta_j \neq 0
-\end{aligned}
-\]</span></p>
-<div class="question">
-<p>State these hypotheses in words.</p>
-</div>
+<ul>
+<li><p><strong>Null Hypothesis</strong>: <span class="math inline">\(H_0: \beta_j = 0\)</span></p>
+<ul>
+<li>There is no linear relationship between <span class="math inline">\(\beta_j\)</span> and <span class="math inline">\(y\)</span> after accounting for the other variables in the model</li>
+</ul></li>
+<li><p><strong>Alternative hypothesis</strong>: <span class="math inline">\(H_a: \beta_j \neq 0\)</span></p>
+<ul>
+<li>There is a linear relationship between <span class="math inline">\(\beta_j\)</span> and <span class="math inline">\(y\)</span> after accounting for the other variables in the model</li>
+</ul></li>
+</ul>
 </section>
 <section id="hypothesis-test-for-beta_j-test-statistic" class="slide level2 midi">
 <h2>Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Test statistic</h2>
-<p><strong>Test statistic:</strong> Number of standard errors the estimate is away from the null</p>
+<p><strong>Test statistic:</strong> Number of standard errors the estimate is away from the null hypothesized value</p>
 <p><span class="math display">\[
 \text{Test Statstic} = \frac{\text{Estimate - Null}}{\text{Standard error}} \\
 \]</span></p>
+<p><br></p>
 <div class="fragment">
-<p>If <span class="math inline">\(\sigma^2_{\epsilon}\)</span> was known, the test statistic would be</p>
-<p><span class="math display">\[Z = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)} ~ = ~\frac{\hat{\beta}_j - 0}{\sqrt{\sigma^2_\epsilon C_{jj}}} ~\sim ~ N(0, 1)
-\]</span></p>
-</div>
-<div class="fragment">
-<p>In general, <span class="math inline">\(\sigma^2_{\epsilon}\)</span> is <u>not</u> known, so we use <span class="math inline">\(\hat{\sigma}_{\epsilon}^2\)</span> to calculate <span class="math inline">\(SE(\hat{\beta}_j)\)</span></p>
 <p><span class="math display">\[T = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)} ~ = ~\frac{\hat{\beta}_j - 0}{\sqrt{\hat{\sigma}^2_\epsilon C_{jj}}} ~\sim ~ t_{n-p-1}
 \]</span></p>
 </div>
 </section>
-<section id="hypothesis-test-for-beta_j-test-statistic-1" class="slide level2">
-<h2>Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Test statistic</h2>
-<ul>
-<li><p>The test statistic <span class="math inline">\(T\)</span> follows a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n - p -1\)</span> degrees of freedom.</p></li>
-<li><p>We need to account for the additional variability introduced by calculating <span class="math inline">\(SE(\hat{\beta}_j)\)</span> using an estimated value instead of a constant</p></li>
-</ul>
-</section>
-<section id="t-vs.-n01" class="slide level2">
-<h2><em>t</em> vs.&nbsp;N(0,1)</h2>
-
-<img data-src="08-inference_files/figure-revealjs/fig-normal-t-curves-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p class="caption">
-Figure&nbsp;1: Standard normal vs.&nbsp;t distributions
-</p></section>
 <section id="hypothesis-test-for-beta_j-p-value" class="slide level2">
 <h2>Hypothesis test for <span class="math inline">\(\beta_j\)</span>: P-value</h2>
 <p>The <strong>p-value</strong> is the probability of observing a test statistic at least as extreme (in the direction of the alternative hypothesis) from the null value as the one observed</p>
@@ -845,11 +719,6 @@ Figure&nbsp;1: Standard normal vs.&nbsp;t distributions
 p-value = P(|t| &gt; |\text{test statistic}|),
 \]</span></p>
 <p>calculated from a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n- p - 1\)</span> degrees of freedom</p>
-<div class="fragment">
-<div class="question">
-<p>Why do we take into account “extreme” on both the high and low ends?</p>
-</div>
-</div>
 </section>
 <section id="understanding-the-p-value" class="slide level2">
 <h2>Understanding the p-value</h2>
@@ -887,17 +756,340 @@ p-value = P(|t| &gt; |\text{test statistic}|),
 <ul>
 <li><p>Make a conclusion by comparing the p-value to a predetermined decision-making threshold called the significance level ( <span class="math inline">\(\alpha\)</span> level)</p>
 <ul>
-<li><p>If <span class="math inline">\(\text{P-value} &lt; \alpha\)</span>: Reject <span class="math inline">\(H_0\)</span></p></li>
-<li><p>If <span class="math inline">\(\text{P-value} \geq \alpha\)</span>: Fail to reject <span class="math inline">\(H_0\)</span></p></li>
+<li><p>If <span class="math inline">\(\text{p-value} &lt; \alpha\)</span>: Reject <span class="math inline">\(H_0\)</span></p></li>
+<li><p>If <span class="math inline">\(\text{p-value} \geq \alpha\)</span>: Fail to reject <span class="math inline">\(H_0\)</span></p></li>
 </ul></li>
 <li><p>State the conclusion in the context of the data</p></li>
 </ul>
 </section></section>
-<section>
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
 <p>📋 <a href="https://sta221-fa24.netlify.app/ae/ae-03-inference" class="uri">https://sta221-fa24.netlify.app/ae/ae-03-inference</a></p>
+</div>
+</section>
+
+<section>
+<section id="confidence-interval-for-beta_j" class="title-slide slide level1 center">
+<h1>Confidence interval for <span class="math inline">\(\beta_j\)</span></h1>
+
+</section>
+<section id="confidence-interval-for-beta_j-1" class="slide level2 midi">
+<h2>Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
+<div>
+<ul>
+<li class="fragment"><p>A plausible range of values for a population parameter is called a <strong>confidence interval</strong></p></li>
+<li class="fragment"><p>Using only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net</p>
+<ul>
+<li class="fragment"><p>We can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish</p></li>
+<li class="fragment"><p>Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="what-confidence-means" class="slide level2 midi">
+<h2>What “confidence” means</h2>
+<div>
+<ul>
+<li class="fragment"><p>We will construct <span class="math inline">\(C\%\)</span> confidence intervals.</p>
+<ul>
+<li class="fragment">The confidence level impacts the width of the interval</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li class="fragment">“Confident” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate <span class="math inline">\(C\%\)</span> CIs for the coefficient of <span class="math inline">\(x_j\)</span>, then <span class="math inline">\(C\%\)</span> of those intervals will contain the true value of the coefficient <span class="math inline">\(\beta_j\)</span></li>
+</ul>
+<p><br></p>
+<ul>
+<li class="fragment">Balance precision and accuracy when selecting a confidence level</li>
+</ul>
+</div>
+</section>
+<section id="confidence-interval-for-beta_j-2" class="slide level2">
+<h2>Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
+<p><span class="math display">\[
+\text{Estimate} \pm \text{ (critical value) } \times \text{SE}
+\]</span></p>
+<p><br></p>
+<div class="fragment">
+<p><span class="math display">\[
+\hat{\beta}_1 \pm t^* \times SE({\hat{\beta}_j})
+\]</span></p>
+<p>where <span class="math inline">\(t^*\)</span> is calculated from a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n-p-1\)</span> degrees of freedom</p>
+</div>
+</section>
+<section id="confidence-interval-critical-value" class="slide level2">
+<h2>Confidence interval: Critical value</h2>
+<div class="fragment" data-fragment-index="1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># confidence level: 95%</span></span>
+<span id="cb4-2"><a></a><span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> <span class="fu">nrow</span>(football) <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.97928</code></pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="fragment" data-fragment-index="2">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># confidence level: 90%</span></span>
+<span id="cb6-2"><a></a><span class="fu">qt</span>(<span class="fl">0.95</span>, <span class="at">df =</span> <span class="fu">nrow</span>(football) <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.657235</code></pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="fragment" data-fragment-index="3">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># confidence level: 99%</span></span>
+<span id="cb8-2"><a></a><span class="fu">qt</span>(<span class="fl">0.995</span>, <span class="at">df =</span> <span class="fu">nrow</span>(football) <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.61606</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="ci-for-beta_j-calculation" class="slide level2">
+<h2>95% CI for <span class="math inline">\(\beta_j\)</span>: Calculation</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ci-for-beta_j-in-r" class="slide level2">
+<h2>95% CI for <span class="math inline">\(\beta_j\)</span> in R</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">tidy</span>(exp_fit, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13.426</td>
+<td style="text-align: right;">25.239</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.562</td>
+<td style="text-align: right;">0.999</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-19.466</td>
+<td style="text-align: right;">-6.986</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+<p><strong>Interpretation</strong>: We are 95% confident that for each additional 1,000 students enrolled, the institution’s expenditures on football will be greater by $562,000 to $999,000, on average, holding institution type constant.</p>
+</section></section>
+<section>
+<section id="test-for-overall-significance" class="title-slide slide level1 center">
+<h1>Test for overall significance</h1>
+
+</section>
+<section id="test-for-overall-significance-hypotheses" class="slide level2">
+<h2>Test for overall significance: Hypotheses</h2>
+<p>We can conduct a hypothesis test using the ANOVA table to determine if there is at least one non-zero coefficient in the model</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;H_0: \beta_1 = \dots = \beta_p = 0\\
+&amp;H_a: \beta_j \neq 0 \text{ for at least one }j
+\end{aligned}
+\]</span></p>
+<div class="fragment">
+<p><strong>For the football data</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;H_0: \beta_1 = \beta_2 = 0\\
+&amp;H_a: \beta_j \neq 0 \text{ for at least one }j
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="test-for-overall-significance-test-statistic" class="slide level2 midi">
+<h2>Test for overall significance: Test statistic</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Source</th>
+<th style="text-align: right;">Df</th>
+<th style="text-align: right;">Sum Sq</th>
+<th style="text-align: left;">Mean Sq</th>
+<th style="text-align: left;">F Stat</th>
+<th style="text-align: left;">Pr(&gt; F)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Model</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7138.591</td>
+<td style="text-align: left;">3569.296</td>
+<td style="text-align: left;">26.628</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">124</td>
+<td style="text-align: right;">16621.344</td>
+<td style="text-align: left;">134.043</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">126</td>
+<td style="text-align: right;">23759.935</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+<p><strong>Test statistic</strong>: Ratio of explained to unexplained variability</p>
+<p><span class="math display">\[
+F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
+\]</span></p>
+<p>The test statistic follows an <span class="math inline">\(F\)</span> distribution with <span class="math inline">\(p\)</span> and <span class="math inline">\(n -  p - 1\)</span> degrees of freedom</p>
+</section>
+<section id="test-for-overall-significance-p-value" class="slide level2">
+<h2>Test for overall significance: P-value</h2>
+
+<img data-src="09-inference-pt2_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[
+\text{P-value} = \text{Pr}(F &gt; \text{F Stat})
+\]</span></p>
+</section>
+<section id="test-for-overall-significance-conclusion" class="slide level2 midi">
+<h2>Test for overall significance: Conclusion</h2>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;H_0: \beta_1 = \beta_2 = 0\\
+&amp;H_a: \beta_j \neq 0 \text{ for at least one }j
+\end{aligned}
+\]</span></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>football_anova <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Source</th>
+<th style="text-align: right;">Df</th>
+<th style="text-align: right;">Sum Sq</th>
+<th style="text-align: left;">Mean Sq</th>
+<th style="text-align: left;">F Stat</th>
+<th style="text-align: left;">Pr(&gt; F)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Model</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7138.591</td>
+<td style="text-align: left;">3569.296</td>
+<td style="text-align: left;">26.628</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">124</td>
+<td style="text-align: right;">16621.344</td>
+<td style="text-align: left;">134.043</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">126</td>
+<td style="text-align: right;">23759.935</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="question">
+<p>What is the conclusion from this hypothesis test?</p>
 </div>
 </section>
 <section id="recap" class="slide level2">
@@ -907,6 +1099,7 @@ p-value = P(|t| &gt; |\text{test statistic}|),
 <li><p>Described the assumptions for regression</p></li>
 <li><p>Connected the distribution of residuals and inferential procedures</p></li>
 <li><p>Conducted inference on a single coefficient</p></li>
+<li><p>Conducted inference on the overall regression model</p></li>
 </ul>
 
 <div class="quarto-auto-generated-content">
