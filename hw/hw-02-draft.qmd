@@ -91,9 +91,8 @@ The data are contained in `lego-sample.csv`. Use the code below to read in the d
 #| echo: true
 #| warning: false
 #| message: false
-legos <- read_csv("data/lego-sample.csv") |>
-  mutate(Minifigures = replace_na(Minifigures, 0)) |>
-  drop_na()
+legos <- read_csv("data/lego-sample.csv")|>
+  drop_na(Pieces, Amazon_Price, Size, Minifigures)
 ```
 
 ::: callout-note
