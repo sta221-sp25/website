@@ -74,28 +74,30 @@ The applied exercises are focused on applying the concepts to analyze data.
 
 Write all narrative using complete sentences and include informative axis labels / titles on visualizations.
 
-## Data: LEGO<sup>&reg;</sup> sets
+## Data: LEGO<sup>®</sup> sets
 
-The data for **Exercises 3 - 5** includes information about LEGO<sup>&reg;</sup> sets from themes produced January 1, 2018 and September 11, 2020. The data were originally scraped from Brickset.com, an online LEGO set guide and were obtained for this assignment from @peterson2021s.
+The data for **Exercises 3 - 5** includes information about LEGO<sup>®</sup> sets from themes produced January 1, 2018 and September 11, 2020. The data were originally scraped from Brickset.com, an online LEGO set guide and were obtained for this assignment from @peterson2021s.
 
 You will work with data on about 400 randomly selected LEGO sets produced during this time period. The primary variables are interest in this analysis are
 
 -   `Pieces`: Number of pieces in the set from brickset.com.
--   `Minifigures`: Number of minifigures (LEGO<sup>&reg;</sup> people) in the set scraped from brickset.com.
+-   `Minifigures`: Number of minifigures (LEGO<sup>®</sup> people) in the set scraped from brickset.com.
 -   `Amazon_Price`: Price of the set on Amazon.com (in U.S. dollars)
--   `Size`: General size of the interlocking bricks (Large = LEGO Duplo<sup>&reg;</sup> sets - which include large brick pieces safe for children ages 1 to 5, Small = LEGO<sup>&reg;</sup> sets which- include the traditional smaller brick pieces created for age groups 5 and - older, e.g., City, Friends)
+-   `Size`: General size of the interlocking bricks (Large = LEGO Duplo<sup>®</sup> sets - which include large brick pieces safe for children ages 1 to 5, Small = LEGO<sup>®</sup> sets which- include the traditional smaller brick pieces created for age groups 5 and - older, e.g., City, Friends)
 
 The data are contained in `lego-sample.csv`. Use the code below to read in the data and remove any observations that have missing values for the relevant variables.
 
 ```{r}
-#| include: false
+#| echo: true
+#| warning: false
+#| message: false
 legos <- read_csv("data/lego-sample.csv") |>
   mutate(Minifigures = replace_na(Minifigures, 0)) |>
   drop_na()
 ```
 
 ::: callout-note
-**Analysis goal**: We want to fit a multiple linear regression model to predict the price of LEGO<sup>&reg;</sup> sets on Amazon.com based on `Pieces`, `Size`, and `Minifigures`.
+**Analysis goal**: We want to fit a multiple linear regression model to predict the price of LEGO<sup>®</sup> sets on Amazon.com based on `Pieces`, `Size`, and `Minifigures`.
 :::
 
 ## Exercise 3
@@ -121,7 +123,7 @@ You are convinced from the model output that there is evidence of a linear relat
 
 Instead of using the number of minifigures in the model, you decide to create an indicator variable for whether or not there are any minifigures in the set.
 
-1.  Create an indicator variable that takes the value "No" if there are zero minifigures in the LEGO<sup>&reg;</sup>, and "Yes" if there is at least one minifigure.
+1.  Create an indicator variable that takes the value "No" if there are zero minifigures in the LEGO<sup>®</sup>, and "Yes" if there is at least one minifigure.
 
 2.  You hypothesize that the relationship between the price and number of pieces may differ based on whether or not there are minifigures in the set.
 
