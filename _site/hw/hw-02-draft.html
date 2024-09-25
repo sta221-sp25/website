@@ -573,6 +573,65 @@ This analysis focuses on indicators from 2011 on 165 countries. The variables of
 \]</span></p>
 <p>where <span class="math inline">\(\log(GDP)\)</span> is the natural log of <code>gdp.per.capita</code>.</p>
 <p>The output from R is shown below.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">4.491</td>
+<td style="text-align: right;">1.638</td>
+<td style="text-align: right;">2.742</td>
+<td style="text-align: right;">0.007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sanit.access.factorhigh</td>
+<td style="text-align: right;">-6.993</td>
+<td style="text-align: right;">1.971</td>
+<td style="text-align: right;">-3.548</td>
+<td style="text-align: right;">0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">edu.expend</td>
+<td style="text-align: right;">0.097</td>
+<td style="text-align: right;">0.038</td>
+<td style="text-align: right;">2.550</td>
+<td style="text-align: right;">0.012</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">life.expect</td>
+<td style="text-align: right;">0.030</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">1.061</td>
+<td style="text-align: right;">0.291</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sanit.access.factorhigh:life.expect</td>
+<td style="text-align: right;">0.122</td>
+<td style="text-align: right;">0.032</td>
+<td style="text-align: right;">3.853</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <ol type="1">
 <li><p>Interpret the coefficient of <code>edu.expend</code> in the context of the data. You can interpret the coefficient in terms of <span class="math inline">\(log(GDP)\)</span> .</p></li>
 <li><p>Interpret the coefficient of <code>sanit.access.factorhigh</code> in the context of the data.You can interpret the coefficient in terms of <span class="math inline">\(log(GDP)\)</span> .</p></li>

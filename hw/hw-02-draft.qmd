@@ -160,7 +160,8 @@ The output from R is shown below.
 
 ```{r}
 #| echo: false
-#| include: false
+#| message: false
+#| warning: false
 
 world_df <- read_csv("data/wdi.2011.csv") |>
   filter(!is.na(sanit.access.factor))|>
