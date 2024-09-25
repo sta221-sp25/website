@@ -69,11 +69,11 @@ The purpose of the project proposal is for your team to identify the data set yo
 
 The data set must meet the following criteria:
 
--    At least 500 observations
+-   At least 500 observations
 
 -   At least 10 columns, such that at least 6 of the columns are useful and unique predictor variables.
 
-    -   e.g., identifier variables such as "name", "ID number", etc. are \[not\]{.underline} useful predictor variables.
+    -   e.g., identifier variables such as "name", "ID number", etc. are <u>not</u> useful predictor variables.
 
     -   e.g., if you have multiple columns with the same information (e.g. "state abbreviation" and "state name"), then they are not unique predictors.
 
@@ -86,7 +86,7 @@ The data set must meet the following criteria:
 -   May not be data that has previously been used in any course materials, or any derivation of data that has been used in course materials.
 
 ::: callout-warning
-###  Types of data sets to avoid
+### Types of data sets to avoid
 
 -   Data that are likely violate the independence condition. Therefore, avoid data with repeated measures, data collected over time, etc.
 
@@ -115,15 +115,15 @@ Reuse and iterate on the work from the Research Questions milestone.
 
     -   This is a narrative about what you think regarding the research question, not formal statistical hypotheses.
 
-### Section 2: Data description 
+### Section 2: Data description
 
 -   The source of the data set
 
 -   A description of when and how the data were originally collected (by the original data curator, not necessarily how you found the data)
 
--   A description of the observations and general characteristics being measured --\>
+-   A description of the observations and general characteristics being measured
 
-### Section 3: Initial exploratory data analysis 
+### Section 3: Initial exploratory data analysis
 
 -   Description of data cleaning you need to do to prepare for analysis (can focus on the response variable for now), such as joining data sets, imputing missing values, variable transformation, creating a new variable, etc.
 
@@ -135,7 +135,7 @@ Reuse and iterate on the work from the Research Questions milestone.
 
 -   regression model technique (multiple linear regression or logistic regression for a categorical response variable
 
-### Data dictionary (aka code book) 
+### Data dictionary (aka code book)
 
 Submit a data dictionary for all the variables in your data set in the `README` of the `data` folder. You do <u>not</u> need to include the data dictionary in the PDF document.
 
@@ -167,7 +167,7 @@ The purpose of this milestone is begin exploring the data and get early feedback
 
 Below is a brief description of the sections to include in this step:
 
-### Introduction 
+### Introduction
 
 This section includes an introduction to the project motivation, background, data, and research question.
 
@@ -183,7 +183,7 @@ This section includes the following:
     -   Bivariate EDA of the response and key predictor variables
     -   Potential interaction effects.
 
-### Submission 
+### Submission
 
 Write your draft introduction and exploratory data analysis in the `written-report.qmd` file in your team's GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Thursday, October 31 at 11:59pm.**
 
