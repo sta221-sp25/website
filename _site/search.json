@@ -309,7 +309,7 @@
     "href": "slides/10-prop-of-estimators.html#what-confidence-means",
     "title": "Properties of estimators",
     "section": "What “confidence” means",
-    "text": "What “confidence” means\n\n\nWe will construct \\(C\\%\\) confidence intervals\n\nThe confidence level impacts the width of the interval\n\n\n\n\n“Confidence” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate \\(C\\%\\) CIs for the coefficient of \\(x_j\\), then \\(C\\%\\) of those intervals will contain the true value of the coefficient \\(\\beta_j\\)\n\n\n\nNeed to balance precision and accuracy when selecting a confidence level"
+    "text": "What “confidence” means\n\n\nWe will construct \\(C\\%\\) confidence intervals\n\nThe confidence level impacts the width of the interval\n\n“Confidence” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate \\(C\\%\\) CIs for the coefficient of \\(x_j\\), then \\(C\\%\\) of those intervals will contain the true value of the coefficient \\(\\beta_j\\)\nNeed to balance precision and accuracy when selecting a confidence level"
   },
   {
     "objectID": "slides/10-prop-of-estimators.html#confidence-interval-for-beta_j-2",
@@ -337,7 +337,7 @@
     "href": "slides/10-prop-of-estimators.html#interpreting-the-ci",
     "title": "Properties of estimators",
     "section": "Interpreting the CI",
-    "text": "Interpreting the CI"
+    "text": "Interpreting the CI\n🔗 edstem.org/us/courses/62513/discussion/648045"
   },
   {
     "objectID": "slides/10-prop-of-estimators.html#computing-ci-in-r",
@@ -424,11 +424,18 @@
     "text": "“Linear” regression model\nWhat does it mean for a model to be a “linear” regression model?\n\n\nLinear regression models are linear in the parameters, i.e. given an observation \\(y_i\\)\n\\[\ny_i = \\beta_0 + \\beta_1f_1(x_{i1}) +  \\dots + \\beta_pf_p(x_{ip}) + \\epsilon_i\n\\]\nThe functions \\(f_1, \\ldots, f_p\\) can be non-linear as long as \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) are linear in \\(Y\\)"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#identify-the-linear-models",
-    "href": "slides/10-prop-of-estimators.html#identify-the-linear-models",
+    "objectID": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model",
+    "href": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model",
     "title": "Properties of estimators",
-    "section": "Identify the linear models",
-    "text": "Identify the linear models"
+    "section": "Identify the linear regression model",
+    "text": "Identify the linear regression model\n🔗 edstem.org/us/courses/62513/discussion/648051"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model-1",
+    "href": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model-1",
+    "title": "Properties of estimators",
+    "section": "Identify the linear regression model",
+    "text": "Identify the linear regression model\n\n\n\\(y_i = \\beta_0 + \\beta_1x_{i1} + \\beta_2x_{i1}^2 + \\beta_3x_{i2}  + \\epsilon_i\\)\n\\(y_i = \\beta_1x_{i1} + \\beta_2x_{i2} + \\beta_3x_{i1}x_{i2} + \\epsilon_i\\)\n\\(y_i = \\beta_0  + \\beta_1\\sin(x_{i1} + \\beta_2x_{i2}) + \\beta_3x_{i3} + \\epsilon_i\\)\n\\(y_i = \\beta_0 + \\beta_1e^{x_{i1}} + \\beta_2e^{x_{i2}} + \\epsilon_i\\)\n\\(y_i = \\exp(\\beta_0 + \\beta_1x_{i1} + \\beta_2x_{i2} + \\beta_3x_{i3}) + \\epsilon_i\\)"
   },
   {
     "objectID": "slides/10-prop-of-estimators.html#recap",

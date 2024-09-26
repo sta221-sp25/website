@@ -524,20 +524,14 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="what-confidence-means" class="slide level2 midi">
 <h2>What “confidence” means</h2>
-<div>
+<div class="extrapad">
 <ul>
 <li class="fragment"><p>We will construct <span class="math inline">\(C\%\)</span> confidence intervals</p>
 <ul>
 <li class="fragment">The confidence level impacts the width of the interval</li>
 </ul></li>
-</ul>
-<p><br></p>
-<ul>
-<li class="fragment">“Confidence” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate <span class="math inline">\(C\%\)</span> CIs for the coefficient of <span class="math inline">\(x_j\)</span>, then <span class="math inline">\(C\%\)</span> of those intervals will contain the true value of the coefficient <span class="math inline">\(\beta_j\)</span></li>
-</ul>
-<p><br></p>
-<ul>
-<li class="fragment">Need to balance precision and accuracy when selecting a confidence level</li>
+<li class="fragment"><p>“Confidence” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate <span class="math inline">\(C\%\)</span> CIs for the coefficient of <span class="math inline">\(x_j\)</span>, then <span class="math inline">\(C\%\)</span> of those intervals will contain the true value of the coefficient <span class="math inline">\(\beta_j\)</span></p></li>
+<li class="fragment"><p>Need to balance precision and accuracy when selecting a confidence level</p></li>
 </ul>
 </div>
 </section>
@@ -645,8 +639,8 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="interpreting-the-ci" class="slide level2">
 <h2>Interpreting the CI</h2>
-<!--# Make Ed Discussion post-->
-<!--# Best interpretation: Interpretation: We are 95% confident that for each additional 1,000 students enrolled, the institution's expenditures on football will be greater by $562,000 to $999,000, on average, holding institution type constant.-->
+<p>🔗 <a href="https://edstem.org/us/courses/62513/discussion/648045">edstem.org/us/courses/62513/discussion/648045</a></p>
+<iframe allowfullscreen="" frameborder="0" height="100%" mozallowfullscreen="" style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/648045" width="100%"></iframe>
 </section>
 <section id="computing-ci-in-r" class="slide level2">
 <h2>Computing CI in R</h2>
@@ -858,9 +852,22 @@ y_i = \beta_0 + \beta_1f_1(x_{i1}) +  \dots + \beta_pf_p(x_{ip}) + \epsilon_i
 </ul>
 </div>
 </section>
-<section id="identify-the-linear-models" class="slide level2">
-<h2>Identify the linear models</h2>
-<!--# ed discussion poll-->
+<section id="identify-the-linear-regression-model" class="slide level2">
+<h2>Identify the linear regression model</h2>
+<p>🔗 <a href="https://edstem.org/us/courses/62513/discussion/648051">edstem.org/us/courses/62513/discussion/648051</a></p>
+<iframe allowfullscreen="" frameborder="0" height="100%" mozallowfullscreen="" style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/648051" width="100%"></iframe>
+</section>
+<section id="identify-the-linear-regression-model-1" class="slide level2">
+<h2>Identify the linear regression model</h2>
+<div class="extrapad">
+<ol type="1">
+<li><p><span class="math inline">\(y_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i1}^2 + \beta_3x_{i2}  + \epsilon_i\)</span></p></li>
+<li><p><span class="math inline">\(y_i = \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i1}x_{i2} + \epsilon_i\)</span></p></li>
+<li><p><span class="math inline">\(y_i = \beta_0  + \beta_1\sin(x_{i1} + \beta_2x_{i2}) + \beta_3x_{i3} + \epsilon_i\)</span></p></li>
+<li><p><span class="math inline">\(y_i = \beta_0 + \beta_1e^{x_{i1}} + \beta_2e^{x_{i2}} + \epsilon_i\)</span></p></li>
+<li><p><span class="math inline">\(y_i = \exp(\beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i3}) + \epsilon_i\)</span></p></li>
+</ol>
+</div>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>

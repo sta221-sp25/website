@@ -162,16 +162,12 @@ We often want to conduct inference on individual model coefficients
 
 ## What "confidence" means {.midi}
 
-::: incremental
+::: {.incremental .extrapad}
 -   We will construct $C\%$ confidence intervals
 
     -   The confidence level impacts the width of the interval
 
-<br>
-
 -   "Confidence" means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate $C\%$ CIs for the coefficient of $x_j$, then $C\%$ of those intervals will contain the true value of the coefficient $\beta_j$
-
-<br>
 
 -   Need to balance precision and accuracy when selecting a confidence level
 :::
@@ -251,10 +247,11 @@ $$
 
 ## Interpreting the CI
 
-<!--# Make Ed Discussion post-->
+🔗 [edstem.org/us/courses/62513/discussion/648045](https://edstem.org/us/courses/62513/discussion/648045)
 
-<!--# Best interpretation: Interpretation: We are 95% confident that for each additional 1,000 students enrolled, the institution's expenditures on football will be greater by $562,000 to $999,000, on average, holding institution type constant.-->
-
+```{=html}
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/648045" width="100%"></iframe>
+```
 ## Computing CI in R
 
 ```{r}
@@ -311,7 +308,7 @@ Suppose you are throwing darts at a target
 
 -   **Acceptable scenario:** There's some trade-off between the bias and variance. For example, it may be acceptable for the darts to be clustered around a point that is close to the target (low bias and low variance)
 
-## Bias and variance 
+## Bias and variance
 
 ::: incremental
 -   Each time we take a sample of size $n$, we can find the least squares estimator (throw dart at target)
@@ -421,9 +418,26 @@ What does it mean for a model to be a "linear" regression model?
 
 -   The functions $f_1, \ldots, f_p$ can be non-linear as long as $\beta_0, \beta_1, \ldots, \beta_p$ are linear in $Y$
 
-## Identify the linear models
+## Identify the linear regression model
 
-<!--# ed discussion poll-->
+🔗 [edstem.org/us/courses/62513/discussion/648051](https://edstem.org/us/courses/62513/discussion/648051)
+
+```{=html}
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/648051" width="100%"></iframe>
+```
+## Identify the linear regression model 
+
+::: extrapad
+1.  $y_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i1}^2 + \beta_3x_{i2}  + \epsilon_i$
+
+2.  $y_i = \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i1}x_{i2} + \epsilon_i$
+
+3.  $y_i = \beta_0  + \beta_1\sin(x_{i1} + \beta_2x_{i2}) + \beta_3x_{i3} + \epsilon_i$
+
+4.  $y_i = \beta_0 + \beta_1e^{x_{i1}} + \beta_2e^{x_{i2}} + \epsilon_i$
+
+5.  $y_i = \exp(\beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i3}) + \epsilon_i$
+:::
 
 ## Recap
 
