@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HW 02: Multiple linear regression – STA 221 - Fall 2024</title>
+<title>Final project tips + resources – STA 221 - Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,45 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./project.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -121,35 +102,6 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -162,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">HW 02: Multiple linear regression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project.html">Project</a></li><li class="breadcrumb-item"><a href="./project-tips.html">Tips + resources</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,8 +128,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sta221-fa24" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -209,31 +161,31 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../overview.html" class="sidebar-item-text sidebar-link">
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../support.html" class="sidebar-item-text sidebar-link">
+  <a href="./support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../links.html" class="sidebar-item-text sidebar-link">
+  <a href="./links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Useful links</span></a>
   </div>
 </li>
@@ -248,19 +200,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="./computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+  <a href="./computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Troubleshooting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing-r-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="./computing-r-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R resources</span></a>
   </div>
 </li>
@@ -277,31 +229,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hw/hw-01.html" class="sidebar-item-text sidebar-link">
+  <a href="./hw/hw-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hw/hw-02.html" class="sidebar-item-text sidebar-link">
+  <a href="./hw/hw-02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 02</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hw/hw-03.html" class="sidebar-item-text sidebar-link">
+  <a href="./hw/hw-03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 03</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hw/hw-04.html" class="sidebar-item-text sidebar-link">
+  <a href="./hw/hw-04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 04</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hw/stats-experience.html" class="sidebar-item-text sidebar-link">
+  <a href="./hw/stats-experience.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistics experience</span></a>
   </div>
 </li>
@@ -318,43 +270,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-01.html" class="sidebar-item-text sidebar-link">
+  <a href="./labs/lab-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-02.html" class="sidebar-item-text sidebar-link">
+  <a href="./labs/lab-02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 02</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-03.html" class="sidebar-item-text sidebar-link">
+  <a href="./labs/lab-03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 03</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-04.html" class="sidebar-item-text sidebar-link">
+  <a href="./labs/lab-04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 04</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-05.html" class="sidebar-item-text sidebar-link">
+  <a href="./labs/lab-05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 05</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-06.html" class="sidebar-item-text sidebar-link">
+  <a href="./labs/lab-06.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 06</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-07.html" class="sidebar-item-text sidebar-link">
+  <a href="./labs/lab-07.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 07</span></a>
   </div>
 </li>
@@ -362,22 +314,22 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project.html" class="sidebar-item-text sidebar-link">
+  <a href="./project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project-tips.html" class="sidebar-item-text sidebar-link">
+  <a href="./project-tips.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tips + resources</span></a>
   </div>
 </li>
@@ -393,40 +345,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><strong>Learning goals</strong></a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><strong>Getting started</strong></a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual exercises</a>
-  <ul class="collapse">
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  </ul></li>
-  <li><a href="#applied-exercises" id="toc-applied-exercises" class="nav-link" data-scroll-target="#applied-exercises">Applied exercises</a>
-  <ul class="collapse">
-  <li><a href="#instructions-1" id="toc-instructions-1" class="nav-link" data-scroll-target="#instructions-1">Instructions</a></li>
-  <li><a href="#data-lego-sets" id="toc-data-lego-sets" class="nav-link" data-scroll-target="#data-lego-sets">Data: LEGO<sup>®</sup> sets</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#data-world-bank" id="toc-data-world-bank" class="nav-link" data-scroll-target="#data-world-bank">Data: World Bank</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
-  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
-  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
-  <li><a href="#bonus-optional" id="toc-bonus-optional" class="nav-link" data-scroll-target="#bonus-optional">Bonus (optional)</a></li>
-  </ul></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link active" data-scroll-target="#data-sources">Data sources</a></li>
+  <li><a href="#tips" id="toc-tips" class="nav-link" data-scroll-target="#tips">Tips</a></li>
+  <li><a href="#formatting-communication-tips" id="toc-formatting-communication-tips" class="nav-link" data-scroll-target="#formatting-communication-tips">Formatting + communication tips</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional resources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa24/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project.html">Project</a></li><li class="breadcrumb-item"><a href="./project-tips.html">Tips + resources</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">HW 02: Multiple linear regression</h1>
+<h1 class="title">Final project tips + resources</h1>
 </div>
 
 
@@ -443,167 +374,198 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Due date
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This assignment is due on <strong>Thursday, October 3 at 11:59pm.</strong></p>
-</div>
-</div>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>You will use linear regression to analyze the relationship between three or more variables for multiple data sets. You will conduct statistical inference to draw conclusions about these relationships.</p>
-</section>
-<section id="learning-goals" class="level1">
-<h1><strong>Learning goals</strong></h1>
-<p>In this assignment, you will…</p>
+<section id="data-sources" class="level3">
+<h3 class="anchored" data-anchor-id="data-sources">Data sources</h3>
+<section id="some-resources-that-may-be-helpful-as-you-find-data" class="level4">
+<h4 class="anchored" data-anchor-id="some-resources-that-may-be-helpful-as-you-find-data">Some resources that may be helpful as you find data:</h4>
 <ul>
-<li>use multiple linear regression to model the relationship between three or more variables.</li>
-<li>draw conclusions from the model using statistical inference.</li>
-<li>fit and interpret models with interaction terms.</li>
+<li><a href="https://rfun.library.duke.edu/blog/data-sources-for-regression-analysis/">R Data Sources for Regression Analysis</a></li>
+<li><a href="https://data.fivethirtyeight.com/">FiveThirtyEight data</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</a></li>
 </ul>
 </section>
-<section id="getting-started" class="level1">
-<h1><strong>Getting started</strong></h1>
+<section id="other-data-repositories" class="level4">
+<h4 class="anchored" data-anchor-id="other-data-repositories">Other data repositories</h4>
 <ul>
-<li><p>Go to the <a href="https://www.github.com/sta221-fa24">sta221-fa24</a> organization on GitHub. Click on the repo with the prefix <strong>hw-02</strong>. It contains the starter documents you need to complete the lab.</p></li>
-<li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta221-fa24.netlify.app/labs/lab-01#clone-the-repo-start-new-rstudio-project">Lab 01 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
+<li><a href="https://www.who.int/gho/database/en/">World Health Organization</a></li>
+<li><a href="https://data.nber.org/data/">The National Bureau of Economic Research</a></li>
+<li><a href="https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&amp;sId=1479329328660">International Monetary Fund</a></li>
+<li><a href="http://gss.norc.org/">General Social Survey</a></li>
+<li><a href="http://data.un.org/">United Nations Data</a></li>
+<li><a href="https://unstats.un.org/home/">United Nations Statistics Division</a></li>
+<li><a href="https://data.gov.uk/">U.K. Data</a></li>
+<li><a href="https://www.data.gov/">U.S. Data</a></li>
+<li><a href="https://www.census.gov/data.html">U.S. Census Data</a></li>
+<li><a href="https://ec.europa.eu/eurostat/">European Statistics</a></li>
+<li><a href="https://www.statcan.gc.ca/eng/start">Statistics Canada</a></li>
+<li><a href="https://www.pewresearch.org/download-datasets/">Pew Research</a></li>
+<li><a href="https://data.unicef.org/">UNICEF</a></li>
+<li><a href="https://www.cdc.gov/datastatistics/index.html">CDC</a></li>
+<li><a href="https://datacatalog.worldbank.org/">World Bank</a></li>
+<li><a href="https://electionstudies.org//">Election Studies</a></li>
 </ul>
 </section>
-<section id="packages" class="level1">
-<h1>Packages</h1>
-<p>The following packages are used in this assignment:</p>
 </section>
-<section id="conceptual-exercises" class="level1">
-<h1>Conceptual exercises</h1>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.<br>
-<br>
-<strong>You may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.</strong></p>
-</section>
-<section id="exercise-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Let <span class="math inline">\(Var(\hat{\mathbf{y}})\)</span> be the variance of the fitted (predicted) values of the response variable. Show that <span class="math inline">\(Var(\hat{\mathbf{y}}) = \sigma^2_\epsilon \mathbf{H}\)</span>.</p>
-<!--# from Ex 3.27 of Introduction to Linear regression-->
-</section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Suppose we fit the model <span class="math inline">\(\mathbf{y} = \mathbf{X}_1\boldsymbol{\beta}_1 + \boldsymbol{\epsilon}\)</span> when the true model is actually given by <span class="math inline">\(\mathbf{y} = \mathbf{X}_1\boldsymbol{\beta}_1 + \mathbf{X}_2\boldsymbol{\beta}_2 + \boldsymbol{\epsilon}\)</span>. Assume <span class="math inline">\(E(\boldsymbol{\epsilon}) = \mathbf{0}\)</span> for both models.</p>
-<ol type="a">
-<li><p>Find the expected value of the ordinary least-squares estimate <span class="math inline">\(\hat{\boldsymbol{\beta}}_1\)</span>.</p></li>
-<li><p>Under what conditions is the estimate <span class="math inline">\(\hat{\boldsymbol{\beta}}_1\)</span> unbiased?</p></li>
-</ol>
-<!--# Exercise 3.37 from Introduction to linear regression-->
-</section>
-</section>
-<section id="applied-exercises" class="level1">
-<h1>Applied exercises</h1>
-<section id="instructions-1" class="level2">
-<h2 class="anchored" data-anchor-id="instructions-1">Instructions</h2>
-<p>The applied exercises are focused on applying the concepts to analyze data.</p>
-<p><strong>All work for the applied exercises must be typed in your Quarto document following a reproducible workflow.</strong></p>
-<p>Write all narrative using complete sentences and include informative axis labels / titles on visualizations.</p>
-</section>
-<section id="data-lego-sets" class="level2">
-<h2 class="anchored" data-anchor-id="data-lego-sets">Data: LEGO<sup>®</sup> sets</h2>
-<p>The data for <strong>Exercises 3 - 5</strong> includes information about LEGO<sup>®</sup> sets from themes produced January 1, 2018 and September 11, 2020. The data were originally scraped from Brickset.com, an online LEGO set guide and were obtained for this assignment from <span class="citation" data-cites="peterson2021">Peterson and Ziegler (<a href="#ref-peterson2021" role="doc-biblioref">2021</a>)</span>.</p>
-<p>You will work with data on about 400 randomly selected LEGO sets produced during this time period. The primary variables are interest in this analysis are</p>
+<section id="tips" class="level3">
+<h3 class="anchored" data-anchor-id="tips">Tips</h3>
 <ul>
-<li><code>Pieces</code>: Number of pieces in the set from brickset.com.</li>
-<li><code>Minifigures</code>: Number of minifigures (LEGO<sup>®</sup> people) in the set scraped from brickset.com.</li>
-<li><code>Amazon_Price</code>: Price of the set on Amazon.com (in U.S. dollars)</li>
-<li><code>Size</code>: General size of the interlocking bricks (Large = LEGO Duplo<sup>®</sup> sets - which include large brick pieces safe for children ages 1 to 5, Small = LEGO<sup>®</sup> sets which- include the traditional smaller brick pieces created for age groups 5 and - older, e.g., City, Friends)</li>
-</ul>
-<p>The data are contained in <code>lego-sample.csv</code>. Use the code below to read in the data and remove any observations that have missing values for the relevant variables.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>legos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/lego-sample.csv"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(Pieces, Amazon_Price, Size, Minifigures)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Analysis goal</strong>: We want to fit a multiple linear regression model to predict the price of LEGO<sup>®</sup> sets on Amazon.com based on <code>Pieces</code>, <code>Size</code>, and <code>Minifigures</code>.</p>
-</div>
-</div>
-</section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<ol type="a">
-<li>In this analysis, we dropped observations that have missing values for some of the relevant variables.
+<li><p>Ask questions if any of the expectations are unclear.</p></li>
+<li><p><em>Code</em>: In your write up your code should be hidden (<code>echo = FALSE</code>) so that your document is neat and easy to read. However your document should include all your code such that if I re-knit your Qmd file I should be able to obtain the results you presented.</p>
 <ul>
-<li>What is a disadvantage of dropping observations that have missing values, instead of using a method to impute (fill in) the missing data?</li>
-<li>How might dropping these observations impact the generalizability of conclusions?</li>
+<li><strong>Exception:</strong> If you want to highlight something specific about a piece of code, you’re welcome to show that portion.</li>
 </ul></li>
-<li>Fit the regression model and neatly display the results using three digits.</li>
-</ol>
-</section>
-<section id="exercise-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>We want to understand the relationship between <code>Pieces</code> and <code>Amazon_Price</code> based on this model that also takes into the size of the blocks and number of minifigures.</p>
-<p>You are convinced from the model output that there is evidence of a linear relationship between the two variables. Now you want to be more specific and test whether the slope is actually different from 0.1 ($10 increase in the price for every 100 additional pieces).</p>
-<ol type="a">
-<li>Write the null and alternative hypotheses for this test in using words and mathematical notation.</li>
-<li>Calculate the test statistic for this test. You may use any relevant output from the model in the previous exercise.</li>
-<li>What is the distribution of the test statistic under the null hypothesis for this problem?</li>
-<li>Calculate the p-value and state your conclusion in the context of the data using a threshold of <span class="math inline">\(\alpha = 0.05\)</span>.</li>
-<li>Calculate the 95% confidence interval. Is the confidence interval consistent with your conclusion from the hypothesis test? Briefly explain.</li>
-</ol>
-</section>
-<section id="exercise-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<p>Instead of using the number of minifigures in the model, you decide to create an indicator variable for whether or not there are any minifigures in the set.</p>
-<ol type="a">
-<li><p>Create an indicator variable that takes the value “No” if there are zero minifigures in the LEGO<sup>®</sup>, and “Yes” if there is at least one minifigure.</p></li>
-<li><p>You hypothesize that the relationship between the price and number of pieces may differ based on whether or not there are minifigures in the set.</p>
-<p>Make a plot to visualize this potential effect. Does the relationship between price and number of pieces seem to differ based on the presence of minifigures? Briefly explain.</p></li>
-<li><p>Fit a model using the number pieces, size of the blocks, the indicator for minifigures, and the interaction between pieces and the presence of minifigures to predict the price on Amazon.com.</p></li>
-<li><p>Based on this model, is there evidence that the effect pieces on the price differs based on the inclusion of minifigures? Briefly explain your response, referencing any statistics used to make your determination.</p></li>
-</ol>
-</section>
-<section id="data-world-bank" class="level2">
-<h2 class="anchored" data-anchor-id="data-world-bank">Data: World Bank</h2>
-<p>The World Bank collects “world development indicators” about the past and current development of countries. These data are made available on the <a href="https://data.worldbank.org/indicator">World Bank’s website</a>. It can be used to understand the relationships between these various factors and trends over time.<br>
-<br>
-This analysis focuses on indicators from 2011 on 165 countries. The variables of interest are:</p>
-<ul>
-<li><p><code>gdp.per.capita</code>: gross domestic product divided by midyear population. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in current U.S. dollars.</p></li>
-<li><p><code>sanit.access.factor</code>: Population access to sanitation facilities (Low, High)</p></li>
-<li><p><code>edu.expend</code>: Government expenditure on education, total (% of government expenditure)</p></li>
-<li><p><code>life.expect</code>: Life expectancy at birth (in years)</p></li>
+<li><p>Merge conflicts will happen, issues will arise, and that’s fine! Commit and push often, and ask questions when stuck.</p></li>
+<li><p>Make sure each team member is contributing, both in terms of quality and quantity of contribution (we will be reviewing commits from different team members).</p></li>
+<li><p>All team members are expected to contribute equally to the completion of this assignment and group assessments will be given at its completion - anyone judged to not have sufficient contributed to the final product will have their grade penalized. While different teams members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment works.</p></li>
 </ul>
 </section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-<p>You fit a model using sanitation access, education expenditures, and life expectancy to understand variability in GDP. The model takes the form</p>
-<p><span class="math display">\[
-\begin{aligned}\widehat{\log(GDP)} = \hat{\beta}_0 &amp;+ \hat{\beta}_1 ~ sanit.access.factor + \hat{\beta}_2 ~ edu.expend + \hat{\beta}_3 ~life.expect \\ &amp;+ \hat{\beta}_4 ~ sanit.access.factor \times life.expect\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(\log(GDP)\)</span> is the natural log of <code>gdp.per.capita</code>.</p>
-<p>The output from R is shown below.</p>
+<section id="formatting-communication-tips" class="level3">
+<h3 class="anchored" data-anchor-id="formatting-communication-tips">Formatting + communication tips</h3>
+<section id="suppress-code-warnings-messages" class="level4">
+<h4 class="anchored" data-anchor-id="suppress-code-warnings-messages">Suppress Code, Warnings, &amp; Messages</h4>
+<ul>
+<li>Include the following code in a code chunk at the top of your .qmd file to suppress all code, warnings, and other messages. Use the code chunk header <code>{r set-up, include = FALSE}</code> to suppress this set up code.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>An alternative approach is to add the following code to the YAML:</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>execute<span class="sc">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  echo<span class="sc">:</span> false</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  warning<span class="sc">:</span> false</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  message<span class="sc">:</span> false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ul>
+</section>
+<section id="headers" class="level4">
+<h4 class="anchored" data-anchor-id="headers">Headers</h4>
+<ul>
+<li>Use headers to clearly label each section. Make sure there is a space between the last <code>#</code> and the title, so the header renders correctly. For example, <code>###Section Title</code> will not render as header, but <code>### Section Title</code> will.</li>
+</ul>
+</section>
+<section id="references" class="level4">
+<h4 class="anchored" data-anchor-id="references">References</h4>
+<ul>
+<li>Include all references in a section called “References” at the end of the report.</li>
+<li>This course does not have specific requirements for formatting citations and references.</li>
+</ul>
+</section>
+<section id="appendix" class="level4">
+<h4 class="anchored" data-anchor-id="appendix">Appendix</h4>
+<ul>
+<li>If you have additional work that does not fit or does not belong in the body of the report, you may put it at the end of the document in section called “Appendix”.</li>
+<li>The items in the appendix should be properly labeled.</li>
+<li>The appendix should only be for additional material. The reader should be able to fully understand your report without viewing content in the appendix.</li>
+</ul>
+</section>
+<section id="resize-figures" class="level4">
+<h4 class="anchored" data-anchor-id="resize-figures">Resize figures</h4>
+<ul>
+<li>Resize plots and figures, so you have more space for the narrative.
+<ul>
+<li><strong>Resize individual figures</strong>: Use the code chunk header <code>{r plot1, fig.height = 3, fig.width = 5}</code>, replacing <code>plot1</code> with a meaningful label and the height and width with values appropriate for your write up.</li>
+<li><strong>Resize all figures</strong>: Include the <code>fig_width</code> and <code>fig_height</code> options in your YAML header as shown below:</li>
+</ul></li>
+</ul>
+<!-- -->
+<pre><code>---
+title: "Your title"
+author: "Your names"
+format:
+  pdf:
+    fig-width: 7
+    fig-height: 5
+---</code></pre>
+<p>Replace the height and width values with values appropriate for your write up.</p>
+</section>
+<section id="arranging-plots" class="level4">
+<h4 class="anchored" data-anchor-id="arranging-plots">Arranging plots</h4>
+<p>Arrange plots in a grid, instead of one after the other. This is especially useful when displaying plots for exploratory data analysis and to check assumptions.</p>
+<ul>
+<li><p>If you’re using ggplot2 functions, the <code>patchwork</code> package makes it easy to arrange plots in a grid. See the documentation and examples <a href="https://patchwork.data-imaginist.com/">here</a>.</p></li>
+<li><p>If you’re using base R function, i.e.&nbsp;when using the <code>emplogit</code> functions, put the code <code>par(mfrow = c(rows,columns))</code> before the code to make the plots. For example, <code>par(mfrow = c(2,3))</code> will arrange plots in a grid with 2 rows and 3 columns.</p></li>
+</ul>
+</section>
+<section id="plot-titles-and-axis-labels" class="level4">
+<h4 class="anchored" data-anchor-id="plot-titles-and-axis-labels">Plot titles and axis labels</h4>
+<p>Be sure all plot titles and axis labels are visible and easy to read.</p>
+<ul>
+<li>Use informative titles, <u>not</u> variable names, for titles and axis labels.</li>
+<li>Use <code>coord_flip()</code> to flip the <em>x</em> and <em>y</em> axes on the plot. This is useful if you a bar plot with an x-axis that is difficult to read due to overlapping text.</li>
+</ul>
+<p>❌ <strong>NO! The x-axis is hard to read because the names overlap.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project-tips_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>✅ <strong>YES! Names are readable</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project-tips_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="do-a-little-more-to-make-the-plot-look-professional" class="level4">
+<h4 class="anchored" data-anchor-id="do-a-little-more-to-make-the-plot-look-professional">Do a little more to make the plot look professional!</h4>
+<ul>
+<li>Informative title and axis labels</li>
+<li>Flipped coordinates to make names readable</li>
+<li>Arranged bars based on count</li>
+<li>Capitalized manufacturer names</li>
+<li><em>Optional: Added color - Use a coordinated color scheme throughout paper / presentation</em></li>
+<li><em>Optional: Applied a theme - Use same theme throughout paper / presentation</em></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(manufacturer) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">manufacturer =</span> <span class="fu">str_to_title</span>(manufacturer)) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(manufacturer,n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Manufacturer"</span>, </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>, </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"The most common manufacturer is Dodge"</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project-tips_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="tables-and-model-output" class="level4">
+<h4 class="anchored" data-anchor-id="tables-and-model-output">Tables and model output</h4>
+<ul>
+<li>Use the <code>kable</code> function from the knitr package to neatly output all tables and model output. This will also ensure all model coefficients are displayed.
+<ul>
+<li>Use the <code>digits</code> argument to display only 3 or 4 significant digits.</li>
+<li>Use the <code>caption</code> argument to add captions to your table.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(model) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 49%">
-<col style="width: 12%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 10%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">term</th>
@@ -616,170 +578,66 @@ This analysis focuses on indicators from 2011 on 165 countries. The variables of
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">4.491</td>
-<td style="text-align: right;">1.638</td>
-<td style="text-align: right;">2.742</td>
-<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">30.099</td>
+<td style="text-align: right;">1.634</td>
+<td style="text-align: right;">18.421</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">sanit.access.factorhigh</td>
-<td style="text-align: right;">-6.993</td>
-<td style="text-align: right;">1.971</td>
-<td style="text-align: right;">-3.548</td>
-<td style="text-align: right;">0.001</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">edu.expend</td>
-<td style="text-align: right;">0.097</td>
-<td style="text-align: right;">0.038</td>
-<td style="text-align: right;">2.550</td>
-<td style="text-align: right;">0.012</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">life.expect</td>
-<td style="text-align: right;">0.030</td>
-<td style="text-align: right;">0.029</td>
-<td style="text-align: right;">1.061</td>
-<td style="text-align: right;">0.291</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">sanit.access.factorhigh:life.expect</td>
-<td style="text-align: right;">0.122</td>
-<td style="text-align: right;">0.032</td>
-<td style="text-align: right;">3.853</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: left;">hp</td>
+<td style="text-align: right;">-0.068</td>
+<td style="text-align: right;">0.010</td>
+<td style="text-align: right;">-6.742</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<ol type="a">
-<li><p>Interpret the coefficient of <code>edu.expend</code> in the context of the data. You can interpret the coefficient in terms of <span class="math inline">\(log(GDP)\)</span> .</p></li>
-<li><p>Interpret the coefficient of <code>sanit.access.factorhigh</code> in the context of the data.You can interpret the coefficient in terms of <span class="math inline">\(log(GDP)\)</span> .</p></li>
-</ol>
 </section>
-<section id="exercise-7" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
-<ol type="a">
-<li><p>Write the estimated regression equation for countries with high sanitation access.</p></li>
-<li><p>Interpret the effect of <code>life.expect</code> for countries with high sanitation access in the context of the data. You can interpret the coefficient in terms of <span class="math inline">\(log(GDP)\)</span> .</p></li>
-</ol>
-</section>
-<section id="exercise-8" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
-<p>Below are plots from the exploratory data analysis of the relationships between the predictor variables. Based on these plots, what appears to be a potential issue with the model from Exercise 6? Briefly explain your response.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="hw-02-draft_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="bonus-optional" class="level2">
-<h2 class="anchored" data-anchor-id="bonus-optional">Bonus (optional)</h2>
-<p>Use the model from Exercise 6 to interpret the coefficients of <code>edu.expend</code> and <code>sanit.access.factorhigh</code> in term of GDP (not log(GDP)). Write your interpretation in the context of the data.</p>
-<p>Each interpretation is worth 1 point out of 50. The interpretation must be exactly correct to receive credit.</p>
-</section>
-</section>
-<section id="submission" class="level1">
-<h1>Submission</h1>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
-<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
-<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
-<p>Instructions to combine PDFs:</p>
+<section id="guidelines-for-communicating-results" class="level4">
+<h4 class="anchored" data-anchor-id="guidelines-for-communicating-results">Guidelines for communicating results</h4>
 <ul>
-<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
-<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p>
+<li><strong>Don’t use variable names in your narrative!</strong> Use descriptive terms, so the reader understands your narrative without relying on the data dictionary.
 <ul>
-<li>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></li>
+<li>❌ There is a negative linear relationship between mpg and hp.</li>
+<li>✅ There is a negative linear relationship between a car’s fuel economy (in miles per gallon) and its horsepower.</li>
+</ul></li>
+<li><strong>Know your audience:</strong> Your report should be written for a general audience who has an understanding of statistics at the level of STA 210.</li>
+<li><strong>Avoid subject matter jargon:</strong> Don’t assume the audience knows all of the specific terminology related to your subject area. If you must use jargon, include a brief definition the first time you introduce a term.</li>
+<li><strong>Tell the “so what”:</strong> Your report and presentation should be more than a list of interpretations and technical definitions. Focus on what the results mean, i.e.&nbsp;what you want the audience to know about your topic after reading your report or viewing your presentation.
+<ul>
+<li>❌ For every one unit increase in horsepower, we expect the miles per gallon to decrease by 0.068 units, on average.</li>
+<li>✅ If the priority is to have good fuel economy, then one should choose a car with lower horsepower. Based on our model, the fuel economy is expected to decrease, on average, by 0.68 miles per gallon for every 10 additional horsepower.</li>
+</ul></li>
+<li><strong>Tell a story:</strong> All visualizations, tables, model output, and narrative should tell a cohesive story!</li>
+<li><strong>Use one voice:</strong> Though multiple people are writing the report, it should read as if it’s from a single author. At least one team member should read through the report before submission to ensure it reads like a cohesive document.</li>
+</ul>
+</section>
+</section>
+<section id="additional-resources" class="level3">
+<h3 class="anchored" data-anchor-id="additional-resources">Additional resources</h3>
+<ul>
+<li><a href="https://www.rstudio.com/blog/exploring-rstudio-visual-markdown-editor/">Exploring RStudio’s Visual Markdown Editor</a></li>
+<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
+<li>Quarto documentation:
+<ul>
+<li><a href="https://quarto.org/docs/output-formats/pdf-basics.html">Quarto PDF Basics</a></li>
+<li><a href="https://quarto.org/docs/presentations/revealjs/">Presentations in Quarto</a></li>
+</ul></li>
+<li>Data visualization
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/reference/index.html">ggplot2 Reference</a></li>
+<li><a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics for Data Analysis</a></li>
+<li><a href="https://socviz.co/index.html">Data Visualization: A Practice Introduction</a></li>
+<li><a href="https://patchwork.data-imaginist.com/index.html">Patchwork R Package</a></li>
 </ul></li>
 </ul>
-</div>
-</div>
-<p>To submit your assignment:</p>
-<ul>
-<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/38867">STA 221 Canvas site.</a></p></li>
-<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
-<li><p>Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).</p></li>
-<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
-</ul>
-</section>
-<section id="grading" class="level1">
-<h1>Grading</h1>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Component</th>
-<th>Points</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ex 1</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td>Ex 2</td>
-<td>6</td>
-</tr>
-<tr class="odd">
-<td>Ex 3</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>Ex 4</td>
-<td>12</td>
-</tr>
-<tr class="odd">
-<td>Ex 5</td>
-<td>8</td>
-</tr>
-<tr class="even">
-<td>Ex 6</td>
-<td>6</td>
-</tr>
-<tr class="odd">
-<td>Ex 7</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>Ex 8</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>Bonus</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>Workflow &amp; formatting</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.</p>
-
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-peterson2021" class="csl-entry" role="listitem">
-Peterson, Anna D., and Laura Ziegler. 2021. <span>“Building a Multiple Linear Regression Model With LEGO Brick Data.”</span> <em>Journal of Statistics and Data Science Education</em> 29 (3): 297–303. <a href="https://doi.org/10.1080/26939169.2021.1946450">https://doi.org/10.1080/26939169.2021.1946450</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1200,6 +1058,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./project.html" class="pagination-link" aria-label="Instructions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Instructions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -60,9 +60,11 @@ Let $Var(\hat{\mathbf{y}})$ be the variance of the fitted (predicted) values of 
 
 Suppose we fit the model $\mathbf{y} = \mathbf{X}_1\boldsymbol{\beta}_1 + \boldsymbol{\epsilon}$ when the true model is actually given by $\mathbf{y} = \mathbf{X}_1\boldsymbol{\beta}_1 + \mathbf{X}_2\boldsymbol{\beta}_2 + \boldsymbol{\epsilon}$. Assume $E(\boldsymbol{\epsilon}) = \mathbf{0}$ for both models.
 
--   Find the expected value of the ordinary least-squares estimates $\hat{\boldsymbol{\beta}}_1$.
+a.  Find the expected value of the ordinary least-squares estimate $\hat{\boldsymbol{\beta}}_1$.
 
--   Under what conditions is the estimate $\hat{\boldsymbol{\beta}}_1$ unbiased?
+b.  Under what conditions is the estimate $\hat{\boldsymbol{\beta}}_1$ unbiased?
+
+<!--# Exercise 3.37 from Introduction to linear regression-->
 
 # Applied exercises
 
@@ -76,7 +78,7 @@ Write all narrative using complete sentences and include informative axis labels
 
 ## Data: LEGO<sup>®</sup> sets
 
-The data for **Exercises 3 - 5** includes information about LEGO<sup>®</sup> sets from themes produced January 1, 2018 and September 11, 2020. The data were originally scraped from Brickset.com, an online LEGO set guide and were obtained for this assignment from @peterson2021s.
+The data for **Exercises 3 - 5** includes information about LEGO<sup>®</sup> sets from themes produced January 1, 2018 and September 11, 2020. The data were originally scraped from Brickset.com, an online LEGO set guide and were obtained for this assignment from @peterson2021.
 
 You will work with data on about 400 randomly selected LEGO sets produced during this time period. The primary variables are interest in this analysis are
 
@@ -101,10 +103,10 @@ legos <- read_csv("data/lego-sample.csv")|>
 
 ## Exercise 3
 
-1.  In this analysis, we dropped observations that have missing values for some of the relevant variables.
-    1.  What is a disadvantage of dropping observations that have missing values, instead of using a method to impute (fill in) the missing data?
-    2.  How might dropping these observations impact the generalizability of conclusions?
-2.  Fit the regression model and neatly display the results using three digits.
+a.  In this analysis, we dropped observations that have missing values for some of the relevant variables.
+    -   What is a disadvantage of dropping observations that have missing values, instead of using a method to impute (fill in) the missing data?
+    -   How might dropping these observations impact the generalizability of conclusions?
+b.  Fit the regression model and neatly display the results using three digits.
 
 ## Exercise 4
 
@@ -112,25 +114,25 @@ We want to understand the relationship between `Pieces` and `Amazon_Price` based
 
 You are convinced from the model output that there is evidence of a linear relationship between the two variables. Now you want to be more specific and test whether the slope is actually different from 0.1 (\$10 increase in the price for every 100 additional pieces).
 
-1.  Write the null and alternative hypotheses for this test in using words and mathematical notation.
-2.  Calculate the test statistic for this test. You may use any relevant output from the model in the previous exercise.
-3.  What is the distribution of the test statistic under the null hypothesis for this problem?
-4.  Calculate the p-value and state your conclusion in the context of the data using a threshold of $\alpha = 0.05$.
-5.  Calculate the 95% confidence interval. Is the confidence interval consistent with your conclusion from the hypothesis test? Briefly explain.
+a.  Write the null and alternative hypotheses for this test in using words and mathematical notation.
+b.  Calculate the test statistic for this test. You may use any relevant output from the model in the previous exercise.
+c.  What is the distribution of the test statistic under the null hypothesis for this problem?
+d.  Calculate the p-value and state your conclusion in the context of the data using a threshold of $\alpha = 0.05$.
+e.  Calculate the 95% confidence interval. Is the confidence interval consistent with your conclusion from the hypothesis test? Briefly explain.
 
 ## Exercise 5
 
 Instead of using the number of minifigures in the model, you decide to create an indicator variable for whether or not there are any minifigures in the set.
 
-1.  Create an indicator variable that takes the value "No" if there are zero minifigures in the LEGO<sup>®</sup>, and "Yes" if there is at least one minifigure.
+a.  Create an indicator variable that takes the value "No" if there are zero minifigures in the LEGO<sup>®</sup>, and "Yes" if there is at least one minifigure.
 
-2.  You hypothesize that the relationship between the price and number of pieces may differ based on whether or not there are minifigures in the set.
+b.  You hypothesize that the relationship between the price and number of pieces may differ based on whether or not there are minifigures in the set.
 
     Make a plot to visualize this potential effect. Does the relationship between price and number of pieces seem to differ based on the presence of minifigures? Briefly explain.
 
-3.  Fit a using the number pieces, size of the blocks, the indicator for minifigures, and the interaction between pieces and the presence of minifigures to predict the price on Amazon.com.
+c.  Fit a model using the number pieces, size of the blocks, the indicator for minifigures, and the interaction between pieces and the presence of minifigures to predict the price on Amazon.com.
 
-4.  Based on this model, is there evidence that the effect pieces on the price differs based on the inclusion of minifigures? Briefly explain your response, referencing any statistics used to make your determination.
+d.  Based on this model, is there evidence that the effect pieces on the price differs based on the inclusion of minifigures? Briefly explain your response, referencing any statistics used to make your determination.
 
 ## Data: World Bank
 
@@ -173,15 +175,15 @@ tidy(world_fit) |>
   kable(digits = 3)
 ```
 
-1.  Interpret the coefficient of `edu.expend` in the context of the data. You can interpret the coefficient in terms of $log(GDP)$ .
+a.  Interpret the coefficient of `edu.expend` in the context of the data. You can interpret the coefficient in terms of $log(GDP)$ .
 
-2.  Interpret the coefficient of `sanit.access.factorhigh` in the context of the data.You can interpret the coefficient in terms of $log(GDP)$ .
+b.  Interpret the coefficient of `sanit.access.factorhigh` in the context of the data.You can interpret the coefficient in terms of $log(GDP)$ .
 
 ## Exercise 7
 
-1.  Write the estimated regression equation for counties with high sanitation access.
+a.  Write the estimated regression equation for countries with high sanitation access.
 
-2.  Interpret the effect of `life.expect` for countries with high sanitation access in the context of the data. You can interpret the coefficient in terms of $log(GDP)$ .
+b.  Interpret the effect of `life.expect` for countries with high sanitation access in the context of the data. You can interpret the coefficient in terms of $log(GDP)$ .
 
 ## Exercise 8
 
@@ -190,6 +192,9 @@ Below are plots from the exploratory data analysis of the relationships between 
 ```{r}
 #| echo: false
 #| eval: true 
+#| warning: false
+#| message: false
+
 
 library(patchwork)
 p1 <- ggplot(data = world_df, aes(x = life.expect, y = sanit.access.factor)) + 
@@ -253,15 +258,15 @@ To submit your assignment:
 
 | Component             | Points |
 |-----------------------|--------|
-| Ex 1                  | 4      |
-| Ex 2                  | 4      |
-| Ex 3                  | 4      |
-| Ex 4                  | 4      |
-| Ex 5                  | 6      |
+| Ex 1                  | 3      |
+| Ex 2                  | 6      |
+| Ex 3                  | 5      |
+| Ex 4                  | 12     |
+| Ex 5                  | 8      |
 | Ex 6                  | 6      |
 | Ex 7                  | 5      |
-| Ex 8                  | 5      |
-| Bonus                 |        |
+| Ex 8                  | 2      |
+| Bonus                 | 2      |
 | Workflow & formatting | 3      |
 
 The "Workflow & formatting" grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.

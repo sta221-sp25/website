@@ -311,7 +311,7 @@ Suppose you are throwing darts at a target
 
 -   **Acceptable scenario:** There's some trade-off between the bias and variance. For example, it may be acceptable for the darts to be clustered around a point that is close to the target (low bias and low variance)
 
-## Bias and variance of the least-squares estimator
+## Bias and variance 
 
 ::: incremental
 -   Each time we take a sample of size $n$, we can find the least squares estimator (throw dart at target)
@@ -343,9 +343,7 @@ $$
 
 An estimator is **unbiased** if the bias is 0 and thus $E(\hat{\theta}) = \theta$
 
----
-
-## Finding expected value and variance {.center}
+## Finding expected value and variance
 
 Let $\mathbf{A}$ be a $n \times p$ matrix of constants and $\mathbf{b}$ a $p \times 1$ vector of random variables. Then
 
@@ -357,7 +355,7 @@ $$
 Var(\mathbf{Ab}) = \mathbf{A}Var(\mathbf{b})\mathbf{A}^T
 $$
 
-## Expected value of $\hat{\boldsymbol{\beta}}$ 
+## Expected value of $\hat{\boldsymbol{\beta}}$
 
 Let's take a look at the expected value of the least squares estimator. Given $E(\boldsymbol{\epsilon}) = \mathbf{0}$,
 
@@ -371,9 +369,9 @@ E(\hat{\boldsymbol{\beta}}) &= E[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathb
 \end{aligned}
 $$
 
----
+------------------------------------------------------------------------
 
-## Expected value of $\hat{\boldsymbol{\beta}}$ 
+## Expected value of $\hat{\boldsymbol{\beta}}$
 
 The least squares estimator $\hat{\boldsymbol{\beta}}$ is an *unbiased* estimator of $\boldsymbol{\beta}$
 
@@ -387,7 +385,7 @@ $$
 
 Now let's take a look at the variance
 
-## Variance of $\hat{\boldsymbol{\beta}}$ 
+## Variance of $\hat{\boldsymbol{\beta}}$
 
 $$
 \begin{aligned}
@@ -399,7 +397,7 @@ Var(\hat{\boldsymbol{\beta}}) &= Var((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\m
 \end{aligned}
 $$
 
-## Variance of $\hat{\boldsymbol{\beta}}$ 
+## Variance of $\hat{\boldsymbol{\beta}}$
 
 $$
 Var(\hat{\boldsymbol{\beta}}) =  \sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}
@@ -407,9 +405,9 @@ $$
 
 We will show that $\hat{\boldsymbol{\beta}}$ is the "best" estimator (has the lowest variance) among the class of linear unbiased estimators
 
-# What do we mean by "linear"? 
+# What do we mean by "linear"?
 
-## "Linear" regression model 
+## "Linear" regression model
 
 What does it mean for a model to be a "linear" regression model?
 
@@ -423,11 +421,11 @@ What does it mean for a model to be a "linear" regression model?
 
 -   The functions $f_1, \ldots, f_p$ can be non-linear as long as $\beta_0, \beta_1, \ldots, \beta_p$ are linear in $Y$
 
-## Poll: Identify the linear models
+## Identify the linear models
 
 <!--# ed discussion poll-->
 
-## Recap 
+## Recap
 
 -   Computed and interpreted confidence interval for a single coefficient
 
