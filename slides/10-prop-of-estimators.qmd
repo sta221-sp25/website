@@ -126,7 +126,7 @@ sports |>
 football <- read_csv("data/ncaa-football-exp.csv")
 ```
 
-```{}
+```         
 ```
 
 ## Regression model
@@ -163,17 +163,17 @@ We often want to conduct inference on individual model coefficients
 ## What "confidence" means {.midi}
 
 ::: incremental
--   We will construct $C\%$ confidence intervals.
+-   We will construct $C\%$ confidence intervals
 
     -   The confidence level impacts the width of the interval
 
 <br>
 
--   "Confident" means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate $C\%$ CIs for the coefficient of $x_j$, then $C\%$ of those intervals will contain the true value of the coefficient $\beta_j$
+-   "Confidence" means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate $C\%$ CIs for the coefficient of $x_j$, then $C\%$ of those intervals will contain the true value of the coefficient $\beta_j$
 
 <br>
 
--   Balance precision and accuracy when selecting a confidence level
+-   Need to balance precision and accuracy when selecting a confidence level
 :::
 
 ## Confidence interval for $\beta_j$
@@ -265,10 +265,11 @@ tidy(exp_fit, conf.int = TRUE, conf.level = 0.95) |>
   kable(digits = 3)
 ```
 
-# Properties of $\hat{\boldsymbol{\beta}}$ 
+# Properties of $\hat{\boldsymbol{\beta}}$
 
-## Motvation
+## Motivation {.midi}
 
+::: incremental
 -   We have discussed how to use least squares to find an estimator of $\hat{\boldsymbol{\beta}}$
 
 -   How do we know whether our least squares estimator is a "good" estimator?
@@ -276,24 +277,25 @@ tidy(exp_fit, conf.int = TRUE, conf.level = 0.95) |>
 -   When we consider what makes an estimator "good", we'll look at three criteria:
 
     -   Bias
-
     -   Variance
-
     -   Mean squared error
 
 -   We'll take a look at these over the course of a few lectures and motivate why we might prefer using least squares to compute $\hat{\boldsymbol{\beta}}$ versus other methods
+:::
 
 ## Bias and variance
 
 Suppose you are throwing darts at a target
 
+. . .
+
 ::: columns
 ::: {.column width="50%"}
-<!--# find image of dart-->
+![Image source: [Analytics Vidhya](https://medium.com/analytics-vidhya/bias-variance-tradeoff-regularization-5543d2d1ad8a)](images/10/bias-variance.webp)
 :::
 
 ::: {.column width="50%"}
--   **Unbiased**: Darts spread around the target
+-   **Unbiased**: Darts distributed around the target
 
 -   **Biased**: Darts systematically away from the target
 
@@ -303,27 +305,132 @@ Suppose you are throwing darts at a target
 
 ## Bias and variance
 
--   **Ideal scenario**: Darts are clustered around the target (unbiaseds and low variance)
+-   **Ideal scenario**: Darts are clustered around the target (unbiased and low variance)
 
 -   **Worst case scenario**: Darts are widely spread out and systematically far from the target (high bias and high variance)
 
--   **Acceptable scenario:** There's some tradeoff between the bias and variance. For example, it may be acceptable for the darts to be clustered around a point that is close to the target (low bias and low variance)
+-   **Acceptable scenario:** There's some trade-off between the bias and variance. For example, it may be acceptable for the darts to be clustered around a point that is close to the target (low bias and low variance)
 
-## Bias and variance in estimator
+## Bias and variance of the least-squares estimator
 
-I Each time we take a sample, we compute the MLE for the
-parameters of interest. (We shoot an arrow at the target.)
-I Suppose we could take many independent samples over and
-over again and compute the MLE in each.
-I Ideally, the collection of MLE values are centered at the true
-parameter. (We are unbiased shooters.)
-I Even better, the collection of MLE values are clustered around
-the true parameter. (We are unbiased shooters with low
-variance.)
-I It would be bad news if the MLE values tended not to estimate
-the true parameter and were di↵usely spread. (We are biased
-shooters with high variance.
+::: incremental
+-   Each time we take a sample of size $n$, we can find the least squares estimator (throw dart at target)
 
-<!--# show distribution of beta-hat-->
+-   Suppose we take many independent samples of size $n$ and find the least squares estimator for each sample (throw many darts at the target). Ideally,
 
-## $E(\hat{\boldsymbol{\beta}})$ 
+    -   The estimators are centered at the true parameter (unbiased)
+
+    -   The estimators are clustered around the true parameter (unbiased with low variance)
+:::
+
+. . .
+
+Let's take a look at the mean and variance of the least squares estimator
+
+## Expected value of $\hat{\boldsymbol{\beta}}$
+
+The **bias** of an estimator is the difference between the estimator's expected value and the true value of the parameter
+
+. . .
+
+Let $\hat{\theta}$ be an estimator of the parameter $\theta$. Then
+
+$$
+Bias(\hat{\theta}) = E(\hat{\theta}) - \theta
+$$
+
+. . .
+
+An estimator is **unbiased** if the bias is 0 and thus $E(\hat{\theta}) = \theta$
+
+---
+
+## Finding expected value and variance {.center}
+
+Let $\mathbf{A}$ be a $n \times p$ matrix of constants and $\mathbf{b}$ a $p \times 1$ vector of random variables. Then
+
+$$
+E(\mathbf{Ab}) = \mathbf{A}E(\mathbf{b})
+$$
+
+$$
+Var(\mathbf{Ab}) = \mathbf{A}Var(\mathbf{b})\mathbf{A}^T
+$$
+
+## Expected value of $\hat{\boldsymbol{\beta}}$ 
+
+Let's take a look at the expected value of the least squares estimator. Given $E(\boldsymbol{\epsilon}) = \mathbf{0}$,
+
+$$
+\begin{aligned}
+E(\hat{\boldsymbol{\beta}}) &= E[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}] \\[8pt]
+& = \class{fragment}{E[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T(\mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon})]} \\[8pt]
+& = \class{fragment}{E[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}] + E[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\boldsymbol{\epsilon}]}\\[8pt]
+& = \class{fragment}{\boldsymbol{\beta} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^TE(\boldsymbol{\epsilon})} \\[8pt]
+ & = \class{fragment}{\boldsymbol{\beta}}
+\end{aligned}
+$$
+
+---
+
+## Expected value of $\hat{\boldsymbol{\beta}}$ 
+
+The least squares estimator $\hat{\boldsymbol{\beta}}$ is an *unbiased* estimator of $\boldsymbol{\beta}$
+
+$$
+E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}
+$$
+
+<br>
+
+. . .
+
+Now let's take a look at the variance
+
+## Variance of $\hat{\boldsymbol{\beta}}$ 
+
+$$
+\begin{aligned}
+Var(\hat{\boldsymbol{\beta}}) &= Var((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}) \\[8pt]
+& = \class{fragment}{[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T]Var(\mathbf{y})[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T]^T }\\[8pt]
+& = \class{fragment}{[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T]\sigma^2_{\epsilon}\mathbf{I}[\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}]} \\[8pt]
+& = \class{fragment}{\sigma^2_{\epsilon}[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}]} \\[8pt]
+& = \class{fragment}{\sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}}
+\end{aligned}
+$$
+
+## Variance of $\hat{\boldsymbol{\beta}}$ 
+
+$$
+Var(\hat{\boldsymbol{\beta}}) =  \sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}
+$$
+
+We will show that $\hat{\boldsymbol{\beta}}$ is the "best" estimator (has the lowest variance) among the class of linear unbiased estimators
+
+# What do we mean by "linear"? 
+
+## "Linear" regression model 
+
+What does it mean for a model to be a "linear" regression model?
+
+. . .
+
+-   Linear regression models are linear in the parameters, i.e. given an observation $y_i$
+
+    $$
+    y_i = \beta_0 + \beta_1f_1(x_{i1}) +  \dots + \beta_pf_p(x_{ip}) + \epsilon_i
+    $$
+
+-   The functions $f_1, \ldots, f_p$ can be non-linear as long as $\beta_0, \beta_1, \ldots, \beta_p$ are linear in $Y$
+
+## Poll: Identify the linear models
+
+<!--# ed discussion poll-->
+
+## Recap 
+
+-   Computed and interpreted confidence interval for a single coefficient
+
+-   Showed some properties of $\hat{\boldsymbol{\beta}}$
+
+-   Defined "linear" model
