@@ -15,9 +15,10 @@ library(broom)
 
 #### Some resources that may be helpful as you find data:
 
--   [R Data Sources for Regression Analysis](https://rfun.library.duke.edu/blog/data-sources-for-regression-analysis/)
 -   [FiveThirtyEight data](https://data.fivethirtyeight.com/)
 -   [TidyTuesday](https://github.com/rfordatascience/tidytuesday)
+-   [Data Is Plural](https://www.data-is-plural.com/)
+-   [R Data Sources for Regression Analysis](https://rfun.library.duke.edu/blog/data-sources-for-regression-analysis/)
 
 #### Other data repositories
 

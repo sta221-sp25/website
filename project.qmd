@@ -22,9 +22,9 @@ library(broom)
 
 [Round 1 submission (optional)](#round1-submission) due Friday, December 6
 
-[Written report](#written-report) due Thursday, December 12
+[Written report](#written-report) due Thursday, December 12 at 9pm
 
-[Reproducibility + organization](#reproducibility-organization) due Thursday, December 12
+[Reproducibility + organization](#reproducibility-organization) due Thursday, December 12 at 9pm
 
 ## Introduction
 
@@ -66,6 +66,10 @@ Write your responses in `research-questions.qmd` in your team's project GitHub r
 ## Project proposal {#project-proposal}
 
 The purpose of the project proposal is for your team to identify the data set you're interested in analyzing to investigate one of your potential research questions. You will also do some preliminary exploration of the response variable and begin thinking about the modeling strategy. If you're unsure where to find data, you can use the list of potential data sources on the [Tips + resources](https://sta221-fa24.netlify.app/project-tips) page as a starting point.
+
+::: callout-important
+You must the data set(s) in the proposal for the final project, unless instructed otherwise when given feedback.
+:::
 
 The data set must meet the following criteria:
 
@@ -133,7 +137,7 @@ Reuse and iterate on the work from the Research Questions milestone.
 
 -   a description of the potential predictor variables of interest
 
--   regression model technique (multiple linear regression or logistic regression for a categorical response variable
+-   regression model technique (multiple linear regression for quantitative response variable or logistic regression for a categorical response variable)
 
 ### Data dictionary (aka code book)
 
@@ -143,19 +147,19 @@ Submit a data dictionary for all the variables in your data set in the `README` 
 
 Write your narrative and analysis for Sections 1 - 4 in the `proposal.qmd` file in your team's GitHub repo. Put the data set and the data dictionary in the `data` folder in the repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Thursday, October 3 at 11:59pm.**
 
-<!-- ### Grading -->
+### Grading
 
-<!-- The anticipated length, including all graphs, tables, narrative, etc., is 2 -4 pages; it may not exceed **5 pages.** -->
+The anticipated length, including all graphs, tables, narrative, etc., is 2 -4 pages.
 
-<!-- The proposal is worth 15 points and will be graded based on accurately and comprehensively addressing the criteria stated above. Points will be assigned based on a holistic review of the project proposal. -->
+The proposal is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above. Points will be assigned based on a holistic review of the project proposal.
 
-<!-- -   **Excellent (14 - 15 points) :** All required elements are completed and are accurate. There is a thorough exploration of the data as descrbied above, and the team has demonstrated a careful and thoughtful approach exploring the data and preparing it for analysis. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting. -->
+-   **Excellent (9 - 10 points) :** All required elements are completed and are accurate. The data set meets the requirements (or the team has otherwise discussed the data with Professor Tackett) and the data do not pose obvious violations to the modeling assumptions. There is a thoughtful and comprehensive description of the data and exploration of the response variable as descrbied above. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.
 
-<!-- -   **Strong: (11 - 13 points):** Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some minor revision of the work required before team is ready for modeling. -->
+-   **Strong (7 - 8 points)**: Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some minor revision of the work required before team is ready for modeling.
 
-<!-- -   **Satisfactory (8 - 10 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling. -->
+-   **Satisfactory (5 - 6 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling.
 
-<!-- -   **Needs Improvement (7 or fewer points points):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling. -->
+-   **Needs Improvement (4 or fewer points points):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling.
 
 ## Exploratory data analysis {#eda}
 

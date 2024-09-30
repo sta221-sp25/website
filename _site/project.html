@@ -329,6 +329,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#section-4-analysis-approach" id="toc-section-4-analysis-approach" class="nav-link" data-scroll-target="#section-4-analysis-approach">Section 4: Analysis approach</a></li>
   <li><a href="#data-dictionary-aka-code-book" id="toc-data-dictionary-aka-code-book" class="nav-link" data-scroll-target="#data-dictionary-aka-code-book">Data dictionary (aka code book)</a></li>
   <li><a href="#submission-1" id="toc-submission-1" class="nav-link" data-scroll-target="#submission-1">Submission</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul></li>
   <li><a href="#eda" id="toc-eda" class="nav-link" data-scroll-target="#eda">Exploratory data analysis</a>
   <ul class="collapse">
@@ -380,8 +381,8 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="#presentation">Presentation</a> + <a href="#presentation-comments">Presentation comments</a> Monday, November 11 (in lab)</p>
 <p><a href="#draft-report-peer-review">Analysis draft + peer review</a> Monday, November 25 (peer review in lab)</p>
 <p><a href="#round1-submission">Round 1 submission (optional)</a> due Friday, December 6</p>
-<p><a href="#written-report">Written report</a> due Thursday, December 12</p>
-<p><a href="#reproducibility-organization">Reproducibility + organization</a> due Thursday, December 12</p>
+<p><a href="#written-report">Written report</a> due Thursday, December 12 at 9pm</p>
+<p><a href="#reproducibility-organization">Reproducibility + organization</a> due Thursday, December 12 at 9pm</p>
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
@@ -418,6 +419,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="project-proposal" class="level2">
 <h2 class="anchored" data-anchor-id="project-proposal">Project proposal</h2>
 <p>The purpose of the project proposal is for your team to identify the data set you’re interested in analyzing to investigate one of your potential research questions. You will also do some preliminary exploration of the response variable and begin thinking about the modeling strategy. If you’re unsure where to find data, you can use the list of potential data sources on the <a href="https://sta221-fa24.netlify.app/project-tips">Tips + resources</a> page as a starting point.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You must the data set(s) in the proposal for the final project, unless instructed otherwise when given feedback.</p>
+</div>
+</div>
 <p>The data set must meet the following criteria:</p>
 <ul>
 <li><p>At least 500 observations</p></li>
@@ -496,7 +510,7 @@ Tip
 <h3 class="anchored" data-anchor-id="section-4-analysis-approach">Section 4: Analysis approach</h3>
 <ul>
 <li><p>a description of the potential predictor variables of interest</p></li>
-<li><p>regression model technique (multiple linear regression or logistic regression for a categorical response variable</p></li>
+<li><p>regression model technique (multiple linear regression for quantitative response variable or logistic regression for a categorical response variable)</p></li>
 </ul>
 </section>
 <section id="data-dictionary-aka-code-book" class="level3">
@@ -506,13 +520,17 @@ Tip
 <section id="submission-1" class="level3">
 <h3 class="anchored" data-anchor-id="submission-1">Submission</h3>
 <p>Write your narrative and analysis for Sections 1 - 4 in the <code>proposal.qmd</code> file in your team’s GitHub repo. Put the data set and the data dictionary in the <code>data</code> folder in the repo. Push the qmd and rendered pdf documents to GitHub by the deadline, <strong>Thursday, October 3 at 11:59pm.</strong></p>
-<!-- ### Grading -->
-<!-- The anticipated length, including all graphs, tables, narrative, etc., is 2 -4 pages; it may not exceed **5 pages.** -->
-<!-- The proposal is worth 15 points and will be graded based on accurately and comprehensively addressing the criteria stated above. Points will be assigned based on a holistic review of the project proposal. -->
-<!-- -   **Excellent (14 - 15 points) :** All required elements are completed and are accurate. There is a thorough exploration of the data as descrbied above, and the team has demonstrated a careful and thoughtful approach exploring the data and preparing it for analysis. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting. -->
-<!-- -   **Strong: (11 - 13 points):** Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some minor revision of the work required before team is ready for modeling. -->
-<!-- -   **Satisfactory (8 - 10 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling. -->
-<!-- -   **Needs Improvement (7 or fewer points points):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling. -->
+</section>
+<section id="grading" class="level3">
+<h3 class="anchored" data-anchor-id="grading">Grading</h3>
+<p>The anticipated length, including all graphs, tables, narrative, etc., is 2 -4 pages.</p>
+<p>The proposal is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above. Points will be assigned based on a holistic review of the project proposal.</p>
+<ul>
+<li><p><strong>Excellent (9 - 10 points) :</strong> All required elements are completed and are accurate. The data set meets the requirements (or the team has otherwise discussed the data with Professor Tackett) and the data do not pose obvious violations to the modeling assumptions. There is a thoughtful and comprehensive description of the data and exploration of the response variable as descrbied above. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.</p></li>
+<li><p><strong>Strong (7 - 8 points)</strong>: Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some minor revision of the work required before team is ready for modeling.</p></li>
+<li><p><strong>Satisfactory (5 - 6 points):</strong> Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling.</p></li>
+<li><p><strong>Needs Improvement (4 or fewer points points):</strong> Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling.</p></li>
+</ul>
 </section>
 </section>
 <section id="eda" class="level2">
