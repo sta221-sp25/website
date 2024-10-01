@@ -46,7 +46,7 @@ knitr::opts_chunk$set(
 options(scipen=999)
 ```
 
-## Announcements
+## Announcements {.midi}
 
 -   Project Proposal due Thursday, October 3 at 11:59pm
 
@@ -56,11 +56,13 @@ options(scipen=999)
 
 -   Exam 01: Tuesday, October 8 (in class + take-home)
 
-    -   Lecture recordings available until the start of the in-class exam
+    -   Lecture recordings available until the start of the in-class exam (Link on side bar of webpage)
 
     -   Exam review on Thursday
 
     -   Monday's lab: Exam office hours
+
+    -   No office hours while take-home exam is out
 
 ## Topics
 
