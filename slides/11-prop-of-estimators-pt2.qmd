@@ -248,7 +248,7 @@ $$
 
 ## Gauss-Markov Theorem Proof 
 
--   $\mathbf{BX}$ must be the $\mathbf{0}$ matrix (dimensions = $(p+1) \times (p+1)$) in order for $\tilde{\boldsymbol{\beta}}$ to be unbiased
+-   $\mathbf{BX}$ must be the $\mathbf{0}$ matrix (dimension = $(p+1) \times (p+1)$) in order for $\tilde{\boldsymbol{\beta}}$ to be unbiased
 
 -   Now we need to find $Var(\tilde{\boldsymbol{\beta}})$ and see how it compares to $Var(\hat{\boldsymbol{\beta}})$
 

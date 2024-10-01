@@ -3718,7 +3718,7 @@
     "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-3",
     "title": "Properties of estimators",
     "section": "Gauss-Markov Theorem Proof",
-    "text": "Gauss-Markov Theorem Proof\n\n\\(\\mathbf{BX}\\) must be the \\(\\mathbf{0}\\) matrix (dimensions = \\((p+1) \\times (p+1)\\)) in order for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be unbiased\nNow we need to find \\(Var(\\tilde{\\boldsymbol{\\beta}})\\) and see how it compares to \\(Var(\\hat{\\boldsymbol{\\beta}})\\)"
+    "text": "Gauss-Markov Theorem Proof\n\n\\(\\mathbf{BX}\\) must be the \\(\\mathbf{0}\\) matrix (dimension = \\((p+1) \\times (p+1)\\)) in order for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be unbiased\nNow we need to find \\(Var(\\tilde{\\boldsymbol{\\beta}})\\) and see how it compares to \\(Var(\\hat{\\boldsymbol{\\beta}})\\)"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-4",
