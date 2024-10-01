@@ -425,7 +425,7 @@ What does it mean for a model to be a "linear" regression model?
 ```{=html}
 <iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/648051" width="100%"></iframe>
 ```
-## Identify the linear regression model 
+## Identify the linear regression model
 
 ::: extrapad
 1.  $y_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i1}^2 + \beta_3x_{i2}  + \epsilon_i$

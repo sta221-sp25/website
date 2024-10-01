@@ -256,193 +256,144 @@
     ]
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#announcements",
-    "href": "slides/10-prop-of-estimators.html#announcements",
-    "title": "Properties of estimators",
+    "objectID": "math-rules.html",
+    "href": "math-rules.html",
+    "title": "STA 221 - Fall 2024",
+    "section": "",
+    "text": "Let \\(\\mathbf{A}\\) be a \\(n \\times p\\) matrix of constants and \\(\\mathbf{b}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\nE(\\mathbf{Ab}) = \\mathbf{A}E(\\mathbf{b})\n\\]\n\\[\nVar(\\mathbf{Ab}) = \\mathbf{A}Var(\\mathbf{b})\\mathbf{A}^T\n\\]"
+  },
+  {
+    "objectID": "math-rules.html#math-rules",
+    "href": "math-rules.html#math-rules",
+    "title": "STA 221 - Fall 2024",
+    "section": "",
+    "text": "Let \\(\\mathbf{A}\\) be a \\(n \\times p\\) matrix of constants and \\(\\mathbf{b}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\nE(\\mathbf{Ab}) = \\mathbf{A}E(\\mathbf{b})\n\\]\n\\[\nVar(\\mathbf{Ab}) = \\mathbf{A}Var(\\mathbf{b})\\mathbf{A}^T\n\\]"
+  },
+  {
+    "objectID": "slides/05-slr-matrix-contd.html#announcements",
+    "href": "slides/05-slr-matrix-contd.html#announcements",
+    "title": "SLR: Matrix representation",
     "section": "Announcements",
-    "text": "Announcements\n\nProject\n\nResearch questions due TODAY\nProposal due Thursday, October 3 at 11:59pm\n\nLab 03 due Thursday, October 3 at 11:59pm\nHW 02 due Thursday, October 3 at 11:59pm (released after class)\nStatistics experience due Tue, Nov 26 at 11:59pm"
+    "text": "Announcements\n\nLab 01 due on Thursday, September 12 at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#topics",
-    "href": "slides/10-prop-of-estimators.html#topics",
-    "title": "Properties of estimators",
+    "objectID": "slides/05-slr-matrix-contd.html#topics",
+    "href": "slides/05-slr-matrix-contd.html#topics",
+    "title": "SLR: Matrix representation",
     "section": "Topics",
-    "text": "Topics\n\nCompute and interpret confidence interval for a single coefficient\nProperties of \\(\\hat{\\boldsymbol{\\beta}}\\)\nDefine “linear” model"
+    "text": "Topics\n\nMatrix representation of simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#computing-setup",
-    "href": "slides/10-prop-of-estimators.html#computing-setup",
-    "title": "Properties of estimators",
-    "section": "Computing setup",
-    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(kableExtra)  \nlibrary(patchwork)   \n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "objectID": "slides/05-slr-matrix-contd.html#slr-in-matrix-form",
+    "href": "slides/05-slr-matrix-contd.html#slr-in-matrix-form",
+    "title": "SLR: Matrix representation",
+    "section": "SLR in matrix form",
+    "text": "SLR in matrix form\nSuppose we have \\(n\\) observations, a quantitative response variable, and a single predictor\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\n\\(\\mathbf{y}\\): \\(n\\times 1\\) vector of responses\n\\(\\mathbf{X}\\): \\(n \\times 2\\) design matrix\n\\(\\boldsymbol{\\beta}\\): \\(2 \\times 1\\) vector of coefficients\n\\(\\boldsymbol{\\epsilon}\\): \\(n \\times 1\\) vector of error terms"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#data-ncaa-football-expenditures",
-    "href": "slides/10-prop-of-estimators.html#data-ncaa-football-expenditures",
-    "title": "Properties of estimators",
-    "section": "Data: NCAA Football expenditures",
-    "text": "Data: NCAA Football expenditures\nToday’s data come from Equity in Athletics Data Analysis and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a March 2022 Tidy Tuesday.\nWe will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :\n\ntotal_exp_m: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)\nenrollment_th: Total student enrollment in the 2019 - 2020 academic year (in thousands)\ntype: institution type (Public or Private)"
+    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals",
+    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\nGoal: Find \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes the sum of squared residuals \\[\n\\begin{aligned}\nSSR = \\sum_{i=1}^n e_i^2 = \\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#regression-model",
-    "href": "slides/10-prop-of-estimators.html#regression-model",
-    "title": "Properties of estimators",
-    "section": "Regression model",
-    "text": "Regression model\n\nexp_fit &lt;- lm(total_exp_m ~ enrollment_th + type, data = football)\ntidy(exp_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0"
+    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-1",
+    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-1",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\n\\[\n\\begin{aligned}\n\\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})}\\\\[10pt]\n&\\class{fragment}{=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}}\\\\[10pt]\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#inference-for-beta_j",
-    "href": "slides/10-prop-of-estimators.html#inference-for-beta_j",
-    "title": "Properties of estimators",
-    "section": "Inference for \\(\\beta_j\\)",
-    "text": "Inference for \\(\\beta_j\\)\nWe often want to conduct inference on individual model coefficients\n\nHypothesis test: Is there a linear relationship between the response and \\(x_j\\)?\nConfidence interval: What is a plausible range of values \\(\\beta_j\\) can take?"
+    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-2",
+    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-2",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\n\\[\n\\begin{aligned}\n\\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#confidence-interval-for-beta_j-1",
-    "href": "slides/10-prop-of-estimators.html#confidence-interval-for-beta_j-1",
-    "title": "Properties of estimators",
-    "section": "Confidence interval for \\(\\beta_j\\)",
-    "text": "Confidence interval for \\(\\beta_j\\)\n\n\nA plausible range of values for a population parameter is called a confidence interval\nUsing only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net\n\nWe can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish\nSimilarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter"
+    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-3",
+    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-3",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\nThe estimate of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes SSR is the one such that\n\\[\n\\nabla_{\\boldsymbol{\\beta}} SSR = \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) = 0\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#what-confidence-means",
-    "href": "slides/10-prop-of-estimators.html#what-confidence-means",
-    "title": "Properties of estimators",
-    "section": "What “confidence” means",
-    "text": "What “confidence” means\n\n\nWe will construct \\(C\\%\\) confidence intervals\n\nThe confidence level impacts the width of the interval\n\n“Confidence” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate \\(C\\%\\) CIs for the coefficient of \\(x_j\\), then \\(C\\%\\) of those intervals will contain the true value of the coefficient \\(\\beta_j\\)\nNeed to balance precision and accuracy when selecting a confidence level"
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations",
+    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\n\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#confidence-interval-for-beta_j-2",
-    "href": "slides/10-prop-of-estimators.html#confidence-interval-for-beta_j-2",
-    "title": "Properties of estimators",
-    "section": "Confidence interval for \\(\\beta_j\\)",
-    "text": "Confidence interval for \\(\\beta_j\\)\n\\[\n\\text{Estimate} \\pm \\text{ (critical value) } \\times \\text{SE}\n\\]\n\n\n\\[\n\\hat{\\beta}_1 \\pm t^* \\times SE({\\hat{\\beta}_j})\n\\]\nwhere \\(t^*\\) is calculated from a \\(t\\) distribution with \\(n-p-1\\) degrees of freedom"
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations-1",
+    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\nTh Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#computing-t-in-r",
-    "href": "slides/10-prop-of-estimators.html#computing-t-in-r",
-    "title": "Properties of estimators",
-    "section": "Computing \\(t^*\\) in R",
-    "text": "Computing \\(t^*\\) in R\n\n\n# confidence level: 95%\nqt(0.975, df = nrow(football) - 2 - 1)\n\n[1] 1.97928\n\n\n\n\n\n\n# confidence level: 90%\nqt(0.95, df = nrow(football) - 2 - 1)\n\n[1] 1.657235\n\n\n\n\n\n\n# confidence level: 99%\nqt(0.995, df = nrow(football) - 2 - 1)\n\n[1] 2.61606"
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations-2",
+    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations-2",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\n\n\n\nProposition 1\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^T\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{z} = \\mathbf{z}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#ci-for-coefficient-of-enrollment",
-    "href": "slides/10-prop-of-estimators.html#ci-for-coefficient-of-enrollment",
-    "title": "Properties of estimators",
-    "section": "95% CI for coefficient of enrollment",
-    "text": "95% CI for coefficient of enrollment\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n\n\n\n\n\n\n\n\\[\n\\hat{\\beta}_j \\pm t^* \\times SE(\\hat{\\beta}_j)\n\\]\n\n\n\\[\n0.7804 \\pm 1.9793 \\times 0.1103\n\\]\n\n\n\\[\n[0.562, 0.999]\n\\]"
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-proposition-1",
+    "href": "slides/05-slr-matrix-contd.html#side-note-proposition-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Proposition 1",
+    "text": "Side note: Proposition 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^T\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#interpreting-the-ci",
-    "href": "slides/10-prop-of-estimators.html#interpreting-the-ci",
-    "title": "Properties of estimators",
-    "section": "Interpreting the CI",
-    "text": "Interpreting the CI\n🔗 edstem.org/us/courses/62513/discussion/648045"
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-proposition-1-1",
+    "href": "slides/05-slr-matrix-contd.html#side-note-proposition-1-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Proposition 1",
+    "text": "Side note: Proposition 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^T\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#computing-ci-in-r",
-    "href": "slides/10-prop-of-estimators.html#computing-ci-in-r",
-    "title": "Properties of estimators",
-    "section": "Computing CI in R",
-    "text": "Computing CI in R\n\ntidy(exp_fit, conf.int = TRUE, conf.level = 0.95) |&gt; \n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n13.426\n25.239\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n0.562\n0.999\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n-19.466\n-6.986"
+    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-matrix-operations",
+    "href": "slides/05-slr-matrix-contd.html#side-note-vector-matrix-operations",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector + matrix operations",
+    "text": "Side note: Vector + matrix operations\n\n\n\nProposition 2\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^T \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\n\n\n\nProof in HW 01"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#motivation",
-    "href": "slides/10-prop-of-estimators.html#motivation",
-    "title": "Properties of estimators",
-    "section": "Motivation",
-    "text": "Motivation\n\n\nWe have discussed how to use least squares to find an estimator of \\(\\hat{\\boldsymbol{\\beta}}\\)\nHow do we know whether our least squares estimator is a “good” estimator?\nWhen we consider what makes an estimator “good”, we’ll look at three criteria:\n\nBias\nVariance\nMean squared error\n\nWe’ll take a look at these over the course of a few lectures and motivate why we might prefer using least squares to compute \\(\\hat{\\boldsymbol{\\beta}}\\) versus other methods"
+    "objectID": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
+    "href": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
+    "title": "SLR: Matrix representation",
+    "section": "Find the least squares estimators",
+    "text": "Find the least squares estimators\n\\[\n\\begin{aligned}\n\\nabla_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta})  \\\\[10pt]\n& \\class{fragment}{= \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\mathbf{y}^T\\mathbf{y} - 2\\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{= 0 - 2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}}\\class{fragment}{=0} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow \\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = \\mathbf{X}^T\\mathbf{y}} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow   (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}} \\\\[10pt]\n&\\class{fragment}{\\color{#993399}{\\Rightarrow \\hat{\\boldsymbol{\\beta}} =  (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#bias-and-variance",
-    "href": "slides/10-prop-of-estimators.html#bias-and-variance",
-    "title": "Properties of estimators",
-    "section": "Bias and variance",
-    "text": "Bias and variance\nSuppose you are throwing darts at a target\n\n\n\n\n\n\nImage source: Analytics Vidhya\n\n\n\n\nUnbiased: Darts distributed around the target\nBiased: Darts systematically away from the target\nVariance: Darts could be widely spread (high variance) or generally clustered together (low variance)"
+    "objectID": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
+    "href": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
+    "title": "SLR: Matrix representation",
+    "section": "Did we find a minimum?",
+    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{=-2\\nabla_{\\boldsymbol{\\beta}}\\mathbf{X}^T\\mathbf{y} + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^T\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&\\class{fragment}{\\propto \\mathbf{X}^T\\mathbf{X}}\\class{fragment}{ &gt; 0}\n\\end{aligned}\n\\]\n\nShow the details in HW 01"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#bias-and-variance-1",
-    "href": "slides/10-prop-of-estimators.html#bias-and-variance-1",
-    "title": "Properties of estimators",
-    "section": "Bias and variance",
-    "text": "Bias and variance\n\nIdeal scenario: Darts are clustered around the target (unbiased and low variance)\nWorst case scenario: Darts are widely spread out and systematically far from the target (high bias and high variance)\nAcceptable scenario: There’s some trade-off between the bias and variance. For example, it may be acceptable for the darts to be clustered around a point that is close to the target (low bias and low variance)"
+    "objectID": "slides/05-slr-matrix-contd.html#predicted-fitted-values",
+    "href": "slides/05-slr-matrix-contd.html#predicted-fitted-values",
+    "title": "SLR: Matrix representation",
+    "section": "Predicted (fitted) values",
+    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\)\n\n\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)\nIt is only a function of \\(\\mathbf{X}\\) not \\(\\mathbf{y}\\)"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#bias-and-variance-2",
-    "href": "slides/10-prop-of-estimators.html#bias-and-variance-2",
-    "title": "Properties of estimators",
-    "section": "Bias and variance",
-    "text": "Bias and variance\n\n\nEach time we take a sample of size \\(n\\), we can find the least squares estimator (throw dart at target)\nSuppose we take many independent samples of size \\(n\\) and find the least squares estimator for each sample (throw many darts at the target). Ideally,\n\nThe estimators are centered at the true parameter (unbiased)\nThe estimators are clustered around the true parameter (unbiased with low variance)\n\n\n\n\nLet’s take a look at the mean and variance of the least squares estimator"
+    "objectID": "slides/05-slr-matrix-contd.html#residuals",
+    "href": "slides/05-slr-matrix-contd.html#residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Residuals",
+    "text": "Residuals\nRecall that the residuals are the difference between the observed and predicted values\n\\[\n\\begin{aligned}\n\\mathbf{e} &= \\mathbf{y} - \\hat{\\mathbf{y}}\\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}}} \\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{H}\\mathbf{y}} \\\\[20pt]\n\\class{fragment}{\\color{#993399}{\\mathbf{e}}} &\\class{fragment}{\\color{#993399}{=(\\mathbf{I} - \\mathbf{H})\\mathbf{y}}} \\\\[10pt]\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta",
-    "href": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta",
-    "title": "Properties of estimators",
-    "section": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe bias of an estimator is the difference between the estimator’s expected value and the true value of the parameter\n\nLet \\(\\hat{\\theta}\\) be an estimator of the parameter \\(\\theta\\). Then\n\\[\nBias(\\hat{\\theta}) = E(\\hat{\\theta}) - \\theta\n\\]\n\n\nAn estimator is unbiased if the bias is 0 and thus \\(E(\\hat{\\theta}) = \\theta\\)"
-  },
-  {
-    "objectID": "slides/10-prop-of-estimators.html#finding-expected-value-and-variance",
-    "href": "slides/10-prop-of-estimators.html#finding-expected-value-and-variance",
-    "title": "Properties of estimators",
-    "section": "Finding expected value and variance",
-    "text": "Finding expected value and variance\nLet \\(\\mathbf{A}\\) be a \\(n \\times p\\) matrix of constants and \\(\\mathbf{b}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\nE(\\mathbf{Ab}) = \\mathbf{A}E(\\mathbf{b})\n\\]\n\\[\nVar(\\mathbf{Ab}) = \\mathbf{A}Var(\\mathbf{b})\\mathbf{A}^T\n\\]"
-  },
-  {
-    "objectID": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta-1",
-    "href": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta-1",
-    "title": "Properties of estimators",
-    "section": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)\nLet’s take a look at the expected value of the least squares estimator. Given \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\),\n\\[\n\\begin{aligned}\nE(\\hat{\\boldsymbol{\\beta}}) &= E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}] \\\\[8pt]\n& = \\class{fragment}{E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T(\\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon})]} \\\\[8pt]\n& = \\class{fragment}{E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}] + E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon}]}\\\\[8pt]\n& = \\class{fragment}{\\boldsymbol{\\beta} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^TE(\\boldsymbol{\\epsilon})} \\\\[8pt]\n& = \\class{fragment}{\\boldsymbol{\\beta}}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta-2",
-    "href": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta-2",
-    "title": "Properties of estimators",
-    "section": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe least squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is an unbiased estimator of \\(\\boldsymbol{\\beta}\\)\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\n\\]\n\n\nNow let’s take a look at the variance"
-  },
-  {
-    "objectID": "slides/10-prop-of-estimators.html#variance-of-hatboldsymbolbeta",
-    "href": "slides/10-prop-of-estimators.html#variance-of-hatboldsymbolbeta",
-    "title": "Properties of estimators",
-    "section": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\\[\n\\begin{aligned}\nVar(\\hat{\\boldsymbol{\\beta}}) &= Var((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}) \\\\[8pt]\n& = \\class{fragment}{[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T]Var(\\mathbf{y})[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T]^T }\\\\[8pt]\n& = \\class{fragment}{[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T]\\sigma^2_{\\epsilon}\\mathbf{I}[\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}]} \\\\[8pt]\n& = \\class{fragment}{\\sigma^2_{\\epsilon}[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}]} \\\\[8pt]\n& = \\class{fragment}{\\sigma^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1}}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/10-prop-of-estimators.html#variance-of-hatboldsymbolbeta-1",
-    "href": "slides/10-prop-of-estimators.html#variance-of-hatboldsymbolbeta-1",
-    "title": "Properties of estimators",
-    "section": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) =  \\sigma^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1}\n\\]\nWe will show that \\(\\hat{\\boldsymbol{\\beta}}\\) is the “best” estimator (has the lowest variance) among the class of linear unbiased estimators"
-  },
-  {
-    "objectID": "slides/10-prop-of-estimators.html#linear-regression-model",
-    "href": "slides/10-prop-of-estimators.html#linear-regression-model",
-    "title": "Properties of estimators",
-    "section": "“Linear” regression model",
-    "text": "“Linear” regression model\nWhat does it mean for a model to be a “linear” regression model?\n\n\nLinear regression models are linear in the parameters, i.e. given an observation \\(y_i\\)\n\\[\ny_i = \\beta_0 + \\beta_1f_1(x_{i1}) +  \\dots + \\beta_pf_p(x_{ip}) + \\epsilon_i\n\\]\nThe functions \\(f_1, \\ldots, f_p\\) can be non-linear as long as \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) are linear in \\(Y\\)"
-  },
-  {
-    "objectID": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model",
-    "href": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model",
-    "title": "Properties of estimators",
-    "section": "Identify the linear regression model",
-    "text": "Identify the linear regression model\n🔗 edstem.org/us/courses/62513/discussion/648051"
-  },
-  {
-    "objectID": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model-1",
-    "href": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model-1",
-    "title": "Properties of estimators",
-    "section": "Identify the linear regression model",
-    "text": "Identify the linear regression model\n\n\n\\(y_i = \\beta_0 + \\beta_1x_{i1} + \\beta_2x_{i1}^2 + \\beta_3x_{i2}  + \\epsilon_i\\)\n\\(y_i = \\beta_1x_{i1} + \\beta_2x_{i2} + \\beta_3x_{i1}x_{i2} + \\epsilon_i\\)\n\\(y_i = \\beta_0  + \\beta_1\\sin(x_{i1} + \\beta_2x_{i2}) + \\beta_3x_{i3} + \\epsilon_i\\)\n\\(y_i = \\beta_0 + \\beta_1e^{x_{i1}} + \\beta_2e^{x_{i2}} + \\epsilon_i\\)\n\\(y_i = \\exp(\\beta_0 + \\beta_1x_{i1} + \\beta_2x_{i2} + \\beta_3x_{i3}) + \\epsilon_i\\)"
-  },
-  {
-    "objectID": "slides/10-prop-of-estimators.html#recap",
-    "href": "slides/10-prop-of-estimators.html#recap",
-    "title": "Properties of estimators",
+    "objectID": "slides/05-slr-matrix-contd.html#recap",
+    "href": "slides/05-slr-matrix-contd.html#recap",
+    "title": "SLR: Matrix representation",
     "section": "Recap",
-    "text": "Recap\n\nComputed and interpreted confidence interval for a single coefficient\nShowed some properties of \\(\\hat{\\boldsymbol{\\beta}}\\)\nDefined “linear” model\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+    "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel from\nLeast square estimate\nPredicted (fitted) values\nResiduals\n\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#announcements",
@@ -1478,7 +1429,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned, Lab 01 due\n\n\n4\nM\nSep 16\nLab 02: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nANOVA + Geometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Lab 02 due\n\n\n5\nM\nSep 23\nLab: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned, Project research questions due\n\n\n6\nM\nSep 30\nLab: Lab 03 + Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due, Lab 03 due, Project proposal due\n\n\n7\nM\nOct 7\nLab: Estimators + Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nMaximum Likelihood Estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Model diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab: Project Exploratory Data Analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Model diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nOdds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nae\nhw\nlab\nproject\nnotes\n\n\n\n\n1\nM\nAug 26\nLab 00: Welcome + Getting Started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nAug 27\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nAug 29\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nSep 2\nNO LAB: Labor Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 3\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 5\nSLR: Model assessment cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nSep 9\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 10\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 12\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 assigned, Lab 01 due\n\n\n4\nM\nSep 16\nLab 02: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 17\nANOVA + Geometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 19\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Lab 02 due\n\n\n5\nM\nSep 23\nLab 03: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject: Develop Research question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nSep 24\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nSep 26\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 assigned, Project research questions due\n\n\n6\nM\nSep 30\nLab 03 + Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 1\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 3\nExam 01 Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due, Lab 03 due, Project proposal due\n\n\n7\nM\nOct 7\nLab :Exam office hours\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 8\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 10\nMaximum Likelihood Estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nOct 14\nNO LAB: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 15\nNO LECTURE: Fall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 17\nMLR: Model diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 assigned\n\n\n9\nM\nOct 21\nLab 04: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 22\nMLR: Model diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 24\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n10\nM\nOct 28\nLab: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nOct 29\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nOct 31\nOdds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nNov 4\nLab: Model comparison + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 5\nWellness Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 7\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nNov 11\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 12\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 14\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 assigned\n\n\n13\nM\nNov 18\nLab: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 19\nLR estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 21\nTBD / Catch up day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n14\nM\nNov 25\nProject: Draft analysis + report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nNov 26\nProject day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nNov 28\nNO LECTURE: Thanksgiving\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nDec 2\nProject: Peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nDec 3\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nDec 5\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -3679,130 +3630,354 @@
     "text": "Next class\n\nMore on multiple linear regression\n\nCategorical predictors\nModel assessment\nGeometric interpretation (as time permits)\n\nSee Sep 12 prepare\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#announcements",
-    "href": "slides/05-slr-matrix-contd.html#announcements",
-    "title": "SLR: Matrix representation",
+    "objectID": "slides/11-prop-of-estimators-pt2.html#announcements",
+    "href": "slides/11-prop-of-estimators-pt2.html#announcements",
+    "title": "Properties of estimators",
     "section": "Announcements",
-    "text": "Announcements\n\nLab 01 due on Thursday, September 12 at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
+    "text": "Announcements\n\nProject Proposal due Thursday, October 3 at 11:59pm\nLab 03 due Thursday, October 3 at 11:59pm\nHW 02 due Thursday, October 3 at 11:59pm (released after class)\nExam 01: Tuesday, October 8 (in class + take-home)\n\nLecture recordings available until the start of the in-class exam\nExam review on Thursday\nMonday’s lab: Exam office hours"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#topics",
-    "href": "slides/05-slr-matrix-contd.html#topics",
-    "title": "SLR: Matrix representation",
+    "objectID": "slides/11-prop-of-estimators-pt2.html#topics",
+    "href": "slides/11-prop-of-estimators-pt2.html#topics",
+    "title": "Properties of estimators",
     "section": "Topics",
-    "text": "Topics\n\nMatrix representation of simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+    "text": "Topics\n\nProperties of the least squares estimator\n\n\n\n\n\n\n\nNote\n\n\nThis is not a mathematical statistics class. There are semester-long courses that will go into these topics in much more detail; we will barely scratch the surface in this course.\nOur goals are to understand\n\nEstimators have properties\nSome properties of the least squares estimator and why they are useful"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#slr-in-matrix-form",
-    "href": "slides/05-slr-matrix-contd.html#slr-in-matrix-form",
-    "title": "SLR: Matrix representation",
-    "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nSuppose we have \\(n\\) observations, a quantitative response variable, and a single predictor\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\n\\(\\mathbf{y}\\): \\(n\\times 1\\) vector of responses\n\\(\\mathbf{X}\\): \\(n \\times 2\\) design matrix\n\\(\\boldsymbol{\\beta}\\): \\(2 \\times 1\\) vector of coefficients\n\\(\\boldsymbol{\\epsilon}\\): \\(n \\times 1\\) vector of error terms"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#motivation",
+    "href": "slides/11-prop-of-estimators-pt2.html#motivation",
+    "title": "Properties of estimators",
+    "section": "Motivation",
+    "text": "Motivation\n\n\nWe have discussed how to use least squares to find an estimator of \\(\\hat{\\boldsymbol{\\beta}}\\)\nHow do we know whether our least squares estimator is a “good” estimator?\nWhen we consider what makes an estimator “good”, we’ll look at three criteria:\n\nBias\nVariance\nMean squared error\n\nWe’ll take a look at these over the course of a few lectures and motivate why we might prefer using least squares to compute \\(\\hat{\\boldsymbol{\\beta}}\\) versus other methods"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals",
-    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals",
-    "title": "SLR: Matrix representation",
-    "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\nGoal: Find \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes the sum of squared residuals \\[\n\\begin{aligned}\nSSR = \\sum_{i=1}^n e_i^2 = \\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n\\end{aligned}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#bias-and-variance",
+    "href": "slides/11-prop-of-estimators-pt2.html#bias-and-variance",
+    "title": "Properties of estimators",
+    "section": "Bias and variance",
+    "text": "Bias and variance\nSuppose you are throwing darts at a target\n\n\n\n\n\n\nImage source: Analytics Vidhya\n\n\n\n\nIdeal scenario: Darts are clustered around the target (unbiased and low variance)\nIdeal scenario: Darts are clustered around the target (unbiased and low variance)\nAcceptable scenario: There’s some trade-off between the bias and variance."
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-1",
-    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-1",
-    "title": "SLR: Matrix representation",
-    "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\n\\[\n\\begin{aligned}\n\\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})}\\\\[10pt]\n&\\class{fragment}{=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}}\\\\[10pt]\n\\end{aligned}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#properties-of-hatboldsymbolbeta-1",
+    "href": "slides/11-prop-of-estimators-pt2.html#properties-of-hatboldsymbolbeta-1",
+    "title": "Properties of estimators",
+    "section": "Properties of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Properties of \\(\\hat{\\boldsymbol{\\beta}}\\)\nFinite sample ( \\(n\\) ) properties\n\nUnbiased estimator\nBest Linear Unbiased Estimator (BLUE)\n\n\nInfinite sample ( \\(n \\rightarrow \\infty\\) ) properties\n\nConsistent estimator\nEfficient estimator"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-2",
-    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-2",
-    "title": "SLR: Matrix representation",
-    "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\n\\[\n\\begin{aligned}\n\\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^T - \\boldsymbol{\\beta}^T\\mathbf{X}^T)(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - \\mathbf{y}^T\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#unbiased-estimator",
+    "href": "slides/11-prop-of-estimators-pt2.html#unbiased-estimator",
+    "title": "Properties of estimators",
+    "section": "Unbiased estimator",
+    "text": "Unbiased estimator\nThe bias of an estimator is the difference between the estimator’s expected value and the true value of the parameter\nLet \\(\\hat{\\theta}\\) be an estimator of the parameter \\(\\theta\\). Then\n\\[\nBias(\\hat{\\theta}) = E(\\hat{\\theta}) - \\theta\n\\]\nAn estimator is unbiased if the bias is 0 and thus \\(E(\\hat{\\theta}) = \\theta\\)"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-3",
-    "href": "slides/05-slr-matrix-contd.html#minimize-sum-of-squared-residuals-3",
-    "title": "SLR: Matrix representation",
-    "section": "Minimize sum of squared residuals",
-    "text": "Minimize sum of squared residuals\nThe estimate of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes SSR is the one such that\n\\[\n\\nabla_{\\boldsymbol{\\beta}} SSR = \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) = 0\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#unbiased-estimator-1",
+    "href": "slides/11-prop-of-estimators-pt2.html#unbiased-estimator-1",
+    "title": "Properties of estimators",
+    "section": "Unbiased estimator",
+    "text": "Unbiased estimator\nGiven \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\),\n\\[\n\\begin{aligned}\nE(\\hat{\\boldsymbol{\\beta}}) &= E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}] \\\\[8pt]\n& = E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T(\\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon})] \\\\[8pt]\n& = E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}] + E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon}]\\\\[8pt]\n& = \\boldsymbol{\\beta} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^TE(\\boldsymbol{\\epsilon}) \\\\[8pt]\n& = \\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nThe least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is an unbiased estimator of \\(\\boldsymbol{\\beta}\\)"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations",
-    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Vector operations",
-    "text": "Side note: Vector operations\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\n\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#variance-of-hatboldsymbolbeta",
+    "href": "slides/11-prop-of-estimators-pt2.html#variance-of-hatboldsymbolbeta",
+    "title": "Properties of estimators",
+    "section": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\\[\n\\begin{aligned}\nVar(\\hat{\\boldsymbol{\\beta}}) &= Var((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}) \\\\[8pt]\n& = [(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T]Var(\\mathbf{y})[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T]^T \\\\[8pt]\n& = [(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T]\\sigma^2_{\\epsilon}\\mathbf{I}[\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}] \\\\[8pt]\n& = \\sigma^2_{\\epsilon}[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}] \\\\[8pt]\n& = \\sigma^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations-1",
-    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Vector operations",
-    "text": "Side note: Vector operations\nTh Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#linear-regression-model",
+    "href": "slides/11-prop-of-estimators-pt2.html#linear-regression-model",
+    "title": "Properties of estimators",
+    "section": "“Linear” regression model",
+    "text": "“Linear” regression model\nWhat does it mean for a model to be a “linear” regression model?\n\nLinear regression models are linear in the parameters, i.e. given an observation \\(y_i\\)\n\\[\ny_i = \\beta_0 + \\beta_1f_1(x_{i1}) +  \\dots + \\beta_pf_p(x_{ip}) + \\epsilon_i\n\\]\nThe functions \\(f_1, \\ldots, f_p\\) can be non-linear as long as \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) are linear in \\(Y\\)"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-operations-2",
-    "href": "slides/05-slr-matrix-contd.html#side-note-vector-operations-2",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Vector operations",
-    "text": "Side note: Vector operations\n\n\n\nProposition 1\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^T\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{z} = \\mathbf{z}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof",
+    "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof",
+    "title": "Properties of estimators",
+    "section": "Gauss-Markov Theorem Proof",
+    "text": "Gauss-Markov Theorem Proof\nSuppose \\(\\tilde{\\boldsymbol{\\beta}}\\) is another linear unbiased estimator of \\(\\boldsymbol{\\beta}\\) that can be expressed as \\(\\tilde{\\boldsymbol{\\beta}} = \\mathbf{Cy}\\) , such that \\(\\hat{\\mathbf{y}} = \\mathbf{X}\\tilde{\\boldsymbol{\\beta}} = \\mathbf{XCy}\\)\n\nLet \\(\\mathbf{C} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B}\\) for a non-zero matrix of constants \\(\\mathbf{B}\\).\n\n\nWhat is the dimension of \\(\\mathbf{B}\\)?"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-proposition-1",
-    "href": "slides/05-slr-matrix-contd.html#side-note-proposition-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Proposition 1",
-    "text": "Side note: Proposition 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^T\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-1",
+    "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-1",
+    "title": "Properties of estimators",
+    "section": "Gauss-Markov Theorem Proof",
+    "text": "Gauss-Markov Theorem Proof\n\\[\n\\tilde{\\boldsymbol{\\beta}} = \\mathbf{Cy} = ((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})\\mathbf{y}\n\\]\nWe need to show\n\n\\(\\tilde{\\boldsymbol{\\beta}}\\) is unbiased\n\\(Var(\\tilde{\\boldsymbol{\\beta}}) &gt; Var(\\hat{\\boldsymbol{\\beta}})\\)"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-proposition-1-1",
-    "href": "slides/05-slr-matrix-contd.html#side-note-proposition-1-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Proposition 1",
-    "text": "Side note: Proposition 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^T\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-2",
+    "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-2",
+    "title": "Properties of estimators",
+    "section": "Gauss-Markov Theorem Proof",
+    "text": "Gauss-Markov Theorem Proof\n\\[\n\\begin{aligned}\nE(\\tilde{\\boldsymbol{\\beta}}) & = E[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})\\mathbf{y}] \\\\\n& = E[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})(\\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon})] \\\\\n& = E[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})(\\mathbf{X}\\boldsymbol{\\beta})] \\\\\n& = ((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})(\\mathbf{X}\\boldsymbol{\\beta}) \\\\\n& = (\\mathbf{I} + \\mathbf{BX})\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\n\n\nWhat assumption(s) of the Gauss-Markov Theorem did we use?\nWhat must be true for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be unbiased?"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#side-note-vector-matrix-operations",
-    "href": "slides/05-slr-matrix-contd.html#side-note-vector-matrix-operations",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Vector + matrix operations",
-    "text": "Side note: Vector + matrix operations\n\n\n\nProposition 2\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^T \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\n\n\n\nProof in HW 01"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-3",
+    "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-3",
+    "title": "Properties of estimators",
+    "section": "Gauss-Markov Theorem Proof",
+    "text": "Gauss-Markov Theorem Proof\n\n\\(\\mathbf{BX}\\) must be the \\(\\mathbf{0}\\) matrix (dimensions = \\((p+1) \\times (p+1)\\)) in order for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be unbiased\nNow we need to find \\(Var(\\tilde{\\boldsymbol{\\beta}})\\) and see how it compares to \\(Var(\\hat{\\boldsymbol{\\beta}})\\)"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
-    "href": "slides/05-slr-matrix-contd.html#find-the-least-squares-estimators",
-    "title": "SLR: Matrix representation",
-    "section": "Find the least squares estimators",
-    "text": "Find the least squares estimators\n\\[\n\\begin{aligned}\n\\nabla_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta})  \\\\[10pt]\n& \\class{fragment}{= \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\mathbf{y}^T\\mathbf{y} - 2\\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{= 0 - 2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}}\\class{fragment}{=0} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow \\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = \\mathbf{X}^T\\mathbf{y}} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow   (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}} \\\\[10pt]\n&\\class{fragment}{\\color{#993399}{\\Rightarrow \\hat{\\boldsymbol{\\beta}} =  (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}}\n\\end{aligned}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-4",
+    "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-4",
+    "title": "Properties of estimators",
+    "section": "Gauss-Markov Theorem Proof",
+    "text": "Gauss-Markov Theorem Proof\n\\[\n\\begin{aligned}\nVar(\\tilde{\\boldsymbol{\\beta}}) &= Var[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})\\mathbf{y}] \\\\\n& = ((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})Var(\\mathbf{y})((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})^T \\\\\n& = \\sigma^2_{\\epsilon}[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T \\mathbf{B}^T + \\mathbf{BX}(\\mathbf{X}^T\\mathbf{X})^{-1} + \\mathbf{BB}^T]\\\\\n& = \\sigma^2_\\epsilon(\\mathbf{X}^T\\mathbf{X})^{-1} + \\sigma^2_{\\epsilon}\\mathbf{BB}^T\\end{aligned}\n\\]\n\nWhat assumption(s) of the Gauss-Markov Theorem did we use?"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
-    "href": "slides/05-slr-matrix-contd.html#did-we-find-a-minimum",
-    "title": "SLR: Matrix representation",
-    "section": "Did we find a minimum?",
-    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{=-2\\nabla_{\\boldsymbol{\\beta}}\\mathbf{X}^T\\mathbf{y} + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^T\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&\\class{fragment}{\\propto \\mathbf{X}^T\\mathbf{X}}\\class{fragment}{ &gt; 0}\n\\end{aligned}\n\\]\n\nShow the details in HW 01"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-5",
+    "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-5",
+    "title": "Properties of estimators",
+    "section": "Gauss-Markov Theorem Proof",
+    "text": "Gauss-Markov Theorem Proof\nWe know that \\(\\mathbf{B}\\mathbf{B}^T\\) transpose is symmetric. Let \\(\\mathbf{z}\\) be a non-zero vector. Then,\n\\[\n\\mathbf{z}^T\\mathbf{BB}^T\\mathbf{z} = (\\mathbf{B}^T\\mathbf{z})^T(\\mathbf{B}^T\\mathbf{z}) = ||\\mathbf{B}^T\\mathbf{z}||^2 \\geq 0\n\\]\n\nWhen is \\(||\\mathbf{B}^T\\mathbf{z}|| = 0\\) ?\n\n\nTherefore, we have shown that \\(Var(\\tilde{\\boldsymbol{\\beta}}) &gt; Var(\\hat{\\boldsymbol{\\beta}})\\) and have completed the proof."
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#predicted-fitted-values",
-    "href": "slides/05-slr-matrix-contd.html#predicted-fitted-values",
-    "title": "SLR: Matrix representation",
-    "section": "Predicted (fitted) values",
-    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\)\n\n\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)\nIt is only a function of \\(\\mathbf{X}\\) not \\(\\mathbf{y}\\)"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#properties-of-hatboldsymbolbeta-2",
+    "href": "slides/11-prop-of-estimators-pt2.html#properties-of-hatboldsymbolbeta-2",
+    "title": "Properties of estimators",
+    "section": "Properties of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Properties of \\(\\hat{\\boldsymbol{\\beta}}\\)\nFinite sample ( \\(n\\) ) properties\n\nUnbiased estimator ✅\nBest Linear Unbiased Estimator (BLUE) ✅\n\n\nInfinite sample ( \\(n \\rightarrow \\infty\\) ) properties\n\nConsistent estimator\nEfficient estimator"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#residuals",
-    "href": "slides/05-slr-matrix-contd.html#residuals",
-    "title": "SLR: Matrix representation",
-    "section": "Residuals",
-    "text": "Residuals\nRecall that the residuals are the difference between the observed and predicted values\n\\[\n\\begin{aligned}\n\\mathbf{e} &= \\mathbf{y} - \\hat{\\mathbf{y}}\\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}}} \\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{H}\\mathbf{y}} \\\\[20pt]\n\\class{fragment}{\\color{#993399}{\\mathbf{e}}} &\\class{fragment}{\\color{#993399}{=(\\mathbf{I} - \\mathbf{H})\\mathbf{y}}} \\\\[10pt]\n\\end{aligned}\n\\]"
+    "objectID": "slides/11-prop-of-estimators-pt2.html#mean-squared-error",
+    "href": "slides/11-prop-of-estimators-pt2.html#mean-squared-error",
+    "title": "Properties of estimators",
+    "section": "Mean squared error",
+    "text": "Mean squared error\nThe mean squared error (MSE) is the squared difference between the estimator and parameter.\n\nLet \\(\\hat{\\theta}\\) be an estimator of the parameter \\(\\theta\\). Then\n\\[\n\\begin{aligned}\nMSE(\\hat{\\theta}) &= E[(\\hat{\\theta} - \\theta)^2] \\\\\n& = E(\\hat{\\theta}^2 - 2\\hat{\\theta}\\theta + \\theta^2) \\\\\n& = E(\\hat{\\theta}^2) - 2\\theta E(\\hat{\\theta}) + \\theta^2 \\\\\n& = \\underbrace{E(\\hat{\\theta}^2) -  E(\\hat{\\theta})^2}_{Var(\\hat{\\theta})} + \\underbrace{E(\\hat{\\theta})^2 - 2\\theta E(\\hat{\\theta}) + \\theta^2}_{Bias(\\theta)^2}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/05-slr-matrix-contd.html#recap",
-    "href": "slides/05-slr-matrix-contd.html#recap",
-    "title": "SLR: Matrix representation",
+    "objectID": "slides/11-prop-of-estimators-pt2.html#mean-squared-error-1",
+    "href": "slides/11-prop-of-estimators-pt2.html#mean-squared-error-1",
+    "title": "Properties of estimators",
+    "section": "Mean squared error",
+    "text": "Mean squared error\n\\[\nMSE(\\theta) = Var(\\hat{\\theta}) + Bias(\\hat{\\theta})^2\n\\]\n\n\nThe least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is unbiased, so \\(MSE(\\hat{\\boldsymbol{\\beta}}) = Var(\\hat{\\boldsymbol{\\beta}})\\)"
+  },
+  {
+    "objectID": "slides/11-prop-of-estimators-pt2.html#consistency",
+    "href": "slides/11-prop-of-estimators-pt2.html#consistency",
+    "title": "Properties of estimators",
+    "section": "Consistency",
+    "text": "Consistency\nAn estimator \\(\\hat{\\theta}\\) is a consistent estimator of a parameter \\(\\theta\\) if it converges in probability to \\(\\theta\\). Given a sequence of estimators \\(\\hat{\\theta}_1, \\hat{\\theta}_2, . . .\\), then for every \\(\\epsilon &gt; 0\\),\n\\[\n\\displaystyle \\lim_{n\\to\\infty} P(|\\hat{\\theta}_n - \\theta| \\geq \\epsilon) = 0\n\\]\n\nThis means that as the sample size goes to \\(\\infty\\) (and thus the sample information gets better and better), the estimator will be arbitrarily close to the parameter with high probability.\n\n\nWhy is this a useful property of an estimator?"
+  },
+  {
+    "objectID": "slides/11-prop-of-estimators-pt2.html#consistency-1",
+    "href": "slides/11-prop-of-estimators-pt2.html#consistency-1",
+    "title": "Properties of estimators",
+    "section": "Consistency",
+    "text": "Consistency\n\n\n\n\n\nImportant\n\n\nTheorem\nAn estimator \\(\\hat{\\theta}\\) is a consistent estimator of the parameter \\(\\theta\\) if the sequence of estimators \\(\\hat{\\theta}_1, \\hat{\\theta}_2, \\ldots\\) satisfies\n\n\\(\\lim_{n \\to \\infty} Var(\\hat{\\theta}) = 0\\)\n\\(\\lim_{n \\to \\infty} Bias(\\hat{\\theta}) = 0\\)"
+  },
+  {
+    "objectID": "slides/11-prop-of-estimators-pt2.html#consistency-of-hatboldsymbolbeta",
+    "href": "slides/11-prop-of-estimators-pt2.html#consistency-of-hatboldsymbolbeta",
+    "title": "Properties of estimators",
+    "section": "Consistency of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Consistency of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\\(Bias(\\hat{\\boldsymbol{\\beta}}) = \\mathbf{0}\\), so \\(\\lim_{n \\to \\infty} Bias(\\hat{\\boldsymbol{\\beta}}) = \\mathbf{0}\\)\n\n\nNow we need to show that \\(\\lim_{n \\to \\infty} Var(\\hat{\\boldsymbol{\\beta}}) = \\mathbf{0}\\)\n\n\nWhat is \\(Var(\\hat{\\boldsymbol{\\beta}})\\)?\nDoes \\(Var(\\hat{\\boldsymbol{\\beta}}) \\to \\mathbf{0}\\) as \\(n \\to \\infty\\)?"
+  },
+  {
+    "objectID": "slides/11-prop-of-estimators-pt2.html#efficiency",
+    "href": "slides/11-prop-of-estimators-pt2.html#efficiency",
+    "title": "Properties of estimators",
+    "section": "Efficiency",
+    "text": "Efficiency\n\nThe efficiency of an estimator is concerned with the asymptotic variance of an estimator.\nThe estimator with the smallest variance is considered the most efficient.\nBy the Gauss-Markov Theorem, we have shown that the least-squares estimator is the most efficient among linear unbiased estimators."
+  },
+  {
+    "objectID": "slides/11-prop-of-estimators-pt2.html#recap",
+    "href": "slides/11-prop-of-estimators-pt2.html#recap",
+    "title": "Properties of estimators",
     "section": "Recap",
-    "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel from\nLeast square estimate\nPredicted (fitted) values\nResiduals\n\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+    "text": "Recap\nFinite sample ( \\(n\\) ) properties\n\nUnbiased estimator ✅\nBest Linear Unbiased Estimator (BLUE) ✅\n\n\nInfinite sample ( \\(n \\rightarrow \\infty\\) ) properties\n\nConsistent estimator ✅\nEfficient estimator ✅\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#announcements",
+    "href": "slides/10-prop-of-estimators.html#announcements",
+    "title": "Properties of estimators",
+    "section": "Announcements",
+    "text": "Announcements\n\nProject\n\nResearch questions due TODAY\nProposal due Thursday, October 3 at 11:59pm\n\nLab 03 due Thursday, October 3 at 11:59pm\nHW 02 due Thursday, October 3 at 11:59pm (released after class)\nStatistics experience due Tue, Nov 26 at 11:59pm"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#topics",
+    "href": "slides/10-prop-of-estimators.html#topics",
+    "title": "Properties of estimators",
+    "section": "Topics",
+    "text": "Topics\n\nCompute and interpret confidence interval for a single coefficient\nProperties of \\(\\hat{\\boldsymbol{\\beta}}\\)\nDefine “linear” model"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#computing-setup",
+    "href": "slides/10-prop-of-estimators.html#computing-setup",
+    "title": "Properties of estimators",
+    "section": "Computing setup",
+    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(kableExtra)  \nlibrary(patchwork)   \n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#data-ncaa-football-expenditures",
+    "href": "slides/10-prop-of-estimators.html#data-ncaa-football-expenditures",
+    "title": "Properties of estimators",
+    "section": "Data: NCAA Football expenditures",
+    "text": "Data: NCAA Football expenditures\nToday’s data come from Equity in Athletics Data Analysis and includes information about sports expenditures and revenues for colleges and universities in the United States. This data set was featured in a March 2022 Tidy Tuesday.\nWe will focus on the 2019 - 2020 season expenditures on football for institutions in the NCAA - Division 1 FBS. The variables are :\n\ntotal_exp_m: Total expenditures on football in the 2019 - 2020 academic year (in millions USD)\nenrollment_th: Total student enrollment in the 2019 - 2020 academic year (in thousands)\ntype: institution type (Public or Private)"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#regression-model",
+    "href": "slides/10-prop-of-estimators.html#regression-model",
+    "title": "Properties of estimators",
+    "section": "Regression model",
+    "text": "Regression model\n\nexp_fit &lt;- lm(total_exp_m ~ enrollment_th + type, data = football)\ntidy(exp_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#inference-for-beta_j",
+    "href": "slides/10-prop-of-estimators.html#inference-for-beta_j",
+    "title": "Properties of estimators",
+    "section": "Inference for \\(\\beta_j\\)",
+    "text": "Inference for \\(\\beta_j\\)\nWe often want to conduct inference on individual model coefficients\n\nHypothesis test: Is there a linear relationship between the response and \\(x_j\\)?\nConfidence interval: What is a plausible range of values \\(\\beta_j\\) can take?"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#confidence-interval-for-beta_j-1",
+    "href": "slides/10-prop-of-estimators.html#confidence-interval-for-beta_j-1",
+    "title": "Properties of estimators",
+    "section": "Confidence interval for \\(\\beta_j\\)",
+    "text": "Confidence interval for \\(\\beta_j\\)\n\n\nA plausible range of values for a population parameter is called a confidence interval\nUsing only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net\n\nWe can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish\nSimilarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#what-confidence-means",
+    "href": "slides/10-prop-of-estimators.html#what-confidence-means",
+    "title": "Properties of estimators",
+    "section": "What “confidence” means",
+    "text": "What “confidence” means\n\n\nWe will construct \\(C\\%\\) confidence intervals\n\nThe confidence level impacts the width of the interval\n\n“Confidence” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate \\(C\\%\\) CIs for the coefficient of \\(x_j\\), then \\(C\\%\\) of those intervals will contain the true value of the coefficient \\(\\beta_j\\)\nNeed to balance precision and accuracy when selecting a confidence level"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#confidence-interval-for-beta_j-2",
+    "href": "slides/10-prop-of-estimators.html#confidence-interval-for-beta_j-2",
+    "title": "Properties of estimators",
+    "section": "Confidence interval for \\(\\beta_j\\)",
+    "text": "Confidence interval for \\(\\beta_j\\)\n\\[\n\\text{Estimate} \\pm \\text{ (critical value) } \\times \\text{SE}\n\\]\n\n\n\\[\n\\hat{\\beta}_1 \\pm t^* \\times SE({\\hat{\\beta}_j})\n\\]\nwhere \\(t^*\\) is calculated from a \\(t\\) distribution with \\(n-p-1\\) degrees of freedom"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#computing-t-in-r",
+    "href": "slides/10-prop-of-estimators.html#computing-t-in-r",
+    "title": "Properties of estimators",
+    "section": "Computing \\(t^*\\) in R",
+    "text": "Computing \\(t^*\\) in R\n\n\n# confidence level: 95%\nqt(0.975, df = nrow(football) - 2 - 1)\n\n[1] 1.97928\n\n\n\n\n\n\n# confidence level: 90%\nqt(0.95, df = nrow(football) - 2 - 1)\n\n[1] 1.657235\n\n\n\n\n\n\n# confidence level: 99%\nqt(0.995, df = nrow(football) - 2 - 1)\n\n[1] 2.61606"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#ci-for-coefficient-of-enrollment",
+    "href": "slides/10-prop-of-estimators.html#ci-for-coefficient-of-enrollment",
+    "title": "Properties of estimators",
+    "section": "95% CI for coefficient of enrollment",
+    "text": "95% CI for coefficient of enrollment\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n\n\n\n\n\n\n\n\\[\n\\hat{\\beta}_j \\pm t^* \\times SE(\\hat{\\beta}_j)\n\\]\n\n\n\\[\n0.7804 \\pm 1.9793 \\times 0.1103\n\\]\n\n\n\\[\n[0.562, 0.999]\n\\]"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#interpreting-the-ci",
+    "href": "slides/10-prop-of-estimators.html#interpreting-the-ci",
+    "title": "Properties of estimators",
+    "section": "Interpreting the CI",
+    "text": "Interpreting the CI\n🔗 edstem.org/us/courses/62513/discussion/648045"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#computing-ci-in-r",
+    "href": "slides/10-prop-of-estimators.html#computing-ci-in-r",
+    "title": "Properties of estimators",
+    "section": "Computing CI in R",
+    "text": "Computing CI in R\n\ntidy(exp_fit, conf.int = TRUE, conf.level = 0.95) |&gt; \n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n13.426\n25.239\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n0.562\n0.999\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n-19.466\n-6.986"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#motivation",
+    "href": "slides/10-prop-of-estimators.html#motivation",
+    "title": "Properties of estimators",
+    "section": "Motivation",
+    "text": "Motivation\n\n\nWe have discussed how to use least squares to find an estimator of \\(\\hat{\\boldsymbol{\\beta}}\\)\nHow do we know whether our least squares estimator is a “good” estimator?\nWhen we consider what makes an estimator “good”, we’ll look at three criteria:\n\nBias\nVariance\nMean squared error\n\nWe’ll take a look at these over the course of a few lectures and motivate why we might prefer using least squares to compute \\(\\hat{\\boldsymbol{\\beta}}\\) versus other methods"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#bias-and-variance",
+    "href": "slides/10-prop-of-estimators.html#bias-and-variance",
+    "title": "Properties of estimators",
+    "section": "Bias and variance",
+    "text": "Bias and variance\nSuppose you are throwing darts at a target\n\n\n\n\n\n\nImage source: Analytics Vidhya\n\n\n\n\nUnbiased: Darts distributed around the target\nBiased: Darts systematically away from the target\nVariance: Darts could be widely spread (high variance) or generally clustered together (low variance)"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#bias-and-variance-1",
+    "href": "slides/10-prop-of-estimators.html#bias-and-variance-1",
+    "title": "Properties of estimators",
+    "section": "Bias and variance",
+    "text": "Bias and variance\n\nIdeal scenario: Darts are clustered around the target (unbiased and low variance)\nWorst case scenario: Darts are widely spread out and systematically far from the target (high bias and high variance)\nAcceptable scenario: There’s some trade-off between the bias and variance. For example, it may be acceptable for the darts to be clustered around a point that is close to the target (low bias and low variance)"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#bias-and-variance-2",
+    "href": "slides/10-prop-of-estimators.html#bias-and-variance-2",
+    "title": "Properties of estimators",
+    "section": "Bias and variance",
+    "text": "Bias and variance\n\n\nEach time we take a sample of size \\(n\\), we can find the least squares estimator (throw dart at target)\nSuppose we take many independent samples of size \\(n\\) and find the least squares estimator for each sample (throw many darts at the target). Ideally,\n\nThe estimators are centered at the true parameter (unbiased)\nThe estimators are clustered around the true parameter (unbiased with low variance)\n\n\n\n\nLet’s take a look at the mean and variance of the least squares estimator"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta",
+    "href": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta",
+    "title": "Properties of estimators",
+    "section": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe bias of an estimator is the difference between the estimator’s expected value and the true value of the parameter\n\nLet \\(\\hat{\\theta}\\) be an estimator of the parameter \\(\\theta\\). Then\n\\[\nBias(\\hat{\\theta}) = E(\\hat{\\theta}) - \\theta\n\\]\n\n\nAn estimator is unbiased if the bias is 0 and thus \\(E(\\hat{\\theta}) = \\theta\\)"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#finding-expected-value-and-variance",
+    "href": "slides/10-prop-of-estimators.html#finding-expected-value-and-variance",
+    "title": "Properties of estimators",
+    "section": "Finding expected value and variance",
+    "text": "Finding expected value and variance\nLet \\(\\mathbf{A}\\) be a \\(n \\times p\\) matrix of constants and \\(\\mathbf{b}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\nE(\\mathbf{Ab}) = \\mathbf{A}E(\\mathbf{b})\n\\]\n\\[\nVar(\\mathbf{Ab}) = \\mathbf{A}Var(\\mathbf{b})\\mathbf{A}^T\n\\]"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta-1",
+    "href": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta-1",
+    "title": "Properties of estimators",
+    "section": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)\nLet’s take a look at the expected value of the least squares estimator. Given \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\),\n\\[\n\\begin{aligned}\nE(\\hat{\\boldsymbol{\\beta}}) &= E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}] \\\\[8pt]\n& = \\class{fragment}{E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T(\\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon})]} \\\\[8pt]\n& = \\class{fragment}{E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}] + E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon}]}\\\\[8pt]\n& = \\class{fragment}{\\boldsymbol{\\beta} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^TE(\\boldsymbol{\\epsilon})} \\\\[8pt]\n& = \\class{fragment}{\\boldsymbol{\\beta}}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta-2",
+    "href": "slides/10-prop-of-estimators.html#expected-value-of-hatboldsymbolbeta-2",
+    "title": "Properties of estimators",
+    "section": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Expected value of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe least squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is an unbiased estimator of \\(\\boldsymbol{\\beta}\\)\n\\[\nE(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\n\\]\n\n\nNow let’s take a look at the variance"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#variance-of-hatboldsymbolbeta",
+    "href": "slides/10-prop-of-estimators.html#variance-of-hatboldsymbolbeta",
+    "title": "Properties of estimators",
+    "section": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\\[\n\\begin{aligned}\nVar(\\hat{\\boldsymbol{\\beta}}) &= Var((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}) \\\\[8pt]\n& = \\class{fragment}{[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T]Var(\\mathbf{y})[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T]^T }\\\\[8pt]\n& = \\class{fragment}{[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T]\\sigma^2_{\\epsilon}\\mathbf{I}[\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}]} \\\\[8pt]\n& = \\class{fragment}{\\sigma^2_{\\epsilon}[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}]} \\\\[8pt]\n& = \\class{fragment}{\\sigma^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1}}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#variance-of-hatboldsymbolbeta-1",
+    "href": "slides/10-prop-of-estimators.html#variance-of-hatboldsymbolbeta-1",
+    "title": "Properties of estimators",
+    "section": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Variance of \\(\\hat{\\boldsymbol{\\beta}}\\)\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) =  \\sigma^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1}\n\\]\nWe will show that \\(\\hat{\\boldsymbol{\\beta}}\\) is the “best” estimator (has the lowest variance) among the class of linear unbiased estimators"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#linear-regression-model",
+    "href": "slides/10-prop-of-estimators.html#linear-regression-model",
+    "title": "Properties of estimators",
+    "section": "“Linear” regression model",
+    "text": "“Linear” regression model\nWhat does it mean for a model to be a “linear” regression model?\n\n\nLinear regression models are linear in the parameters, i.e. given an observation \\(y_i\\)\n\\[\ny_i = \\beta_0 + \\beta_1f_1(x_{i1}) +  \\dots + \\beta_pf_p(x_{ip}) + \\epsilon_i\n\\]\nThe functions \\(f_1, \\ldots, f_p\\) can be non-linear as long as \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) are linear in \\(Y\\)"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model",
+    "href": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model",
+    "title": "Properties of estimators",
+    "section": "Identify the linear regression model",
+    "text": "Identify the linear regression model\n🔗 edstem.org/us/courses/62513/discussion/648051"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model-1",
+    "href": "slides/10-prop-of-estimators.html#identify-the-linear-regression-model-1",
+    "title": "Properties of estimators",
+    "section": "Identify the linear regression model",
+    "text": "Identify the linear regression model\n\n\n\\(y_i = \\beta_0 + \\beta_1x_{i1} + \\beta_2x_{i1}^2 + \\beta_3x_{i2}  + \\epsilon_i\\)\n\\(y_i = \\beta_1x_{i1} + \\beta_2x_{i2} + \\beta_3x_{i1}x_{i2} + \\epsilon_i\\)\n\\(y_i = \\beta_0  + \\beta_1\\sin(x_{i1} + \\beta_2x_{i2}) + \\beta_3x_{i3} + \\epsilon_i\\)\n\\(y_i = \\beta_0 + \\beta_1e^{x_{i1}} + \\beta_2e^{x_{i2}} + \\epsilon_i\\)\n\\(y_i = \\exp(\\beta_0 + \\beta_1x_{i1} + \\beta_2x_{i2} + \\beta_3x_{i3}) + \\epsilon_i\\)"
+  },
+  {
+    "objectID": "slides/10-prop-of-estimators.html#recap",
+    "href": "slides/10-prop-of-estimators.html#recap",
+    "title": "Properties of estimators",
+    "section": "Recap",
+    "text": "Recap\n\nComputed and interpreted confidence interval for a single coefficient\nShowed some properties of \\(\\hat{\\boldsymbol{\\beta}}\\)\nDefined “linear” model\n\n\n\n\n\n🔗 STA 221 - Fall 2024"
   },
   {
     "objectID": "links.html",
