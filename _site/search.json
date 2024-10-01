@@ -3641,21 +3641,21 @@
     "href": "slides/11-prop-of-estimators-pt2.html#topics",
     "title": "Properties of estimators",
     "section": "Topics",
-    "text": "Topics\n\nProperties of the least squares estimator\n\n\n\n\n\n\n\nNote\n\n\nThis is not a mathematical statistics class. There are semester-long courses that will go into these topics in much more detail; we will barely scratch the surface in this course.\nOur goals are to understand\n\nEstimators have properties\nSome properties of the least squares estimator and why they are useful"
+    "text": "Topics\n\nProperties of the least squares estimator\n\n\n\n\n\n\n\nNote\n\n\nThis is not a mathematical statistics class. There are semester-long courses that will go into these topics in much more detail; we will barely scratch the surface in this course.\nOur goals are to understand\n\nEstimators have properties\nA few properties of the least squares estimator and why they are useful"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#motivation",
     "href": "slides/11-prop-of-estimators-pt2.html#motivation",
     "title": "Properties of estimators",
     "section": "Motivation",
-    "text": "Motivation\n\n\nWe have discussed how to use least squares to find an estimator of \\(\\hat{\\boldsymbol{\\beta}}\\)\nHow do we know whether our least squares estimator is a “good” estimator?\nWhen we consider what makes an estimator “good”, we’ll look at three criteria:\n\nBias\nVariance\nMean squared error\n\nWe’ll take a look at these over the course of a few lectures and motivate why we might prefer using least squares to compute \\(\\hat{\\boldsymbol{\\beta}}\\) versus other methods"
+    "text": "Motivation\n\n\nWe have discussed how to use least squares to find an estimator of \\(\\hat{\\boldsymbol{\\beta}}\\)\nHow do we know whether our least-squares estimator is a “good” estimator?\nWhen we consider what makes an estimator “good”, we’ll look at three criteria:\n\nBias\nVariance\nMean squared error\n\nWe’ll take a look at these and motivate why we might prefer using least squares to compute \\(\\hat{\\boldsymbol{\\beta}}\\) versus other methods"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#bias-and-variance",
     "href": "slides/11-prop-of-estimators-pt2.html#bias-and-variance",
     "title": "Properties of estimators",
     "section": "Bias and variance",
-    "text": "Bias and variance\nSuppose you are throwing darts at a target\n\n\n\n\n\n\nImage source: Analytics Vidhya\n\n\n\n\nIdeal scenario: Darts are clustered around the target (unbiased and low variance)\nIdeal scenario: Darts are clustered around the target (unbiased and low variance)\nAcceptable scenario: There’s some trade-off between the bias and variance."
+    "text": "Bias and variance\nSuppose you are throwing darts at a target\n\n\n\n\n\n\nImage source: Analytics Vidhya\n\n\n\n\nIdeal scenario: Darts are clustered around the target (unbiased and low variance)\nWorst case scenario: Darts are widely spread out and systematically far from the target (high bias and high variance)\nAcceptable scenario: There’s some trade-off between the bias and variance."
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#properties-of-hatboldsymbolbeta-1",
@@ -3676,7 +3676,7 @@
     "href": "slides/11-prop-of-estimators-pt2.html#unbiased-estimator-1",
     "title": "Properties of estimators",
     "section": "Unbiased estimator",
-    "text": "Unbiased estimator\nGiven \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\),\n\\[\n\\begin{aligned}\nE(\\hat{\\boldsymbol{\\beta}}) &= E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}] \\\\[8pt]\n& = E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T(\\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon})] \\\\[8pt]\n& = E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}] + E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon}]\\\\[8pt]\n& = \\boldsymbol{\\beta} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^TE(\\boldsymbol{\\epsilon}) \\\\[8pt]\n& = \\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nThe least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is an unbiased estimator of \\(\\boldsymbol{\\beta}\\)"
+    "text": "Unbiased estimator\n\\[\n\\begin{aligned}\nE(\\hat{\\boldsymbol{\\beta}}) &= E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}] \\\\[8pt]\n& = E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T(\\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon})] \\\\[8pt]\n& = E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}] + E[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon}]\\\\[8pt]\n& = \\boldsymbol{\\beta} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^TE(\\boldsymbol{\\epsilon}) \\\\[8pt]\n& = \\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nThe least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is an unbiased estimator of \\(\\boldsymbol{\\beta}\\)"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#variance-of-hatboldsymbolbeta",
@@ -3697,7 +3697,7 @@
     "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof",
     "title": "Properties of estimators",
     "section": "Gauss-Markov Theorem Proof",
-    "text": "Gauss-Markov Theorem Proof\nSuppose \\(\\tilde{\\boldsymbol{\\beta}}\\) is another linear unbiased estimator of \\(\\boldsymbol{\\beta}\\) that can be expressed as \\(\\tilde{\\boldsymbol{\\beta}} = \\mathbf{Cy}\\) , such that \\(\\hat{\\mathbf{y}} = \\mathbf{X}\\tilde{\\boldsymbol{\\beta}} = \\mathbf{XCy}\\)\n\nLet \\(\\mathbf{C} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B}\\) for a non-zero matrix of constants \\(\\mathbf{B}\\).\n\n\nWhat is the dimension of \\(\\mathbf{B}\\)?"
+    "text": "Gauss-Markov Theorem Proof\nSuppose \\(\\tilde{\\boldsymbol{\\beta}}\\) is another linear unbiased estimator of \\(\\boldsymbol{\\beta}\\) that can be expressed as \\(\\tilde{\\boldsymbol{\\beta}} = \\mathbf{Cy}\\) , such that \\(\\hat{\\mathbf{y}} = \\mathbf{X}\\tilde{\\boldsymbol{\\beta}} = \\mathbf{XCy}\\)\n\nLet \\(\\mathbf{C} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B}\\) for a non-zero matrix \\(\\mathbf{B}\\).\n\n\nWhat is the dimension of \\(\\mathbf{B}\\)?"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-1",
@@ -3725,14 +3725,14 @@
     "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-4",
     "title": "Properties of estimators",
     "section": "Gauss-Markov Theorem Proof",
-    "text": "Gauss-Markov Theorem Proof\n\\[\n\\begin{aligned}\nVar(\\tilde{\\boldsymbol{\\beta}}) &= Var[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})\\mathbf{y}] \\\\\n& = ((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})Var(\\mathbf{y})((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})^T \\\\\n& = \\sigma^2_{\\epsilon}[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T \\mathbf{B}^T + \\mathbf{BX}(\\mathbf{X}^T\\mathbf{X})^{-1} + \\mathbf{BB}^T]\\\\\n& = \\sigma^2_\\epsilon(\\mathbf{X}^T\\mathbf{X})^{-1} + \\sigma^2_{\\epsilon}\\mathbf{BB}^T\\end{aligned}\n\\]\n\nWhat assumption(s) of the Gauss-Markov Theorem did we use?"
+    "text": "Gauss-Markov Theorem Proof\n\\[\n\\begin{aligned}\nVar(\\tilde{\\boldsymbol{\\beta}}) &= Var[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})\\mathbf{y}] \\\\[8pt]\n& = ((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})Var(\\mathbf{y})((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})^T \\\\[8pt]\n& = \\sigma^2_{\\epsilon}[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T \\mathbf{B}^T + \\mathbf{BX}(\\mathbf{X}^T\\mathbf{X})^{-1} + \\mathbf{BB}^T]\\\\[8pt]\n& = \\sigma^2_\\epsilon(\\mathbf{X}^T\\mathbf{X})^{-1} + \\sigma^2_{\\epsilon}\\mathbf{BB}^T\\end{aligned}\n\\]\n\nWhat assumption(s) of the Gauss-Markov Theorem did we use?"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-5",
     "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-5",
     "title": "Properties of estimators",
     "section": "Gauss-Markov Theorem Proof",
-    "text": "Gauss-Markov Theorem Proof\nWe know that \\(\\mathbf{B}\\mathbf{B}^T\\) transpose is symmetric. Let \\(\\mathbf{z}\\) be a non-zero vector. Then,\n\\[\n\\mathbf{z}^T\\mathbf{BB}^T\\mathbf{z} = (\\mathbf{B}^T\\mathbf{z})^T(\\mathbf{B}^T\\mathbf{z}) = ||\\mathbf{B}^T\\mathbf{z}||^2 \\geq 0\n\\]\n\nWhen is \\(||\\mathbf{B}^T\\mathbf{z}|| = 0\\) ?\n\n\nTherefore, we have shown that \\(Var(\\tilde{\\boldsymbol{\\beta}}) &gt; Var(\\hat{\\boldsymbol{\\beta}})\\) and have completed the proof."
+    "text": "Gauss-Markov Theorem Proof\nWe have\n\\[\nVar(\\tilde{\\boldsymbol{\\beta}}) = \\sigma^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{1} + \\sigma^2_\\epsilon \\mathbf{BB}^T\n\\]\n\nWe know that \\(\\sigma^2_{\\epsilon}\\mathbf{BB}^T \\geq \\mathbf{0}\\).\n\n\n\n\nWhen is \\(\\sigma^2_{\\epsilon}\\mathbf{BB}^T = \\mathbf{0}\\)?\n\n\n\nTherefore, we have shown that \\(Var(\\tilde{\\boldsymbol{\\beta}}) &gt; Var(\\hat{\\boldsymbol{\\beta}})\\) and have completed the proof."
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#properties-of-hatboldsymbolbeta-2",
@@ -3753,14 +3753,14 @@
     "href": "slides/11-prop-of-estimators-pt2.html#mean-squared-error-1",
     "title": "Properties of estimators",
     "section": "Mean squared error",
-    "text": "Mean squared error\n\\[\nMSE(\\theta) = Var(\\hat{\\theta}) + Bias(\\hat{\\theta})^2\n\\]\n\n\nThe least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is unbiased, so \\(MSE(\\hat{\\boldsymbol{\\beta}}) = Var(\\hat{\\boldsymbol{\\beta}})\\)"
+    "text": "Mean squared error\n\\[\nMSE(\\theta) = Var(\\hat{\\theta}) + Bias(\\hat{\\theta})^2\n\\]\n\n\nThe least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is unbiased, so \\[MSE(\\hat{\\boldsymbol{\\beta}}) = Var(\\hat{\\boldsymbol{\\beta}})\\]"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#consistency",
     "href": "slides/11-prop-of-estimators-pt2.html#consistency",
     "title": "Properties of estimators",
     "section": "Consistency",
-    "text": "Consistency\nAn estimator \\(\\hat{\\theta}\\) is a consistent estimator of a parameter \\(\\theta\\) if it converges in probability to \\(\\theta\\). Given a sequence of estimators \\(\\hat{\\theta}_1, \\hat{\\theta}_2, . . .\\), then for every \\(\\epsilon &gt; 0\\),\n\\[\n\\displaystyle \\lim_{n\\to\\infty} P(|\\hat{\\theta}_n - \\theta| \\geq \\epsilon) = 0\n\\]\n\nThis means that as the sample size goes to \\(\\infty\\) (and thus the sample information gets better and better), the estimator will be arbitrarily close to the parameter with high probability.\n\n\nWhy is this a useful property of an estimator?"
+    "text": "Consistency\nAn estimator \\(\\hat{\\theta}\\) is a consistent estimator of a parameter \\(\\theta\\) if it converges in probability to \\(\\theta\\). Given a sequence of estimators \\(\\hat{\\theta}_1, \\hat{\\theta}_2, . . .\\), then for every \\(\\epsilon &gt; 0\\),\n\\[\n\\displaystyle \\lim_{n\\to\\infty} P(|\\hat{\\theta}_n - \\theta| \\geq \\epsilon) = 0\n\\]\n\nThis means that as the sample size goes to \\(\\infty\\) (and thus the sample information gets better and better), the estimator will be arbitrarily close to the parameter with high probability.\n\n\n\nWhy is this a useful property of an estimator?"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#consistency-1",

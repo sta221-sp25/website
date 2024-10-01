@@ -374,7 +374,7 @@ Prof.&nbsp;Maria Tackett
 <p>Our goals are to understand</p>
 <ul>
 <li><p>Estimators have properties</p></li>
-<li><p>Some properties of the least squares estimator and why they are useful</p></li>
+<li><p>A few properties of the least squares estimator and why they are useful</p></li>
 </ul>
 </div>
 </div>
@@ -390,14 +390,14 @@ Prof.&nbsp;Maria Tackett
 <div>
 <ul>
 <li class="fragment"><p>We have discussed how to use least squares to find an estimator of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></p></li>
-<li class="fragment"><p>How do we know whether our least squares estimator is a “good” estimator?</p></li>
+<li class="fragment"><p>How do we know whether our least-squares estimator is a “good” estimator?</p></li>
 <li class="fragment"><p>When we consider what makes an estimator “good”, we’ll look at three criteria:</p>
 <ul>
 <li class="fragment">Bias</li>
 <li class="fragment">Variance</li>
 <li class="fragment">Mean squared error</li>
 </ul></li>
-<li class="fragment"><p>We’ll take a look at these over the course of a few lectures and motivate why we might prefer using least squares to compute <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> versus other methods</p></li>
+<li class="fragment"><p>We’ll take a look at these and motivate why we might prefer using least squares to compute <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> versus other methods</p></li>
 </ul>
 </div>
 </section>
@@ -416,7 +416,7 @@ Prof.&nbsp;Maria Tackett
 </div><div class="column" style="width:50%;">
 <ul>
 <li><p><strong>Ideal scenario</strong>: Darts are clustered around the target (unbiased and low variance)</p></li>
-<li><p><strong>Ideal scenario</strong>: Darts are clustered around the target (unbiased and low variance)</p></li>
+<li><p><strong>Worst case scenario</strong>: Darts are widely spread out and systematically far from the target (high bias and high variance)</p></li>
 <li><p><strong>Acceptable scenario:</strong> There’s some trade-off between the bias and variance.</p></li>
 </ul>
 </div></div>
@@ -452,7 +452,6 @@ Bias(\hat{\theta}) = E(\hat{\theta}) - \theta
 </section>
 <section id="unbiased-estimator-1" class="slide level2">
 <h2>Unbiased estimator</h2>
-<p>Given <span class="math inline">\(E(\boldsymbol{\epsilon}) = \mathbf{0}\)</span>,</p>
 <p><span class="math display">\[
 \begin{aligned}
 E(\hat{\boldsymbol{\beta}}) &amp;= E[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}] \\[8pt]
@@ -509,7 +508,7 @@ y_i = \beta_0 + \beta_1f_1(x_{i1}) +  \dots + \beta_pf_p(x_{ip}) + \epsilon_i
 <h2>Gauss-Markov Theorem Proof</h2>
 <p>Suppose <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> is another linear unbiased estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span> that can be expressed as <span class="math inline">\(\tilde{\boldsymbol{\beta}} = \mathbf{Cy}\)</span> , such that <span class="math inline">\(\hat{\mathbf{y}} = \mathbf{X}\tilde{\boldsymbol{\beta}} = \mathbf{XCy}\)</span></p>
 <p><br></p>
-<p>Let <span class="math inline">\(\mathbf{C} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B}\)</span> for a non-zero matrix of constants <span class="math inline">\(\mathbf{B}\)</span>.</p>
+<p>Let <span class="math inline">\(\mathbf{C} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B}\)</span> for a non-zero matrix <span class="math inline">\(\mathbf{B}\)</span>.</p>
 <p><br></p>
 <div class="question">
 <p>What is the dimension of <span class="math inline">\(\mathbf{B}\)</span>?</p>
@@ -555,9 +554,9 @@ E(\tilde{\boldsymbol{\beta}}) &amp; = E[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}
 <h2>Gauss-Markov Theorem Proof</h2>
 <p><span class="math display">\[
 \begin{aligned}
-Var(\tilde{\boldsymbol{\beta}}) &amp;= Var[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})\mathbf{y}] \\
-&amp; = ((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})Var(\mathbf{y})((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})^T \\
-&amp; = \sigma^2_{\epsilon}[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{B}^T + \mathbf{BX}(\mathbf{X}^T\mathbf{X})^{-1} + \mathbf{BB}^T]\\
+Var(\tilde{\boldsymbol{\beta}}) &amp;= Var[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})\mathbf{y}] \\[8pt]
+&amp; = ((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})Var(\mathbf{y})((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})^T \\[8pt]
+&amp; = \sigma^2_{\epsilon}[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{B}^T + \mathbf{BX}(\mathbf{X}^T\mathbf{X})^{-1} + \mathbf{BB}^T]\\[8pt]
 &amp; = \sigma^2_\epsilon(\mathbf{X}^T\mathbf{X})^{-1} + \sigma^2_{\epsilon}\mathbf{BB}^T\end{aligned}
 \]</span></p>
 <div class="question">
@@ -567,12 +566,18 @@ Var(\tilde{\boldsymbol{\beta}}) &amp;= Var[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf
 </section>
 <section id="gauss-markov-theorem-proof-5" class="slide level2">
 <h2>Gauss-Markov Theorem Proof</h2>
-<p>We know that <span class="math inline">\(\mathbf{B}\mathbf{B}^T\)</span> transpose is symmetric. Let <span class="math inline">\(\mathbf{z}\)</span> be a non-zero vector. Then,</p>
+<p>We have</p>
 <p><span class="math display">\[
-\mathbf{z}^T\mathbf{BB}^T\mathbf{z} = (\mathbf{B}^T\mathbf{z})^T(\mathbf{B}^T\mathbf{z}) = ||\mathbf{B}^T\mathbf{z}||^2 \geq 0
+Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{1} + \sigma^2_\epsilon \mathbf{BB}^T
 \]</span></p>
+<div class="fragment">
+<p>We know that <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{BB}^T \geq \mathbf{0}\)</span>.</p>
+<p><br></p>
+</div>
+<div class="fragment">
 <div class="question">
-<p>When is <span class="math inline">\(||\mathbf{B}^T\mathbf{z}|| = 0\)</span> ?</p>
+<p>When is <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{BB}^T = \mathbf{0}\)</span>?</p>
+</div>
 </div>
 <div class="fragment">
 <p>Therefore, we have shown that <span class="math inline">\(Var(\tilde{\boldsymbol{\beta}}) &gt; Var(\hat{\boldsymbol{\beta}})\)</span> and have completed the proof.</p>
@@ -636,7 +641,7 @@ MSE(\theta) = Var(\hat{\theta}) + Bias(\hat{\theta})^2
 \]</span></p>
 <p><br></p>
 <div class="fragment">
-<p>The least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is unbiased, so <span class="math inline">\(MSE(\hat{\boldsymbol{\beta}}) = Var(\hat{\boldsymbol{\beta}})\)</span></p>
+<p>The least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is unbiased, so <span class="math display">\[MSE(\hat{\boldsymbol{\beta}}) = Var(\hat{\boldsymbol{\beta}})\]</span></p>
 </div>
 </section>
 <section id="consistency" class="slide level2">
@@ -648,6 +653,7 @@ MSE(\theta) = Var(\hat{\theta}) + Bias(\hat{\theta})^2
 <div class="fragment">
 <p>This means that as the sample size goes to <span class="math inline">\(\infty\)</span> (and thus the sample information gets better and better), the estimator will be arbitrarily close to the parameter with high probability.</p>
 <!--# casella berger pg. 468-->
+<p><br></p>
 <div class="question">
 <p>Why is this a useful property of an estimator?</p>
 </div>

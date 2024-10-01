@@ -75,7 +75,7 @@ Our goals are to understand
 
 -   Estimators have properties
 
--   Some properties of the least squares estimator and why they are useful
+-   A few properties of the least squares estimator and why they are useful
 :::
 
 # Properties of $\hat{\boldsymbol{\beta}}$
@@ -85,7 +85,7 @@ Our goals are to understand
 ::: incremental
 -   We have discussed how to use least squares to find an estimator of $\hat{\boldsymbol{\beta}}$
 
--   How do we know whether our least squares estimator is a "good" estimator?
+-   How do we know whether our least-squares estimator is a "good" estimator?
 
 -   When we consider what makes an estimator "good", we'll look at three criteria:
 
@@ -93,7 +93,7 @@ Our goals are to understand
     -   Variance
     -   Mean squared error
 
--   We'll take a look at these over the course of a few lectures and motivate why we might prefer using least squares to compute $\hat{\boldsymbol{\beta}}$ versus other methods
+-   We'll take a look at these and motivate why we might prefer using least squares to compute $\hat{\boldsymbol{\beta}}$ versus other methods
 :::
 
 ## Bias and variance
@@ -110,7 +110,7 @@ Suppose you are throwing darts at a target
 ::: {.column width="50%"}
 -   **Ideal scenario**: Darts are clustered around the target (unbiased and low variance)
 
--   **Ideal scenario**: Darts are clustered around the target (unbiased and low variance)
+-   **Worst case scenario**: Darts are widely spread out and systematically far from the target (high bias and high variance)
 
 -   **Acceptable scenario:** There's some trade-off between the bias and variance.
 :::
@@ -147,8 +147,6 @@ $$
 An estimator is **unbiased** if the bias is 0 and thus $E(\hat{\theta}) = \theta$
 
 ## Unbiased estimator
-
-Given $E(\boldsymbol{\epsilon}) = \mathbf{0}$,
 
 $$
 \begin{aligned}
@@ -210,7 +208,7 @@ Suppose $\tilde{\boldsymbol{\beta}}$ is another linear unbiased estimator of $\b
 
 <br>
 
-Let $\mathbf{C} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B}$ for a non-zero matrix of constants $\mathbf{B}$.
+Let $\mathbf{C} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B}$ for a non-zero matrix $\mathbf{B}$.
 
 <br>
 
@@ -258,9 +256,9 @@ $$
 
 $$
 \begin{aligned}
-Var(\tilde{\boldsymbol{\beta}}) &= Var[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})\mathbf{y}] \\
-& = ((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})Var(\mathbf{y})((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})^T \\
-& = \sigma^2_{\epsilon}[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{B}^T + \mathbf{BX}(\mathbf{X}^T\mathbf{X})^{-1} + \mathbf{BB}^T]\\
+Var(\tilde{\boldsymbol{\beta}}) &= Var[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})\mathbf{y}] \\[8pt]
+& = ((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})Var(\mathbf{y})((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})^T \\[8pt]
+& = \sigma^2_{\epsilon}[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{B}^T + \mathbf{BX}(\mathbf{X}^T\mathbf{X})^{-1} + \mathbf{BB}^T]\\[8pt]
 & = \sigma^2_\epsilon(\mathbf{X}^T\mathbf{X})^{-1} + \sigma^2_{\epsilon}\mathbf{BB}^T\end{aligned}
 $$
 
@@ -272,14 +270,22 @@ What assumption(s) of the Gauss-Markov Theorem did we use?
 
 ## Gauss-Markov Theorem Proof 
 
-We know that $\mathbf{B}\mathbf{B}^T$ transpose is symmetric. Let $\mathbf{z}$ be a non-zero vector. Then,
+We have
 
 $$
-\mathbf{z}^T\mathbf{BB}^T\mathbf{z} = (\mathbf{B}^T\mathbf{z})^T(\mathbf{B}^T\mathbf{z}) = ||\mathbf{B}^T\mathbf{z}||^2 \geq 0
+Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{1} + \sigma^2_\epsilon \mathbf{BB}^T
 $$
+
+. . .
+
+We know that $\sigma^2_{\epsilon}\mathbf{BB}^T \geq \mathbf{0}$.
+
+<br>
+
+. . .
 
 ::: question
-When is $||\mathbf{B}^T\mathbf{z}|| = 0$ ?
+When is $\sigma^2_{\epsilon}\mathbf{BB}^T = \mathbf{0}$?
 :::
 
 . . .
@@ -349,7 +355,7 @@ $$
 
 . . .
 
-The least-squares estimator $\hat{\boldsymbol{\beta}}$ is unbiased, so $MSE(\hat{\boldsymbol{\beta}}) = Var(\hat{\boldsymbol{\beta}})$
+The least-squares estimator $\hat{\boldsymbol{\beta}}$ is unbiased, so $$MSE(\hat{\boldsymbol{\beta}}) = Var(\hat{\boldsymbol{\beta}})$$
 
 ## Consistency 
 
@@ -364,6 +370,8 @@ $$
 This means that as the sample size goes to $\infty$ (and thus the sample information gets better and better), the estimator will be arbitrarily close to the parameter with high probability.
 
 <!--# casella berger pg. 468-->
+
+<br>
 
 ::: question
 Why is this a useful property of an estimator?
