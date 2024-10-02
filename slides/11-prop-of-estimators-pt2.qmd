@@ -186,7 +186,7 @@ What does it mean for a model to be a "linear" regression model?
 
 -   The functions $f_1, \ldots, f_p$ can be non-linear as long as $\beta_0, \beta_1, \ldots, \beta_p$ are linear in $Y$
 
----
+------------------------------------------------------------------------
 
 <br>
 
@@ -202,7 +202,7 @@ The least-squares estimator of $\boldsymbol{\beta}$ in the model $\mathbf{y} = \
 "Best" means $\hat{\boldsymbol{\beta}}$ has the smallest variance among all linear unbiased estimators for $\boldsymbol{\beta}$ .
 :::
 
-## Gauss-Markov Theorem Proof 
+## Gauss-Markov Theorem Proof
 
 Suppose $\tilde{\boldsymbol{\beta}}$ is another linear unbiased estimator of $\boldsymbol{\beta}$ that can be expressed as $\tilde{\boldsymbol{\beta}} = \mathbf{Cy}$ , such that $\hat{\mathbf{y}} = \mathbf{X}\tilde{\boldsymbol{\beta}} = \mathbf{XCy}$
 
@@ -216,7 +216,7 @@ Let $\mathbf{C} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B}$ for a 
 What is the dimension of $\mathbf{B}$?
 :::
 
-## Gauss-Markov Theorem Proof 
+## Gauss-Markov Theorem Proof
 
 $$
 \tilde{\boldsymbol{\beta}} = \mathbf{Cy} = ((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})\mathbf{y}
@@ -228,7 +228,7 @@ We need to show
 
 -   $Var(\tilde{\boldsymbol{\beta}}) > Var(\hat{\boldsymbol{\beta}})$
 
-## Gauss-Markov Theorem Proof 
+## Gauss-Markov Theorem Proof
 
 $$
 \begin{aligned}
@@ -246,19 +246,19 @@ $$
 -   What must be true for $\tilde{\boldsymbol{\beta}}$ to be unbiased?
 :::
 
-## Gauss-Markov Theorem Proof 
+## Gauss-Markov Theorem Proof
 
 -   $\mathbf{BX}$ must be the $\mathbf{0}$ matrix (dimension = $(p+1) \times (p+1)$) in order for $\tilde{\boldsymbol{\beta}}$ to be unbiased
 
 -   Now we need to find $Var(\tilde{\boldsymbol{\beta}})$ and see how it compares to $Var(\hat{\boldsymbol{\beta}})$
 
-## Gauss-Markov Theorem Proof  {.midi}
+## Gauss-Markov Theorem Proof {.midi}
 
 $$
 \begin{aligned}
 Var(\tilde{\boldsymbol{\beta}}) &= Var[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})\mathbf{y}] \\[8pt]
 & = ((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})Var(\mathbf{y})((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})^T \\[8pt]
-& = \sigma^2_{\epsilon}[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{B}^T + \mathbf{BX}(\mathbf{X}^T\mathbf{X})^{-1} + \mathbf{BB}^T]\\[8pt]
+& = \small{\sigma^2_{\epsilon}[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{B}^T + \mathbf{BX}(\mathbf{X}^T\mathbf{X})^{-1} + \mathbf{BB}^T]}\\[8pt]
 & = \sigma^2_\epsilon(\mathbf{X}^T\mathbf{X})^{-1} + \sigma^2_{\epsilon}\mathbf{BB}^T\end{aligned}
 $$
 
@@ -268,12 +268,12 @@ What assumption(s) of the Gauss-Markov Theorem did we use?
 
 <!--# add math rule-->
 
-## Gauss-Markov Theorem Proof 
+## Gauss-Markov Theorem Proof
 
 We have
 
 $$
-Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{1} + \sigma^2_\epsilon \mathbf{BB}^T
+Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1} + \sigma^2_\epsilon \mathbf{BB}^T
 $$
 
 . . .
@@ -292,7 +292,7 @@ When is $\sigma^2_{\epsilon}\mathbf{BB}^T = \mathbf{0}$?
 
 Therefore, we have shown that $Var(\tilde{\boldsymbol{\beta}}) > Var(\hat{\boldsymbol{\beta}})$ and have completed the proof.
 
----
+------------------------------------------------------------------------
 
 <br>
 
@@ -348,7 +348,7 @@ $$
 ## Mean squared error
 
 $$
-MSE(\theta) = Var(\hat{\theta}) + Bias(\hat{\theta})^2
+MSE(\hat{\theta}) = Var(\hat{\theta}) + Bias(\hat{\theta})^2
 $$
 
 <br>
@@ -357,7 +357,7 @@ $$
 
 The least-squares estimator $\hat{\boldsymbol{\beta}}$ is unbiased, so $$MSE(\hat{\boldsymbol{\beta}}) = Var(\hat{\boldsymbol{\beta}})$$
 
-## Consistency 
+## Consistency
 
 An estimator $\hat{\theta}$ is a consistent estimator of a parameter $\theta$ if it converges in probability to $\theta$. Given a sequence of estimators $\hat{\theta}_1, \hat{\theta}_2, . . .$, then for every $\epsilon > 0$,
 
@@ -377,7 +377,7 @@ This means that as the sample size goes to $\infty$ (and thus the sample informa
 Why is this a useful property of an estimator?
 :::
 
-## Consistency 
+## Consistency
 
 <br>
 
@@ -393,7 +393,7 @@ An estimator $\hat{\theta}$ is a consistent estimator of the parameter $\theta$ 
 -   $\lim_{n \to \infty} Bias(\hat{\theta}) = 0$
 :::
 
-## Consistency of $\hat{\boldsymbol{\beta}}$ 
+## Consistency of $\hat{\boldsymbol{\beta}}$
 
 $Bias(\hat{\boldsymbol{\beta}}) = \mathbf{0}$, so $\lim_{n \to \infty} Bias(\hat{\boldsymbol{\beta}}) = \mathbf{0}$
 
@@ -409,7 +409,7 @@ Now we need to show that $\lim_{n \to \infty} Var(\hat{\boldsymbol{\beta}}) = \m
 -   Does $Var(\hat{\boldsymbol{\beta}}) \to \mathbf{0}$ as $n \to \infty$?
 :::
 
-## Efficiency 
+## Efficiency
 
 -   The **efficiency** of an estimator is concerned with the asymptotic variance of an estimator.
 

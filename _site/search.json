@@ -3725,14 +3725,14 @@
     "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-4",
     "title": "Properties of estimators",
     "section": "Gauss-Markov Theorem Proof",
-    "text": "Gauss-Markov Theorem Proof\n\\[\n\\begin{aligned}\nVar(\\tilde{\\boldsymbol{\\beta}}) &= Var[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})\\mathbf{y}] \\\\[8pt]\n& = ((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})Var(\\mathbf{y})((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})^T \\\\[8pt]\n& = \\sigma^2_{\\epsilon}[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T \\mathbf{B}^T + \\mathbf{BX}(\\mathbf{X}^T\\mathbf{X})^{-1} + \\mathbf{BB}^T]\\\\[8pt]\n& = \\sigma^2_\\epsilon(\\mathbf{X}^T\\mathbf{X})^{-1} + \\sigma^2_{\\epsilon}\\mathbf{BB}^T\\end{aligned}\n\\]\n\nWhat assumption(s) of the Gauss-Markov Theorem did we use?"
+    "text": "Gauss-Markov Theorem Proof\n\\[\n\\begin{aligned}\nVar(\\tilde{\\boldsymbol{\\beta}}) &= Var[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})\\mathbf{y}] \\\\[8pt]\n& = ((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})Var(\\mathbf{y})((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T + \\mathbf{B})^T \\\\[8pt]\n& = \\small{\\sigma^2_{\\epsilon}[(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} + (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T \\mathbf{B}^T + \\mathbf{BX}(\\mathbf{X}^T\\mathbf{X})^{-1} + \\mathbf{BB}^T]}\\\\[8pt]\n& = \\sigma^2_\\epsilon(\\mathbf{X}^T\\mathbf{X})^{-1} + \\sigma^2_{\\epsilon}\\mathbf{BB}^T\\end{aligned}\n\\]\n\nWhat assumption(s) of the Gauss-Markov Theorem did we use?"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-5",
     "href": "slides/11-prop-of-estimators-pt2.html#gauss-markov-theorem-proof-5",
     "title": "Properties of estimators",
     "section": "Gauss-Markov Theorem Proof",
-    "text": "Gauss-Markov Theorem Proof\nWe have\n\\[\nVar(\\tilde{\\boldsymbol{\\beta}}) = \\sigma^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{1} + \\sigma^2_\\epsilon \\mathbf{BB}^T\n\\]\n\nWe know that \\(\\sigma^2_{\\epsilon}\\mathbf{BB}^T \\geq \\mathbf{0}\\).\n\n\n\n\nWhen is \\(\\sigma^2_{\\epsilon}\\mathbf{BB}^T = \\mathbf{0}\\)?\n\n\n\nTherefore, we have shown that \\(Var(\\tilde{\\boldsymbol{\\beta}}) &gt; Var(\\hat{\\boldsymbol{\\beta}})\\) and have completed the proof."
+    "text": "Gauss-Markov Theorem Proof\nWe have\n\\[\nVar(\\tilde{\\boldsymbol{\\beta}}) = \\sigma^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1} + \\sigma^2_\\epsilon \\mathbf{BB}^T\n\\]\n\nWe know that \\(\\sigma^2_{\\epsilon}\\mathbf{BB}^T \\geq \\mathbf{0}\\).\n\n\n\n\nWhen is \\(\\sigma^2_{\\epsilon}\\mathbf{BB}^T = \\mathbf{0}\\)?\n\n\n\nTherefore, we have shown that \\(Var(\\tilde{\\boldsymbol{\\beta}}) &gt; Var(\\hat{\\boldsymbol{\\beta}})\\) and have completed the proof."
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#properties-of-hatboldsymbolbeta-2",
@@ -3753,7 +3753,7 @@
     "href": "slides/11-prop-of-estimators-pt2.html#mean-squared-error-1",
     "title": "Properties of estimators",
     "section": "Mean squared error",
-    "text": "Mean squared error\n\\[\nMSE(\\theta) = Var(\\hat{\\theta}) + Bias(\\hat{\\theta})^2\n\\]\n\n\nThe least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is unbiased, so \\[MSE(\\hat{\\boldsymbol{\\beta}}) = Var(\\hat{\\boldsymbol{\\beta}})\\]"
+    "text": "Mean squared error\n\\[\nMSE(\\hat{\\theta}) = Var(\\hat{\\theta}) + Bias(\\hat{\\theta})^2\n\\]\n\n\nThe least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is unbiased, so \\[MSE(\\hat{\\boldsymbol{\\beta}}) = Var(\\hat{\\boldsymbol{\\beta}})\\]"
   },
   {
     "objectID": "slides/11-prop-of-estimators-pt2.html#consistency",
@@ -4159,5 +4159,33 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/12-exam-01-review.html#announcements",
+    "href": "slides/12-exam-01-review.html#announcements",
+    "title": "Exam 01 review",
+    "section": "Announcements",
+    "text": "Announcements\n\nProject Proposal due TODAY at 11:59pm\nLab 03 due TODAY at 11:59pm\nHW 02 due TODAY at 11:59pm\nExam 01: Tuesday, October 8 (in class + take-home)\n\nLecture recordings available until the start of the in-class exam (Link on side bar of webpage)\nMonday’s lab: Exam office hours\nNo office hours while take-home exam is out"
+  },
+  {
+    "objectID": "slides/12-exam-01-review.html#exam-01",
+    "href": "slides/12-exam-01-review.html#exam-01",
+    "title": "Exam 01 review",
+    "section": "Exam 01",
+    "text": "Exam 01\n\n20s% of final course grade\n50 points total \n\nin-class: 40 points\ntake-home: 10 points\n\nIn-class: 75 minutes during Tuesday, October 8 lecture\nTake-home:\n\nReleased: Tuesday, October 8 ~ 1pm\nDue: Thursday, October 10 at 11:30 (we will have class Thursday)\nSimilar in format to a lab/ HW\n\nIf you miss any part of the exam for an excused absence (with academic dean’s note), your Exam 02 score will be counted twice"
+  },
+  {
+    "objectID": "slides/12-exam-01-review.html#content-weeks-1---6",
+    "href": "slides/12-exam-01-review.html#content-weeks-1---6",
+    "title": "Exam 01 review",
+    "section": "Content: Weeks 1 - 6",
+    "text": "Content: Weeks 1 - 6\n\n\n\nExploratory data analysis\nFitting and interpreting linear regression models\nModel assessment and comparison\nANOVA\nCategorical + interaction terms\n\n\n\nInference for model coefficients\nMatrix representation of regression\nFinding the least-squares estimator (no geometric interpretation)\nProperties of the least-squares estimator"
+  },
+  {
+    "objectID": "slides/12-exam-01-review.html#outline-of-in-class-portion",
+    "href": "slides/12-exam-01-review.html#outline-of-in-class-portion",
+    "title": "Exam 01 review",
+    "section": "Outline of in-class portion",
+    "text": "Outline of in-class portion\n\nClosed-book, closed-note.\n8 questions, some with multiple parts\nQuestion types:\n\nShort answer (show work / explain response)\nTrue/ False.\n\nIf false, write 1 - 2 sentence justification about why it is false.\n\nDerivations\n\nWill be provided all relevant R output and a page of math rules \nJust need a pencil or pen. No calculator permitted on exam."
   }
 ]

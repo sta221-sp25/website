@@ -556,7 +556,7 @@ E(\tilde{\boldsymbol{\beta}}) &amp; = E[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}
 \begin{aligned}
 Var(\tilde{\boldsymbol{\beta}}) &amp;= Var[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})\mathbf{y}] \\[8pt]
 &amp; = ((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})Var(\mathbf{y})((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T + \mathbf{B})^T \\[8pt]
-&amp; = \sigma^2_{\epsilon}[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{B}^T + \mathbf{BX}(\mathbf{X}^T\mathbf{X})^{-1} + \mathbf{BB}^T]\\[8pt]
+&amp; = \small{\sigma^2_{\epsilon}[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{B}^T + \mathbf{BX}(\mathbf{X}^T\mathbf{X})^{-1} + \mathbf{BB}^T]}\\[8pt]
 &amp; = \sigma^2_\epsilon(\mathbf{X}^T\mathbf{X})^{-1} + \sigma^2_{\epsilon}\mathbf{BB}^T\end{aligned}
 \]</span></p>
 <div class="question">
@@ -568,7 +568,7 @@ Var(\tilde{\boldsymbol{\beta}}) &amp;= Var[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf
 <h2>Gauss-Markov Theorem Proof</h2>
 <p>We have</p>
 <p><span class="math display">\[
-Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{1} + \sigma^2_\epsilon \mathbf{BB}^T
+Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1} + \sigma^2_\epsilon \mathbf{BB}^T
 \]</span></p>
 <div class="fragment">
 <p>We know that <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{BB}^T \geq \mathbf{0}\)</span>.</p>
@@ -637,7 +637,7 @@ MSE(\hat{\theta}) &amp;= E[(\hat{\theta} - \theta)^2] \\
 <section id="mean-squared-error-1" class="slide level2">
 <h2>Mean squared error</h2>
 <p><span class="math display">\[
-MSE(\theta) = Var(\hat{\theta}) + Bias(\hat{\theta})^2
+MSE(\hat{\theta}) = Var(\hat{\theta}) + Bias(\hat{\theta})^2
 \]</span></p>
 <p><br></p>
 <div class="fragment">
