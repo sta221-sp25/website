@@ -3590,7 +3590,7 @@
     "href": "slides/12-exam-01-review.html#content-weeks-1---6",
     "title": "Exam 01 review",
     "section": "Content: Weeks 1 - 6",
-    "text": "Content: Weeks 1 - 6\n\n\n\nExploratory data analysis\nFitting and interpreting linear regression models\nModel assessment and comparison\nANOVA\nCategorical + interaction terms\nInference for model coefficients\n\n\n\nMatrix representation of regression\nFinding the least-squares estimator (no geometric interpretation)\nAssumptions for least-squares regression\nProperties of the least-squares estimator"
+    "text": "Content: Weeks 1 - 6\n\n\n\nExploratory data analysis\nFitting and interpreting linear regression models\nModel assessment and comparison\nANOVA\nCategorical + interaction terms\nInference for model coefficients\n\n\n\nMatrix representation of regression\nHat matrix\nFinding the least-squares estimator (no geometric interpretation)\nAssumptions for least-squares regression\nProperties of the least-squares estimator"
   },
   {
     "objectID": "slides/12-exam-01-review.html#outline-of-in-class-portion",

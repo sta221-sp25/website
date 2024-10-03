@@ -80,6 +80,8 @@ bibliography: references.bib
 ::: {.column width="50%"}
 -   Matrix representation of regression
 
+-   Hat matrix
+
 -   Finding the least-squares estimator (no geometric interpretation)
 
 -   Assumptions for least-squares regression
