@@ -94,6 +94,8 @@ website:
           text: Tips + resources
       - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=ccfa023a-c78c-4254-93ea-b1d80116d1dc
         text: Lecture recordings
+      - href: math-rules.qmd
+        text: Math rules
         
 
 format:

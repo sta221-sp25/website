@@ -1,10 +1,160 @@
-## math rules
+```{=html}
+<style>
+  .h3 {
+     margin-top: 3in;
+  }
+</style>
+```
+# Math rules
+
+This page contains mathematical rules we'll use in this course that may be beyond what is covered in a linear algebra course.
+
+## Matrix calculus
+
+### Definition of gradient
+
+Let $\mathbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\x_k\end{bmatrix}$be a $k \times 1$ vector and $f(\mathbf{x})$ be a function of $\mathbf{x}$.
+
+Then $\nabla_\mathbf{x}f$, the **gradient** of $f$ with respect to $\mathbf{x}$ is
+
+$$
+\nabla_\mathbf{x}f = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}
+$$<hr>
+
+### Gradient of $\mathbf{x}^T\mathbf{z}$
+
+Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{z}$ be a $k \times 1$ vector, such that $\mathbf{z}$ is not a function of $\mathbf{x}$ .
+
+The gradient of $\mathbf{x}^T\mathbf{z}$ with respect to $\mathbf{x}$ is
+
+$$
+\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{z} = \mathbf{z}
+$$<hr>
+
+### Gradient of $\mathbf{x}^T\mathbf{A}\mathbf{x}$
+
+Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{A}$ be a $k \times k$ matrix, such that $\mathbf{A}$ is not a function of $\mathbf{x}$ .
+
+Then the gradient of $\mathbf{x}^T\mathbf{A}\mathbf{x}$ with respect to $\mathbf{x}$ is
+
+$$
+\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^T \mathbf{x}) = (\mathbf{A} + \mathbf{A}^T)\mathbf{x}
+$$
+
+If $\mathbf{A}$ is symmetric, then
+
+$$
+(\mathbf{A} + \mathbf{A}^T)\mathbf{x} = 2\mathbf{A}\mathbf{x}
+$$
+
+<hr>
+
+### Hessian matrix
+
+The **Hessian** matrix, $\nabla_\mathbf{x}^2f$ is a $k \times k$ matrix of partial second derivatives
+
+$$
+\nabla_{\mathbf{x}}^2f = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} & \frac{\partial^2f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2f}{\partial x_1\partial x_k} \\ 
+\frac{\partial^2f}{\partial\ x_2 \partial x_1} & \frac{\partial^2f}{\partial x_2^2} & \dots & \frac{\partial^2f}{\partial x_2 \partial x_k} \\
+\vdots & \vdots & \ddots & \vdots \\ 
+\frac{\partial^2f}{\partial x_k\partial x_1} & \frac{\partial^2f}{\partial x_k\partial x_2} & \dots & \frac{\partial^2f}{\partial x_k^2} \end{bmatrix}
+$$
+
+## Expected value
+
+### Expected value of random variable $X$
+
+The **expected value** of a random variable $\mathbf{X}$ is a weighted average, i.e., the mean value of the possible values a random variable can take weighted by the probability of the outcomes.
+
+Let $f_X(x)$ be the probability distribution of $X$. If $X$ is continuous then
+
+$$
+E(X) = \int_{-\infty}^{\infty}xf_X(x)dx
+$$
+
+If $X$ is discrete then
+
+$$
+E(X) = \sum_{x \in X}xf_X(x) = \sum_{x\in X}xP(X = x)
+$$
+
+<hr>
+
+### Expected value of $aX + b$
+
+Let $X$ be a random variable and $a$ and $b$ be constants. Then
+
+$$
+E(aX + b) = E(aX) + E(b) = aE(X) + b
+$$
+
+<hr>
+
+### Expected value of $a g_1(X) + bg_2(X) + c)$
+
+Let $X$ be a random variable and $a$, $b$, and $c$ be constants. For any functions $g_1(x)$ and $g_2(x)$, then
+
+$$E(ag_1(X) + bg_2(X) + c) = aE(g_1(X)) + bE(g_2(X)) + c$$
+
+<hr>
+
+### Expected value of vector $\mathbf{b}$
+
+Let $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
+
+Then $E(\mathbf{b}) = E\begin{bmatrix}b_1 \\ \vdots \\ b_p\end{bmatrix} = \begin{bmatrix}E(b_1) \\ \vdots \\ E(b_p)\end{bmatrix}$
+
+<hr>
+
+### Expected value of $\mathbf{Ab}$ 
 
 Let $\mathbf{A}$ be a $n \times p$ matrix of constants and $\mathbf{b}$ a $p \times 1$ vector of random variables. Then
 
 $$
 E(\mathbf{Ab}) = \mathbf{A}E(\mathbf{b})
 $$
+
+## Variance
+
+### Variance of random variable $X$ 
+
+The **variance** of a random variable $X$ is a measure of the spread of a distribution about its mean.
+
+$$
+Var(X) = E[(X - E(X))^2] = E(X^2) - E(X)^2
+$$
+
+<hr>
+
+### Variance of $aX + b$ 
+
+Let $X$ be a random variable and $a$ and $b$ be constants. Then
+
+$$
+Var(aX + b) = a^2Var(X) 
+$$
+
+<hr>
+
+### Variance of vector $\mathbf{b}$ 
+
+Let $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
+
+Then $Var(\mathbf{b}) = \begin{bmatrix}Var(b_1) & Cov(b_1, b_2) & \dots & Cov(b_1, b_p) \\ Cov(b_2, b_1) & Var(b_2) & \dots & Cov(b_2, b_p) \\ \vdots & \vdots & \dots & \vdots \\ Cov(b_p, b_1) & Cov(b_2, b_p) & \dots & Var(b_p)\end{bmatrix}$
+
+<hr>
+
+### Variance of vector $\mathbf{b}$ (independent random variables)
+
+Let $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}$ be a $p \times 1$ vector of [*independent*]{.underline} random variables.
+
+Then $Var(\mathbf{b}) = \begin{bmatrix}Var(b_1) & 0 & \dots & 0 \\ 0 & Var(b_2) & \dots & 0 \\ \vdots & \vdots & \dots & \vdots \\ 0 & 0 & \dots & Var(b_p)\end{bmatrix}$
+
+<hr>
+
+### Variance of $\mathbf{Ab}$ 
+
+Let $\mathbf{A}$ be a $n \times p$ matrix of constants and $\mathbf{b}$ a $p \times 1$ vector of random variables. Then
 
 $$
 Var(\mathbf{Ab}) = \mathbf{A}Var(\mathbf{b})\mathbf{A}^T
