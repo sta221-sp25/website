@@ -176,7 +176,7 @@ $$
 
 ## Side note: Vector operations
 
-Th **Hessian** matrix, $\nabla_\mathbf{x}^2f$ is a $k \times k$ matrix of partial second derivatives
+The **Hessian** matrix, $\nabla_\mathbf{x}^2f$ is a $k \times k$ matrix of partial second derivatives
 
 $$
 \nabla_{\mathbf{x}}^2f = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} & \frac{\partial^2f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2f}{\partial x_1\partial x_k} \\ 

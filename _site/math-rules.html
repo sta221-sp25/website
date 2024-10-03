@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./project-tips.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +109,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./math-rules.html">Math rules</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -335,6 +336,12 @@ window.Quarto = {
  <span class="menu-text">Lecture recordings</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-rules.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Math rules</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -345,8 +352,33 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#math-rules" id="toc-math-rules" class="nav-link active" data-scroll-target="#math-rules">math rules</a></li>
+  <li><a href="#math-rules" id="toc-math-rules" class="nav-link active" data-scroll-target="#math-rules">Math rules</a>
+  <ul class="collapse">
+  <li><a href="#matrix-calculus" id="toc-matrix-calculus" class="nav-link" data-scroll-target="#matrix-calculus">Matrix calculus</a>
+  <ul class="collapse">
+  <li><a href="#definition-of-gradient" id="toc-definition-of-gradient" class="nav-link" data-scroll-target="#definition-of-gradient">Definition of gradient</a></li>
+  <li><a href="#gradient-of-mathbfxtmathbfz" id="toc-gradient-of-mathbfxtmathbfz" class="nav-link" data-scroll-target="#gradient-of-mathbfxtmathbfz">Gradient of <span class="math inline">\(\mathbf{x}^T\mathbf{z}\)</span></a></li>
+  <li><a href="#gradient-of-mathbfxtmathbfamathbfx" id="toc-gradient-of-mathbfxtmathbfamathbfx" class="nav-link" data-scroll-target="#gradient-of-mathbfxtmathbfamathbfx">Gradient of <span class="math inline">\(\mathbf{x}^T\mathbf{A}\mathbf{x}\)</span></a></li>
+  <li><a href="#hessian-matrix" id="toc-hessian-matrix" class="nav-link" data-scroll-target="#hessian-matrix">Hessian matrix</a></li>
+  </ul></li>
+  <li><a href="#expected-value" id="toc-expected-value" class="nav-link" data-scroll-target="#expected-value">Expected value</a>
+  <ul class="collapse">
+  <li><a href="#expected-value-of-random-variable-x" id="toc-expected-value-of-random-variable-x" class="nav-link" data-scroll-target="#expected-value-of-random-variable-x">Expected value of random variable <span class="math inline">\(X\)</span></a></li>
+  <li><a href="#expected-value-of-ax-b" id="toc-expected-value-of-ax-b" class="nav-link" data-scroll-target="#expected-value-of-ax-b">Expected value of <span class="math inline">\(aX + b\)</span></a></li>
+  <li><a href="#expected-value-of-a-g_1x-bg_2x-c" id="toc-expected-value-of-a-g_1x-bg_2x-c" class="nav-link" data-scroll-target="#expected-value-of-a-g_1x-bg_2x-c">Expected value of <span class="math inline">\(a g_1(X) + bg_2(X) + c)\)</span></a></li>
+  <li><a href="#expected-value-of-vector-mathbfb" id="toc-expected-value-of-vector-mathbfb" class="nav-link" data-scroll-target="#expected-value-of-vector-mathbfb">Expected value of vector <span class="math inline">\(\mathbf{b}\)</span></a></li>
+  <li><a href="#expected-value-of-mathbfab" id="toc-expected-value-of-mathbfab" class="nav-link" data-scroll-target="#expected-value-of-mathbfab">Expected value of <span class="math inline">\(\mathbf{Ab}\)</span></a></li>
+  </ul></li>
+  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance">Variance</a>
+  <ul class="collapse">
+  <li><a href="#variance-of-random-variable-x" id="toc-variance-of-random-variable-x" class="nav-link" data-scroll-target="#variance-of-random-variable-x">Variance of random variable <span class="math inline">\(X\)</span></a></li>
+  <li><a href="#variance-of-ax-b" id="toc-variance-of-ax-b" class="nav-link" data-scroll-target="#variance-of-ax-b">Variance of <span class="math inline">\(aX + b\)</span></a></li>
+  <li><a href="#variance-of-vector-mathbfb" id="toc-variance-of-vector-mathbfb" class="nav-link" data-scroll-target="#variance-of-vector-mathbfb">Variance of vector <span class="math inline">\(\mathbf{b}\)</span></a></li>
+  <li><a href="#variance-of-vector-mathbfb-independent-random-variables" id="toc-variance-of-vector-mathbfb-independent-random-variables" class="nav-link" data-scroll-target="#variance-of-vector-mathbfb-independent-random-variables">Variance of vector <span class="math inline">\(\mathbf{b}\)</span> (independent random variables)</a></li>
+  <li><a href="#variance-of-mathbfab" id="toc-variance-of-mathbfab" class="nav-link" data-scroll-target="#variance-of-mathbfab">Variance of <span class="math inline">\(\mathbf{Ab}\)</span></a></li>
+  </ul></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa24/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -356,20 +388,144 @@ window.Quarto = {
 
 
 
-<section id="math-rules" class="level2">
-<h2 class="anchored" data-anchor-id="math-rules">math rules</h2>
+<style>
+  .h3 {
+     margin-top: 3in;
+  }
+</style>
+<section id="math-rules" class="level1">
+<h1>Math rules</h1>
+<p>This page contains mathematical rules we’ll use in this course that may be beyond what is covered in a linear algebra course.</p>
+<section id="matrix-calculus" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-calculus">Matrix calculus</h2>
+<section id="definition-of-gradient" class="level3">
+<h3 class="anchored" data-anchor-id="definition-of-gradient">Definition of gradient</h3>
+<p>Let <span class="math inline">\(\mathbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\x_k\end{bmatrix}\)</span>be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(f(\mathbf{x})\)</span> be a function of <span class="math inline">\(\mathbf{x}\)</span>.</p>
+<p>Then <span class="math inline">\(\nabla_\mathbf{x}f\)</span>, the <strong>gradient</strong> of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
+<span class="math display">\[
+\nabla_\mathbf{x}f = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}
+\]</span>
+<hr>
+</section>
+<section id="gradient-of-mathbfxtmathbfz" class="level3">
+<h3 class="anchored" data-anchor-id="gradient-of-mathbfxtmathbfz">Gradient of <span class="math inline">\(\mathbf{x}^T\mathbf{z}\)</span></h3>
+<p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{z}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector, such that <span class="math inline">\(\mathbf{z}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .</p>
+<p>The gradient of <span class="math inline">\(\mathbf{x}^T\mathbf{z}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
+<span class="math display">\[
+\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{z} = \mathbf{z}
+\]</span>
+<hr>
+</section>
+<section id="gradient-of-mathbfxtmathbfamathbfx" class="level3">
+<h3 class="anchored" data-anchor-id="gradient-of-mathbfxtmathbfamathbfx">Gradient of <span class="math inline">\(\mathbf{x}^T\mathbf{A}\mathbf{x}\)</span></h3>
+<p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{A}\)</span> be a <span class="math inline">\(k \times k\)</span> matrix, such that <span class="math inline">\(\mathbf{A}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .</p>
+<p>Then the gradient of <span class="math inline">\(\mathbf{x}^T\mathbf{A}\mathbf{x}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
+<p><span class="math display">\[
+\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^T \mathbf{x}) = (\mathbf{A} + \mathbf{A}^T)\mathbf{x}
+\]</span></p>
+<p>If <span class="math inline">\(\mathbf{A}\)</span> is symmetric, then</p>
+<p><span class="math display">\[
+(\mathbf{A} + \mathbf{A}^T)\mathbf{x} = 2\mathbf{A}\mathbf{x}
+\]</span></p>
+<hr>
+</section>
+<section id="hessian-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="hessian-matrix">Hessian matrix</h3>
+<p>The <strong>Hessian</strong> matrix, <span class="math inline">\(\nabla_\mathbf{x}^2f\)</span> is a <span class="math inline">\(k \times k\)</span> matrix of partial second derivatives</p>
+<p><span class="math display">\[
+\nabla_{\mathbf{x}}^2f = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} &amp; \frac{\partial^2f}{\partial x_1 \partial x_2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_1\partial x_k} \\
+\frac{\partial^2f}{\partial\ x_2 \partial x_1} &amp; \frac{\partial^2f}{\partial x_2^2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_2 \partial x_k} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\frac{\partial^2f}{\partial x_k\partial x_1} &amp; \frac{\partial^2f}{\partial x_k\partial x_2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_k^2} \end{bmatrix}
+\]</span></p>
+</section>
+</section>
+<section id="expected-value" class="level2">
+<h2 class="anchored" data-anchor-id="expected-value">Expected value</h2>
+<section id="expected-value-of-random-variable-x" class="level3">
+<h3 class="anchored" data-anchor-id="expected-value-of-random-variable-x">Expected value of random variable <span class="math inline">\(X\)</span></h3>
+<p>The <strong>expected value</strong> of a random variable <span class="math inline">\(\mathbf{X}\)</span> is a weighted average, i.e., the mean value of the possible values a random variable can take weighted by the probability of the outcomes.</p>
+<p>Let <span class="math inline">\(f_X(x)\)</span> be the probability distribution of <span class="math inline">\(X\)</span>. If <span class="math inline">\(X\)</span> is continuous then</p>
+<p><span class="math display">\[
+E(X) = \int_{-\infty}^{\infty}xf_X(x)dx
+\]</span></p>
+<p>If <span class="math inline">\(X\)</span> is discrete then</p>
+<p><span class="math display">\[
+E(X) = \sum_{x \in X}xf_X(x) = \sum_{x\in X}xP(X = x)
+\]</span></p>
+<hr>
+</section>
+<section id="expected-value-of-ax-b" class="level3">
+<h3 class="anchored" data-anchor-id="expected-value-of-ax-b">Expected value of <span class="math inline">\(aX + b\)</span></h3>
+<p>Let <span class="math inline">\(X\)</span> be a random variable and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be constants. Then</p>
+<p><span class="math display">\[
+E(aX + b) = E(aX) + E(b) = aE(X) + b
+\]</span></p>
+<hr>
+</section>
+<section id="expected-value-of-a-g_1x-bg_2x-c" class="level3">
+<h3 class="anchored" data-anchor-id="expected-value-of-a-g_1x-bg_2x-c">Expected value of <span class="math inline">\(a g_1(X) + bg_2(X) + c)\)</span></h3>
+<p>Let <span class="math inline">\(X\)</span> be a random variable and <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> be constants. For any functions <span class="math inline">\(g_1(x)\)</span> and <span class="math inline">\(g_2(x)\)</span>, then</p>
+<p><span class="math display">\[E(ag_1(X) + bg_2(X) + c) = aE(g_1(X)) + bE(g_2(X)) + c\]</span></p>
+<hr>
+</section>
+<section id="expected-value-of-vector-mathbfb" class="level3">
+<h3 class="anchored" data-anchor-id="expected-value-of-vector-mathbfb">Expected value of vector <span class="math inline">\(\mathbf{b}\)</span></h3>
+<p>Let <span class="math inline">\(\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of random variables.</p>
+<p>Then <span class="math inline">\(E(\mathbf{b}) = E\begin{bmatrix}b_1 \\ \vdots \\ b_p\end{bmatrix} = \begin{bmatrix}E(b_1) \\ \vdots \\ E(b_p)\end{bmatrix}\)</span></p>
+<hr>
+</section>
+<section id="expected-value-of-mathbfab" class="level3">
+<h3 class="anchored" data-anchor-id="expected-value-of-mathbfab">Expected value of <span class="math inline">\(\mathbf{Ab}\)</span></h3>
 <p>Let <span class="math inline">\(\mathbf{A}\)</span> be a <span class="math inline">\(n \times p\)</span> matrix of constants and <span class="math inline">\(\mathbf{b}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
 <p><span class="math display">\[
 E(\mathbf{Ab}) = \mathbf{A}E(\mathbf{b})
 \]</span></p>
+</section>
+</section>
+<section id="variance" class="level2">
+<h2 class="anchored" data-anchor-id="variance">Variance</h2>
+<section id="variance-of-random-variable-x" class="level3">
+<h3 class="anchored" data-anchor-id="variance-of-random-variable-x">Variance of random variable <span class="math inline">\(X\)</span></h3>
+<p>The <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span> is a measure of the spread of a distribution about its mean.</p>
+<p><span class="math display">\[
+Var(X) = E[(X - E(X))^2] = E(X^2) - E(X)^2
+\]</span></p>
+<hr>
+</section>
+<section id="variance-of-ax-b" class="level3">
+<h3 class="anchored" data-anchor-id="variance-of-ax-b">Variance of <span class="math inline">\(aX + b\)</span></h3>
+<p>Let <span class="math inline">\(X\)</span> be a random variable and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be constants. Then</p>
+<p><span class="math display">\[
+Var(aX + b) = a^2Var(X)
+\]</span></p>
+<hr>
+</section>
+<section id="variance-of-vector-mathbfb" class="level3">
+<h3 class="anchored" data-anchor-id="variance-of-vector-mathbfb">Variance of vector <span class="math inline">\(\mathbf{b}\)</span></h3>
+<p>Let <span class="math inline">\(\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of random variables.</p>
+<p>Then <span class="math inline">\(Var(\mathbf{b}) = \begin{bmatrix}Var(b_1) &amp; Cov(b_1, b_2) &amp; \dots &amp; Cov(b_1, b_p) \\ Cov(b_2, b_1) &amp; Var(b_2) &amp; \dots &amp; Cov(b_2, b_p) \\ \vdots &amp; \vdots &amp; \dots &amp; \vdots \\ Cov(b_p, b_1) &amp; Cov(b_2, b_p) &amp; \dots &amp; Var(b_p)\end{bmatrix}\)</span></p>
+<hr>
+</section>
+<section id="variance-of-vector-mathbfb-independent-random-variables" class="level3">
+<h3 class="anchored" data-anchor-id="variance-of-vector-mathbfb-independent-random-variables">Variance of vector <span class="math inline">\(\mathbf{b}\)</span> (independent random variables)</h3>
+<p>Let <span class="math inline">\(\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of <u><em>independent</em></u> random variables.</p>
+<p>Then <span class="math inline">\(Var(\mathbf{b}) = \begin{bmatrix}Var(b_1) &amp; 0 &amp; \dots &amp; 0 \\ 0 &amp; Var(b_2) &amp; \dots &amp; 0 \\ \vdots &amp; \vdots &amp; \dots &amp; \vdots \\ 0 &amp; 0 &amp; \dots &amp; Var(b_p)\end{bmatrix}\)</span></p>
+<hr>
+</section>
+<section id="variance-of-mathbfab" class="level3">
+<h3 class="anchored" data-anchor-id="variance-of-mathbfab">Variance of <span class="math inline">\(\mathbf{Ab}\)</span></h3>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be a <span class="math inline">\(n \times p\)</span> matrix of constants and <span class="math inline">\(\mathbf{b}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
 <p><span class="math display">\[
 Var(\mathbf{Ab}) = \mathbf{A}Var(\mathbf{b})\mathbf{A}^T
 \]</span></p>
+</section>
 </section>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section"></h2>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -793,6 +949,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./project-tips.html" class="pagination-link" aria-label="Tips + resources">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tips + resources</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -463,7 +463,7 @@ SSR = \sum_{i=1}^n e_i^2 = \mathbf{e}^T\mathbf{e} &amp;= (\mathbf{y} - \mathbf{X
 </section>
 <section id="side-note-vector-operations-1" class="slide level2">
 <h2>Side note: Vector operations</h2>
-<p>Th <strong>Hessian</strong> matrix, <span class="math inline">\(\nabla_\mathbf{x}^2f\)</span> is a <span class="math inline">\(k \times k\)</span> matrix of partial second derivatives</p>
+<p>The <strong>Hessian</strong> matrix, <span class="math inline">\(\nabla_\mathbf{x}^2f\)</span> is a <span class="math inline">\(k \times k\)</span> matrix of partial second derivatives</p>
 <p><span class="math display">\[
 \nabla_{\mathbf{x}}^2f = \begin{bmatrix} \frac{\partial^2f}{\partial x_1^2} &amp; \frac{\partial^2f}{\partial x_1 \partial x_2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_1\partial x_k} \\
 \frac{\partial^2f}{\partial\ x_2 \partial x_1} &amp; \frac{\partial^2f}{\partial x_2^2} &amp; \dots &amp; \frac{\partial^2f}{\partial x_2 \partial x_k} \\
@@ -822,44 +822,6 @@ Proof in HW 01
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
