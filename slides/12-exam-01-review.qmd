@@ -56,11 +56,7 @@ bibliography: references.bib
 
 -   In-class: 75 minutes during Tuesday, October 8 lecture
 
--   Take-home:
-
-    -   Released: Tuesday, October 8 \~ 1pm
-    -   Due: Thursday, October 10 at 11:30 (we will have class Thursday)
-    -   Similar in format to a lab/ HW
+-   Take-home: due October 10 at 11:30am (we will have class Thursday)
 
 -   If you miss any part of the exam for an excused absence (with academic dean's note), your Exam 02 score will be counted twice
 
@@ -77,11 +73,11 @@ bibliography: references.bib
 -   ANOVA
 
 -   Categorical + interaction terms
+
+-   Inference for model coefficients
 :::
 
 ::: {.column width="50%"}
--   Inference for model coefficients
-
 -   Matrix representation of regression
 
 -   Finding the least-squares estimator (no geometric interpretation)
@@ -105,9 +101,18 @@ bibliography: references.bib
         -   If false, write 1 - 2 sentence justification about why it is false.
     -   Derivations
 
--   Will be provided all relevant R output and a page of math rules <!--# Update link-->
+-   Will be provided all relevant R output and a page of [math rules](../math-rules.html) <!--# Update link-->
 
 -   Just need a pencil or pen. No calculator permitted on exam.
+
+## Outline of take-home portion
+
+-   Released: Tuesday, October 8 \~ 1pm
+-   Due: Thursday, October 10 at 11:30 (we will have class Thursday)
+-   Similar in format to a lab/ HW
+    -   Will receive Exam questions in README of GitHub repo
+    -   Formatting + using a reproducible workflow will be part of grade
+-   Submit a PDF of responses to GitHub
 
 # Application exercise
 
@@ -117,4 +122,6 @@ bibliography: references.bib
 
 -   Sit with your lab group.
 
--   Put your group's response to your assigned exercise on Ed Discussion. <!--# update-->
+-   Select one person to present your group's response to the class.
+
+-   Select one person to post your group's response to the [Google slides](https://docs.google.com/presentation/d/1CGulfEDqeszbdy5Mn8AiGgn1kHTy8BLSBksucchlHVo/edit?usp=sharing).
