@@ -49,10 +49,10 @@ bibliography: references.bib
 
 -   20s% of final course grade
 
--   50 points total <!--# UPDATE THIS-->
+-   50 points total
 
-    -   in-class: 40 points
-    -   take-home: 10 points
+    -   in-class: 35-40 points
+    -   take-home: 10 - 15 points
 
 -   In-class: 75 minutes during Tuesday, October 8 lecture
 
@@ -86,6 +86,8 @@ bibliography: references.bib
 
 -   Finding the least-squares estimator (no geometric interpretation)
 
+-   Assumptions for least-squares regression
+
 -   Properties of the least-squares estimator
 :::
 :::
@@ -110,7 +112,7 @@ bibliography: references.bib
 # Application exercise
 
 ::: appex
-📋
+📋 [sta221-fa24.netlify.app/ae/ae-04-exam-01-review](https://sta221-fa24.netlify.app/ae/ae-04-exam-01-review)
 :::
 
 -   Sit with your lab group.
