@@ -365,7 +365,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#expected-value-of-random-variable-x" id="toc-expected-value-of-random-variable-x" class="nav-link" data-scroll-target="#expected-value-of-random-variable-x">Expected value of random variable <span class="math inline">\(X\)</span></a></li>
   <li><a href="#expected-value-of-ax-b" id="toc-expected-value-of-ax-b" class="nav-link" data-scroll-target="#expected-value-of-ax-b">Expected value of <span class="math inline">\(aX + b\)</span></a></li>
-  <li><a href="#expected-value-of-a-g_1x-bg_2x-c" id="toc-expected-value-of-a-g_1x-bg_2x-c" class="nav-link" data-scroll-target="#expected-value-of-a-g_1x-bg_2x-c">Expected value of <span class="math inline">\(a g_1(X) + bg_2(X) + c)\)</span></a></li>
+  <li><a href="#expected-value-of-a-g_1x-bg_2x-c" id="toc-expected-value-of-a-g_1x-bg_2x-c" class="nav-link" data-scroll-target="#expected-value-of-a-g_1x-bg_2x-c">Expected value of <span class="math inline">\(a g_1(X) + bg_2(X) + c\)</span></a></li>
   <li><a href="#expected-value-of-vector-mathbfb" id="toc-expected-value-of-vector-mathbfb" class="nav-link" data-scroll-target="#expected-value-of-vector-mathbfb">Expected value of vector <span class="math inline">\(\mathbf{b}\)</span></a></li>
   <li><a href="#expected-value-of-mathbfab" id="toc-expected-value-of-mathbfab" class="nav-link" data-scroll-target="#expected-value-of-mathbfab">Expected value of <span class="math inline">\(\mathbf{Ab}\)</span></a></li>
   </ul></li>
@@ -374,7 +374,6 @@ window.Quarto = {
   <li><a href="#variance-of-random-variable-x" id="toc-variance-of-random-variable-x" class="nav-link" data-scroll-target="#variance-of-random-variable-x">Variance of random variable <span class="math inline">\(X\)</span></a></li>
   <li><a href="#variance-of-ax-b" id="toc-variance-of-ax-b" class="nav-link" data-scroll-target="#variance-of-ax-b">Variance of <span class="math inline">\(aX + b\)</span></a></li>
   <li><a href="#variance-of-vector-mathbfb" id="toc-variance-of-vector-mathbfb" class="nav-link" data-scroll-target="#variance-of-vector-mathbfb">Variance of vector <span class="math inline">\(\mathbf{b}\)</span></a></li>
-  <li><a href="#variance-of-vector-mathbfb-independent-random-variables" id="toc-variance-of-vector-mathbfb-independent-random-variables" class="nav-link" data-scroll-target="#variance-of-vector-mathbfb-independent-random-variables">Variance of vector <span class="math inline">\(\mathbf{b}\)</span> (independent random variables)</a></li>
   <li><a href="#variance-of-mathbfab" id="toc-variance-of-mathbfab" class="nav-link" data-scroll-target="#variance-of-mathbfab">Variance of <span class="math inline">\(\mathbf{Ab}\)</span></a></li>
   </ul></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
@@ -402,18 +401,18 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="definition-of-gradient">Definition of gradient</h3>
 <p>Let <span class="math inline">\(\mathbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\x_k\end{bmatrix}\)</span>be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(f(\mathbf{x})\)</span> be a function of <span class="math inline">\(\mathbf{x}\)</span>.</p>
 <p>Then <span class="math inline">\(\nabla_\mathbf{x}f\)</span>, the <strong>gradient</strong> of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<span class="math display">\[
+<p><span class="math display">\[
 \nabla_\mathbf{x}f = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_k}\end{bmatrix}
-\]</span>
+\]</span></p>
 <hr>
 </section>
 <section id="gradient-of-mathbfxtmathbfz" class="level3">
 <h3 class="anchored" data-anchor-id="gradient-of-mathbfxtmathbfz">Gradient of <span class="math inline">\(\mathbf{x}^T\mathbf{z}\)</span></h3>
 <p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{z}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector, such that <span class="math inline">\(\mathbf{z}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .</p>
 <p>The gradient of <span class="math inline">\(\mathbf{x}^T\mathbf{z}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
-<span class="math display">\[
+<p><span class="math display">\[
 \nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{z} = \mathbf{z}
-\]</span>
+\]</span></p>
 <hr>
 </section>
 <section id="gradient-of-mathbfxtmathbfamathbfx" class="level3">
@@ -464,7 +463,7 @@ E(aX + b) = E(aX) + E(b) = aE(X) + b
 <hr>
 </section>
 <section id="expected-value-of-a-g_1x-bg_2x-c" class="level3">
-<h3 class="anchored" data-anchor-id="expected-value-of-a-g_1x-bg_2x-c">Expected value of <span class="math inline">\(a g_1(X) + bg_2(X) + c)\)</span></h3>
+<h3 class="anchored" data-anchor-id="expected-value-of-a-g_1x-bg_2x-c">Expected value of <span class="math inline">\(a g_1(X) + bg_2(X) + c\)</span></h3>
 <p>Let <span class="math inline">\(X\)</span> be a random variable and <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> be constants. For any functions <span class="math inline">\(g_1(x)\)</span> and <span class="math inline">\(g_2(x)\)</span>, then</p>
 <p><span class="math display">\[E(ag_1(X) + bg_2(X) + c) = aE(g_1(X)) + bE(g_2(X)) + c\]</span></p>
 <hr>
@@ -504,20 +503,19 @@ Var(aX + b) = a^2Var(X)
 <section id="variance-of-vector-mathbfb" class="level3">
 <h3 class="anchored" data-anchor-id="variance-of-vector-mathbfb">Variance of vector <span class="math inline">\(\mathbf{b}\)</span></h3>
 <p>Let <span class="math inline">\(\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of random variables.</p>
-<p>Then <span class="math inline">\(Var(\mathbf{b}) = \begin{bmatrix}Var(b_1) &amp; Cov(b_1, b_2) &amp; \dots &amp; Cov(b_1, b_p) \\ Cov(b_2, b_1) &amp; Var(b_2) &amp; \dots &amp; Cov(b_2, b_p) \\ \vdots &amp; \vdots &amp; \dots &amp; \vdots \\ Cov(b_p, b_1) &amp; Cov(b_2, b_p) &amp; \dots &amp; Var(b_p)\end{bmatrix}\)</span></p>
-<hr>
-</section>
-<section id="variance-of-vector-mathbfb-independent-random-variables" class="level3">
-<h3 class="anchored" data-anchor-id="variance-of-vector-mathbfb-independent-random-variables">Variance of vector <span class="math inline">\(\mathbf{b}\)</span> (independent random variables)</h3>
-<p>Let <span class="math inline">\(\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of <u><em>independent</em></u> random variables.</p>
-<p>Then <span class="math inline">\(Var(\mathbf{b}) = \begin{bmatrix}Var(b_1) &amp; 0 &amp; \dots &amp; 0 \\ 0 &amp; Var(b_2) &amp; \dots &amp; 0 \\ \vdots &amp; \vdots &amp; \dots &amp; \vdots \\ 0 &amp; 0 &amp; \dots &amp; Var(b_p)\end{bmatrix}\)</span></p>
-<hr>
+<p>Then</p>
+<p><span class="math display">\[
+Var(\mathbf{b}) = E[(\mathbf{b} - E(\mathbf{b}))(\mathbf{b} - E(\mathbf{b}))^T]
+\]</span></p>
+<!--# Can add in the drop-down the resulting matrix-->
 </section>
 <section id="variance-of-mathbfab" class="level3">
 <h3 class="anchored" data-anchor-id="variance-of-mathbfab">Variance of <span class="math inline">\(\mathbf{Ab}\)</span></h3>
 <p>Let <span class="math inline">\(\mathbf{A}\)</span> be a <span class="math inline">\(n \times p\)</span> matrix of constants and <span class="math inline">\(\mathbf{b}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
 <p><span class="math display">\[
-Var(\mathbf{Ab}) = \mathbf{A}Var(\mathbf{b})\mathbf{A}^T
+\begin{aligned}
+Var(\mathbf{Ab}) &amp;= E[(\mathbf{Ab} - E(\mathbf{Ab}))(\mathbf{Ab} - E(\mathbf{Ab}))^T]\\&amp; = \mathbf{A}Var(\mathbf{b})\mathbf{A}^T
+\end{aligned}
 \]</span></p>
 </section>
 </section>
