@@ -546,7 +546,7 @@ Important
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
 <p>Compute the following directly from the data:</p>
 <ol type="a">
-<li>The regression standard error <span class="math inline">\(\hat{\sigma}_{\epsilon}^2\)</span> . Interpret this value in the context of the data.</li>
+<li>The regression standard error <span class="math inline">\(\hat{\sigma}_{\epsilon}\)</span> . Interpret this value in the context of the data.</li>
 <li><span class="math inline">\(R^2\)</span>. Interpret this value in the context of the data.</li>
 <li><span class="math inline">\(RMSE\)</span>. Interpret this value in the context of the data.</li>
 </ol>
@@ -677,17 +677,16 @@ Important
 <li><p>Consider the following derivation of <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span> , the variance of the least-squares estimator:</p>
 <p><span class="math display">\[
 \begin{aligned}
-Var(\hat{\boldsymbol{\beta}}) &amp;= E[(\hat{\boldsymbol{\beta}} - E(\hat{\boldsymbol{\beta}}))^2]\\
-&amp; = E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})^T] \\
+Var(\hat{\boldsymbol{\beta}}) &amp; = E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})^T] \\
 &amp; = E[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\boldsymbol{\epsilon})((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\boldsymbol{\epsilon})^T] \\
 &amp; = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^TE(\boldsymbol{\epsilon}\boldsymbol{\epsilon}^T)\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} \\
 &amp; = \sigma^2(\mathbf{X}^T\mathbf{X})^{-1}
 \end{aligned}
 \]</span></p></li>
 </ol>
-<p>Explain how to go from Line 2 to Line 3.</p>
+<p>Explain how to go from Line 1 to Line 2.</p>
 <ol start="3" type="a">
-<li>What assumptions are used to go from Line 4 to Line 5?</li>
+<li>What assumptions are used to go from Line 3 to Line 4?</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">

@@ -2776,7 +2776,7 @@
     "href": "ae/ae-04-exam-01-review.html#exercise-3",
     "title": "AE 04: Exam 01 Review",
     "section": "Exercise 3",
-    "text": "Exercise 3\nCompute the following directly from the data:\n\nThe regression standard error \\(\\hat{\\sigma}_{\\epsilon}^2\\) . Interpret this value in the context of the data.\n\\(R^2\\). Interpret this value in the context of the data.\n\\(RMSE\\). Interpret this value in the context of the data.\n\n\n# add code here"
+    "text": "Exercise 3\nCompute the following directly from the data:\n\nThe regression standard error \\(\\hat{\\sigma}_{\\epsilon}\\) . Interpret this value in the context of the data.\n\\(R^2\\). Interpret this value in the context of the data.\n\\(RMSE\\). Interpret this value in the context of the data.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-04-exam-01-review.html#exercise-4",
@@ -2797,7 +2797,7 @@
     "href": "ae/ae-04-exam-01-review.html#exercise-6",
     "title": "AE 04: Exam 01 Review",
     "section": "Exercise 6",
-    "text": "Exercise 6\nThe following are general questions about regression. They are not specific to the tips data set.\n\nWhat does it mean for an estimator to be the “least-squares” estimator?\nConsider the following derivation of \\(Var(\\hat{\\boldsymbol{\\beta}})\\) , the variance of the least-squares estimator:\n\\[\n\\begin{aligned}\nVar(\\hat{\\boldsymbol{\\beta}}) &= E[(\\hat{\\boldsymbol{\\beta}} - E(\\hat{\\boldsymbol{\\beta}}))^2]\\\\\n& = E[(\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta})(\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta})^T] \\\\\n& = E[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon})((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon})^T] \\\\\n& = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^TE(\\boldsymbol{\\epsilon}\\boldsymbol{\\epsilon}^T)\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} \\\\\n& = \\sigma^2(\\mathbf{X}^T\\mathbf{X})^{-1}\n\\end{aligned}\n\\]\n\nExplain how to go from Line 2 to Line 3.\n\nWhat assumptions are used to go from Line 4 to Line 5?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+    "text": "Exercise 6\nThe following are general questions about regression. They are not specific to the tips data set.\n\nWhat does it mean for an estimator to be the “least-squares” estimator?\nConsider the following derivation of \\(Var(\\hat{\\boldsymbol{\\beta}})\\) , the variance of the least-squares estimator:\n\\[\n\\begin{aligned}\nVar(\\hat{\\boldsymbol{\\beta}}) & = E[(\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta})(\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta})^T] \\\\\n& = E[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon})((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon})^T] \\\\\n& = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^TE(\\boldsymbol{\\epsilon}\\boldsymbol{\\epsilon}^T)\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} \\\\\n& = \\sigma^2(\\mathbf{X}^T\\mathbf{X})^{-1}\n\\end{aligned}\n\\]\n\nExplain how to go from Line 1 to Line 2.\n\nWhat assumptions are used to go from Line 3 to Line 4?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
   },
   {
     "objectID": "ae/ae-04-exam-01-review.html#footnotes",

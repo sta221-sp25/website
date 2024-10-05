@@ -119,7 +119,7 @@ c.  Write the equation of the estimated regression model.
 
 Compute the following directly from the data:
 
-a.  The regression standard error $\hat{\sigma}_{\epsilon}^2$ . Interpret this value in the context of the data.
+a.  The regression standard error $\hat{\sigma}_{\epsilon}$ . Interpret this value in the context of the data.
 b.  $R^2$. Interpret this value in the context of the data.
 c.  $RMSE$. Interpret this value in the context of the data.
 
@@ -173,17 +173,16 @@ b.  Consider the following derivation of $Var(\hat{\boldsymbol{\beta}})$ , the v
 
     $$
     \begin{aligned}
-    Var(\hat{\boldsymbol{\beta}}) &= E[(\hat{\boldsymbol{\beta}} - E(\hat{\boldsymbol{\beta}}))^2]\\
-    & = E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})^T] \\
+    Var(\hat{\boldsymbol{\beta}}) & = E[(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})(\hat{\boldsymbol{\beta}} - \boldsymbol{\beta})^T] \\
     & = E[((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\boldsymbol{\epsilon})((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\boldsymbol{\epsilon})^T] \\
     & = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^TE(\boldsymbol{\epsilon}\boldsymbol{\epsilon}^T)\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} \\
     & = \sigma^2(\mathbf{X}^T\mathbf{X})^{-1}
     \end{aligned}
     $$
 
-Explain how to go from Line 2 to Line 3.
+Explain how to go from Line 1 to Line 2.
 
-c.  What assumptions are used to go from Line 4 to Line 5?
+c.  What assumptions are used to go from Line 3 to Line 4?
 
 ::: callout-important
 # Submission
