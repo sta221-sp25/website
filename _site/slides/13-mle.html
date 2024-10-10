@@ -410,51 +410,62 @@ Prof.&nbsp;Maria Tackett
 <section id="example-shooting-free-throws" class="slide level2">
 <h2>Example: Shooting free throws</h2>
 <p>Suppose a basketball player shoots a single free throw, such that the probability of making a basket is <span class="math inline">\(p\)</span></p>
+<div class="fragment">
+<div>
 <ul>
-<li><p>What is the probability distribution for this random phenomenon?</p></li>
-<li><p>Suppose the probability is <span class="math inline">\(p = 0.5\)</span>? What is the probability the player makes a single shot, given this value of the parameter <span class="math inline">\(p\)</span>?</p></li>
-<li><p>Suppose the probability is <span class="math inline">\(p = 0.8\)</span>? What is the probability the player makes a single shot, given this value of the parameter <span class="math inline">\(p\)</span>?</p></li>
+<li class="fragment"><p>What is the probability distribution for this random phenomenon?</p></li>
+<li class="fragment"><p>Suppose the probability is <span class="math inline">\(p = 0.5\)</span>? What is the probability the player makes a single shot, given this value of the parameter <span class="math inline">\(p\)</span>?</p></li>
+<li class="fragment"><p>Suppose the probability is <span class="math inline">\(p = 0.8\)</span>? What is the probability the player makes a single shot, given this value of the parameter <span class="math inline">\(p\)</span>?</p></li>
 </ul>
+</div>
+</div>
 </section>
 <section id="shooting-three-free-throws" class="slide level2">
 <h2>Shooting three free throws</h2>
 <p>Suppose the player shoots three free throws. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each shot.</p>
 <p>Let <span class="math inline">\(B\)</span> represent a made basket, and <span class="math inline">\(M\)</span> represent a missed basket. The player shoots three free throws with the outcome <span class="math inline">\(BBM\)</span>.</p>
+<div class="fragment">
+<div>
 <ul>
-<li><p>Suppose the probability is <span class="math inline">\(p = 0.5\)</span>? What is the probability of observing the data <span class="math inline">\(BBM\)</span>, given this value of the parameter <span class="math inline">\(p\)</span>?</p></li>
-<li><p>Suppose the probability is <span class="math inline">\(p = 0.3\)</span>? What is the probability of observing the data <span class="math inline">\(BBM\)</span>, given this value of the parameter <span class="math inline">\(p\)</span> ?</p></li>
+<li class="fragment"><p>Suppose the probability is <span class="math inline">\(p = 0.5\)</span>? What is the probability of observing the data <span class="math inline">\(BBM\)</span>, given this value of the parameter <span class="math inline">\(p\)</span>?</p></li>
+<li class="fragment"><p>Suppose the probability is <span class="math inline">\(p = 0.3\)</span>? What is the probability of observing the data <span class="math inline">\(BBM\)</span>, given this value of the parameter <span class="math inline">\(p\)</span> ?</p></li>
 </ul>
+</div>
+</div>
 </section>
 <section id="shooting-three-free-throws-1" class="slide level2">
 <h2>Shooting three free throws</h2>
 <p>Suppose the player shoots three free throws. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each shot.</p>
 <p>The player shoots three free throws with the outcome <span class="math inline">\(BBM\)</span>.</p>
+<div class="fragment">
+<div>
 <ul>
-<li><p>How would you describe in words the probabilities we previously calculated?</p></li>
-<li><p><strong>New question:</strong> What parameter value of <span class="math inline">\(p\)</span> do you think maximizes the probability of observing this data?</p></li>
-<li><p>We will use a <strong>likelihood</strong> function to answer this question.</p></li>
+<li class="fragment"><p>How would you describe in words the probabilities we previously calculated?</p></li>
+<li class="fragment"><p><strong>New question:</strong> What parameter value of <span class="math inline">\(p\)</span> do you think maximizes the probability of observing this data?</p></li>
+<li class="fragment"><p>We will use a <strong>likelihood</strong> function to answer this question.</p></li>
 </ul>
+</div>
+</div>
 </section>
-<section id="likelihood" class="slide level2">
+<section id="likelihood" class="slide level2 incremental">
 <h2>Likelihood</h2>
-<p>A <strong>likelihood</strong> is a function that tells us how likely we are to observe our data for a given parameter value (or values). <!--# Find a better definition - Casella Berger maybe?--></p>
-<div class="fragment">
-<p>Note that this is <strong>not</strong> the same as the probability function. In other words,</p>
-</div>
-<div class="fragment">
-<p><strong>Probability function</strong>: Fixed parameter value(s) + input possible outcomes <span class="math inline">\(\Rightarrow\)</span> probability of seeing the different outcomes given the parameter value(s)</p>
-<p><strong>Likelihood function</strong>: Fixed data + input possible parameter values <span class="math inline">\(\Rightarrow\)</span> probability of seeing the fixed data for each parameter value</p>
-</div>
-</section>
-<section id="likelihood-shooting-three-free-throws" class="slide level2">
-<h2>Likelihood: shooting three free throws</h2>
+<ul>
+<li><p>A <strong>likelihood</strong> is a function that tells us how likely we are to observe our data for a given parameter value (or values). <!--# Find a better definition - Casella Berger maybe?--></p></li>
+<li><p>Note that this is <strong>not</strong> the same as the probability function. In other words,</p></li>
+<li><p><strong>Probability function</strong>: Fixed parameter value(s) + input possible outcomes <span class="math inline">\(\Rightarrow\)</span> probability of seeing the different outcomes given the parameter value(s)</p></li>
+<li><p><strong>Likelihood function</strong>: Fixed data + input possible parameter values <span class="math inline">\(\Rightarrow\)</span> probability of seeing the fixed data for each parameter value</p>
+<h2 id="likelihood-shooting-three-free-throws">Likelihood: shooting three free throws</h2></li>
+</ul>
 <p>The likelihood function for the probability of heads <span class="math inline">\(p\)</span> given we observed <span class="math inline">\(BBM\)</span> when shooting three independent free throws is <span class="math display">\[
 L(p|BBM) = p \times p \times (1 - p)
 \]</span></p>
+<p><br></p>
+<div class="fragment">
 <p>Thus, if the likelihood for <span class="math inline">\(p = 0.8\)</span> is</p>
 <p><span class="math display">\[
 L(p = 0.8|BBM) = 0.8 \times 0.8 \times (1 - 0.8) = 0.128
 \]</span></p>
+</div>
 </section>
 <section id="likelihood-shooting-three-free-throws-1" class="slide level2">
 <h2>Likelihood: shooting three free throws</h2>
@@ -470,17 +481,20 @@ L(p = 0.8|BBM) = 0.8 \times 0.8 \times (1 - 0.8) = 0.128
 <p><span class="math display">\[
 L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
 \]</span></p>
+<div class="fragment">
+<div>
 <ul>
-<li><p>We want of the value of <span class="math inline">\(p\)</span> that maximizes this likelihood function, i.e., the value of <span class="math inline">\(p\)</span> that is most likely given the observed data.</p></li>
-<li><p>The process of finding this value is <strong>maximum likelihood estimation</strong>.</p></li>
-<li><p>There are three primary ways to find the maximum likelihood estimator</p>
+<li class="fragment"><p>We want of the value of <span class="math inline">\(p\)</span> that maximizes this likelihood function, i.e., the value of <span class="math inline">\(p\)</span> that is most likely given the observed data.</p></li>
+<li class="fragment"><p>The process of finding this value is <strong>maximum likelihood estimation</strong>.</p></li>
+<li class="fragment"><p>There are three primary ways to find the maximum likelihood estimator</p>
 <ul>
-<li><p>Approximate using a graph</p></li>
-<li><p>Using calculus</p></li>
-<li><p>Numerical approximation</p></li>
+<li class="fragment"><p>Approximate using a graph</p></li>
+<li class="fragment"><p>Using calculus</p></li>
+<li class="fragment"><p>Numerical approximation</p></li>
 </ul></li>
 </ul>
-<!--# Add a poll - what is your guess for the MLE?-->
+</div>
+</div>
 </section>
 <section id="finding-the-mle-using-graphs" class="slide level2">
 <h2>Finding the MLE using graphs</h2>
@@ -506,11 +520,18 @@ L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
 <h2>Shooting <span class="math inline">\(n\)</span> free throws</h2>
 <p>Suppose the player shoots <span class="math inline">\(n\)</span> free throw. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each shot.</p>
 <p>Suppose the player makes <span class="math inline">\(k\)</span> baskets out of the <span class="math inline">\(n\)</span> free throws. This is the observe data.</p>
+<div class="fragment">
+<div>
 <ul>
-<li><p>What is the formula for the probability distribution to describe this random phenomenon?</p></li>
-<li><p>What is the formula for the likelihood function for <span class="math inline">\(p\)</span> given the observed data?</p></li>
-<li><p>For what value of <span class="math inline">\(p\)</span> do we maximize the likelihood given the observed data? Use calculus to find the response.</p></li>
+<li class="fragment">What is the formula for the probability distribution to describe this random phenomenon?</li>
 </ul>
+<!-- -->
+<ul>
+<li class="fragment"><p>What is the formula for the likelihood function for <span class="math inline">\(p\)</span> given the observed data?</p></li>
+<li class="fragment"><p>For what value of <span class="math inline">\(p\)</span> do we maximize the likelihood given the observed data? Use calculus to find the response.</p></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="why-maximum-likelihood-estimation" class="slide level2 midi">
 <h2>Why maximum likelihood estimation?</h2>
@@ -540,15 +561,144 @@ L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
 </div>
 </section></section>
 <section>
-<section id="mle-in-linear-regression" class="title-slide slide level1 center">
+<section id="mle-in-linear-regression" class="title-slide slide level1 midi center">
 <h1>MLE in linear regression</h1>
-<!--# intro slide of this is our model we've seen the whole time-->
-<!--# slide looking at the likelihood and log-likelihood for simple linear regression model-->
-<!--# maybe show the work for beta 0-->
-<!--# show the result for beta1 and sigma. You will explore this more in lab after fall break-->
+<p>Recall the linear model</p>
+<p><span class="math display">\[
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{10mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+\]</span></p>
+<div class="fragment">
+<div>
+<ul>
+<li class="fragment">We have discussed least-squares estimation to find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> and <span class="math inline">\(\hat{\sigma}_\epsilon^2\)</span></li>
+<li class="fragment">We have discussed properties of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that depend on <span class="math inline">\(E(\boldsymbol{\epsilon}) = \mathbf{0}\)</span> and <span class="math inline">\(Var(\boldsymbol{\epsilon}) = \sigma^2_{\epsilon}\mathbf{I}\)</span></li>
+<li class="fragment">We have used the fact that <span class="math inline">\(\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1})\)</span> when doing hypothesis testing and confidence intervals.</li>
+<li class="fragment">Now we will discuss how we know <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is normally distributed, as we introduce MLE for linear regression</li>
+</ul>
+</div>
+</div>
 </section>
-<section id="recap" class="slide level2">
-<h2>Recap</h2>
+<section id="simple-linear-regression-model" class="slide level2">
+<h2>Simple linear regression model</h2>
+<p>Suppose we have the simple linear regression (SLR) model</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1x_i + \epsilon_i, \hspace{10mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})
+\]</span></p>
+<p>such that <span class="math inline">\(\epsilon_i\)</span> are independently and identically distributed.</p>
+<p><br></p>
+<div class="fragment">
+<p>We can write this model in the form below and use this</p>
+<p><span class="math display">\[
+y_i | x_i \sim N(\beta_0 + \beta x_i, \sigma^2_{\epsilon})
+\]</span></p>
+</div>
+</section>
+<section id="side-note-normal-distribution" class="slide level2">
+<h2>Side note: Normal distribution</h2>
+<p>Let <span class="math inline">\(X\)</span> be a random variable, such that <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span>. Then the probability function is</p>
+<p><span class="math display">\[
+P(X = x | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(x - \mu)^2}\Big\}
+\]</span></p>
+</section>
+<section id="likelihood-for-slr" class="slide level2">
+<h2>Likelihood for SLR</h2>
+<p>The likelihood function for <span class="math inline">\(\beta_0, \beta_1, \sigma^2_{\epsilon}\)</span> is</p>
+<p><span class="math display">\[
+\begin{aligned}
+L&amp;(\beta_0, \beta_1, \sigma^2_{\epsilon} | x_i, \dots, x_n, y_i, \dots, y_n) \\[5pt]
+&amp;= \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_
+\epsilon^2}}\exp\Big\{{-\frac{1}{2\sigma_\epsilon^2}(y_i - [\beta_0 + \beta_1x_i])^2}\Big\} \\[10pt]
+&amp; = (2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="log-likelihood-for-slr" class="slide level2">
+<h2>Log-likelihood for SLR</h2>
+<p>The log-likelihood function for <span class="math inline">\(\beta_0, \beta_1, \sigma^2_{\epsilon}\)</span> is</p>
+<p><span class="math display">\[
+\begin{aligned}
+\log &amp;L(\beta_0, \beta_1, \sigma^2_{\epsilon} | x_i, \dots, x_n, y_i, \dots, y_n)
+  \\[8pt]
+&amp; = -\frac{n}{2}\log(2\pi\sigma^2_{\epsilon}) -\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<div class="fragment">
+<p>We will use the log-likelihood function to find the MLEs</p>
+</div>
+</section>
+<section id="mle-for-beta_0" class="slide level2">
+<h2>MLE for <span class="math inline">\(\beta_0\)</span></h2>
+<p>1️⃣ Take derivative of <span class="math inline">\(\log L\)</span> with respect to <span class="math inline">\(\beta_0\)</span> and set it equal to 0</p>
+<p><span class="math display">\[
+\frac{\partial \log L}{\partial \beta_0} = -\frac{1}{2\sigma^2_\epsilon}\sum_{i=1}^n (y_i - \beta_0 - \beta_1x_i)(-1) = 0
+\]</span></p>
+</section>
+<section id="mle-for-beta_0-1" class="slide level2 midi">
+<h2>MLE for <span class="math inline">\(\beta_0\)</span></h2>
+<p>2️⃣ Find the <span class="math inline">\(\tilde{\beta}_0\)</span> that satisfies the equality on the previous slide</p>
+<div class="fragment">
+<p>After a few steps…</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\Rightarrow \sum_{i=1}^ny_i - n\tilde{\beta}_0 - \tilde{\beta}_1\sum_{i=1}^n x_i = 0 \\
+&amp;\Rightarrow \sum_{i=1}^ny_i  - \tilde{\beta}_1\sum_{i=1}^n x_i = n\tilde{\beta}_0 \\
+&amp;\Rightarrow \frac{1}{n}\sum_{i=1}^ny_i  - \frac{1}{n}\tilde{\beta}_1\sum_{i=1}^n x_i = \tilde{\beta}_0
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+</section>
+<section id="mle-for-beta_0-2" class="slide level2 midi">
+<h2>MLE for <span class="math inline">\(\beta_0\)</span></h2>
+<p>3️⃣ We can use the second derivative to show we’ve found the maximum</p>
+<p><span class="math display">\[
+\frac{\partial^2 \log L}{\partial \beta_0^2} = -\frac{n}{2\tilde{\sigma}^2_\epsilon}  &lt; 0
+\]</span></p>
+<p><br></p>
+<div class="fragment">
+<p>Therefore, we have found the maximum. Thus, MLE for <span class="math inline">\(\beta_0\)</span> is</p>
+<p><span class="math display">\[
+\tilde{\beta}_0 = \bar{y} - \tilde{\beta}_1\bar{x}
+\]</span></p>
+<p>$$$$</p>
+</div>
+</section>
+<section id="mle-for-beta_1-and-sigma2_epsilon" class="slide level2">
+<h2>MLE for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span></h2>
+<p>We can use a similar process to find the MLEs for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span></p>
+<p><span class="math display">\[
+\tilde{\beta}_1 = \frac{\sum_{i=1}^n y_i(x_i - \bar{x})}{\sum_{i=1}^n(x_i - \bar{x})^2}
+\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\tilde{\sigma}^2_{\epsilon} = \frac{\sum_{i=1}^n(y_i - \tilde{\beta}_0 - \tilde{\beta}_1x_i)^2}{n} = \frac{\sum_{i=1}^ne_i^2}{n}
+\]</span></p>
+</div>
+</section>
+<section id="putting-it-all-together" class="slide level2 incremental">
+<h2>Putting it all together</h2>
+<ul>
+<li><p>The MLEs <span class="math inline">\(\tilde{\beta}_0\)</span> and <span class="math inline">\(\tilde{\beta}_1\)</span> are equivalent to the least-squares estimators, when the errors follow independent and identical normal distributions</p></li>
+<li><p>This means the least-squares estimators <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> and inherit all the nice properties of MLEs</p>
+<ul>
+<li>Consistency</li>
+<li>Efficiency - minimum variance among all consistent estimators</li>
+<li>Asymptotically normal</li>
+</ul></li>
+</ul>
+</section>
+<section id="putting-it-all-together-1" class="slide level2 incremental">
+<h2>Putting it all together</h2>
+<ul>
+<li><p>From previous work, we also know these estimators are unbiased</p></li>
+<li><p>Note that the MLE <span class="math inline">\(\tilde{\sigma}^2_{\epsilon}\)</span> is <em>asymptotically unbiased</em></p>
+<ul>
+<li>The estimate from least-squares <span class="math inline">\(\hat{\sigma}_{\epsilon}^2\)</span> is unbiased</li>
+</ul></li>
+</ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
