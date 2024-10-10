@@ -1,0 +1,249 @@
+---
+title: "Maximum likelihood estimation"
+author: "Prof. Maria Tackett"
+date: "2024-10-10"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs:
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+filters:
+  - parse-latex
+bibliography: references.bib
+---
+
+## Announcements
+
+-   Office hours:
+
+    -   This week: Thursday - Friday
+
+    -   Next week: Wednesday - Friday
+
+-   No class next Monday or Tuesday
+
+<br>
+
+<center> 🍁 Have a good Fall Break! 🍁 </center>
+
+## Topics
+
+-   Likelihood
+
+-   Maximum likelihood estimation
+
+-   MLE for linear regression
+
+-   Properties of maximum likelihood estimator
+
+## Motivation  {.midi}
+
+-   We can find the estimators of $\boldsymbol{\beta}$ and $\sigma^2_{\epsilon}$ for the model
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{10mm} \boldsymbol{\epsilon} \sim N(0, \sigma^2_\epsilon\mathbf{I})
+$$using least-squares estimation
+
+-   We have also shown some nice properties of the least-squares estimator $\hat{\boldsymbol{\beta}}$ , given $E(\boldsymbol{\epsilon}) = \mathbf{0}$ and $Var(\boldsymbol{\epsilon}) = \sigma^2_{\epsilon}\mathbf{I}$
+
+-   Today we will introduce another way to find these estimators - **maximum likelihood estimation.** We will see...
+
+    -   the maximum likelihood estimators have nice properties
+
+    -   the least-squares estimator is equal to the maximum likelihood estimator when certain assumptions hold
+
+# Maximum likelihood estimation
+
+## Example: Shooting free throws
+
+Suppose a basketball player shoots a single free throw, such that the probability of making a basket is $p$
+
+-   What is the probability distribution for this random phenomenon?
+
+-   Suppose the probability is $p = 0.5$? What is the probability the player makes a single shot, given this value of the parameter $p$?
+
+-   Suppose the probability is $p = 0.8$? What is the probability the player makes a single shot, given this value of the parameter $p$?
+
+## Shooting three free throws
+
+Suppose the player shoots three free throws. They are all independent and the player has the same probability $p$ of making each shot.
+
+Let $B$ represent a made basket, and $M$ represent a missed basket. The player shoots three free throws with the outcome $BBM$.
+
+-   Suppose the probability is $p = 0.5$? What is the probability of observing the data $BBM$, given this value of the parameter $p$?
+
+-   Suppose the probability is $p = 0.3$? What is the probability of observing the data $BBM$, given this value of the parameter $p$ ?
+
+## Shooting three free throws
+
+Suppose the player shoots three free throws. They are all independent and the player has the same probability $p$ of making each shot.
+
+The player shoots three free throws with the outcome $BBM$.
+
+-   How would you describe in words the probabilities we previously calculated?
+
+-   **New question:** What parameter value of $p$ do you think maximizes the
+    probability of observing this data?
+
+-   We will use a **likelihood** function to answer this question.
+
+## Likelihood
+
+A **likelihood** is a function that tells us how likely we are to observe our data for a given parameter value (or values). <!--# Find a better definition - Casella Berger maybe?-->
+
+. . .
+
+Note that this is **not** the same as the probability function. In other words,
+
+. . .
+
+**Probability function**: Fixed parameter value(s) + input possible outcomes $\Rightarrow$ probability of seeing the different outcomes given the parameter value(s)
+
+**Likelihood function**: Fixed data + input possible parameter values $\Rightarrow$ probability of seeing the fixed data for each parameter value
+
+## Likelihood: shooting three free throws
+
+The likelihood function for the probability of heads $p$ given we observed $BBM$ when shooting three independent free throws is $$
+L(p|BBM) = p \times p \times (1 - p)
+$$
+
+Thus, if the likelihood for $p = 0.8$ is
+
+$$
+L(p = 0.8|BBM) = 0.8 \times 0.8 \times (1 - 0.8) = 0.128
+$$
+
+## Likelihood: shooting three free throws
+
+-   What is the general formula for the likelihood function for $p$ given the observed data $BBM$?
+
+-   Why do we need to assume independence?
+
+-   Why does having identically distributed data simplify things?
+
+## Likelihood: shooting three free throws {.midi}
+
+The likelihood function for $p$ given the data $BBM$ is
+
+$$
+L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
+$$
+
+-   We want of the value of $p$ that maximizes this likelihood function, i.e., the value of $p$ that is most likely given the observed data.
+
+-   The process of finding this value is **maximum likelihood estimation**.
+
+-   There are three primary ways to find the maximum likelihood estimator
+
+    -   Approximate using a graph
+
+    -   Using calculus
+
+    -   Numerical approximation
+
+<!--# Add a poll - what is your guess for the MLE?-->
+
+## Finding the MLE using graphs
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+
+
+p <- seq(0, 1, 0.05)
+
+lik <- function(p) {
+  p^2 * (1 - p)
+}
+
+l <- lik(p)
+
+combined <- bind_cols(p = p, l = l)
+
+ggplot(data = combined, aes(x = p, y = l)) +
+  geom_point() + 
+  geom_line() + 
+  labs(x = "p",
+       y = "Likelihood", 
+       title = "Likelihood of p given data BBM")
+
+```
+
+::: question
+What do you think is the approximate value of the MLE of $p$ given the data?
+:::
+
+## Finding the MLE using calculus
+
+-   Find the MLE using the first derivative of the likelihood function.
+
+```{=html}
+<!-- -->
+```
+-   This can be tricky because of the Product Rule, so we can maximize the **log(Likelihood)** instead. The same value maximizes the likelihood and log(Likelihood).
+
+::: question
+Use calculus to find the MLE of $p$ given the data $BBM$.
+:::
+
+## Shooting $n$ free throws
+
+Suppose the player shoots $n$ free throw. They are all independent and the player has the same probability $p$ of making each shot.
+
+Suppose the player makes $k$ baskets out of the $n$ free throws. This is the observe data.
+
+-   What is the formula for the probability distribution to describe this random phenomenon?
+
+-   What is the formula for the likelihood function for $p$ given the observed data?
+
+-   For what value of $p$ do we maximize the likelihood given the observed data? Use calculus to find the response.
+
+## Why maximum likelihood estimation?  {.midi}
+
+-   *"Maximum likelihood estimation is, by far, the most popular technique for deriving estimators."* [@casella2024statistical, pp. 315]
+
+-   MLEs have nice statistical properties. They are
+
+    -   Consistent
+
+    -   Efficient - Have the smallest MSE among all consistent estimators
+
+    -   Asymptotically normal
+
+. . .
+
+::: callout-note
+If the normality assumption holds, the least squares estimator is the maximum likelihood estimator for $\beta$. Therefore, it has all these properties of the MLE.
+:::
+
+# MLE in linear regression
+
+<!--# intro slide of this is our model we've seen the whole time-->
+
+<!--# slide looking at the likelihood and log-likelihood for simple linear regression model-->
+
+<!--# maybe show the work for beta 0-->
+
+<!--# show the result for beta1 and sigma. You will explore this more in lab after fall break-->
+
+## Recap
+
+## References

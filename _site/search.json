@@ -4297,5 +4297,159 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/13-mle.html#announcements",
+    "href": "slides/13-mle.html#announcements",
+    "title": "Maximum likelihood estimation",
+    "section": "Announcements",
+    "text": "Announcements\n\nOffice hours:\n\nThis week: Thursday - Friday\nNext week: Wednesday - Friday\n\nNo class next Monday or Tuesday\n\n\n\n🍁 Have a good Fall Break! 🍁"
+  },
+  {
+    "objectID": "slides/13-mle.html#topics",
+    "href": "slides/13-mle.html#topics",
+    "title": "Maximum likelihood estimation",
+    "section": "Topics",
+    "text": "Topics\n\nLikelihood\nMaximum likelihood estimation\nMLE for linear regression\nProperties of maximum likelihood estimator"
+  },
+  {
+    "objectID": "slides/13-mle.html#motivation",
+    "href": "slides/13-mle.html#motivation",
+    "title": "Maximum likelihood estimation",
+    "section": "Motivation",
+    "text": "Motivation\n\nWe can find the estimators of \\(\\boldsymbol{\\beta}\\) and \\(\\sigma^2_{\\epsilon}\\) for the model\n\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\hspace{10mm} \\boldsymbol{\\epsilon} \\sim N(0, \\sigma^2_\\epsilon\\mathbf{I})\n\\]using least-squares estimation\n\nWe have also shown some nice properties of the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) , given \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\) and \\(Var(\\boldsymbol{\\epsilon}) = \\sigma^2_{\\epsilon}\\mathbf{I}\\)\nToday we will introduce another way to find these estimators - maximum likelihood estimation. We will see…\n\nthe maximum likelihood estimators have nice properties\nthe least-squares estimator is equal to the maximum likelihood estimator when certain assumptions hold"
+  },
+  {
+    "objectID": "slides/13-mle.html#example-flip-a-single-coin",
+    "href": "slides/13-mle.html#example-flip-a-single-coin",
+    "title": "Maximum likelihood estimation",
+    "section": "Example: Flip a single coin",
+    "text": "Example: Flip a single coin\nSuppose we flip a single coin where the probability of “heads” is \\(p\\)\n\nWhat is the probability distribution for this random experiment?\nSuppose the probability is \\(p = 0.5\\)? What is the probability we flip a single head in one toss, given this value of the parameter \\(p\\)?\nSuppose the probability is \\(p = 0.3\\)? What is the probability we flip a single head in one toss, given this value of the parameter \\(p\\)?"
+  },
+  {
+    "objectID": "slides/13-mle.html#flip-three-coins",
+    "href": "slides/13-mle.html#flip-three-coins",
+    "title": "Maximum likelihood estimation",
+    "section": "Flip three coins",
+    "text": "Flip three coins\nSuppose we are flipping three independent coins. They all have the same probability \\(p\\) of being heads.\nWe flip the three coins and observe \\(HHT\\) .\n\nSuppose the probability is \\(p = 0.5\\)? What is the probability we observe our data, given this value of the parameter \\(p\\)?\nSuppose the probability is \\(p = 0.3\\)? What is the probability we observe our data, given this value of the parameter \\(p\\)?"
+  },
+  {
+    "objectID": "slides/13-mle.html#flip-three-coins-1",
+    "href": "slides/13-mle.html#flip-three-coins-1",
+    "title": "Maximum likelihood estimation",
+    "section": "Flip three coins",
+    "text": "Flip three coins\nSuppose you are flipping three independent coins. They all have the same probability \\(p\\) of being heads.\nWe flip three coins and observe \\(HHT\\).\n\nWhat parameter value of \\(p\\) do you think maximizes the probability that we see our observed data? We will use a likelihood function to answer this question."
+  },
+  {
+    "objectID": "slides/13-mle.html#likelihood",
+    "href": "slides/13-mle.html#likelihood",
+    "title": "Maximum likelihood estimation",
+    "section": "Likelihood",
+    "text": "Likelihood\nA likelihood is a function that tells us how likely we are to observe our data for a given parameter value (or values). \n\nNote that this is not the same as the probability function. In other words,\n\n\nProbability function: Fixed parameter value(s) + input possible outcomes \\(\\Rightarrow\\) probability of seeing the different outcomes given the parameter value(s)\nLikelihood function: Fixed data + input possible parameter values \\(\\Rightarrow\\) probability of seeing the fixed data for each parameter value"
+  },
+  {
+    "objectID": "slides/13-mle.html#recap",
+    "href": "slides/13-mle.html#recap",
+    "title": "Maximum likelihood estimation",
+    "section": "Recap",
+    "text": "Recap"
+  },
+  {
+    "objectID": "slides/13-mle.html#likelihood-flipping-three-coins",
+    "href": "slides/13-mle.html#likelihood-flipping-three-coins",
+    "title": "Maximum likelihood estimation",
+    "section": "Likelihood: flipping three coins",
+    "text": "Likelihood: flipping three coins\nThe likelihood function for the probability of heads \\(p\\) given we observed \\(HHT\\) when flipping three independent coins is\n\\[\nL(p|HHT) = p \\times p \\times (1 - p)\n\\]\nThus, if the likelihood for \\(p = 0.5\\) is\n\\[\nL(p = 0.5|HHT) = 0.5 \\times 0.5 \\times (1 - 0.5) = 0.125\n\\]"
+  },
+  {
+    "objectID": "slides/13-mle.html#likelihood-flipping-n-coins",
+    "href": "slides/13-mle.html#likelihood-flipping-n-coins",
+    "title": "Maximum likelihood estimation",
+    "section": "Likelihood: flipping \\(n\\) coins",
+    "text": "Likelihood: flipping \\(n\\) coins\nFlip \\(n\\) coins and observe \\(k\\) heads"
+  },
+  {
+    "objectID": "slides/13-mle.html#example-flip-a-single-coin---change-to-basketball-free-throws",
+    "href": "slides/13-mle.html#example-flip-a-single-coin---change-to-basketball-free-throws",
+    "title": "Maximum likelihood estimation",
+    "section": "Example: Flip a single coin - change to basketball free throws",
+    "text": "Example: Flip a single coin - change to basketball free throws\nSuppose we flip a single coin where the probability of “heads” is \\(p\\)\n\nWhat is the probability distribution for this random experiment?\nSuppose the probability is \\(p = 0.5\\)? What is the probability we flip a single head in one toss, given this value of the parameter \\(p\\)?\nSuppose the probability is \\(p = 0.3\\)? What is the probability we flip a single head in one toss, given this value of the parameter \\(p\\)?"
+  },
+  {
+    "objectID": "slides/13-mle.html#example-shooting-free-throws",
+    "href": "slides/13-mle.html#example-shooting-free-throws",
+    "title": "Maximum likelihood estimation",
+    "section": "Example: Shooting free throws",
+    "text": "Example: Shooting free throws\nSuppose a basketball player shoots a single free throw, such that the probability of making a basket is \\(p\\)\n\nWhat is the probability distribution for this random phenomenon?\nSuppose the probability is \\(p = 0.5\\)? What is the probability the player makes a single shot, given this value of the parameter \\(p\\)?\nSuppose the probability is \\(p = 0.8\\)? What is the probability the player makes a single shot, given this value of the parameter \\(p\\)?"
+  },
+  {
+    "objectID": "slides/13-mle.html#shooting-three-free-throws",
+    "href": "slides/13-mle.html#shooting-three-free-throws",
+    "title": "Maximum likelihood estimation",
+    "section": "Shooting three free throws",
+    "text": "Shooting three free throws\nSuppose the player shoots three free throws. They are all independent and the player has the same probability \\(p\\) of making each shot.\nLet \\(B\\) represent a made basket, and \\(M\\) represent a missed basket. The player shoots three free throws with the outcome \\(BBM\\).\n\nSuppose the probability is \\(p = 0.5\\)? What is the probability of observing the data \\(BBM\\), given this value of the parameter \\(p\\)?\nSuppose the probability is \\(p = 0.3\\)? What is the probability of observing the data \\(BBM\\), given this value of the parameter \\(p\\) ?"
+  },
+  {
+    "objectID": "slides/13-mle.html#shooting-three-free-throws-1",
+    "href": "slides/13-mle.html#shooting-three-free-throws-1",
+    "title": "Maximum likelihood estimation",
+    "section": "Shooting three free throws",
+    "text": "Shooting three free throws\nSuppose the player shoots three free throws. They are all independent and the player has the same probability \\(p\\) of making each shot.\nThe player shoots three free throws with the outcome \\(BBM\\).\n\nHow would you describe in words the probabilities we previously calculated?\nNew question: What parameter value of \\(p\\) do you think maximizes the probability of observing this data?\nWe will use a likelihood function to answer this question."
+  },
+  {
+    "objectID": "slides/13-mle.html#likelihood-shooting-three-free-throws",
+    "href": "slides/13-mle.html#likelihood-shooting-three-free-throws",
+    "title": "Maximum likelihood estimation",
+    "section": "Likelihood: shooting three free throws",
+    "text": "Likelihood: shooting three free throws\nThe likelihood function for the probability of heads \\(p\\) given we observed \\(BBM\\) when shooting three independent free throws is \\[\nL(p|BBM) = p \\times p \\times (1 - p)\n\\]\nThus, if the likelihood for \\(p = 0.8\\) is\n\\[\nL(p = 0.8|BBM) = 0.8 \\times 0.8 \\times (1 - 0.8) = 0.128\n\\]"
+  },
+  {
+    "objectID": "slides/13-mle.html#likelihood-shooting-three-free-throws-1",
+    "href": "slides/13-mle.html#likelihood-shooting-three-free-throws-1",
+    "title": "Maximum likelihood estimation",
+    "section": "Likelihood: shooting three free throws",
+    "text": "Likelihood: shooting three free throws\n\nWhat is the general formula for the likelihood function for \\(p\\) given the observed data \\(BBM\\)?\nWhy do we need to assume independence?\nWhy does having identically distributed data simplify things?"
+  },
+  {
+    "objectID": "slides/13-mle.html#likelihood-shooting-three-free-throws-2",
+    "href": "slides/13-mle.html#likelihood-shooting-three-free-throws-2",
+    "title": "Maximum likelihood estimation",
+    "section": "Likelihood: shooting three free throws",
+    "text": "Likelihood: shooting three free throws\nThe likelihood function for \\(p\\) given the data \\(BBM\\) is\n\\[\nL(p|BBM) = p \\times p \\times (1 - p) = p^2 \\times (1 - p)\n\\]\n\nWe want of the value of \\(p\\) that maximizes this likelihood function, i.e., the value of \\(p\\) that is most likely given the observed data.\nThe process of finding this value is maximum likelihood estimation.\nThere are three primary ways to find the maximum likelihood estimator\n\nApproximate using a graph\nUsing calculus\nNumerical approximation"
+  },
+  {
+    "objectID": "slides/13-mle.html#finding-the-mle-using-graphs",
+    "href": "slides/13-mle.html#finding-the-mle-using-graphs",
+    "title": "Maximum likelihood estimation",
+    "section": "Finding the MLE using graphs",
+    "text": "Finding the MLE using graphs\n\n\nWhat do you think is the approximate value of the MLE of \\(p\\) given the data?"
+  },
+  {
+    "objectID": "slides/13-mle.html#finding-the-mle-using-calculus",
+    "href": "slides/13-mle.html#finding-the-mle-using-calculus",
+    "title": "Maximum likelihood estimation",
+    "section": "Finding the MLE using calculus",
+    "text": "Finding the MLE using calculus\n\nFind the MLE using the first derivative of the likelihood function.\n\n\n\nThis can be tricky because of the Product Rule, so we can maximize the log(Likelihood) instead. The same value maximizes the likelihood and log(Likelihood).\n\n\nUse calculus to find the MLE of \\(p\\) given the data \\(BBM\\)."
+  },
+  {
+    "objectID": "slides/13-mle.html#shooting-n-free-throws",
+    "href": "slides/13-mle.html#shooting-n-free-throws",
+    "title": "Maximum likelihood estimation",
+    "section": "Shooting \\(n\\) free throws",
+    "text": "Shooting \\(n\\) free throws\nSuppose the player shoots \\(n\\) free throw. They are all independent and the player has the same probability \\(p\\) of making each shot.\nSuppose the player makes \\(k\\) baskets out of the \\(n\\) free throws. This is the observe data.\n\nWhat is the formula for the probability distribution to describe this random phenomenon?\nWhat is the formula for the likelihood function for \\(p\\) given the observed data?\nFor what value of \\(p\\) do we maximize the likelihood given the observed data? Use calculus to find the response."
+  },
+  {
+    "objectID": "slides/13-mle.html#why-maximum-likelihood-estimation",
+    "href": "slides/13-mle.html#why-maximum-likelihood-estimation",
+    "title": "Maximum likelihood estimation",
+    "section": "Why maximum likelihood estimation?",
+    "text": "Why maximum likelihood estimation?\n\n“Maximum likelihood estimation is, by far, the most popular technique for deriving estimators.” (Casella and Berger 2024, 315)\nMLEs have nice statistical properties. They are\n\nConsistent\nEfficient - Have the smallest MSE among all consistent estimators\nAsymptotically normal\n\n\n\n\n\n\n\n\n\nNote\n\n\nIf the normality assumption holds, the least squares estimator is the maximum likelihood estimator for \\(\\beta\\). Therefore, it has all these properties of the MLE."
+  },
+  {
+    "objectID": "slides/13-mle.html#references",
+    "href": "slides/13-mle.html#references",
+    "title": "Maximum likelihood estimation",
+    "section": "References",
+    "text": "References\n\n\n\n\n🔗 STA 221 - Fall 2024\n\n\n\n\nCasella, George, and Roger Berger. 2024. Statistical Inference. CRC Press."
   }
 ]
