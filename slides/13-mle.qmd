@@ -342,7 +342,7 @@ We will use the log-likelihood function to find the MLEs
 1️⃣ Take derivative of $\log L$ with respect to $\beta_0$ and set it equal to 0
 
 $$
-\frac{\partial \log L}{\partial \beta_0} = -\frac{1}{2\sigma^2_\epsilon}\sum_{i=1}^n (y_i - \beta_0 - \beta_1x_i)(-1) = 0
+\frac{\partial \log L}{\partial \beta_0} = -\frac{2}{2\sigma^2_\epsilon}\sum_{i=1}^n (y_i - \beta_0 - \beta_1x_i)(-1) = 0
 $$
 
 ## MLE for $\beta_0$  {.midi}

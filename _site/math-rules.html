@@ -332,12 +332,6 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=ccfa023a-c78c-4254-93ea-b1d80116d1dc" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture recordings</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./math-rules.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Math rules</span></a>
   </div>
@@ -376,7 +370,10 @@ window.Quarto = {
   <li><a href="#variance-of-vector-mathbfb" id="toc-variance-of-vector-mathbfb" class="nav-link" data-scroll-target="#variance-of-vector-mathbfb">Variance of vector <span class="math inline">\(\mathbf{b}\)</span></a></li>
   <li><a href="#variance-of-mathbfab" id="toc-variance-of-mathbfab" class="nav-link" data-scroll-target="#variance-of-mathbfab">Variance of <span class="math inline">\(\mathbf{Ab}\)</span></a></li>
   </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link" data-scroll-target="#probability-distributions">Probability distributions</a>
+  <ul class="collapse">
+  <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution">Normal distribution</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa24/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -519,10 +516,17 @@ Var(\mathbf{Ab}) &amp;= E[(\mathbf{Ab} - E(\mathbf{Ab}))(\mathbf{Ab} - E(\mathbf
 \]</span></p>
 </section>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="probability-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="probability-distributions">Probability distributions</h2>
+<section id="normal-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="normal-distribution">Normal distribution</h3>
+<p>Let <span class="math inline">\(X\)</span> be a random variable, such that <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span>. Then the probability function is</p>
+<p><span class="math display">\[
+P(X = x | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(x - \mu)^2}\Big\}
+\]</span></p>
 
 
+</section>
 </section>
 </section>
 
