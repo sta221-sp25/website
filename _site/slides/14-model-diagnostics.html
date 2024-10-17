@@ -584,7 +584,7 @@ L(\boldsymbol{\beta}, \sigma^2_{\epsilon} | \mathbf{X}, \mathbf{y}) = \frac{1}{(
 <div>
 <ul>
 <li class="fragment"><p>The MLE <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> is equivalent to the least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> , when the errors follow independent and identical normal distributions</p></li>
-<li class="fragment"><p>This means the least-squares estimator <span class="math inline">\(\hat{\mathbf{\boldsymbol{\beta}}}\)</span> and inherit all the nice properties of MLEs</p>
+<li class="fragment"><p>This means the least-squares estimator <span class="math inline">\(\hat{\mathbf{\boldsymbol{\beta}}}\)</span> inherits all the nice properties of MLEs</p>
 <ul>
 <li class="fragment">Consistency</li>
 <li class="fragment">Efficiency - minimum variance among all consistent estimators</li>
@@ -612,7 +612,7 @@ L(\boldsymbol{\beta}, \sigma^2_{\epsilon} | \mathbf{X}, \mathbf{y}) = \frac{1}{(
 <h2>Data: Duke lemurs</h2>
 <p>Today’s data contains a subset of the original Duke Lemur data set available in the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md">TidyTuesday GitHub repo</a>. This data includes information on “young adult” lemurs from the <a href="https://lemur.duke.edu/discover/meet-the-lemurs/coquerels-sifaka/">Coquerel’s sifaka species</a> (PCOQ), the largest species at the Duke Lemur Center. The analysis will focus on the following variables:</p>
 <ul>
-<li><p><code>age_at_wt_mo</code>: Age in days: Age of the animal when the weight was taken, in days (Wei ght_Date-DOB)</p></li>
+<li><p><code>age_at_wt_mo</code>: Age in months: Age of the animal when the weight was taken, in months (((Weight_Date-DOB)/365)*12)</p></li>
 <li><p><code>weight_g</code>: Weight: Animal weight, in grams. Weights under 500g generally to nearest 0.1-1g; Weights &gt;500g generally to the nearest 1-20g.</p></li>
 </ul>
 <p><strong>The goal of the analysis is to use the age of the lemurs to understand variability in the weight.</strong></p>
@@ -728,7 +728,7 @@ L(\boldsymbol{\beta}, \sigma^2_{\epsilon} | \mathbf{X}, \mathbf{y}) = \frac{1}{(
 </ul></li>
 <li class="fragment">We will use measures to quantify an individual observation’s influence on the regression model
 <ul>
-<li class="fragment"><strong>leverage</strong>, <strong>standardized residuals</strong>, and <strong>Cook’s distance</strong></li>
+<li class="fragment"><strong>leverage</strong>, <strong>standardized &amp; studentized residuals</strong>, and <strong>Cook’s distance</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -740,33 +740,39 @@ L(\boldsymbol{\beta}, \sigma^2_{\epsilon} | \mathbf{X}, \mathbf{y}) = \frac{1}{(
 </section>
 <section id="hat-matrix" class="slide level2">
 <h2>Hat matrix</h2>
+<div>
 <ul>
-<li><p>Recall the <strong>hat matrix</strong> <span class="math inline">\(\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\)</span></p></li>
-<li><p>We’ve seen that <span class="math inline">\(\mathbf{H}\)</span> is used to compute <span class="math inline">\(Var(\hat{\mathbf{y}}) = \sigma^2_{\epsilon}\mathbf{H}\)</span> and <span class="math inline">\(Var(\mathbf{e}) = \sigma^2_{\epsilon}(\mathbf{I} - \mathbf{H})\)</span></p></li>
-<li><p>An element of <span class="math inline">\(\mathbf{H}\)</span>, <span class="math inline">\(h_{ij}\)</span>, is the leverage of the observation <span class="math inline">\(y_i\)</span> on the fitted values <span class="math inline">\(\hat{y}_{ij}\)</span></p></li>
+<li class="fragment"><p>Recall the <strong>hat matrix</strong> <span class="math inline">\(\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\)</span></p></li>
+<li class="fragment"><p>We’ve seen that <span class="math inline">\(\mathbf{H}\)</span> is used to compute <span class="math inline">\(Var(\hat{\mathbf{y}}) = \sigma^2_{\epsilon}\mathbf{H}\)</span> and <span class="math inline">\(Var(\mathbf{e}) = \sigma^2_{\epsilon}(\mathbf{I} - \mathbf{H})\)</span></p></li>
+<li class="fragment"><p>An element of <span class="math inline">\(\mathbf{H}\)</span>, <span class="math inline">\(h_{ij}\)</span>, is the leverage of the observation <span class="math inline">\(y_i\)</span> on the fitted values <span class="math inline">\(\hat{y}_{j}\)</span></p></li>
 </ul>
+</div>
 </section>
 <section id="leverage-1" class="slide level2">
 <h2>Leverage</h2>
+<div>
 <ul>
-<li><p>We focus on the diagonal elements</p>
+<li class="fragment"><p>We focus on the diagonal elements</p>
 <p><span class="math display">\[
 h_{ii} = \mathbf{x}_i^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_i
 \]</span>such that <span class="math inline">\(\mathbf{x}^T_i\)</span> is the <span class="math inline">\(i^{th}\)</span> row of <span class="math inline">\(\mathbf{X}\)</span></p></li>
-<li><p><span class="math inline">\(h_{ii}\)</span> is the <strong>leverage</strong>: a measure of the distance of the <span class="math inline">\(i^{th}\)</span> observation from the center (or centroid) of <span class="math inline">\(x\)</span> space</p></li>
-<li><p>Observations with large values of <span class="math inline">\(h_{ii}\)</span> are far away from the typical value (or combination of values) of the <u>predictors</u> in the data</p></li>
+<li class="fragment"><p><span class="math inline">\(h_{ii}\)</span> is the <strong>leverage</strong>: a measure of the distance of the <span class="math inline">\(i^{th}\)</span> observation from the center (or centroid) of the <span class="math inline">\(x\)</span> space</p></li>
+<li class="fragment"><p>Observations with large values of <span class="math inline">\(h_{ii}\)</span> are far away from the typical value (or combination of values) of the <u>predictors</u> in the data</p></li>
 </ul>
+</div>
 </section>
 <section id="large-leverage" class="slide level2">
 <h2>Large leverage</h2>
+<div>
 <ul>
-<li><p>The sum of the leverages for all points is <span class="math inline">\(p + 1\)</span>, where <span class="math inline">\(p\)</span> is the number of predictors in the model . More specifically</p>
+<li class="fragment"><p>The sum of the leverages for all points is <span class="math inline">\(p + 1\)</span>, where <span class="math inline">\(p\)</span> is the number of predictors in the model . More specifically</p>
 <p><span class="math display">\[
 \sum_{i=1}^n h_{ii} = \text{rank}(\mathbf{H}) = \text{rank}(\mathbf{X}) = p+1
 \]</span></p></li>
-<li><p>The average value of leverage, <span class="math inline">\(h_{ii}\)</span>, is <span class="math inline">\(\bar{h} =  \frac{(p+1)}{n}\)</span></p></li>
-<li><p>An observation has <strong>large leverage</strong> if <span class="math display">\[h_{ii} &gt; \frac{2(p+1)}{n}\]</span></p></li>
+<li class="fragment"><p>The average value of leverage, <span class="math inline">\(h_{ii}\)</span>, is <span class="math inline">\(\bar{h} =  \frac{(p+1)}{n}\)</span></p></li>
+<li class="fragment"><p>An observation has <strong>large leverage</strong> if <span class="math display">\[h_{ii} &gt; \frac{2(p+1)}{n}\]</span></p></li>
 </ul>
+</div>
 </section>
 <section id="lemurs-leverage" class="slide level2">
 <h2>Lemurs: Leverage</h2>
@@ -777,6 +783,7 @@ h_{ii} = \mathbf{x}_i^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_i
 <pre><code>[1] 0.05263158</code></pre>
 </div>
 </div>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>lemurs_aug <span class="sc">|&gt;</span></span>
 <span id="cb7-2"><a></a>  <span class="fu">filter</span>(.hat <span class="sc">&gt;</span> h_threshold)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -791,6 +798,7 @@ h_{ii} = \mathbf{x}_i^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_i
 5     4319         58.2   4272.   47.1 0.229    517. 0.00161     0.104 
 6     3610         47.4   4061. -451.  0.0770   514. 0.0348     -0.914 
 7     3597         48.6   4084. -487.  0.0889   514. 0.0480     -0.992 </code></pre>
+</div>
 </div>
 </div>
 <div class="fragment">
@@ -814,9 +822,6 @@ h_{ii} = \mathbf{x}_i^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_i
 <div class="fragment">
 <p>Just because a point has high leverage does not necessarily mean it will have a substantial impact on the regression. Therefore we need to check other measures.</p>
 </div>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
 </section></section>
 <section>
 <section id="scaled-residuals" class="title-slide slide level1 center">
@@ -825,36 +830,42 @@ h_{ii} = \mathbf{x}_i^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_i
 </section>
 <section id="scaled-residuals-1" class="slide level2">
 <h2>Scaled residuals</h2>
+<div>
 <ul>
-<li>What is the best way to identify outlier points that don’t fit the pattern from the regression line?
+<li class="fragment"><p>What is the best way to identify outlier points that don’t fit the pattern from the regression line?</p>
 <ul>
-<li>Look for points that have large residuals</li>
+<li class="fragment">Look for points that have large residuals</li>
 </ul></li>
-<li>We can rescale residuals and put them on a common scale to more easily identify “large” residuals</li>
-<li>We will consider two types of scaled residuals: standardized residuals and studentized residuals</li>
+<li class="fragment"><p>We can rescale residuals and put them on a common scale to more easily identify “large” residuals</p></li>
+<li class="fragment"><p>We will consider two types of scaled residuals: standardized residuals and studentized residuals</p></li>
 </ul>
+</div>
 </section>
 <section id="standardized-residuals" class="slide level2">
 <h2>Standardized residuals</h2>
+<div>
 <ul>
-<li><p>The variance of the residuals can be estimated by the mean squared residuals (MSR) <span class="math inline">\(= \frac{SSR}{n - p - 1} = \hat{\sigma}^2_{\epsilon}\)</span></p></li>
-<li><p>We can use MSR to compute <strong>standardized residuals</strong></p>
+<li class="fragment"><p>The variance of the residuals can be estimated by the mean squared residuals (MSR) <span class="math inline">\(= \frac{SSR}{n - p - 1} = \hat{\sigma}^2_{\epsilon}\)</span></p></li>
+<li class="fragment"><p>We can use MSR to compute <strong>standardized residuals</strong></p>
 <p><span class="math display">\[
 std.res_i = \frac{e_i}{\sqrt{MSR}}
 \]</span></p></li>
-<li><p>Standardized residuals are produced by <code>augment()</code> in the column <code>.std.resid</code></p></li>
+<li class="fragment"><p>Standardized residuals are produced by <code>augment()</code> in the column <code>.std.resid</code></p></li>
 </ul>
+</div>
 </section>
 <section id="studentized-residuals" class="slide level2">
 <h2>Studentized residuals</h2>
+<div>
 <ul>
-<li><p>MSR is an approximation of the variance of the residuals.</p></li>
-<li><p>The variance of the residuals is <span class="math inline">\(Var(\mathbf{e}) = \sigma^2_{\epsilon}(\mathbf{I} - \mathbf{H})\)</span></p>
+<li class="fragment"><p>MSR is an approximation of the variance of the residuals.</p></li>
+<li class="fragment"><p>The variance of the residuals is <span class="math inline">\(Var(\mathbf{e}) = \sigma^2_{\epsilon}(\mathbf{I} - \mathbf{H})\)</span></p>
 <ul>
-<li>The variance of the <span class="math inline">\(i^{th}\)</span> residual is <span class="math inline">\(Var(e_i) = \sigma^2_{\epsilon}(1 - h_{ii})\)</span></li>
+<li class="fragment">The variance of the <span class="math inline">\(i^{th}\)</span> residual is <span class="math inline">\(Var(e_i) = \sigma^2_{\epsilon}(1 - h_{ii})\)</span></li>
 </ul></li>
-<li><p>The <strong>studentized residual</strong> is the residual rescaled by the more exact calculation for variance</p></li>
+<li class="fragment"><p>The <strong>studentized residual</strong> is the residual rescaled by the more exact calculation for variance</p></li>
 </ul>
+</div>
 <p><span class="math display">\[
 r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2_{\epsilon}(1 - h_{ii})}}
 \]</span></p>
@@ -866,7 +877,7 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2_{\epsilon}(1 - h_{ii})}}
 <h2>Using standardized residuals</h2>
 <p>We can examine the standardized residuals directly from the output from the <code>augment()</code> function</p>
 
-<img data-src="14-model-diagnostics_files/figure-revealjs/std residuals vs fitted-1.png" width="960" class="r-stretch"><ul>
+<img data-src="14-model-diagnostics_files/figure-revealjs/std residuals vs fitted-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><ul>
 <li>An observation is a <em>potential outlier</em> if its standardized residual is beyond <span class="math inline">\(\pm 3\)</span></li>
 </ul>
 </section>
@@ -908,7 +919,7 @@ D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
 <section id="using-cooks-distance" class="slide level2">
 <h2>Using Cook’s Distance</h2>
 <ul>
-<li><p>An observation with large <span class="math inline">\(D_i\)</span> is said to have a strong influence on the predicted values</p></li>
+<li><p>An observation with large value of <span class="math inline">\(D_i\)</span> is said to have a strong influence on the predicted values</p></li>
 <li><p>General thresholds .An observation with</p>
 <ul>
 <li><p><span class="math inline">\(D_i &gt; 0.5\)</span> is <strong>moderately influential</strong></p></li>
@@ -930,25 +941,29 @@ D_i = \frac{r^2_i}{p + 1}\Big(\frac{h_{ii}}{1 - h_{ii}}\Big)
 </section>
 <section id="what-to-do-with-outliersinfluential-points" class="slide level2">
 <h2>What to do with outliers/influential points?</h2>
+<div>
 <ul>
-<li><p>First consider if the outlier is a result of a data entry error.</p></li>
-<li><p>If not, you may consider dropping an observation if it’s an outlier in the predictor variables if…</p>
+<li class="fragment"><p>First consider if the outlier is a result of a data entry error.</p></li>
+<li class="fragment"><p>If not, you may consider dropping an observation if it’s an outlier in the <u>predictor</u> variables if…</p>
 <ul>
-<li><p>It is meaningful to drop the observation given the context of the problem</p></li>
-<li><p>You intended to build a model on a smaller range of the predictor variables. Mention this in the write up of the results and be careful to avoid extrapolation when making predictions</p></li>
+<li class="fragment"><p>It is meaningful to drop the observation given the context of the problem</p></li>
+<li class="fragment"><p>You intended to build a model on a smaller range of the predictor variables. Mention this in the write up of the results and be careful to avoid extrapolation when making predictions</p></li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="what-to-do-with-outliersinfluential-points-1" class="slide level2">
 <h2>What to do with outliers/influential points?</h2>
+<div>
 <ul>
-<li><p>It is generally <strong>not</strong> good practice to drop observations that ar outliers in the value of the response variable</p>
+<li class="fragment"><p>It is generally <strong>not</strong> good practice to drop observations that ar outliers in the value of the <u>response</u> variable</p>
 <ul>
-<li><p>These are legitimate observations and should be in the model</p></li>
-<li><p>You can try transformations or increasing the sample size by collecting more data</p></li>
+<li class="fragment"><p>These are legitimate observations and should be in the model</p></li>
+<li class="fragment"><p>You can try transformations or increasing the sample size by collecting more data</p></li>
 </ul></li>
-<li><p>A general strategy when there are influential points is to fit the model with and without the influential points and compare the outcomes</p></li>
+<li class="fragment"><p>A general strategy when there are influential points is to fit the model with and without the influential points and compare the outcomes</p></li>
 </ul>
+</div>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>

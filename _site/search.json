@@ -3663,7 +3663,7 @@
     "href": "slides/14-model-diagnostics.html#putting-it-all-together",
     "title": "Model diagnostics",
     "section": "Putting it all together",
-    "text": "Putting it all together\n\n\nThe MLE \\(\\tilde{\\boldsymbol{\\beta}}\\) is equivalent to the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) , when the errors follow independent and identical normal distributions\nThis means the least-squares estimator \\(\\hat{\\mathbf{\\boldsymbol{\\beta}}}\\) and inherit all the nice properties of MLEs\n\nConsistency\nEfficiency - minimum variance among all consistent estimators\nAsymptotically normal"
+    "text": "Putting it all together\n\n\nThe MLE \\(\\tilde{\\boldsymbol{\\beta}}\\) is equivalent to the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) , when the errors follow independent and identical normal distributions\nThis means the least-squares estimator \\(\\hat{\\mathbf{\\boldsymbol{\\beta}}}\\) inherits all the nice properties of MLEs\n\nConsistency\nEfficiency - minimum variance among all consistent estimators\nAsymptotically normal"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#putting-it-all-together-1",
@@ -3677,7 +3677,7 @@
     "href": "slides/14-model-diagnostics.html#data-duke-lemurs",
     "title": "Model diagnostics",
     "section": "Data: Duke lemurs",
-    "text": "Data: Duke lemurs\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on “young adult” lemurs from the Coquerel’s sifaka species (PCOQ), the largest species at the Duke Lemur Center. The analysis will focus on the following variables:\n\nage_at_wt_mo: Age in days: Age of the animal when the weight was taken, in days (Wei ght_Date-DOB)\nweight_g: Weight: Animal weight, in grams. Weights under 500g generally to nearest 0.1-1g; Weights &gt;500g generally to the nearest 1-20g.\n\nThe goal of the analysis is to use the age of the lemurs to understand variability in the weight."
+    "text": "Data: Duke lemurs\nToday’s data contains a subset of the original Duke Lemur data set available in the TidyTuesday GitHub repo. This data includes information on “young adult” lemurs from the Coquerel’s sifaka species (PCOQ), the largest species at the Duke Lemur Center. The analysis will focus on the following variables:\n\nage_at_wt_mo: Age in months: Age of the animal when the weight was taken, in months (((Weight_Date-DOB)/365)*12)\nweight_g: Weight: Animal weight, in grams. Weights under 500g generally to nearest 0.1-1g; Weights &gt;500g generally to the nearest 1-20g.\n\nThe goal of the analysis is to use the age of the lemurs to understand variability in the weight."
   },
   {
     "objectID": "slides/14-model-diagnostics.html#eda",
@@ -3733,35 +3733,35 @@
     "href": "slides/14-model-diagnostics.html#influential-points",
     "title": "Model diagnostics",
     "section": "Influential points",
-    "text": "Influential points\n\n\nInfluential points have a noticeable impact on the coefficients and standard errors used for inference\nThese points can sometimes be identified in a scatterplot if there is only one predictor variable\n\nThis is often not the case when there are multiple predictors\n\nWe will use measures to quantify an individual observation’s influence on the regression model\n\nleverage, standardized residuals, and Cook’s distance"
+    "text": "Influential points\n\n\nInfluential points have a noticeable impact on the coefficients and standard errors used for inference\nThese points can sometimes be identified in a scatterplot if there is only one predictor variable\n\nThis is often not the case when there are multiple predictors\n\nWe will use measures to quantify an individual observation’s influence on the regression model\n\nleverage, standardized & studentized residuals, and Cook’s distance"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#hat-matrix",
     "href": "slides/14-model-diagnostics.html#hat-matrix",
     "title": "Model diagnostics",
     "section": "Hat matrix",
-    "text": "Hat matrix\n\nRecall the hat matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\)\nWe’ve seen that \\(\\mathbf{H}\\) is used to compute \\(Var(\\hat{\\mathbf{y}}) = \\sigma^2_{\\epsilon}\\mathbf{H}\\) and \\(Var(\\mathbf{e}) = \\sigma^2_{\\epsilon}(\\mathbf{I} - \\mathbf{H})\\)\nAn element of \\(\\mathbf{H}\\), \\(h_{ij}\\), is the leverage of the observation \\(y_i\\) on the fitted values \\(\\hat{y}_{ij}\\)"
+    "text": "Hat matrix\n\n\nRecall the hat matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\)\nWe’ve seen that \\(\\mathbf{H}\\) is used to compute \\(Var(\\hat{\\mathbf{y}}) = \\sigma^2_{\\epsilon}\\mathbf{H}\\) and \\(Var(\\mathbf{e}) = \\sigma^2_{\\epsilon}(\\mathbf{I} - \\mathbf{H})\\)\nAn element of \\(\\mathbf{H}\\), \\(h_{ij}\\), is the leverage of the observation \\(y_i\\) on the fitted values \\(\\hat{y}_{j}\\)"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#leverage-1",
     "href": "slides/14-model-diagnostics.html#leverage-1",
     "title": "Model diagnostics",
     "section": "Leverage",
-    "text": "Leverage\n\nWe focus on the diagonal elements\n\\[\nh_{ii} = \\mathbf{x}_i^T(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{x}_i\n\\]such that \\(\\mathbf{x}^T_i\\) is the \\(i^{th}\\) row of \\(\\mathbf{X}\\)\n\\(h_{ii}\\) is the leverage: a measure of the distance of the \\(i^{th}\\) observation from the center (or centroid) of \\(x\\) space\nObservations with large values of \\(h_{ii}\\) are far away from the typical value (or combination of values) of the predictors in the data"
+    "text": "Leverage\n\n\nWe focus on the diagonal elements\n\\[\nh_{ii} = \\mathbf{x}_i^T(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{x}_i\n\\]such that \\(\\mathbf{x}^T_i\\) is the \\(i^{th}\\) row of \\(\\mathbf{X}\\)\n\\(h_{ii}\\) is the leverage: a measure of the distance of the \\(i^{th}\\) observation from the center (or centroid) of the \\(x\\) space\nObservations with large values of \\(h_{ii}\\) are far away from the typical value (or combination of values) of the predictors in the data"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#large-leverage",
     "href": "slides/14-model-diagnostics.html#large-leverage",
     "title": "Model diagnostics",
     "section": "Large leverage",
-    "text": "Large leverage\n\nThe sum of the leverages for all points is \\(p + 1\\), where \\(p\\) is the number of predictors in the model . More specifically\n\\[\n\\sum_{i=1}^n h_{ii} = \\text{rank}(\\mathbf{H}) = \\text{rank}(\\mathbf{X}) = p+1\n\\]\nThe average value of leverage, \\(h_{ii}\\), is \\(\\bar{h} =  \\frac{(p+1)}{n}\\)\nAn observation has large leverage if \\[h_{ii} &gt; \\frac{2(p+1)}{n}\\]"
+    "text": "Large leverage\n\n\nThe sum of the leverages for all points is \\(p + 1\\), where \\(p\\) is the number of predictors in the model . More specifically\n\\[\n\\sum_{i=1}^n h_{ii} = \\text{rank}(\\mathbf{H}) = \\text{rank}(\\mathbf{X}) = p+1\n\\]\nThe average value of leverage, \\(h_{ii}\\), is \\(\\bar{h} =  \\frac{(p+1)}{n}\\)\nAn observation has large leverage if \\[h_{ii} &gt; \\frac{2(p+1)}{n}\\]"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#lemurs-leverage",
     "href": "slides/14-model-diagnostics.html#lemurs-leverage",
     "title": "Model diagnostics",
     "section": "Lemurs: Leverage",
-    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * 2 / nrow(lemurs)\nh_threshold\n\n[1] 0.05263158\n\n\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 7 × 8\n  weight_g age_at_wt_mo .fitted .resid   .hat .sigma .cooksd .std.resid\n     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;\n1     4143         46.2   4037.  106.  0.0655   517. 0.00159     0.213 \n2     4313         58.2   4272.   41.1 0.229    517. 0.00123     0.0910\n3     4640         54.9   4208.  432.  0.173    514. 0.0895      0.925 \n4     3677         47.4   4061. -384.  0.0770   515. 0.0253     -0.778 \n5     4319         58.2   4272.   47.1 0.229    517. 0.00161     0.104 \n6     3610         47.4   4061. -451.  0.0770   514. 0.0348     -0.914 \n7     3597         48.6   4084. -487.  0.0889   514. 0.0480     -0.992 \n\n\n\n\nWhy do you think these points have large leverage?"
+    "text": "Lemurs: Leverage\n\nh_threshold &lt;- 2 * 2 / nrow(lemurs)\nh_threshold\n\n[1] 0.05263158\n\n\n\n\nlemurs_aug |&gt;\n  filter(.hat &gt; h_threshold)\n\n# A tibble: 7 × 8\n  weight_g age_at_wt_mo .fitted .resid   .hat .sigma .cooksd .std.resid\n     &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;\n1     4143         46.2   4037.  106.  0.0655   517. 0.00159     0.213 \n2     4313         58.2   4272.   41.1 0.229    517. 0.00123     0.0910\n3     4640         54.9   4208.  432.  0.173    514. 0.0895      0.925 \n4     3677         47.4   4061. -384.  0.0770   515. 0.0253     -0.778 \n5     4319         58.2   4272.   47.1 0.229    517. 0.00161     0.104 \n6     3610         47.4   4061. -451.  0.0770   514. 0.0348     -0.914 \n7     3597         48.6   4084. -487.  0.0889   514. 0.0480     -0.992 \n\n\n\n\n\nWhy do you think these points have large leverage?"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#lets-look-at-the-data",
@@ -3782,21 +3782,21 @@
     "href": "slides/14-model-diagnostics.html#scaled-residuals-1",
     "title": "Model diagnostics",
     "section": "Scaled residuals",
-    "text": "Scaled residuals\n\nWhat is the best way to identify outlier points that don’t fit the pattern from the regression line?\n\nLook for points that have large residuals\n\nWe can rescale residuals and put them on a common scale to more easily identify “large” residuals\nWe will consider two types of scaled residuals: standardized residuals and studentized residuals"
+    "text": "Scaled residuals\n\n\nWhat is the best way to identify outlier points that don’t fit the pattern from the regression line?\n\nLook for points that have large residuals\n\nWe can rescale residuals and put them on a common scale to more easily identify “large” residuals\nWe will consider two types of scaled residuals: standardized residuals and studentized residuals"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#standardized-residuals",
     "href": "slides/14-model-diagnostics.html#standardized-residuals",
     "title": "Model diagnostics",
     "section": "Standardized residuals",
-    "text": "Standardized residuals\n\nThe variance of the residuals can be estimated by the mean squared residuals (MSR) \\(= \\frac{SSR}{n - p - 1} = \\hat{\\sigma}^2_{\\epsilon}\\)\nWe can use MSR to compute standardized residuals\n\\[\nstd.res_i = \\frac{e_i}{\\sqrt{MSR}}\n\\]\nStandardized residuals are produced by augment() in the column .std.resid"
+    "text": "Standardized residuals\n\n\nThe variance of the residuals can be estimated by the mean squared residuals (MSR) \\(= \\frac{SSR}{n - p - 1} = \\hat{\\sigma}^2_{\\epsilon}\\)\nWe can use MSR to compute standardized residuals\n\\[\nstd.res_i = \\frac{e_i}{\\sqrt{MSR}}\n\\]\nStandardized residuals are produced by augment() in the column .std.resid"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#studentized-residuals",
     "href": "slides/14-model-diagnostics.html#studentized-residuals",
     "title": "Model diagnostics",
     "section": "Studentized residuals",
-    "text": "Studentized residuals\n\nMSR is an approximation of the variance of the residuals.\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2_{\\epsilon}(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2_{\\epsilon}(1 - h_{ii})\\)\n\nThe studentized residual is the residual rescaled by the more exact calculation for variance\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2_{\\epsilon}(1 - h_{ii})}}\n\\]\n\nStandardized and studentized residuals provide similar information about which points are outliers in the response."
+    "text": "Studentized residuals\n\n\nMSR is an approximation of the variance of the residuals.\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2_{\\epsilon}(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2_{\\epsilon}(1 - h_{ii})\\)\n\nThe studentized residual is the residual rescaled by the more exact calculation for variance\n\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2_{\\epsilon}(1 - h_{ii})}}\n\\]\n\nStandardized and studentized residuals provide similar information about which points are outliers in the response."
   },
   {
     "objectID": "slides/14-model-diagnostics.html#using-standardized-residuals",
@@ -3831,7 +3831,7 @@
     "href": "slides/14-model-diagnostics.html#using-cooks-distance",
     "title": "Model diagnostics",
     "section": "Using Cook’s Distance",
-    "text": "Using Cook’s Distance\n\nAn observation with large \\(D_i\\) is said to have a strong influence on the predicted values\nGeneral thresholds .An observation with\n\n\\(D_i &gt; 0.5\\) is moderately influential\n\\(D_i &gt; 1\\) is very influential"
+    "text": "Using Cook’s Distance\n\nAn observation with large value of \\(D_i\\) is said to have a strong influence on the predicted values\nGeneral thresholds .An observation with\n\n\\(D_i &gt; 0.5\\) is moderately influential\n\\(D_i &gt; 1\\) is very influential"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#cooks-distance-2",
@@ -3852,14 +3852,14 @@
     "href": "slides/14-model-diagnostics.html#what-to-do-with-outliersinfluential-points",
     "title": "Model diagnostics",
     "section": "What to do with outliers/influential points?",
-    "text": "What to do with outliers/influential points?\n\nFirst consider if the outlier is a result of a data entry error.\nIf not, you may consider dropping an observation if it’s an outlier in the predictor variables if…\n\nIt is meaningful to drop the observation given the context of the problem\nYou intended to build a model on a smaller range of the predictor variables. Mention this in the write up of the results and be careful to avoid extrapolation when making predictions"
+    "text": "What to do with outliers/influential points?\n\n\nFirst consider if the outlier is a result of a data entry error.\nIf not, you may consider dropping an observation if it’s an outlier in the predictor variables if…\n\nIt is meaningful to drop the observation given the context of the problem\nYou intended to build a model on a smaller range of the predictor variables. Mention this in the write up of the results and be careful to avoid extrapolation when making predictions"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#what-to-do-with-outliersinfluential-points-1",
     "href": "slides/14-model-diagnostics.html#what-to-do-with-outliersinfluential-points-1",
     "title": "Model diagnostics",
     "section": "What to do with outliers/influential points?",
-    "text": "What to do with outliers/influential points?\n\nIt is generally not good practice to drop observations that ar outliers in the value of the response variable\n\nThese are legitimate observations and should be in the model\nYou can try transformations or increasing the sample size by collecting more data\n\nA general strategy when there are influential points is to fit the model with and without the influential points and compare the outcomes"
+    "text": "What to do with outliers/influential points?\n\n\nIt is generally not good practice to drop observations that ar outliers in the value of the response variable\n\nThese are legitimate observations and should be in the model\nYou can try transformations or increasing the sample size by collecting more data\n\nA general strategy when there are influential points is to fit the model with and without the influential points and compare the outcomes"
   },
   {
     "objectID": "slides/14-model-diagnostics.html#recap",
