@@ -41,7 +41,7 @@ bibliography: references.bib
 
 <br>
 
-<center> 🍁 Have a good Fall Break! 🍁 </center>
+<center>🍁 Have a good Fall Break! 🍁</center>
 
 ## Topics
 
@@ -53,7 +53,7 @@ bibliography: references.bib
 
 -   Properties of maximum likelihood estimator
 
-## Motivation  {.midi}
+## Motivation {.midi}
 
 ::: incremental
 -   We can find the estimators of $\boldsymbol{\beta}$ and $\sigma^2_{\epsilon}$ for the model
@@ -112,8 +112,7 @@ The player shoots three free throws with the outcome $BBM$.
 ::: incremental
 -   How would you describe in words the probabilities we previously calculated?
 
--   **New question:** What parameter value of $p$ do you think maximizes the
-    probability of observing this data?
+-   **New question:** What parameter value of $p$ do you think maximizes the probability of observing this data?
 
 -   We will use a **likelihood** function to answer this question.
 :::
@@ -213,9 +212,8 @@ What do you think is the approximate value of the MLE of $p$ given the data?
 
 -   Find the MLE using the first derivative of the likelihood function.
 
-```{=html}
 <!-- -->
-```
+
 -   This can be tricky because of the Product Rule, so we can maximize the **log(Likelihood)** instead. The same value maximizes the likelihood and log(Likelihood).
 
 ::: question
@@ -233,15 +231,14 @@ Suppose the player makes $k$ baskets out of the $n$ free throws. This is the obs
 ::: incremental
 -   What is the formula for the probability distribution to describe this random phenomenon?
 
-```{=html}
 <!-- -->
-```
+
 -   What is the formula for the likelihood function for $p$ given the observed data?
 
 -   For what value of $p$ do we maximize the likelihood given the observed data? Use calculus to find the response.
 :::
 
-## Why maximum likelihood estimation?  {.midi}
+## Why maximum likelihood estimation? {.midi}
 
 -   *"Maximum likelihood estimation is, by far, the most popular technique for deriving estimators."* [@casella2024statistical, pp. 315]
 
@@ -278,7 +275,7 @@ $$
 -   Now we will discuss how we know $\hat{\boldsymbol{\beta}}$ is normally distributed, as we introduce MLE for linear regression
 :::
 
-## Simple linear regression model 
+## Simple linear regression model
 
 Suppose we have the simple linear regression (SLR) model
 
@@ -298,7 +295,7 @@ $$
 y_i | x_i \sim N(\beta_0 + \beta_1 x_i, \sigma^2_{\epsilon})
 $$
 
-## Side note: Normal distribution 
+## Side note: Normal distribution
 
 Let $X$ be a random variable, such that $X \sim N(\mu, \sigma^2)$. Then the probability function is
 
@@ -337,7 +334,7 @@ $$
 
 We will use the log-likelihood function to find the MLEs
 
-## MLE for $\beta_0$ 
+## MLE for $\beta_0$
 
 1️⃣ Take derivative of $\log L$ with respect to $\beta_0$ and set it equal to 0
 
@@ -345,7 +342,7 @@ $$
 \frac{\partial \log L}{\partial \beta_0} = -\frac{2}{2\sigma^2_\epsilon}\sum_{i=1}^n (y_i - \beta_0 - \beta_1x_i)(-1) = 0
 $$
 
-## MLE for $\beta_0$  {.midi}
+## MLE for $\beta_0$ {.midi}
 
 2️⃣ Find the $\tilde{\beta}_0$ that satisfies the equality on the previous slide
 
@@ -361,7 +358,7 @@ $$
 \end{aligned}
 $$
 
-## MLE for $\beta_0$  {.midi}
+## MLE for $\beta_0$ {.midi}
 
 3️⃣ We can use the second derivative to show we've found the maximum
 
@@ -379,9 +376,9 @@ $$
 \tilde{\beta}_0 = \bar{y} - \tilde{\beta}_1\bar{x}
 $$
 
-$$$$
+\$\$\$\$
 
-## MLE for $\beta_1$ and $\sigma^2_{\epsilon}$ 
+## MLE for $\beta_1$ and $\sigma^2_{\epsilon}$
 
 We can use a similar process to find the MLEs for $\beta_1$ and $\sigma^2_{\epsilon}$
 
