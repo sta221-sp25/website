@@ -19,6 +19,7 @@ In this lab, we will see how a standard simple linear regression analysis can be
 For today's lab, we will be using the following packages.
 
 ```{r packages}
+#| message: false
 library(tidyverse)
 library(palmerpenguins)
 ```
