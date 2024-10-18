@@ -1,0 +1,78 @@
+---
+title: "Lab 04"
+subtitle: "Maximum likelihood estimation"
+date: "2024-10-21"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs:
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+# Welcome
+
+## Goals
+
+-   Team feedback
+-   Mid-semester survey
+-   Lab 04: Maximum likelihood estimation (with Palmer penguins)
+
+## Team feedback
+
+-   **Purpose**: To reflect on the team's collaboration and your contribution thus far
+
+-   You should have received an email from Teammates with a link to the feedback from on October 21 around 11am
+
+    -   Please let your TA know if you do not see the email (check your spam folder first!)
+
+-   Team feedback is due **Thursday, October 24 at 11:59pm**
+
+-   ***This feedback will be graded for completion only*** (go towards the Participation grade)
+
+## Mid-semester feedback
+
+-   **Purpose**: To give the teaching team feedback on what is working well (or not as well) in helping you learn the course content
+
+-   The feedback is **anonymous** and will not be graded
+
+-   It will be available until Thursday, October 24 at 11:59pm.
+
+**We (the teaching team) appreciate you taking a few minutes to fill it out!**
+
+🔗 [duke.qualtrics.com/jfe/form/SV_244HYi8U8X85pgW](https://duke.qualtrics.com/jfe/form/SV_244HYi8U8X85pgW)
+
+## Lab 04: Maximum likelihood estimation
+
+This lab focuses on
+
+-   using linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica.
+
+-   exploring maximum likelihood estimators and their connection to least-squares estimators
+
+🔗 <https://sta221-fa24.netlify.app/labs/lab-04>
+
+## Reminder: Tips for working on a team
+
+-   Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.
+
+-   The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.
+
+-   Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.
