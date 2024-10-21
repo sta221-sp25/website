@@ -2534,7 +2534,7 @@
     "href": "labs/lab-04.html#exercise-2",
     "title": "Lab 04: Maximum likelihood estimation",
     "section": "Exercise 2",
-    "text": "Exercise 2\nWe will fit the main effects model using bill length and species to understand variability in the bill depth.\n\nWrite the form of the statistical (population-level) model in matrix form.\nWrite the dimensions for \\(\\mathbf{y}, \\mathbf{X}, \\boldsymbol{\\beta}, \\boldsymbol{\\epsilon}, \\sigma^2_{\\epsilon}\\) specific for this problem.",
+    "text": "Exercise 2\nWe will fit the main effects model using bill length and species to understand variability in the bill depth.\n\nWrite the form of the statistical (population-level) model in matrix form.\nWrite the dimensions for \\(\\mathbf{y}, \\mathbf{X}, \\boldsymbol{\\beta}, \\boldsymbol{\\epsilon}\\) specific for this problem.",
     "crumbs": [
       "Labs",
       "Lab 04"

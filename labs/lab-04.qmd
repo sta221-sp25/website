@@ -100,7 +100,7 @@ We will fit the main effects model using bill length and species to understand v
 
 -   Write the form of the statistical (population-level) model in matrix form.
 
--   Write the dimensions for $\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \boldsymbol{\epsilon}, \sigma^2_{\epsilon}$ specific for this problem.
+-   Write the dimensions for $\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \boldsymbol{\epsilon}$ specific for this problem.
 
 ## Exercise 3
 
@@ -144,7 +144,7 @@ Using the data and regression estimates for this analysis, compute both the maxi
 
 ## Exercise 8
 
-Now we will look into the last property of the maximum likelihood estimator for $\boldsymbol{\beta}$, and thus of least-squares estimator  - **asymptotic normality**.
+Now we will look into the last property of the maximum likelihood estimator for $\boldsymbol{\beta}$, and thus of least-squares estimator - **asymptotic normality**.
 
 In words, this property says that, when the number of samples $n$ is large compared to the number of predictors $p$, the maximum likelihood estimator $\tilde{\boldsymbol\beta}$ follows a (multivariate) normal distribution $N\big(\boldsymbol\beta, \sigma_\epsilon^2 (\mathbf{X}^T\mathbf{X})^{-1}\big)$. Let's use this to construct an approximate confidence interval for $\beta_j$, the coefficient for `speciesChinstrap`.
 
