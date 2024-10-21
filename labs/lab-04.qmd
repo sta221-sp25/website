@@ -1,5 +1,5 @@
 ---
-title: "Lab 04: Maximum likelihood esitmation"
+title: "Lab 04: Maximum likelihood estimation"
 subtitle: "Return of the Palmer penguins"
 execute:
   freeze: auto
@@ -23,16 +23,16 @@ This lab is due on **Thursday, October 24 at 11:59pm.** To be considered on time
 
 # Introduction
 
-In this lab you will compute maximum likelihood estimates for regression models looking at the relationship between features of penguins living in Palmer Archipelago in Antarctica. You will also explore propreties of maximum likelihood estimators and how they are related to least-squares estimators.
+In this lab you will compute maximum likelihood estimates for regression models looking at the relationship between features of penguins living in Palmer Archipelago in Antarctica. You will also explore properties of maximum likelihood estimators and how they are related to least-squares estimators.
 
 # Learning goals
 
 By the end of the lab you will be able to…
 
--   compute estimates for $\hat{\boldsymbol{\beta}}$ and $\sigma^2_{\epsilon}$ using maximum likelihood estimation
--   understand how assumptions of linear regression connect to maximum likelihood estimation
--   the similarities and differences between maximum likelihood estimators and least-squares estimators
--   Evaluate which estimation procedure may be preferable in a given analysis scenario
+-   compute estimates for $\hat{\boldsymbol{\beta}}$ and $\sigma^2_{\epsilon}$ using maximum likelihood estimation.
+-   understand how assumptions of linear regression connect to maximum likelihood estimation.
+-   describe the similarities and differences between maximum likelihood estimators and least-squares estimators.
+-   evaluate which estimation procedure may be preferable in a given analysis scenario.
 
 # Getting started
 
@@ -66,11 +66,11 @@ library(knitr)
 
 # Data
 
-Today's data include information about characteristics of three species of penguins living in Palmer Archipelago in Antarctica. The data were collected and made available by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and the [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), a member of the [Long Term Ecological Research Network](https://lternet.edu/) [@gorman2014].
+Today's dataset include information about characteristics of three species of penguins living in Palmer Archipelago in Antarctica. The data were collected and made available by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and the [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), a member of the [Long Term Ecological Research Network](https://lternet.edu/) [@gorman2014].
 
 The data are in the file `palmer-penguins.csv` in the `data` folder. This dataset is originally from the `penguins` data frame in the [**palmerpenguins**](https://allisonhorst.github.io/palmerpenguins/) R package with observations that have missing values removed. This analysis will focus on the following variables:
 
--   `body_mass_g`: bill depth in millimeters
+-   `bill_depth_mm`: bill depth in millimeters
 
 -   `bill_length_mm`: bill length in millimeters
 
@@ -88,19 +88,19 @@ We'll start with exploratory data analysis focused on the relationship between t
 
 -   Visualize the relationship between the response variable `bill_depth_mm` and predictor `bill_length_mm` .
 
--   Now, visualize the relationship between `bill_depth_mm` and `bill_length_mm` by `species`. Use `geom_smooth(method = "lm", se = FALSE)` to add lines more clearly visualizing the relationship between `bill_depth_mm` and `bill_length_mm` for each species.
+-   Now, visualize the relationship between `bill_depth_mm` and `bill_length_mm` by `species`. Use `geom_smooth(method = "lm", se = FALSE)` to add lines and more clearly visualize the relationship for each species.
 
--   Based on these visualizations, why is it important to include `species` when we model the relationship between bill depth and length? Briefly explain.
+-   Based on these visualizations, why is it important to include `species` when in the model of the relationship between bill depth and length? Briefly explain.
 
 -   Based on these visualizations, would you include an interaction term between the two predictors? Briefly explain?
 
 ## Exercise 2
 
-We will fit the main effects model using bill length and speices to understand variability in the bill depth.
+We will fit the main effects model using bill length and species to understand variability in the bill depth.
 
 -   Write the form of the statistical (population-level) model in matrix form.
 
--   Write the dimensions for $\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \sigma^2_{\epsilon}$ specific for this problem.
+-   Write the dimensions for $\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \boldsymbol{\epsilon}, \sigma^2_{\epsilon}$ specific for this problem.
 
 ## Exercise 3
 
@@ -118,11 +118,11 @@ Briefly explain how the process of finding the maximum likelihood estimators for
 
 For the next few exercises, we will compare the results of the maximum likelihood and least-squares procedures.
 
--   Fit the regression model described in Exercise 2. Neatly display the results using three digits.
+-   Fit the least-squares regression model described in Exercise 2. Neatly display the results using three digits.
 
 -   Describe the estimated effect of bill length on bill depth in the context of the data.
 
--   Describe the estimated effect of species on bill depth in the context of the data. Include discussion about whether there is statistical evidence in a difference between species.
+-   Describe the estimated effect of species on bill depth in the context of the data. Include discussion about whether there is statistical evidence of a difference between species.
 
 ## Exercise 6
 
@@ -138,13 +138,13 @@ $$
 \tilde{\sigma}^2_{\epsilon} = \frac{1}{n} \mathbf{e}^T\mathbf{e}
 $$
 
-We know that the maximum likelihood estimate and least-squares estimates for $\sigma^2_{\epsilon}$ are not equal. Additionally, the least-squares estimator $\hat{\sigma}^2_{\epsilon}$ is unbiased. We want to find a scaling factor $c$ such that the maximum likelihood estimator is unbiased.
+We know that the maximum likelihood estimator and least-squares estimator for $\sigma^2_{\epsilon}$ are not equal. Additionally, the least-squares estimator $\hat{\sigma}^2_{\epsilon}$ is unbiased. We want to find a scaling factor $c$ such that the maximum likelihood estimator is unbiased.
 
 Using the data and regression estimates for this analysis, compute both the maximum likelihood and least-squares estimators for $\sigma_{\epsilon}^2$, and then find $c$ by solving the equation $$ \hat\sigma^2_{\epsilon} = c \cdot \tilde\sigma^2_{\epsilon} $$You can do this last step either computationally or algebraically.
 
 ## Exercise 8
 
-Now we will look into the last property of the maximum likelihood estimator for $\boldsymbol{\beta}$, and thus of least-squares estimates - **asymptotic normality**.
+Now we will look into the last property of the maximum likelihood estimator for $\boldsymbol{\beta}$, and thus of least-squares estimator  - **asymptotic normality**.
 
 In words, this property says that, when the number of samples $n$ is large compared to the number of predictors $p$, the maximum likelihood estimator $\tilde{\boldsymbol\beta}$ follows a (multivariate) normal distribution $N\big(\boldsymbol\beta, \sigma_\epsilon^2 (\mathbf{X}^T\mathbf{X})^{-1}\big)$. Let's use this to construct an approximate confidence interval for $\beta_j$, the coefficient for `speciesChinstrap`.
 
@@ -160,7 +160,7 @@ $$
 
 -   Compute the exact (based on the $t$-distribution) confidence interval for $\beta_j$, the coefficient of `speciesChinstrap`.
 
--   Compare the center and width of the this exact interval with the one you computed in **Exercise 8**. Do they differ? By how much? Which one is wider, indicating more uncertainty?
+-   Compare the center and width of the this exact interval with the one you computed in Exercise 8. Do they differ? By how much? Which one is wider, indicating more uncertainty?
 
 ## Exercise 10
 
@@ -194,16 +194,16 @@ To submit your assignment:
 
 | Component             | Points |
 |:----------------------|:-------|
-| Ex 1                  |        |
-| Ex 2                  |        |
-| Ex 3                  |        |
-| Ex 4                  |        |
-| Ex 5                  |        |
-| Ex 6                  |        |
-| Ex 7                  |        |
-| Ex 8                  |        |
-| Ex 9                  |        |
-| Ex 10                 |        |
-| Workflow & formatting | 5      |
+| Ex 1                  | 8      |
+| Ex 2                  | 4      |
+| Ex 3                  | 6      |
+| Ex 4                  | 3      |
+| Ex 5                  | 5      |
+| Ex 6                  | 5      |
+| Ex 7                  | 4      |
+| Ex 8                  | 5      |
+| Ex 9                  | 4      |
+| Ex 10                 | 2      |
+| Workflow & formatting | 4      |
 
 The “Workflow & formatting” grade is to assess the reproducible workflow and collaboration. This includes having at least one meaningful commit from each team member, a neatly organized document with readable code, and updating the team name and date in the YAML.s

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 04: Maximum likelihood esitmation – STA 221 - Fall 2024</title>
+<title>Lab 04: Maximum likelihood estimation – STA 221 - Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -430,7 +430,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-01.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-04.html">Lab 04</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lab 04: Maximum likelihood esitmation</h1>
+<h1 class="title">Lab 04: Maximum likelihood estimation</h1>
 <p class="subtitle lead">Return of the Palmer penguins</p>
 </div>
 
@@ -467,16 +467,16 @@ Due date
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>In this lab you will compute maximum likelihood estimates for regression models looking at the relationship between features of penguins living in Palmer Archipelago in Antarctica. You will also explore propreties of maximum likelihood estimators and how they are related to least-squares estimators.</p>
+<p>In this lab you will compute maximum likelihood estimates for regression models looking at the relationship between features of penguins living in Palmer Archipelago in Antarctica. You will also explore properties of maximum likelihood estimators and how they are related to least-squares estimators.</p>
 </section>
 <section id="learning-goals" class="level1">
 <h1>Learning goals</h1>
 <p>By the end of the lab you will be able to…</p>
 <ul>
-<li>compute estimates for <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span> using maximum likelihood estimation</li>
-<li>understand how assumptions of linear regression connect to maximum likelihood estimation</li>
-<li>the similarities and differences between maximum likelihood estimators and least-squares estimators</li>
-<li>Evaluate which estimation procedure may be preferable in a given analysis scenario</li>
+<li>compute estimates for <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span> using maximum likelihood estimation.</li>
+<li>understand how assumptions of linear regression connect to maximum likelihood estimation.</li>
+<li>describe the similarities and differences between maximum likelihood estimators and least-squares estimators.</li>
+<li>evaluate which estimation procedure may be preferable in a given analysis scenario.</li>
 </ul>
 </section>
 <section id="getting-started" class="level1">
@@ -515,10 +515,10 @@ Important
 </section>
 <section id="data" class="level1">
 <h1>Data</h1>
-<p>Today’s data include information about characteristics of three species of penguins living in Palmer Archipelago in Antarctica. The data were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr.&nbsp;Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>, a member of the <a href="https://lternet.edu/">Long Term Ecological Research Network</a> <span class="citation" data-cites="gorman2014">(<a href="#ref-gorman2014" role="doc-biblioref">Gorman, Williams, and Fraser 2014</a>)</span>.</p>
+<p>Today’s dataset include information about characteristics of three species of penguins living in Palmer Archipelago in Antarctica. The data were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr.&nbsp;Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>, a member of the <a href="https://lternet.edu/">Long Term Ecological Research Network</a> <span class="citation" data-cites="gorman2014">(<a href="#ref-gorman2014" role="doc-biblioref">Gorman, Williams, and Fraser 2014</a>)</span>.</p>
 <p>The data are in the file <code>palmer-penguins.csv</code> in the <code>data</code> folder. This dataset is originally from the <code>penguins</code> data frame in the <a href="https://allisonhorst.github.io/palmerpenguins/"><strong>palmerpenguins</strong></a> R package with observations that have missing values removed. This analysis will focus on the following variables:</p>
 <ul>
-<li><p><code>body_mass_g</code>: bill depth in millimeters</p></li>
+<li><p><code>bill_depth_mm</code>: bill depth in millimeters</p></li>
 <li><p><code>bill_length_mm</code>: bill length in millimeters</p></li>
 <li><p><code>species</code>: penguin species (Adélie, Chinstrap and Gentoo)</p></li>
 </ul>
@@ -532,17 +532,17 @@ Important
 <p>We’ll start with exploratory data analysis focused on the relationship between the response and predictor variables.</p>
 <ul>
 <li><p>Visualize the relationship between the response variable <code>bill_depth_mm</code> and predictor <code>bill_length_mm</code> .</p></li>
-<li><p>Now, visualize the relationship between <code>bill_depth_mm</code> and <code>bill_length_mm</code> by <code>species</code>. Use <code>geom_smooth(method = "lm", se = FALSE)</code> to add lines more clearly visualizing the relationship between <code>bill_depth_mm</code> and <code>bill_length_mm</code> for each species.</p></li>
-<li><p>Based on these visualizations, why is it important to include <code>species</code> when we model the relationship between bill depth and length? Briefly explain.</p></li>
+<li><p>Now, visualize the relationship between <code>bill_depth_mm</code> and <code>bill_length_mm</code> by <code>species</code>. Use <code>geom_smooth(method = "lm", se = FALSE)</code> to add lines and more clearly visualize the relationship for each species.</p></li>
+<li><p>Based on these visualizations, why is it important to include <code>species</code> when in the model of the relationship between bill depth and length? Briefly explain.</p></li>
 <li><p>Based on these visualizations, would you include an interaction term between the two predictors? Briefly explain?</p></li>
 </ul>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>We will fit the main effects model using bill length and speices to understand variability in the bill depth.</p>
+<p>We will fit the main effects model using bill length and species to understand variability in the bill depth.</p>
 <ul>
 <li><p>Write the form of the statistical (population-level) model in matrix form.</p></li>
-<li><p>Write the dimensions for <span class="math inline">\(\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \sigma^2_{\epsilon}\)</span> specific for this problem.</p></li>
+<li><p>Write the dimensions for <span class="math inline">\(\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \boldsymbol{\epsilon}, \sigma^2_{\epsilon}\)</span> specific for this problem.</p></li>
 </ul>
 </section>
 <section id="exercise-3" class="level2">
@@ -561,9 +561,9 @@ Important
 <h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <p>For the next few exercises, we will compare the results of the maximum likelihood and least-squares procedures.</p>
 <ul>
-<li><p>Fit the regression model described in Exercise 2. Neatly display the results using three digits.</p></li>
+<li><p>Fit the least-squares regression model described in Exercise 2. Neatly display the results using three digits.</p></li>
 <li><p>Describe the estimated effect of bill length on bill depth in the context of the data.</p></li>
-<li><p>Describe the estimated effect of species on bill depth in the context of the data. Include discussion about whether there is statistical evidence in a difference between species.</p></li>
+<li><p>Describe the estimated effect of species on bill depth in the context of the data. Include discussion about whether there is statistical evidence of a difference between species.</p></li>
 </ul>
 </section>
 <section id="exercise-6" class="level2">
@@ -579,12 +579,12 @@ Important
 <p><span class="math display">\[
 \tilde{\sigma}^2_{\epsilon} = \frac{1}{n} \mathbf{e}^T\mathbf{e}
 \]</span></p>
-<p>We know that the maximum likelihood estimate and least-squares estimates for <span class="math inline">\(\sigma^2_{\epsilon}\)</span> are not equal. Additionally, the least-squares estimator <span class="math inline">\(\hat{\sigma}^2_{\epsilon}\)</span> is unbiased. We want to find a scaling factor <span class="math inline">\(c\)</span> such that the maximum likelihood estimator is unbiased.</p>
+<p>We know that the maximum likelihood estimator and least-squares estimator for <span class="math inline">\(\sigma^2_{\epsilon}\)</span> are not equal. Additionally, the least-squares estimator <span class="math inline">\(\hat{\sigma}^2_{\epsilon}\)</span> is unbiased. We want to find a scaling factor <span class="math inline">\(c\)</span> such that the maximum likelihood estimator is unbiased.</p>
 <p>Using the data and regression estimates for this analysis, compute both the maximum likelihood and least-squares estimators for <span class="math inline">\(\sigma_{\epsilon}^2\)</span>, and then find <span class="math inline">\(c\)</span> by solving the equation <span class="math display">\[ \hat\sigma^2_{\epsilon} = c \cdot \tilde\sigma^2_{\epsilon} \]</span>You can do this last step either computationally or algebraically.</p>
 </section>
 <section id="exercise-8" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
-<p>Now we will look into the last property of the maximum likelihood estimator for <span class="math inline">\(\boldsymbol{\beta}\)</span>, and thus of least-squares estimates - <strong>asymptotic normality</strong>.</p>
+<p>Now we will look into the last property of the maximum likelihood estimator for <span class="math inline">\(\boldsymbol{\beta}\)</span>, and thus of least-squares estimator - <strong>asymptotic normality</strong>.</p>
 <p>In words, this property says that, when the number of samples <span class="math inline">\(n\)</span> is large compared to the number of predictors <span class="math inline">\(p\)</span>, the maximum likelihood estimator <span class="math inline">\(\tilde{\boldsymbol\beta}\)</span> follows a (multivariate) normal distribution <span class="math inline">\(N\big(\boldsymbol\beta, \sigma_\epsilon^2 (\mathbf{X}^T\mathbf{X})^{-1}\big)\)</span>. Let’s use this to construct an approximate confidence interval for <span class="math inline">\(\beta_j\)</span>, the coefficient for <code>speciesChinstrap</code>.</p>
 <ul>
 <li>Use <span class="math inline">\(\tilde{\sigma}^2_{\epsilon}\)</span>, the maximum likelihood estimator, to compute the approximate confidence interval for <span class="math inline">\(\beta_j\)</span> . The approximate 95% confidence interval may be computed as</li>
@@ -600,7 +600,7 @@ Important
 <h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
 <ul>
 <li><p>Compute the exact (based on the <span class="math inline">\(t\)</span>-distribution) confidence interval for <span class="math inline">\(\beta_j\)</span>, the coefficient of <code>speciesChinstrap</code>.</p></li>
-<li><p>Compare the center and width of the this exact interval with the one you computed in <strong>Exercise 8</strong>. Do they differ? By how much? Which one is wider, indicating more uncertainty?</p></li>
+<li><p>Compare the center and width of the this exact interval with the one you computed in Exercise 8. Do they differ? By how much? Which one is wider, indicating more uncertainty?</p></li>
 </ul>
 </section>
 <section id="exercise-10" class="level2">
@@ -647,47 +647,47 @@ Warning
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Ex 1</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">8</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ex 2</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ex 3</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">6</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ex 4</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">3</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ex 5</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">5</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ex 6</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ex 7</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ex 8</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ex 9</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ex 10</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Workflow &amp; formatting</td>
-<td style="text-align: left;">5</td>
+<td style="text-align: left;">4</td>
 </tr>
 </tbody>
 </table>
