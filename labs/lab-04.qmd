@@ -25,7 +25,7 @@ This lab is due on **Thursday, October 24 at 11:59pm.** To be considered on time
 
 In this lab you will compute maximum likelihood estimates for regression models looking at the relationship between features of penguins living in Palmer Archipelago in Antarctica. You will also explore propreties of maximum likelihood estimators and how they are related to least-squares estimators.
 
-# **Learning goals**
+# Learning goals
 
 By the end of the lab you will be able to…
 
@@ -34,7 +34,7 @@ By the end of the lab you will be able to…
 -   the similarities and differences between maximum likelihood estimators and least-squares estimators
 -   Evaluate which estimation procedure may be preferable in a given analysis scenario
 
-# **Getting started**
+# Getting started
 
 -   A repository has already been created for you and your teammates. Everyone in your team has access to the same repo.
 
@@ -42,7 +42,7 @@ By the end of the lab you will be able to…
 
 -   Each person on the team should clone the repository and open a new project in RStudio. Throughout the lab, each person should get a chance to make commits and push to the repo.
 
-# **Workflow: Using Git and GitHub as a team**
+# Workflow: Using Git and GitHub as a team
 
 ::: callout-important
 There are no Team Member markers in this lab; however, you should use a similar workflow as in [Lab 02](../lab-02.html). Only one person should type in the group’s .qmd file at a time to avoid merge conflicts. Once that person has finished typing the group’s responses, they should *render, commit, and push* the changes to GitHub. All other teammates can *pull* to see the updates in RStudio.
