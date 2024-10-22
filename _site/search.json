@@ -898,21 +898,21 @@
     "href": "slides/15-multicollinearity.html#announcements",
     "title": "Multicollinearity + Variable transformations",
     "section": "Announcements",
-    "text": "Announcements\n\nExam corrections (optional) due Thursday at 11:59pm on Canvas\nLab 04 due Thursday at 11:59pm\nLooking ahead\n\nProject: Exploratory data analysis due October 31\nStatistics experience due Tuesday, November 26"
+    "text": "Announcements\n\nExam corrections (optional) due Thursday at 11:59pm on Canvas\nLab 04 due Thursday at 11:59pm\nTeam Feedback (from TEAMMATES) due Thursday at 11:59pm\nMid semester survey (strongly encouraged!) by Thursday at 11:59pm\nLooking ahead\n\nProject: Exploratory data analysis due October 31\nStatistics experience due Tuesday, November 26"
   },
   {
     "objectID": "slides/15-multicollinearity.html#spring-2025-statistics-classes",
     "href": "slides/15-multicollinearity.html#spring-2025-statistics-classes",
     "title": "Multicollinearity + Variable transformations",
     "section": "Spring 2025 statistics classes",
-    "text": "Spring 2025 statistics classes"
+    "text": "Spring 2025 statistics classes\n\nSTA 230, STA 231 or STA 240: Probability\nSTA 310: Generalized Linear Models\nSTA 323: Statistical Computing\nSTA 360: Bayesian Inference and Modern Statistical Methods\nSTA 432: Theory and Methods of Statistical Learning and Inference"
   },
   {
     "objectID": "slides/15-multicollinearity.html#computing-set-up",
     "href": "slides/15-multicollinearity.html#computing-set-up",
     "title": "Multicollinearity + Variable transformations",
     "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\nlibrary(GGally) #for scatterplot matrix\n\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\nlibrary(GGally) #for pairwise plot matrix\n\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
     "objectID": "slides/15-multicollinearity.html#topics",
@@ -922,60 +922,53 @@
     "text": "Topics\n\nMulticollinearity\n\nDefinition\nHow it impacts the model\nHow to detect it\nWhat to do about it\n\nVariable transformations"
   },
   {
-    "objectID": "slides/15-multicollinearity.html#data-rail_trail",
-    "href": "slides/15-multicollinearity.html#data-rail_trail",
+    "objectID": "slides/15-multicollinearity.html#data-trail-users",
+    "href": "slides/15-multicollinearity.html#data-trail-users",
     "title": "Multicollinearity + Variable transformations",
-    "section": "Data: rail_trail",
-    "text": "Data: rail_trail\n\nThe Pioneer Valley Planning Commission (PVPC) collected data for ninety days from April 5, 2005 to November 15, 2005.\nData collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\n\n\n\n# A tibble: 90 × 7\n   volume hightemp avgtemp season cloudcover precip day_type\n    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n 1    501       83    66.5 Summer       7.60 0      Weekday \n 2    419       73    61   Summer       6.30 0.290  Weekday \n 3    397       74    63   Spring       7.5  0.320  Weekday \n 4    385       95    78   Summer       2.60 0      Weekend \n 5    200       44    48   Spring      10    0.140  Weekday \n 6    375       69    61.5 Spring       6.60 0.0200 Weekday \n 7    417       66    52.5 Spring       2.40 0      Weekday \n 8    629       66    52   Spring       0    0      Weekend \n 9    533       80    67.5 Summer       3.80 0      Weekend \n10    547       79    62   Summer       4.10 0      Weekday \n# ℹ 80 more rows\n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package."
+    "section": "Data: Trail users",
+    "text": "Data: Trail users\n\nThe Pioneer Valley Planning Commission (PVPC) collected data at the beginning a trail in Florence, MA for ninety days from April 5, 2005 to November 15, 2005 to\nData collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\n\n\n\n# A tibble: 5 × 7\n  volume hightemp avgtemp season cloudcover precip day_type\n   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n1    501       83    66.5 Summer       7.60  0     Weekday \n2    419       73    61   Summer       6.30  0.290 Weekday \n3    397       74    63   Spring       7.5   0.320 Weekday \n4    385       95    78   Summer       2.60  0     Weekend \n5    200       44    48   Spring      10     0.140 Weekday \n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package."
   },
   {
     "objectID": "slides/15-multicollinearity.html#variables",
     "href": "slides/15-multicollinearity.html#variables",
     "title": "Multicollinearity + Variable transformations",
     "section": "Variables",
-    "text": "Variables\nOutcome:\nvolume estimated number of trail users that day (number of breaks recorded)\nPredictors\n\nhightemp daily high temperature (in degrees Fahrenheit)\navgtemp average of daily low and daily high temperature (in degrees Fahrenheit)\nseason one of “Fall”, “Spring”, or “Summer”\nprecip measure of precipitation (in inches)"
+    "text": "Variables\nOutcome:\n\nvolume estimated number of trail users that day (number of breaks recorded)\n\nPredictors\n\nhightemp daily high temperature (in degrees Fahrenheit)\navgtemp average of daily low and daily high temperature (in degrees Fahrenheit)\nseason one of “Fall”, “Spring”, or “Summer”\nprecip measure of precipitation (in inches)"
   },
   {
     "objectID": "slides/15-multicollinearity.html#eda-relationship-between-predictors",
     "href": "slides/15-multicollinearity.html#eda-relationship-between-predictors",
     "title": "Multicollinearity + Variable transformations",
     "section": "EDA: Relationship between predictors",
-    "text": "EDA: Relationship between predictors\nWe can create a scatterplot matrix using the ggpairs function from the GGally R package\n\nrail_trail |&gt;\n  select(hightemp, avgtemp, season, precip) |&gt;\n  ggpairs()"
+    "text": "EDA: Relationship between predictors\nWe can create a pairwise plot matrix using the ggpairs function from the GGally R package\n\nrail_trail |&gt;\n  select(hightemp, avgtemp, season, precip) |&gt;\n  ggpairs()"
   },
   {
     "objectID": "slides/15-multicollinearity.html#eda-relationship-between-predictors-1",
     "href": "slides/15-multicollinearity.html#eda-relationship-between-predictors-1",
     "title": "Multicollinearity + Variable transformations",
     "section": "EDA: Relationship between predictors",
-    "text": "EDA: Relationship between predictors\n\n\nWhat looks like a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
+    "text": "EDA: Relationship between predictors\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
   },
   {
     "objectID": "slides/15-multicollinearity.html#multicollinearity-1",
     "href": "slides/15-multicollinearity.html#multicollinearity-1",
     "title": "Multicollinearity + Variable transformations",
     "section": "Multicollinearity",
-    "text": "Multicollinearity\n\nPredictors are orthogonal when there is no linear relationship (dependence) between the predictors\n\nThis is generally not the case in practice but is often not a major issue\n\nMulticollinearity: there are near-linear dependencies between predictors"
+    "text": "Multicollinearity\n\nIdeally there is no linear relationship (dependence) between the predictors\n\nThis is generally not the case in practice but is often not a major issue\n\nMulticollinearity: there are near-linear dependencies between predictors"
   },
   {
-    "objectID": "slides/15-multicollinearity.html#common-causes-of-multicollinearity",
-    "href": "slides/15-multicollinearity.html#common-causes-of-multicollinearity",
+    "objectID": "slides/15-multicollinearity.html#common-sources-of-multicollinearity",
+    "href": "slides/15-multicollinearity.html#common-sources-of-multicollinearity",
     "title": "Multicollinearity + Variable transformations",
-    "section": "Common causes of multicollinearity",
-    "text": "Common causes of multicollinearity\n\nDependencies that generally occur in the population\nHow the model is defined and the variables that are included\nSample comes from only a subspace of the region of predictors\nThere are more predictor variables than observations"
+    "section": "Common sources of multicollinearity",
+    "text": "Common sources of multicollinearity\n\n\nDependencies that generally occur in the population\nHow the model is defined and the variables that are included\nSample comes from only a subspace of the region of predictors\nThere are more predictor variables than observations"
   },
   {
     "objectID": "slides/15-multicollinearity.html#detecting-multicollinearity",
     "href": "slides/15-multicollinearity.html#detecting-multicollinearity",
     "title": "Multicollinearity + Variable transformations",
     "section": "Detecting multicollinearity",
-    "text": "Detecting multicollinearity\n\nVariance Inflation Factor (VIF): Measure of multicollinearity in the regression model\n\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors"
-  },
-  {
-    "objectID": "slides/15-multicollinearity.html#effects-of-multicollinearity",
-    "href": "slides/15-multicollinearity.html#effects-of-multicollinearity",
-    "title": "Multicollinearity + Variable transformations",
-    "section": "Effects of multicollinearity",
-    "text": "Effects of multicollinearity\n\nLarge variance \\((\\hat{\\sigma}^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1})\\) in the model coefficients\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship\n\nInterpretation of coefficient is no longer while holding all other variables constant, since this would be impossible for correlated predictors"
+    "text": "Detecting multicollinearity\n\nVariance Inflation Factor (VIF): measure of multicollinearity in the regression model\n\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors"
   },
   {
     "objectID": "slides/15-multicollinearity.html#detecting-multicollinearity-1",
@@ -985,18 +978,25 @@
     "text": "Detecting multicollinearity\n\nCommon practice uses threshold \\(VIF &gt; 10\\) as indication of concerning multicollinearity\nVariables with similar values of VIF are typically the ones correlated with each other\nUse the vif() function in the rms R package to calculate VIF"
   },
   {
+    "objectID": "slides/15-multicollinearity.html#effects-of-multicollinearity",
+    "href": "slides/15-multicollinearity.html#effects-of-multicollinearity",
+    "title": "Multicollinearity + Variable transformations",
+    "section": "Effects of multicollinearity",
+    "text": "Effects of multicollinearity\n\n\nLarge variance \\((\\hat{\\sigma}^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1})\\) in the model coefficients\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
+  },
+  {
     "objectID": "slides/15-multicollinearity.html#dealing-with-multicollinearity",
     "href": "slides/15-multicollinearity.html#dealing-with-multicollinearity",
     "title": "Multicollinearity + Variable transformations",
     "section": "Dealing with multicollinearity",
-    "text": "Dealing with multicollinearity\n\nCollect more data\n\nOften not feasible given practical constraints\n\nRespecify the correlated predictors to keep the information from predictors but eliminate collinearity\n\ne.g., if \\(x_1, x_2, x_3\\) are correlated, use a new variable \\((x_1 + x_2) / x_3\\) in the model\n\nFor categorical predictors, avoid using levels with very few observations as the baseline\nRemove one of the correlated variables\n\nBe careful about substantially reducing predictive power of the model"
+    "text": "Dealing with multicollinearity\n\n\nCollect more data (often not feasible given practical constraints)\nRedefine the correlated predictors to keep the information from predictors but eliminate collinearity\n\ne.g., if \\(x_1, x_2, x_3\\) are correlated, use a new variable \\((x_1 + x_2) / x_3\\) in the model\n\nFor categorical predictors, avoid using levels with very few observations as the baseline\nRemove one of the correlated variables\n\nBe careful about substantially reducing predictive power of the model"
   },
   {
-    "objectID": "slides/15-multicollinearity.html#respiratory-rate-vs.-age",
-    "href": "slides/15-multicollinearity.html#respiratory-rate-vs.-age",
+    "objectID": "slides/15-multicollinearity.html#data-respiratory-rate-vs.-age",
+    "href": "slides/15-multicollinearity.html#data-respiratory-rate-vs.-age",
     "title": "Multicollinearity + Variable transformations",
-    "section": "Respiratory Rate vs. Age",
-    "text": "Respiratory Rate vs. Age\n\nA high respiratory rate can potentially indicate a respiratory infection in children. In order to determine what indicates a “high” rate, we first want to understand the relationship between a child’s age and their respiratory rate.\nThe data contain the respiratory rate for 618 children ages 15 days to 3 years. It was obtained from the Sleuth3 R package and is originally form a 1994 publication “Reference Values for Respiratory Rate in the First 3 Years of Life”.\nVariables:\n\nAge: age in months\nRate: respiratory rate (breaths per minute)"
+    "section": "Data: Respiratory Rate vs. Age",
+    "text": "Data: Respiratory Rate vs. Age\n\nA high respiratory rate can potentially indicate a respiratory infection in children. In order to determine what indicates a “high” rate, we first want to understand the relationship between a child’s age and their respiratory rate.\nThe data contain the respiratory rate for 618 children ages 15 days to 3 years. It was obtained from the Sleuth3 R package and is originally form a 1994 publication “Reference Values for Respiratory Rate in the First 3 Years of Life”.\nVariables:\n\nAge: age in months\nRate: respiratory rate (breaths per minute)"
   },
   {
     "objectID": "slides/15-multicollinearity.html#rate-vs.-age",
@@ -1027,11 +1027,39 @@
     "text": "Consider different transformations…"
   },
   {
+    "objectID": "slides/15-multicollinearity.html#identifying-a-need-to-transform-y",
+    "href": "slides/15-multicollinearity.html#identifying-a-need-to-transform-y",
+    "title": "Multicollinearity + Variable transformations",
+    "section": "Identifying a need to transform Y",
+    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., Y, 1/Y, log⁡(Y)\nlog⁡(Y) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
+  },
+  {
+    "objectID": "slides/15-multicollinearity.html#log-transformation-on-y",
+    "href": "slides/15-multicollinearity.html#log-transformation-on-y",
+    "title": "Multicollinearity + Variable transformations",
+    "section": "Log transformation on \\(Y\\)",
+    "text": "Log transformation on \\(Y\\)\n\nIf we apply a log transformation to the response variable, we want to estimate the parameters for the statistical model\n\n\\[\n\\log(y_i) = \\beta_0+ \\beta_1 x_{i1} + \\dots +\\beta_px_{ip} + \\epsilon_i, \\hspace{10mm} \\epsilon \\sim N(0,\\sigma^2_\\epsilon)\n\\]\n\nThe regression equation is\n\n\\[\\widehat{\\log(y_i)} = \\hat{\\beta}_0+ \\hat{\\beta}_1 x_{i1} + \\dots + \\hat{\\beta}_px_{ip}\\]"
+  },
+  {
+    "objectID": "slides/15-multicollinearity.html#log-transformation-on-y-1",
+    "href": "slides/15-multicollinearity.html#log-transformation-on-y-1",
+    "title": "Multicollinearity + Variable transformations",
+    "section": "Log transformation on \\(Y\\)",
+    "text": "Log transformation on \\(Y\\)\nWe want to interpret the model in terms of the original variable \\(Y\\), not \\(\\log(Y)\\), so we need to write the regression equation in terms of \\(Y\\)\n\\[\\begin{align}\\hat{y_i} &= \\exp\\{\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{i1} + \\dots + \\hat{\\beta}_Px_{ip}\\}\\\\ &= \\exp\\{\\hat{\\beta}_0\\}\\exp\\{\\hat{\\beta}_1x_{i1}\\}\\dots\\exp\\{\\hat{\\beta}_px_{ip}\\}\\end{align}\\]\n\n\n\n\n\n\nNote\n\n\nThe predicted value \\(\\hat{y_i}\\) is the predicted median of \\(Y\\). Note, when the distribution of \\(y_i|x_1, \\ldots, x_p\\) is symmetric, then the median equals the mean. (See notes at the end for more details)"
+  },
+  {
+    "objectID": "slides/15-multicollinearity.html#model-interpretation",
+    "href": "slides/15-multicollinearity.html#model-interpretation",
+    "title": "Multicollinearity + Variable transformations",
+    "section": "Model interpretation",
+    "text": "Model interpretation\n\\[\\begin{align}\\hat{y_i} &= \\exp\\{\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{1p} + \\dots + \\hat{\\beta}_Px_{ip}\\}\\\\ &= \\exp\\{\\hat{\\beta}_0\\}\\exp\\{\\hat{\\beta}_1x_{i1}\\}\\dots\\exp\\{\\hat{\\beta}_px_{ip}\\}\\end{align}\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = x_{ip} =0\\), \\(y_i\\) is expected to be \\(\\exp\\{\\hat{\\beta}_0\\}\\)\nSlope: For every one unit increase in \\(x_{ij}\\), \\(y_{i}\\) is expected to multiply by a factor of \\(\\exp\\{\\hat{\\beta}_j\\}\\), holding all else constant\n\n\nWhy is the interpretation in terms of a multiplicative change?"
+  },
+  {
     "objectID": "slides/15-multicollinearity.html#model-2-lograte-vs.-age",
     "href": "slides/15-multicollinearity.html#model-2-lograte-vs.-age",
     "title": "Multicollinearity + Variable transformations",
     "section": "Model 2: log(Rate) vs. Age",
-    "text": "Model 2: log(Rate) vs. Age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n3.845\n0.013\n304.500\n0\n\n\nAge\n-0.019\n0.001\n-25.839\n0\n\n\n\n\n\n\n\nSlope: For each additional month in a child’s age, the median respiratory rate is expected to multiply by a factor of 0.982 [exp(-0.018)].\nIntercept: The median respiratory rate for children who are 0 months old is expected to be 29.4 [exp(3.381)]."
+    "text": "Model 2: log(Rate) vs. Age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n3.845\n0.013\n304.500\n0\n\n\nAge\n-0.019\n0.001\n-25.839\n0\n\n\n\n\n\n\n\n\nInterpret the intercept in terms of (1) log(Rate) and (2) Rate.\nInterpret the effect of Age in terms of (1) log(Rate) and (2) Rate."
   },
   {
     "objectID": "slides/15-multicollinearity.html#model-2-residuals",
@@ -1066,14 +1094,14 @@
     "href": "slides/15-multicollinearity.html#model-with-transformation-on-x",
     "title": "Multicollinearity + Variable transformations",
     "section": "Model with Transformation on \\(X\\)",
-    "text": "Model with Transformation on \\(X\\)\nSuppose we have the following regression equation:\n\\[\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 \\log(X)\\]\n\n\nIntercept: When \\(X = 1\\) \\((\\log(X) = 0)\\), \\(Y\\) is expected to be \\(\\hat{\\beta}_0\\) (i.e. the mean of \\(Y\\) is \\(\\hat{\\beta}_0\\))\nSlope: When \\(X\\) is multiplied by a factor of \\(\\mathbf{C}\\), the mean of \\(Y\\) is expected to increase by \\(\\boldsymbol{\\hat{\\beta}_1}\\mathbf{\\log(C)}\\) units\n\nExample: when \\(X\\) is multiplied by a factor of 2, \\(Y\\) is expected to increase by \\(\\boldsymbol{\\hat{\\beta}_1}\\mathbf{\\log(2)}\\) units"
+    "text": "Model with Transformation on \\(X\\)\nSuppose we have the following regression equation:\n\\[\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1 \\log(x_i)\\]\n\n\n\nIntercept: When \\(x_i = 1\\) \\((\\log(x_i) = 0)\\), \\(y_i\\) is expected to be \\(\\hat{\\beta}_0\\) (i.e. the mean of \\(y_i\\) is \\(\\hat{\\beta}_0\\))\nSlope: When \\(x_i\\) is multiplied by a factor of \\(\\mathbf{C}\\), the mean of \\(y_i\\) is expected to increase by \\(\\hat{\\beta}_1\\log(C)\\) units\n\nExample: when \\(x_i\\) is multiplied by a factor of 2, \\(y_i\\) is expected to increase by \\(\\hat{\\beta}_1}\\mathbf{\\log(2)\\) units"
   },
   {
     "objectID": "slides/15-multicollinearity.html#model-3-rate-vs.-logage",
     "href": "slides/15-multicollinearity.html#model-3-rate-vs.-logage",
     "title": "Multicollinearity + Variable transformations",
     "section": "Model 3: Rate vs. log(Age)",
-    "text": "Model 3: Rate vs. log(Age)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n50.135\n0.632\n79.330\n0\n\n\nlog_age\n-5.982\n0.263\n-22.781\n0\n\n\n\n\n\n\n\nInterpret the slope and intercept in the context of the data.\n\n\n\n\n−+\n04:00"
+    "text": "Model 3: Rate vs. log(Age)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n50.135\n0.632\n79.330\n0\n\n\nlog_age\n-5.982\n0.263\n-22.781\n0\n\n\n\n\n\n\n\nInterpret the slope and intercept in the context of the data."
   },
   {
     "objectID": "slides/15-multicollinearity.html#model-3-residuals",
