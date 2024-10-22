@@ -204,6 +204,12 @@ where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a lin
 
 # Application exercise
 
+::: appex
+📋 [sta221-fa24.netlify.app/ae/ae-05-multicollinearity](../ae/ae-05-multicollinearity.html)
+:::
+
+Selected groups - put responses on your [Google slide](https://docs.google.com/presentation/d/1pFjNKtvyMo7rd0RJFVNvJf6UcRVsFnXeW4qWOMNeTdU/edit?usp=sharing).
+
 ## Dealing with multicollinearity
 
 ::: incremental
@@ -221,6 +227,12 @@ where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a lin
 :::
 
 # Application exercise
+
+::: appex
+📋 [sta221-fa24.netlify.app/ae/ae-05-multicollinearity](../ae/ae-05-multicollinearity.html)
+:::
+
+Selected groups - put responses on your [Google slide](https://docs.google.com/presentation/d/1pFjNKtvyMo7rd0RJFVNvJf6UcRVsFnXeW4qWOMNeTdU/edit?usp=sharing).
 
 # Variable transformations
 
@@ -310,9 +322,8 @@ p4 <- ggplot(data=respiratory, aes(x=log_age, y=log_rate)) +
 
     -   log⁡(Y) the most straightforward to interpret, so we use that transformation when possible
 
-```{=html}
 <!-- -->
-```
+
 -   When building a model:
 
     -   Choose a transformation and build the model on the transformed data

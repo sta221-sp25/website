@@ -1,0 +1,121 @@
+---
+title: "AE 05: Multicollinearity"
+date: "October 22, 2024"
+editor: visual
+---
+
+::: callout-important
+Go to the course GitHub organization and locate your ae-05 repo to get started.
+
+Render, commit, and push your responses to GitHub by the end of class to submit your AE.
+:::
+
+```{r}
+#| label: load-packages
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(knitr)
+library(tidymodels)
+library(rms) #calculate VIF
+```
+
+# Introduction
+
+The Pioneer Valley Planning Commission (PVPC) collected data at the beginning a trail in Florence, MA for ninety days from April 5, 2005 to November 15, 2005. Data collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station. The data were collected from by [Pioneer Valley Planning Commission](http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf) via the **mosaicData** package.
+
+We will use the following variables in this analysis:
+
+**Outcome**:
+
+-   `volume` estimated number of trail users that day (number of breaks recorded)
+
+**Predictors**
+
+-   `hightemp` daily high temperature (in degrees Fahrenheit)
+
+-   `avgtemp` average of daily low and daily high temperature (in degrees Fahrenheit)
+
+-   `season` one of “Fall”, “Spring”, or “Summer”
+
+-   `precip` measure of precipitation (in inches)
+
+```{r}
+#| label: load-data
+#| message: false
+#| eval: false
+
+rail_trail <- read_csv("data/rail_trail.csv")
+```
+
+# Part 1
+
+## Exercise 1
+
+-   Fit the regression model using high temperature, average temperature, season, and precipitation to predict volume.
+
+-   Are there any coefficients that may be not what you expected?
+
+```{r}
+#| label: ex-1
+
+# add code here
+
+```
+
+## Exercise 2
+
+-   Use the formula
+
+$$
+VIF_j = \frac{1}{1 - R^2_j} 
+$$
+
+to calculate the VIF for `avgtemp`.
+
+```{r}
+#| label: ex-2
+
+# add code here
+
+```
+
+## Exercise 3
+
+Based on the VIF from the previous exercise, does `avgtemp` have a linear dependency with one or more other predictors? Explain.
+
+## Exercise 4
+
+-   Fill in the name of the model from Exercise 1 to calculate VIF for all predictors. (Remove `#| eval: false` after you've filled in the code.)
+
+-   Are there predictors with linear dependencies? If so, which ones?
+
+```{r}
+#| label: ex-4
+#| eval: false
+
+vif(____)
+
+```
+
+# Part 2
+
+## Exercise 5
+
+Let's try to deal with the mulitcollinearity by removing one of the predictors that are linearly dependent. Choose a final model using this strategy.
+
+```{r}
+#| label: ex-5
+
+# add code here
+
+```
+
+# Submission
+
+To submit the AE:
+
+Render the document to produce the PDF with all of your work from today's class.
+
+Push all your work to your AE repo on GitHub. You're done! 🎉
