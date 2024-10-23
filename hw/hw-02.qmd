@@ -98,7 +98,7 @@ legos <- read_csv("data/lego-sample.csv")|>
 ```
 
 ::: callout-note
-## Analysis goal 
+## Analysis goal
 
 We want to fit a multiple linear regression model to predict the price of LEGO<sup>®</sup> sets on Amazon.com based on `Pieces`, `Size`, and `Minifigures`.
 :::
