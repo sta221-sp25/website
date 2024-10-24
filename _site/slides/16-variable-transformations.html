@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <title>STA 221 - Fall 2024 – Multicollinearity</title>
+  <title>STA 221 - Fall 2024 – Variable transformations</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -394,7 +394,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Multicollinearity</h1>
+  <h1 class="title">Variable transformations</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -404,15 +404,15 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">Oct 22, 2024</p>
+  <p class="date">Oct 24, 2024</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li><p>Exam corrections (optional) due Thursday at 11:59pm <a href="https://canvas.duke.edu/courses/38867/assignments/169519">on Canvas</a></p></li>
-<li><p>Lab 04 due Thursday at 11:59pm</p></li>
-<li><p>Team Feedback (from TEAMMATES) due Thursday at 11:59pm</p></li>
-<li><p><a href="https://duke.qualtrics.com/jfe/form/SV_244HYi8U8X85pgW">Mid semester survey</a> (strongly encouraged!) by Thursday at 11:59pm</p></li>
+<li><p>Exam corrections (optional) due TODAY at 11:59pm <a href="https://canvas.duke.edu/courses/38867/assignments/169519">on Canvas</a></p></li>
+<li><p>Lab 04 due TODAY at 11:59pm</p></li>
+<li><p>Team Feedback (from TEAMMATES) due TODAY at 11:59pm</p></li>
+<li><p><a href="https://duke.qualtrics.com/jfe/form/SV_244HYi8U8X85pgW">Mid semester survey</a> (strongly encouraged!) by TODAY at 11:59pm</p></li>
 <li><p>Looking ahead</p>
 <ul>
 <li><p>Project: Exploratory data analysis due October 31</p></li>
@@ -420,14 +420,15 @@ Prof.&nbsp;Maria Tackett
 </ul></li>
 </ul>
 </section>
-<section id="spring-2025-statistics-classes" class="slide level2">
-<h2>Spring 2025 statistics classes</h2>
+<section id="exam-weighting" class="slide level2">
+<h2>Exam weighting</h2>
 <ul>
-<li><p>STA 230, STA 231 or STA 240: Probability</p></li>
-<li><p>STA 310: Generalized Linear Models</p></li>
-<li><p>STA 323: Statistical Computing</p></li>
-<li><p>STA 360: Bayesian Inference and Modern Statistical Methods</p></li>
-<li><p>STA 432: Theory and Methods of Statistical Learning and Inference</p></li>
+<li><p>No curves on individual exam grades</p></li>
+<li><p>Exams will be weighted to reflect significant progress throughout semester based on three possible scenarios:</p>
+<ul>
+<li><p>If Exam 02 score is at least 5 points (out of 50) points greater than the Exam 01 score (before corrections), Exam 01 is 13% and Exam 02 is 27% of the final course grade</p></li>
+<li><p>Otherwise, the exams are 20% each as stated in the syllabus.</p></li>
+</ul></li>
 </ul>
 </section>
 <section id="computing-set-up" class="slide level2">
@@ -438,178 +439,321 @@ Prof.&nbsp;Maria Tackett
 <span id="cb1-3"><a></a><span class="fu">library</span>(tidymodels)  </span>
 <span id="cb1-4"><a></a><span class="fu">library</span>(knitr)       </span>
 <span id="cb1-5"><a></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-6"><a></a><span class="fu">library</span>(GGally) <span class="co">#for pairwise plot matrix</span></span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(Sleuth3) <span class="co">#for data set</span></span>
 <span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a><span class="co"># set default theme in ggplot2</span></span>
-<span id="cb1-10"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a></a><span class="co"># set default theme in ggplot2</span></span>
+<span id="cb1-9"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
 <ul>
-<li><p>Multicollinearity</p>
-<ul>
-<li><p>Definition</p></li>
-<li><p>How it impacts the model</p></li>
-<li><p>How to detect it</p></li>
-<li><p>What to do about it</p></li>
-</ul></li>
+<li>Variable transformations</li>
 </ul>
-</section>
-<section id="data-trail-users" class="slide level2 midi">
-<h2>Data: Trail users</h2>
-<ul>
-<li>The Pioneer Valley Planning Commission (PVPC) collected data at the beginning a trail in Florence, MA for ninety days from April 5, 2005 to November 15, 2005 to</li>
-<li>Data collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.</li>
-</ul>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-  volume hightemp avgtemp season cloudcover precip day_type
-   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   
-1    501       83    66.5 Summer       7.60  0     Weekday 
-2    419       73    61   Summer       6.30  0.290 Weekday 
-3    397       74    63   Spring       7.5   0.320 Weekday 
-4    385       95    78   Summer       2.60  0     Weekend 
-5    200       44    48   Spring      10     0.140 Weekday </code></pre>
-</div>
-</div>
-<p>Source: <a href="http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf">Pioneer Valley Planning Commission</a> via the <strong>mosaicData</strong> package.</p>
-</section>
-<section id="variables" class="slide level2">
-<h2>Variables</h2>
-<p><strong>Outcome</strong>:</p>
-<ul>
-<li><code>volume</code> estimated number of trail users that day (number of breaks recorded)</li>
-</ul>
-<p><strong>Predictors</strong></p>
-<ul>
-<li><p><code>hightemp</code> daily high temperature (in degrees Fahrenheit)</p></li>
-<li><p><code>avgtemp</code> average of daily low and daily high temperature (in degrees Fahrenheit)</p></li>
-<li><p><code>season</code> one of “Fall”, “Spring”, or “Summer”</p></li>
-<li><p><code>precip</code> measure of precipitation (in inches)</p></li>
-</ul>
-</section>
-<section id="eda-relationship-between-predictors" class="slide level2">
-<h2>EDA: Relationship between predictors</h2>
-<p>We can create a pairwise plot matrix using the <code>ggpairs</code> function from the <strong>GGally</strong> R package</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>rail_trail <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">select</span>(hightemp, avgtemp, season, precip) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">ggpairs</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="eda-relationship-between-predictors-1" class="slide level2 midi">
-<h2>EDA: Relationship between predictors</h2>
-
-<img data-src="15-multicollinearity_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="question">
-<p>What might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?</p>
-</div>
 </section>
 <section>
-<section id="multicollinearity" class="title-slide slide level1 center">
-<h1>Multicollinearity</h1>
+<section id="variable-transformations" class="title-slide slide level1 center">
+<h1>Variable transformations</h1>
 
 </section>
-<section id="multicollinearity-1" class="slide level2">
-<h2>Multicollinearity</h2>
+<section id="data-respiratory-rate-vs.-age" class="slide level2 midi">
+<h2>Data: Respiratory Rate vs.&nbsp;Age</h2>
 <ul>
-<li><p>Ideally there is no linear relationship (dependence) between the predictors</p>
+<li><p>A high respiratory rate can potentially indicate a respiratory infection in children. In order to determine what indicates a “high” rate, we first want to understand the relationship between a child’s age and their respiratory rate.</p></li>
+<li><p>The data contain the respiratory rate for 618 children ages 15 days to 3 years. It was obtained from the <strong>Sleuth3</strong> R package and is originally form a 1994 publication “Reference Values for Respiratory Rate in the First 3 Years of Life”.</p></li>
+<li><p><strong>Variables</strong>:</p>
 <ul>
-<li>This is generally not the case in practice but is often not a major issue</li>
+<li><code>Age</code>: age in months</li>
+<li><code>Rate</code>: respiratory rate (breaths per minute)</li>
 </ul></li>
-<li><p><strong>Multicollinearity</strong>: there are near-linear dependencies between predictors</p></li>
 </ul>
 </section>
-<section id="common-sources-of-multicollinearity" class="slide level2">
-<h2>Common sources of multicollinearity</h2>
+<section id="rate-vs.-age" class="slide level2">
+<h2>Rate vs.&nbsp;Age</h2>
+
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="model-1-rate-vs.-age" class="slide level2">
+<h2>Model 1: Rate vs.&nbsp;Age</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>resp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Rate <span class="sc">~</span> Age, <span class="at">data =</span> respiratory)</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="fu">tidy</span>(resp_fit) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">47.052</td>
+<td style="text-align: right;">0.504</td>
+<td style="text-align: right;">93.317</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">-0.696</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">-23.684</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="model-1-residuals" class="slide level2">
+<h2>Model 1: Residuals</h2>
+
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="consider-different-transformations" class="slide level2">
+<h2>Consider different transformations…</h2>
+
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="transformation-on-y" class="title-slide slide level1 center">
+<h1>Transformation on <span class="math inline">\(Y\)</span></h1>
+
+</section>
+<section id="identifying-a-need-to-transform-y" class="slide level2 midi">
+<h2>Identifying a need to transform Y</h2>
 <div>
 <ul>
-<li class="fragment"><p>Dependencies that generally occur in the population</p></li>
-<li class="fragment"><p>How the model is defined and the variables that are included</p></li>
-<li class="fragment"><p>Sample comes from only a subspace of the region of predictors</p></li>
-<li class="fragment"><p>There are more predictor variables than observations</p></li>
+<li class="fragment"><p>Typically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y</p>
+<ul>
+<li class="fragment"><p>There are multiple ways to transform a variable, e.g., Y, 1/Y, log⁡(Y)</p></li>
+<li class="fragment"><p>log⁡(Y) the most straightforward to interpret, so we use that transformation when possible</p></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li class="fragment"><p>When building a model:</p>
+<ul>
+<li class="fragment"><p>Choose a transformation and build the model on the transformed data</p></li>
+<li class="fragment"><p>Reassess the residual plots</p></li>
+<li class="fragment"><p>If the residuals plots did not sufficiently improve, try a new transformation!</p></li>
+</ul></li>
 </ul>
 </div>
 </section>
-<section id="detecting-multicollinearity" class="slide level2">
-<h2>Detecting multicollinearity</h2>
+<section id="log-transformation-on-y" class="slide level2">
+<h2>Log transformation on <span class="math inline">\(Y\)</span></h2>
 <ul>
-<li><strong>Variance Inflation Factor (VIF)</strong>: measure of multicollinearity in the regression model</li>
+<li>If we apply a log transformation to the response variable, we want to estimate the parameters for the statistical model</li>
 </ul>
 <p><span class="math display">\[
-VIF_j = \frac{1}{1 - R^2_j}
+\log(y_i) = \beta_0+ \beta_1 x_{i1} + \dots +\beta_px_{ip} + \epsilon_i, \hspace{10mm} \epsilon \sim N(0,\sigma^2_\epsilon)
 \]</span></p>
-<p>where <span class="math inline">\(R^2_j\)</span> is the proportion of variation in <span class="math inline">\(x_j\)</span> that is explained by a linear combination of all the other predictors</p>
-</section>
-<section id="detecting-multicollinearity-1" class="slide level2">
-<h2>Detecting multicollinearity</h2>
 <ul>
-<li><p>Common practice uses threshold <span class="math inline">\(VIF &gt; 10\)</span> as indication of concerning multicollinearity</p></li>
-<li><p>Variables with similar values of VIF are typically the ones correlated with each other</p></li>
-<li><p>Use the <code>vif()</code> function in the <strong>rms</strong> R package to calculate VIF</p></li>
+<li>The regression equation is</li>
 </ul>
+<p><span class="math display">\[\widehat{\log(y_i)} = \hat{\beta}_0+ \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_px_{ip}\]</span></p>
 </section>
-<section id="effects-of-multicollinearity" class="slide level2">
-<h2>Effects of multicollinearity</h2>
+<section id="log-transformation-on-y-1" class="slide level2">
+<h2>Log transformation on <span class="math inline">\(Y\)</span></h2>
+<p>We want to interpret the model in terms of the original variable <span class="math inline">\(Y\)</span>, not <span class="math inline">\(\log(Y)\)</span>, so we need to write the regression equation in terms of <span class="math inline">\(Y\)</span></p>
+<p><span class="math display">\[\begin{align}\hat{y_i} &amp;= \exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_Px_{ip}\}\\ &amp;= \exp\{\hat{\beta}_0\}\exp\{\hat{\beta}_1x_{i1}\}\dots\exp\{\hat{\beta}_px_{ip}\}\end{align}\]</span></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>The predicted value <span class="math inline">\(\hat{y_i}\)</span> is the predicted <em>median</em> of <span class="math inline">\(Y\)</span>. Note, when the distribution of <span class="math inline">\(y_i|x_1, \ldots, x_p\)</span> is symmetric, then the median equals the mean. (See notes at the end for more details)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="model-interpretation" class="slide level2 midi">
+<h2>Model interpretation</h2>
+<p><span class="math display">\[\begin{align}\hat{y_i} &amp;= \exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{1p} + \dots + \hat{\beta}_Px_{ip}\}\\ &amp;= \exp\{\hat{\beta}_0\}\exp\{\hat{\beta}_1x_{i1}\}\dots\exp\{\hat{\beta}_px_{ip}\}\end{align}\]</span></p>
+<div class="fragment">
+<ul>
+<li><p><strong>Intercept</strong>: When <span class="math inline">\(x_{i1} = \dots = x_{ip} =0\)</span>, <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(\exp\{\hat{\beta}_0\}\)</span></p></li>
+<li><p><strong>Slope:</strong> For every one unit increase in <span class="math inline">\(x_{ij}\)</span>, <span class="math inline">\(y_{i}\)</span> is expected to multiply by a factor of <span class="math inline">\(\exp\{\hat{\beta}_j\}\)</span>, holding all else constant</p></li>
+</ul>
+<div class="question">
+<p>Why is the interpretation in terms of a multiplicative change?</p>
+</div>
+</div>
+</section>
+<section id="model-2-lograte-vs.-age" class="slide level2">
+<h2>Model 2: log(Rate) vs.&nbsp;Age</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">3.845</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">304.500</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">-0.019</td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">-25.839</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+<div class="question">
+<ul>
+<li><p>Interpret the intercept in terms of (1) <code>log(Rate)</code> and (2) <code>Rate</code>.</p></li>
+<li><p>Interpret the effect of <code>Age</code> in terms of (1) <code>log(Rate)</code> and (2) <code>Rate</code>.</p></li>
+</ul>
+</div>
+</section>
+<section id="model-2-residuals" class="slide level2">
+<h2>Model 2: Residuals</h2>
+
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="compare-residual-plots" class="slide level2">
+<h2>Compare residual plots</h2>
+
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="log-transformation-on-a-predictor-variable" class="title-slide slide level1 center">
+<h1>Log transformation on a predictor variable</h1>
+
+</section>
+<section id="log-transformation-on-x" class="slide level2">
+<h2>Log Transformation on <span class="math inline">\(X\)</span></h2>
+
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot shows some curvature but the variance is constant for all values of <span class="math inline">\(X\)</span></p>
+</section>
+<section id="rate-vs.-logage" class="slide level2">
+<h2>Rate vs.&nbsp;log(Age)</h2>
+
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="model-with-transformation-on-x" class="slide level2 midi">
+<h2>Model with Transformation on <span class="math inline">\(X\)</span></h2>
+<p>Suppose we have the following regression equation:</p>
+<p><span class="math display">\[\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 \log(x_i)\]</span></p>
+<div class="fragment">
 <div>
 <ul>
-<li class="fragment"><p>Large variance <span class="math inline">\((\hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1})\)</span> in the model coefficients</p>
+<li class="fragment"><p><strong>Intercept:</strong> When <span class="math inline">\(x_i = 1\)</span> <span class="math inline">\((\log(x_i) = 0)\)</span>, <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(\hat{\beta}_0\)</span> (i.e.&nbsp;the mean of <span class="math inline">\(y_i\)</span> is <span class="math inline">\(\hat{\beta}_0\)</span>)</p></li>
+<li class="fragment"><p><strong>Slope:</strong> When <span class="math inline">\(x_i\)</span> is multiplied by a factor of <span class="math inline">\(\mathbf{C}\)</span>, the mean of <span class="math inline">\(y_i\)</span> is expected to increase by <span class="math inline">\(\hat{\beta}_1\log(C)\)</span> units</p>
 <ul>
-<li class="fragment">Different combinations of coefficient estimates produce equally good model fits</li>
+<li class="fragment"><strong>Example</strong>: when <span class="math inline">\(x_i\)</span> is multiplied by a factor of 2, <span class="math inline">\(y_i\)</span> is expected to increase by <span class="math inline">\(\hat{\beta}_1\log(2)\)</span> units</li>
 </ul></li>
-<li class="fragment"><p>Unreliable statistical inference results</p>
-<ul>
-<li class="fragment">May conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response</li>
-</ul></li>
-<li class="fragment"><p>Interpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors</p></li>
 </ul>
 </div>
-</section></section>
-<section>
-<section id="application-exercise" class="title-slide slide level1 center">
-<h1>Application exercise</h1>
-<div class="appex">
-<p>📋 <a href="../ae/ae-05-multicollinearity.html">sta221-fa24.netlify.app/ae/ae-05-multicollinearity</a></p>
 </div>
-<p>Selected groups - put responses on your <a href="https://docs.google.com/presentation/d/1pFjNKtvyMo7rd0RJFVNvJf6UcRVsFnXeW4qWOMNeTdU/edit?usp=sharing">Google slide</a>.</p>
 </section>
-<section id="dealing-with-multicollinearity" class="slide level2">
-<h2>Dealing with multicollinearity</h2>
-<div>
-<ul>
-<li class="fragment"><p>Collect more data (often not feasible given practical constraints)</p></li>
-<li class="fragment"><p>Redefine the correlated predictors to keep the information from predictors but eliminate collinearity</p>
-<ul>
-<li class="fragment">e.g., if <span class="math inline">\(x_1, x_2, x_3\)</span> are correlated, use a new variable <span class="math inline">\((x_1 + x_2) / x_3\)</span> in the model</li>
-</ul></li>
-<li class="fragment"><p>For categorical predictors, avoid using levels with very few observations as the baseline</p></li>
-<li class="fragment"><p>Remove one of the correlated variables</p>
-<ul>
-<li class="fragment">Be careful about substantially reducing predictive power of the model</li>
-</ul></li>
-</ul>
+<section id="model-3-rate-vs.-logage" class="slide level2">
+<h2>Model 3: Rate vs.&nbsp;log(Age)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">50.135</td>
+<td style="text-align: right;">0.632</td>
+<td style="text-align: right;">79.330</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">log_age</td>
+<td style="text-align: right;">-5.982</td>
+<td style="text-align: right;">0.263</td>
+<td style="text-align: right;">-22.781</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
 </div>
-</section></section>
-<section>
-<section id="application-exercise-1" class="title-slide slide level1 center">
-<h1>Application exercise</h1>
-<div class="appex">
-<p>📋 <a href="../ae/ae-05-multicollinearity.html">sta221-fa24.netlify.app/ae/ae-05-multicollinearity</a></p>
 </div>
-<p>Selected groups - put responses on your <a href="https://docs.google.com/presentation/d/1pFjNKtvyMo7rd0RJFVNvJf6UcRVsFnXeW4qWOMNeTdU/edit?usp=sharing">Google slide</a>.</p>
+<p><br></p>
+<div class="question">
+<p>Interpret the slope and intercept in the context of the data.</p>
+</div>
+</section>
+<section id="model-3-residuals" class="slide level2">
+<h2>Model 3: Residuals</h2>
+
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<section id="choose-a-model" class="slide level2">
+<h2>Choose a model</h2>
+<p>Recall the goal of the analysis:</p>
+<p><em>In order to determine what indicates a “high” rate, we first want to understand the relationship between a child’s age and their respiratory rate.</em></p>
+<p><br></p>
+<div class="question">
+<p>Which is the preferred metric to compare the models - <span class="math inline">\(R^2\)</span> or RMSE?</p>
+</div>
+</section>
+<section id="compare-models" class="slide level2">
+<h2>Compare models</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 34%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rate vs.&nbsp;Age</th>
+<th>log(Rate) vs.&nbsp;Age</th>
+<th>Rate vs.&nbsp;log(Age)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.477</td>
+<td>0.52</td>
+<td>0.457</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="question">
+<p>Which model would you choose?</p>
+</div>
+</section>
+<section id="learn-more" class="slide level2">
+<h2>Learn more</h2>
+<p>See <a href="https://github.com/sta210-sp20/supplemental-notes/blob/master/log-transformations.pdf">Log Transformations in Linear Regression</a> for more details about interpreting regression models with log-transformed variables.</p>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
 <ul>
-<li><p>Introduced multicollinearity</p>
-<ul>
-<li><p>Definition</p></li>
-<li><p>How it impacts the model</p></li>
-<li><p>How to detect it</p></li>
-<li><p>What to do about it</p></li>
-</ul></li>
+<li>Introduced variable transformations</li>
 </ul>
 
 <div class="quarto-auto-generated-content">
