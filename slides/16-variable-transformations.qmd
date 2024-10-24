@@ -29,7 +29,7 @@ filters:
 bibliography: references.bib
 ---
 
-## Announcements
+## Announcements {.midi}
 
 -   Exam corrections (optional) due TODAY at 11:59pm [on Canvas](https://canvas.duke.edu/courses/38867/assignments/169519)
 
@@ -38,6 +38,8 @@ bibliography: references.bib
 -   Team Feedback (from TEAMMATES) due TODAY at 11:59pm
 
 -   [Mid semester survey](https://duke.qualtrics.com/jfe/form/SV_244HYi8U8X85pgW) (strongly encouraged!) by TODAY at 11:59pm
+
+-   HW 03 due Thursday October 31 at 11:59pm (released after class)
 
 -   Looking ahead
 
