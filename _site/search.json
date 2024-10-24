@@ -2269,9 +2269,9 @@
   {
     "objectID": "hw/hw-03.html",
     "href": "hw/hw-03.html",
-    "title": "HW 03",
+    "title": "HW 03: Multiple linear regression cont’d",
     "section": "",
-    "text": "To be posted.",
+    "text": "Due date\n\n\n\nThis assignment is due on Thursday, October 31s at 11:59pm.",
     "crumbs": [
       "Homework",
       "HW 03"
@@ -5214,6 +5214,149 @@
     "crumbs": [
       "Computing",
       "Troubleshooting"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#instructions",
+    "href": "hw/hw-03.html#instructions",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Instructions",
+    "text": "Instructions\nThe conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.\n\nYou may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-1",
+    "href": "hw/hw-03.html#exercise-1",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nLet \\(x_1, \\ldots, x_n\\) be independently and identically distributed (i.i.d.) sample observations from a distribution where\n\\[\nf(x | \\theta) = \\theta x^{\\theta - 1} \\hspace{8mm} 0\\leq x\\leq 1, \\hspace{3mm} 0 &lt; \\theta &lt; \\infty\n\\]\nFind the maximum likelihood estimator (MLE) of \\(\\theta\\).",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-2",
+    "href": "hw/hw-03.html#exercise-2",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nSuppose you have the linear regression model\n\\[\ny_i = \\beta x_i + \\epsilon_i \\hspace{8mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\nsuch that \\(\\epsilon_i\\) are i.i.d. and there is no intercept.\n\nFind \\(\\tilde{\\beta}\\) , the MLE of \\(\\beta\\).\nShow that the MLE is unbiased. (Note: You must show this directly and may not use the result from part(c).)\nShow mathematically how \\(\\tilde{\\beta}\\) relates to the least-squares estimator.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-3",
+    "href": "hw/hw-03.html#exercise-3",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nSuppose there are \\(n\\) observations, such that each \\(y_i\\) is generated from \\(x_i\\) based on the linear model\n\\[\ny_i = \\beta_0 + \\beta_1 x_i = \\epsilon_i, \\hspace{8mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\nsuch that \\(\\epsilon_i\\) are i.i.d.\nThe model is reparameterized (redefined) as\n\\[\ny_i = \\beta^{\\prime}_0 + \\beta^{\\prime}_1(x_i - \\bar{x}) + \\epsilon_i\n\\]\nsuch that \\(\\epsilon_i\\) follows the same distribution as the original model.\n\nShow that the MLE of \\(\\beta^{\\prime}_1\\) is equal to the MLE of \\(\\beta_1\\).\nShow that the MLE of \\(\\beta^{\\prime}_0\\) is notequal to the MLE of \\(\\beta_0\\).\nThe predictor in the reparameterized model is mean-centered, i.e., the predictor is shifted by its mean value. Based on your responses to parts (a) and (b), what is one potential benefit for using mean-centered predictors in the model?\n\n\n\n\n\n\n\nTip\n\n\n\nYou do not need to derive the MLEs for \\(\\beta_0\\) and \\(\\beta_1\\). You may use the results from the notes.\nYou do need to show your work to derive the MLEs for \\(\\beta^{\\prime}_0\\) and \\(\\beta^{\\prime}_1\\) .",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-4",
+    "href": "hw/hw-03.html#exercise-4",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nSuppose we have a model of the form\n\\[\n\\log(y_i) =\\beta_0 + \\beta_1\\log(x_i) + \\epsilon_i \\hspace{10mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\nDescribe the expected change in \\(y_i\\) when \\(x_i\\) is multiplied by a constant \\(C\\). Show the work used to obtain the expected change.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#instructions-1",
+    "href": "hw/hw-03.html#instructions-1",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Instructions",
+    "text": "Instructions\nThe applied exercises are focused on applying the concepts to analyze data.\nAll work for the applied exercises must be typed in your Quarto document following a reproducible workflow.\nWrite all narrative using complete sentences and include informative axis labels / titles on visualizations.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#data-sat",
+    "href": "hw/hw-03.html#data-sat",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Data: SAT",
+    "text": "Data: SAT\nThis data set contains the average SAT score (out of 1600) and other variables that may be associated with SAT performance for each of the 50 U.S. states. The data is based on test takers for the 1982 exam. We will use the following variables:\n\nSAT: average total SAT score\nTakers: percentage of high school seniors who took exam\nIncome: median income of families of test-takers ($ hundreds)\nYears: average number of years test-takers had formal education in social sciences, natural sciences, and humanities\nPublic: percentage of test-takers who attended public high schools\nExpend: total state expenditure on high schools ($ hundreds per student)\nRank: median percentile rank of test-takers within their high school classes\n\nThe data are in the file sat-1982.csv in the data folder.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-5",
+    "href": "hw/hw-03.html#exercise-5",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Exercise 5",
+    "text": "Exercise 5\n\nFit a main effects model using SAT as the response and all other variables at the predictors. Neatly display the model using 3 digits.\nAre there any influential observations in the data set? Briefly explain showing any work or output used to make the determination.\nConsider the observation with the highest value for Cook’s distance. What is the value of leverage for this observation? Would this be considered large leverage? Briefly explain showing any work or output used to make the determination.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-6",
+    "href": "hw/hw-03.html#exercise-6",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nCompute the Variance Inflation Factors (VIF) for the model from the previous exercise.\nDoes this model have any issues with multicollinearity? If so, what predictors appear to be collinear?\nIf multicollinearity is present, select a strategy to fit a model that does not have an issue with multicollinearity.\n\nBriefly describe your strategy.\nSelect a final model.\nBriefly explain your selection, showing any work and output used to choose a model.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#data-2000-u.s.-presidental-election",
+    "href": "hw/hw-03.html#data-2000-u.s.-presidental-election",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Data: 2000 U.S. Presidental Election",
+    "text": "Data: 2000 U.S. Presidental Election\nWe will examine data about the 2000 U.S. presidential election between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous butterfly ballots. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.\nThe variables in the data are\n\nCounty: County name\nBush2000: Number of votes for George W. Bush\nBuchanan2000: Number of votes for Pat Buchanan\n\nThe data are available in the file florida-votes-2000.csv in the data folder of your repo.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-7",
+    "href": "hw/hw-03.html#exercise-7",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nThe goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.\n\nVisualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.\nWhat is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. You will use this updated data frame for the remainder of this exercise.\nFit a model to predict the number of votes for Buchanan based on the number of votes for Bush in the county.\n\nMake a plot of the standardized residuals versus the fitted values.\nIs the constant variance condition satisfied? Briefly explain.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-8",
+    "href": "hw/hw-03.html#exercise-8",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nNow let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:\n\n\n\nModel\nResponse variable\nPredictor variable\n\n\n\n\n1 (from previous exercise)\nBuchanan2000\nBush2000\n\n\n2\nlog(Buchanan2000)\nBush2000\n\n\n3\nBuchanan2000\nlog(Bush2000)\n\n\n4\nlog(Buchanan2000)\nlog(Bush2000)\n\n\n\nWhich model best fits the data? Briefly explain, showing any work and output used to determine the response.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-9",
+    "href": "hw/hw-03.html#exercise-9",
+    "title": "HW 03: Multiple linear regression cont’d",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nUse the model you chose in the previous question to predict the number of votes for Buchanan in the outlying county identified in Exercise 7.\nCompute the standardized residual for this observation.\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim? Briefly explain.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
     ]
   }
 ]
