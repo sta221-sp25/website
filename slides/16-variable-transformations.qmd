@@ -304,7 +304,7 @@ $$\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 \log(x_i)$$
 ::: incremental
 -   **Intercept:** When $x_i = 1$ $(\log(x_i) = 0)$, $y_i$ is expected to be $\hat{\beta}_0$ (i.e. the mean of $y_i$ is $\hat{\beta}_0$)
 
--   **Slope:** When $x_i$ is multiplied by a factor of $\mathbf{C}$, the mean of $y_i$ is expected to increase by $\hat{\beta}_1\log(C)$ units
+-   **Slope:** When $x_i$ is multiplied by a factor of $\mathbf{C}$, the mean of $y_i$ is expected to change by $\hat{\beta}_1\log(C)$ units
 
     -   **Example**: when $x_i$ is multiplied by a factor of 2, $y_i$ is expected to increase by $\hat{\beta}_1\log(2)$ units
 :::
