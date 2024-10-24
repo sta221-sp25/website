@@ -49,9 +49,9 @@ bibliography: references.bib
 
 -   No curves on individual exam grades
 
--   Exams will be weighted to reflect significant progress throughout semester based on three possible scenarios:
+-   Exams will be weighted to reflect significant progress throughout semester. There are 2 scenarios:
 
-    -   If Exam 02 score is at least 5 points (out of 50) points greater than the Exam 01 score (before corrections), Exam 01 is 13% and Exam 02 is 27% of the final course grade
+    -   If Exam 02 score is at least 5 (out of 50) points greater than the Exam 01 score (before corrections), Exam 01 is 13% and Exam 02 is 27% of the final course grade
 
     -   Otherwise, the exams are 20% each as stated in the syllabus.
 
