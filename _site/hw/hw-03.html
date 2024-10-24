@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -348,8 +382,8 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><strong>Learning goals</strong></a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><strong>Getting started</strong></a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual exercises</a>
   <ul class="collapse">
@@ -365,7 +399,7 @@ window.Quarto = {
   <li><a href="#data-sat" id="toc-data-sat" class="nav-link" data-scroll-target="#data-sat">Data: SAT</a></li>
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
-  <li><a href="#data-2000-u.s.-presidental-election" id="toc-data-2000-u.s.-presidental-election" class="nav-link" data-scroll-target="#data-2000-u.s.-presidental-election">Data: <strong>2000 U.S. Presidental Election</strong></a></li>
+  <li><a href="#data-2000-u.s.-presidential-election" id="toc-data-2000-u.s.-presidential-election" class="nav-link" data-scroll-target="#data-2000-u.s.-presidential-election">Data: <strong>2000 U.S. Presidential Election</strong></a></li>
   <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
   <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
@@ -415,17 +449,17 @@ Due date
 <p>In this assignment you will use linear regression to explore the relationship between multiple variables. You will also examine model diagnostics, variable transformations, and maximum likelihood estimation.</p>
 </section>
 <section id="learning-goals" class="level1">
-<h1><strong>Learning goals</strong></h1>
+<h1>Learning goals</h1>
 <p>In this assignment, you will…</p>
 <ul>
-<li><p>find maximum likelihood estimators under different scenarios.</p></li>
-<li><p>use model diagnostics to identify influential points.</p></li>
-<li><p>examine multicollinearity and consider strategies to handle it.</p></li>
-<li><p>fit and interpret models with transformed variables.</p></li>
+<li>find maximum likelihood estimators under different scenarios.</li>
+<li>use model diagnostics to identify influential points.</li>
+<li>examine multicollinearity and consider strategies to handle it.</li>
+<li>fit and interpret models with transformed variables.</li>
 </ul>
 </section>
 <section id="getting-started" class="level1">
-<h1><strong>Getting started</strong></h1>
+<h1>Getting started</h1>
 <ul>
 <li><p>Go to the <a href="https://www.github.com/sta221-fa24">sta221-fa24</a> organization on GitHub. Click on the repo with the prefix <strong>hw-03</strong>. It contains the starter documents you need to complete the lab.</p></li>
 <li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta221-fa24.netlify.app/labs/lab-01#clone-the-repo-start-new-rstudio-project">Lab 01 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
@@ -434,6 +468,13 @@ Due date
 <section id="packages" class="level1">
 <h1>Packages</h1>
 <p>The following packages are used in this assignment:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="conceptual-exercises" class="level1">
 <h1>Conceptual exercises</h1>
@@ -550,8 +591,8 @@ Tip
 </ul></li>
 </ol>
 </section>
-<section id="data-2000-u.s.-presidental-election" class="level2">
-<h2 class="anchored" data-anchor-id="data-2000-u.s.-presidental-election">Data: <strong>2000 U.S. Presidental Election</strong></h2>
+<section id="data-2000-u.s.-presidential-election" class="level2">
+<h2 class="anchored" data-anchor-id="data-2000-u.s.-presidential-election">Data: <strong>2000 U.S. Presidential Election</strong></h2>
 <p>We will examine data about the <a href="https://en.wikipedia.org/wiki/2000_United_States_presidential_election">2000 U.S. presidential election</a> between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous <a href="http://news.bbc.co.uk/2/hi/in_depth/americas/2000/us_elections/glossary/a-b/1037172.stm">butterfly ballots</a>. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.</p>
 <p>The variables in the data are</p>
 <ul>
@@ -612,11 +653,28 @@ Tip
 </section>
 <section id="exercise-9" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<p>Now we will use the model to predict the expected number of Buchanan votes for the outlier county.</p>
+<p>Suppose we the observed value of the predictor <code>Bush2000</code> for this county (a new observation) is <span class="math inline">\(x_0\)</span>. We define <span class="math inline">\(\mathbf{x}_0^T = [1, x_0]\)</span></p>
+<p>Then the predicted response is</p>
+<p><span class="math display">\[
+\hat{y}_0 = \mathbf{x}_0^T\hat{\boldsymbol{\beta}}
+\]</span></p>
+<p>Where <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the vector of estimated model coefficients.</p>
+<p>Just as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use <strong>prediction intervals</strong> to quantify the uncertainty for the prediction for a new observation.</p>
+<p>The <span class="math inline">\(C\%\)</span> prediction interval for the new observation is</p>
+<p><span class="math display">\[
+\hat{y}_0 \pm t^*_{n - p - 1}\sqrt{\hat{\sigma}^2_\epsilon(1 + \mathbf{x}_0^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_0}
+\]</span></p>
+<p>where <span class="math inline">\(t^*_{n-p-1}\)</span> is the critical value obtained from the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom.</p>
+<ol type="a">
+<li><p>Use the model you chose in the previous question to compute <span class="math inline">\(\hat{y}_0\)</span>, the predicted number of votes for Buchanan in the outlying county identified in Exercise 7.</p></li>
+<li><p>Compute the 95% prediction interval for this county.</p></li>
+<li><p>It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?</p>
 <ul>
-<li><p>Use the model you chose in the previous question to predict the number of votes for Buchanan in the outlying county identified in Exercise 7.</p></li>
-<li><p>Compute the standardized residual for this observation.</p></li>
-<li><p>It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim? Briefly explain.</p></li>
-</ul>
+<li><p>If no, briefly explain.</p></li>
+<li><p>If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer.</p></li>
+</ul></li>
+</ol>
 </section>
 </section>
 <section id="submission" class="level1">
@@ -637,7 +695,7 @@ Warning
 <p>Instructions to combine PDFs:</p>
 <ul>
 <li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
-<li><p>Adobe (Mac or PC): <a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">helpx.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p>
+<li><p>Adobe (Mac or PC): help<a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p>
 <ul>
 <li>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></li>
 </ul></li>
@@ -688,7 +746,7 @@ Warning
 </tr>
 <tr class="odd">
 <td>Ex 7</td>
-<td>6</td>
+<td>5</td>
 </tr>
 <tr class="even">
 <td>Ex 8</td>
@@ -696,7 +754,7 @@ Warning
 </tr>
 <tr class="odd">
 <td>Ex 9</td>
-<td>4</td>
+<td>5</td>
 </tr>
 <tr class="even">
 <td>Workflow &amp; formatting</td>

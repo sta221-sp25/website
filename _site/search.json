@@ -3216,11 +3216,11 @@
     ]
   },
   {
-    "objectID": "hw/hw-03.html#data-2000-u.s.-presidental-election",
-    "href": "hw/hw-03.html#data-2000-u.s.-presidental-election",
+    "objectID": "hw/hw-03.html#data-2000-u.s.-presidential-election",
+    "href": "hw/hw-03.html#data-2000-u.s.-presidential-election",
     "title": "HW 03: Multiple linear regression cont’d",
-    "section": "Data: 2000 U.S. Presidental Election",
-    "text": "Data: 2000 U.S. Presidental Election\nWe will examine data about the 2000 U.S. presidential election between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous butterfly ballots. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.\nThe variables in the data are\n\nCounty: County name\nBush2000: Number of votes for George W. Bush\nBuchanan2000: Number of votes for Pat Buchanan\n\nThe data are available in the file florida-votes-2000.csv in the data folder of your repo.",
+    "section": "Data: 2000 U.S. Presidential Election",
+    "text": "Data: 2000 U.S. Presidential Election\nWe will examine data about the 2000 U.S. presidential election between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous butterfly ballots. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.\nThe variables in the data are\n\nCounty: County name\nBush2000: Number of votes for George W. Bush\nBuchanan2000: Number of votes for Pat Buchanan\n\nThe data are available in the file florida-votes-2000.csv in the data folder of your repo.",
     "crumbs": [
       "Homework",
       "HW 03"
@@ -3253,7 +3253,7 @@
     "href": "hw/hw-03.html#exercise-9",
     "title": "HW 03: Multiple linear regression cont’d",
     "section": "Exercise 9",
-    "text": "Exercise 9\n\nUse the model you chose in the previous question to predict the number of votes for Buchanan in the outlying county identified in Exercise 7.\nCompute the standardized residual for this observation.\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim? Briefly explain.",
+    "text": "Exercise 9\nNow we will use the model to predict the expected number of Buchanan votes for the outlier county.\nSuppose we the observed value of the predictor Bush2000 for this county (a new observation) is \\(x_0\\). We define \\(\\mathbf{x}_0^T = [1, x_0]\\)\nThen the predicted response is\n\\[\n\\hat{y}_0 = \\mathbf{x}_0^T\\hat{\\boldsymbol{\\beta}}\n\\]\nWhere \\(\\hat{\\boldsymbol{\\beta}}\\) is the vector of estimated model coefficients.\nJust as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use prediction intervals to quantify the uncertainty for the prediction for a new observation.\nThe \\(C\\%\\) prediction interval for the new observation is\n\\[\n\\hat{y}_0 \\pm t^*_{n - p - 1}\\sqrt{\\hat{\\sigma}^2_\\epsilon(1 + \\mathbf{x}_0^T(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{x}_0}\n\\]\nwhere \\(t^*_{n-p-1}\\) is the critical value obtained from the \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom.\n\nUse the model you chose in the previous question to compute \\(\\hat{y}_0\\), the predicted number of votes for Buchanan in the outlying county identified in Exercise 7.\nCompute the 95% prediction interval for this county.\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?\n\nIf no, briefly explain.\nIf yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer.",
     "crumbs": [
       "Homework",
       "HW 03"

@@ -14,19 +14,16 @@ This assignment is due on **Thursday, October 31s at 11:59pm.**
 
 In this assignment you will use linear regression to explore the relationship between multiple variables. You will also examine model diagnostics, variable transformations, and maximum likelihood estimation.
 
-# **Learning goals**
+# Learning goals
 
 In this assignment, you will…
 
 -   find maximum likelihood estimators under different scenarios.
-
 -   use model diagnostics to identify influential points.
-
 -   examine multicollinearity and consider strategies to handle it.
-
 -   fit and interpret models with transformed variables.
 
-# **Getting started**
+# Getting started
 
 -   Go to the [sta221-fa24](https://www.github.com/sta221-fa24) organization on GitHub. Click on the repo with the prefix **hw-03**. It contains the starter documents you need to complete the lab.
 
@@ -37,7 +34,7 @@ In this assignment, you will…
 The following packages are used in this assignment:
 
 ```{r}
-#| include: false
+#| eval: false
 
 library(tidyverse)
 library(tidymodels)
@@ -165,7 +162,7 @@ c.  If multicollinearity is present, select a strategy to fit a model that does 
     -   Select a final model.
     -   Briefly explain your selection, showing any work and output used to choose a model.
 
-## Data: **2000 U.S. Presidental Election**
+## Data: **2000 U.S. Presidential Election**
 
 We will examine data about the [2000 U.S. presidential election](https://en.wikipedia.org/wiki/2000_United_States_presidential_election) between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous [butterfly ballots](http://news.bbc.co.uk/2/hi/in_depth/americas/2000/us_elections/glossary/a-b/1037172.stm). It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.
 
@@ -204,11 +201,37 @@ Which model best fits the data? Briefly explain, showing any work and output use
 
 ## Exercise 9
 
--   Use the model you chose in the previous question to predict the number of votes for Buchanan in the outlying county identified in Exercise 7.
+Now we will use the model to predict the expected number of Buchanan votes for the outlier county.
 
--   Compute the standardized residual for this observation.
+Suppose we the observed value of the predictor `Bush2000` for this county (a new observation) is $x_0$. We define $\mathbf{x}_0^T = [1, x_0]$
 
--   It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim? Briefly explain.
+Then the predicted response is
+
+$$
+\hat{y}_0 = \mathbf{x}_0^T\hat{\boldsymbol{\beta}}
+$$
+
+Where $\hat{\boldsymbol{\beta}}$ is the vector of estimated model coefficients.
+
+Just as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use **prediction intervals** to quantify the uncertainty for the prediction for a new observation.
+
+The $C\%$ prediction interval for the new observation is
+
+$$
+\hat{y}_0 \pm t^*_{n - p - 1}\sqrt{\hat{\sigma}^2_\epsilon(1 + \mathbf{x}_0^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_0}
+$$
+
+where $t^*_{n-p-1}$ is the critical value obtained from the $t$ distribution with $n - p - 1$ degrees of freedom.
+
+a.  Use the model you chose in the previous question to compute $\hat{y}_0$, the predicted number of votes for Buchanan in the outlying county identified in Exercise 7.
+
+b.  Compute the 95% prediction interval for this county.
+
+c.  It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?
+
+    -   If no, briefly explain.
+
+    -   If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer.
 
 # Submission
 
@@ -223,7 +246,7 @@ Instructions to combine PDFs:
 
 -   Preview (Mac): [support.apple.com/guide/preview/combine-pdfs-prvw43696/mac](https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac)
 
--   Adobe (Mac or PC): [helpx.adobe.com/acrobat/using/merging-files-single-pdf.html](https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html)
+-   Adobe (Mac or PC): help[.adobe.com/acrobat/using/merging-files-single-pdf.html](https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html)
 
     -   Get free access to Adobe Acrobat as a Duke student: [oit.duke.edu/help/articles/kb0030141/](https://oit.duke.edu/help/articles/kb0030141/)
 :::
@@ -248,9 +271,9 @@ To submit your assignment:
 | Ex 4                  | 3      |
 | Ex 5                  | 5      |
 | Ex 6                  | 5      |
-| Ex 7                  | 6      |
+| Ex 7                  | 5      |
 | Ex 8                  | 3      |
-| Ex 9                  | 4      |
+| Ex 9                  | 5      |
 | Workflow & formatting | 3      |
 
 The "Workflow & formatting" grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.
