@@ -2620,7 +2620,7 @@
     "href": "labs/lab-04.html#exercise-10",
     "title": "Lab 04: Maximum likelihood estimation",
     "section": "Exercise 10",
-    "text": "Exercise 10\nTo wrap up, we have seen that both the OLS and the maximum likelihood procedures for linear regression produce the same coefficient estimates, but lead to different estimators for the variance \\(\\sigma_\\epsilon^2\\) and allow for different types of uncertainty quantification.\nBased on the work in this lab, do you think performing inference based on either method would have changed your conclusions about the the relationship between bill depth and Chinstrap species?",
+    "text": "Exercise 10\nTo wrap up, we have seen that both the OLS and the maximum likelihood procedures for linear regression produce the same coefficient estimates, but lead to different estimators for the variance \\(\\sigma_\\epsilon^2\\) and allow for different types of uncertainty quantification.\nBased on the work in this lab, do you think performing inference based on either method would have changed your conclusion about the the relationship between bill depth and Chinstrap species?",
     "crumbs": [
       "Labs",
       "Lab 04"
