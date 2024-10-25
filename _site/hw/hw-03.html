@@ -441,7 +441,7 @@ Due date
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This assignment is due on <strong>Thursday, October 31s at 11:59pm.</strong></p>
+<p>This assignment is due on <strong>Thursday, October 31 at 11:59pm.</strong></p>
 </div>
 </div>
 <section id="introduction" class="level1">
@@ -472,8 +472,9 @@ Due date
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rms)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="conceptual-exercises" class="level1">
@@ -521,7 +522,7 @@ y_i = \beta^{\prime}_0 + \beta^{\prime}_1(x_i - \bar{x}) + \epsilon_i
 <p>such that <span class="math inline">\(\epsilon_i\)</span> follows the same distribution as the original model.</p>
 <ol type="a">
 <li>Show that the MLE of <span class="math inline">\(\beta^{\prime}_1\)</span> is equal to the MLE of <span class="math inline">\(\beta_1\)</span>.</li>
-<li>Show that the MLE of <span class="math inline">\(\beta^{\prime}_0\)</span> is <u><b>not</b></u>equal to the MLE of <span class="math inline">\(\beta_0\)</span>.</li>
+<li>Show that the MLE of <span class="math inline">\(\beta^{\prime}_0\)</span> is <u><b>not</b></u> equal to the MLE of <span class="math inline">\(\beta_0\)</span>.</li>
 <li>The predictor in the reparameterized model is <strong>mean-centered</strong>, i.e., the predictor is shifted by its mean value. Based on your responses to parts (a) and (b), what is one potential benefit for using mean-centered predictors in the model?</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -573,7 +574,7 @@ Tip
 <section id="exercise-5" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <ol type="a">
-<li>Fit a main effects model using <code>SAT</code> as the response and all other variables at the predictors. Neatly display the model using 3 digits.</li>
+<li>Fit a main effects model using <code>SAT</code> as the response and all other variables (except State) as the predictors. Neatly display the model using 3 digits.</li>
 <li>Are there any influential observations in the data set? Briefly explain showing any work or output used to make the determination.</li>
 <li>Consider the observation with the highest value for Cook’s distance. What is the value of leverage for this observation? Would this be considered large leverage? Briefly explain showing any work or output used to make the determination.</li>
 </ol>
@@ -607,7 +608,7 @@ Tip
 <p>The goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.</p>
 <ol type="a">
 <li>Visualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.</li>
-<li>What is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. <strong>You will use this updated data frame for the remainder of this exercise.</strong></li>
+<li>What is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. <strong>You will use this updated data frame for the remainder of this exercise and Exercise 8.</strong></li>
 <li>Fit a model to predict the number of votes for Buchanan based on the number of votes for Bush in the county.
 <ul>
 <li>Make a plot of the standardized residuals versus the fitted values.</li>
@@ -649,30 +650,30 @@ Tip
 </tr>
 </tbody>
 </table>
-<p>Which model best fits the data? Briefly explain, showing any work and output used to determine the response.</p>
+<p>Which model best fits the data? Briefly explain, showing any work and output used to determine the response. <strong>(Note: Use the data set without the outlying county to find the candidate models.)</strong></p>
 </section>
 <section id="exercise-9" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
 <p>Now we will use the model to predict the expected number of Buchanan votes for the outlier county.</p>
-<p>Suppose we the observed value of the predictor <code>Bush2000</code> for this county (a new observation) is <span class="math inline">\(x_0\)</span>. We define <span class="math inline">\(\mathbf{x}_0^T = [1, x_0]\)</span></p>
+<p>Suppose the observed value of the predictor for this county (a new observation) is <span class="math inline">\(x_0\)</span>. We define <span class="math inline">\(\mathbf{x}_0^T = [1, x_0]\)</span></p>
 <p>Then the predicted response is</p>
 <p><span class="math display">\[
 \hat{y}_0 = \mathbf{x}_0^T\hat{\boldsymbol{\beta}}
 \]</span></p>
 <p>Where <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the vector of estimated model coefficients.</p>
-<p>Just as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use <strong>prediction intervals</strong> to quantify the uncertainty for the prediction for a new observation.</p>
+<p>Just as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a <strong>prediction interval</strong> to quantify the uncertainty in the prediction for a new observation.</p>
 <p>The <span class="math inline">\(C\%\)</span> prediction interval for the new observation is</p>
 <p><span class="math display">\[
-\hat{y}_0 \pm t^*_{n - p - 1}\sqrt{\hat{\sigma}^2_\epsilon(1 + \mathbf{x}_0^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_0}
+\hat{y}_0 \pm t^*_{n - p - 1}\sqrt{\hat{\sigma}^2_\epsilon(1 + \mathbf{x}_0^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_0)}
 \]</span></p>
-<p>where <span class="math inline">\(t^*_{n-p-1}\)</span> is the critical value obtained from the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom.</p>
+<p>where <span class="math inline">\(t^*_{n-p-1}\)</span> is the critical value obtained from the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom, <span class="math inline">\(\mathbf{X}\)</span> is the design matrix for the model, and <span class="math inline">\(\hat{\sigma}^2_\epsilon\)</span> is the estimated variability about the regression line.</p>
 <ol type="a">
-<li><p>Use the model you chose in the previous question to compute <span class="math inline">\(\hat{y}_0\)</span>, the predicted number of votes for Buchanan in the outlying county identified in Exercise 7.</p></li>
-<li><p>Compute the 95% prediction interval for this county.</p></li>
+<li><p>Use the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 7. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).</p></li>
+<li><p>Compute the 95% prediction interval for this county. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).</p></li>
 <li><p>It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?</p>
 <ul>
 <li><p>If no, briefly explain.</p></li>
-<li><p>If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer.</p></li>
+<li><p>If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).</p></li>
 </ul></li>
 </ol>
 </section>

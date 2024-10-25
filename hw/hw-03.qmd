@@ -1,5 +1,5 @@
 ---
-title: "HW 03:  Multiple linear regression cont'd"
+title: "HW 03: Multiple linear regression cont'd"
 
 bibliography: references.bib
 ---
@@ -7,7 +7,7 @@ bibliography: references.bib
 ::: callout-important
 ## Due date
 
-This assignment is due on **Thursday, October 31s at 11:59pm.**
+This assignment is due on **Thursday, October 31 at 11:59pm.**
 :::
 
 # Introduction
@@ -39,6 +39,7 @@ The following packages are used in this assignment:
 library(tidyverse)
 library(tidymodels)
 library(knitr)
+library(rms)
 
 # load other packages as needed
 ```
@@ -98,7 +99,7 @@ $$
 such that $\epsilon_i$ follows the same distribution as the original model.
 
 a.  Show that the MLE of $\beta^{\prime}_1$ is equal to the MLE of $\beta_1$.
-b.   Show that the MLE of $\beta^{\prime}_0$ is <u><b>not</b></u>equal to the MLE of $\beta_0$.
+b.  Show that the MLE of $\beta^{\prime}_0$ is <u><b>not</b></u> equal to the MLE of $\beta_0$.
 c.  The predictor in the reparameterized model is **mean-centered**, i.e., the predictor is shifted by its mean value. Based on your responses to parts (a) and (b), what is one potential benefit for using mean-centered predictors in the model?
 
 ::: callout-tip
@@ -127,7 +128,7 @@ The applied exercises are focused on applying the concepts to analyze data.
 
 Write all narrative using complete sentences and include informative axis labels / titles on visualizations.
 
-## Data: SAT 
+## Data: SAT
 
 This data set contains the average SAT score (out of 1600) and other variables that may be associated with SAT performance for each of the 50 U.S. states. The data is based on test takers for the 1982 exam. We will use the following variables:
 
@@ -149,7 +150,7 @@ The data are in the file `sat-1982.csv` in the `data` folder.
 
 ## Exercise 5
 
-a.  Fit a main effects model using `SAT` as the response and all other variables at the predictors. Neatly display the model using 3 digits.
+a.  Fit a main effects model using `SAT` as the response and all other variables (except State) as the predictors. Neatly display the model using 3 digits.
 b.  Are there any influential observations in the data set? Briefly explain showing any work or output used to make the determination.
 c.  Consider the observation with the highest value for Cook's distance. What is the value of leverage for this observation? Would this be considered large leverage? Briefly explain showing any work or output used to make the determination.
 
@@ -181,7 +182,7 @@ The data are available in the file `florida-votes-2000.csv` in the `data` folder
 The goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.
 
 a.  Visualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.
-b.  What is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. **You will use this updated data frame for the remainder of this exercise.**
+b.  What is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. **You will use this updated data frame for the remainder of this exercise and Exercise 8.**
 c.  Fit a model to predict the number of votes for Buchanan based on the number of votes for Bush in the county.
     -   Make a plot of the standardized residuals versus the fitted values.
     -   Is the constant variance condition satisfied? Briefly explain.
@@ -197,13 +198,13 @@ Now let's consider potential models with transformations on the response and/or 
 | 3                          | Buchanan2000      | log(Bush2000)      |
 | 4                          | log(Buchanan2000) | log(Bush2000)      |
 
-Which model best fits the data? Briefly explain, showing any work and output used to determine the response.
+Which model best fits the data? Briefly explain, showing any work and output used to determine the response. **(Note: Use the data set without the outlying county to find the candidate models.)**
 
 ## Exercise 9
 
 Now we will use the model to predict the expected number of Buchanan votes for the outlier county.
 
-Suppose we the observed value of the predictor `Bush2000` for this county (a new observation) is $x_0$. We define $\mathbf{x}_0^T = [1, x_0]$
+Suppose the observed value of the predictor for this county (a new observation) is $x_0$. We define $\mathbf{x}_0^T = [1, x_0]$
 
 Then the predicted response is
 
@@ -213,25 +214,25 @@ $$
 
 Where $\hat{\boldsymbol{\beta}}$ is the vector of estimated model coefficients.
 
-Just as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use **prediction intervals** to quantify the uncertainty for the prediction for a new observation.
+Just as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a **prediction interval** to quantify the uncertainty in the prediction for a new observation.
 
 The $C\%$ prediction interval for the new observation is
 
 $$
-\hat{y}_0 \pm t^*_{n - p - 1}\sqrt{\hat{\sigma}^2_\epsilon(1 + \mathbf{x}_0^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_0}
+\hat{y}_0 \pm t^*_{n - p - 1}\sqrt{\hat{\sigma}^2_\epsilon(1 + \mathbf{x}_0^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_0)}
 $$
 
-where $t^*_{n-p-1}$ is the critical value obtained from the $t$ distribution with $n - p - 1$ degrees of freedom.
+where $t^*_{n-p-1}$ is the critical value obtained from the $t$ distribution with $n - p - 1$ degrees of freedom, $\mathbf{X}$ is the design matrix for the model, and $\hat{\sigma}^2_\epsilon$ is the estimated variability about the regression line.
 
-a.  Use the model you chose in the previous question to compute $\hat{y}_0$, the predicted number of votes for Buchanan in the outlying county identified in Exercise 7.
+a.  Use the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 7. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
 
-b.  Compute the 95% prediction interval for this county.
+b.  Compute the 95% prediction interval for this county. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
 
 c.  It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?
 
     -   If no, briefly explain.
 
-    -   If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer.
+    -   If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
 
 # Submission
 
