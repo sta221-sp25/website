@@ -85,7 +85,7 @@ c.  Show mathematically how $\tilde{\beta}$ relates to the least-squares estimat
 Suppose there are $n$ observations, such that each $y_i$ is generated from $x_i$ based on the linear model
 
 $$
-y_i = \beta_0 + \beta_1 x_i = \epsilon_i, \hspace{8mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})
+y_i = \beta_0 + \beta_1 x_i + \epsilon_i, \hspace{8mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})
 $$
 
 such that $\epsilon_i$ are i.i.d.
@@ -105,7 +105,7 @@ c.  The predictor in the reparameterized model is **mean-centered**, i.e., the p
 ::: callout-tip
 You do not need to derive the MLEs for $\beta_0$ and $\beta_1$. You may use the results from the notes.
 
-You do need to show your work to derive the MLEs for $\beta^{\prime}_0$ and $\beta^{\prime}_1$ .
+You do need to show your work / explain your reasoning to get the MLEs for $\beta^{\prime}_0$ and $\beta^{\prime}_1$ .
 :::
 
 ## Exercise 4
