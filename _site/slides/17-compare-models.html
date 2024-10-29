@@ -411,7 +411,7 @@ Prof.&nbsp;Maria Tackett
 <section id="announcements" class="slide level2 midi">
 <h2>Announcements</h2>
 <ul>
-<li><p>HW 03 due Thursday at 11:59pm (released after class)</p></li>
+<li><p>HW 03 due Thursday at 11:59pm</p></li>
 <li><p>Project: Exploratory data analysis due Thursday at 11:59pm</p></li>
 <li><p>Looking ahead</p>
 <ul>
@@ -679,6 +679,21 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 <p>What is the conclusion from this hypothesis test?</p>
 </div>
 </section>
+<section id="why-use-overall-f-test" class="slide level2 midi">
+<h2>Why use overall F test?</h2>
+<p>Why do we use overall F test instead of just looking at the test for individual coefficients?<sup>1</sup></p>
+<p>Suppose we have a model such that <span class="math inline">\(p = 100\)</span> and <span class="math inline">\(H_0: \beta_1 = \dots = \beta_{100} = 0\)</span> is true</p>
+<div class="fragment">
+<div>
+<ul>
+<li class="fragment"><p>About 5% of the p-values for individual coefficients will be below 0.05 by chance.</p></li>
+<li class="fragment"><p>So we expect to see 5 small p-values if even no linear association actually exists.</p></li>
+<li class="fragment"><p>Therefore, it is very likely we will see at least one small p-value by chance.</p></li>
+<li class="fragment"><p>The F-test does not have this problem, because it accounts for the number of predictors. There is only a 5% chance we will get a p-value below 0.05, if a linear relationship truly does not exist.</p></li>
+</ul>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Example from <em>Introduction to Statistical Learning</em></p></li></ol></aside></section>
 <section id="testing-subset-of-coefficients" class="slide level2">
 <h2>Testing subset of coefficients</h2>
 <ul>
@@ -907,7 +922,7 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 </div>
 </div>
 </section>
-<section id="including-interactions" class="slide level2">
+<section id="including-interactions" class="slide level2 midi">
 <h2>Including interactions</h2>
 <p>Does the effect of <code>Party</code> differ based on the <code>Meal</code> time?</p>
 <div class="cell">
@@ -1180,7 +1195,7 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 <li><p>simple explanations should be preferred to complex explanations</p></li>
 </ul></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Source: The R Book by Michael J. Crawley</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Source: The R Book by Michael J. Crawley</p></li></ol></aside></section>
 <section id="in-pursuit-of-occams-razor" class="slide level2">
 <h2>In pursuit of Occam’s razor</h2>
 <ul>
@@ -1206,7 +1221,7 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 <p><br></p>
 <p>Radford Neal - Bayesian Learning for Neural Networks<sup>1</sup></p>
 </blockquote>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>Suggested blog post: <a href="https://statmodeling.stat.columbia.edu/2012/06/26/occam-2/">Occam</a> by Andrew Gelman</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Suggested blog post: <a href="https://statmodeling.stat.columbia.edu/2012/06/26/occam-2/">Occam</a> by Andrew Gelman</p></li></ol></aside></section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
 <ul>

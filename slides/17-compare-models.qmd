@@ -31,7 +31,7 @@ bibliography: references.bib
 
 ## Announcements {.midi}
 
--   HW 03 due Thursday at 11:59pm (released after class)
+-   HW 03 due Thursday at 11:59pm
 
 -   Project: Exploratory data analysis due Thursday at 11:59pm
 
@@ -270,6 +270,26 @@ tips_anova |>
 What is the conclusion from this hypothesis test?
 :::
 
+## Why use overall F test?  {.midi}
+
+Why do we use overall F test instead of just looking at the test for individual coefficients?[^1]
+
+[^1]: Example from *Introduction to Statistical Learning*
+
+Suppose we have a model such that $p = 100$ and $H_0: \beta_1 = \dots = \beta_{100} = 0$ is true
+
+. . .
+
+::: incremental
+-   About 5% of the p-values for individual coefficients will be below 0.05 by chance.
+
+-   So we expect to see 5 small p-values if even no linear association actually exists.
+
+-   Therefore, it is very likely we will see at least one small p-value by chance.
+
+-   The F-test does not have this problem, because it accounts for the number of predictors. There is only a 5% chance we will get a p-value below 0.05, if a linear relationship truly does not exist.
+:::
+
 ## Testing subset of coefficients
 
 -   Sometimes we want to test whether a **subset of coefficients** are all equal to 0
@@ -366,7 +386,7 @@ tidy(model.tips, conf.int = TRUE) |>
   kable(format="html", digits=3)
 ```
 
-## Including interactions
+## Including interactions {.midi}
 
 Does the effect of `Party` differ based on the `Meal` time?
 
@@ -485,7 +505,7 @@ Which model do you choose?
 
 ## Parsimony and Occam’s razor {.small}
 
--   The principle of **parsimony** is attributed to William of Occam (early 14th-century English nominalist philosopher), who insisted that, given a set of equally good explanations for a given phenomenon, *the correct explanation is the simplest explanation*[^1]
+-   The principle of **parsimony** is attributed to William of Occam (early 14th-century English nominalist philosopher), who insisted that, given a set of equally good explanations for a given phenomenon, *the correct explanation is the simplest explanation*[^2]
 
 -   Called **Occam’s razor** because he “shaved” his explanations down to the bare minimum
 
@@ -501,7 +521,7 @@ Which model do you choose?
 
     -   simple explanations should be preferred to complex explanations
 
-[^1]: Source: The R Book by Michael J. Crawley
+[^2]: Source: The R Book by Michael J. Crawley
 
 ## In pursuit of Occam’s razor
 
@@ -529,9 +549,9 @@ Which model do you choose?
 >
 > <br>
 >
-> Radford Neal - Bayesian Learning for Neural Networks[^2]
+> Radford Neal - Bayesian Learning for Neural Networks[^3]
 
-[^2]: Suggested blog post: [Occam](https://statmodeling.stat.columbia.edu/2012/06/26/occam-2/) by Andrew Gelman
+[^3]: Suggested blog post: [Occam](https://statmodeling.stat.columbia.edu/2012/06/26/occam-2/) by Andrew Gelman
 
 ## Recap
 
