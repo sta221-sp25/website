@@ -26,7 +26,7 @@ library(tidymodels)
 
 *You are asked by the management of the company to conduct an analysis to determine how the factors of financial performance, customer ratings and performance ratings influence the likelihood of a given salesperson being promoted. You are provided with a data set containing data for the last three years of salespeople considered for promotion.*[^1]
 
-[^1]: Excerpt from Chapter 5 of [*Handbook of Regression Modeling in People Analytics*](https://peopleanalytics-regression-book.org/bin-log-reg.html)by Keith McNulty.
+[^1]: Excerpt from Chapter 5 of [*Handbook of Regression Modeling in People Analytics*](https://peopleanalytics-regression-book.org/bin-log-reg.html) by Keith McNulty.
 
 **For this analysis, you will focus on understanding the association between performance rating and promotion using the following variables:**
 
@@ -109,7 +109,7 @@ Make a plot to visualize the relationship between being promoted and performance
 ::: {.callout-note icon="false"}
 ## Exercise 5
 
-We can use a logistic regression model to understand the relationship between performance rating promotion. (We will discuss this in detail next class, but will get a preview for now.)
+We can use a logistic regression model to understand the relationship between performance rating and promotion. (We will discuss this in detail next class, but will get a preview for now.)
 
 Let $\pi$ be the probability a randomly selected employee was promoted in the last three years. The statistical model is
 
