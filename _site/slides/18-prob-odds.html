@@ -483,12 +483,6 @@ Prof.&nbsp;Maria Tackett
 <p>0: no</p>
 </div><div class="column" style="width:60%;">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">data</span>(YouthRisk2009) <span class="co">#from Stat2Data package</span></span>
-<span id="cb2-2"><a></a>sleep <span class="ot">&lt;-</span> YouthRisk2009 <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Age), <span class="sc">!</span><span class="fu">is.na</span>(Sleep7))</span>
-<span id="cb2-5"><a></a>sleep <span class="sc">|&gt;</span></span>
-<span id="cb2-6"><a></a>  <span class="fu">relocate</span>(Age, Sleep7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 446 × 6
      Age Sleep7 Sleep           SmokeLife SmokeDaily MarijuaEver
@@ -511,9 +505,9 @@ Prof.&nbsp;Maria Tackett
 <section id="plot-the-data" class="slide level2">
 <h2>Plot the data</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(sleep, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> Sleep7)) <span class="sc">+</span></span>
-<span id="cb4-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb4-3"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Getting 7+ hours of sleep"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(sleep, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> Sleep7)) <span class="sc">+</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb3-3"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Getting 7+ hours of sleep"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="18-prob-odds_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
@@ -541,14 +535,14 @@ Prof.&nbsp;Maria Tackett
 <section id="the-code" class="slide level2">
 <h2>The code</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(sleep_age, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> prop)) <span class="sc">+</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb5-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
-<span id="cb5-4"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span><span class="st">"glm"</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>), </span>
-<span id="cb5-5"><a></a>              <span class="at">fullrange =</span> <span class="cn">TRUE</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"P(7+ hours of sleep)"</span>) <span class="sc">+</span></span>
-<span id="cb5-7"><a></a>  <span class="fu">xlim</span>(<span class="dv">1</span>, <span class="dv">40</span>) <span class="sc">+</span></span>
-<span id="cb5-8"><a></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(sleep_age, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> prop)) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb4-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb4-4"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span><span class="st">"glm"</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>), </span>
+<span id="cb4-5"><a></a>              <span class="at">fullrange =</span> <span class="cn">TRUE</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"P(7+ hours of sleep)"</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a></a>  <span class="fu">xlim</span>(<span class="dv">1</span>, <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="different-types-of-models" class="slide level2">
@@ -557,7 +551,7 @@ Prof.&nbsp;Maria Tackett
 <colgroup>
 <col style="width: 26%">
 <col style="width: 25%">
-<col style="width: 48%">
+<col style="width: 47%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -627,9 +621,9 @@ Prof.&nbsp;Maria Tackett
 <section id="are-teenagers-getting-enough-sleep" class="slide level2">
 <h2>Are teenagers getting enough sleep?</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>sleep <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a></a>  <span class="fu">count</span>(Sleep7) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a></a>  <span class="fu">mutate</span>(<span class="at">p =</span> <span class="fu">round</span>(n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>sleep <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">count</span>(Sleep7) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a></a>  <span class="fu">mutate</span>(<span class="at">p =</span> <span class="fu">round</span>(n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   Sleep7     n     p
@@ -941,34 +935,34 @@ OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
 <h2>Making the table 1</h2>
 <p>First, rename the levels of the categorical variables:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>heart_disease <span class="ot">&lt;-</span> heart_disease <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb8-3"><a></a>    <span class="at">high_risk_names =</span> <span class="fu">if_else</span>(high_risk <span class="sc">==</span> <span class="st">"1"</span>, <span class="st">"High risk"</span>, <span class="st">"Not high risk"</span>),</span>
-<span id="cb8-4"><a></a>    <span class="at">education_names =</span> <span class="fu">case_when</span>(</span>
-<span id="cb8-5"><a></a>      education <span class="sc">==</span> <span class="st">"1"</span> <span class="sc">~</span> <span class="st">"Some high school"</span>,</span>
-<span id="cb8-6"><a></a>      education <span class="sc">==</span> <span class="st">"2"</span> <span class="sc">~</span> <span class="st">"High school or GED"</span>,</span>
-<span id="cb8-7"><a></a>      education <span class="sc">==</span> <span class="st">"3"</span> <span class="sc">~</span> <span class="st">"Some college or vocational school"</span>,</span>
-<span id="cb8-8"><a></a>      education <span class="sc">==</span> <span class="st">"4"</span> <span class="sc">~</span> <span class="st">"College"</span></span>
-<span id="cb8-9"><a></a>    ),</span>
-<span id="cb8-10"><a></a>    <span class="at">education_names =</span> <span class="fu">fct_relevel</span>(education_names, <span class="st">"Some high school"</span>, <span class="st">"High school or GED"</span>, <span class="st">"Some college or vocational school"</span>, <span class="st">"College"</span>)</span>
-<span id="cb8-11"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>heart_disease <span class="ot">&lt;-</span> heart_disease <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-3"><a></a>    <span class="at">high_risk_names =</span> <span class="fu">if_else</span>(high_risk <span class="sc">==</span> <span class="st">"1"</span>, <span class="st">"High risk"</span>, <span class="st">"Not high risk"</span>),</span>
+<span id="cb7-4"><a></a>    <span class="at">education_names =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-5"><a></a>      education <span class="sc">==</span> <span class="st">"1"</span> <span class="sc">~</span> <span class="st">"Some high school"</span>,</span>
+<span id="cb7-6"><a></a>      education <span class="sc">==</span> <span class="st">"2"</span> <span class="sc">~</span> <span class="st">"High school or GED"</span>,</span>
+<span id="cb7-7"><a></a>      education <span class="sc">==</span> <span class="st">"3"</span> <span class="sc">~</span> <span class="st">"Some college or vocational school"</span>,</span>
+<span id="cb7-8"><a></a>      education <span class="sc">==</span> <span class="st">"4"</span> <span class="sc">~</span> <span class="st">"College"</span></span>
+<span id="cb7-9"><a></a>    ),</span>
+<span id="cb7-10"><a></a>    <span class="at">education_names =</span> <span class="fu">fct_relevel</span>(education_names, <span class="st">"Some high school"</span>, <span class="st">"High school or GED"</span>, <span class="st">"Some college or vocational school"</span>, <span class="st">"College"</span>)</span>
+<span id="cb7-11"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="making-the-table-2" class="slide level2">
 <h2>Making the table 2</h2>
 <p>Then, make the table:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> high_risk_names, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
-<span id="cb9-4"><a></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Education"</span>, <span class="st">"High risk"</span>, <span class="st">"Not high risk"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> high_risk_names, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Education"</span>, <span class="st">"High risk"</span>, <span class="st">"Not high risk"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="deeper-look-into-the-code" class="slide level2">
 <h2>Deeper look into the code</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 3
   education_names                   high_risk_names     n
@@ -987,9 +981,9 @@ OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
 <section id="deeper-look-into-the-code-1" class="slide level2">
 <h2>Deeper look into the code</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> high_risk_names, <span class="at">values_from =</span> n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> high_risk_names, <span class="at">values_from =</span> n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
   education_names                   `High risk` `Not high risk`
@@ -1004,10 +998,10 @@ OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
 <section id="deeper-look-into-the-code-2" class="slide level2">
 <h2>Deeper look into the code</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> high_risk_names, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
-<span id="cb14-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> high_risk_names, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1046,10 +1040,10 @@ OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
 <section id="deeper-look-into-the-code-3" class="slide level2">
 <h2>Deeper look into the code</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names) <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> high_risk_names, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
-<span id="cb15-4"><a></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Education"</span>, <span class="st">"High risk"</span>, <span class="st">"Not high risk"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">count</span>(education_names, high_risk_names) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> high_risk_names, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
+<span id="cb14-4"><a></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Education"</span>, <span class="st">"High risk"</span>, <span class="st">"Not high risk"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
