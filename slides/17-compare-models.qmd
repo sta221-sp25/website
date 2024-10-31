@@ -270,7 +270,7 @@ tips_anova |>
 What is the conclusion from this hypothesis test?
 :::
 
-## Why use overall F test?  {.midi}
+## Why use overall F test? {.midi}
 
 Why do we use overall F test instead of just looking at the test for individual coefficients?[^1]
 
