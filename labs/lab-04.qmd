@@ -206,4 +206,4 @@ To submit your assignment:
 | Ex 10                 | 2      |
 | Workflow & formatting | 4      |
 
-The “Workflow & formatting” grade is to assess the reproducible workflow and collaboration. This includes having at least one meaningful commit from each team member, a neatly organized document with readable code, and updating the team name and date in the YAML.s
+The “Workflow & formatting” grade is to assess the reproducible workflow and collaboration. This includes having at least one meaningful commit from each team member, a neatly organized document with readable code, and updating the team name and date in the YAML.
