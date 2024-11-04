@@ -535,7 +535,7 @@ Exercise 5
 <p>We can use a logistic regression model to understand the relationship between performance rating and promotion. (We will discuss this in detail next class, but will get a preview for now.)</p>
 <p>Let <span class="math inline">\(\pi\)</span> be the probability a randomly selected employee was promoted in the last three years. The statistical model is</p>
 <p><span class="math display">\[
-\log\Big(\frac{\pi_i}{1-\pi_i}\Big) = \beta_0 + \beta_1\boldsymbol{1}(performance_i = 2) + \mathbf{1}(performance_i= 3) + \mathbf{1}(performance_i = 4)
+\log\Big(\frac{\pi_i}{1-\pi_i}\Big) = \beta_0 + \beta_1\boldsymbol{1}(performance_i = 2) + \beta_2\mathbf{1}(performance_i= 3) + \beta_3\mathbf{1}(performance_i = 4)
 \]</span></p>
 <p>The code and output to fit this model is shown below:</p>
 <div class="cell">

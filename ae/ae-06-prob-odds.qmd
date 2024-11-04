@@ -114,7 +114,7 @@ We can use a logistic regression model to understand the relationship between pe
 Let $\pi$ be the probability a randomly selected employee was promoted in the last three years. The statistical model is
 
 $$
-\log\Big(\frac{\pi_i}{1-\pi_i}\Big) = \beta_0 + \beta_1\boldsymbol{1}(performance_i = 2) + \mathbf{1}(performance_i= 3) + \mathbf{1}(performance_i = 4)
+\log\Big(\frac{\pi_i}{1-\pi_i}\Big) = \beta_0 + \beta_1\boldsymbol{1}(performance_i = 2) + \beta_2\mathbf{1}(performance_i= 3) + \beta_3\mathbf{1}(performance_i = 4)
 $$
 
 The code and output to fit this model is shown below:
