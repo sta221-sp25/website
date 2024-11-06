@@ -182,7 +182,7 @@ $$\text{probability} = \pi = \frac{\exp\{\mathbf{X}\boldsymbol{\beta}\}}{1 + \ex
 ## Sigmoid Function
 
 We call this function relating the probability to the predictors a **sigmoid function,** $$
-\sigma(\pi) = \frac{\exp\{\pi\}}{1 + \exp\{\pi\}}= \frac{1}{1+\text{exp}\{-\pi\}}.$$
+\sigma(x) = \frac{\exp\{x\}}{1 + \exp\{x\}}= \frac{1}{1+\text{exp}\{-x\}}.$$
 
 ## Sigmoid Function
 
@@ -200,7 +200,7 @@ data <- data.frame(x = x_values, y = y_values)
 # Plot the sigmoid function
 ggplot(data, aes(x = x, y = y)) +
   geom_line(color = "blue") +
-  labs(x = expression(pi), y = expression(sigma(pi))) +
+  labs(x = expression(x), y = expression(sigma(x))) +
   ggtitle("Sigmoid Function")
 ```
 
