@@ -198,7 +198,7 @@ The anticipated length, including all graphs, tables, narrative, etc. with code,
 ::: callout-tip
 You can suppress code, warnings, and messages by including the following in the YAML:
 
-``` R
+``` r
 execute: 
   echo: false
   message: false
@@ -246,39 +246,37 @@ The slide deck should have no more than 6 content slides + 1 title slide to ensu
 
 -   Slide 6: Next steps and any questions you'd like to get feedback on
 
-    <!-- ### Grading criteria -->
+### Submission
 
-<!-- The presentation grade will be based on the following criteira: -->
+You can submit the presentation slides in two ways:
 
-<!-- -   Content: The group told a unified story using the appropriate regression analysis. -->
+-   Put a PDF of the slides or Quarto slides in the `presentation` folder in your team's GitHub repo.
 
-<!-- -   Slides: The presentation slides were organized, included clear and informative visualizations, and were easily readable. -->
+-   Put the URL to your slides in the `README` of the `presentation` folder. If you share the URL, please make sure permissions are set so Prof. Tackett can view the slides.
 
-<!-- -   Professionalism: The group's communication style was clear and professional. -->
+::: callout-important
+Slides must be submitted by the start of your lab on November 11. We will use a classroom computer for the presentations.
+:::
 
-<!-- -   Time Management: Team divided the time well and stayed within the 6 minute time limit, with each team member making a meaning contribution to the presentation. (assessed by the teaching team only). -->
+### Grading
 
-<!-- 80% of the presentation grade will be the average of the teaching scores and 20% will be the average of the peer scores. -->
+The presentation is worth points. It will be graded based on the following:
 
-<!-- ::: callout-important -->
+-   **Content:** The team told a unified story that clearly introduced the subject matter, research question, and exploration of the data.
 
-<!-- You can submit the presentation slides in two ways: -->
+-   **Slides:** The presentation slides were organized, included clear and informative visualizations, and were easily readable.
 
-<!-- -   Put a PDF of the slides in the `presentation` folder in your team's GitHub repo. -->
+-   **Presentation:** The team's communication style was clear and professional. The team divided the time well and stayed within the 8 minute time limit, with each team member making a meaningful contribution to the presentation.
 
-<!-- -   Put the URL to your slides in the `README` of the `presentation` folder. If you share the URL, please make sure permissions are set so Prof. Tackett can view the slides. -->
-
-<!-- **Slides must be submitted by the start of your lab on December 5 or 7.** You will [not]{.underline} submit the slides on Gradescope. -->
-
-<!-- ::: -->
+80% of the presentation grade will be the average of the teaching team scores and 20% will be the average of the peer scores.
 
 ## Presentation comments {#presentation-comments}
 
-<!-- ::: callout-important -->
+::: callout-important
+[Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbNUT6SRxWpFrZcKwiY46h0B347V4f_LERD1WcVLtGenOw?e=zeEbEc) to see the teams you're scoring and a link to the feedback form.
 
-<!-- [Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/Ed8d7gVI8-lMrmgJpFpTEjYB2UXUTyZNDMOgQYpO4YOJJg?e=jxx4e4) to find the teams you're scoring and a link to the feedback form. -->
-
-This portion of the project will be assessed individually.
+This portion of the project is worth 2 points and will be assessed individually.
+:::
 
 You will provide feedback on two teams' presentations. The assigned teams and link to the feedback form will be available in advance of the presentations. Please provide all scores and comments by the end of the lab session. There will be a few minutes between each presentation to submit scores and comments.
 
@@ -288,7 +286,7 @@ The grade will be based on submitting the scores and comments for both of your a
 
 The purpose of the draft and peer review is to give you an opportunity to get early feedback on your analysis. Therefore, the draft and peer review will focus primarily on the exploratory data analysis, modeling, and initial interpretations.
 
-### Draft report 
+### Draft report
 
 ::: callout-important
 The draft report is due in your GitHub repo by November 25 at 9am.
@@ -302,7 +300,7 @@ Below is a brief description of the sections to focus on in the draft:
 
 This section includes an introduction to the project motivation, data, and research question. Describe the data and definitions of key variables. It should also include some exploratory data analysis. All of the EDA won't fit in the body of the report, so focus on the EDA for the response variable and a few other interesting variables and relationships.
 
-#### Methodology 
+#### Methodology
 
 This section includes a brief description of your modeling process. Explain the reasoning for the type of model you're fitting, predictor variables considered for the model including any interactions. Additionally, show how you arrived at the final model by describing the model selection process, any variable transformations (if needed), and any other relevant considerations that were part of the model fitting process.
 
@@ -336,11 +334,11 @@ During the peer review process, you will be provided read-only access to your pa
 
 -   For each team you're reviewing:
 
-    -    Open that team's repo, read the project draft, and browse the rest of the repo.
+    -   Open that team's repo, read the project draft, and browse the rest of the repo.
 
     -   Go to the **Issues** tab in that repo, click on **New issue**, and click on **Get started** for the Peer Review issue. Fill out this issue. You will answer the the following questions:
 
-        -    Describe the goal of the project.
+        -   Describe the goal of the project.
 
         -   Describe the data set used in the project. What are the observations in the data? What is the source of the data? How were the data originally collected?
 
@@ -366,7 +364,7 @@ During the peer review process, you will be provided read-only access to your pa
 The Round 1 submission is due on Friday, December 6 at 11:59pm. Reports submitted after this date will not receive preliminary feedback.
 :::
 
-The Round 1 submission is an opportunity to receive detailed feedback on your analysis and [Written report] before the final submission. Therefore, to make the feedback most useful, **you must submit a complete written report to receive feedback.** You will also be notified of the grade you would receive at that point. You will have the option to keep the grade (and thus you don't need to turn in an updated report) or resubmit the written report by the final submission deadline to receive a new grade.
+The Round 1 submission is an opportunity to receive detailed feedback on your analysis and [Written report](#written-report) before the final submission. Therefore, to make the feedback most useful, **you must submit a complete written report to receive feedback.** You will also be notified of the grade you would receive at that point. You will have the option to keep the grade (and thus you don't need to turn in an updated report) or resubmit the written report by the final submission deadline to receive a new grade.
 
 #### To submit the Round 1 submission:
 
@@ -379,7 +377,7 @@ Note that this is optional, so there is <u>no</u> grade penalty for not turning 
 ## Written report {#written-report}
 
 ::: callout-important
-The written report is due on Thursday, December 12 at **9pm**. \
+The written report is due on Thursday, December 12 at **9pm**.\
 \
 Your written report must be completed in the `written-report.qmd` file and must be reproducible. All team members should contribute to the GitHub repository, with regular meaningful commits.
 
@@ -394,7 +392,7 @@ Before you finalize your write up, make sure the code chunks are not visible and
 
 -   You are welcome to include an appendix with additional work at the end of the written report document; however, grading will overwhelmingly be based on the content in the main body of the report. You should assume the reader will not see the material in the appendix unless prompted to view it in the main body of the report. The appendix should be neatly formatted and easy for the reader to navigate. It is not included in the 10-page limit.
 
-### Introduction and data 
+### Introduction and data
 
 This section includes an introduction to the project motivation, data, and research question. Describe the data and definitions of key variables. It should also include some exploratory data analysis. All of the EDA won't fit in the paper, so focus on the EDA for the response variable and a few other interesting variables and relationships.
 
@@ -428,7 +426,7 @@ In this section you'll include a summary of what you have learned about your res
 
 <!-- Overall conclusions from analysis are clearly described, and the model results are put into the larger context of the subject matter and original research question. There is thoughtful consideration of potential limitations of the data and/or analysis, and ideas for future work are clearly described. -->
 
-### Organization + formatting 
+### Organization + formatting
 
 This is an assessment of the overall presentation and formatting of the written report.
 
