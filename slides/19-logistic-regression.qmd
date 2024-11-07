@@ -317,7 +317,7 @@ $$
 Plugging in $\pi_i = \frac{\exp\{x_i^\top \boldsymbol\beta\}}{1+\exp\{x_i^\top \boldsymbol\beta\}}$ and simplifying, we get:
 
 $$
-\begin{aligned}\log &L(\boldsymbol\beta | x_i, \dots, x_n, y_i, \dots, y_n) \\
+\begin{aligned}\log &L(\boldsymbol\beta | x_1, \dots, x_n, y_1, \dots, y_n) \\
 &= \sum_{i=1}^n y_i x_i^\top \boldsymbol\beta - \sum_{i=1}^n \log(1+ \exp\{x_i^\top \beta\})
 \end{aligned}
 $$
