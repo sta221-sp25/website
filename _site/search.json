@@ -937,7 +937,7 @@
     "href": "slides/19-logistic-regression.html#sigmoid-function",
     "title": "Logistic Regression",
     "section": "Sigmoid Function",
-    "text": "Sigmoid Function\nWe call this function relating the probability to the predictors a sigmoid function, \\[\n\\sigma(\\pi) = \\frac{\\exp\\{\\pi\\}}{1 + \\exp\\{\\pi\\}}= \\frac{1}{1+\\text{exp}\\{-\\pi\\}}.\\]"
+    "text": "Sigmoid Function\nWe call this function relating the probability to the predictors a sigmoid function, \\[\n\\sigma(x) = \\frac{\\exp\\{x\\}}{1 + \\exp\\{x\\}}= \\frac{1}{1+\\text{exp}\\{-x\\}}.\\]"
   },
   {
     "objectID": "slides/19-logistic-regression.html#sigmoid-function-1",
@@ -979,14 +979,14 @@
     "href": "slides/19-logistic-regression.html#likelihood",
     "title": "Logistic Regression",
     "section": "Likelihood",
-    "text": "Likelihood\nThe likelihood function for \\(\\boldsymbol\\beta\\) is\n\\[\n\\begin{aligned}\nL&(\\boldsymbol\\beta| x_i, \\dots, x_n, y_i, \\dots, y_n) \\\\[5pt]\n&=  \\prod_{i=1}^n \\pi_i^{y_i} (1-\\pi_i)^{1-y_i} \\\\[10pt]\n\\end{aligned}\n\\] \n\nWe will use the log-likelihood function to find the MLEs"
+    "text": "Likelihood\nThe likelihood function for \\(\\boldsymbol\\beta\\) is\n\\[\n\\begin{aligned}\nL&(\\boldsymbol\\beta| x_1, \\dots, x_n, y_1, \\dots, y_n) \\\\[5pt]\n&=  \\prod_{i=1}^n \\pi_i^{y_i} (1-\\pi_i)^{1-y_i} \\\\[10pt]\n\\end{aligned}\n\\] \n\nWe will use the log-likelihood function to find the MLEs"
   },
   {
     "objectID": "slides/19-logistic-regression.html#log-likelihood",
     "href": "slides/19-logistic-regression.html#log-likelihood",
     "title": "Logistic Regression",
     "section": "Log-likelihood",
-    "text": "Log-likelihood\nThe log-likelihood function for \\(\\boldsymbol\\beta\\) is\n\\[\n\\begin{aligned}\n\\log &L(\\boldsymbol\\beta | x_i, \\dots, x_n, y_i, \\dots, y_n)\n  \\\\[8pt]\n& = \\sum_{i=1}^n\\log(\\pi_i^{y_i}(1-\\pi_i)^{1-y_i})\\\\\n&= \\sum_{i=1}^n\\left(y_i\\log (\\pi_i) + (1-y_i)\\log(1-\\pi_i)\\right)\\\\\n\\end{aligned}\n\\]"
+    "text": "Log-likelihood\nThe log-likelihood function for \\(\\boldsymbol\\beta\\) is\n\\[\n\\begin{aligned}\n\\log &L(\\boldsymbol\\beta | x_1, \\dots, x_n, y_1, \\dots, y_n)\n  \\\\[8pt]\n& = \\sum_{i=1}^n\\log(\\pi_i^{y_i}(1-\\pi_i)^{1-y_i})\\\\\n&= \\sum_{i=1}^n\\left(y_i\\log (\\pi_i) + (1-y_i)\\log(1-\\pi_i)\\right)\\\\\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/19-logistic-regression.html#log-likelihood-1",

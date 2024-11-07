@@ -528,7 +528,7 @@ Kat Husar
 <section id="sigmoid-function" class="slide level2">
 <h2>Sigmoid Function</h2>
 <p>We call this function relating the probability to the predictors a <strong>sigmoid function,</strong> <span class="math display">\[
-\sigma(\pi) = \frac{\exp\{\pi\}}{1 + \exp\{\pi\}}= \frac{1}{1+\text{exp}\{-\pi\}}.\]</span></p>
+\sigma(x) = \frac{\exp\{x\}}{1 + \exp\{x\}}= \frac{1}{1+\text{exp}\{-x\}}.\]</span></p>
 </section>
 <section id="sigmoid-function-1" class="slide level2">
 <h2>Sigmoid Function</h2>
@@ -618,7 +618,7 @@ Kat Husar
 <p>The likelihood function for <span class="math inline">\(\boldsymbol\beta\)</span> is</p>
 <p><span class="math display">\[
 \begin{aligned}
-L&amp;(\boldsymbol\beta| x_i, \dots, x_n, y_i, \dots, y_n) \\[5pt]
+L&amp;(\boldsymbol\beta| x_1, \dots, x_n, y_1, \dots, y_n) \\[5pt]
 &amp;=  \prod_{i=1}^n \pi_i^{y_i} (1-\pi_i)^{1-y_i} \\[10pt]
 \end{aligned}
 \]</span> <br></p>
@@ -631,7 +631,7 @@ L&amp;(\boldsymbol\beta| x_i, \dots, x_n, y_i, \dots, y_n) \\[5pt]
 <p>The log-likelihood function for <span class="math inline">\(\boldsymbol\beta\)</span> is</p>
 <p><span class="math display">\[
 \begin{aligned}
-\log &amp;L(\boldsymbol\beta | x_i, \dots, x_n, y_i, \dots, y_n)
+\log &amp;L(\boldsymbol\beta | x_1, \dots, x_n, y_1, \dots, y_n)
   \\[8pt]
 &amp; = \sum_{i=1}^n\log(\pi_i^{y_i}(1-\pi_i)^{1-y_i})\\
 &amp;= \sum_{i=1}^n\left(y_i\log (\pi_i) + (1-y_i)\log(1-\pi_i)\right)\\
