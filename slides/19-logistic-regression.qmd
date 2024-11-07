@@ -290,7 +290,7 @@ The likelihood function for $\boldsymbol\beta$ is
 
 $$
 \begin{aligned}
-L&(\boldsymbol\beta| x_i, \dots, x_n, y_i, \dots, y_n) \\[5pt]
+L&(\boldsymbol\beta| x_1, \dots, x_n, y_1, \dots, y_n) \\[5pt]
  &=  \prod_{i=1}^n \pi_i^{y_i} (1-\pi_i)^{1-y_i} \\[10pt]
 \end{aligned}
 $$ <br>
@@ -305,7 +305,7 @@ The log-likelihood function for $\boldsymbol\beta$ is
 
 $$
 \begin{aligned}
-\log &L(\boldsymbol\beta | x_i, \dots, x_n, y_i, \dots, y_n) 
+\log &L(\boldsymbol\beta | x_1, \dots, x_n, y_1, \dots, y_n) 
   \\[8pt]
 & = \sum_{i=1}^n\log(\pi_i^{y_i}(1-\pi_i)^{1-y_i})\\
 &= \sum_{i=1}^n\left(y_i\log (\pi_i) + (1-y_i)\log(1-\pi_i)\right)\\
