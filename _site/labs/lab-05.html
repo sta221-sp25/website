@@ -307,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-07.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/lab-07.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 07</span></a>
   </div>
 </li>
@@ -356,8 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#workflow-using-git-and-github-as-a-team" id="toc-workflow-using-git-and-github-as-a-team" class="nav-link" data-scroll-target="#workflow-using-git-and-github-as-a-team">Workflow: Using Git and GitHub as a team</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
-  <ul class="collapse">
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
@@ -371,7 +370,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
   <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
-  </ul></li>
   </ul></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
@@ -464,8 +462,9 @@ Important
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
 <p>Today’s data contains expenditures, revenues, and student body composition, other information about NCAA Division 1 athletic programs at colleges and universities in the United States. The data were featured as part of the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md">TidyTuesday</a> data visualization challenge. It was originally obtained from <a href="https://ope.ed.gov/athletics/#/datafile/list">Equity in Athletics Data Analysis</a>, a reporting tool by the Office of Postsecondary Education of the U.S. Department of Education.</p>
 <p>We will investigate whether institution features affect the revenues of athletics programs in different sports. Here is a table describing the variables in the data.</p>
 <p>This analysis will focus on the following variables:</p>
@@ -484,11 +483,11 @@ Important
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sports <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ncaa-revenues.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
 <p><strong>Goal</strong>: The goal of the analysis is to use various features of NCAA Division 1 colleges and universities to explain variability in the total revenue from their athletic programs.</p>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
 <p>We’ll begin by rescaling the response and some of the predictor variables.</p>
 <ul>
 <li><p>Rescale the response variable <code>total_rev_menwomen</code> and the primary predictor variable <code>total_exp_menwomen</code>, so that they are in terms of $100K (100 thousand dollars). Name the new variables <code>rev100k</code> and <code>exp100k</code>, respectively.</p></li>
@@ -496,8 +495,8 @@ Important
 <li><p>Briefly explain why we might we rescale these variables instead of using them in the original units.</p></li>
 </ul>
 </section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
 <p>Before modeling, let’s do some exploratory data analysis.</p>
 <ul>
 <li>Make a visualization of the relationship between revenue and expenditures. Use the plot to describe the relationship between the two variables.</li>
@@ -508,8 +507,8 @@ Important
 <li><p>Larger values of expenditures and revenues seem to follow a slightly different trend and are associated with two sports - football and basketball. Create an indicator variable that takes value <code>1</code> if the sport is basketball or football and <code>0</code> otherwise. Name the variable <code>bball_football</code>.</p></li>
 </ul>
 </section>
-<section id="exercise-3" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
 <ul>
 <li><p>Visualize the relationship between <code>log_rev</code> and <code>log_exp</code>.</p></li>
 <li><p>From the visualization, you may notice a lot of observations form a straight diagonal line, indicating a perfect one-to-one relationship between expenses and revenues. Provide a possible interpretation of this phenomenon.</p></li>
@@ -518,21 +517,21 @@ Important
 </ul>
 <p><strong>You will use <code>sports_nolinear</code> for the remainder of the assignment.</strong></p>
 </section>
-<section id="exercise-4" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
 <p>Use <code>sports_nolinear</code> to fit a regression model with the log-transformed revenue as the response variable and the following predictors: log-transformed expenditures, student enrollment, institution type, sports type, participation in athletics for men, participation in athletics for women, the basketball/football indicator you created in a previous exercise, and the interaction between the log-transformed expenditures and the basketball/football indicator.</p>
 <p>Neatly display the model using 3 digits.</p>
 </section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <p>Consider the regression model from the previous exercise.</p>
 <ul>
 <li><p>What type of institution and sport correspond to the intercept?</p></li>
 <li><p>You’ll notice that one coefficient has a missing value. Why is the coefficient missing? What is the technical name of this phenomenon?</p></li>
 </ul>
 </section>
-<section id="exercise-6" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <p>For the sake of interpretability, it is useful to have a regression model in which no coefficients are missing, and the coefficients for each sport indicator represent the baseline level for such sport. To address this issue, use the code below to fit another regression model that uses the same predictors as before, making sure to drop the unnecessary variables and the intercept (by the the <code>-1</code> in the formula) to achieve this.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sports_fit_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_rev <span class="sc">~</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">+</span> sports <span class="sc">+</span> students_1k <span class="sc">+</span> sector_name <span class="sc">+</span></span>
@@ -545,13 +544,13 @@ Important
 <li><p>Which type of institution was chosen to be the baseline in this model?</p></li>
 </ul>
 </section>
-<section id="exercise-7" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
 <p>Now that we have an interpretable model, let us assess the model fit and perform diagnostics to verify whether our linear regression assumptions are reasonable for this data.</p>
 <p>As a first step, provide some overall measures of model fit and comment on whether it seems to have an acceptable predictive power on the response of interest.</p>
 </section>
-<section id="exercise-8" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
 <p>Next, let’s take a look at the residuals for the model.</p>
 <p>Because there are multiple sports at every institution, we may be concerned the residuals within an institution are correlated with each other (thus violating the independence assumption).</p>
 <p>Due to the large number of institutions, we will look at randomly selected subset of 20 institutions to evaluate this.</p>
@@ -575,8 +574,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="exercise-9" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
 <p>After an examination of all the residuals, we notice a few things:</p>
 <ol type="1">
 <li>There seems to be two groups of observations.</li>
@@ -589,14 +588,13 @@ Tip
 <li><p>Do you think this model is an appropriate fit for the data or is the model misspecified? Briefly explain.</p></li>
 </ul>
 </section>
-<section id="exercise-10" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-10">Exercise 10</h3>
+<section id="exercise-10" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
 <ul>
 <li><p>Based on this model (regardless of your answer to the previous exercise), which variables seem to be useful in explaining the variability in the revenue from collegiate sports?</p></li>
 <li><p>Interpret the coefficient for one useful quantitative predictor in terms of the revenue (not log(revenue)).</p></li>
 <li><p>Interpret the coefficient for one useful categorical predictor in terms of the revenue (not log(revenue)).</p></li>
 </ul>
-</section>
 </section>
 </section>
 <section id="submission" class="level1">

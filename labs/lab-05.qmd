@@ -66,7 +66,7 @@ library(tidymodels)
 library(knitr)
 ```
 
-## Data
+# Data
 
 Today's data contains expenditures, revenues, and student body composition, other information about NCAA Division 1 athletic programs at colleges and universities in the United States. The data were featured as part of the [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-03-29/readme.md) data visualization challenge. It was originally obtained from [Equity in Athletics Data Analysis](https://ope.ed.gov/athletics/#/datafile/list), a reporting tool by the Office of Postsecondary Education of the U.S. Department of Education.
 
@@ -100,11 +100,11 @@ This analysis will focus on the following variables:
 sports <- read_csv("data/ncaa-revenues.csv")
 ```
 
-## Exercises
+# Exercises
 
 **Goal**: The goal of the analysis is to use various features of NCAA Division 1 colleges and universities to explain variability in the total revenue from their athletic programs.
 
-### Exercise 1
+## Exercise 1
 
 We'll begin by rescaling the response and some of the predictor variables.
 
@@ -114,20 +114,19 @@ We'll begin by rescaling the response and some of the predictor variables.
 
 -   Briefly explain why we might we rescale these variables instead of using them in the original units.
 
-### Exercise 2
+## Exercise 2
 
 Before modeling, let's do some exploratory data analysis.
 
 -   Make a visualization of the relationship between revenue and expenditures. Use the plot to describe the relationship between the two variables.
 
-```{=html}
 <!-- -->
-```
+
 -   Higher values of both expenditures and revenues are associated with greater variability. Transform both variables using a `log` transformation, to deal with the potential violation of an assumption of linear regression. Name the variables `log_exp` and `log_rev`, respectively.
 
 -   Larger values of expenditures and revenues seem to follow a slightly different trend and are associated with two sports - football and basketball. Create an indicator variable that takes value `1` if the sport is basketball or football and `0` otherwise. Name the variable `bball_football`.
 
-### Exercise 3
+## Exercise 3
 
 -   Visualize the relationship between `log_rev` and `log_exp`.
 
@@ -153,13 +152,13 @@ sports_nolinear <- sports |>
   filter(log_exp != log_rev)
 ```
 
-### Exercise 4
+## Exercise 4
 
 Use `sports_nolinear` to fit a regression model with the log-transformed revenue as the response variable and the following predictors: log-transformed expenditures, student enrollment, institution type, sports type, participation in athletics for men, participation in athletics for women, the basketball/football indicator you created in a previous exercise, and the interaction between the log-transformed expenditures and the basketball/football indicator.
 
 Neatly display the model using 3 digits.
 
-### Exercise 5
+## Exercise 5
 
 Consider the regression model from the previous exercise.
 
@@ -167,7 +166,7 @@ Consider the regression model from the previous exercise.
 
 -   You'll notice that one coefficient has a missing value. Why is the coefficient missing? What is the technical name of this phenomenon?
 
-### Exercise 6
+## Exercise 6
 
 For the sake of interpretability, it is useful to have a regression model in which no coefficients are missing, and the coefficients for each sport indicator represent the baseline level for such sport. To address this issue, use the code below to fit another regression model that uses the same predictors as before, making sure to drop the unnecessary variables and the intercept (by the the `-1` in the formula) to achieve this.
 
@@ -183,13 +182,13 @@ sports_fit_2 <- lm(log_rev ~ -1 + sports + students_1k + sector_name +
 
 -   Which type of institution was chosen to be the baseline in this model?
 
-### Exercise 7
+## Exercise 7
 
 Now that we have an interpretable model, let us assess the model fit and perform diagnostics to verify whether our linear regression assumptions are reasonable for this data.
 
 As a first step, provide some overall measures of model fit and comment on whether it seems to have an acceptable predictive power on the response of interest.
 
-### Exercise 8
+## Exercise 8
 
 Next, let's take a look at the residuals for the model.
 
@@ -209,7 +208,7 @@ Due to the large number of institutions, we will look at randomly selected subse
 You may need to change the size of the figure so that the faceted lot is fully visible. You can do so using the options `#| fig-width` and `#| fig-height` in the code chunk.
 :::
 
-### Exercise 9
+## Exercise 9
 
 After an examination of all the residuals, we notice a few things:
 
@@ -235,7 +234,7 @@ ggplot(sports_aug) +
 
 -   Do you think this model is an appropriate fit for the data or is the model misspecified? Briefly explain.
 
-### Exercise 10
+## Exercise 10
 
 -   Based on this model (regardless of your answer to the previous exercise), which variables seem to be useful in explaining the variability in the revenue from collegiate sports?
 
