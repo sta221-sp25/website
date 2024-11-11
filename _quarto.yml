@@ -84,8 +84,6 @@ website:
           text: Lab 05
         - href: labs/lab-06.qmd
           text: Lab 06
-        - href: labs/lab-07.qmd
-          text: Lab 07
       - section: Project
         contents:
         - href: project.qmd
