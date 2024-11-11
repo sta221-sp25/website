@@ -273,7 +273,7 @@ The presentation is worth points. It will be graded based on the following:
 ## Presentation comments {#presentation-comments}
 
 ::: callout-important
-[Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbNUT6SRxWpFrZcKwiY46h0B347V4f_LERD1WcVLtGenOw?e=zeEbEc) to see the teams you're scoring and a link to the feedback form.
+[Click](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbNUT6SRxWpFrZcKwiY46h0B347V4f_LERD1WcVLtGenOw)[ here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbNUT6SRxWpFrZcKwiY46h0B347V4f_LERD1WcVLtGenOw?e=zeEbEc) to see the teams you're scoring and a link to the feedback form.
 
 This portion of the project is worth 2 points and will be assessed individually.
 :::
