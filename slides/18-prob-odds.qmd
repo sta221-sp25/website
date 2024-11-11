@@ -226,7 +226,7 @@ ggplot(sleep_age, aes(x = Age, y = prop)) +
 ## Different types of models
 
 | Method                          | Outcome      | Model                                                           |
-|-------------------|------------------|----------------------------------|
+|---------------------------------|--------------|-----------------------------------------------------------------|
 | Linear regression               | Quantitative | $y_i = \beta_0 + \beta_1~ x_i$                                  |
 | Linear regression (transform Y) | Quantitative | $\log(y_i) = \beta_0 + \beta_1~ x_i$                            |
 | Logistic regression             | Binary       | $\log\big(\frac{\pi_i}{1-\pi_i}\big) = \beta_0 + \beta_1 ~ x_i$ |
