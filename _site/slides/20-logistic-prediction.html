@@ -415,6 +415,16 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="computational-set-up" class="slide level2">
 <h2>Computational set up</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(pROC)       <span class="co"># make ROC curves</span></span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="co"># set default theme in ggplot2</span></span>
+<span id="cb1-8"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
@@ -522,7 +532,7 @@ Prof.&nbsp;Maria Tackett
 <section id="augmented-data-frame" class="slide level2">
 <h2>Augmented data frame</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">augment</span>(heart_disease_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">augment</span>(heart_disease_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4,190 × 10
    high_risk   age totChol currentSmoker .fitted .resid     .hat .sigma  .cooksd
@@ -545,7 +555,7 @@ Prof.&nbsp;Maria Tackett
 <section id="predicted-log-odds" class="slide level2">
 <h2>Predicted log-odds</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>heart_disease_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(heart_disease_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>heart_disease_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(heart_disease_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
@@ -645,7 +655,7 @@ Prof.&nbsp;Maria Tackett
 <p><br></p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">predict.glm</span>(heart_disease_fit, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">predict.glm</span>(heart_disease_fit, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -661,10 +671,10 @@ Prof.&nbsp;Maria Tackett
 <section id="predictions-in-r" class="slide level2">
 <h2>Predictions in R</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>pred_prob <span class="ot">&lt;-</span> <span class="fu">predict.glm</span>(heart_disease_fit, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb10-2"><a></a></span>
-<span id="cb10-3"><a></a>heart_disease_aug <span class="ot">&lt;-</span> heart_disease_aug <span class="sc">|&gt;</span> </span>
-<span id="cb10-4"><a></a>  <span class="fu">bind_cols</span>(<span class="at">pred_prob =</span> pred_prob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>pred_prob <span class="ot">&lt;-</span> <span class="fu">predict.glm</span>(heart_disease_fit, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb11-2"><a></a></span>
+<span id="cb11-3"><a></a>heart_disease_aug <span class="ot">&lt;-</span> heart_disease_aug <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a></a>  <span class="fu">bind_cols</span>(<span class="at">pred_prob =</span> pred_prob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
@@ -716,8 +726,8 @@ Prof.&nbsp;Maria Tackett
 <p><br></p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>heart_disease_aug <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a></a>  <span class="fu">conf_mat</span>(high_risk, pred_class) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>heart_disease_aug <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">conf_mat</span>(high_risk, pred_class) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          Truth
 Prediction    0    1
@@ -730,13 +740,13 @@ Prediction    0    1
 <section id="visualize-confusion-matrix" class="slide level2">
 <h2>Visualize confusion matrix</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>heart_conf_mat <span class="ot">&lt;-</span> heart_disease_aug <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">conf_mat</span>(high_risk, pred_class)</span>
-<span id="cb15-3"><a></a></span>
-<span id="cb15-4"><a></a><span class="fu">autoplot</span>(heart_conf_mat, <span class="at">type =</span> <span class="st">"heatmap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>heart_conf_mat <span class="ot">&lt;-</span> heart_disease_aug <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">conf_mat</span>(high_risk, pred_class)</span>
+<span id="cb16-3"><a></a></span>
+<span id="cb16-4"><a></a><span class="fu">autoplot</span>(heart_conf_mat, <span class="at">type =</span> <span class="st">"heatmap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="20-logistic-prediction_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<img data-src="20-logistic-prediction_files/figure-html/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="using-the-confusion-matrix" class="slide level2">
 <h2>Using the confusion matrix</h2>
 <div class="center">
@@ -1066,7 +1076,7 @@ Prediction    0    1
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="20-logistic-prediction_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+<p><img data-src="20-logistic-prediction_files/figure-html/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
 </figure>
 </div>
 </div>
@@ -1083,17 +1093,17 @@ Prediction    0    1
 <section id="roc-curve-1" class="slide level2">
 <h2>ROC curve</h2>
 
-<img data-src="20-logistic-prediction_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<img data-src="20-logistic-prediction_files/figure-html/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
 <section id="roc-curve-in-r" class="slide level2 midi">
 <h2>ROC curve in R</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># calculate sensitivity and specificity at each threshold</span></span>
-<span id="cb20-2"><a></a>roc_curve_data <span class="ot">&lt;-</span> heart_disease_aug <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">roc_curve</span>(high_risk, .fitted, </span>
-<span id="cb20-4"><a></a>            <span class="at">event_level =</span> <span class="st">"second"</span>) </span>
-<span id="cb20-5"><a></a></span>
-<span id="cb20-6"><a></a><span class="co"># plot roc curve</span></span>
-<span id="cb20-7"><a></a><span class="fu">autoplot</span>(roc_curve_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># calculate sensitivity and specificity at each threshold</span></span>
+<span id="cb21-2"><a></a>roc_curve_data <span class="ot">&lt;-</span> heart_disease_aug <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a></a>  <span class="fu">roc_curve</span>(high_risk, .fitted, </span>
+<span id="cb21-4"><a></a>            <span class="at">event_level =</span> <span class="st">"second"</span>) </span>
+<span id="cb21-5"><a></a></span>
+<span id="cb21-6"><a></a><span class="co"># plot roc curve</span></span>
+<span id="cb21-7"><a></a><span class="fu">autoplot</span>(roc_curve_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="roc-curve-in-r-1" class="slide level2">
@@ -1117,7 +1127,7 @@ Prediction    0    1
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="20-logistic-prediction_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+<p><img data-src="20-logistic-prediction_files/figure-html/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
 </figure>
 </div>
 </div>
@@ -1133,10 +1143,10 @@ Prediction    0    1
 </ul>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>heart_disease_aug <span class="sc">|&gt;</span></span>
-<span id="cb22-2"><a></a>  <span class="fu">roc_auc</span>(high_risk, .fitted,</span>
-<span id="cb22-3"><a></a>    <span class="at">event_level =</span> <span class="st">"second"</span></span>
-<span id="cb22-4"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>heart_disease_aug <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">roc_auc</span>(high_risk, .fitted,</span>
+<span id="cb23-3"><a></a>    <span class="at">event_level =</span> <span class="st">"second"</span></span>
+<span id="cb23-4"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   .metric .estimator .estimate
@@ -1382,44 +1392,6 @@ Prediction    0    1
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

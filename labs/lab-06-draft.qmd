@@ -1,0 +1,83 @@
+---
+title: "Lab 06: Logistic Regression"
+date: today
+execute:
+  freeze: auto
+  echo: true
+  evaluate: true
+  warning: false
+  message: false
+format: html
+---
+
+::: callout-important
+## Date due
+
+-   Add dates
+-   Add dates
+:::
+
+# Logistic Regression
+
+Today' we will be exploring the use of logistic regression's lab will be focused on running and interpreting logistic regression models for binary outcomes.
+
+## Packages
+
+For today's lab, we will be using the following packages.
+
+```{r packages}
+library(tidyverse)
+library(tidymodels)
+```
+
+## Data
+
+Today's data is about image classification. In particular, we will consider the problem of distinguishing between two different rice varieties, *Cammeo* and *Osmancik*, based on pictures of the grains. The data is available on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/545/rice+cammeo+and+osmancik).
+
+<!--# add the paper -->
+
+```{r read_data}
+rice <- read_csv("data/rice.csv")
+```
+
+Our outcome variable will be `Class` (the type of rice), and we will be used two predictors, namely `Area` and `Eccentricity`. `Area` refers to the size of the rice grain as measured in pixels, and `Eccentricity` measures how close to a circle the rice shape is (0 would be a perfect circle).
+
+## Exercises
+
+### Exercise 1
+
+Let us begin by visualizing the data. Create a scatterplot of `Area` against `Eccentricity`, and color the points by the assigned class.
+
+### Exercise 2
+
+Comment on the above plot. Does it look like the two types of rice can be separated based on the two chosen features?
+
+### Exercise 3
+
+With this type of classification problems, it is common to test the performance of a logistic regression by splitting the data into a *training* and a *test* set. This means that we will choose a random subset of the data to estimate the regression coefficient, and we will then test the predictions on the remaining observations.
+
+Randomly select 75% of the rows of the data to create a dataset `rice_train`, and place the remaining 25% in a dataset named `rice_test`.
+
+### Exercise 5
+
+In a logistic regression model, it is commonly said that the *log-odds* of the outcome being 1 is given by $$\log\Big(\frac{\pi_i}{1-\pi_i}\Big) = \mathbf{x}_i^\top \boldsymbol{\beta}$$ What does each $\pi_i$ represent? How are the log-odds related to the probability of the outcome variable being 1? Make sure to show the mathematical relationship between the two quantities.
+
+### Exercise 6
+
+Estimate the logistic regression model for `Class` on the chosen predictors using the `rice_train` data. Display the regression output and interpret the coefficients. Does the intercept have any reasonable interpretation? If so, interpret the intercept. Otherwise explain why not.
+
+### Exercise 7
+
+Interpret the coefficients on `Area` and `Eccentricity`, and comment on their significance.
+
+### Exercise 8
+
+How would you expect the log-odds of the rice grain being of the Osmancik variety to change if the measures eccentricity changes from 0.85 to 0.9? How does that translate into the estimated probabilities?
+
+### Exercise 9
+
+Let us now test our model on the test set. Using the `predict` function, obtain the predicted probabilities of the rice type being Osmancik for the observations in `rice_test`.
+
+### Exercise 10
+
+With these estimated probabilities, we can now try to classify the rice in the test set. Choose a way to assign a label to each observation based on the estimated probability, and describe it here. Compare the estimated class assignments you constructed with the actual classes. Comment on the result.

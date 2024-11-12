@@ -48,6 +48,7 @@ knitr::opts_chunk$set(
 ## Computational set up
 
 ```{r}
+#| echo: true
 #| warning: false
 #| message: false
 
@@ -429,7 +430,7 @@ Accuracy is 0.848 and the misclassification rate is 0.152.
 
 -   P(classified high risk \| not high risk) = $\frac{FP}{TN + FP}$
 
-## Sensitivity  {.midi}
+## Sensitivity {.midi}
 
 +--------------------------------------------------------------------+---------------------------+-----------------------+
 |                                                                    | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
@@ -491,19 +492,19 @@ Calculate the
 
 ## Using metrics to select model and threshold {.midi}
 
-+-----------------------------------+---------------------------------------------------------------------+
-| Metric                            | Guidance for use                                                    |
-+===================================+=====================================================================+
-| Accuracy                          | For balanced data, use only in combination with other metrics.      |
-|                                   |                                                                     |
-|                                   | Avoid using for imbalanced data.                                    |
-+-----------------------------------+---------------------------------------------------------------------+
-| Sensitivity (true positive rate)  | Use when false negatives are more "expensive" than false positives. |
-+-----------------------------------+---------------------------------------------------------------------+
-| False positive rate               | Use when false positives are more "expensive" than false negatives. |
-+-----------------------------------+---------------------------------------------------------------------+
-| Precision = $\frac{TP}{TP + FP}$  | Use when it's important for positive predictions to be accurate.    |
-+-----------------------------------+---------------------------------------------------------------------+
++----------------------------------+---------------------------------------------------------------------+
+| Metric                           | Guidance for use                                                    |
++==================================+=====================================================================+
+| Accuracy                         | For balanced data, use only in combination with other metrics.      |
+|                                  |                                                                     |
+|                                  | Avoid using for imbalanced data.                                    |
++----------------------------------+---------------------------------------------------------------------+
+| Sensitivity (true positive rate) | Use when false negatives are more "expensive" than false positives. |
++----------------------------------+---------------------------------------------------------------------+
+| False positive rate              | Use when false positives are more "expensive" than false negatives. |
++----------------------------------+---------------------------------------------------------------------+
+| Precision = $\frac{TP}{TP + FP}$ | Use when it's important for positive predictions to be accurate.    |
++----------------------------------+---------------------------------------------------------------------+
 
 ::: small
 This table is a modification of work created and shared by Google in the [Google Machine Learning Crash Course](#0).
@@ -633,7 +634,7 @@ heart_disease_aug |>
   )
 ```
 
-## Recap 
+## Recap
 
 -   Calculated predicted probabilities from the logistic regression model
 
