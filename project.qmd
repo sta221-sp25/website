@@ -18,7 +18,7 @@ library(broom)
 
 [Presentation](#presentation) + [Presentation comments](#presentation-comments) Monday, November 11 (in lab)
 
-[Analysis draft + peer review](#draft-report-peer-review) Monday, December (peer review in lab)
+[Analysis draft + peer review](#draft-report-peer-review) Monday, December 2 (peer review in lab)
 
 [Round 1 submission (optional)](#round1-submission) due Friday, December 6
 
