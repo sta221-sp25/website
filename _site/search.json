@@ -4243,7 +4243,7 @@
     "href": "slides/20-logistic-prediction.html#announcements",
     "title": "Logistic Regression: Prediction",
     "section": "Announcements",
-    "text": "Announcements\n\nProject: Draft report due + peer review in December 2 lab\nStatistics experience due Tuesday, November 26"
+    "text": "Announcements\n\nProject: Draft report due + peer review in December 2 lab\nStatistics experience due Tuesday, November 26\nHW 04 released on Thursday"
   },
   {
     "objectID": "slides/20-logistic-prediction.html#computational-set-up",
@@ -4278,7 +4278,14 @@
     "href": "slides/20-logistic-prediction.html#prediction-and-classification",
     "title": "Logistic Regression: Prediction",
     "section": "Prediction and classification",
-    "text": "Prediction and classification\n\nWe are often interested in using the model to classify observations, i.e., predict whether a given observation will have a 1 or 0 response\nFor each observation\n\nUse the logistic regression model to calculate the predicted log-odds the response for the \\(i^{th}\\) observation is 1\nUse the log-odds to calculate the predicted probability the \\(i^{th}\\) observation is 1\nThen, use the predicted probabilities to classify the observation as having a 1 or 0 response using some predefined threshold"
+    "text": "Prediction and classification\n\n\nWe are often interested in using the model to classify observations, i.e., predict whether a given observation will have a 1 or 0 response\nFor each observation\n\nUse the logistic regression model to calculate the predicted log-odds the response for the \\(i^{th}\\) observation is 1\nUse the log-odds to calculate the predicted probability the \\(i^{th}\\) observation is 1\nThen, use the predicted probability to classify the observation as having a 1 or 0 response using some predefined threshold"
+  },
+  {
+    "objectID": "slides/20-logistic-prediction.html#augmented-data-frame",
+    "href": "slides/20-logistic-prediction.html#augmented-data-frame",
+    "title": "Logistic Regression: Prediction",
+    "section": "Augmented data frame",
+    "text": "Augmented data frame\n\naugment(heart_disease_fit)\n\n# A tibble: 4,190 × 10\n   high_risk   age totChol currentSmoker .fitted .resid     .hat .sigma  .cooksd\n   &lt;fct&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt;           &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n 1 0            39     195 0              -3.06  -0.302 0.000594  0.890  6.94e-6\n 2 0            46     250 0              -2.38  -0.420 0.000543  0.890  1.25e-5\n 3 0            48     245 1              -1.77  -0.560 0.000527  0.890  2.24e-5\n 4 1            61     225 1              -0.751  1.51  0.00164   0.889  8.70e-4\n 5 0            46     285 1              -1.86  -0.539 0.000830  0.890  3.25e-5\n 6 0            43     228 0              -2.67  -0.366 0.000546  0.890  9.43e-6\n 7 1            63     205 0              -1.08   1.66  0.00154   0.889  1.15e-3\n 8 0            45     313 1              -1.88  -0.532 0.00127   0.890  4.86e-5\n 9 0            52     260 0              -1.87  -0.535 0.000542  0.890  2.08e-5\n10 0            43     225 1              -2.22  -0.454 0.000532  0.890  1.44e-5\n# ℹ 4,180 more rows\n# ℹ 1 more variable: .std.resid &lt;dbl&gt;"
   },
   {
     "objectID": "slides/20-logistic-prediction.html#predicted-log-odds",
@@ -4327,7 +4334,7 @@
     "href": "slides/20-logistic-prediction.html#classifying-observations",
     "title": "Logistic Regression: Prediction",
     "section": "Classifying observations",
-    "text": "Classifying observations\n\n\nWhat threshold would you use to classify observations as high risk or not high risk?\nWhat considerations did you make to determine the threshold?"
+    "text": "Classifying observations\n\nYou would like to determine a threshold for classifying individuals as high risk or not high risk.\nWhat considerations would you make in determining the threshold?"
   },
   {
     "objectID": "slides/20-logistic-prediction.html#classify-using-0.5-as-threshold",
@@ -4407,6 +4414,20 @@
     "text": "Specificity\n\n\n\n\n\n\n\n\n\nNot high risk \\((y_i = 0)\\)\nHigh risk \\((y_i = 1)\\)\n\n\n\n\nClassified not high risk \\((\\hat{\\pi}_i \\leq \\text{threshold})\\)\nTrue negative (TN)\nFalse negative (FN)\n\n\nClassified high risk \\((\\hat{\\pi}_i &gt; \\text{threshold})\\)\nFalse positive (FP)\nTrue positive (TP)\n\n\n\n\n\nSpecificity: Proportion of actual negatives that were correctly classified as negative\n\nP(classified not high risk | not high risk) = 1 − False positive rate"
   },
   {
+    "objectID": "slides/20-logistic-prediction.html#practice",
+    "href": "slides/20-logistic-prediction.html#practice",
+    "title": "Logistic Regression: Prediction",
+    "section": "Practice",
+    "text": "Practice"
+  },
+  {
+    "objectID": "slides/20-logistic-prediction.html#section",
+    "href": "slides/20-logistic-prediction.html#section",
+    "title": "Logistic Regression: Prediction",
+    "section": "",
+    "text": "Truth\nPrediction    0    1\n         0 3553  635\n         1    2    0\n\n\n\n\nCalculate the\n\nFalse negative rate\nFalse positive rate\nSensitivity\nSpecificity"
+  },
+  {
     "objectID": "slides/20-logistic-prediction.html#using-metrics-to-select-model-and-threshold",
     "href": "slides/20-logistic-prediction.html#using-metrics-to-select-model-and-threshold",
     "title": "Logistic Regression: Prediction",
@@ -4418,14 +4439,14 @@
     "href": "slides/20-logistic-prediction.html#choosing-a-classification-threshold",
     "title": "Logistic Regression: Prediction",
     "section": "Choosing a classification threshold",
-    "text": "Choosing a classification threshold\n\nA doctor plans to use your model to determine which patients are high risk for heart disease. The doctor will recommend a treatment plan for high risk patients.\n\nWould you want sensitivity and specificity to be high or low?\nWhat are the trade-offs associated with each decision?"
+    "text": "Choosing a classification threshold\n\nA doctor plans to use your model to determine which patients are high risk for heart disease. The doctor will recommend a treatment plan for high risk patients.\n\nWould you want sensitivity to be high or low? What about specificity?\nWhat are the trade-offs associated with each decision?"
   },
   {
     "objectID": "slides/20-logistic-prediction.html#roc-curve",
     "href": "slides/20-logistic-prediction.html#roc-curve",
     "title": "Logistic Regression: Prediction",
     "section": "ROC curve",
-    "text": "ROC curve\nSo far the model assessment has depended on the model and selected threshold. The receiver operating characteristic (ROC) curve allows to assess the model performance across a range of thresholds.\n\n\n\n\n\n\n\n\n\n\n\n\n\nx-axis: 1 - Specificity (False positive rate)\ny-axis: Sensitivity (True positive rate)\n\nWhich corner of the plot indicates the best model performance?"
+    "text": "ROC curve\nSo far the model assessment has depended on the model and selected threshold. The receiver operating characteristic (ROC) curve allows us to assess the model performance across a range of thresholds.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx-axis: 1 - Specificity (False positive rate)\ny-axis: Sensitivity (True positive rate)\n\nWhich corner of the plot indicates the best model performance?"
   },
   {
     "objectID": "slides/20-logistic-prediction.html#roc-curve-1",
@@ -4456,8 +4477,8 @@
     "text": "Area under the curve\nThe area under the curve (AUC) can be used to assess how well the logistic model fits the data\n\nAUC=0.5: model is a very bad fit (no better than a coin flip)\nAUC close to 1: model is a good fit\n\n\n\nheart_disease_aug |&gt;\n  roc_auc(high_risk, .fitted,\n    event_level = \"second\"\n  )\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.695"
   },
   {
-    "objectID": "slides/20-logistic-prediction.html#recap-1",
-    "href": "slides/20-logistic-prediction.html#recap-1",
+    "objectID": "slides/20-logistic-prediction.html#recap",
+    "href": "slides/20-logistic-prediction.html#recap",
     "title": "Logistic Regression: Prediction",
     "section": "Recap",
     "text": "Recap\n\nCalculated predicted probabilities from the logistic regression model\nUsed predicted probabilities to classify observations\nMade decisions and assessed model performance using\n\nConfusion matrix\nROC curve"

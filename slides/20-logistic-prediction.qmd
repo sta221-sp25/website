@@ -43,6 +43,8 @@ knitr::opts_chunk$set(
 
 -   Statistics experience due Tuesday, November 26
 
+-   HW 04 released on Thursday
+
 ## Computational set up
 
 ```{r}
@@ -92,10 +94,6 @@ heart_disease <- read_csv("data/framingham.csv") |>
          currentSmoker = as_factor(currentSmoker))
 ```
 
-# Recap
-
-<!--# add some recap slides-->
-
 ## Modeling risk of coronary heart disease
 
 ```{r}
@@ -108,13 +106,22 @@ tidy(heart_disease_fit, conf.int = TRUE) |>
 
 ## Prediction and classification
 
+::: incremental
 -   We are often interested in using the model to classify observations, i.e., predict whether a given observation will have a 1 or 0 response
 
 -   For each observation
 
     -   Use the logistic regression model to calculate the predicted log-odds the response for the $i^{th}$ observation is 1
     -   Use the log-odds to calculate the predicted probability the $i^{th}$ observation is 1
-    -   Then, use the predicted probabilities to classify the observation as having a 1 or 0 response using some predefined threshold
+    -   Then, use the predicted probability to classify the observation as having a 1 or 0 response using some predefined threshold
+:::
+
+## Augmented data frame
+
+```{r}
+#| echo: true
+augment(heart_disease_fit)
+```
 
 ## Predicted log-odds
 
@@ -137,8 +144,6 @@ heart_disease_aug |>
 $$
 \text{predicted log-odds} = \log(\hat{\omega}) = \log\Big(\frac{\hat{\pi}}{1- \hat{\pi}}\Big) = -3.06
 $$
-
-<!--# do i want to deal with residuals? Maybe hide those for now?-->
 
 ## Predicted odds
 
@@ -252,9 +257,9 @@ heart_disease_aug  |>
 ## Classifying observations
 
 ::: question
--   What threshold would you use to classify observations as high risk or not high risk?
+You would like to determine a threshold for classifying individuals as high risk or not high risk.
 
--   What considerations did you make to determine the threshold?
+What considerations would you make in determining the threshold?
 :::
 
 ## Classify using 0.5 as threshold
@@ -462,6 +467,28 @@ Accuracy is 0.848 and the misclassification rate is 0.152.
 
 -   **P(classified not high risk \| not high risk) = 1 − False positive rate**
 
+## Practice
+
+## 
+
+::: center
+```{r}
+#| echo: false
+
+heart_disease_aug |>
+  conf_mat(high_risk, pred_class) 
+```
+:::
+
+::: question
+Calculate the
+
+-   False negative rate
+-   False positive rate
+-   Sensitivity
+-   Specificity
+:::
+
 ## Using metrics to select model and threshold {.midi}
 
 +-----------------------------------+---------------------------------------------------------------------+
@@ -487,14 +514,16 @@ This table is a modification of work created and shared by Google in the [Google
 ::: question
 A doctor plans to use your model to determine which patients are high risk for heart disease. The doctor will recommend a treatment plan for high risk patients.
 
--   Would you want sensitivity and specificity to be high or low?
+-   Would you want sensitivity to be high or low? What about specificity?
 
 -   What are the trade-offs associated with each decision?
 :::
 
 ## ROC curve
 
-So far the model assessment has depended on the model and selected threshold. The **receiver operating characteristic (ROC) curve** allows to assess the model performance across a range of thresholds.
+So far the model assessment has depended on the model and selected threshold. The **receiver operating characteristic (ROC) curve** allows us to assess the model performance across a range of thresholds.
+
+. . .
 
 ::: columns
 ::: {.column width="65%"}
