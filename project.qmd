@@ -18,7 +18,7 @@ library(broom)
 
 [Presentation](#presentation) + [Presentation comments](#presentation-comments) Monday, November 11 (in lab)
 
-[Analysis draft + peer review](#draft-report-peer-review) Monday, November 25 (peer review in lab)
+[Analysis draft + peer review](#draft-report-peer-review) Monday, December (peer review in lab)
 
 [Round 1 submission (optional)](#round1-submission) due Friday, December 6
 
@@ -273,7 +273,7 @@ The presentation is worth points. It will be graded based on the following:
 ## Presentation comments {#presentation-comments}
 
 ::: callout-important
-[Click](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbNUT6SRxWpFrZcKwiY46h0B347V4f_LERD1WcVLtGenOw)[ here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbNUT6SRxWpFrZcKwiY46h0B347V4f_LERD1WcVLtGenOw?e=zeEbEc) to see the teams you're scoring and a link to the feedback form.
+[Click](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbNUT6SRxWpFrZcKwiY46h0B347V4f_LERD1WcVLtGenOw)[here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbNUT6SRxWpFrZcKwiY46h0B347V4f_LERD1WcVLtGenOw?e=zeEbEc) to see the teams you're scoring and a link to the feedback form.
 
 This portion of the project is worth 2 points and will be assessed individually.
 :::
@@ -289,7 +289,7 @@ The purpose of the draft and peer review is to give you an opportunity to get ea
 ### Draft report
 
 ::: callout-important
-The draft report is due in your GitHub repo by November 25 at 9am.
+The draft report is due in your GitHub repo by December 2 at 9am.
 :::
 
 Write the draft in the `written-report.qmd` file in your project repo.
@@ -317,7 +317,7 @@ This section also includes initial interpretations and conclusions drawn from th
 ### Peer review
 
 ::: callout-important
-Peer review comments are due in GitHub on November 26 at 11:59pm.
+Peer review comments are due in GitHub on December 3 at 11:59pm.
 :::
 
 Critically reviewing others' work is a crucial part of the scientific process, and STA 221 is no exception. Each lab team will be assigned two other teams' projects to review. Each team should push their draft to their GitHub repo by the 9am on the day their lab's draft is due. The lab that week will be dedicate to the peer review, so your team will have time to review and provide quality feedback to two other teams.
