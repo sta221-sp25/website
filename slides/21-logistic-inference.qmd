@@ -1,0 +1,522 @@
+---
+title: "Logistic Regression: Prediction"
+author: "Prof. Maria Tackett"
+date: "2024-11-12"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs:
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+	fig.align = "center",
+	fig.height =5,
+	fig.width = 8,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+## Announcements {.midi}
+
+-   Project: Draft report due + peer review in December 2 lab
+
+-   Statistics experience due Tuesday, November 26
+
+-   HW 04 released on Thursday
+
+## Topics
+
+<!--# UPDATE-->
+
+::: nonincremental
+-   Estimating coefficients in logistic regression
+-   Inference for coefficients in logistic regression
+-   Checking model conditions for logistic regression
+:::
+
+## Computational setup
+
+```{r}
+#| echo: true
+#| warning: false
+#| message: false
+
+
+library(tidyverse)
+library(tidymodels)
+library(pROC)      
+library(knitr)
+library(kableExtra)
+library(Stat2Data)
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+```
+
+# Data
+
+## Risk of coronary heart disease {.midi}
+
+This data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.
+
+-   `high_risk`:
+
+    -   1: High risk of having heart disease in next 10 years
+    -   0: Not high risk of having heart disease in next 10 years
+
+-   `age`: Age at exam time (in years)
+
+-   `totChol`: Total cholesterol (in mg/dL)
+
+-   `currentSmoker`: 0 = nonsmoker, 1 = smoker
+
+-   `education`: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+
+heart_disease <- read_csv("data/framingham.csv") |>
+  select(age, education, TenYearCHD, totChol, currentSmoker) |>
+  drop_na() |>
+  mutate(
+    high_risk = as_factor(TenYearCHD),
+    education = as_factor(education),
+    currentSmoker = as_factor(currentSmoker)
+  )
+```
+
+# Inference for coefficients
+
+## Modeling risk of coronary heart disease
+
+Using `age`, `totChol`, `currentSmoker`
+
+```{r}
+heart_disease_fit <- glm(high_risk ~ age + totChol + currentSmoker, 
+              data = heart_disease, family = "binomial")
+
+tidy(heart_disease_fit, conf.int = TRUE) |> 
+  kable(digits = 3)
+```
+
+# Test for overall significance
+
+## Likelihood ratio test
+
+Similar to linear regression, we can test the overall significance for a logistic regression model, i.e., there is at least one non-zero coefficient in the model
+
+$$
+\begin{aligned}
+&H_0: \beta_1 = \dots = \beta_p = 0 \\
+&H_a: \beta_j \neq 0 \text{ for at least one } j
+\end{aligned}
+$$
+
+. . .
+
+The **likelihood ratio test** compares the fit of a model with no predictors to the current model.
+
+## Likelihood ratio test statistic
+
+Let $L_0$ and $L_a$ be the likelihood functions of the model under $H_0$ and $H_a$, respectively. The **likelihood ratio test statistic** is
+
+$$
+G = -2[\log L_0 - \log L_a] = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+$$
+
+where $\hat{\pi}^0$ is the predicted probability under $H_0$ and $\hat{\pi}_i^a = \frac{\exp \{x_i^T\boldsymbol{\beta}\}}{1 + \exp \{x_i^T\boldsymbol{\beta}\}}$ is the predicted probability under $H_a$ [^1]
+
+[^1]: See @wilks1935likelihood for explanation of why -2 is included.
+
+## Likelihood ratio test statistic
+
+$$
+G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+$$
+
+. . .
+
+::: incremental
+-   When $n$ is large, $G \sim \chi^2_p$, ( $G$ follows a Chi-square distribution with $p$ degrees of freedom)
+
+-   The p-value is calculated as $
+    \text{p-value} = P(\chi^2 > G)
+    $
+
+-   Large values of $G$ (small p-values) indicate at least one $\beta_j$ is non-zero
+:::
+
+## Heart disease model: likelihood ratio test
+
+$$
+\begin{aligned}
+&H_0: \beta_{age} = \beta_{totChol} = \beta_{currentSmoker} = 0 \\
+&H_a: \beta_j \neq 0 \text{ for at least one }j
+\end{aligned}$$
+
+. . .
+
+**Fit the null model**
+
+(we've already fit the alternative model)
+
+```{r}
+#| echo: true
+
+null_model <- glm(high_risk ~ 1, data = heart_disease, family = "binomial")
+
+tidy(null_model) |>
+  kable()
+```
+
+## Heart disease model: likelihood ratio test
+
+**Calculate the log-likelihood for the null and alternative models**
+
+```{r}
+(L_0 <- glance(null_model)$logLik)
+(L_a <- glance(heart_disease_fit)$logLik)
+```
+
+. . .
+
+**Calculate the likelihood ratio test statistic**
+
+```{r}
+(G <- -2 * (L_0 - L_a))
+```
+
+. . .
+
+## Heart disease model: likelihood ratio test
+
+**Calculate the p-value**
+
+```{r}
+(p_value <- pchisq(G, df = 3, lower.tail = FALSE))
+```
+
+. . .
+
+**Conclusion**
+
+The p-value is small, so we reject $H_0$. The data provide evidence of at least one non-zero model coefficient in the model.
+
+### LRT for subset of coefficients
+
+## Inference for coefficients
+
+There are two approaches for testing coefficients in logistic regression
+
+-   **Drop-in-deviance test**. Use to test...
+
+    -   a single coefficient
+    -   a categorical predictor with 3+ levels
+    -   a group of predictor variables
+
+-   **(Wald) hypothesis test.** Use to test
+
+    -   a single coefficient
+
+## Hypothesis test for $\beta_j$
+
+**Hypotheses:** $H_0: \beta_j = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_j \neq 0$, given the other variables in the model
+
+. . .
+
+**Test Statistic:** $$z = \frac{\hat{\beta}_j - 0}{SE_{\hat{\beta}_j}}$$
+
+. . .
+
+**P-value:** $P(|Z| > |z|)$, where $Z \sim N(0, 1)$, the Standard Normal distribution
+
+## Confidence interval for $\beta_j$
+
+We can calculate the **C% confidence interval** for $\beta_j$ as the following:
+
+$$
+\Large{\hat{\beta}_j \pm z^* SE_{\hat{\beta}_j}}
+$$
+
+where $z^*$ is calculated from the $N(0,1)$ distribution
+
+. . .
+
+::: callout-note
+This is an interval for the change in the log-odds for every one unit increase in $x_j$
+:::
+
+## Interpretation in terms of the odds
+
+The change in **odds** for every one unit increase in $x_j$.
+
+$$
+\Large{exp\{\hat{\beta}_j \pm z^* SE_{\hat{\beta}_j}\}}
+$$
+
+. . .
+
+**Interpretation:** We are $C\%$ confident that for every one unit increase in $x_j$, the odds multiply by a factor of $exp\{\hat{\beta}_j - z^* SE_{\hat{\beta}_j}\}$ to $exp\{\hat{\beta}_j + z^* SE_{\hat{\beta}_j}\}$, holding all else constant.
+
+## Coefficient for `age` {.midi}
+
+```{r}
+#| label: risk-model-age-highlight
+#| echo: false
+
+tidy(heart_disease_fit, conf.int = TRUE) |> 
+  kable(digits = 3) |>
+  row_spec(2, background = "#D9E3E4")
+```
+
+. . .
+
+**Hypotheses:**
+
+$$
+H_0: \beta_{age} = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_{age} \neq 0
+$$, given education is in the model
+
+## Coefficient for `age` {.midi}
+
+```{r}
+#| echo: false
+#| ref.label: risk-model-age-highlight
+```
+
+**Test statistic:**
+
+$$z = \frac{0.07559 - 0}{0.00554} = 13.64
+$$
+
+## Coefficient for `age` {.midi}
+
+```{r}
+#| echo: false
+#| ref.label: risk-model-age-highlight
+```
+
+**P-value:**
+
+$$
+P(|Z| > |13.64|) \approx 0
+$$
+
+. . .
+
+```{r}
+2 * pnorm(13.64,lower.tail = FALSE)
+```
+
+## Coefficient for `age` {.midi}
+
+```{r}
+#| echo: false
+#| ref.label: risk-model-age-highlight
+```
+
+**Conclusion:**
+
+The p-value is very small, so we reject $H_0$. The data provide sufficient evidence that age is a statistically significant predictor of whether someone is high risk of having heart disease, after accounting for education.
+
+## CI for `age`
+
+```{r}
+#| echo: false
+#| ref.label: risk-model-age-highlight
+```
+
+::: question
+Interpret the 95% confidence interval for `age` in terms of the **odds** of being high risk for heart disease.
+:::
+
+# Application exercise
+
+::: appex
+📋 [AE 15: Inference for Logistic Regression](../ae/ae-15-logistic-inference.html)
+:::
+
+# Conditions
+
+## The model {.smaller}
+
+Let's predict `high_risk` from age, total cholesterol, and whether the patient is a current smoker:
+
+```{r}
+heart_disease_fit <- logistic_reg() |>
+  set_engine("glm") |>
+  fit(high_risk ~ age + totChol + currentSmoker, 
+      data = heart_disease, family = "binomial")
+
+tidy(heart_disease_fit, conf.int = TRUE) |> 
+  kable(digits = 3)
+```
+
+## Conditions for logistic regression
+
+1.  **Linearity:** The log-odds have a linear relationship with the predictors.
+
+2.  **Randomness:** The data were obtained from a random process
+
+3.  **Independence:** The observations are independent from one another.
+
+## Empirical logit
+
+The **empirical logit** is the log of the observed odds:
+
+$$
+\text{logit}(\hat{p}) = \log\Big(\frac{\hat{p}}{1 - \hat{p}}\Big) = \log\Big(\frac{\# \text{Yes}}{\# \text{No}}\Big)
+$$
+
+## Calculating empirical logit (categorical predictor)
+
+If the predictor is categorical, we can calculate the empirical logit for each level of the predictor.
+
+```{r}
+heart_disease |>
+  count(currentSmoker, high_risk) |>
+  group_by(currentSmoker) |>
+  mutate(prop = n/sum(n)) |>
+  filter(high_risk == "1") |>
+  mutate(emp_logit = log(prop/(1-prop)))
+```
+
+## Calculating empirical logit (quantitative predictor)
+
+1.  Divide the range of the predictor into intervals with approximately equal number of cases. (If you have enough observations, use 5 - 10 intervals.)
+
+2.  Compute the empirical logit for each interval
+
+. . .
+
+You can then calculate the mean value of the predictor in each interval and create a plot of the empirical logit versus the mean value of the predictor in each interval.
+
+## Empirical logit plot in R (quantitative predictor)
+
+Created using `dplyr` and `ggplot` functions.
+
+```{r}
+#| echo: false
+heart_disease |> 
+  mutate(age_bin = cut_interval(age, n = 10)) |>
+  group_by(age_bin) |>
+  mutate(mean_age = mean(age)) |>
+  count(mean_age, high_risk) |>
+  mutate(prop = n/sum(n)) |>
+  filter(high_risk == "1") |>
+  mutate(emp_logit = log(prop/(1-prop))) |>
+  ggplot(aes(x = mean_age, y = emp_logit)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Mean Age", 
+       y = "Empirical logit")
+```
+
+## Empirical logit plot in R (quantitative predictor)
+
+Created using `dplyr` and `ggplot` functions.
+
+```{r}
+#| eval: false
+#| 
+heart_disease |> 
+  mutate(age_bin = cut_interval(age, n = 10)) |>
+  group_by(age_bin) |>
+  mutate(mean_age = mean(age)) |>
+  count(mean_age, high_risk) |>
+  mutate(prop = n/sum(n)) |>
+  filter(high_risk == "1") |>
+  mutate(emp_logit = log(prop/(1-prop))) |>
+  ggplot(aes(x = mean_age, y = emp_logit)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Mean Age", 
+       y = "Empirical logit")
+```
+
+## Empirical logit plot in R (quantitative predictor)
+
+Using the `emplogitplot1` function from the **Stat2Data** R package
+
+```{r}
+emplogitplot1(high_risk ~ age, 
+              data = heart_disease, 
+              ngroups = 10)
+```
+
+## Empirical logit plot in R (interactions)
+
+Using the `emplogitplot2` function from the **Stat2Data** R package
+
+```{r}
+emplogitplot2(high_risk ~ age + currentSmoker, data = heart_disease, 
+              ngroups = 10, 
+              putlegend = "bottomright")
+```
+
+## Checking linearity
+
+::: columns
+::: {.column width="50%"}
+```{r}
+emplogitplot1(high_risk ~ age, 
+              data = heart_disease, 
+              ngroups = 10)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+emplogitplot1(high_risk ~ totChol, 
+              data = heart_disease, 
+              ngroups = 10)
+```
+:::
+:::
+
+. . .
+
+`r emo::ji("white_check_mark")` The linearity condition is satisfied. There is a linear relationship between the empirical logit and the predictor variables.
+
+## Checking randomness
+
+We can check the randomness condition based on the context of the data and how the observations were collected.
+
+-   Was the sample randomly selected?
+-   If the sample was not randomly selected, ask whether there is reason to believe the observations in the sample differ systematically from the population of interest.
+
+. . .
+
+`r emo::ji("white_check_mark")` The randomness condition is satisfied. We do not have reason to believe that the participants in this study differ systematically from adults in the U.S. in regards to health characteristics and risk of heart disease.
+
+## Checking independence
+
+-   We can check the independence condition based on the context of the data and how the observations were collected.
+-   Independence is most often violated if the data were collected over time or there is a strong spatial relationship between the observations.
+
+. . .
+
+`r emo::ji("white_check_mark")` The independence condition is satisfied. It is reasonable to conclude that the participants' health characteristics are independent of one another.

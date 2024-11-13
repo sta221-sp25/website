@@ -6567,5 +6567,257 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#announcements",
+    "href": "slides/21-logistic-inference.html#announcements",
+    "title": "Logistic Regression: Prediction",
+    "section": "Announcements",
+    "text": "Announcements\n\nProject: Draft report due + peer review in December 2 lab\nStatistics experience due Tuesday, November 26\nHW 04 released on Thursday"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#topics",
+    "href": "slides/21-logistic-inference.html#topics",
+    "title": "Logistic Regression: Prediction",
+    "section": "Topics",
+    "text": "Topics\n\n\n\nEstimating coefficients in logistic regression\nInference for coefficients in logistic regression\nChecking model conditions for logistic regression"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#computational-setup",
+    "href": "slides/21-logistic-inference.html#computational-setup",
+    "title": "Logistic Regression: Prediction",
+    "section": "Computational setup",
+    "text": "Computational setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(pROC)      \nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(Stat2Data)\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#risk-of-coronary-heart-disease",
+    "href": "slides/21-logistic-inference.html#risk-of-coronary-heart-disease",
+    "title": "Logistic Regression: Prediction",
+    "section": "Risk of coronary heart disease",
+    "text": "Risk of coronary heart disease\nThis data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.\n\nhigh_risk:\n\n1: High risk of having heart disease in next 10 years\n0: Not high risk of having heart disease in next 10 years\n\nage: Age at exam time (in years)\ntotChol: Total cholesterol (in mg/dL)\ncurrentSmoker: 0 = nonsmoker, 1 = smoker\neducation: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#modeling-risk-of-coronary-heart-disease",
+    "href": "slides/21-logistic-inference.html#modeling-risk-of-coronary-heart-disease",
+    "title": "Logistic Regression: Prediction",
+    "section": "Modeling risk of coronary heart disease",
+    "text": "Modeling risk of coronary heart disease\nUsing age, totChol, currentSmoker\n\nheart_disease_fit &lt;- glm(high_risk ~ age + totChol + currentSmoker, \n              data = heart_disease, family = \"binomial\")\n\ntidy(heart_disease_fit, conf.int = TRUE) |&gt; \n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#likelihood-ratio-test",
+    "href": "slides/21-logistic-inference.html#likelihood-ratio-test",
+    "title": "Logistic Regression: Prediction",
+    "section": "Likelihood ratio test",
+    "text": "Likelihood ratio test\nSimilar to linear regression, we can test the overall significance for a logistic regression model, i.e., there is at least one non-zero coefficient in the model\n\\[\n\\begin{aligned}\n&H_0: \\beta_1 = \\dots = \\beta_p = 0 \\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one } j\n\\end{aligned}\n\\]\n\nThe likelihood ratio test compares the fit of a model with no predictors to the current model."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#inference-for-coefficients-1",
+    "href": "slides/21-logistic-inference.html#inference-for-coefficients-1",
+    "title": "Logistic Regression: Prediction",
+    "section": "Inference for coefficients",
+    "text": "Inference for coefficients\nThere are two approaches for testing coefficients in logistic regression\n\nDrop-in-deviance test. Use to test…\n\na single coefficient\na categorical predictor with 3+ levels\na group of predictor variables\n\n(Wald) hypothesis test. Use to test\n\na single coefficient"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#hypothesis-test-for-beta_j",
+    "href": "slides/21-logistic-inference.html#hypothesis-test-for-beta_j",
+    "title": "Logistic Regression: Prediction",
+    "section": "Hypothesis test for \\(\\beta_j\\)",
+    "text": "Hypothesis test for \\(\\beta_j\\)\nHypotheses: \\(H_0: \\beta_j = 0 \\hspace{2mm} \\text{ vs } \\hspace{2mm} H_a: \\beta_j \\neq 0\\), given the other variables in the model\n\nTest Statistic: \\[z = \\frac{\\hat{\\beta}_j - 0}{SE_{\\hat{\\beta}_j}}\\]\n\n\nP-value: \\(P(|Z| &gt; |z|)\\), where \\(Z \\sim N(0, 1)\\), the Standard Normal distribution"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#confidence-interval-for-beta_j",
+    "href": "slides/21-logistic-inference.html#confidence-interval-for-beta_j",
+    "title": "Logistic Regression: Prediction",
+    "section": "Confidence interval for \\(\\beta_j\\)",
+    "text": "Confidence interval for \\(\\beta_j\\)\nWe can calculate the C% confidence interval for \\(\\beta_j\\) as the following:\n\\[\n\\Large{\\hat{\\beta}_j \\pm z^* SE_{\\hat{\\beta}_j}}\n\\]\nwhere \\(z^*\\) is calculated from the \\(N(0,1)\\) distribution\n\n\n\n\n\n\n\nNote\n\n\nThis is an interval for the change in the log-odds for every one unit increase in \\(x_j\\)"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#interpretation-in-terms-of-the-odds",
+    "href": "slides/21-logistic-inference.html#interpretation-in-terms-of-the-odds",
+    "title": "Logistic Regression: Prediction",
+    "section": "Interpretation in terms of the odds",
+    "text": "Interpretation in terms of the odds\nThe change in odds for every one unit increase in \\(x_j\\).\n\\[\n\\Large{exp\\{\\hat{\\beta}_j \\pm z^* SE_{\\hat{\\beta}_j}\\}}\n\\]\n\nInterpretation: We are \\(C\\%\\) confident that for every one unit increase in \\(x_j\\), the odds multiply by a factor of \\(exp\\{\\hat{\\beta}_j - z^* SE_{\\hat{\\beta}_j}\\}\\) to \\(exp\\{\\hat{\\beta}_j + z^* SE_{\\hat{\\beta}_j}\\}\\), holding all else constant."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#coefficient-for-age",
+    "href": "slides/21-logistic-inference.html#coefficient-for-age",
+    "title": "Logistic Regression: Prediction",
+    "section": "Coefficient for age",
+    "text": "Coefficient for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\n\nHypotheses:\n\\[\nH_0: \\beta_{age} = 0 \\hspace{2mm} \\text{ vs } \\hspace{2mm} H_a: \\beta_{age} \\neq 0\n\\], given education is in the model"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#coefficient-for-age-1",
+    "href": "slides/21-logistic-inference.html#coefficient-for-age-1",
+    "title": "Logistic Regression: Prediction",
+    "section": "Coefficient for age",
+    "text": "Coefficient for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\nTest statistic:\n\\[z = \\frac{0.07559 - 0}{0.00554} = 13.64\n\\]"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#coefficient-for-age-2",
+    "href": "slides/21-logistic-inference.html#coefficient-for-age-2",
+    "title": "Logistic Regression: Prediction",
+    "section": "Coefficient for age",
+    "text": "Coefficient for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\nP-value:\n\\[\nP(|Z| &gt; |13.64|) \\approx 0\n\\]\n\n\n2 * pnorm(13.64,lower.tail = FALSE)\n\n[1] 2.315606e-42"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#coefficient-for-age-3",
+    "href": "slides/21-logistic-inference.html#coefficient-for-age-3",
+    "title": "Logistic Regression: Prediction",
+    "section": "Coefficient for age",
+    "text": "Coefficient for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\nConclusion:\nThe p-value is very small, so we reject \\(H_0\\). The data provide sufficient evidence that age is a statistically significant predictor of whether someone is high risk of having heart disease, after accounting for education."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#ci-for-age",
+    "href": "slides/21-logistic-inference.html#ci-for-age",
+    "title": "Logistic Regression: Prediction",
+    "section": "CI for age",
+    "text": "CI for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\n\nInterpret the 95% confidence interval for age in terms of the odds of being high risk for heart disease."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#the-model",
+    "href": "slides/21-logistic-inference.html#the-model",
+    "title": "Logistic Regression: Prediction",
+    "section": "The model",
+    "text": "The model\nLet’s predict high_risk from age, total cholesterol, and whether the patient is a current smoker:\n\nheart_disease_fit &lt;- logistic_reg() |&gt;\n  set_engine(\"glm\") |&gt;\n  fit(high_risk ~ age + totChol + currentSmoker, \n      data = heart_disease, family = \"binomial\")\n\ntidy(heart_disease_fit, conf.int = TRUE) |&gt; \n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#conditions-for-logistic-regression",
+    "href": "slides/21-logistic-inference.html#conditions-for-logistic-regression",
+    "title": "Logistic Regression: Prediction",
+    "section": "Conditions for logistic regression",
+    "text": "Conditions for logistic regression\n\nLinearity: The log-odds have a linear relationship with the predictors.\nRandomness: The data were obtained from a random process\nIndependence: The observations are independent from one another."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#empirical-logit",
+    "href": "slides/21-logistic-inference.html#empirical-logit",
+    "title": "Logistic Regression: Prediction",
+    "section": "Empirical logit",
+    "text": "Empirical logit\nThe empirical logit is the log of the observed odds:\n\\[\n\\text{logit}(\\hat{p}) = \\log\\Big(\\frac{\\hat{p}}{1 - \\hat{p}}\\Big) = \\log\\Big(\\frac{\\# \\text{Yes}}{\\# \\text{No}}\\Big)\n\\]"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#calculating-empirical-logit-categorical-predictor",
+    "href": "slides/21-logistic-inference.html#calculating-empirical-logit-categorical-predictor",
+    "title": "Logistic Regression: Prediction",
+    "section": "Calculating empirical logit (categorical predictor)",
+    "text": "Calculating empirical logit (categorical predictor)\nIf the predictor is categorical, we can calculate the empirical logit for each level of the predictor.\n\nheart_disease |&gt;\n  count(currentSmoker, high_risk) |&gt;\n  group_by(currentSmoker) |&gt;\n  mutate(prop = n/sum(n)) |&gt;\n  filter(high_risk == \"1\") |&gt;\n  mutate(emp_logit = log(prop/(1-prop)))\n\n# A tibble: 2 × 5\n# Groups:   currentSmoker [2]\n  currentSmoker high_risk     n  prop emp_logit\n  &lt;fct&gt;         &lt;fct&gt;     &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 0             1           301 0.145     -1.77\n2 1             1           318 0.158     -1.67"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#calculating-empirical-logit-quantitative-predictor",
+    "href": "slides/21-logistic-inference.html#calculating-empirical-logit-quantitative-predictor",
+    "title": "Logistic Regression: Prediction",
+    "section": "Calculating empirical logit (quantitative predictor)",
+    "text": "Calculating empirical logit (quantitative predictor)\n\nDivide the range of the predictor into intervals with approximately equal number of cases. (If you have enough observations, use 5 - 10 intervals.)\nCompute the empirical logit for each interval\n\n\nYou can then calculate the mean value of the predictor in each interval and create a plot of the empirical logit versus the mean value of the predictor in each interval."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#empirical-logit-plot-in-r-quantitative-predictor",
+    "href": "slides/21-logistic-inference.html#empirical-logit-plot-in-r-quantitative-predictor",
+    "title": "Logistic Regression: Prediction",
+    "section": "Empirical logit plot in R (quantitative predictor)",
+    "text": "Empirical logit plot in R (quantitative predictor)\nCreated using dplyr and ggplot functions."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#empirical-logit-plot-in-r-quantitative-predictor-1",
+    "href": "slides/21-logistic-inference.html#empirical-logit-plot-in-r-quantitative-predictor-1",
+    "title": "Logistic Regression: Prediction",
+    "section": "Empirical logit plot in R (quantitative predictor)",
+    "text": "Empirical logit plot in R (quantitative predictor)\nCreated using dplyr and ggplot functions.\n\nheart_disease |&gt; \n  mutate(age_bin = cut_interval(age, n = 10)) |&gt;\n  group_by(age_bin) |&gt;\n  mutate(mean_age = mean(age)) |&gt;\n  count(mean_age, high_risk) |&gt;\n  mutate(prop = n/sum(n)) |&gt;\n  filter(high_risk == \"1\") |&gt;\n  mutate(emp_logit = log(prop/(1-prop))) |&gt;\n  ggplot(aes(x = mean_age, y = emp_logit)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(x = \"Mean Age\", \n       y = \"Empirical logit\")"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#empirical-logit-plot-in-r-quantitative-predictor-2",
+    "href": "slides/21-logistic-inference.html#empirical-logit-plot-in-r-quantitative-predictor-2",
+    "title": "Logistic Regression: Prediction",
+    "section": "Empirical logit plot in R (quantitative predictor)",
+    "text": "Empirical logit plot in R (quantitative predictor)\nUsing the emplogitplot1 function from the Stat2Data R package\n\nemplogitplot1(high_risk ~ age, \n              data = heart_disease, \n              ngroups = 10)"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#empirical-logit-plot-in-r-interactions",
+    "href": "slides/21-logistic-inference.html#empirical-logit-plot-in-r-interactions",
+    "title": "Logistic Regression: Prediction",
+    "section": "Empirical logit plot in R (interactions)",
+    "text": "Empirical logit plot in R (interactions)\nUsing the emplogitplot2 function from the Stat2Data R package\n\nemplogitplot2(high_risk ~ age + currentSmoker, data = heart_disease, \n              ngroups = 10, \n              putlegend = \"bottomright\")"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#checking-linearity",
+    "href": "slides/21-logistic-inference.html#checking-linearity",
+    "title": "Logistic Regression: Prediction",
+    "section": "Checking linearity",
+    "text": "Checking linearity\n\n\n\nemplogitplot1(high_risk ~ age, \n              data = heart_disease, \n              ngroups = 10)\n\n\n\n\n\n\n\n\n\n\nemplogitplot1(high_risk ~ totChol, \n              data = heart_disease, \n              ngroups = 10)\n\n\n\n\n\n\n\n\n\n\n✅ The linearity condition is satisfied. There is a linear relationship between the empirical logit and the predictor variables."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#checking-randomness",
+    "href": "slides/21-logistic-inference.html#checking-randomness",
+    "title": "Logistic Regression: Prediction",
+    "section": "Checking randomness",
+    "text": "Checking randomness\nWe can check the randomness condition based on the context of the data and how the observations were collected.\n\nWas the sample randomly selected?\nIf the sample was not randomly selected, ask whether there is reason to believe the observations in the sample differ systematically from the population of interest.\n\n\n✅ The randomness condition is satisfied. We do not have reason to believe that the participants in this study differ systematically from adults in the U.S. in regards to health characteristics and risk of heart disease."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#checking-independence",
+    "href": "slides/21-logistic-inference.html#checking-independence",
+    "title": "Logistic Regression: Prediction",
+    "section": "Checking independence",
+    "text": "Checking independence\n\nWe can check the independence condition based on the context of the data and how the observations were collected.\nIndependence is most often violated if the data were collected over time or there is a strong spatial relationship between the observations.\n\n\n✅ The independence condition is satisfied. It is reasonable to conclude that the participants’ health characteristics are independent of one another.\n\n\n\n\n🔗 STA 221 - Fall 2024"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#likelihood-ratio-test-statistic",
+    "href": "slides/21-logistic-inference.html#likelihood-ratio-test-statistic",
+    "title": "Logistic Regression: Prediction",
+    "section": "Likelihood ratio test statistic",
+    "text": "Likelihood ratio test statistic\nLet \\(L_0\\) and \\(L_a\\) be the likelihood functions of the model under \\(H_0\\) and \\(H_a\\), respectively. The likelihood ratio test statistic is\n\\[\nG = -2[\\log L_0 - \\log L_a] = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\nwhere \\(\\hat{\\pi}^0\\) is the predicted probability under \\(H_0\\) and \\(\\hat{\\pi}_i^a = \\frac{\\exp \\{x_i^T\\boldsymbol{\\beta}\\}}{1 + \\exp \\{x_i^T\\boldsymbol{\\beta}\\}}\\) is the predicted probability under \\(H_a\\) 1\nSee @wilks1935likelihood for explanation of why -2 is included."
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#likelihood-ratio-test-statistic-1",
+    "href": "slides/21-logistic-inference.html#likelihood-ratio-test-statistic-1",
+    "title": "Logistic Regression: Prediction",
+    "section": "Likelihood ratio test statistic",
+    "text": "Likelihood ratio test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\nThe p-value is calculated as $ = P(^2 &gt; G) $\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#g--2log-l_0---log-l_a--2sum_i1n-big-y_i-log-bigfrachatpi0hatpia_ibig-1---y_ilog-bigfrac1-hatpi01-hatpia_ibigbig",
+    "href": "slides/21-logistic-inference.html#g--2log-l_0---log-l_a--2sum_i1n-big-y_i-log-bigfrachatpi0hatpia_ibig-1---y_ilog-bigfrac1-hatpi01-hatpia_ibigbig",
+    "title": "Logistic Regression: Prediction",
+    "section": "\\[\nG = -2[\\log L_0 - \\log L_a] = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]",
+    "text": "\\[\nG = -2[\\log L_0 - \\log L_a] = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\n\n\nThe p-value is calculated as\n\\[\n\\text{p-value} = P(\\chi^2 &gt; G)\n\\]"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#example-likelihood-ratio-test",
+    "href": "slides/21-logistic-inference.html#example-likelihood-ratio-test",
+    "title": "Logistic Regression: Prediction",
+    "section": "Example: likelihood ratio test",
+    "text": "Example: likelihood ratio test\n\\[\n\\begin{aligned}\n&H_0: \\beta_{age} = \\beta_{totChol} = \\beta_{currentSmoker} = 0 \\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\\]\n\n\nnull_model &lt;- glm(high_risk ~ 1, data = heart_disease, family = \"binomial\")\n\ntidy(null_model) |&gt;\n  kable()\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-1.72294\n0.0436342\n-39.486\n0\n\n\n\n\n\n\n\n\n(L_0 &lt;- glance(null_model)$logLik)\n\n[1] -1737.735\n\n(L_a &lt;- glance(heart_disease_fit)$logLik)\n\n[1] -1612.406\n\n\n\n(G &lt;- -2 * (L_0 - L_a))\n\n[1] 250.6572\n\n\n\n\n\n(p_value &lt;- pchisq(G, df = 3, lower.tail = FALSE))\n\n[1] 4.717158e-54"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#heart-disease-example-likelihood-ratio-test",
+    "href": "slides/21-logistic-inference.html#heart-disease-example-likelihood-ratio-test",
+    "title": "Logistic Regression: Prediction",
+    "section": "Heart disease example: likelihood ratio test",
+    "text": "Heart disease example: likelihood ratio test\n\\[\n\\begin{aligned}\n&H_0: \\beta_{age} = \\beta_{totChol} = \\beta_{currentSmoker} = 0 \\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\\]\n\nFit the null model\n(we’ve already fit the alternative model)\n\nnull_model &lt;- glm(high_risk ~ 1, data = heart_disease, family = \"binomial\")\n\ntidy(null_model) |&gt;\n  kable()\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-1.72294\n0.0436342\n-39.486\n0"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#heart-disease-example-likelihood-ratio-test-1",
+    "href": "slides/21-logistic-inference.html#heart-disease-example-likelihood-ratio-test-1",
+    "title": "Logistic Regression: Prediction",
+    "section": "Heart disease example: likelihood ratio test",
+    "text": "Heart disease example: likelihood ratio test\nCalculate the log-likelihood for the null and alternative models\n\n(L_0 &lt;- glance(null_model)$logLik)\n\n[1] -1737.735\n\n(L_a &lt;- glance(heart_disease_fit)$logLik)\n\n[1] -1612.406\n\n\n\nCalculate the likelihood ratio test statistic\n\n(G &lt;- -2 * (L_0 - L_a))\n\n[1] 250.6572\n\n\n\n\nCalculate the p-value\n\n(p_value &lt;- pchisq(G, df = 3, lower.tail = FALSE))\n\n[1] 4.717158e-54"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#heart-disease-model-likelihood-ratio-test",
+    "href": "slides/21-logistic-inference.html#heart-disease-model-likelihood-ratio-test",
+    "title": "Logistic Regression: Prediction",
+    "section": "Heart disease model: likelihood ratio test",
+    "text": "Heart disease model: likelihood ratio test\n\\[\n\\begin{aligned}\n&H_0: \\beta_{age} = \\beta_{totChol} = \\beta_{currentSmoker} = 0 \\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\\]\n\nFit the null model\n(we’ve already fit the alternative model)\n\nnull_model &lt;- glm(high_risk ~ 1, data = heart_disease, family = \"binomial\")\n\ntidy(null_model) |&gt;\n  kable()\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-1.72294\n0.0436342\n-39.486\n0"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#heart-disease-model-likelihood-ratio-test-1",
+    "href": "slides/21-logistic-inference.html#heart-disease-model-likelihood-ratio-test-1",
+    "title": "Logistic Regression: Prediction",
+    "section": "Heart disease model: likelihood ratio test",
+    "text": "Heart disease model: likelihood ratio test\nCalculate the log-likelihood for the null and alternative models\n\n(L_0 &lt;- glance(null_model)$logLik)\n\n[1] -1737.735\n\n(L_a &lt;- glance(heart_disease_fit)$logLik)\n\n[1] -1612.406\n\n\n\nCalculate the likelihood ratio test statistic\n\n(G &lt;- -2 * (L_0 - L_a))\n\n[1] 250.6572"
+  },
+  {
+    "objectID": "slides/21-logistic-inference.html#heart-disease-model-likelihood-ratio-test-2",
+    "href": "slides/21-logistic-inference.html#heart-disease-model-likelihood-ratio-test-2",
+    "title": "Logistic Regression: Prediction",
+    "section": "Heart disease model: likelihood ratio test",
+    "text": "Heart disease model: likelihood ratio test\nCalculate the p-value\n\n(p_value &lt;- pchisq(G, df = 3, lower.tail = FALSE))\n\n[1] 4.717158e-54\n\n\n\nConclusion\nThe p-value is small, so we reject \\(H_0\\). The data provide evidence of at least one non-zero model coefficient in the model.\nLRT for subset of coefficients"
   }
 ]
