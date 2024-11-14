@@ -272,7 +272,7 @@ $$
 
 This is called a **drop-in-deviance** test (also known as nested likelihood ratio test)
 
-## Deviance
+## Deviance {.midi}
 
 The **deviance** is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a "saturated" model)
 
