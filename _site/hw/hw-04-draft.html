@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-11-14">
 
-<title>Lab 06: Logistic Regression – STA 221 - Fall 2024</title>
+<title>HW 04: Logistic regression – STA 221 - Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 06: Logistic Regression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">HW 04: Logistic regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -374,23 +373,31 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link active" data-scroll-target="#logistic-regression">Logistic Regression</a>
-  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual exercises</a>
   <ul class="collapse">
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  </ul></li>
+  <li><a href="#applied-exercises" id="toc-applied-exercises" class="nav-link" data-scroll-target="#applied-exercises">Applied exercises</a>
+  <ul class="collapse">
+  <li><a href="#instructions-1" id="toc-instructions-1" class="nav-link" data-scroll-target="#instructions-1">Instructions</a></li>
+  <li><a href="#data-sat" id="toc-data-sat" class="nav-link" data-scroll-target="#data-sat">Data: SAT</a></li>
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#data-2000-u.s.-presidential-election" id="toc-data-2000-u.s.-presidential-election" class="nav-link" data-scroll-target="#data-2000-u.s.-presidential-election">Data: <strong>2000 U.S. Presidential Election</strong></a></li>
   <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
   <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
-  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa24/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -399,7 +406,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 06: Logistic Regression</h1>
+<h1 class="title">HW 04: Logistic regression</h1>
 </div>
 
 
@@ -407,12 +414,6 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 14, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -428,78 +429,356 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Date due
+Due date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This assignment is due on <strong>Thursday, November 21 at 11:59pm.</strong></p>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<!--# Update-->
+</section>
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
+<p>In this assignment, you will…</p>
+<!--# Update-->
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<ul>
+<li><p>Go to the <a href="https://www.github.com/sta221-fa24">sta221-fa24</a> organization on GitHub. Click on the repo with the prefix <strong>hw-04</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta221-fa24.netlify.app/labs/lab-01#clone-the-repo-start-new-rstudio-project">Lab 01 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
+</ul>
+</section>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>The following packages are used in this assignment:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load other packages as needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="conceptual-exercises" class="level1">
+<h1>Conceptual exercises</h1>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>The conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.<br>
+<br>
+<strong>You may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.</strong></p>
+</section>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>In the 2014 article <a href="https://fivethirtyeight.com/features/the-biggest-predictor-of-how-long-youll-be-unemployed-is-when-you-lose-your-job/">“The Biggest Predictor of How Long You’ll Be Unemployed Is When You Lose Your Job”</a>, author Ben Casselman analyzes the relationship between numerous factors such as age, race, and education and the odds an adult is unemployed for over a year.</p>
+<p>Casselman fits a logistic regression model using the unemployment rate at the time the person lost their job to predict whether an adult is unemployed for over a year. He states the following from the model:</p>
+<blockquote class="blockquote">
+<p><em>“A one-point increase in the unemployment rate raises an individual’s odds of becoming long-term unemployed by 35 percent.”</em></p>
+</blockquote>
+<p>What is the coefficient for unemployment rate in this model? Show how you calculated the answer.</p>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<!--# Adapted from Gelman and Hill pg. 105 #3-->
+<p>You would like to study how well the combined earnings for a child’s parents predicts high school graduate. Suppose the probability a child graduates from high school is 27% for children whose parents earn no income and is 88% for children whose parents earn $60,000 combined income.</p>
+<p>Write the equation for the logistic regression model with the single predictor variable <code>income</code> that is consistent with the information above. You can assume income is measured in tens of thousands of dollars.</p>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p><em>In the paper <a href="https://web-s-ebscohost-com.proxy.lib.duke.edu/ehost/pdfviewer/pdfviewer?vid=0&amp;sid=221ae3cd-b01e-4432-a4dc-4b259e895086%40redis">“Employing Standardized Risk Assessment in Pretrial Release Decisions: Association With Criminal Justice Outcomes and Racial Equity”</a></em> Marlowe et al.&nbsp;(<a href="https://sta210-fa22.netlify.app/hw/hw-04#ref-marlowe2020">2020</a>) <em>analyze the risk predictions produced by a black-box algorithm used to determine whether a defendant is considered “high risk” of being rearrested if they are released while awaiting trial. Such algorithms are used by judges in some states to help determine whether or not defendants are released while awaiting trial.</em></p>
+<p><em>The authors examine the algorithm’s risk predictions and whether a person was rearrested for over 500 defendants released pretrial in a southern state. For each person, the algorithm produced one of the following predictions: “High Risk” or “Low Risk”. The observed outcome was “Rearrested” or “Not Rearrested”. Below are some results from the analysis:</em></p>
+<ul>
+<li><em>Sensitivity: 86%</em></li>
+<li><em>Specificity: 24%</em></li>
+<li><em>Positive predictive power: 57%</em></li>
+<li><em>Negative predictive power: 60%</em></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Add dates</li>
-<li>Add dates</li>
+<li><p><strong>Positive Predictive Power</strong>: P(Y = 1 | Y classified as 1 from the model)</p></li>
+<li><p><strong>Negative Predictive Power</strong>: P(Y = 0 | Y classified as 0 from the model)</p></li>
 </ul>
 </div>
 </div>
-<section id="logistic-regression" class="level1">
-<h1>Logistic Regression</h1>
-<p>Today’ we will be exploring the use of logistic regression’s lab will be focused on running and interpreting logistic regression models for binary outcomes.</p>
-<section id="packages" class="level2">
-<h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<p>For today’s lab, we will be using the following packages.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="a">
+<li><p>Explain what each of the following mean in the context of the analysis:</p>
+<ul>
+<li><p>Sensitivity</p></li>
+<li><p>Specificity</p></li>
+<li><p>Positive predictive power</p></li>
+<li><p>Negative predictive power</p></li>
+</ul></li>
+<li><p>What is the false positive rate? What does this value mean in the context of the analysis?</p></li>
+<li><p>The AUC for this algorithm is 0.55. Based on this value, do you think this algorithm a good fit for the population examined in the paper? Why or why not?</p></li>
+</ol>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>The 2016 article <a href="https://link.springer.com/article/10.1007/s12603-016-0687-0">“Tea consumption reduces the incidence of neurocognitive disorders: Findings from the Singapore longitudinal aging study”</a> (<a href="https://sta210-fa22.netlify.app/hw/hw-04#ref-feng2016">Feng et al.&nbsp;2016</a>) examined the association between tea consumption habits and neurocognitive disorders (NCD), such as Alzheimer’s disease, in adults age 55 and older. Portions of the abstract are below:</p>
+<blockquote class="blockquote">
+<p><u>Objectives</u></p>
+<p><em>To examine the relationships between tea consumption habits and incident neurocognitive disorders (NCD) and explore potential effect modification by gender and the apolipoprotein E (APOE) genotype.</em></p>
+<p><u>Participants</u></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>957 community-living Chinese elderly who were cognitively intact at baseline.</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><u>Measurements</u></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>We collected tea consumption information at baseline from 2003 to 2005 and ascertained incident cases of neurocognitive disorders (NCD) from 2006 to 2010. Odds ratio (OR) of association were calculated in logistic regression models that adjusted for potential confounders.</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><u>Results</u></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>A total of 72 incident NCD cases were identified from the cohort. Tea intake was associated with lower risk of incident NCD, independent of other risk factors. Reduced NCD risk was observed for both green tea (OR=0.43) and black/oolong tea (OR=0.53) and appeared to be influenced by the changing of tea consumption habit at follow-up. Using consistent nontea consumers as the reference, only consistent tea consumers had reduced risk of NCD (OR=0.39). Stratified analyses indicated that tea consumption was associated with reduced risk of NCD among females (OR=0.32) and APOE e4 carriers (OR=0.14) but not males and non APOE e4 carriers.</em></p>
+</blockquote>
+<ol type="a">
+<li><p>The odds ratios reported in the abstract are the adjusted odds ratios, i.e., the odds ratios after adjusting for potential confounders such as age, pre-existing health conditions, diet, and behavioral factors. Interpret the following odds ratios from the abstract. Write the interpretations in the context of the data.</p>
+<ul>
+<li><p>OR = 0.39</p></li>
+<li><p>OR = 0.32</p></li>
+</ul></li>
+<li><p>An <a href="https://www.womansworld.com/posts/health/tea-cuts-dementia-risk">online article</a> based on the results of Feng et al.&nbsp;states the following:</p>
+<blockquote class="blockquote">
+<p><em>“And for people who carry a gene that puts them at higher risk for Alzheimer’s disease (the APOE e4 gene), enjoying the beverage is even more important: Daily tea consumption could reduce their risk of cognitive decline by up to 86 percent.”</em></p>
+</blockquote>
+<p>Is this statement supported by the results of the study? Briefly explain why or why not.</p></li>
+</ol>
+<!--# START HERE--->
+</section>
+</section>
+<section id="applied-exercises" class="level1">
+<h1>Applied exercises</h1>
+<section id="instructions-1" class="level2">
+<h2 class="anchored" data-anchor-id="instructions-1">Instructions</h2>
+<p>The applied exercises are focused on applying the concepts to analyze data.</p>
+<p><strong>All work for the applied exercises must be typed in your Quarto document following a reproducible workflow.</strong></p>
+<p>Write all narrative using complete sentences and include informative axis labels / titles on visualizations.</p>
+</section>
+<section id="data-sat" class="level2">
+<h2 class="anchored" data-anchor-id="data-sat">Data: SAT</h2>
+<p>This data set contains the average SAT score (out of 1600) and other variables that may be associated with SAT performance for each of the 50 U.S. states. The data is based on test takers for the 1982 exam. We will use the following variables:</p>
+<ul>
+<li><p><strong><code>SAT</code></strong>: average total SAT score</p></li>
+<li><p><strong><code>Takers</code></strong>: percentage of high school seniors who took exam</p></li>
+<li><p><strong><code>Income</code></strong>: median income of families of test-takers ($ hundreds)</p></li>
+<li><p><strong><code>Years</code></strong>: average number of years test-takers had formal education in social sciences, natural sciences, and humanities</p></li>
+<li><p><strong><code>Public</code></strong>: percentage of test-takers who attended public high schools</p></li>
+<li><p><strong><code>Expend</code></strong>: total state expenditure on high schools ($ hundreds per student)</p></li>
+<li><p><strong><code>Rank</code></strong>: median percentile rank of test-takers within their high school classes</p></li>
+</ul>
+<p>The data are in the file <code>sat-1982.csv</code> in the <code>data</code> folder.</p>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<ol type="a">
+<li>Fit a main effects model using <code>SAT</code> as the response and all other variables (except State) as the predictors. Neatly display the model using 3 digits.</li>
+<li>Are there any influential observations in the data set? Briefly explain showing any work or output used to make the determination.</li>
+<li>Consider the observation with the highest value for Cook’s distance. What is the value of leverage for this observation? Would this be considered large leverage? Briefly explain showing any work or output used to make the determination.</li>
+</ol>
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<ol type="a">
+<li>Compute the Variance Inflation Factors (VIF) for the model from the previous exercise.</li>
+<li>Does this model have any issues with multicollinearity? If so, what predictors appear to be collinear?</li>
+<li>If multicollinearity is present, select a strategy to fit a model that does not have an issue with multicollinearity.
+<ul>
+<li>Briefly describe your strategy.</li>
+<li>Select a final model.</li>
+<li>Briefly explain your selection, showing any work and output used to choose a model.</li>
+</ul></li>
+</ol>
+</section>
+<section id="data-2000-u.s.-presidential-election" class="level2">
+<h2 class="anchored" data-anchor-id="data-2000-u.s.-presidential-election">Data: <strong>2000 U.S. Presidential Election</strong></h2>
+<p>We will examine data about the <a href="https://en.wikipedia.org/wiki/2000_United_States_presidential_election">2000 U.S. presidential election</a> between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous <a href="http://news.bbc.co.uk/2/hi/in_depth/americas/2000/us_elections/glossary/a-b/1037172.stm">butterfly ballots</a>. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.</p>
+<p>The variables in the data are</p>
+<ul>
+<li><p><code>County</code>: County name</p></li>
+<li><p><code>Bush2000</code>: Number of votes for George W. Bush</p></li>
+<li><p><code>Buchanan2000</code>: Number of votes for Pat Buchanan</p></li>
+</ul>
+<p>The data are available in the file <code>florida-votes-2000.csv</code> in the <code>data</code> folder of your repo.</p>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>The goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.</p>
+<ol type="a">
+<li>Visualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.</li>
+<li>What is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. <strong>You will use this updated data frame for the remainder of this exercise and Exercise 8.</strong></li>
+<li>Fit a model to predict the number of votes for Buchanan based on the number of votes for Bush in the county.
+<ul>
+<li>Make a plot of the standardized residuals versus the fitted values.</li>
+<li>Is the constant variance condition satisfied? Briefly explain.</li>
+</ul></li>
+</ol>
+</section>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<p>Now let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Response variable</th>
+<th>Predictor variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 (from previous exercise)</td>
+<td>Buchanan2000</td>
+<td>Bush2000</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>log(Buchanan2000)</td>
+<td>Bush2000</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Buchanan2000</td>
+<td>log(Bush2000)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>log(Buchanan2000)</td>
+<td>log(Bush2000)</td>
+</tr>
+</tbody>
+</table>
+<p>Which model best fits the data? Briefly explain, showing any work and output used to determine the response. <strong>(Note: Use the data set without the outlying county to find the candidate models.)</strong></p>
+</section>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<p>Now we will use the model to predict the expected number of Buchanan votes for the outlier county.</p>
+<p>Suppose the observed value of the predictor for this county (a new observation) is <span class="math inline">\(x_0\)</span>. We define <span class="math inline">\(\mathbf{x}_0^T = [1, x_0]\)</span></p>
+<p>Then the predicted response is</p>
+<p><span class="math display">\[
+\hat{y}_0 = \mathbf{x}_0^T\hat{\boldsymbol{\beta}}
+\]</span></p>
+<p>Where <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the vector of estimated model coefficients.</p>
+<p>Just as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a <strong>prediction interval</strong> to quantify the uncertainty in the prediction for a new observation.</p>
+<p>The <span class="math inline">\(C\%\)</span> prediction interval for the new observation is</p>
+<p><span class="math display">\[
+\hat{y}_0 \pm t^*_{n - p - 1}\sqrt{\hat{\sigma}^2_\epsilon(1 + \mathbf{x}_0^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_0)}
+\]</span></p>
+<p>where <span class="math inline">\(t^*_{n-p-1}\)</span> is the critical value obtained from the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom, <span class="math inline">\(\mathbf{X}\)</span> is the design matrix for the model, and <span class="math inline">\(\hat{\sigma}^2_\epsilon\)</span> is the estimated variability about the regression line.</p>
+<ol type="a">
+<li><p>Use the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 7. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).</p></li>
+<li><p>Compute the 95% prediction interval for this county. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).</p></li>
+<li><p>It is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?</p>
+<ul>
+<li><p>If no, briefly explain.</p></li>
+<li><p>If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).</p></li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Today’s data is about image classification. In particular, we will consider the problem of distinguishing between two different rice varieties, <em>Cammeo</em> and <em>Osmancik</em>, based on pictures of the grains. The data is available on the <a href="https://archive.ics.uci.edu/dataset/545/rice+cammeo+and+osmancik">UCI Machine Learning Repository</a>.</p>
-<!--# add the paper -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rice <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/rice.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-title-container flex-fill">
+Warning
 </div>
-<p>Our outcome variable will be <code>Class</code> (the type of rice), and we will be used two predictors, namely <code>Area</code> and <code>Eccentricity</code>. <code>Area</code> refers to the size of the rice grain as measured in pixels, and <code>Eccentricity</code> measures how close to a circle the rice shape is (0 would be a perfect circle).</p>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
+<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
+<p>If you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.</p>
+<p>Instructions to combine PDFs:</p>
+<ul>
+<li><p>Preview (Mac): <a href="https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac">support.apple.com/guide/preview/combine-pdfs-prvw43696/mac</a></p></li>
+<li><p>Adobe (Mac or PC): help<a href="https://helpx.adobe.com/acrobat/using/merging-files-single-pdf.html">.adobe.com/acrobat/using/merging-files-single-pdf.html</a></p>
+<ul>
+<li>Get free access to Adobe Acrobat as a Duke student: <a href="https://oit.duke.edu/help/articles/kb0030141/">oit.duke.edu/help/articles/kb0030141/</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>To submit your assignment:</p>
+<ul>
+<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/38867">STA 221 Canvas site.</a></p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
+<li><p>Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).</p></li>
+<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
+</ul>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Let us begin by visualizing the data. Create a scatterplot of <code>Area</code> against <code>Eccentricity</code>, and color the points by the assigned class.</p>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Comment on the above plot. Does it look like the two types of rice can be separated based on the two chosen features?</p>
-</section>
-<section id="exercise-3" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>With this type of classification problems, it is common to test the performance of a logistic regression by splitting the data into a <em>training</em> and a <em>test</em> set. This means that we will choose a random subset of the data to estimate the regression coefficient, and we will then test the predictions on the remaining observations.</p>
-<p>Randomly select 75% of the rows of the data to create a dataset <code>rice_train</code>, and place the remaining 25% in a dataset named <code>rice_test</code>.</p>
-</section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-<p>In a logistic regression model, it is commonly said that the <em>log-odds</em> of the outcome being 1 is given by <span class="math display">\[\log\Big(\frac{\pi_i}{1-\pi_i}\Big) = \mathbf{x}_i^\top \boldsymbol{\beta}\]</span> What does each <span class="math inline">\(\pi_i\)</span> represent? How are the log-odds related to the probability of the outcome variable being 1? Make sure to show the mathematical relationship between the two quantities.</p>
-</section>
-<section id="exercise-6" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
-<p>Estimate the logistic regression model for <code>Class</code> on the chosen predictors using the <code>rice_train</code> data. Display the regression output and interpret the coefficients. Does the intercept have any reasonable interpretation? If so, interpret the intercept. Otherwise explain why not.</p>
-</section>
-<section id="exercise-7" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
-<p>Interpret the coefficients on <code>Area</code> and <code>Eccentricity</code>, and comment on their significance.</p>
-</section>
-<section id="exercise-8" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
-<p>How would you expect the log-odds of the rice grain being of the Osmancik variety to change if the measures eccentricity changes from 0.85 to 0.9? How does that translate into the estimated probabilities?</p>
-</section>
-<section id="exercise-9" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
-<p>Let us now test our model on the test set. Using the <code>predict</code> function, obtain the predicted probabilities of the rice type being Osmancik for the observations in <code>rice_test</code>.</p>
-</section>
-<section id="exercise-10" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-10">Exercise 10</h3>
-<p>With these estimated probabilities, we can now try to classify the rice in the test set. Choose a way to assign a label to each observation based on the estimated probability, and describe it here. Compare the estimated class assignments you constructed with the actual classes. Comment on the result.</p>
+<section id="grading" class="level1">
+<h1>Grading</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ex 1</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Ex 2</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>Ex 3</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>Ex 4</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Ex 5</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Ex 6</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Ex 7</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Ex 8</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Ex 9</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Workflow &amp; formatting</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.</p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -48,13 +48,11 @@ knitr::opts_chunk$set(
 
 ## Topics
 
-<!--# UPDATE-->
+-   Test of significance for overall logistic regression model
 
-::: nonincremental
--   Estimating coefficients in logistic regression
--   Inference for coefficients in logistic regression
--   Checking model conditions for logistic regression
-:::
+-   Test of significance for a subset of model coefficients
+
+-   Test of significance for a single coefficient
 
 ## Computational setup
 
@@ -69,13 +67,12 @@ library(tidymodels)
 library(pROC)      
 library(knitr)
 library(kableExtra)
-library(Stat2Data)
 
 # set default theme in ggplot2
 ggplot2::theme_set(ggplot2::theme_bw())
 ```
 
-# Data
+# 
 
 ## Risk of coronary heart disease {.midi}
 
@@ -126,7 +123,7 @@ tidy(heart_disease_fit, conf.int = TRUE) |>
 
 ## Likelihood ratio test
 
-Similar to linear regression, we can test the overall significance for a logistic regression model, i.e., there is at least one non-zero coefficient in the model
+Similar to linear regression, we can test the overall significance for a logistic regression model, i.e., whether there is at least one non-zero coefficient in the model
 
 $$
 \begin{aligned}
@@ -162,14 +159,12 @@ $$
 ::: incremental
 -   When $n$ is large, $G \sim \chi^2_p$, ( $G$ follows a Chi-square distribution with $p$ degrees of freedom)
 
--   The p-value is calculated as $
-    \text{p-value} = P(\chi^2 > G)
-    $
+-   The p-value is calculated as $\text{p-value} = P(\chi^2 > G)$
 
 -   Large values of $G$ (small p-values) indicate at least one $\beta_j$ is non-zero
 :::
 
-## $\chi^2$ distribution 
+## $\chi^2$ distribution
 
 ```{r}
 #| echo: false
@@ -260,7 +255,7 @@ The p-value is small, so we reject $H_0$. The data provide evidence of at least 
 
     -   Reduced Model: includes predictors $x_1, \ldots, x_q$
 
-    -   Full Model: includes predictors $x1, \ldots, x_q, x_{q+1}, \ldots, x_p$
+    -   Full Model: includes predictors $x_1, \ldots, x_q, x_{q+1}, \ldots, x_p$
 
 -   We can use the likelihood ratios to see if any of the new predictors are useful
 
@@ -279,15 +274,23 @@ This is called a **drop-in-deviance** test (also known as nested likelihood rati
 
 ## Deviance
 
-The **deviance** is a measure of the degree to which the predicted values are different from the observed values
+The **deviance** is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a "saturated" model)
+
+<br>
+
+In logistic regression,
 
 $$
-D = -2 \log L
+D = -2 \log L 
 $$
+
+<br>
 
 $D \sim \chi^2_{n - p - 1}$ ( $D$ follows a Chi-square distribution with $n - p - 1$ degrees of freedom)
 
-Note: $n - p - 1$ a the degrees of freedom associated with the residuals, i.e., error in the model
+<br>
+
+Note: $n - p - 1$ a the degrees of freedom associated with the error in the model (like residuals)
 
 ## Drop-in-deviance test
 
@@ -304,7 +307,7 @@ The test statistic is
 
 $$
 \begin{aligned}
-G &= D_{reduced} - D_{full} = -2\log L_{reduced} - (-2 \log L_{full}) \\
+G = D_{reduced} - D_{full} &= -2\log L_{reduced} - (-2 \log L_{full}) \\
 &= -2(\log L_{reduced} - \log L_{full})
 \end{aligned}
 $$
@@ -370,7 +373,7 @@ pchisq(G, df = 3, lower.tail = FALSE)
 . . .
 
 ::: question
-What is your conclusion? Would you include `education` in the model that already includes `age`, `totChol`, `education`?
+What is your conclusion? Would you include `education` in the model that already has `age`, `totChol`, `currentSmoker`?
 :::
 
 ## Drop-in-deviance test in R {.midi}
@@ -396,19 +399,57 @@ $$
 
 You want to select the model that minimizes AIC / BIC
 
+## Compare models using AIC
+
+AIC for reduced model (`age`, `totChol`, `currentSmoker`)
+
+```{r}
+glance(reduced_model)$AIC
+```
+
+<br>
+
+. . .
+
+AIC for full model (`age`, `totChol`, `currentSmoker`, `education`)
+
+```{r}
+glance(full_model)$AIC
+```
+
+## Compare models using BIC
+
+BIC for reduced model (`age`, `totChol`, `currentSmoker`)
+
+```{r}
+glance(reduced_model)$BIC
+```
+
+<br>
+
+. . .
+
+BIC for full model (`age`, `totChol`, `currentSmoker`, `education`)
+
+```{r}
+glance(full_model)$BIC
+```
+
 # Test for a single coefficient
 
-## Distribution of $\hat{\boldsymbol{\beta}}$ 
+## Distribution of $\hat{\boldsymbol{\beta}}$
 
 When $n$ is large, $\hat{\boldsymbol{\beta}}$, the estimated coefficients of the logistic regression model, is approximately normal.
+
+<br>
 
 ::: question
 How do we know the distribution of $\hat{\boldsymbol{\beta}}$ is normal for large $n$?
 :::
 
-## Distribution of $\hat{\boldsymbol{\beta}}$ 
+## Distribution of $\hat{\boldsymbol{\beta}}$
 
-The expected value of $\hat{\boldsymbol{\beta}}$ is the true parameter, $\beta$, i.e., $E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}$
+The expected value of $\hat{\boldsymbol{\beta}}$ is the true parameter, $\boldsymbol{\beta}$, i.e., $E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}$
 
 . . .
 
