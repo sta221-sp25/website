@@ -3038,7 +3038,7 @@
     "href": "hw/hw-04.html#data-understanding-pro-environmental-behavior",
     "title": "HW 04: Logistic regression",
     "section": "Data: Understanding pro-environmental behavior",
-    "text": "Data: Understanding pro-environmental behavior\nIbanez and Roussel (2022) conducted an experiment to understand the impact of watching a nature documentary on pro-environmental behavior. The researchers randomly assigned the 113 participants to watch an video about architecture in NYC (control) or a video about Yellowstone National Park (treatment). As part of the experiment, participants played a game in which they had an opportunity to donate to an environmental organization.\nThe data set is available in nature-experiment.csv in the data folder. We will use the following variables:\n\ndonation_binary:\n\n1 - participant donated to environmental organization\n0 - participant did not donate\n\nAge: Age in years\nGender: Participant’s reported gender\nTreatment:\n\n“Urban (T1)” - the control group,\n“Nature (T2)” - the treatment group\n\nNEP_high:\n\n1 - score of 4 or higher on the New Ecological Paradigm (NEP)\n0 - score less than 4\n\n\n\n\n\n\n\n\nTip\n\n\n\nSee the Introduction and Methods sections of Ibanez and Roussel (2022) for more detail about the variables.\nClick here to access the paper online.",
+    "text": "Data: Understanding pro-environmental behavior\nIbanez and Roussel (2022) conducted an experiment to understand the impact of watching a nature documentary on pro-environmental behavior. The researchers randomly assigned the 113 participants to watch an video about architecture in NYC (control) or a video about Yellowstone National Park (treatment). As part of the experiment, participants played a game in which they had an opportunity to donate to an environmental organization.\nThe data set is available in nature-experiment.csv in the data folder. We will use the following variables:\n\ndonation_binary:\n\n1 - participant donated to environmental organization\n0 - participant did not donate\n\nage: Age in years\ngender: Participant’s reported gender\n\n1 - male\n0 - non-male\n\ntreatment:\n\n“Urban (T1)” - the control group,\n“Nature (T2)” - the treatment group\n\nnep_high:\n\n1 - score of 4 or higher on the New Ecological Paradigm (NEP)\n0 - score less than 4\n\n\n\n\n\n\n\n\nTip\n\n\n\nSee the Introduction and Methods sections of Ibanez and Roussel (2022) for more detail about the variables.\nClick here to access the paper online.",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -3071,7 +3071,7 @@
     "href": "hw/hw-04.html#exercise-8",
     "title": "HW 04: Logistic regression",
     "section": "Exercise 8",
-    "text": "Exercise 8\nProduce the ROC curve for the model from the previous exericse and calculate the area under curve (AUC). Write 1 - 2 sentences describing how well the model fits the data.",
+    "text": "Exercise 8\nProduce the ROC curve for the model from the previous exercise and calculate the area under curve (AUC). Write 1 - 2 sentences describing how well the model fits the data.",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -3082,7 +3082,7 @@
     "href": "hw/hw-04.html#exercise-9",
     "title": "HW 04: Logistic regression",
     "section": "Exercise 9",
-    "text": "Exercise 9\nThe authors include an interaction effect between NEP_high and Treatment in one of their models.\n\nExplain what an interaction between NEP_high and Treatment means in the context of the data.\nCreate a visualization to explore the potential of an interaction effect between these two variables. Based on the visualization, do you think there is an interaction effect? Briefly explain.",
+    "text": "Exercise 9\nThe authors include an interaction effect between nep_high and treatment in one of their models.\n\nExplain what an interaction between nep_high and treatment means in the context of the data.\nCreate a visualization to explore the potential of an interaction effect between these two variables. Based on the visualization, do you think there is an interaction effect? Briefly explain.",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -3093,7 +3093,7 @@
     "href": "hw/hw-04.html#exercise-10",
     "title": "HW 04: Logistic regression",
     "section": "Exercise 10",
-    "text": "Exercise 10\nConduct a drop-in-deviance test to determine if the interaction between NEP_high and Treatment should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.",
+    "text": "Exercise 10\nConduct a drop-in-deviance test to determine if the interaction between nep_high and Treatment should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.",
     "crumbs": [
       "Homework",
       "HW 04"

@@ -169,16 +169,20 @@ The data set is available in `nature-experiment.csv` in the `data` folder. We wi
     -   1 - participant donated to environmental organization
     -   0 - participant did not donate
 
--   `Age`: Age in years
+-   `age`: Age in years
 
--   `Gender`: Participant's reported gender
+-   `gender`: Participant's reported gender
 
--   `Treatment`:
+    -   1 - male
+
+    -   0 - non-male
+
+-   `treatment`:
 
     -   "Urban (T1)" - the control group,
     -   "Nature (T2)" - the treatment group
 
--   `NEP_high`:
+-   `nep_high`:
 
     -   1 - score of 4 or higher on the New Ecological Paradigm (NEP)
     -   0 - score less than 4
@@ -209,18 +213,18 @@ d.  Based on the model, what is the predicted probability of donating for a 25-y
 
 ## Exercise 8
 
-Produce the ROC curve for the model from the previous exericse and calculate the area under curve (AUC). Write 1 - 2 sentences describing how well the model fits the data.
+Produce the ROC curve for the model from the previous exercise and calculate the area under curve (AUC). Write 1 - 2 sentences describing how well the model fits the data.
 
 ## Exercise 9
 
-The authors include an interaction effect between `NEP_high` and `Treatment` in one of their models.
+The authors include an interaction effect between `nep_high` and `treatment` in one of their models.
 
-a.  Explain what an interaction between `NEP_high` and `Treatment` means in the context of the data.
-b.   Create a visualization to explore the potential of an interaction effect between these two variables. Based on the visualization, do you think there is an interaction effect? Briefly explain.
+a.  Explain what an interaction between `nep_high` and `treatment` means in the context of the data.
+b.  Create a visualization to explore the potential of an interaction effect between these two variables. Based on the visualization, do you think there is an interaction effect? Briefly explain.
 
 ## Exercise 10
 
-Conduct a drop-in-deviance test to determine if the interaction between `NEP_high` and `Treatment` should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.
+Conduct a drop-in-deviance test to determine if the interaction between `nep_high` and `Treatment` should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.
 
 # Submission
 
