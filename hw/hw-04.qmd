@@ -177,8 +177,8 @@ The data set is available in `nature-experiment.csv` in the `data` folder. We wi
 
 -   `treatment`:
 
-    -   "Urban (T1)" - the control group,
-    -   "Nature (T2)" - the treatment group
+    -   "URBAN (T1)" - the control group
+    -   "NATURE (T2)" - the treatment group
 
 -   `nep_high`:
 
@@ -197,13 +197,13 @@ a.  Create a visualization of the relationship between donating and treatment. U
 
 b.  Create a visualization of the relationship between donating and age. Use the visualization to describe the relationship between the two variables.
 
-c.  We would like to use the mean-centered value of `age` in the model. Create a new variable `age_cent` that contains the mean-centered ages. Use `age_cent` for the remainder of the assignment.
+c.  We would like to use the mean-centered value of `age` in the model. Create a new variable `age_cent` that contains the mean-centered ages.
 
 ## Exercise 7
 
 a.  Fit a logistic regression model using `age_cent`, `gender`, `treatment`, and `nep_high` to predict the likelihood of donating. Neatly display the model using 3 digits.
 
-b.  Describe the effect of watching the documentary in terms of the **odds** of donating.
+b.  The researchers are most interested in the effect of watching the nature documentary. Describe the effect of `treatment` in terms of the **odds** of donating.
 
 c.  What group of participants is described by the intercept? What is the predicted probability a randomly selected individual in this group donates?
 
@@ -222,7 +222,7 @@ b.  Create a visualization to explore the potential of an interaction effect bet
 
 ## Exercise 10
 
-Conduct a drop-in-deviance test to determine if the interaction between `nep_high` and `Treatment` should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.
+Conduct a drop-in-deviance test to determine if the interaction between `nep_high` and `treatment` should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.
 
 # Submission
 

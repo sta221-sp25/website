@@ -3038,7 +3038,7 @@
     "href": "hw/hw-04.html#data-understanding-pro-environmental-behavior",
     "title": "HW 04: Logistic regression",
     "section": "Data: Understanding pro-environmental behavior",
-    "text": "Data: Understanding pro-environmental behavior\nIbanez and Roussel (2022) conducted an experiment to understand the impact of watching a nature documentary on pro-environmental behavior. The researchers randomly assigned the 113 participants to watch an video about architecture in NYC (control) or a video about Yellowstone National Park (treatment). As part of the experiment, participants played a game in which they had an opportunity to donate to an environmental organization.\nThe data set is available in nature-experiment.csv in the data folder. We will use the following variables:\n\ndonation_binary:\n\n1 - participant donated to environmental organization\n0 - participant did not donate\n\nage: Age in years\ngender: Participant’s reported gender\n\n1 - male\n0 - non-male\n\ntreatment:\n\n“Urban (T1)” - the control group,\n“Nature (T2)” - the treatment group\n\nnep_high:\n\n1 - score of 4 or higher on the New Ecological Paradigm (NEP)\n0 - score less than 4\n\n\n\n\n\n\n\n\nTip\n\n\n\nSee the Introduction and Methods sections of Ibanez and Roussel (2022) for more detail about the variables.\nClick here to access the paper online.",
+    "text": "Data: Understanding pro-environmental behavior\nIbanez and Roussel (2022) conducted an experiment to understand the impact of watching a nature documentary on pro-environmental behavior. The researchers randomly assigned the 113 participants to watch an video about architecture in NYC (control) or a video about Yellowstone National Park (treatment). As part of the experiment, participants played a game in which they had an opportunity to donate to an environmental organization.\nThe data set is available in nature-experiment.csv in the data folder. We will use the following variables:\n\ndonation_binary:\n\n1 - participant donated to environmental organization\n0 - participant did not donate\n\nage: Age in years\ngender: Participant’s reported gender\n\n1 - male\n0 - non-male\n\ntreatment:\n\n“URBAN (T1)” - the control group\n“NATURE (T2)” - the treatment group\n\nnep_high:\n\n1 - score of 4 or higher on the New Ecological Paradigm (NEP)\n0 - score less than 4\n\n\n\n\n\n\n\n\nTip\n\n\n\nSee the Introduction and Methods sections of Ibanez and Roussel (2022) for more detail about the variables.\nClick here to access the paper online.",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -3049,7 +3049,7 @@
     "href": "hw/hw-04.html#exercise-6",
     "title": "HW 04: Logistic regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nCreate a visualization of the relationship between donating and treatment. Use the visualization to describe the relationship between the two variables.\nCreate a visualization of the relationship between donating and age. Use the visualization to describe the relationship between the two variables.\nWe would like to use the mean-centered value of age in the model. Create a new variable age_cent that contains the mean-centered ages. Use age_cent for the remainder of the assignment.",
+    "text": "Exercise 6\n\nCreate a visualization of the relationship between donating and treatment. Use the visualization to describe the relationship between the two variables.\nCreate a visualization of the relationship between donating and age. Use the visualization to describe the relationship between the two variables.\nWe would like to use the mean-centered value of age in the model. Create a new variable age_cent that contains the mean-centered ages.",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -3060,7 +3060,7 @@
     "href": "hw/hw-04.html#exercise-7",
     "title": "HW 04: Logistic regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nFit a logistic regression model using age_cent, gender, treatment, and nep_high to predict the likelihood of donating. Neatly display the model using 3 digits.\nDescribe the effect of watching the documentary in terms of the odds of donating.\nWhat group of participants is described by the intercept? What is the predicted probability a randomly selected individual in this group donates?\nBased on the model, what is the predicted probability of donating for a 25-year old male in the treatment group with a NEP score of 5?",
+    "text": "Exercise 7\n\nFit a logistic regression model using age_cent, gender, treatment, and nep_high to predict the likelihood of donating. Neatly display the model using 3 digits.\nThe researchers are most interested in the effect of watching the nature documentary. Describe the effect of treatment in terms of the odds of donating.\nWhat group of participants is described by the intercept? What is the predicted probability a randomly selected individual in this group donates?\nBased on the model, what is the predicted probability of donating for a 25-year old male in the treatment group with a NEP score of 5?",
     "crumbs": [
       "Homework",
       "HW 04"
@@ -3093,7 +3093,7 @@
     "href": "hw/hw-04.html#exercise-10",
     "title": "HW 04: Logistic regression",
     "section": "Exercise 10",
-    "text": "Exercise 10\nConduct a drop-in-deviance test to determine if the interaction between nep_high and Treatment should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.",
+    "text": "Exercise 10\nConduct a drop-in-deviance test to determine if the interaction between nep_high and treatment should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.",
     "crumbs": [
       "Homework",
       "HW 04"

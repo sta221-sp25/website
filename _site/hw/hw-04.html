@@ -611,8 +611,8 @@ Tip
 </ul></li>
 <li><p><code>treatment</code>:</p>
 <ul>
-<li>“Urban (T1)” - the control group,</li>
-<li>“Nature (T2)” - the treatment group</li>
+<li>“URBAN (T1)” - the control group</li>
+<li>“NATURE (T2)” - the treatment group</li>
 </ul></li>
 <li><p><code>nep_high</code>:</p>
 <ul>
@@ -640,14 +640,14 @@ Tip
 <ol type="a">
 <li><p>Create a visualization of the relationship between donating and treatment. Use the visualization to describe the relationship between the two variables.</p></li>
 <li><p>Create a visualization of the relationship between donating and age. Use the visualization to describe the relationship between the two variables.</p></li>
-<li><p>We would like to use the mean-centered value of <code>age</code> in the model. Create a new variable <code>age_cent</code> that contains the mean-centered ages. Use <code>age_cent</code> for the remainder of the assignment.</p></li>
+<li><p>We would like to use the mean-centered value of <code>age</code> in the model. Create a new variable <code>age_cent</code> that contains the mean-centered ages.</p></li>
 </ol>
 </section>
 <section id="exercise-7" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
 <ol type="a">
 <li><p>Fit a logistic regression model using <code>age_cent</code>, <code>gender</code>, <code>treatment</code>, and <code>nep_high</code> to predict the likelihood of donating. Neatly display the model using 3 digits.</p></li>
-<li><p>Describe the effect of watching the documentary in terms of the <strong>odds</strong> of donating.</p></li>
+<li><p>The researchers are most interested in the effect of watching the nature documentary. Describe the effect of <code>treatment</code> in terms of the <strong>odds</strong> of donating.</p></li>
 <li><p>What group of participants is described by the intercept? What is the predicted probability a randomly selected individual in this group donates?</p></li>
 <li><p>Based on the model, what is the predicted probability of donating for a 25-year old male in the treatment group with a NEP score of 5?</p></li>
 </ol>
@@ -666,7 +666,7 @@ Tip
 </section>
 <section id="exercise-10" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
-<p>Conduct a drop-in-deviance test to determine if the interaction between <code>nep_high</code> and <code>Treatment</code> should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.</p>
+<p>Conduct a drop-in-deviance test to determine if the interaction between <code>nep_high</code> and <code>treatment</code> should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.</p>
 </section>
 </section>
 <section id="submission" class="level1">
