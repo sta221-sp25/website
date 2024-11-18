@@ -31,9 +31,8 @@ bibliography: references.bib
 
 ## Goals
 
--   Review AE 06
--   Looking ahead - project analysis draft
--   Lab 05: Logistic regression
+-   Project milestones
+-   Lab 06: Logistic regression
 
 ## Upcoming project milestones
 
