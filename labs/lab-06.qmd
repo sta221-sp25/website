@@ -122,9 +122,8 @@ Use `rice_train` to fit the logistic regression model for the response variable 
 
 -   Neatly display the output using 3 digits.
 
-```{=html}
 <!-- -->
-```
+
 -   Does the intercept have any reasonable interpretation? If so, interpret the intercept. Otherwise explain why not.
 
 ## Exercise 6
@@ -175,16 +174,16 @@ To submit your assignment:
 
 | Component             | Points |
 |:----------------------|:-------|
-| Ex 1                  |        |
-| Ex 2                  |        |
-| Ex 3                  |        |
-| Ex 4                  |        |
-| Ex 5                  |        |
-| Ex 6                  |        |
-| Ex 7                  |        |
-| Ex 8                  |        |
-| Ex 9                  |        |
-| Ex 10                 |        |
-| Workflow & formatting | 3      |
+| Ex 1                  | 4      |
+| Ex 2                  | 4      |
+| Ex 3                  | 4      |
+| Ex 4                  | 5      |
+| Ex 5                  | 5      |
+| Ex 6                  | 6      |
+| Ex 7                  | 6      |
+| Ex 8                  | 3      |
+| Ex 9                  | 4      |
+| Ex 10                 | 5      |
+| Workflow & formatting | 4      |
 
 The “Workflow & formatting” grade is to assess the reproducible workflow and collaboration. This includes having at least one meaningful commit from each team member, a neatly organized document with readable code, and updating the team name and date in the YAML.
