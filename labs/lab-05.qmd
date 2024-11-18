@@ -110,7 +110,7 @@ We'll begin by rescaling the response and some of the predictor variables.
 
 -   Rescale the response variable `total_rev_menwomen` and the primary predictor variable `total_exp_menwomen`, so that they are in terms of \$100K (100 thousand dollars). Name the new variables `rev100k` and `exp100k`, respectively.
 
--   Rescale the predictor variable `ef_total_count` , so it is in terms of thousands of students. Name the new variable `studnets_1k`.
+-   Rescale the predictor variable `ef_total_count` , so it is in terms of thousands of students. Name the new variable `students_1k`.
 
 -   Briefly explain why we might we rescale these variables instead of using them in the original units.
 
