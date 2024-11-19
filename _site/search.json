@@ -2759,7 +2759,7 @@
     "href": "ae/ae-07-newton-raphson.html#covid-19-infection-prevention-practices-at-food-establishments",
     "title": "AE 07: Newton Raphson",
     "section": "COVID-19 infection prevention practices at food establishments",
-    "text": "COVID-19 infection prevention practices at food establishments\nResearchers at Wollo University in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in Andualem et al. (2022).\nThey were particularly interested in the understanding implementation of prevention practices at food establishments, given the workers’ increased risk due to daily contact with customers.\nWe will use the data from Andualem et al. (2022) to explore the association between age, sex, years of service, and whether someone works at a food establishment with access to personal protective equipment (PPE) as of August 2020. We will use access to PPE as a proxy for wearing PPE.\nThe study participants were selected using a simple random sampling at the selected establishments.\n.\n\ncovid_df &lt;- read_csv(\"data/covid-prevention-study.csv\") |&gt;\n  rename(age = \"Age of food handlers\", \n         years = \"Years of service\", \n         ppe_access = \"Availability of PPEs\") |&gt;\n  mutate(sex = factor(if_else(Sex == 2, \"Female\", \"Male\"))) |&gt;\n  select(age, sex, years, ppe_access) |&gt;\n  mutate(ppe_access = as_factor(ppe_access))"
+    "text": "COVID-19 infection prevention practices at food establishments\nResearchers at Wollo University in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in Andualem et al. (2022).\nThey were particularly interested in the understanding implementation of prevention practices at food establishments, given the workers’ increased risk due to daily contact with customers.\nWe will use the data from Andualem et al. (2022) to explore the association between age, sex, years of service, and whether someone works at a food establishment with access to personal protective equipment (PPE) as of August 2020. We will use access to PPE as a proxy for wearing PPE.\nThe study participants were selected using a simple random sampling at the selected establishments.\n.\n\ncovid_df &lt;- read_csv(\"data/covid-prevention-study.csv\") |&gt;\n  rename(age = \"Age of food handlers\", \n         years = \"Years of service\", \n         ppe_access = \"Availability of PPEs\") |&gt;\n  mutate(sex = factor(if_else(Sex == 2, \"Female\", \"Male\")),\n         ppe_access = as_factor(ppe_access))"
   },
   {
     "objectID": "ae/ae-07-newton-raphson.html#functions-for-newton-raphson",
@@ -5633,8 +5633,8 @@
     "objectID": "slides/22-logistic-conditions-estimation.html#announcements",
     "href": "slides/22-logistic-conditions-estimation.html#announcements",
     "title": "Logistic Regression: Assumptions + Estimation",
-    "section": "",
-    "text": "Lab 06 due Thursday, November 21 at 11:59pm\nHW 04 released later today. Due Thursday, November 21\nProject meetings: November 25 and 26\n\nClick here to sign up (1 slot per team) by November 22\n\nStatistics experience due Tuesday, November 26\nProject: Draft report due + peer review in December 2 lab"
+    "section": "Announcements",
+    "text": "Announcements\n\nLab 06 due Thursday, November 21 at 11:59pm\nHW 04 released later today. Due Thursday, November 21\nProject meetings: November 25 and 26\n\nClick here to sign up (1 slot per team) by November 22\n\nStatistics experience due Tuesday, November 26\nProject: Draft report due + peer review in December 2 lab"
   },
   {
     "objectID": "slides/22-logistic-conditions-estimation.html#topics",
@@ -5704,7 +5704,7 @@
     "href": "slides/22-logistic-conditions-estimation.html#calculating-empirical-logit-quantitative-predictor",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Calculating empirical logit (quantitative predictor)",
-    "text": "Calculating empirical logit (quantitative predictor)\n\nDivide the range of the predictor into intervals with approximately equal number of cases. (If you have enough observations, use 5 - 10 intervals.)\nCompute the empirical logit for each interval\n\n. . .\nYou can then calculate the mean value of the predictor in each interval and create a plot of the empirical logit versus the mean value of the predictor in each interval."
+    "text": "Calculating empirical logit (quantitative predictor)\n\nDivide the range of the predictor into intervals with approximately equal number of cases. (If you have enough observations, use 5 - 10 intervals.)\nCompute the empirical logit for each interval\n\n\nYou can then calculate the mean value of the predictor in each interval and create a plot of the empirical logit versus the mean value of the predictor in each interval."
   },
   {
     "objectID": "slides/22-logistic-conditions-estimation.html#empirical-logit-plot-in-r-quantitative-predictor",
@@ -5760,21 +5760,21 @@
     "href": "slides/22-logistic-conditions-estimation.html#checking-linearity",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Checking linearity",
-    "text": "Checking linearity\nCheck the empirical logit plots for the quantitative predictors\n\n\n\nemplogitplot1(ppe_access ~ age, data = covid_df, \n              ngroups = 10)\n\n\n\n\n\n\n\n\n\n\nemplogitplot1(ppe_access ~ years, data = covid_df, \n              ngroups = 5)\n\n\n\n\n\n\n\n\n\n\n. . .\n\n✅ The linearity condition is satisfied. There is generally a linear relationship between the empirical logit and the quantitative predictor variables"
+    "text": "Checking linearity\nCheck the empirical logit plots for the quantitative predictors\n\n\n\nemplogitplot1(ppe_access ~ age, data = covid_df, \n              ngroups = 10)\n\n\n\n\n\n\n\n\n\n\nemplogitplot1(ppe_access ~ years, data = covid_df, \n              ngroups = 5)\n\n\n\n\n\n\n\n\n\n\n\n✅ The linearity condition is satisfied. There is generally a linear relationship between the empirical logit and the quantitative predictor variables"
   },
   {
     "objectID": "slides/22-logistic-conditions-estimation.html#checking-randomness",
     "href": "slides/22-logistic-conditions-estimation.html#checking-randomness",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Checking randomness",
-    "text": "Checking randomness\nWe can check the randomness condition based on the context of the data and how the observations were collected.\n\nWas the sample randomly selected?\nIf the sample was not randomly selected, ask whether there is reason to believe the observations in the sample differ systematically from the population of interest\n\n. . .\n✅ The randomness condition is satisfied. The paper states the participants were selected using simple random sampling at selected establishments. We can reasonably treat this sample as representative of the population."
+    "text": "Checking randomness\nWe can check the randomness condition based on the context of the data and how the observations were collected.\n\nWas the sample randomly selected?\nIf the sample was not randomly selected, ask whether there is reason to believe the observations in the sample differ systematically from the population of interest\n\n\n✅ The randomness condition is satisfied. The paper states the participants were selected using simple random sampling at selected establishments. We can reasonably treat this sample as representative of the population."
   },
   {
     "objectID": "slides/22-logistic-conditions-estimation.html#checking-independence",
     "href": "slides/22-logistic-conditions-estimation.html#checking-independence",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Checking independence",
-    "text": "Checking independence\n\nWe can check the independence condition based on the context of the data and how the observations were collected.\nIndependence is most often violated if the data were collected over time or there is a strong spatial relationship between the observations.\n\n. . .\n✅ We will treat this sample as independent. If given the data, we may want to further investigate potential correlation within an establishment."
+    "text": "Checking independence\n\nWe can check the independence condition based on the context of the data and how the observations were collected.\nIndependence is most often violated if the data were collected over time or there is a strong spatial relationship between the observations.\n\n\n✅ We will treat this sample as independent. If given the data, we may want to further investigate potential correlation within an establishment."
   },
   {
     "objectID": "slides/22-logistic-conditions-estimation.html#estimating-boldsymbolbeta-1",
@@ -5788,7 +5788,7 @@
     "href": "slides/22-logistic-conditions-estimation.html#estimating-boldsymbolbeta-2",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Estimating \\(\\boldsymbol{\\beta}\\)",
-    "text": "Estimating \\(\\boldsymbol{\\beta}\\)\nTake the derivative and set it equal to 0 to solve for \\(\\boldsymbol{\\beta}\\). (Click here for the full derivation.)\n\\[\n\\begin{aligned}\n\\frac{\\partial \\log L}{\\partial \\boldsymbol\\beta} =\\sum_{i=1}^n y_i \\mathbf{x}_i^T\n&- \\sum_{i=1}^n \\frac{\\exp\\{\\mathbf{x}_i^T \\boldsymbol\\beta\\} x_i^T}{1+\\exp\\{\\mathbf{x}_i^T \\boldsymbol\\beta\\}} = 0\n\\end{aligned}\n\\]\n. . .\nThere is no closed form solution. We can find the solution numerically using the Newton-Raphson method."
+    "text": "Estimating \\(\\boldsymbol{\\beta}\\)\nTake the derivative and set it equal to 0 to solve for \\(\\boldsymbol{\\beta}\\). (Click here for the full derivation.)\n\\[\n\\begin{aligned}\n\\frac{\\partial \\log L}{\\partial \\boldsymbol\\beta} =\\sum_{i=1}^n y_i \\mathbf{x}_i^T\n&- \\sum_{i=1}^n \\frac{\\exp\\{\\mathbf{x}_i^T \\boldsymbol\\beta\\} x_i^T}{1+\\exp\\{\\mathbf{x}_i^T \\boldsymbol\\beta\\}} = 0\n\\end{aligned}\n\\]\n\nThere is no closed form solution. We can find the solution numerically using the Newton-Raphson method."
   },
   {
     "objectID": "slides/22-logistic-conditions-estimation.html#newton-raphson-method",
@@ -5816,21 +5816,21 @@
     "href": "slides/22-logistic-conditions-estimation.html#example-1",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Example",
-    "text": "Example\nSuppose the convergence criteria be \\(\\Delta = |\\theta^{(t+1)} - \\theta^{(t)}| &lt; 0.001\\) . We’ll start with an initial guess of \\(\\theta^{(0)} = 3\\)\n. . .\n\\[\n\\theta^{(1)} = 3 - \\frac{3^3 - 20}{3*3^2} = 2.740741\n\\]\n. . .\n\\[\\Delta = |2.740741 - 3| = 0.259259\n\\]\n. . .\n\\[\n\\theta^{(2)} = 2.740741 - \\frac{2.740741^3 - 20}{3*2.740741^2} = 2.71467\n\\]\n. . .\n\\[\\Delta = |2.71467 - 2.740741| = 0.026071\n\\]"
+    "text": "Example\nSuppose the convergence criteria be \\(\\Delta = |\\theta^{(t+1)} - \\theta^{(t)}| &lt; 0.001\\) . We’ll start with an initial guess of \\(\\theta^{(0)} = 3\\)\n\n\\[\n\\theta^{(1)} = 3 - \\frac{3^3 - 20}{3*3^2} = 2.740741\n\\]\n\n\n\\[\\Delta = |2.740741 - 3| = 0.259259\n\\]\n\n\n\\[\n\\theta^{(2)} = 2.740741 - \\frac{2.740741^3 - 20}{3*2.740741^2} = 2.71467\n\\]\n\n\n\\[\\Delta = |2.71467 - 2.740741| = 0.026071\n\\]"
   },
   {
     "objectID": "slides/22-logistic-conditions-estimation.html#example-2",
     "href": "slides/22-logistic-conditions-estimation.html#example-2",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Example",
-    "text": "Example\n\\[\n\\theta^{(3)} = 2.71467 - \\frac{2.71467^3 - 20}{3*2.71467^2} = 2.714418\n\\]\n. . .\n\\[\n\\Delta = |2.714418 - 2.71467| = 0.000252 &lt; 0.001\n\\]\n\nThe solution is \\(\\mathbf{\\approx 2.714418}\\)"
+    "text": "Example\n\\[\n\\theta^{(3)} = 2.71467 - \\frac{2.71467^3 - 20}{3*2.71467^2} = 2.714418\n\\]\n\n\\[\n\\Delta = |2.714418 - 2.71467| = 0.000252 &lt; 0.001\n\\]\n\nThe solution is \\(\\mathbf{\\approx 2.714418}\\)"
   },
   {
     "objectID": "slides/22-logistic-conditions-estimation.html#score-vector-hessian",
     "href": "slides/22-logistic-conditions-estimation.html#score-vector-hessian",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Score vector & Hessian",
-    "text": "Score vector & Hessian\nGiven parameter \\(\\boldsymbol{\\theta} = [\\theta_1, \\ldots, \\theta_p]^T\\) and log-likelihood, \\(\\log L (\\boldsymbol{\\theta}|\\mathbf{X})\\) , then\n. . .\n\\[\n\\text{Score vector } =\\nabla_{\\boldsymbol{\\theta}} \\log L = \\begin{bmatrix}\\frac{\\partial \\log L}{\\partial \\theta_1} \\\\ \\vdots \\\\ \\frac{\\partial \\log L}{\\partial \\theta_p} \\end{bmatrix}\n\\]\n\\[\n\\text{Hessian} = \\nabla^2_{\\boldsymbol{\\theta}} \\log L = \\begin{bmatrix}\\frac{\\partial^2 \\log L}{\\partial \\theta_1^2} &\\frac{\\partial^2 \\log L}{\\partial \\theta_1\\theta_2} & \\dots & \\frac{\\partial^2 \\log L}{\\partial \\theta_1\\theta_p} \\\\\n\\frac{\\partial^2 \\log L}{\\partial \\theta_2\\theta_1} & \\frac{\\partial^2 \\log L}{\\partial \\theta_2^2}  & \\dots & \\frac{\\partial^2 \\log L}{\\partial \\theta_2\\theta_p} \\\\\n\\vdots & \\vdots & \\dots & \\vdots \\\\\n\\frac{\\partial^2 \\log L}{\\partial \\theta_p\\theta_1} & \\frac{\\partial^2 \\log L}{\\partial \\theta_p\\theta_2} & \\dots & \\frac{\\partial^2 \\log L}{\\partial \\theta_p^2}\\end{bmatrix}\n\\]"
+    "text": "Score vector & Hessian\nGiven parameter \\(\\boldsymbol{\\theta} = [\\theta_1, \\ldots, \\theta_p]^T\\) and log-likelihood, \\(\\log L (\\boldsymbol{\\theta}|\\mathbf{X})\\) , then\n\n\\[\n\\text{Score vector } =\\nabla_{\\boldsymbol{\\theta}} \\log L = \\begin{bmatrix}\\frac{\\partial \\log L}{\\partial \\theta_1} \\\\ \\vdots \\\\ \\frac{\\partial \\log L}{\\partial \\theta_p} \\end{bmatrix}\n\\]\n\\[\n\\text{Hessian} = \\nabla^2_{\\boldsymbol{\\theta}} \\log L = \\begin{bmatrix}\\frac{\\partial^2 \\log L}{\\partial \\theta_1^2} &\\frac{\\partial^2 \\log L}{\\partial \\theta_1\\theta_2} & \\dots & \\frac{\\partial^2 \\log L}{\\partial \\theta_1\\theta_p} \\\\\n\\frac{\\partial^2 \\log L}{\\partial \\theta_2\\theta_1} & \\frac{\\partial^2 \\log L}{\\partial \\theta_2^2}  & \\dots & \\frac{\\partial^2 \\log L}{\\partial \\theta_2\\theta_p} \\\\\n\\vdots & \\vdots & \\dots & \\vdots \\\\\n\\frac{\\partial^2 \\log L}{\\partial \\theta_p\\theta_1} & \\frac{\\partial^2 \\log L}{\\partial \\theta_p\\theta_2} & \\dots & \\frac{\\partial^2 \\log L}{\\partial \\theta_p^2}\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "slides/22-logistic-conditions-estimation.html#newton-raphson-for-logistic-regression",

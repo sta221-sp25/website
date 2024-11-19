@@ -43,9 +43,8 @@ covid_df <- read_csv("data/covid-prevention-study.csv") |>
   rename(age = "Age of food handlers", 
          years = "Years of service", 
          ppe_access = "Availability of PPEs") |>
-  mutate(sex = factor(if_else(Sex == 2, "Female", "Male"))) |>
-  select(age, sex, years, ppe_access) |>
-  mutate(ppe_access = as_factor(ppe_access))
+  mutate(sex = factor(if_else(Sex == 2, "Female", "Male")),
+         ppe_access = as_factor(ppe_access))
 
 ```
 
