@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <title>STA 221 - Fall 2024 – Variable transformations</title>
+  <title>STA 221 - Fall 2024 – Logistic Regression: Assumptions + Estimation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -94,7 +94,27 @@
     code span.va { color: #111111; } /* Variable */
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -389,12 +409,11 @@
   </style>
 </head>
 <body class="quarto-light">
-<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Variable transformations</h1>
+  <h1 class="title">Logistic Regression: Assumptions + Estimation</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -404,376 +423,497 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">Oct 24, 2024</p>
+  <p class="date">Nov 19, 2024</p>
 </section>
 <section id="announcements" class="slide level2 midi">
 <h2>Announcements</h2>
 <ul>
-<li><p>Exam corrections (optional) due TODAY at 11:59pm <a href="https://canvas.duke.edu/courses/38867/assignments/169519">on Canvas</a></p></li>
-<li><p>Lab 04 due TODAY at 11:59pm</p></li>
-<li><p>Team Feedback (from TEAMMATES) due TODAY at 11:59pm</p></li>
-<li><p><a href="https://duke.qualtrics.com/jfe/form/SV_244HYi8U8X85pgW">Mid semester survey</a> (strongly encouraged!) by TODAY at 11:59pm</p></li>
-<li><p>HW 03 due Thursday October 31 at 11:59pm (released after class)</p></li>
-<li><p>Looking ahead</p>
+<li><p>Lab 06 due Thursday, November 21 at 11:59pm</p></li>
+<li><p>HW 04 released later today. Due Thursday, November 21</p></li>
+<li><p>Project meetings: November 25 and 26</p>
 <ul>
-<li><p>Project: Exploratory data analysis due October 31</p></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1_TiZ84kWGs7GiTl9Sph5BkgOUScjIAlOrKyU1uAkl1I/edit?usp=sharing">Click here</a> to sign up (1 slot per team) by November 22</li>
+</ul></li>
 <li><p>Statistics experience due Tuesday, November 26</p></li>
-</ul></li>
+<li><p>Project: Draft report due + peer review in December 2 lab</p></li>
 </ul>
 </section>
-<section id="exam-weighting" class="slide level2">
-<h2>Exam weighting</h2>
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
 <ul>
-<li><p>No curves on individual exam grades</p></li>
-<li><p>Exams will be weighted to reflect significant progress throughout semester. There are 2 scenarios:</p>
-<ul>
-<li><p>If Exam 02 score is at least 5 (out of 50) points greater than the Exam 01 score (before corrections), Exam 01 is 13% and Exam 02 is 27% of the final course grade</p></li>
-<li><p>Otherwise, the exams are 20% each as stated in the syllabus.</p></li>
-</ul></li>
+<li><p>Conditions for logistic regression</p></li>
+<li><p>Estimating coefficients for logistic regression model</p></li>
 </ul>
 </section>
-<section id="computing-set-up" class="slide level2">
-<h2>Computing set up</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># load packages</span></span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)  </span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(tidymodels)  </span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(knitr)       </span>
-<span id="cb1-5"><a></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-6"><a></a><span class="fu">library</span>(Sleuth3) <span class="co">#for data set</span></span>
+<section id="computational-setup" class="slide level2">
+<h2>Computational setup</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(Stat2Data)  <span class="co">#empirical logit plots</span></span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(patchwork)</span>
 <span id="cb1-7"><a></a></span>
 <span id="cb1-8"><a></a><span class="co"># set default theme in ggplot2</span></span>
 <span id="cb1-9"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="topics" class="slide level2">
-<h2>Topics</h2>
-<ul>
-<li>Variable transformations</li>
-</ul>
+<section id="covid-19-infection-prevention-practices-at-food-establishments" class="slide level2">
+<h2>COVID-19 infection prevention practices at food establishments</h2>
+<p>Researchers at Wollo University in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in <span class="citation" data-cites="andualem2022covid">Andualem et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>.</p>
+<p>They were particularly interested in the understanding implementation of prevention practices at food establishments, given the workers’ increased risk due to daily contact with customers.</p>
 </section>
-<section>
-<section id="variable-transformations" class="title-slide slide level1 center">
-<h1>Variable transformations</h1>
-
-</section>
-<section id="data-respiratory-rate-vs.-age" class="slide level2 midi">
-<h2>Data: Respiratory Rate vs.&nbsp;Age</h2>
-<ul>
-<li><p>A high respiratory rate can potentially indicate a respiratory infection in children. In order to determine what indicates a “high” rate, we first want to understand the relationship between a child’s age and their respiratory rate.</p></li>
-<li><p>The data contain the respiratory rate for 618 children ages 15 days to 3 years. It was obtained from the <strong>Sleuth3</strong> R package and is originally form a 1994 publication “Reference Values for Respiratory Rate in the First 3 Years of Life”.</p></li>
-<li><p><strong>Variables</strong>:</p>
-<ul>
-<li><code>Age</code>: age in months</li>
-<li><code>Rate</code>: respiratory rate (breaths per minute)</li>
-</ul></li>
-</ul>
-</section>
-<section id="rate-vs.-age" class="slide level2">
-<h2>Rate vs.&nbsp;Age</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
-</div>
-
-</div>
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-2-1.png" width="672" class="r-stretch"></section>
-<section id="model-1-rate-vs.-age" class="slide level2">
-<h2>Model 1: Rate vs.&nbsp;Age</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>resp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Rate <span class="sc">~</span> Age, <span class="at">data =</span> respiratory)</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a><span class="fu">tidy</span>(resp_fit) <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="access-to-personal-protective-equipment" class="slide level2 midi">
+<h2>Access to personal protective equipment</h2>
+<p>We will use the data from <span class="citation" data-cites="andualem2022covid">Andualem et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span> to explore the association between age, sex, years of service, and whether someone works at a food establishment with access to personal protective equipment (PPE) as of August 2020. We will use access to PPE as a proxy for wearing PPE.</p>
+<p>The study participants were selected using a simple random sampling at the selected establishments.</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">age</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: right;">years</th>
+<th style="text-align: left;">ppe_access</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">47.052</td>
-<td style="text-align: right;">0.504</td>
-<td style="text-align: right;">93.317</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Age</td>
-<td style="text-align: right;">-0.696</td>
-<td style="text-align: right;">0.029</td>
-<td style="text-align: right;">-23.684</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">1</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="model-1-residuals" class="slide level2">
-<h2>Model 1: Residuals</h2>
+<section id="full-model-results" class="slide level2">
+<h2>Full model results</h2>
 
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-4-1.png" width="672" class="r-stretch"></section>
-<section id="consider-different-transformations" class="slide level2">
-<h2>Consider different transformations…</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
+<!--# see these notes for empirical logit: https://sta210-fa23.netlify.app/slides/20-logistic-inf.html#/calculating-empirical-logit-categorical-predictor-->
+<img data-src="images/22/logistic-output.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="bivariate-eda-categorical-predictor" class="slide level2">
+<h2>Bivariate EDA: categorical predictor</h2>
 
-</div>
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-5-1.png" width="672" class="r-stretch"></section></section>
-<section>
-<section id="transformation-on-y" class="title-slide slide level1 center">
-<h1>Transformation on <span class="math inline">\(Y\)</span></h1>
+<img data-src="22-logistic-conditions-estimation_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="bivariate-eda-quantitative-predictor" class="slide level2">
+<h2>Bivariate EDA: quantitative predictor</h2>
 
-</section>
-<section id="identifying-a-need-to-transform-y" class="slide level2 midi">
-<h2>Identifying a need to transform Y</h2>
-<div>
-<ul>
-<li class="fragment"><p>Typically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y</p>
-<ul>
-<li class="fragment"><p>There are multiple ways to transform a variable, e.g., Y, 1/Y, log⁡(Y)</p></li>
-<li class="fragment"><p>log⁡(Y) the most straightforward to interpret, so we use that transformation when possible</p></li>
-</ul></li>
-</ul>
-<!-- -->
-<ul>
-<li class="fragment"><p>When building a model:</p>
-<ul>
-<li class="fragment"><p>Choose a transformation and build the model on the transformed data</p></li>
-<li class="fragment"><p>Reassess the residual plots</p></li>
-<li class="fragment"><p>If the residuals plots did not sufficiently improve, try a new transformation!</p></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="log-transformation-on-y" class="slide level2">
-<h2>Log transformation on <span class="math inline">\(Y\)</span></h2>
-<ul>
-<li>If we apply a log transformation to the response variable, we want to estimate the parameters for the statistical model</li>
-</ul>
+<img data-src="22-logistic-conditions-estimation_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="empirical-logit" class="slide level2">
+<h2>Empirical logit</h2>
+<p>The <strong>empirical logit</strong> is the log of the observed odds:</p>
 <p><span class="math display">\[
-\log(y_i) = \beta_0+ \beta_1 x_{i1} + \dots +\beta_px_{ip} + \epsilon_i, \hspace{10mm} \epsilon \sim N(0,\sigma^2_\epsilon)
+\text{logit}(\hat{p}) = \log\Big(\frac{\hat{p}}{1 - \hat{p}}\Big) = \log\Big(\frac{\# \text{Yes}}{\# \text{No}}\Big)
 \]</span></p>
-<ul>
-<li>The regression equation is</li>
-</ul>
-<p><span class="math display">\[\widehat{\log(y_i)} = \hat{\beta}_0+ \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_px_{ip}\]</span></p>
 </section>
-<section id="log-transformation-on-y-1" class="slide level2">
-<h2>Log transformation on <span class="math inline">\(Y\)</span></h2>
-<p>We want to interpret the model in terms of the original variable <span class="math inline">\(Y\)</span>, not <span class="math inline">\(\log(Y)\)</span>, so we need to write the regression equation in terms of <span class="math inline">\(Y\)</span></p>
-<p><span class="math display">\[\begin{align}\hat{y_i} &amp;= \exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_Px_{ip}\}\\ &amp;= \exp\{\hat{\beta}_0\}\exp\{\hat{\beta}_1x_{i1}\}\dots\exp\{\hat{\beta}_px_{ip}\}\end{align}\]</span></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>The predicted value <span class="math inline">\(\hat{y_i}\)</span> is the predicted <em>median</em> of <span class="math inline">\(Y\)</span>. Note, when the distribution of <span class="math inline">\(y_i|x_1, \ldots, x_p\)</span> is symmetric, then the median equals the mean. (See notes at the end for more details)</p>
-</div>
+<section id="calculating-empirical-logit-categorical-predictor" class="slide level2">
+<h2>Calculating empirical logit (categorical predictor)</h2>
+<p>If the predictor is categorical, we can calculate the empirical logit for each level of the predictor.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>covid_df <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">count</span>(sex, ppe_access) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a></a>  <span class="fu">group_by</span>(sex) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a></a>  <span class="fu">filter</span>(ppe_access <span class="sc">==</span> <span class="st">"1"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a></a>  <span class="fu">mutate</span>(<span class="at">emp_logit =</span> <span class="fu">log</span>(prop<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>prop)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+# Groups:   sex [2]
+  sex    ppe_access     n  prop emp_logit
+  &lt;fct&gt;  &lt;fct&gt;      &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;
+1 Female 1            103 0.475    -0.101
+2 Male   1            119 0.647     0.605</code></pre>
 </div>
 </div>
 </section>
-<section id="model-interpretation" class="slide level2 midi">
-<h2>Model interpretation</h2>
-<p><span class="math display">\[\begin{align}\hat{y_i} &amp;= \exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{1p} + \dots + \hat{\beta}_Px_{ip}\}\\ &amp;= \exp\{\hat{\beta}_0\}\exp\{\hat{\beta}_1x_{i1}\}\dots\exp\{\hat{\beta}_px_{ip}\}\end{align}\]</span></p>
+<section id="calculating-empirical-logit-quantitative-predictor" class="slide level2">
+<h2>Calculating empirical logit (quantitative predictor)</h2>
+<ol type="1">
+<li><p>Divide the range of the predictor into intervals with approximately equal number of cases. (If you have enough observations, use 5 - 10 intervals.)</p></li>
+<li><p>Compute the empirical logit for each interval</p></li>
+</ol>
 <div class="fragment">
-<ul>
-<li><p><strong>Intercept</strong>: When <span class="math inline">\(x_{i1} = \dots = x_{ip} =0\)</span>, <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(\exp\{\hat{\beta}_0\}\)</span></p></li>
-<li><p><strong>Slope:</strong> For every one unit increase in <span class="math inline">\(x_{ij}\)</span>, <span class="math inline">\(y_{i}\)</span> is expected to multiply by a factor of <span class="math inline">\(\exp\{\hat{\beta}_j\}\)</span>, holding all else constant</p></li>
-</ul>
-<div class="question">
-<p>Why is the interpretation in terms of a multiplicative change?</p>
-</div>
+<p>You can then calculate the mean value of the predictor in each interval and create a plot of the empirical logit versus the mean value of the predictor in each interval.</p>
 </div>
 </section>
-<section id="model-2-lograte-vs.-age" class="slide level2">
-<h2>Model 2: log(Rate) vs.&nbsp;Age</h2>
-<div class="cell">
+<section id="empirical-logit-plot-in-r-quantitative-predictor" class="slide level2">
+<h2>Empirical logit plot in R (quantitative predictor)</h2>
+<p>Created using <code>dplyr</code> and <code>ggplot</code> functions.</p>
+
+<img data-src="22-logistic-conditions-estimation_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="empirical-logit-plot-in-r-quantitative-predictor-1" class="slide level2">
+<h2>Empirical logit plot in R (quantitative predictor)</h2>
+<p>Created using <code>dplyr</code> and <code>ggplot</code> functions.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>covid_df <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a></a>  <span class="fu">mutate</span>(<span class="at">age_bin =</span> <span class="fu">cut_number</span>(age, <span class="at">n =</span> <span class="dv">10</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">group_by</span>(age_bin) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a></a>  <span class="fu">mutate</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(age)) <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a></a>  <span class="fu">count</span>(mean_age, ppe_access) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb4-7"><a></a>  <span class="fu">filter</span>(ppe_access <span class="sc">==</span> <span class="st">"1"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-8"><a></a>  <span class="fu">mutate</span>(<span class="at">emp_logit =</span> <span class="fu">log</span>(prop<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>prop))) <span class="sc">|&gt;</span></span>
+<span id="cb4-9"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean_age, <span class="at">y =</span> emp_logit)) <span class="sc">+</span> </span>
+<span id="cb4-10"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb4-11"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mean Age"</span>, </span>
+<span id="cb4-13"><a></a>       <span class="at">y =</span> <span class="st">"Empirical logit"</span>, </span>
+<span id="cb4-14"><a></a>       <span class="at">title =</span> <span class="st">"Empirical logit of PPE Access vs. Age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="empirical-logit-plot-in-r-quantitative-predictor-2" class="slide level2">
+<h2>Empirical logit plot in R (quantitative predictor)</h2>
+<p>Using the <code>emplogitplot1</code> function from the <strong>Stat2Data</strong> R package</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">emplogitplot1</span>(ppe_access <span class="sc">~</span> age, </span>
+<span id="cb5-2"><a></a>              <span class="at">data =</span> covid_df, </span>
+<span id="cb5-3"><a></a>              <span class="at">ngroups =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="22-logistic-conditions-estimation_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="empirical-logit-plot-in-r-interactions" class="slide level2">
+<h2>Empirical logit plot in R (interactions)</h2>
+<p>Using the <code>emplogitplot2</code> function from the <strong>Stat2Data</strong> R package</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">emplogitplot2</span>(ppe_access <span class="sc">~</span> age <span class="sc">+</span> sex, <span class="at">data =</span> covid_df, </span>
+<span id="cb6-2"><a></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, </span>
+<span id="cb6-3"><a></a>              <span class="at">putlegend =</span> <span class="st">"bottomright"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="22-logistic-conditions-estimation_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="logistic-regression-model" class="slide level2 midi">
+<h2>Logistic regression model</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>ppe_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(ppe_access <span class="sc">~</span> age <span class="sc">+</span> sex <span class="sc">+</span> years, </span>
+<span id="cb7-2"><a></a>                 <span class="at">data =</span> covid_df, <span class="at">family =</span> binomial)</span>
+<span id="cb7-3"><a></a><span class="fu">tidy</span>(ppe_model, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">3.845</td>
-<td style="text-align: right;">0.013</td>
-<td style="text-align: right;">304.500</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Age</td>
-<td style="text-align: right;">-0.019</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">-25.839</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><br></p>
-<div class="question">
-<ul>
-<li><p>Interpret the intercept in terms of (1) <code>log(Rate)</code> and (2) <code>Rate</code>.</p></li>
-<li><p>Interpret the effect of <code>Age</code> in terms of (1) <code>log(Rate)</code> and (2) <code>Rate</code>.</p></li>
-</ul>
-</div>
-</section>
-<section id="model-2-residuals" class="slide level2">
-<h2>Model 2: Residuals</h2>
-
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-7-1.png" width="672" class="r-stretch"></section>
-<section id="compare-residual-plots" class="slide level2">
-<h2>Compare residual plots</h2>
-
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-8-1.png" width="672" class="r-stretch"></section></section>
-<section>
-<section id="log-transformation-on-a-predictor-variable" class="title-slide slide level1 center">
-<h1>Log transformation on a predictor variable</h1>
-
-</section>
-<section id="log-transformation-on-x" class="slide level2">
-<h2>Log Transformation on <span class="math inline">\(X\)</span></h2>
-
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-11-1.png" width="672" class="r-stretch"><p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot shows some curvature but the variance is constant for all values of <span class="math inline">\(X\)</span></p>
-</section>
-<section id="rate-vs.-logage" class="slide level2">
-<h2>Rate vs.&nbsp;log(Age)</h2>
-
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-12-1.png" width="672" class="r-stretch"></section>
-<section id="model-with-transformation-on-x" class="slide level2 midi">
-<h2>Model with Transformation on <span class="math inline">\(X\)</span></h2>
-<p>Suppose we have the following regression equation:</p>
-<p><span class="math display">\[\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 \log(x_i)\]</span></p>
-<div class="fragment">
-<div>
-<ul>
-<li class="fragment"><p><strong>Intercept:</strong> When <span class="math inline">\(x_i = 1\)</span> <span class="math inline">\((\log(x_i) = 0)\)</span>, <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(\hat{\beta}_0\)</span> (i.e.&nbsp;the mean of <span class="math inline">\(y_i\)</span> is <span class="math inline">\(\hat{\beta}_0\)</span>)</p></li>
-<li class="fragment"><p><strong>Slope:</strong> When <span class="math inline">\(x_i\)</span> is multiplied by a factor of <span class="math inline">\(\mathbf{C}\)</span>, the mean of <span class="math inline">\(y_i\)</span> is expected to change by <span class="math inline">\(\hat{\beta}_1\log(C)\)</span> units</p>
-<ul>
-<li class="fragment"><strong>Example</strong>: when <span class="math inline">\(x_i\)</span> is multiplied by a factor of 2, <span class="math inline">\(y_i\)</span> is expected to increase by <span class="math inline">\(\hat{\beta}_1\log(2)\)</span> units</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="model-3-rate-vs.-logage" class="slide level2">
-<h2>Model 3: Rate vs.&nbsp;log(Age)</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">50.135</td>
-<td style="text-align: right;">0.632</td>
-<td style="text-align: right;">79.330</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">log_age</td>
-<td style="text-align: right;">-5.982</td>
-<td style="text-align: right;">0.263</td>
-<td style="text-align: right;">-22.781</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><br></p>
-<div class="question">
-<p>Interpret the slope and intercept in the context of the data.</p>
-</div>
-</section>
-<section id="model-3-residuals" class="slide level2">
-<h2>Model 3: Residuals</h2>
-
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-14-1.png" width="672" class="r-stretch"></section>
-<section id="choose-a-model" class="slide level2">
-<h2>Choose a model</h2>
-<p>Recall the goal of the analysis:</p>
-<p><em>In order to determine what indicates a “high” rate, we first want to understand the relationship between a child’s age and their respiratory rate.</em></p>
-<p><br></p>
-<div class="question">
-<p>Which is the preferred metric to compare the models - <span class="math inline">\(R^2\)</span> or RMSE?</p>
-</div>
-</section>
-<section id="compare-models" class="slide level2">
-<h2>Compare models</h2>
-<table class="caption-top" style="width:100%;">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 34%">
-<col style="width: 34%">
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Rate vs.&nbsp;Age</th>
-<th>log(Rate) vs.&nbsp;Age</th>
-<th>Rate vs.&nbsp;log(Age)</th>
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0.477</td>
-<td>0.52</td>
-<td>0.457</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-2.127</td>
+<td style="text-align: right;">0.458</td>
+<td style="text-align: right;">-4.641</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">-3.058</td>
+<td style="text-align: right;">-1.257</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">0.056</td>
+<td style="text-align: right;">0.017</td>
+<td style="text-align: right;">3.210</td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">0.023</td>
+<td style="text-align: right;">0.091</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sexMale</td>
+<td style="text-align: right;">0.341</td>
+<td style="text-align: right;">0.224</td>
+<td style="text-align: right;">1.524</td>
+<td style="text-align: right;">0.128</td>
+<td style="text-align: right;">-0.098</td>
+<td style="text-align: right;">0.780</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">years</td>
+<td style="text-align: right;">0.264</td>
+<td style="text-align: right;">0.066</td>
+<td style="text-align: right;">4.010</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.143</td>
+<td style="text-align: right;">0.401</td>
 </tr>
 </tbody>
 </table>
-<p><br></p>
-<div class="question">
-<p>Which model would you choose?</p>
+</div>
 </div>
 </section>
-<section id="learn-more" class="slide level2">
-<h2>Learn more</h2>
-<p>See <a href="https://github.com/sta210-sp20/supplemental-notes/blob/master/log-transformations.pdf">Log Transformations in Linear Regression</a> for more details about interpreting regression models with log-transformed variables.</p>
+<section id="visualizing-coefficient-estimates" class="slide level2 midi">
+<h2>Visualizing coefficient estimates</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>model_odds_ratios <span class="ot">&lt;-</span> <span class="fu">tidy</span>(ppe_model, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> model_odds_ratios, <span class="fu">aes</span>(<span class="at">x =</span> term, <span class="at">y =</span> estimate)) <span class="sc">+</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb9-4"><a></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> conf.low, <span class="at">ymax =</span> conf.high))<span class="sc">+</span></span>
+<span id="cb9-5"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Adjusted odds ratios"</span>,</span>
+<span id="cb9-6"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb9-7"><a></a>       <span class="at">y =</span> <span class="st">"Estimated AOR"</span>) <span class="sc">+</span></span>
+<span id="cb9-8"><a></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="22-logistic-conditions-estimation_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%"></section>
+<section>
+<section id="assumptions-for-logistic-regression" class="title-slide slide level1 center">
+<h1>Assumptions for logistic regression</h1>
+
 </section>
-<section id="recap" class="slide level2">
-<h2>Recap</h2>
+<section id="assumptions-for-logistic-regression-1" class="slide level2">
+<h2>Assumptions for logistic regression</h2>
+<!--# https://bookdown.org/roback/bookdown-BeyondMLR/ch-logreg.html#logistic-regression-assumptions-->
 <ul>
-<li>Introduced variable transformations</li>
+<li><p><strong>Linearity:</strong> The log-odds have a linear relationship with the predictors.</p></li>
+<li><p><strong>Randomness:</strong> The data were obtained from a random process</p></li>
+<li><p><strong>Independence:</strong> The observations are independent from one another.</p></li>
 </ul>
+</section>
+<section id="checking-linearity" class="slide level2">
+<h2>Checking linearity</h2>
+<p>Check the empirical logit plots for the <u>quantitative </u>predictors</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">emplogitplot1</span>(ppe_access <span class="sc">~</span> age, <span class="at">data =</span> covid_df, </span>
+<span id="cb10-2"><a></a>              <span class="at">ngroups =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="22-logistic-conditions-estimation_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">emplogitplot1</span>(ppe_access <span class="sc">~</span> years, <span class="at">data =</span> covid_df, </span>
+<span id="cb11-2"><a></a>              <span class="at">ngroups =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="22-logistic-conditions-estimation_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<div class="midi">
+<p>✅ The linearity condition is satisfied. There is generally a linear relationship between the empirical logit and the quantitative predictor variables</p>
+</div>
+</div>
+</section>
+<section id="checking-randomness" class="slide level2">
+<h2>Checking randomness</h2>
+<p>We can check the randomness condition based on the context of the data and how the observations were collected.</p>
+<ul>
+<li><p>Was the sample randomly selected?</p></li>
+<li><p>If the sample was not randomly selected, ask whether there is reason to believe the observations in the sample differ systematically from the population of interest</p></li>
+</ul>
+<div class="fragment">
+<p>✅ The randomness condition is satisfied. The paper states the participants were selected using simple random sampling at selected establishments. We can reasonably treat this sample as representative of the population.</p>
+</div>
+</section>
+<section id="checking-independence" class="slide level2">
+<h2>Checking independence</h2>
+<ul>
+<li><p>We can check the independence condition based on the context of the data and how the observations were collected.</p></li>
+<li><p>Independence is most often violated if the data were collected over time or there is a strong spatial relationship between the observations.</p></li>
+</ul>
+<div class="fragment">
+<p>✅ We will treat this sample as independent. If given the data, we may want to further investigate potential correlation within an establishment.</p>
+</div>
+</section></section>
+<section>
+<section id="estimating-boldsymbolbeta" class="title-slide slide level1 center">
+<h1>Estimating <span class="math inline">\(\boldsymbol{\beta}\)</span></h1>
+
+</section>
+<section id="estimating-boldsymbolbeta-1" class="slide level2">
+<h2>Estimating <span class="math inline">\(\boldsymbol{\beta}\)</span></h2>
+<p>Recall that the coefficients for logistic regression are estimated using maximum likelihood estimation.</p>
+<p><span class="math display">\[
+\begin{aligned}\log &amp;L(\boldsymbol\beta | x_1, \dots, x_n, y_1, \dots, y_n) \\
+&amp;= \sum_{i=1}^n y_i x_i^T \boldsymbol\beta - \sum_{i=1}^n \log(1+ \exp\{x_i^T \beta\})
+\end{aligned}
+\]</span></p>
+</section>
+<section id="estimating-boldsymbolbeta-2" class="slide level2">
+<h2>Estimating <span class="math inline">\(\boldsymbol{\beta}\)</span></h2>
+<p>Take the derivative and set it equal to 0 to solve for <span class="math inline">\(\boldsymbol{\beta}\)</span>. (<a href="https://canvas.duke.edu/courses/38867/discussion_topics/122356">Click here</a> for the full derivation.)<br>
+<span class="math display">\[
+\begin{aligned}
+\frac{\partial \log L}{\partial \boldsymbol\beta} =\sum_{i=1}^n y_i x_i^T
+&amp;- \sum_{i=1}^n \frac{\exp\{x_i^T \boldsymbol\beta\} x_i^T}{1+\exp\{x_i^T \boldsymbol\beta\}} = 0
+\end{aligned}
+\]</span></p>
+<div class="fragment">
+<p>There is no closed form solution. We can find the solution numerically using the <strong>Newton-Raphson method</strong>.</p>
+</div>
+</section>
+<section id="newton-raphson-method" class="slide level2">
+<h2>Newton-Raphson method</h2>
+<p>Newton-Raphson is a numerical method for finding solutions to <span class="math inline">\(f(x) = 0\)</span> . Steps of the Newton-Raphson method:</p>
+<ol type="1">
+<li><p>Start with an initial guess <span class="math inline">\(\theta^{(0)}\)</span> .</p></li>
+<li><p>For each iteration,</p>
+<p><span class="math display">\[
+\theta^{(t+1)} = \theta^{(t)} - \frac{f(\theta^{(t)})}{f^{\prime}(\theta^{(t)})}
+\]</span></p></li>
+<li><p>Stop when the convergence criteria is satisfied.</p></li>
+</ol>
+</section>
+<section id="newton-raphson-method-1" class="slide level2">
+<h2>Newton-Raphson method</h2>
+
+<img data-src="images/22/newton-raphson.jpeg" style="width:75.0%" class="r-stretch"><p>Source: <a href="https://math.libretexts.org/Bookshelves/Calculus/Map%3A_Calculus__Early_Transcendentals_%28Stewart%29/04%3A_Applications_of_Differentiation/4.08%3A_Newton%27s_Method">LibreTexts-Mathematics</a></p>
+</section>
+<section id="example" class="slide level2 midi">
+<h2>Example</h2>
+<p>Let’s find the solution (root) of the function <span class="math display">\[f(x) = x^3 - 20\]</span></p>
+
+<img data-src="22-logistic-conditions-estimation_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p>Suppose the convergence criteria be <span class="math inline">\(\Delta = |\theta^{(t+1)} - \theta^{(t)}| &lt; 0.001\)</span> . We’ll start with an initial guess of <span class="math inline">\(\theta^{(0)} = 3\)</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\theta^{(1)} = 3 - \frac{3^3 - 20}{3*3^2} = 2.740741
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\Delta = |2.740741 - 3| = 0.259259
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\theta^{(2)} = 2.740741 - \frac{2.740741^3 - 20}{3*2.740741^2} = 2.71467
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\Delta = |2.71467 - 2.740741| = 0.026071
+\]</span></p>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<p><span class="math display">\[
+\theta^{(3)} = 2.71467 - \frac{2.71467^3 - 20}{3*2.71467^2} = 2.714418
+\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\Delta = |2.714418 - 2.71467| = 0.000252 &lt; 0.001
+\]</span></p>
+<div class="center">
+<p><strong>The solution is</strong> <span class="math inline">\(\mathbf{\approx 2.714418}\)</span></p>
+</div>
+</div>
+</section>
+<section id="score-vector-hessian" class="slide level2 midi">
+<h2>Score vector &amp; Hessian</h2>
+<p>Given parameter <span class="math inline">\(\boldsymbol{\theta} = [\theta_1, \ldots, \theta_p]^T\)</span> and log-likelihood, <span class="math inline">\(\log L (\boldsymbol{\theta}|\mathbf{X})\)</span> , then</p>
+<div class="fragment">
+<p><span class="math display">\[
+\text{Score vector } =\nabla_{\boldsymbol{\theta}} \log L = \begin{bmatrix}\frac{\partial \log L}{\partial \theta_1} \\ \vdots \\ \frac{\partial \log L}{\partial \theta_p} \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\text{Hessian} = \nabla^2_{\boldsymbol{\theta}} \log L = \begin{bmatrix}\frac{\partial^2 \log L}{\partial \theta_1^2} &amp;\frac{\partial^2 \log L}{\partial \theta_1\theta_2} &amp; \dots &amp; \frac{\partial^2 \log L}{\partial \theta_1\theta_p} \\
+\frac{\partial^2 \log L}{\partial \theta_2\theta_1} &amp; \frac{\partial^2 \log L}{\partial \theta_2^2}  &amp; \dots &amp; \frac{\partial^2 \log L}{\partial \theta_2\theta_p} \\
+\vdots &amp; \vdots &amp; \dots &amp; \vdots \\
+\frac{\partial^2 \log L}{\partial \theta_p\theta_1} &amp; \frac{\partial^2 \log L}{\partial \theta_p\theta_2} &amp; \dots &amp; \frac{\partial^2 \log L}{\partial \theta_p^2}\end{bmatrix}
+\]</span></p>
+</div>
+</section>
+<section id="newton-raphson-for-logistic-regression" class="slide level2">
+<h2>Newton-Raphson for logistic regression</h2>
+<ol type="1">
+<li><p>Start with an initial guess <span class="math inline">\(\boldsymbol{\beta}^{(0)}\)</span> .</p></li>
+<li><p>For each iteration,</p>
+<p><span class="math display">\[
+\boldsymbol{\beta}^{(t+1)} = \boldsymbol{\beta}^{(t)} - \big(\nabla_{\boldsymbol{\beta}}^2 \log L(\boldsymbol{\beta}^{(t)}|\mathbf{X})\big)^{-1}\big(\nabla_{\boldsymbol{\beta}} \log L(\boldsymbol{\beta}^{(t)}|\mathbf{X})\big)
+\]</span></p></li>
+<li><p>Stop when the convergence criteria is satisfied.</p></li>
+</ol>
+</section>
+<section id="newton-raphson-for-logistic-regression-1" class="slide level2 midi">
+<h2>Newton-Raphson for logistic regression</h2>
+<p><span class="math display">\[
+\log L = \sum_{i=1}^n y_i x_i^T \boldsymbol\beta - \sum_{i=1}^n \log(1+ \exp\{x_i^T \beta\})
+\]</span></p>
+<p><span class="math display">\[
+\nabla_{\boldsymbol{\beta}} \log L = \sum_{i=1}^n y_i x_i^T
+- \sum_{i=1}^n \frac{\exp\{x_i^T \boldsymbol\beta\} x_i^T}{1+\exp\{x_i^T \boldsymbol\beta\}}
+\]</span></p>
+<p><span class="math display">\[
+\nabla^2_{\boldsymbol{\beta}} \log L = \
+- \sum_{i=1}^n \Big(\frac{1}{1+\exp\{x_i^T \boldsymbol\beta\}}\Big)\Big(\frac{\exp\{x_i^T \boldsymbol\beta\}}{1+\exp\{x_i^T \boldsymbol\beta\}}\Big)\mathbf{x}_i\mathbf{x}_i^T
+\]</span></p>
+</section>
+<section id="ppe-access-example" class="slide level2">
+<h2>PPE access example</h2>
+<div class="appex">
+<p>📋 <a href="https://sta221-fa24.netlify.app/ae/ae-07-newton-raphson.html" class="uri">https://sta221-fa24.netlify.app/ae/ae-07-newton-raphson.html</a></p>
+</div>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://sta221-fa24.netlify.app">🔗 STA 221 - Fall 2024</a></p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-andualem2022covid" class="csl-entry" role="listitem">
+Andualem, Atsedemariam, Belachew Tegegne, Sewunet Ademe, Tarikuwa Natnael, Gete Berihun, Masresha Abebe, Yeshiwork Alemnew, et al. 2022. <span>“COVID-19 Infection Prevention Practices Among a Sample of Food Handlers of Food and Drink Establishments in Ethiopia.”</span> <em>PLoS One</em> 17 (1): e0259851.
 </div>
 </div>
 </section></section>
@@ -989,6 +1129,44 @@ Prof.&nbsp;Maria Tackett
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

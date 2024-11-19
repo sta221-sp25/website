@@ -366,7 +366,7 @@ m3_aug <- augment(resp_logx_fit)
 ```
 
 | Rate vs. Age                            | log(Rate) vs. Age                            | Rate vs. log(Age)                            |
-|------------------------|-------------------------|------------------------|
+|-----------------------------------------|----------------------------------------------|----------------------------------------------|
 | `r round(glance(resp_fit)$r.squared,3)` | `r round(glance(resp_logy_fit)$r.squared,3)` | `r round(glance(resp_logx_fit)$r.squared,3)` |
 
 <br>

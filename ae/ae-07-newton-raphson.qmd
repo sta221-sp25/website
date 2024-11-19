@@ -1,0 +1,130 @@
+---
+title: "AE 07: Newton Raphson"
+date: "November 19, 2024"
+editor: visual
+bibliography: references.bib
+---
+
+::: callout-important
+Go to the course GitHub organization and locate your ae-07 repo to get started.
+
+Render, commit, and push your responses to GitHub by the end of class to submit your AE.
+:::
+
+```{r}
+#| label: load-packages
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(knitr)
+library(tidymodels)
+```
+
+# Introduction
+
+## COVID-19 infection prevention practices at food establishments
+
+Researchers at Wollo Univeristy in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in @andualem2022.
+
+They were particularly interested in the understanding implementation of prevention practices at food establishments, given the workers’ increased risk due to daily contact with customers.
+
+We will use the data from @andualem2022 to explore the association between age, sex, years of service, and whether someone works at a food establishment with access to personal protective equipment (PPE) as of August 2020. We will use access to PPE as a proxy for wearing PPE.
+
+The study participants were selected using a simple random sampling at the selected establishments.
+
+.
+
+```{r}
+#| label: load-data
+#| message: false
+
+covid_df <- read_csv("data/covid-prevention-study.csv") |>
+  rename(age = "Age of food handlers", 
+         years = "Years of service", 
+         ppe_access = "Availability of PPEs") |>
+  mutate(sex = factor(if_else(Sex == 2, "Female", "Male"))) |>
+  select(age, sex, years, ppe_access) |>
+  mutate(ppe_access = as_factor(ppe_access))
+
+```
+
+## Functions for Newton-Raphson 
+
+```{r}
+## Calculate the first derivative of logL (score function)
+
+calc_first_deriv <- function(beta, X, y){
+  first_deriv <- rep(0, length(beta))
+  for(i in 1:length(y)){
+    first_deriv <- first_deriv + as.numeric(y[i] - exp(X[i,] %*% beta)/(1 + exp(X[i,] %*% beta))) %*% X[i,]
+  }
+  return(colSums(first_deriv)) #return values as a vector 
+}
+
+## Calculate the second derivative of logL (Hessian)
+
+calc_second_deriv <- function(beta, X, y){
+  second_deriv <- matrix(0, nrow = length(beta), ncol = length(beta))
+  for(i in 1:length(y)){
+    second_deriv <- second_deriv + as.numeric(1/(1 + exp(X[i,] %*% beta)))*
+      as.numeric((exp(X[i,] %*% beta)/(1 + exp(X[i,] %*% beta)))) * 
+      (X[i,]) %*% t(X[i,])
+  }
+  return(-1 * second_deriv)
+}
+```
+
+## Get starting values 
+
+```{r}
+
+# design matrix
+X <- model.matrix(~ age + sex + years, data = covid_df)
+
+# vector of response
+y <- I(covid_df$ppe_access == 1)
+
+# vector of coefficients
+beta <- c(0, 0, 0, 0)
+
+# keep track of iterations
+iter <- 1
+
+# keep track of difference in estimates
+delta <- 1
+
+# keep track of estimates at each iteration 
+temp <- matrix(0, nrow = 500, ncol = 4) 
+```
+
+##  Estimate $\boldsymbol{\beta}$ 
+
+```{r}
+while(delta > 0.000001 & iter < 50){
+  old <- beta
+  beta <- old - solve(calc_second_deriv(beta = beta, X = X, y = y)) %*% 
+                calc_first_deriv(beta = beta, X = X, y = y)
+  temp[iter,] <- beta
+  delta <- sqrt(sum((beta - old)^2))
+  iter <- iter + 1
+}
+```
+
+## Show results 
+
+```{r}
+iter
+beta
+```
+
+## Coefficient estimates from `glm`
+
+```{r}
+ppe_model <- glm(ppe_access ~ age + sex + years, 
+                 data = covid_df, family = binomial)
+tidy(ppe_model, conf.int = TRUE) |>
+  kable(digits = 3)
+```
+
+## References
