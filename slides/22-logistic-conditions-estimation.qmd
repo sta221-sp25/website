@@ -218,9 +218,7 @@ covid_df |>
 Using the `emplogitplot1` function from the **Stat2Data** R package
 
 ```{r}
-emplogitplot1(ppe_access ~ age, 
-              data = covid_df, 
-              ngroups = 10)
+emplogitplot1(ppe_access ~ age,  data = covid_df, ngroups = 10)
 ```
 
 ## Empirical logit plot in R (interactions)
@@ -327,7 +325,7 @@ Recall that the coefficients for logistic regression are estimated using maximum
 
 $$
 \begin{aligned}\log &L(\boldsymbol\beta | x_1, \dots, x_n, y_1, \dots, y_n) \\
-&= \sum_{i=1}^n y_i x_i^T \boldsymbol\beta - \sum_{i=1}^n \log(1+ \exp\{x_i^T \beta\})
+&= \sum_{i=1}^n y_i \mathbf{x}_i^T \boldsymbol\beta - \sum_{i=1}^n \log(1+ \exp\{\mathbf{x}_i^T \boldsymbol{\beta}\})
 \end{aligned}
 $$
 
@@ -336,8 +334,8 @@ $$
 Take the derivative and set it equal to 0 to solve for $\boldsymbol{\beta}$. ([Click here](https://canvas.duke.edu/courses/38867/discussion_topics/122356) for the full derivation.)\
 $$
 \begin{aligned}
-\frac{\partial \log L}{\partial \boldsymbol\beta} =\sum_{i=1}^n y_i x_i^T
-&- \sum_{i=1}^n \frac{\exp\{x_i^T \boldsymbol\beta\} x_i^T}{1+\exp\{x_i^T \boldsymbol\beta\}} = 0
+\frac{\partial \log L}{\partial \boldsymbol\beta} =\sum_{i=1}^n y_i \mathbf{x}_i^T
+&- \sum_{i=1}^n \frac{\exp\{\mathbf{x}_i^T \boldsymbol\beta\} x_i^T}{1+\exp\{\mathbf{x}_i^T \boldsymbol\beta\}} = 0
 \end{aligned}
 $$
 
@@ -459,17 +457,21 @@ $$
 ## Newton-Raphson for logistic regression  {.midi}
 
 $$
-\log L = \sum_{i=1}^n y_i x_i^T \boldsymbol\beta - \sum_{i=1}^n \log(1+ \exp\{x_i^T \beta\})
+\log L = \sum_{i=1}^n y_i \mathbf{x}_i^T \boldsymbol\beta - \sum_{i=1}^n \log(1+ \exp\{\mathbf{x}_i^T \boldsymbol{\beta}\})
 $$
 
+<br>
+
 $$
-\nabla_{\boldsymbol{\beta}} \log L = \sum_{i=1}^n y_i x_i^T
-- \sum_{i=1}^n \frac{\exp\{x_i^T \boldsymbol\beta\} x_i^T}{1+\exp\{x_i^T \boldsymbol\beta\}}
+\nabla_{\boldsymbol{\beta}} \log L = \sum_{i=1}^n \Bigg[y_i
+- \frac{\exp\{\mathbf{x}_i^T \boldsymbol\beta\}}{1+\exp\{\mathbf{x}_i^T \boldsymbol\beta\}}\Bigg]\mathbf{x}_i
 $$
+
+<br>
 
 $$
 \nabla^2_{\boldsymbol{\beta}} \log L = \
-- \sum_{i=1}^n \Big(\frac{1}{1+\exp\{x_i^T \boldsymbol\beta\}}\Big)\Big(\frac{\exp\{x_i^T \boldsymbol\beta\}}{1+\exp\{x_i^T \boldsymbol\beta\}}\Big)\mathbf{x}_i\mathbf{x}_i^T
+- \sum_{i=1}^n \Big(\frac{1}{1+\exp\{\mathbf{x}_i^T \boldsymbol\beta\}}\Big)\Big(\frac{\exp\{\mathbf{x}_i^T \boldsymbol\beta\}}{1+\exp\{\mathbf{x}_i^T \boldsymbol\beta\}}\Big)\mathbf{x}_i\mathbf{x}_i^T
 $$
 
 ## PPE access example 

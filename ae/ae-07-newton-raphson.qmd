@@ -25,7 +25,7 @@ library(tidymodels)
 
 ## COVID-19 infection prevention practices at food establishments
 
-Researchers at Wollo Univeristy in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in @andualem2022.
+Researchers at Wollo University in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in @andualem2022.
 
 They were particularly interested in the understanding implementation of prevention practices at food establishments, given the workers’ increased risk due to daily contact with customers.
 
@@ -71,7 +71,7 @@ calc_second_deriv <- function(beta, X, y){
       as.numeric((exp(X[i,] %*% beta)/(1 + exp(X[i,] %*% beta)))) * 
       (X[i,]) %*% t(X[i,])
   }
-  return(-1 * second_deriv)
+  return(second_deriv)
 }
 ```
 
@@ -103,7 +103,7 @@ temp <- matrix(0, nrow = 500, ncol = 4)
 ```{r}
 while(delta > 0.000001 & iter < 50){
   old <- beta
-  beta <- old - solve(calc_second_deriv(beta = beta, X = X, y = y)) %*% 
+  beta <- old - solve(-1 * calc_second_deriv(beta = beta, X = X, y = y)) %*% 
                 calc_first_deriv(beta = beta, X = X, y = y)
   temp[iter,] <- beta
   delta <- sqrt(sum((beta - old)^2))
@@ -116,6 +116,22 @@ while(delta > 0.000001 & iter < 50){
 ```{r}
 iter
 beta
+```
+
+Note that $(\nabla^2_{\boldsymbol{\beta}} \log L)^{-1}$is the estimate for $Var(\boldsymbol{\hat{\beta}})$ . The square root of the diagonal elements are the estimates for $SE(\hat{\boldsymbol{\beta}})$.
+
+```{r}
+
+#calculate the hessian matrix
+second_deriv <- calc_second_deriv(beta = beta, X = X, y = y)
+  
+# take the inverse
+inv_second_deriv <- solve(second_deriv)
+
+# get estimates for SE
+se_beta <- sqrt(diag(inv_second_deriv))
+
+se_beta
 ```
 
 ## Coefficient estimates from `glm`

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-31">
+<meta name="dcterms.date" content="2024-11-19">
 
 <title>AE 07: Newton Raphson – STA 221 - Fall 2024</title>
 <style>
@@ -423,7 +423,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 31, 2024</p>
+      <p class="date">November 19, 2024</p>
     </div>
   </div>
   
@@ -445,7 +445,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Go to the course GitHub organization and locate your ae-06 repo to get started.</p>
+<p>Go to the course GitHub organization and locate your ae-07 repo to get started.</p>
 <p>Render, commit, and push your responses to GitHub by the end of class to submit your AE.</p>
 </div>
 </div>
@@ -458,7 +458,7 @@ Important
 <h1>Introduction</h1>
 <section id="covid-19-infection-prevention-practices-at-food-establishments" class="level2">
 <h2 class="anchored" data-anchor-id="covid-19-infection-prevention-practices-at-food-establishments">COVID-19 infection prevention practices at food establishments</h2>
-<p>Researchers at Wollo Univeristy in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in <span class="citation" data-cites="andualem2022">Andualem et al. (<a href="#ref-andualem2022" role="doc-biblioref">2022</a>)</span>.</p>
+<p>Researchers at Wollo University in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in <span class="citation" data-cites="andualem2022">Andualem et al. (<a href="#ref-andualem2022" role="doc-biblioref">2022</a>)</span>.</p>
 <p>They were particularly interested in the understanding implementation of prevention practices at food establishments, given the workers’ increased risk due to daily contact with customers.</p>
 <p>We will use the data from <span class="citation" data-cites="andualem2022">Andualem et al. (<a href="#ref-andualem2022" role="doc-biblioref">2022</a>)</span> to explore the association between age, sex, years of service, and whether someone works at a food establishment with access to personal protective equipment (PPE) as of August 2020. We will use access to PPE as a proxy for wearing PPE.</p>
 <p>The study participants were selected using a simple random sampling at the selected establishments.</p>
@@ -495,7 +495,7 @@ Important
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>((<span class="fu">exp</span>(X[i,] <span class="sc">%*%</span> beta)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(X[i,] <span class="sc">%*%</span> beta)))) <span class="sc">*</span> </span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      (X[i,]) <span class="sc">%*%</span> <span class="fu">t</span>(X[i,])</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span><span class="dv">1</span> <span class="sc">*</span> second_deriv)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(second_deriv)</span>
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -526,7 +526,7 @@ Important
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(delta <span class="sc">&gt;</span> <span class="fl">0.000001</span> <span class="sc">&amp;</span> iter <span class="sc">&lt;</span> <span class="dv">50</span>){</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  old <span class="ot">&lt;-</span> beta</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> old <span class="sc">-</span> <span class="fu">solve</span>(<span class="fu">calc_second_deriv</span>(<span class="at">beta =</span> beta, <span class="at">X =</span> X, <span class="at">y =</span> y)) <span class="sc">%*%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> old <span class="sc">-</span> <span class="fu">solve</span>(<span class="sc">-</span><span class="dv">1</span> <span class="sc">*</span> <span class="fu">calc_second_deriv</span>(<span class="at">beta =</span> beta, <span class="at">X =</span> X, <span class="at">y =</span> y)) <span class="sc">%*%</span> </span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                <span class="fu">calc_first_deriv</span>(<span class="at">beta =</span> beta, <span class="at">X =</span> X, <span class="at">y =</span> y)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  temp[iter,] <span class="ot">&lt;-</span> beta</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  delta <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((beta <span class="sc">-</span> old)<span class="sc">^</span><span class="dv">2</span>))</span>
@@ -550,14 +550,30 @@ sexMale      0.34070061
 years        0.26396205</code></pre>
 </div>
 </div>
+<p>Note that <span class="math inline">\((\nabla^2_{\boldsymbol{\beta}} \log L)^{-1}\)</span>is the estimate for <span class="math inline">\(Var(\boldsymbol{\hat{\beta}})\)</span> . The square root of the diagonal elements are the estimates for <span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#calculate the hessian matrix</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>second_deriv <span class="ot">&lt;-</span> <span class="fu">calc_second_deriv</span>(<span class="at">beta =</span> beta, <span class="at">X =</span> X, <span class="at">y =</span> y)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># take the inverse</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>inv_second_deriv <span class="ot">&lt;-</span> <span class="fu">solve</span>(second_deriv)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># get estimates for SE</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>se_beta <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(inv_second_deriv))</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>se_beta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.45832580 0.01740581 0.22360561 0.06583117</code></pre>
+</div>
+</div>
 </section>
 <section id="coefficient-estimates-from-glm" class="level2">
 <h2 class="anchored" data-anchor-id="coefficient-estimates-from-glm">Coefficient estimates from <code>glm</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ppe_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(ppe_access <span class="sc">~</span> age <span class="sc">+</span> sex <span class="sc">+</span> years, </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> covid_df, <span class="at">family =</span> binomial)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(ppe_model, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ppe_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(ppe_access <span class="sc">~</span> age <span class="sc">+</span> sex <span class="sc">+</span> years, </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> covid_df, <span class="at">family =</span> binomial)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(ppe_model, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
