@@ -546,17 +546,17 @@ Important
 \log(\frac{\pi_i}{1 - \pi_i}) = \beta_0 + \beta_1 ~ income + \beta_2 ~ rating + \beta_3 ~ regionSouth + \beta_4 ~ regionWest
 \]</span></p>
 <ol type="a">
-<li>Use the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of <span class="math inline">\(\beta_0, \beta_1, \beta_2\)</span>, etc.</li>
+<li>Use the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of <span class="math inline">\(\beta_0, \beta_1, \beta_2, \beta_3, \beta_4\)</span></li>
 </ol>
 <!-- -->
 <ol start="2" type="a">
 <li><p>Suppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of <span class="math inline">\(\beta_0, \beta_1, \beta_2\)</span>, etc.</p></li>
-<li><p>Use R to compute the odds for each individual. How do the odds compare? is this consistent with your response to part (b)?</p></li>
+<li><p>Use R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?</p></li>
 </ol>
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>We consider adding the interaction between <code>region</code> and <code>income</code> to the current model that includes <code>income</code>, <code>rating</code>, and <code>region</code>. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.</p>
+<p>We consider adding the interaction between <code>region</code> and <code>income</code> to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.</p>
 <ol type="a">
 <li>State the null and alternative hypotheses in words and using mathematical notation.</li>
 <li>Describe what the test statistic <span class="math inline">\(G\)</span> means in the context of the data.</li>
@@ -578,7 +578,7 @@ Important
 <h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <p>Use the model <code>credit_fit</code> that includes the main effects for <code>income</code>, <code>rating</code>, and <code>region</code>.</p>
 <ol type="a">
-<li>Construct the ROC curve and compute the area under the curve.</li>
+<li>Construct the ROC curve and compute the area under the curve (AUC).</li>
 <li>Based on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs.&nbsp;those who will not? Explain.</li>
 <li>Suppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.</li>
 <li>Based on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?</li>

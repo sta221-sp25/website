@@ -83,18 +83,18 @@ $$
  \log(\frac{\pi_i}{1 - \pi_i}) = \beta_0 + \beta_1 ~ income + \beta_2 ~ rating + \beta_3 ~ regionSouth + \beta_4 ~ regionWest
 $$
 
-a.  Use the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of $\beta_0, \beta_1, \beta_2$, etc.
+a.  Use the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of $\beta_0, \beta_1, \beta_2, \beta_3, \beta_4$
 
 ```{=html}
 <!-- -->
 ```
 b.  Suppose there are two individuals. Individual 1 has an income of \$64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of \$135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of $\beta_0, \beta_1, \beta_2$, etc.
 
-c.  Use R to compute the odds for each individual. How do the odds compare? is this consistent with your response to part (b)?
+c.  Use R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?
 
 ## Exercise 4
 
-We consider adding the interaction between `region` and `income` to the current model that includes `income`, `rating`, and `region`. We'll use a drop-in-deviance test to determine whether or not to add the interaction term.
+We consider adding the interaction between `region` and `income` to the current model. We'll use a drop-in-deviance test to determine whether or not to add the interaction term.
 
 a.  State the null and alternative hypotheses in words and using mathematical notation.
 b.  Describe what the test statistic $G$ means in the context of the data.
@@ -114,7 +114,7 @@ d.  What is the false positive rate? How it is computed given the specificity? W
 
 Use the model `credit_fit` that includes the main effects for `income`, `rating`, and `region`.
 
-a.  Construct the ROC curve and compute the area under the curve.
+a.  Construct the ROC curve and compute the area under the curve (AUC).
 b.  Based on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.
 c.  Suppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.
 d.  Based on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?

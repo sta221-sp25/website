@@ -58,7 +58,7 @@ knitr::opts_chunk$set(
 
 -   Lecture recordings available until December 5 at 11:45am (link on sidebar of course website)
 
-## Exam 02 format 
+## Exam 02 format
 
 -   50 points total
 
@@ -72,7 +72,7 @@ knitr::opts_chunk$set(
 
 -   Need a note from your academic dean if you miss any part of the exam
 
-## Exam 02 content  {.midi}
+## Exam 02 content {.midi}
 
 Concepts from the first half of the semester continue to apply, but the exam will focus on new content since Exam 01.
 
@@ -110,7 +110,7 @@ Concepts from the first half of the semester continue to apply, but the exam wil
 :::
 :::
 
-## Tips for studying  {.midi}
+## Tips for studying {.midi}
 
 -   Rework derivations from assignments and lecture notes
 
@@ -119,6 +119,8 @@ Concepts from the first half of the semester continue to apply, but the exam wil
     -   e.g., Why do we include "holding all else constant" in interpretations?
 
 -   Understand similarities and differences between linear and logistic regression
+
+    -   How are interpretations for logistic regression similar to interpretations for linear regression with response $\log(y)$? How are they different?
 
 -   Focus on understanding not memorization
 
@@ -131,5 +133,5 @@ Concepts from the first half of the semester continue to apply, but the exam wil
 # Application exercise
 
 ::: appex
-📋 [sta221-fa24.netlify.app/ae/ae-08-logistic-regression-review](https://sta221-fa24.netlify.app/ae/ae-08-logistic-regression-review)
+📋 [sta221-fa24.netlify.app/ae/ae-08-logistic-review](https://sta221-fa24.netlify.app/ae/ae-08-logistic-review)
 :::
