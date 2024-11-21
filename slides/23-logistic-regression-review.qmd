@@ -40,11 +40,11 @@ knitr::opts_chunk$set(
 
 ## Announcements {.midi}
 
--   Lab 06 due TODAY at 11:59pm
-
--   HW 04 due TODAY at 11:59pm
+-   Lab 06 and HW 04 due TODAY at 11:59pm
 
 -   Statistics experience due Tuesday, November 26
+
+-   **Team Feedback #2 (from Teammates)** **due Tuesday, November 26**
 
 -   Project:
 
