@@ -48,7 +48,7 @@ covid_df <- read_csv("data/covid-prevention-study.csv") |>
 
 ```
 
-## Functions for Newton-Raphson 
+## Functions for Newton-Raphson
 
 ```{r}
 ## Calculate the first derivative of logL (score function)
@@ -74,7 +74,7 @@ calc_second_deriv <- function(beta, X, y){
 }
 ```
 
-## Get starting values 
+## Get starting values
 
 ```{r}
 
@@ -97,7 +97,7 @@ delta <- 1
 temp <- matrix(0, nrow = 500, ncol = 4) 
 ```
 
-##  Estimate $\boldsymbol{\beta}$ 
+## Estimate $\boldsymbol{\beta}$
 
 ```{r}
 while(delta > 0.000001 & iter < 50){
@@ -110,7 +110,7 @@ while(delta > 0.000001 & iter < 50){
 }
 ```
 
-## Show results 
+## Show results
 
 ```{r}
 iter

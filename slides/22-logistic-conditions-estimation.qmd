@@ -38,11 +38,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Announcements  {.midi}
+## Announcements {.midi}
 
 -   Lab 06 due Thursday, November 21 at 11:59pm
 
--   HW 04 released later today. Due Thursday, November 21
+-   HW 04 due Thursday, November 21 at 11:59pm
 
 -   Project meetings: November 25 and 26
 
@@ -317,7 +317,7 @@ We can check the randomness condition based on the context of the data and how t
 
 ✅ We will treat this sample as independent. If given the data, we may want to further investigate potential correlation within an establishment.
 
-# Estimating $\boldsymbol{\beta}$ 
+# Estimating $\boldsymbol{\beta}$
 
 ## Estimating $\boldsymbol{\beta}$
 
@@ -329,7 +329,7 @@ $$
 \end{aligned}
 $$
 
-## Estimating $\boldsymbol{\beta}$ 
+## Estimating $\boldsymbol{\beta}$
 
 Take the derivative and set it equal to 0 to solve for $\boldsymbol{\beta}$. ([Click here](https://canvas.duke.edu/courses/38867/discussion_topics/122356) for the full derivation.)\
 $$
@@ -454,7 +454,7 @@ $$
 
 3.  Stop when the convergence criteria is satisfied.
 
-## Newton-Raphson for logistic regression  {.midi}
+## Newton-Raphson for logistic regression {.midi}
 
 $$
 \log L = \sum_{i=1}^n y_i \mathbf{x}_i^T \boldsymbol\beta - \sum_{i=1}^n \log(1+ \exp\{\mathbf{x}_i^T \boldsymbol{\beta}\})
@@ -474,7 +474,7 @@ $$
 - \sum_{i=1}^n \Big(\frac{1}{1+\exp\{\mathbf{x}_i^T \boldsymbol\beta\}}\Big)\Big(\frac{\exp\{\mathbf{x}_i^T \boldsymbol\beta\}}{1+\exp\{\mathbf{x}_i^T \boldsymbol\beta\}}\Big)\mathbf{x}_i\mathbf{x}_i^T
 $$
 
-## PPE access example 
+## PPE access example
 
 ::: appex
 📋 <https://sta221-fa24.netlify.app/ae/ae-07-newton-raphson.html>

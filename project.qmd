@@ -20,7 +20,7 @@ library(broom)
 
 [Analysis draft + peer review](#draft-report-peer-review) Monday, December 2 (peer review in lab)
 
-[Round 1 submission (optional)](#round1-submission) due Friday, December 6
+[Round 1 submission (optional)](#round1-submission) due Sunday, December 8 at 11:59pm
 
 [Written report](#written-report) due Thursday, December 12 at 9pm
 
@@ -361,7 +361,7 @@ During the peer review process, you will be provided read-only access to your pa
 ## Round 1 submission (optional) {#round1-submission}
 
 ::: callout-important
-The Round 1 submission is due on Friday, December 6 at 11:59pm. Reports submitted after this date will not receive preliminary feedback.
+The Round 1 submission is due on Sunday, December 8 at 11:59pm. Reports submitted after this date will not receive preliminary feedback.
 :::
 
 The Round 1 submission is an opportunity to receive detailed feedback on your analysis and [Written report](#written-report) before the final submission. Therefore, to make the feedback most useful, **you must submit a complete written report to receive feedback.** You will also be notified of the grade you would receive at that point. You will have the option to keep the grade (and thus you don't need to turn in an updated report) or resubmit the written report by the final submission deadline to receive a new grade.

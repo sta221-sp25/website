@@ -1,0 +1,130 @@
+---
+title: "AE 08: Logistic regression review"
+date: "November 21, 2024"
+editor: visual
+bibliography: references.bib
+execute: 
+  warning: false
+  message: false
+---
+
+::: callout-important
+Go to the course GitHub organization and locate your ae-08 repo to get started.
+
+Render, commit, and push your responses to GitHub by the end of class to submit your AE.
+:::
+
+```{r}
+#| label: load-packages
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(knitr)
+library(tidymodels)
+library(pROC)
+library(Stat2Data)
+```
+
+# Introduction
+
+The data for this analysis is about credit card customers. It can be found in the file `credit.csv`. The following variables are in the data set:
+
+-   `income`: Income in \$1,000’s
+-   `limit`: Credit limit
+-   `rating`: Credit rating
+-   `cards`: Number of credit cards
+-   `age`: Age in years
+-   `education`: Number of years of education
+-   `own`: Whether an individual owns their home ( `No` or `Yes` )
+-   `student`: Whether the individual was a student ( `No` or `Yes` )
+-   `married`: Whether the individual was married (`No` and `Yes)`
+-   `region`: Region the individual is from ( `South`, `East`, and `West`)
+-   `balance`: Average credit card balance in \$.
+
+```{r}
+credit <- read_csv("data/credit.csv") |>
+  mutate(maxed = factor(if_else(balance == 0, 1, 0)))
+```
+
+# Exercises
+
+**The objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had \$0 average card balance.**
+
+We'll start with a model predicting the odds of `maxed = 1` using `income`, `rating`, and `region`.
+
+```{r}
+credit_fit <- glm(maxed ~ income + rating + region, data = credit, 
+                  family = "binomial")
+
+tidy(credit_fit) |>
+  kable(digits = 3)
+```
+
+## Exercise 1
+
+a.  Why do we use logistic regression (instead of linear regression) for this analysis?
+
+b.  The four assumptions for linear regression are Linearity, Constant Variance, Normality, and Independence. For each assumption, state whether it is satisfied in logistic regression. If yes, state what the assumption means in the context of logistic regression. Otherwise, briefly explain why it is not satisfied.
+
+## Exercise 2
+
+a.  Write the interpretation of `income` in terms of the odds of maxing out a credit card.
+
+b.  Show mathematically why we include "holding all else constant" in the interpretation for `income`.
+
+c.  Describe the expected change in the odds of maxing out a credit card when income increases from the median value \$33,100 to \$57,500 (the $75^{th}$) percentile. Assume rating and region are constant.
+
+## Exercise 3
+
+The logistic regression model takes the following form:
+
+$$
+ \log(\frac{\pi_i}{1 - \pi_i}) = \beta_0 + \beta_1 ~ income + \beta_2 ~ rating + \beta_3 ~ regionSouth + \beta_4 ~ regionWest
+$$
+
+a.  Use the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of $\beta_0, \beta_1, \beta_2$, etc.
+
+```{=html}
+<!-- -->
+```
+b.  Suppose there are two individuals. Individual 1 has an income of \$64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of \$135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of $\beta_0, \beta_1, \beta_2$, etc.
+
+c.  Use R to compute the odds for each individual. How do the odds compare? is this consistent with your response to part (b)?
+
+## Exercise 4
+
+We consider adding the interaction between `region` and `income` to the current model that includes `income`, `rating`, and `region`. We'll use a drop-in-deviance test to determine whether or not to add the interaction term.
+
+a.  State the null and alternative hypotheses in words and using mathematical notation.
+b.  Describe what the test statistic $G$ means in the context of the data.
+c.  Show why the degrees of freedom for the test statistic is equal to 2.
+d.  Conduct the drop-in-deviance test and state your conclusion in the context of the data.
+
+## Exercise 5
+
+Use the model `credit_fit` that includes the main effects for `income`, `rating`, and `region`.
+
+a.  Compute the predicted probabilities, then use those to predict whether individuals maxed out their credit card using a threshold of $\hat{\pi}   = 0.5$.
+b.  What is the accuracy? What does it mean in the context of the data?
+c.  What is the sensitivity? What does it mean in the context of the data ?
+d.  What is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?
+
+## Exercise 6
+
+Use the model `credit_fit` that includes the main effects for `income`, `rating`, and `region`.
+
+a.  Construct the ROC curve and compute the area under the curve.
+b.  Based on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.
+c.  Suppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.
+d.  Based on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?
+
+::: callout-important
+# Submission
+
+To submit the AE:
+
+Render the document to produce the PDF with all of your work from today's class.
+
+Push all your work to your AE repo on GitHub. You're done! 🎉
+:::
