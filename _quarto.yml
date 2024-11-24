@@ -94,6 +94,8 @@ website:
         text: Lecture recordings
       - href: math-rules.qmd
         text: Math rules
+      - href: exam-02-practice.qmd
+        text: Exam 02 Practice
         
 
 format:

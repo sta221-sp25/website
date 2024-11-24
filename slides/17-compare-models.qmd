@@ -20,6 +20,8 @@ html-math-method:
 execute:
   freeze: auto
   echo: true
+  execute: false
+  message: false
 knitr:
   opts_chunk: 
     R.options:      

@@ -457,47 +457,25 @@ Prof.&nbsp;Maria Tackett
 <li><code>Age</code>: age category of person paying the bill (Yadult, Middle, SenCit)</li>
 </ul></li>
 </ul>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 422 Columns: 13
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (8): Day, Meal, Payment, Age, GiftCard, Comps, Alcohol, Bday
-dbl (5): Party, Bill, W/Tip, Tip, Tip Percentage
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-</div>
 </section>
 <section id="response-variable" class="slide level2">
 <h2>Response Variable</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
 
-</div>
-<img data-src="17-compare-models_files/figure-html/unnamed-chunk-3-1.png" width="672" class="r-stretch"></section>
+<img data-src="17-compare-models_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="predictor-variables" class="slide level2">
 <h2>Predictor Variables</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
 
-</div>
-<img data-src="17-compare-models_files/figure-html/unnamed-chunk-4-1.png" width="672" class="r-stretch"></section>
+<img data-src="17-compare-models_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="response-vs.-predictors" class="slide level2">
 <h2>Response vs.&nbsp;Predictors</h2>
 
-<img data-src="17-compare-models_files/figure-html/unnamed-chunk-5-1.png" width="672" class="r-stretch"></section>
+<img data-src="17-compare-models_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 <section id="restaurant-tips-model" class="slide level2">
 <h2>Restaurant tips: model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span>  Age , <span class="at">data =</span> tips)</span>
-<span id="cb5-2"><a></a><span class="fu">tidy</span>(model1, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a></a>  <span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>, <span class="at">digits=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span>  Age , <span class="at">data =</span> tips)</span>
+<span id="cb2-2"><a></a><span class="fu">tidy</span>(model1, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a></a>  <span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>, <span class="at">digits=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <colgroup>
@@ -642,7 +620,7 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 <section id="test-for-overall-significance-p-value" class="slide level2">
 <h2>Test for overall significance: P-value</h2>
 
-<img data-src="17-compare-models_files/figure-html/unnamed-chunk-8-1.png" width="672" class="r-stretch"><p><span class="math display">\[
+<img data-src="17-compare-models_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><p><span class="math display">\[
 \text{P-value} = \text{Pr}(F &gt; \text{F Stat})
 \]</span></p>
 </section>
@@ -802,19 +780,19 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 &amp;H_a: \text{ at least one }\beta_j \text{ is not equal to 0}\end{aligned}\]</span></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>reduced <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age, <span class="at">data =</span> tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>reduced <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age, <span class="at">data =</span> tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>full <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal, <span class="at">data =</span> tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>full <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal, <span class="at">data =</span> tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co">#Nested F test in R</span></span>
-<span id="cb8-2"><a></a><span class="fu">anova</span>(reduced, full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co">#Nested F test in R</span></span>
+<span id="cb5-2"><a></a><span class="fu">anova</span>(reduced, full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -998,18 +976,18 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 <h2>Nested F test for interactions</h2>
 <p>Let’s use a Nested F test to determine if <code>Party*Meal</code> is statistically significant.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>reduced <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal, <span class="at">data =</span> tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>reduced <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal, <span class="at">data =</span> tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>full <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal <span class="sc">+</span> Meal <span class="sc">*</span> Party, </span>
-<span id="cb10-2"><a></a>           <span class="at">data =</span> tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>full <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal <span class="sc">+</span> Meal <span class="sc">*</span> Party, </span>
+<span id="cb7-2"><a></a>           <span class="at">data =</span> tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">kable</span>(<span class="fu">anova</span>(reduced, full), <span class="at">format =</span> <span class="st">"markdown"</span>, <span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">row_spec</span>(<span class="dv">2</span>, <span class="at">background =</span> <span class="st">"#dce5b2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">kable</span>(<span class="fu">anova</span>(reduced, full), <span class="at">format =</span> <span class="st">"markdown"</span>, <span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">row_spec</span>(<span class="dv">2</span>, <span class="at">background =</span> <span class="st">"#dce5b2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
 <thead>
@@ -1121,8 +1099,8 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 <h2>Tips: Comparing models</h2>
 <p>Let’s compare two models:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal, <span class="at">data =</span> tips)</span>
-<span id="cb12-2"><a></a><span class="fu">glance</span>(model1) <span class="sc">|&gt;</span> <span class="fu">select</span>(r.squared, adj.r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal, <span class="at">data =</span> tips)</span>
+<span id="cb9-2"><a></a><span class="fu">glance</span>(model1) <span class="sc">|&gt;</span> <span class="fu">select</span>(r.squared, adj.r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   r.squared adj.r.squared
@@ -1132,8 +1110,8 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal <span class="sc">+</span> Day, <span class="at">data =</span> tips)</span>
-<span id="cb14-2"><a></a><span class="fu">glance</span>(model2) <span class="sc">|&gt;</span> <span class="fu">select</span>(r.squared, adj.r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal <span class="sc">+</span> Day, <span class="at">data =</span> tips)</span>
+<span id="cb11-2"><a></a><span class="fu">glance</span>(model2) <span class="sc">|&gt;</span> <span class="fu">select</span>(r.squared, adj.r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   r.squared adj.r.squared
@@ -1175,8 +1153,8 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 <section id="tips-aic-bic" class="slide level2">
 <h2>Tips: AIC &amp; BIC</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal, <span class="at">data =</span> tips)</span>
-<span id="cb16-2"><a></a><span class="fu">glance</span>(model1) <span class="sc">|&gt;</span> <span class="fu">select</span>(AIC, BIC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal, <span class="at">data =</span> tips)</span>
+<span id="cb13-2"><a></a><span class="fu">glance</span>(model1) <span class="sc">|&gt;</span> <span class="fu">select</span>(AIC, BIC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
     AIC   BIC
@@ -1187,8 +1165,8 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal <span class="sc">+</span> Day, <span class="at">data =</span> tips)</span>
-<span id="cb18-2"><a></a><span class="fu">glance</span>(model2) <span class="sc">|&gt;</span> <span class="fu">select</span>(AIC, BIC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Meal <span class="sc">+</span> Day, <span class="at">data =</span> tips)</span>
+<span id="cb15-2"><a></a><span class="fu">glance</span>(model2) <span class="sc">|&gt;</span> <span class="fu">select</span>(AIC, BIC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
     AIC   BIC
@@ -1472,6 +1450,44 @@ F = \frac{\text{Mean Square Model}}{\text{Mean Square Residuals}}
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,11 +1,6 @@
-```{=html}
-<style>
-  .h3 {
-     margin-top: 3in;
-  }
-</style>
-```
-# Math rules
+---
+title: Math rules
+---
 
 This page contains mathematical rules we'll use in this course that may be beyond what is covered in a linear algebra course.
 
@@ -162,7 +157,7 @@ Var(\mathbf{Ab}) &= E[(\mathbf{Ab} - E(\mathbf{Ab}))(\mathbf{Ab} - E(\mathbf{Ab}
 \end{aligned}
 $$
 
-## Probability distributions 
+## Probability distributions
 
 ### Normal distribution
 

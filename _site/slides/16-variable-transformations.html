@@ -471,20 +471,15 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="rate-vs.-age" class="slide level2">
 <h2>Rate vs.&nbsp;Age</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
-</div>
 
-</div>
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-2-1.png" width="672" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="model-1-rate-vs.-age" class="slide level2">
 <h2>Model 1: Rate vs.&nbsp;Age</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>resp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Rate <span class="sc">~</span> Age, <span class="at">data =</span> respiratory)</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a><span class="fu">tidy</span>(resp_fit) <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>resp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Rate <span class="sc">~</span> Age, <span class="at">data =</span> respiratory)</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="fu">tidy</span>(resp_fit) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -519,19 +514,11 @@ Prof.&nbsp;Maria Tackett
 <section id="model-1-residuals" class="slide level2">
 <h2>Model 1: Residuals</h2>
 
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-4-1.png" width="672" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="consider-different-transformations" class="slide level2">
 <h2>Consider different transformations…</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 
-</div>
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-5-1.png" width="672" class="r-stretch"></section></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="transformation-on-y" class="title-slide slide level1 center">
 <h1>Transformation on <span class="math inline">\(Y\)</span></h1>
@@ -646,11 +633,11 @@ Prof.&nbsp;Maria Tackett
 <section id="model-2-residuals" class="slide level2">
 <h2>Model 2: Residuals</h2>
 
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-7-1.png" width="672" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section id="compare-residual-plots" class="slide level2">
 <h2>Compare residual plots</h2>
 
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-8-1.png" width="672" class="r-stretch"></section></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="log-transformation-on-a-predictor-variable" class="title-slide slide level1 center">
 <h1>Log transformation on a predictor variable</h1>
@@ -659,12 +646,12 @@ Prof.&nbsp;Maria Tackett
 <section id="log-transformation-on-x" class="slide level2">
 <h2>Log Transformation on <span class="math inline">\(X\)</span></h2>
 
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-11-1.png" width="672" class="r-stretch"><p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot shows some curvature but the variance is constant for all values of <span class="math inline">\(X\)</span></p>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot shows some curvature but the variance is constant for all values of <span class="math inline">\(X\)</span></p>
 </section>
 <section id="rate-vs.-logage" class="slide level2">
 <h2>Rate vs.&nbsp;log(Age)</h2>
 
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-12-1.png" width="672" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
 <section id="model-with-transformation-on-x" class="slide level2 midi">
 <h2>Model with Transformation on <span class="math inline">\(X\)</span></h2>
 <p>Suppose we have the following regression equation:</p>
@@ -722,7 +709,7 @@ Prof.&nbsp;Maria Tackett
 <section id="model-3-residuals" class="slide level2">
 <h2>Model 3: Residuals</h2>
 
-<img data-src="16-variable-transformations_files/figure-html/unnamed-chunk-14-1.png" width="672" class="r-stretch"></section>
+<img data-src="16-variable-transformations_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
 <section id="choose-a-model" class="slide level2">
 <h2>Choose a model</h2>
 <p>Recall the goal of the analysis:</p>
@@ -734,7 +721,7 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="compare-models" class="slide level2">
 <h2>Compare models</h2>
-<table class="caption-top" style="width:100%;">
+<table class="caption-top">
 <colgroup>
 <col style="width: 30%">
 <col style="width: 34%">
@@ -989,6 +976,44 @@ Prof.&nbsp;Maria Tackett
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

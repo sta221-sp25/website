@@ -1,0 +1,176 @@
+---
+title: Exam 02 practice
+---
+
+::: callout-important
+This page contains practice problems to help prepare for Exam 02. This set of practice problems is <u>**not**</u> comprehensive. You should review these [study tips](https://sta221-fa24.netlify.app/slides/23-logistic-regression-review#/tips-for-studying) as you prepare for the exam. \
+\
+There is no solution guide for these problems. You may ask questions in office hours and on Ed Discussion.
+:::
+
+# Maximum likelihood estimation 
+
+## Exercise 1
+
+Given the simple linear regression model
+
+$$y_i = \beta_0 + \beta_1x_i + \epsilon_i, \hspace{10mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})$$
+
+Write the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of $\beta_0$, $\beta_1$, and $\sigma^2_{\epsilon}$ are of the form shown on [this slide](https://sta221-fa24.netlify.app/slides/14-model-diagnostics#/mle-for-beta_0beta_1-sigma2_epsilon).
+
+## Exercise 2
+
+Given the linear regression model
+
+$$
+\mathbf{y}  = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon} \hspace{10mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+$$
+
+Write the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of $\boldsymbol{\beta}$ and $\sigma^2_{\epsilon}$ are
+
+$$
+\tilde{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} \hspace{10mm} \tilde{\sigma}^2_{\epsilon} = \frac{1}{n}(\mathbf{y} - \mathbf{X}\tilde{\boldsymbol{\beta}})^T(\mathbf{y} - \mathbf{X}\tilde{\boldsymbol{\beta}})
+$$
+
+## Exercise 3
+
+Given the logistic regression model
+
+$$
+\log\Big(\frac{\pi}{1-\pi}\Big) = \mathbf{X}\boldsymbol{\beta}
+$$
+
+-   Write the likelihood function
+
+-   Rework the derivation from the November 7 lecture to show the derivative solved to find the MLEs is of the form on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/finding-the-mle). (You can check your answer using the board work posted in Canvas).
+
+## Exercise 4
+
+Suppose $Y_1, \ldots, Y_n$ are an independent and identically distributed (iid) sample from some distribution
+
+$$f_Y(y) = \theta(1 - \theta)^{y-1}$$
+
+such that $y$ takes on positive integer values and $0 < \theta < 1$. Show that the MLE for $\theta^{-1}$ is $\frac{1}{n}\sum_{i=1}^n y_i$ .
+
+## Exercise 5
+
+Rework Exercises 1 - 3 in [HW 03](https://sta221-fa24.netlify.app/hw/hw-03).
+
+# Multiple linear regression (diagnostics, multicollinearity, variable transformations, comparison)
+
+## Exercise 6
+
+Suppose we fit a linear model with a log transformation on the response variable, i.e.,
+
+$$
+\widehat{\log(y_i)} = \hat{\beta}_0 + \hat{\beta}_1x_1 + \dots + \hat{\beta}_p x_p
+$$
+
+-   Show mathematically why the slope for $x_j$ and intercept are interpreted in terms of $y$ has shown on [this slide](https://sta221-fa24.netlify.app/slides/16-variable-transformations#/model-interpretation).
+
+-   Show how $y$ is expected to change if $x_j$ increases by $t$ units.
+
+## Exercise 7
+
+Suppose we fit a linear model with a log transformation on one predictor variable, i.e.,
+
+$$\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1\log (x_1) + \dots + \hat{\beta}_p x_p
+$$
+
+-   Show mathematically why the slope and intercept are interpreted similarly as shown on [this slide](https://sta221-fa24.netlify.app/slides/16-variable-transformations#/model-with-transformation-on-x) when $x$ is multiplied by a factor $C$.
+
+-   Explain why we need "holding all else constant" in this interpretation but not for the one shown in the lecture slides.
+
+## Exercise 8
+
+Rework Exercise 4 in [HW 03](https://sta221-fa24.netlify.app/hw/hw-03#exercise-4).
+
+## Exercise 9
+
+Recall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of $Var(\hat{\boldsymbol{\beta}}) = \hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}$. One of the [effects of multicollinearity](https://sta221-fa24.netlify.app/slides/15-multicollinearity#/effects-of-multicollinearity) is large variances in the model coefficients. Explain why.
+
+## Exercise 10
+
+Suppose you fit a simple linear regression model and check the model diagnostics.
+
+-   Draw an example of an observation that has high leverage but low Cook's distance.
+
+-   Draw an example of an observation that has high leverage and high Cook's distance.
+
+-   Draw an example of an observation with a large studentized residual.
+
+## Exercise 11
+
+-   What is an advantage of examining a plot of studentized residuals vs. fitted values rather than using the raw residuals?
+
+-   Explain what is measured by Cook's distance. You don't need to memorize the formula but rather describe what the formula is quantifying for each observation. [Click here](https://sta221-fa24.netlify.app/slides/14-model-diagnostics#/cooks-distance-1) for the formula (slide also contains the solution).
+
+## Exercise 12
+
+Consider the hypotheses being tested in the Nested F Test on [this slide](https://sta221-fa24.netlify.app/slides/17-compare-models#/tips-nested-f-test). The output produced by the `anova()` function for the Nested F test is shown [here](https://sta221-fa24.netlify.app/slides/17-compare-models#/tips-nested-f-test-1). Explain how each value in the table is computed.
+
+## Exercise 13
+
+-   What is an advantaged of using a Nested F test instead of AIC (or BIC) to compare models?
+
+-   What is an advantage of using AIC (or BIC) instead of a Nested F test to compare models?
+
+# Logistic regression
+
+## Exercise 14[^1]
+
+[^1]: From *Introduction to Statistical Learning*.
+
+-   On average, what fraction of people with an odds of 0.37 of defaulting on their credit card payment will in fact default?
+
+-   Suppose an individual has a 16% chance of defaulting on their credit card payment. What are the odds they will default?
+
+## Exercise 15
+
+Recall the model using age and education to predict odds of being high risk for heart disease.
+
+-   Show mathematically why the interpretation for the slope for `age` in terms of the log-odds is the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds-1).
+
+-   Show mathematically why the interpretation for the slope of `age`in terms of the odds is the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds-1).
+
+## Exercise 16
+
+Recall the model using age and education to predict odds of being high risk for heart disease.
+
+-   Show mathematically why the interpretation for the slope for `education4` in terms of the log-odds is the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds).
+
+-   Show mathematically why the interpretation for the slope of `education4`in terms of the odds is the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds).
+
+## Exercise 17
+
+Explain why the slope of the logistic regression model is called the Adjusted Odds Ratio (or just Odds Ratio if there is one predictor).
+
+## Exercise 18
+
+-   Draw an example of an ROC curve such that AUC is about 0.55
+
+-   Draw an example of an ROC curve such that AUC is about 0.9.
+
+-   Explain what each point on an ROC curve means.
+
+## Exercise 19
+
+Consider the drop-in-deviance test [from lecture](https://sta221-fa24.netlify.app/slides/21-logistic-inference#/heart-disease-model-drop-in-deviance-test) testing whether education should be added to a model that already includes `age`, `totChol`, and `currentSmoker` to predict the odds a person is high risk for heart disease.
+
+The `anova()` output for the drop-in-deviance test is shown on [this slide](https://sta221-fa24.netlify.app/slides/21-logistic-inference#/drop-in-deviance-test-in-r). Explain how each value in the table is computed.
+
+## Exercise 20
+
+Recall [this empirical logit plot](https://sta221-fa24.netlify.app/slides/22-logistic-conditions-estimation#/empirical-logit-plot-in-r-quantitative-predictor-2) to check the linearity condition for the model using `age` , `sex`, and `years` (of experience) to predict access to PPE for employees at food establishments in Summer 2020.
+
+There is a point on the plot around (20, -0.5). Explain what these coordinates mean in the context of the data.
+
+## Relevant assignments and AEs
+
+The following assignments and AEs cover Exam 02 content. Ask yourself "why" questions as your review your answers, process, and derivations on these assignments. It may also be helpful to explain your process to others.
+
+-   HW 03, HW 04
+
+-   Lab 04, Lab 05, Lab 06
+
+-   AE 05, AE 06, AE 07, AE 08

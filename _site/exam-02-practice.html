@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Final project tips + resources – STA 221 - Fall 2024</title>
+<title>Exam 02 practice – STA 221 - Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./math-rules.html" rel="next">
-<link href="./project.html" rel="prev">
+<link href="./math-rules.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,6 +68,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -115,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project.html">Project</a></li><li class="breadcrumb-item"><a href="./project-tips.html">Tips + resources</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exam-02-practice.html">Exam 02 Practice</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -309,13 +303,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Project</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
@@ -324,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project-tips.html" class="sidebar-item-text sidebar-link active">
+  <a href="./project-tips.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tips + resources</span></a>
   </div>
 </li>
@@ -344,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exam-02-practice.html" class="sidebar-item-text sidebar-link">
+  <a href="./exam-02-practice.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Exam 02 Practice</span></a>
   </div>
 </li>
@@ -358,19 +352,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-sources" id="toc-data-sources" class="nav-link active" data-scroll-target="#data-sources">Data sources</a></li>
-  <li><a href="#tips" id="toc-tips" class="nav-link" data-scroll-target="#tips">Tips</a></li>
-  <li><a href="#formatting-communication-tips" id="toc-formatting-communication-tips" class="nav-link" data-scroll-target="#formatting-communication-tips">Formatting + communication tips</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional resources</a></li>
+  <li><a href="#maximum-likelihood-estimation" id="toc-maximum-likelihood-estimation" class="nav-link active" data-scroll-target="#maximum-likelihood-estimation">Maximum likelihood estimation</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  </ul></li>
+  <li><a href="#multiple-linear-regression-diagnostics-multicollinearity-variable-transformations-comparison" id="toc-multiple-linear-regression-diagnostics-multicollinearity-variable-transformations-comparison" class="nav-link" data-scroll-target="#multiple-linear-regression-diagnostics-multicollinearity-variable-transformations-comparison">Multiple linear regression (diagnostics, multicollinearity, variable transformations, comparison)</a>
+  <ul class="collapse">
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
+  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
+  <li><a href="#exercise-11" id="toc-exercise-11" class="nav-link" data-scroll-target="#exercise-11">Exercise 11</a></li>
+  <li><a href="#exercise-12" id="toc-exercise-12" class="nav-link" data-scroll-target="#exercise-12">Exercise 12</a></li>
+  <li><a href="#exercise-13" id="toc-exercise-13" class="nav-link" data-scroll-target="#exercise-13">Exercise 13</a></li>
+  </ul></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">Logistic regression</a>
+  <ul class="collapse">
+  <li><a href="#exercise-141" id="toc-exercise-141" class="nav-link" data-scroll-target="#exercise-141">Exercise 14</a></li>
+  <li><a href="#exercise-15" id="toc-exercise-15" class="nav-link" data-scroll-target="#exercise-15">Exercise 15</a></li>
+  <li><a href="#exercise-16" id="toc-exercise-16" class="nav-link" data-scroll-target="#exercise-16">Exercise 16</a></li>
+  <li><a href="#exercise-17" id="toc-exercise-17" class="nav-link" data-scroll-target="#exercise-17">Exercise 17</a></li>
+  <li><a href="#exercise-18" id="toc-exercise-18" class="nav-link" data-scroll-target="#exercise-18">Exercise 18</a></li>
+  <li><a href="#exercise-19" id="toc-exercise-19" class="nav-link" data-scroll-target="#exercise-19">Exercise 19</a></li>
+  <li><a href="#exercise-20" id="toc-exercise-20" class="nav-link" data-scroll-target="#exercise-20">Exercise 20</a></li>
+  <li><a href="#relevant-assignments-and-aes" id="toc-relevant-assignments-and-aes" class="nav-link" data-scroll-target="#relevant-assignments-and-aes">Relevant assignments and AEs</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa24/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project.html">Project</a></li><li class="breadcrumb-item"><a href="./project-tips.html">Tips + resources</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Final project tips + resources</h1>
+<h1 class="title">Exam 02 practice</h1>
 </div>
 
 
@@ -387,271 +407,188 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="data-sources" class="level3">
-<h3 class="anchored" data-anchor-id="data-sources">Data sources</h3>
-<section id="some-resources-that-may-be-helpful-as-you-find-data" class="level4">
-<h4 class="anchored" data-anchor-id="some-resources-that-may-be-helpful-as-you-find-data">Some resources that may be helpful as you find data:</h4>
-<ul>
-<li><a href="https://data.fivethirtyeight.com/">FiveThirtyEight data</a></li>
-<li><a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</a></li>
-<li><a href="https://www.data-is-plural.com/archive/">Data Is Plural</a></li>
-<li><a href="https://rfun.library.duke.edu/blog/data-sources-for-regression-analysis/">R Data Sources for Regression Analysis</a></li>
-</ul>
-</section>
-<section id="other-data-repositories" class="level4">
-<h4 class="anchored" data-anchor-id="other-data-repositories">Other data repositories</h4>
-<ul>
-<li><a href="https://www.who.int/gho/database/en/">World Health Organization</a></li>
-<li><a href="https://data.nber.org/data/">The National Bureau of Economic Research</a></li>
-<li><a href="https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&amp;sId=1479329328660">International Monetary Fund</a></li>
-<li><a href="http://gss.norc.org/">General Social Survey</a></li>
-<li><a href="http://data.un.org/">United Nations Data</a></li>
-<li><a href="https://unstats.un.org/home/">United Nations Statistics Division</a></li>
-<li><a href="https://data.gov.uk/">U.K. Data</a></li>
-<li><a href="https://www.data.gov/">U.S. Data</a></li>
-<li><a href="https://www.census.gov/data.html">U.S. Census Data</a></li>
-<li><a href="https://ec.europa.eu/eurostat/">European Statistics</a></li>
-<li><a href="https://www.statcan.gc.ca/eng/start">Statistics Canada</a></li>
-<li><a href="https://www.pewresearch.org/download-datasets/">Pew Research</a></li>
-<li><a href="https://data.unicef.org/">UNICEF</a></li>
-<li><a href="https://www.cdc.gov/datastatistics/index.html">CDC</a></li>
-<li><a href="https://datacatalog.worldbank.org/">World Bank</a></li>
-<li><a href="https://electionstudies.org//">Election Studies</a></li>
-</ul>
-</section>
-</section>
-<section id="tips" class="level3">
-<h3 class="anchored" data-anchor-id="tips">Tips</h3>
-<ul>
-<li><p>Ask questions if any of the expectations are unclear.</p></li>
-<li><p><em>Code</em>: In your write up your code should be hidden (<code>echo = FALSE</code>) so that your document is neat and easy to read. However your document should include all your code such that if I re-knit your Qmd file I should be able to obtain the results you presented.</p>
-<ul>
-<li><strong>Exception:</strong> If you want to highlight something specific about a piece of code, you’re welcome to show that portion.</li>
-</ul></li>
-<li><p>Merge conflicts will happen, issues will arise, and that’s fine! Commit and push often, and ask questions when stuck.</p></li>
-<li><p>Make sure each team member is contributing, both in terms of quality and quantity of contribution (we will be reviewing commits from different team members).</p></li>
-<li><p>All team members are expected to contribute equally to the completion of this assignment and group assessments will be given at its completion - anyone judged to not have sufficient contributed to the final product will have their grade penalized. While different teams members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment works.</p></li>
-</ul>
-</section>
-<section id="formatting-communication-tips" class="level3">
-<h3 class="anchored" data-anchor-id="formatting-communication-tips">Formatting + communication tips</h3>
-<section id="suppress-code-warnings-messages" class="level4">
-<h4 class="anchored" data-anchor-id="suppress-code-warnings-messages">Suppress Code, Warnings, &amp; Messages</h4>
-<ul>
-<li>Include the following code in a code chunk at the top of your .qmd file to suppress all code, warnings, and other messages. Use the code chunk header <code>{r set-up, include = FALSE}</code> to suppress this set up code.</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p>An alternative approach is to add the following code to the YAML:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>execute<span class="sc">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  echo<span class="sc">:</span> false</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  warning<span class="sc">:</span> false</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  message<span class="sc">:</span> false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
-</ul>
-</section>
-<section id="headers" class="level4">
-<h4 class="anchored" data-anchor-id="headers">Headers</h4>
-<ul>
-<li>Use headers to clearly label each section. Make sure there is a space between the last <code>#</code> and the title, so the header renders correctly. For example, <code>###Section Title</code> will not render as header, but <code>### Section Title</code> will.</li>
-</ul>
-</section>
-<section id="references" class="level4">
-<h4 class="anchored" data-anchor-id="references">References</h4>
-<ul>
-<li>Include all references in a section called “References” at the end of the report.</li>
-<li>This course does not have specific requirements for formatting citations and references.</li>
-</ul>
-</section>
-<section id="appendix" class="level4">
-<h4 class="anchored" data-anchor-id="appendix">Appendix</h4>
-<ul>
-<li>If you have additional work that does not fit or does not belong in the body of the report, you may put it at the end of the document in section called “Appendix”.</li>
-<li>The items in the appendix should be properly labeled.</li>
-<li>The appendix should only be for additional material. The reader should be able to fully understand your report without viewing content in the appendix.</li>
-</ul>
-</section>
-<section id="resize-figures" class="level4">
-<h4 class="anchored" data-anchor-id="resize-figures">Resize figures</h4>
-<ul>
-<li>Resize plots and figures, so you have more space for the narrative.
-<ul>
-<li><strong>Resize individual figures</strong>: Use the code chunk header <code>{r plot1, fig.height = 3, fig.width = 5}</code>, replacing <code>plot1</code> with a meaningful label and the height and width with values appropriate for your write up.</li>
-<li><strong>Resize all figures</strong>: Include the <code>fig_width</code> and <code>fig_height</code> options in your YAML header as shown below:</li>
-</ul></li>
-</ul>
-<!-- -->
-<pre><code>---
-title: "Your title"
-author: "Your names"
-format:
-  pdf:
-    fig-width: 7
-    fig-height: 5
----</code></pre>
-<p>Replace the height and width values with values appropriate for your write up.</p>
-</section>
-<section id="arranging-plots" class="level4">
-<h4 class="anchored" data-anchor-id="arranging-plots">Arranging plots</h4>
-<p>Arrange plots in a grid, instead of one after the other. This is especially useful when displaying plots for exploratory data analysis and to check assumptions.</p>
-<ul>
-<li><p>If you’re using ggplot2 functions, the <code>patchwork</code> package makes it easy to arrange plots in a grid. See the documentation and examples <a href="https://patchwork.data-imaginist.com/">here</a>.</p></li>
-<li><p>If you’re using base R function, i.e.&nbsp;when using the <code>emplogit</code> functions, put the code <code>par(mfrow = c(rows,columns))</code> before the code to make the plots. For example, <code>par(mfrow = c(2,3))</code> will arrange plots in a grid with 2 rows and 3 columns.</p></li>
-</ul>
-</section>
-<section id="plot-titles-and-axis-labels" class="level4">
-<h4 class="anchored" data-anchor-id="plot-titles-and-axis-labels">Plot titles and axis labels</h4>
-<p>Be sure all plot titles and axis labels are visible and easy to read.</p>
-<ul>
-<li>Use informative titles, <u>not</u> variable names, for titles and axis labels.</li>
-<li>Use <code>coord_flip()</code> to flip the <em>x</em> and <em>y</em> axes on the plot. This is useful if you a bar plot with an x-axis that is difficult to read due to overlapping text.</li>
-</ul>
-<p>❌ <strong>NO! The x-axis is hard to read because the names overlap.</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="project-tips_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
 </div>
 </div>
-</div>
-<p>✅ <strong>YES! Names are readable</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="project-tips_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="callout-body-container callout-body">
+<p>This page contains practice problems to help prepare for Exam 02. This set of practice problems is <u><strong>not</strong></u> comprehensive. You should review these <a href="https://sta221-fa24.netlify.app/slides/23-logistic-regression-review#/tips-for-studying">study tips</a> as you prepare for the exam.<br>
+<br>
+There is no solution guide for these problems. You may ask questions in office hours and on Ed Discussion.</p>
 </div>
 </div>
-</div>
+<section id="maximum-likelihood-estimation" class="level1">
+<h1>Maximum likelihood estimation</h1>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>Given the simple linear regression model</p>
+<p><span class="math display">\[y_i = \beta_0 + \beta_1x_i + \epsilon_i, \hspace{10mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})\]</span></p>
+<p>Write the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(\sigma^2_{\epsilon}\)</span> are of the form shown on <a href="https://sta221-fa24.netlify.app/slides/14-model-diagnostics#/mle-for-beta_0beta_1-sigma2_epsilon">this slide</a>.</p>
 </section>
-<section id="do-a-little-more-to-make-the-plot-look-professional" class="level4">
-<h4 class="anchored" data-anchor-id="do-a-little-more-to-make-the-plot-look-professional">Do a little more to make the plot look professional!</h4>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Given the linear regression model</p>
+<p><span class="math display">\[
+\mathbf{y}  = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon} \hspace{10mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+\]</span></p>
+<p>Write the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span> are</p>
+<p><span class="math display">\[
+\tilde{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} \hspace{10mm} \tilde{\sigma}^2_{\epsilon} = \frac{1}{n}(\mathbf{y} - \mathbf{X}\tilde{\boldsymbol{\beta}})^T(\mathbf{y} - \mathbf{X}\tilde{\boldsymbol{\beta}})
+\]</span></p>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>Given the logistic regression model</p>
+<p><span class="math display">\[
+\log\Big(\frac{\pi}{1-\pi}\Big) = \mathbf{X}\boldsymbol{\beta}
+\]</span></p>
 <ul>
-<li>Informative title and axis labels</li>
-<li>Flipped coordinates to make names readable</li>
-<li>Arranged bars based on count</li>
-<li>Capitalized manufacturer names</li>
-<li><em>Optional: Added color - Use a coordinated color scheme throughout paper / presentation</em></li>
-<li><em>Optional: Applied a theme - Use same theme throughout paper / presentation</em></li>
+<li><p>Write the likelihood function</p></li>
+<li><p>Rework the derivation from the November 7 lecture to show the derivative solved to find the MLEs is of the form on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/finding-the-mle">this slide</a>. (You can check your answer using the board work posted in Canvas).</p></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(manufacturer) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">manufacturer =</span> <span class="fu">str_to_title</span>(manufacturer)) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(manufacturer,n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Manufacturer"</span>, </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>, </span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"The most common manufacturer is Dodge"</span>) <span class="sc">+</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="project-tips_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
-<section id="tables-and-model-output" class="level4">
-<h4 class="anchored" data-anchor-id="tables-and-model-output">Tables and model output</h4>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Suppose <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are an independent and identically distributed (iid) sample from some distribution</p>
+<p><span class="math display">\[f_Y(y) = \theta(1 - \theta)^{y-1}\]</span></p>
+<p>such that <span class="math inline">\(y\)</span> takes on positive integer values and <span class="math inline">\(0 &lt; \theta &lt; 1\)</span>. Show that the MLE for <span class="math inline">\(\theta^{-1}\)</span> is <span class="math inline">\(\frac{1}{n}\sum_{i=1}^n y_i\)</span> .</p>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>Rework Exercises 1 - 3 in <a href="https://sta221-fa24.netlify.app/hw/hw-03">HW 03</a>.</p>
+</section>
+</section>
+<section id="multiple-linear-regression-diagnostics-multicollinearity-variable-transformations-comparison" class="level1">
+<h1>Multiple linear regression (diagnostics, multicollinearity, variable transformations, comparison)</h1>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>Suppose we fit a linear model with a log transformation on the response variable, i.e.,</p>
+<p><span class="math display">\[
+\widehat{\log(y_i)} = \hat{\beta}_0 + \hat{\beta}_1x_1 + \dots + \hat{\beta}_p x_p
+\]</span></p>
 <ul>
-<li>Use the <code>kable</code> function from the knitr package to neatly output all tables and model output. This will also ensure all model coefficients are displayed.
-<ul>
-<li>Use the <code>digits</code> argument to display only 3 or 4 significant digits.</li>
-<li>Use the <code>caption</code> argument to add captions to your table.</li>
-</ul></li>
+<li><p>Show mathematically why the slope for <span class="math inline">\(x_j\)</span> and intercept are interpreted in terms of <span class="math inline">\(y\)</span> has shown on <a href="https://sta221-fa24.netlify.app/slides/16-variable-transformations#/model-interpretation">this slide</a>.</p></li>
+<li><p>Show how <span class="math inline">\(y\)</span> is expected to change if <span class="math inline">\(x_j\)</span> increases by <span class="math inline">\(t\)</span> units.</p></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, <span class="at">data =</span> mtcars)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(model) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">30.099</td>
-<td style="text-align: right;">1.634</td>
-<td style="text-align: right;">18.421</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">hp</td>
-<td style="text-align: right;">-0.068</td>
-<td style="text-align: right;">0.010</td>
-<td style="text-align: right;">-6.742</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 </section>
-<section id="guidelines-for-communicating-results" class="level4">
-<h4 class="anchored" data-anchor-id="guidelines-for-communicating-results">Guidelines for communicating results</h4>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>Suppose we fit a linear model with a log transformation on one predictor variable, i.e.,</p>
+<p><span class="math display">\[\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1\log (x_1) + \dots + \hat{\beta}_p x_p
+\]</span></p>
 <ul>
-<li><strong>Don’t use variable names in your narrative!</strong> Use descriptive terms, so the reader understands your narrative without relying on the data dictionary.
+<li><p>Show mathematically why the slope and intercept are interpreted similarly as shown on <a href="https://sta221-fa24.netlify.app/slides/16-variable-transformations#/model-with-transformation-on-x">this slide</a> when <span class="math inline">\(x\)</span> is multiplied by a factor <span class="math inline">\(C\)</span>.</p></li>
+<li><p>Explain why we need “holding all else constant” in this interpretation but not for the one shown in the lecture slides.</p></li>
+</ul>
+</section>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<p>Rework Exercise 4 in <a href="https://sta221-fa24.netlify.app/hw/hw-03#exercise-4">HW 03</a>.</p>
+</section>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<p>Recall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}) = \hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}\)</span>. One of the <a href="https://sta221-fa24.netlify.app/slides/15-multicollinearity#/effects-of-multicollinearity">effects of multicollinearity</a> is large variances in the model coefficients. Explain why.</p>
+</section>
+<section id="exercise-10" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
+<p>Suppose you fit a simple linear regression model and check the model diagnostics.</p>
 <ul>
-<li>❌ There is a negative linear relationship between mpg and hp.</li>
-<li>✅ There is a negative linear relationship between a car’s fuel economy (in miles per gallon) and its horsepower.</li>
-</ul></li>
-<li><strong>Know your audience:</strong> Your report should be written for a general audience who has an understanding of statistics at the level of STA 210.</li>
-<li><strong>Avoid subject matter jargon:</strong> Don’t assume the audience knows all of the specific terminology related to your subject area. If you must use jargon, include a brief definition the first time you introduce a term.</li>
-<li><strong>Tell the “so what”:</strong> Your report and presentation should be more than a list of interpretations and technical definitions. Focus on what the results mean, i.e.&nbsp;what you want the audience to know about your topic after reading your report or viewing your presentation.
+<li><p>Draw an example of an observation that has high leverage but low Cook’s distance.</p></li>
+<li><p>Draw an example of an observation that has high leverage and high Cook’s distance.</p></li>
+<li><p>Draw an example of an observation with a large studentized residual.</p></li>
+</ul>
+</section>
+<section id="exercise-11" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-11">Exercise 11</h2>
 <ul>
-<li>❌ For every one unit increase in horsepower, we expect the miles per gallon to decrease by 0.068 units, on average.</li>
-<li>✅ If the priority is to have good fuel economy, then one should choose a car with lower horsepower. Based on our model, the fuel economy is expected to decrease, on average, by 0.68 miles per gallon for every 10 additional horsepower.</li>
-</ul></li>
-<li><strong>Tell a story:</strong> All visualizations, tables, model output, and narrative should tell a cohesive story!</li>
-<li><strong>Use one voice:</strong> Though multiple people are writing the report, it should read as if it’s from a single author. At least one team member should read through the report before submission to ensure it reads like a cohesive document.</li>
+<li><p>What is an advantage of examining a plot of studentized residuals vs.&nbsp;fitted values rather than using the raw residuals?</p></li>
+<li><p>Explain what is measured by Cook’s distance. You don’t need to memorize the formula but rather describe what the formula is quantifying for each observation. <a href="https://sta221-fa24.netlify.app/slides/14-model-diagnostics#/cooks-distance-1">Click here</a> for the formula (slide also contains the solution).</p></li>
+</ul>
+</section>
+<section id="exercise-12" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-12">Exercise 12</h2>
+<p>Consider the hypotheses being tested in the Nested F Test on <a href="https://sta221-fa24.netlify.app/slides/17-compare-models#/tips-nested-f-test">this slide</a>. The output produced by the <code>anova()</code> function for the Nested F test is shown <a href="https://sta221-fa24.netlify.app/slides/17-compare-models#/tips-nested-f-test-1">here</a>. Explain how each value in the table is computed.</p>
+</section>
+<section id="exercise-13" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-13">Exercise 13</h2>
+<ul>
+<li><p>What is an advantaged of using a Nested F test instead of AIC (or BIC) to compare models?</p></li>
+<li><p>What is an advantage of using AIC (or BIC) instead of a Nested F test to compare models?</p></li>
 </ul>
 </section>
 </section>
-<section id="additional-resources" class="level3">
-<h3 class="anchored" data-anchor-id="additional-resources">Additional resources</h3>
+<section id="logistic-regression" class="level1">
+<h1>Logistic regression</h1>
+<section id="exercise-141" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-141">Exercise 14<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
 <ul>
-<li><a href="https://www.rstudio.com/blog/exploring-rstudio-visual-markdown-editor/">Exploring RStudio’s Visual Markdown Editor</a></li>
-<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
-<li>Quarto documentation:
+<li><p>On average, what fraction of people with an odds of 0.37 of defaulting on their credit card payment will in fact default?</p></li>
+<li><p>Suppose an individual has a 16% chance of defaulting on their credit card payment. What are the odds they will default?</p></li>
+</ul>
+</section>
+<section id="exercise-15" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-15">Exercise 15</h2>
+<p>Recall the model using age and education to predict odds of being high risk for heart disease.</p>
 <ul>
-<li><a href="https://quarto.org/docs/output-formats/pdf-basics.html">Quarto PDF Basics</a></li>
-<li><a href="https://quarto.org/docs/presentations/revealjs/">Presentations in Quarto</a></li>
-</ul></li>
-<li>Data visualization
+<li><p>Show mathematically why the interpretation for the slope for <code>age</code> in terms of the log-odds is the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds-1">this slide</a>.</p></li>
+<li><p>Show mathematically why the interpretation for the slope of <code>age</code>in terms of the odds is the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds-1">this slide</a>.</p></li>
+</ul>
+</section>
+<section id="exercise-16" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-16">Exercise 16</h2>
+<p>Recall the model using age and education to predict odds of being high risk for heart disease.</p>
 <ul>
-<li><a href="https://ggplot2.tidyverse.org/reference/index.html">ggplot2 Reference</a></li>
-<li><a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics for Data Analysis</a></li>
-<li><a href="https://socviz.co/index.html">Data Visualization: A Practice Introduction</a></li>
-<li><a href="https://patchwork.data-imaginist.com/index.html">Patchwork R Package</a></li>
-</ul></li>
+<li><p>Show mathematically why the interpretation for the slope for <code>education4</code> in terms of the log-odds is the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds">this slide</a>.</p></li>
+<li><p>Show mathematically why the interpretation for the slope of <code>education4</code>in terms of the odds is the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds">this slide</a>.</p></li>
+</ul>
+</section>
+<section id="exercise-17" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-17">Exercise 17</h2>
+<p>Explain why the slope of the logistic regression model is called the Adjusted Odds Ratio (or just Odds Ratio if there is one predictor).</p>
+</section>
+<section id="exercise-18" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-18">Exercise 18</h2>
+<ul>
+<li><p>Draw an example of an ROC curve such that AUC is about 0.55</p></li>
+<li><p>Draw an example of an ROC curve such that AUC is about 0.9.</p></li>
+<li><p>Explain what each point on an ROC curve means.</p></li>
+</ul>
+</section>
+<section id="exercise-19" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-19">Exercise 19</h2>
+<p>Consider the drop-in-deviance test <a href="https://sta221-fa24.netlify.app/slides/21-logistic-inference#/heart-disease-model-drop-in-deviance-test">from lecture</a> testing whether education should be added to a model that already includes <code>age</code>, <code>totChol</code>, and <code>currentSmoker</code> to predict the odds a person is high risk for heart disease.</p>
+<p>The <code>anova()</code> output for the drop-in-deviance test is shown on <a href="https://sta221-fa24.netlify.app/slides/21-logistic-inference#/drop-in-deviance-test-in-r">this slide</a>. Explain how each value in the table is computed.</p>
+</section>
+<section id="exercise-20" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-20">Exercise 20</h2>
+<p>Recall <a href="https://sta221-fa24.netlify.app/slides/22-logistic-conditions-estimation#/empirical-logit-plot-in-r-quantitative-predictor-2">this empirical logit plot</a> to check the linearity condition for the model using <code>age</code> , <code>sex</code>, and <code>years</code> (of experience) to predict access to PPE for employees at food establishments in Summer 2020.</p>
+<p>There is a point on the plot around (20, -0.5). Explain what these coordinates mean in the context of the data.</p>
+</section>
+<section id="relevant-assignments-and-aes" class="level2">
+<h2 class="anchored" data-anchor-id="relevant-assignments-and-aes">Relevant assignments and AEs</h2>
+<p>The following assignments and AEs cover Exam 02 content. Ask yourself “why” questions as your review your answers, process, and derivations on these assignments. It may also be helpful to explain your process to others.</p>
+<ul>
+<li><p>HW 03, HW 04</p></li>
+<li><p>Lab 04, Lab 05, Lab 06</p></li>
+<li><p>AE 05, AE 06, AE 07, AE 08</p></li>
 </ul>
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>From <em>Introduction to Statistical Learning</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1074,14 +1011,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./project.html" class="pagination-link" aria-label="Instructions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Instructions</span>
+      <a href="./math-rules.html" class="pagination-link" aria-label="Math rules">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Math rules</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./math-rules.html" class="pagination-link" aria-label="Math rules">
-        <span class="nav-page-text">Math rules</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
