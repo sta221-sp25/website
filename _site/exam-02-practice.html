@@ -419,7 +419,7 @@ Important
 <div class="callout-body-container callout-body">
 <p>This page contains practice problems to help prepare for Exam 02. This set of practice problems is <u><strong>not</strong></u> comprehensive. You should review these <a href="https://sta221-fa24.netlify.app/slides/23-logistic-regression-review#/tips-for-studying">study tips</a> as you prepare for the exam.<br>
 <br>
-There is no solution guide for these problems. You may ask questions in office hours and on Ed Discussion.</p>
+There is no answer key for these problems. You may ask questions in office hours and on Ed Discussion.</p>
 </div>
 </div>
 <section id="maximum-likelihood-estimation" class="level1">
@@ -472,7 +472,7 @@ There is no solution guide for these problems. You may ask questions in office h
 \widehat{\log(y_i)} = \hat{\beta}_0 + \hat{\beta}_1x_1 + \dots + \hat{\beta}_p x_p
 \]</span></p>
 <ul>
-<li><p>Show mathematically why the slope for <span class="math inline">\(x_j\)</span> and intercept are interpreted in terms of <span class="math inline">\(y\)</span> has shown on <a href="https://sta221-fa24.netlify.app/slides/16-variable-transformations#/model-interpretation">this slide</a>.</p></li>
+<li><p>Show mathematically why the slope for <span class="math inline">\(x_j\)</span> and intercept are interpreted in terms of <span class="math inline">\(y\)</span> as shown on <a href="https://sta221-fa24.netlify.app/slides/16-variable-transformations#/model-interpretation">this slide</a>.</p></li>
 <li><p>Show how <span class="math inline">\(y\)</span> is expected to change if <span class="math inline">\(x_j\)</span> increases by <span class="math inline">\(t\)</span> units.</p></li>
 </ul>
 </section>
@@ -492,15 +492,15 @@ There is no solution guide for these problems. You may ask questions in office h
 </section>
 <section id="exercise-9" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
-<p>Recall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}) = \hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}\)</span>. One of the <a href="https://sta221-fa24.netlify.app/slides/15-multicollinearity#/effects-of-multicollinearity">effects of multicollinearity</a> is large variances in the model coefficients. Explain why.</p>
+<p>Recall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}) = \hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}\)</span>. One of the <a href="https://sta221-fa24.netlify.app/slides/15-multicollinearity#/effects-of-multicollinearity">effects of multicollinearity</a> is that the model coefficients will have large variances. Explain why.</p>
 </section>
 <section id="exercise-10" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
-<p>Suppose you fit a simple linear regression model and check the model diagnostics.</p>
+<p>Suppose you fit a simple linear regression model.</p>
 <ul>
-<li><p>Draw an example of an observation that has high leverage but low Cook’s distance.</p></li>
-<li><p>Draw an example of an observation that has high leverage and high Cook’s distance.</p></li>
-<li><p>Draw an example of an observation with a large studentized residual.</p></li>
+<li><p>Draw a scatterplot that contains an observation with large leverage but low Cook’s distance.</p></li>
+<li><p>Draw a scatterplot that contains an observation with large leverage and high Cook’s distance.</p></li>
+<li><p>Draw a scatterplot that contains an observation with a large studentized residual.</p></li>
 </ul>
 </section>
 <section id="exercise-11" class="level2">
@@ -517,8 +517,8 @@ There is no solution guide for these problems. You may ask questions in office h
 <section id="exercise-13" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-13">Exercise 13</h2>
 <ul>
-<li><p>What is an advantaged of using a Nested F test instead of AIC (or BIC) to compare models?</p></li>
-<li><p>What is an advantage of using AIC (or BIC) instead of a Nested F test to compare models?</p></li>
+<li><p>What is an advantage of using a Nested F test instead of AIC (or BIC) to compare linear regression models?</p></li>
+<li><p>What is an advantage of using AIC (or BIC) instead of a Nested F test to compare linear regression models?</p></li>
 </ul>
 </section>
 </section>
@@ -535,16 +535,16 @@ There is no solution guide for these problems. You may ask questions in office h
 <h2 class="anchored" data-anchor-id="exercise-15">Exercise 15</h2>
 <p>Recall the model using age and education to predict odds of being high risk for heart disease.</p>
 <ul>
-<li><p>Show mathematically why the interpretation for the slope for <code>age</code> in terms of the log-odds is the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds-1">this slide</a>.</p></li>
-<li><p>Show mathematically why the interpretation for the slope of <code>age</code>in terms of the odds is the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds-1">this slide</a>.</p></li>
+<li><p>Show mathematically why the interpretation for the slope for <code>age</code> in terms of the log-odds is in the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds-1">this slide</a>.</p></li>
+<li><p>Show mathematically why the interpretation for the slope of <code>age</code> in terms of the odds is in the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds-1">this slide</a>.</p></li>
 </ul>
 </section>
 <section id="exercise-16" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-16">Exercise 16</h2>
 <p>Recall the model using age and education to predict odds of being high risk for heart disease.</p>
 <ul>
-<li><p>Show mathematically why the interpretation for the slope for <code>education4</code> in terms of the log-odds is the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds">this slide</a>.</p></li>
-<li><p>Show mathematically why the interpretation for the slope of <code>education4</code>in terms of the odds is the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds">this slide</a>.</p></li>
+<li><p>Show mathematically why the interpretation for the slope for <code>education4</code> in terms of the log-odds is in the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds">this slide</a>.</p></li>
+<li><p>Show mathematically why the interpretation for the slope of <code>education4</code>in terms of the odds is in the form shown on <a href="https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds">this slide</a>.</p></li>
 </ul>
 </section>
 <section id="exercise-17" class="level2">
@@ -554,9 +554,9 @@ There is no solution guide for these problems. You may ask questions in office h
 <section id="exercise-18" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-18">Exercise 18</h2>
 <ul>
-<li><p>Draw an example of an ROC curve such that AUC is about 0.55</p></li>
-<li><p>Draw an example of an ROC curve such that AUC is about 0.9.</p></li>
-<li><p>Explain what each point on an ROC curve means.</p></li>
+<li><p>Draw an example of an ROC curve such that the AUC is about 0.55</p></li>
+<li><p>Draw an example of an ROC curve such that the AUC is about 0.9.</p></li>
+<li><p>Explain what each point on an ROC curve represents.</p></li>
 </ul>
 </section>
 <section id="exercise-19" class="level2">
@@ -566,7 +566,7 @@ There is no solution guide for these problems. You may ask questions in office h
 </section>
 <section id="exercise-20" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-20">Exercise 20</h2>
-<p>Recall <a href="https://sta221-fa24.netlify.app/slides/22-logistic-conditions-estimation#/empirical-logit-plot-in-r-quantitative-predictor-2">this empirical logit plot</a> to check the linearity condition for the model using <code>age</code> , <code>sex</code>, and <code>years</code> (of experience) to predict access to PPE for employees at food establishments in Summer 2020.</p>
+<p>Recall <a href="https://sta221-fa24.netlify.app/slides/22-logistic-conditions-estimation#/empirical-logit-plot-in-r-quantitative-predictor-2">this empirical logit plot</a> to check the linearity condition for the model using <code>age</code> , <code>sex</code>, and <code>years</code> of experience to predict access to PPE for employees at food establishments in Summer 2020.</p>
 <p>There is a point on the plot around (20, -0.5). Explain what these coordinates mean in the context of the data.</p>
 </section>
 <section id="relevant-assignments-and-aes" class="level2">

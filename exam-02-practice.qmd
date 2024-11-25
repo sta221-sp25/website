@@ -5,7 +5,7 @@ title: Exam 02 practice
 ::: callout-important
 This page contains practice problems to help prepare for Exam 02. This set of practice problems is <u>**not**</u> comprehensive. You should review these [study tips](https://sta221-fa24.netlify.app/slides/23-logistic-regression-review#/tips-for-studying) as you prepare for the exam. \
 \
-There is no solution guide for these problems. You may ask questions in office hours and on Ed Discussion.
+There is no answer key for these problems. You may ask questions in office hours and on Ed Discussion.
 :::
 
 # Maximum likelihood estimation 
@@ -66,7 +66,7 @@ $$
 \widehat{\log(y_i)} = \hat{\beta}_0 + \hat{\beta}_1x_1 + \dots + \hat{\beta}_p x_p
 $$
 
--   Show mathematically why the slope for $x_j$ and intercept are interpreted in terms of $y$ has shown on [this slide](https://sta221-fa24.netlify.app/slides/16-variable-transformations#/model-interpretation).
+-   Show mathematically why the slope for $x_j$ and intercept are interpreted in terms of $y$ as shown on [this slide](https://sta221-fa24.netlify.app/slides/16-variable-transformations#/model-interpretation).
 
 -   Show how $y$ is expected to change if $x_j$ increases by $t$ units.
 
@@ -87,17 +87,17 @@ Rework Exercise 4 in [HW 03](https://sta221-fa24.netlify.app/hw/hw-03#exercise-4
 
 ## Exercise 9
 
-Recall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of $Var(\hat{\boldsymbol{\beta}}) = \hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}$. One of the [effects of multicollinearity](https://sta221-fa24.netlify.app/slides/15-multicollinearity#/effects-of-multicollinearity) is large variances in the model coefficients. Explain why.
+Recall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of $Var(\hat{\boldsymbol{\beta}}) = \hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1}$. One of the [effects of multicollinearity](https://sta221-fa24.netlify.app/slides/15-multicollinearity#/effects-of-multicollinearity) is that the model coefficients will have large variances. Explain why.
 
 ## Exercise 10
 
-Suppose you fit a simple linear regression model and check the model diagnostics.
+Suppose you fit a simple linear regression model.
 
--   Draw an example of an observation that has high leverage but low Cook's distance.
+-   Draw a scatterplot that contains an observation with large leverage but low Cook's distance.
 
--   Draw an example of an observation that has high leverage and high Cook's distance.
+-   Draw a scatterplot that contains an observation with large leverage and high Cook's distance.
 
--   Draw an example of an observation with a large studentized residual.
+-   Draw a scatterplot that contains an observation with a large studentized residual.
 
 ## Exercise 11
 
@@ -111,9 +111,9 @@ Consider the hypotheses being tested in the Nested F Test on [this slide](https:
 
 ## Exercise 13
 
--   What is an advantaged of using a Nested F test instead of AIC (or BIC) to compare models?
+-   What is an advantage of using a Nested F test instead of AIC (or BIC) to compare linear regression models?
 
--   What is an advantage of using AIC (or BIC) instead of a Nested F test to compare models?
+-   What is an advantage of using AIC (or BIC) instead of a Nested F test to compare linear regression models?
 
 # Logistic regression
 
@@ -129,17 +129,17 @@ Consider the hypotheses being tested in the Nested F Test on [this slide](https:
 
 Recall the model using age and education to predict odds of being high risk for heart disease.
 
--   Show mathematically why the interpretation for the slope for `age` in terms of the log-odds is the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds-1).
+-   Show mathematically why the interpretation for the slope for `age` in terms of the log-odds is in the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds-1).
 
--   Show mathematically why the interpretation for the slope of `age`in terms of the odds is the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds-1).
+-   Show mathematically why the interpretation for the slope of `age` in terms of the odds is in the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds-1).
 
 ## Exercise 16
 
 Recall the model using age and education to predict odds of being high risk for heart disease.
 
--   Show mathematically why the interpretation for the slope for `education4` in terms of the log-odds is the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds).
+-   Show mathematically why the interpretation for the slope for `education4` in terms of the log-odds is in the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-log-odds).
 
--   Show mathematically why the interpretation for the slope of `education4`in terms of the odds is the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds).
+-   Show mathematically why the interpretation for the slope of `education4`in terms of the odds is in the form shown on [this slide](https://sta221-fa24.netlify.app/slides/19-logistic-regression#/interpretation-in-terms-of-odds).
 
 ## Exercise 17
 
@@ -147,11 +147,11 @@ Explain why the slope of the logistic regression model is called the Adjusted Od
 
 ## Exercise 18
 
--   Draw an example of an ROC curve such that AUC is about 0.55
+-   Draw an example of an ROC curve such that the AUC is about 0.55
 
--   Draw an example of an ROC curve such that AUC is about 0.9.
+-   Draw an example of an ROC curve such that the AUC is about 0.9.
 
--   Explain what each point on an ROC curve means.
+-   Explain what each point on an ROC curve represents.
 
 ## Exercise 19
 
@@ -161,7 +161,7 @@ The `anova()` output for the drop-in-deviance test is shown on [this slide](http
 
 ## Exercise 20
 
-Recall [this empirical logit plot](https://sta221-fa24.netlify.app/slides/22-logistic-conditions-estimation#/empirical-logit-plot-in-r-quantitative-predictor-2) to check the linearity condition for the model using `age` , `sex`, and `years` (of experience) to predict access to PPE for employees at food establishments in Summer 2020.
+Recall [this empirical logit plot](https://sta221-fa24.netlify.app/slides/22-logistic-conditions-estimation#/empirical-logit-plot-in-r-quantitative-predictor-2) to check the linearity condition for the model using `age` , `sex`, and `years` of experience to predict access to PPE for employees at food establishments in Summer 2020.
 
 There is a point on the plot around (20, -0.5). Explain what these coordinates mean in the context of the data.
 
