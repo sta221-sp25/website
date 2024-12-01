@@ -320,17 +320,21 @@ This section also includes initial interpretations and conclusions drawn from th
 Peer review comments are due in GitHub on December 3 at 11:59pm.
 :::
 
-Critically reviewing others' work is a crucial part of the scientific process, and STA 221 is no exception. Each lab team will be assigned two other teams' projects to review. Each team should push their draft to their GitHub repo by the 9am on the day their lab's draft is due. The lab that week will be dedicate to the peer review, so your team will have time to review and provide quality feedback to two other teams.
+Critically reviewing others' work is a crucial part of the scientific process, and STA 221 is no exception. Each lab team will be assigned two other teams' projects to review. Each team should push their draft to their GitHub repo by 10 am on the day their lab's draft is due. The lab that week will be dedicated to the peer review, so your team will have time to review and provide quality feedback to two other teams.
 
 During the peer review process, you will be provided read-only access to your partner teams' GitHub repos. Provide your review in the form of GitHub issues to your partner team's GitHub repo using the issue template provided in the repo.
 
 #### Steps for peer review
 
-<!-- ## Peer review assignments -->
+::: callout-important
+## Peer review assignments
 
-<!-- [Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/Eez-RT2TVd9Cs_aLCOffbDcB2W7VnGmcZs0myTmdiy2qvA?e=WBpJx2) to see which project your team is reviewing. You'll spend about 30 minutes reviewing each project. -->
+[Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbrBSVVPbNZApOqfoakROssB4-K9I92L9wYWDClTH6Q5MA?e=iNelwG) to see the teams you're peer reviewing.You'll spend about 30 minutes reviewing each project.
+:::
 
--   When you get to lab, you should have access to the GitHub repos for the teams you're reviewing. In GitHub, search the repositories for `project`, and you should see the repos for the projects you're reviewing. You will be able to read the files in the repo and post issues, but you cannot push changes to the repo. You will have access to the repo until the deadline for the peer review. --\>
+-   When you get to lab, you should have access to the GitHub repos for the teams you're reviewing. In GitHub, search the repositories for `project`, and you should see the repos for the projects you're reviewing. You will be able to read the files in the repo and post issues, but you cannot push changes to the repo. You will have access to the repo until the deadline for the peer review.
+
+-   You may choose to all work on both peer reviews or have some team members focus on a single peer review. Either way there will be one peer review grade assigned per team.
 
 -   For each team you're reviewing:
 
@@ -344,9 +348,11 @@ During the peer review process, you will be provided read-only access to your pa
 
         -   Consider the exploratory data analysis (EDA). Describe one aspect of the EDA that is effective in helping you understand the data. Provide constructive feedback on how the team might improve the EDA.
 
-        -   Describe the statistical methods and analysis approach used.
+        -   Describe the statistical methods, analysis approach, and discussion of model assumptions, diagnostics, model fit.
 
         -   Provide constructive feedback on how the team might improve their analysis. Make sure your feedback includes at least one comment on the statistical modeling aspect of the project, but also feel free to comment on aspects beyond the modeling.
+
+        -   Provide constructive feedback on the interpretations and initial conclusion. What is most effective in the presentation of the results? What additional detail can the team provide to make the results and conclusions easier for the reader to understand?
 
         -   What aspect of this project are you most interested in and think would be interesting to highlight in the written report?
 
@@ -354,9 +360,9 @@ During the peer review process, you will be provided read-only access to your pa
 
         -   (Optional) Any further comments or feedback?
 
-<!-- #### Grading -->
+#### Grading
 
-<!-- The peer review will be graded on the extent to which it comprehensively and constructively addresses the components of the partner team's report: the research context and motivation, exploratory data analysis, modeling, interpretations, and conclusions. -->
+The peer review will be graded on the extent to which each comprehensively and constructively addresses the components on the peer review form. There will be one peer review grade per team.
 
 ## Round 1 submission (optional) {#round1-submission}
 
