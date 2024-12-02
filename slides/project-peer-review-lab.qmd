@@ -1,0 +1,64 @@
+---
+title: "Project peer review"
+date: "2024-12-02"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs:
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+# Welcome
+
+## Goals
+
+-   Project milestones
+-   Project peer review
+
+## Upcoming project milestones
+
+-   December 3: Peer review due
+-   December 8: Deadline for Round 1 submission (optional)
+-   December 12: Final report + organized GitHub repo due
+
+See [project instructions](https://sta221-fa24.netlify.app/project#presentation) for more detail.
+
+## Peer review assignments - Section 01L
+
+![](images/peer-review-assignments-01L.png){fig-align="center" width="80%"}
+
+## Peer review assignments - Section 02L
+
+![](images/peer-review-assignments-02L.png){fig-align="center" width="80%"}
+
+## Getting started
+
+For each team you're reviewing...
+
+-   Open that team's repo, read the project draft, and browse the rest of the repo.
+
+-   Go to the **Issues** tab in that repo, click on **New issue**, and click on **Get started** for the Peer Review issue.
+
+-   Write your responses to the prompts in the issue.
+
+::: callout-note
+You may choose to all work on both peer reviews or have some team members focus on a single peer review. Either way there will be one peer review grade assigned per team.
+:::

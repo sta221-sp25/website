@@ -310,9 +310,9 @@ In this section, you will output the final model and include a brief discussion 
 
 This section also includes initial interpretations and conclusions drawn from the model.
 
-<!-- #### Grading -->
+#### Grading
 
-<!-- The draft will be graded based on whether there is demonstration of a reasonable attempt at each of the sections described below in the written-report.qmd file in our GitHub repo by the deadline. -->
+The draft will be graded based on whether there is demonstration of a reasonable attempt at each of the sections described below in the written report file in the GitHub repo by the deadline.
 
 ### Peer review
 
@@ -340,7 +340,7 @@ During the peer review process, you will be provided read-only access to your pa
 
     -   Open that team's repo, read the project draft, and browse the rest of the repo.
 
-    -   Go to the **Issues** tab in that repo, click on **New issue**, and click on **Get started** for the Peer Review issue. Fill out this issue. You will answer the the following questions:
+    -   Go to the **Issues** tab in that repo, click on **New issue**, and click on **Get started** for the Peer Review issue. Write your responses to the prompts in the issue. You will answer the the following questions:
 
         -   Describe the goal of the project.
 
@@ -374,7 +374,7 @@ The Round 1 submission is an opportunity to receive detailed feedback on your an
 
 #### To submit the Round 1 submission:
 
-1.  Push the updated \`written-report.qmd\` and \`written-report.pdf\` to your GitHub repo.
+1.  Push the updated `written-report.qmd` and `written-report.pdf` to your GitHub repo.
 
 2.  Open an issue with the title "Round 1 Submission". You can use the template issue in the GitHub repo. Make sure I am tagged in the issue (`@matackett`), so I receive an email notification of your Round 1 submission. See [Creating an issue from a repository](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-repository) for instructions on opening an issue. Please ask a member of the teaching team for assistance if you need help opening the issue.
 
