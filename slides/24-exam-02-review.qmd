@@ -46,9 +46,31 @@ knitr::opts_chunk$set(
 
 -   Final report and GitHub repo due December 12 at 11:59pm.
 
-## Project feedback 
+-   Wednesday, December 4 is the last day of regular office hours
+
+## Project feedback {.midi}
+
+I would appreciate your feedback on the final project!
+
+-   **Earn 1 point on your final project grade** by completing the feedback survey (individually scored) by **December 12.**
+
+-   **All feedback will be anonymous.**
+
+    -   The survey is administered by Dr. Jess Dewey in Learning Innovation. Dr. Dewey give me the names of students who have completed the survey (without responses) for the purposes of awarding extra credit.
+
+    -   I will receive the anonymized feedback after final course grades are submitted to DukeHub.
+
+🔗 <https://duke.qualtrics.com/jfe/form/SV_eeUQc0k5kZH8HD8> 
 
 ## Course and TA evaluations
+
+I would appreciate your feedback about the course!
+
+-   Course and TA evaluations are now available and are due **December 9**
+
+-   If there is at least 80% on the course evaluations [**and**]{.underline} TA evaluations, everyone in the class will receive **1 point on their final homework average**
+
+-   Should receive emails with access to the course and TA evaluations.
 
 ## Exam 02 format
 
@@ -122,8 +144,20 @@ Concepts from the first half of the semester continue to apply, but the exam wil
 
 -   Review lecture recordings as needed (available until December 5 at 11:45am)
 
+## Resources
+
+-   Lecture notes and application exercises
+
+-   [Lecture recordings](https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=ccfa023a-c78c-4254-93ea-b1d80116d1dc) available until start of the exam
+
+-   HW and lab assignments
+
+    -   Lab 06 returned on Gradescope. [HW 04 key](https://canvas.duke.edu/courses/38867/files?preview=2247503) on Canvas until start of the exam
+
+-   [Exam 02 practice problems](../exam-02-practice.html)
+
 # Application exercise
 
 ::: appex
-📋 [sta221-fa24.netlify.app/ae/ae-09-exam-02-review](https://sta221-fa24.netlify.app/ae/ae-0-exam-02-review)
+📋 [sta221-fa24.netlify.app/ae/ae-09-exam-02-review](https://sta221-fa24.netlify.app/ae/ae-09-exam-02-review)
 :::

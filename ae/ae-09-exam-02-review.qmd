@@ -26,10 +26,24 @@ library(pROC)
 library(Stat2Data)
 ```
 
-# Introduction
+## Exercise 1
+
+Suppose you fit a simple linear regression model.
+
+a.  Draw a scatterplot that contains an observation with large leverage but low Cook’s distance.
+
+b.  Draw a scatterplot that contains an observation with large leverage and high Cook’s distance.
+
+c.  Draw a scatterplot that contains an observation with a large studentized residual.
+
+## Exercise 2
+
+a.  Describe what it means for $\tilde{\boldsymbol{\beta}}$ to be the maximum likelihood estimator.
+
+b.  What are properties of MLEs?
 
 ::: callout-note
-Use this data analysis scenario for Exercises 1 - 4.
+Use this data analysis scenario for Exercises 3 - 6.
 :::
 
 The data for this analysis is about credit card customers. It can be found in the file `credit.csv`. The following variables are in the data set:
@@ -63,7 +77,7 @@ tidy(credit_fit) |>
   kable(digits = 3)
 ```
 
-## Exercise 1
+## Exercise 3
 
 The logistic regression model takes the following form:
 
@@ -77,16 +91,16 @@ b.  Suppose there are two individuals. Individual 1 has an income of \$64,000, a
 
 c.  Use R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?
 
-## Exercise 2
+## Exercise 4
 
 We consider adding the interaction between `region` and `income` to the current model. We'll use a drop-in-deviance test to determine whether or not to add the interaction term.
 
 a.  State the null and alternative hypotheses in words and using mathematical notation.
 b.  Describe what the test statistic $G$ means in the context of the data.
-c.  Show why the degrees of freedom for the test statistic is equal to 2.
+c.  Show why the degrees of freedom for the test statistic are equal to 2.
 d.  Conduct the drop-in-deviance test and state your conclusion in the context of the data.
 
-## Exercise 3
+## Exercise 5
 
 Use the model `credit_fit` that includes the main effects for `income`, `rating`, and `region`.
 
@@ -95,7 +109,7 @@ b.  What is the accuracy? What does it mean in the context of the data?
 c.  What is the sensitivity? What does it mean in the context of the data ?
 d.  What is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?
 
-## Exercise 4
+## Exercise 6
 
 Use the model `credit_fit` that includes the main effects for `income`, `rating`, and `region`.
 
@@ -103,21 +117,6 @@ a.  Construct the ROC curve and compute the area under the curve (AUC).
 b.  Based on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.
 c.  Suppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.
 d.  Based on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?
-
-## Exercise 5
-
-Suppose you fit a simple linear regression model.
-
-a.  Draw a scatterplot that contains an observation with large leverage but low Cook’s distance.
-
-b.  Draw a scatterplot that contains an observation with large leverage and high Cook’s distance.
-
-c.  Draw a scatterplot that contains an observation with a large studentized residual.
-
-## Exercise 6
-
-1.  Describe what it means for $\tilde{\boldsymbol{\beta}}$ to be the maximum likelihood estimator.
-2.  What are properties of MLEs?
 
 ::: callout-important
 # Submission

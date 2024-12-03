@@ -4694,42 +4694,42 @@
     "href": "ae/ae-09-exam-02-review.html#exercise-1",
     "title": "AE 09: Exam 02 review",
     "section": "Exercise 1",
-    "text": "Exercise 1\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\)\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc.\nUse R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?"
+    "text": "Exercise 1\nSuppose you fit a simple linear regression model.\n\nDraw a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw a scatterplot that contains an observation with a large studentized residual."
   },
   {
     "objectID": "ae/ae-09-exam-02-review.html#exercise-2",
     "href": "ae/ae-09-exam-02-review.html#exercise-2",
     "title": "AE 09: Exam 02 review",
     "section": "Exercise 2",
-    "text": "Exercise 2\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic is equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data."
+    "text": "Exercise 2\n\nDescribe what it means for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be the maximum likelihood estimator.\nWhat are properties of MLEs?\n\n\n\n\n\n\n\nNote\n\n\n\nUse this data analysis scenario for Exercises 3 - 6.\n\n\nThe data for this analysis is about credit card customers. It can be found in the file credit.csv. The following variables are in the data set:\n\nincome: Income in $1,000’s\nlimit: Credit limit\nrating: Credit rating\ncards: Number of credit cards\nage: Age in years\neducation: Number of years of education\nown: Whether an individual owns their home ( No or Yes )\nstudent: Whether the individual was a student ( No or Yes )\nmarried: Whether the individual was married (No and Yes)\nregion: Region the individual is from ( South, East, and West)\nbalance: Average credit card balance in $.\n\n\ncredit &lt;- read_csv(\"data/credit.csv\") |&gt;\n  mutate(maxed = factor(if_else(balance == 0, 1, 0)))\n\nThe objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had $0 average card balance.\nWe’ll start with a model predicting the odds of maxed = 1 using income, rating, and region.\n\ncredit_fit &lt;- glm(maxed ~ income + rating + region, data = credit, \n                  family = \"binomial\")\n\ntidy(credit_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n9.898\n1.449\n6.829\n0.000\n\n\nincome\n0.113\n0.021\n5.273\n0.000\n\n\nrating\n-0.057\n0.008\n-7.397\n0.000\n\n\nregionSouth\n-0.595\n0.604\n-0.985\n0.324\n\n\nregionWest\n-0.082\n0.649\n-0.126\n0.900"
   },
   {
     "objectID": "ae/ae-09-exam-02-review.html#exercise-3",
     "href": "ae/ae-09-exam-02-review.html#exercise-3",
     "title": "AE 09: Exam 02 review",
     "section": "Exercise 3",
-    "text": "Exercise 3\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nCompute the predicted probabilities, then use those to predict whether individuals maxed out their credit card using a threshold of \\(\\hat{\\pi}   = 0.5\\).\nWhat is the accuracy? What does it mean in the context of the data?\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?"
+    "text": "Exercise 3\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\)\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc.\nUse R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?"
   },
   {
     "objectID": "ae/ae-09-exam-02-review.html#exercise-4",
     "href": "ae/ae-09-exam-02-review.html#exercise-4",
     "title": "AE 09: Exam 02 review",
     "section": "Exercise 4",
-    "text": "Exercise 4\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nConstruct the ROC curve and compute the area under the curve (AUC).\nBased on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.\nSuppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.\nBased on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?"
+    "text": "Exercise 4\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic are equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data."
   },
   {
     "objectID": "ae/ae-09-exam-02-review.html#exercise-5",
     "href": "ae/ae-09-exam-02-review.html#exercise-5",
     "title": "AE 09: Exam 02 review",
     "section": "Exercise 5",
-    "text": "Exercise 5\nSuppose you fit a simple linear regression model.\n\nDraw a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw a scatterplot that contains an observation with a large studentized residual."
+    "text": "Exercise 5\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nCompute the predicted probabilities, then use those to predict whether individuals maxed out their credit card using a threshold of \\(\\hat{\\pi}   = 0.5\\).\nWhat is the accuracy? What does it mean in the context of the data?\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?"
   },
   {
     "objectID": "ae/ae-09-exam-02-review.html#exercise-6",
     "href": "ae/ae-09-exam-02-review.html#exercise-6",
     "title": "AE 09: Exam 02 review",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nDescribe what it means for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be the maximum likelihood estimator.\nWhat are properties of MLEs?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+    "text": "Exercise 6\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nConstruct the ROC curve and compute the area under the curve (AUC).\nBased on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.\nSuppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.\nBased on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
   },
   {
     "objectID": "support.html",
@@ -5057,21 +5057,21 @@
     "href": "slides/24-exam-02-review.html#announcements",
     "title": "Exam 02 review",
     "section": "Announcements",
-    "text": "Announcements\n\nProject peer review due today at 11:59pm\nRound 1 submission (optional) due December 8 at 11:59pm\nFinal report and GitHub repo due December 12 at 11:59pm."
+    "text": "Announcements\n\nProject peer review due today at 11:59pm\nRound 1 submission (optional) due December 8 at 11:59pm\nFinal report and GitHub repo due December 12 at 11:59pm.\nWednesday, December 4 is the last day of regular office hours"
   },
   {
     "objectID": "slides/24-exam-02-review.html#project-feedback",
     "href": "slides/24-exam-02-review.html#project-feedback",
     "title": "Exam 02 review",
     "section": "Project feedback",
-    "text": "Project feedback"
+    "text": "Project feedback\nI would appreciate your feedback on the final project!\n\nEarn 1 point on your final project grade by completing the feedback survey (individually scored) by December 12.\nAll feedback will be anonymous.\n\nThe survey is administered by Dr. Jess Dewey in Learning Innovation. Dr. Dewey give me the names of students who have completed the survey (without responses) for the purposes of awarding extra credit.\nI will receive the anonymized feedback after final course grades are submitted to DukeHub.\n\n\n🔗 https://duke.qualtrics.com/jfe/form/SV_eeUQc0k5kZH8HD8"
   },
   {
     "objectID": "slides/24-exam-02-review.html#course-and-ta-evaluations",
     "href": "slides/24-exam-02-review.html#course-and-ta-evaluations",
     "title": "Exam 02 review",
     "section": "Course and TA evaluations",
-    "text": "Course and TA evaluations"
+    "text": "Course and TA evaluations\nI would appreciate your feedback about the course!\n\nCourse and TA evaluations are now available and are due December 9\nIf there is at least 80% on the course evaluations and TA evaluations, everyone in the class will receive 1 point on their final homework average\nShould receive emails with access to the course and TA evaluations."
   },
   {
     "objectID": "slides/24-exam-02-review.html#exam-02-format",
@@ -5093,6 +5093,13 @@
     "title": "Exam 02 review",
     "section": "Tips for studying",
     "text": "Tips for studying\n\nRework derivations from assignments and lecture notes\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nUnderstand similarities and differences between linear and logistic regression\n\nHow are interpretations for logistic regression similar to interpretations for linear regression with response \\(\\log(y)\\)? How are they different?\n\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed (available until December 5 at 11:45am)"
+  },
+  {
+    "objectID": "slides/24-exam-02-review.html#resources",
+    "href": "slides/24-exam-02-review.html#resources",
+    "title": "Exam 02 review",
+    "section": "Resources",
+    "text": "Resources\n\nLecture notes and application exercises\nLecture recordings available until start of the exam\nHW and lab assignments\n\nLab 06 returned on Gradescope. HW 04 key on Canvas until start of the exam\n\nExam 02 practice problems"
   },
   {
     "objectID": "slides/lab-00.html#meet-your-tas",
