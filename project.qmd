@@ -442,37 +442,41 @@ This is an assessment of the overall presentation and formatting of the written 
 
 ## Reproducibility + organization {#reproducibility-organization}
 
-<!-- All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized. -->
+::: callout-important
+The repo should be neatly organized by **Thursday, December 12 at 9pm.**
+:::
 
-<!-- The GitHub repo should have the following structure: -->
+All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.
 
-<!-- -   `README`: Short project description and data dictionary -->
+The GitHub repo should have the following structure:
 
-<!-- -   `written-report.qmd` & `written-report.pdf`: Final written report -->
+-   `README`: Short project description and data dictionary
 
-<!-- -   `proposal.qmd` & `proposal.pdf`: Project proposal -->
+-   `written-report.qmd` & `written-report.pdf`: Final written report
 
-<!-- -   `/data`: Folder that contains the data set for the final project. -->
+-   `proposal.qmd` & `proposal.pdf`: Project proposal
 
-<!-- -   `project.Rproj`: File specifying the RStudio project -->
+-   `research-questions.qmd` & `research-questions.pdf`: Proposed research questions
 
-<!-- -   `/presentation`: Folder with the presentation slides or link to slides. -->
+-   `/data`: Folder that contains the data set for the final project.
 
-<!-- -   `.gitignore`: File that lists all files that are in the local RStudio project but not the GitHub repo -->
+-   `project.Rproj`: File specifying the RStudio project
 
-<!-- -   `/.github`: Folder for peer review issue template -->
+-   `/presentation`: Folder with the presentation slides or link to slides.
 
-<!-- Points for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, all text in the `README` should be easily readable. -->
+-   `.gitignore`: File that lists all files that are in the local RStudio project but not the GitHub repo
 
-<!-- ::: callout-important -->
+-   `/.github`: Folder for peer review issue template
 
-<!-- The repo must be ready for grading by Wednesday, December 13 at 11:59pm. -->
+-   Any other files should be neatly organized into clearly labeled folders.
 
-<!-- ::: -->
+Update the README of the project repo with your project title and a few sentences (\~ 2 -5) describing your final project.
+
+Points for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, all text in the `README` should be easily readable.
 
 ## Peer teamwork evaluation
 
-You will be asked to fill out a survey where you rate the contribution and teamwork of each team member by assigning a contribution percentage for each team member. If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation. If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly.
+There will be an opportunity to provide feedback to Professor Tackett about each team member's contribution to the project. If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation. If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly.
 
 ## Overall grading
 

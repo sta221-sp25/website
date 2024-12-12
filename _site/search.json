@@ -7521,7 +7521,7 @@
     "href": "project.html#reproducibility-organization",
     "title": "Final project",
     "section": "Reproducibility + organization",
-    "text": "Reproducibility + organization",
+    "text": "Reproducibility + organization\n\n\n\n\n\n\nImportant\n\n\n\nThe repo should be neatly organized by Thursday, December 12 at 9pm.\n\n\nAll written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.\nThe GitHub repo should have the following structure:\n\nREADME: Short project description and data dictionary\nwritten-report.qmd & written-report.pdf: Final written report\nproposal.qmd & proposal.pdf: Project proposal\nresearch-questions.qmd & research-questions.pdf: Proposed research questions\n/data: Folder that contains the data set for the final project.\nproject.Rproj: File specifying the RStudio project\n/presentation: Folder with the presentation slides or link to slides.\n.gitignore: File that lists all files that are in the local RStudio project but not the GitHub repo\n/.github: Folder for peer review issue template\nAny other files should be neatly organized into clearly labeled folders.\n\nUpdate the README of the project repo with your project title and a few sentences (~ 2 -5) describing your final project.\nPoints for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, all text in the README should be easily readable.",
     "crumbs": [
       "Project",
       "Instructions"
@@ -7532,7 +7532,7 @@
     "href": "project.html#peer-teamwork-evaluation",
     "title": "Final project",
     "section": "Peer teamwork evaluation",
-    "text": "Peer teamwork evaluation\nYou will be asked to fill out a survey where you rate the contribution and teamwork of each team member by assigning a contribution percentage for each team member. If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation. If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly.",
+    "text": "Peer teamwork evaluation\nThere will be an opportunity to provide feedback to Professor Tackett about each team member’s contribution to the project. If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation. If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly.",
     "crumbs": [
       "Project",
       "Instructions"
