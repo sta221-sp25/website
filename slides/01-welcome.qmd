@@ -133,7 +133,7 @@ $$
 
 <br>
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 <center>
 
@@ -161,7 +161,7 @@ Theory
 
 </center>
 :::
-:::
+::::::
 
 <br>
 
@@ -182,8 +182,8 @@ By the end of the semester, you will be able to...
 
 ## Course topics {.midi}
 
-::: columns
-::: {.column width="48%"}
+:::::::: columns
+:::: {.column width="48%"}
 ::: {.fragment fragment-index="1"}
 ### Linear regression {style="color: #993399"}
 
@@ -195,9 +195,9 @@ By the end of the semester, you will be able to...
 -   Model conditions and diagnostics
 -   Different types of predictor variables
 :::
-:::
+::::
 
-::: {.column width="48%"}
+::::: {.column width="48%"}
 ::: {.fragment fragment-index="2"}
 ### Logistic regression {style="color: #993399"}
 
@@ -214,8 +214,8 @@ By the end of the semester, you will be able to...
 -   Presenting statistical results
 -   Collaboration and teamwork
 :::
-:::
-:::
+:::::
+::::::::
 
 # Course overview
 
@@ -235,8 +235,8 @@ By the end of the semester, you will be able to...
 
 ## Computing toolkit {.midi}
 
-::: columns
-::: {.column width="50%"}
+::::::::: columns
+::::: {.column width="50%"}
 ::: {.fragment fragment-index="1"}
 ![](images/01/rstudio.png){fig-alt="RStudio logo" fig-align="center" width="5.61in" height="1.6in"}
 :::
@@ -248,9 +248,9 @@ By the end of the semester, you will be able to...
 
 -   Access RStudio through [STA 210 Docker Containers](https://cmgr.oit.duke.edu/containers)
 :::
-:::
+:::::
 
-::: {.column width="50%"}
+::::: {.column width="50%"}
 ::: {.fragment fragment-index="1"}
 ![](images/01/github.png){fig-alt="GitHub logo" fig-align="center" width="5.61in" height="1.6in"}
 :::
@@ -262,8 +262,8 @@ By the end of the semester, you will be able to...
 
 -   All work in [STA 221 course organization](https://github.com/sta221-fa24)
 :::
-:::
-:::
+:::::
+:::::::::
 
 ## Classroom community
 
@@ -465,7 +465,7 @@ with human readable messages
 
 ## Why do we need version control?
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ![](images/01/phd_comics_vc.gif){fig-align="center"}
 :::
@@ -473,7 +473,7 @@ with human readable messages
 ::: {.column width="50%"}
 Provides a clear record of how the analysis methods evolved. This makes analysis auditable and thus more trustworthy and reliable. [@ostblom2022]
 :::
-:::
+:::::
 
 ## git and GitHub
 
