@@ -3,17 +3,17 @@ project:
 
 website:
   page-navigation: true
-  title: "STA 221 - Fall 2024"
-  description: "Homepage for STA 221 - Regression Analysis: Theory and Applications at Duke University, Fall 2023"
-  site-url: https://sta221-fa24.netlify.app
+  title: "STA 221 - Spring 2025"
+  description: "Homepage for STA 221 - Regression Analysis: Theory and Applications at Duke University, Spring 2025"
+  site-url: https://sta221-sp25.netlify.app
 
-  repo-url: https://github.com/sta221-fa24/website
+  repo-url: https://github.com/sta221-sp25/website
   repo-actions: [issue]
   
   page-footer:
     background: "#497E99"
     left: |
-      &copy; Copyright 2024, Maria Tackett
+      &copy; Copyright 2025, Maria Tackett
     right: |
       This site is built with [Quarto](https://quarto.org/)
 
@@ -23,7 +23,7 @@ website:
     align: center
     tools: 
       - icon: github
-        href: https://github.com/sta221-fa24
+        href: https://github.com/sta221-sp25
         text: "GitHub organization"
       - icon: code-square
         href: https://cmgr.oit.duke.edu/containers
@@ -84,18 +84,20 @@ website:
           text: Lab 05
         - href: labs/lab-06.qmd
           text: Lab 06
+        - href: labs/lab-07.qmd
+          text: Lab 07
       - section: Project
         contents:
         - href: project.qmd
           text: Instructions
         - href: project-tips.qmd
           text: Tips + resources
-      - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=ccfa023a-c78c-4254-93ea-b1d80116d1dc
-        text: Lecture recordings
+    #  - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=ccfa023a-c78c-4254-93ea-b1d80116d1dc
+     #   text: Lecture recordings
       - href: math-rules.qmd
         text: Math rules
-      - href: exam-02-practice.qmd
-        text: Exam 02 Practice
+    #  - href: exam-02-practice.qmd
+    #    text: Exam 02 Practice
         
 
 format:

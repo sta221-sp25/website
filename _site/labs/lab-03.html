@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 03: Inference for regression – STA 221 - Fall 2024</title>
+<title>Lab 03 – STA 221 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -123,35 +69,6 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -182,7 +99,7 @@ window.Quarto = {
       <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/sta221-fa24" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/sta221-sp25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://edstem.org/us/courses/62513/discussion/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-chat-dots-fill"></i></a>
     <div class="dropdown">
@@ -354,6 +271,12 @@ window.Quarto = {
  <span class="menu-text">Lab 06</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 07</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -381,20 +304,8 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=ccfa023a-c78c-4254-93ea-b1d80116d1dc" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture recordings</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../math-rules.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Math rules</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../exam-02-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exam 02 Practice</span></a>
   </div>
 </li>
     </ul>
@@ -402,44 +313,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><strong>Learning goals</strong></a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><strong>Getting started</strong></a></li>
-  <li><a href="#workflow-using-git-and-github-as-a-team" id="toc-workflow-using-git-and-github-as-a-team" class="nav-link" data-scroll-target="#workflow-using-git-and-github-as-a-team"><strong>Workflow: Using Git and GitHub as a team</strong></a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
-  <ul class="collapse">
-  <li><a href="#exercise-0" id="toc-exercise-0" class="nav-link" data-scroll-target="#exercise-0">Exercise 0</a></li>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
-  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
-  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
-  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
-  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
-  </ul></li>
-  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta221-fa24/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-01.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-03.html">Lab 03</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lab 03: Inference for regression</h1>
-<p class="subtitle lead">Palmer penguins</p>
+<h1 class="title">Lab 03</h1>
 </div>
 
 
@@ -456,287 +338,11 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Due date
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This lab is due on <strong>Thursday, October 3 at 11:59pm.</strong> To be considered on time, the following must be done by the due date:</p>
-<ul>
-<li><p>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your team’s GitHub repo</p></li>
-<li><p>Final <code>.pdf</code> file submitted on Gradescope</p></li>
-</ul>
-</div>
-</div>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>In this lab you will use linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica. You will also use the data to check conditions about the distribution of the model residuals.</p>
-<p>During the lab session, you will also begin developing research questions for your final project.</p>
-</section>
-<section id="learning-goals" class="level1">
-<h1><strong>Learning goals</strong></h1>
-<p>By the end of the lab you will be able to…</p>
-<ul>
-<li>use statistical inference to draw conclusions about the relationship between two variables</li>
-<li>use the matrix form of regression to compute statistics for <span class="math inline">\(\hat{\beta}_j\)</span></li>
-<li>use residuals to check the assumptions for regression</li>
-<li>continue developing a collaborative workflow with your teammates</li>
-</ul>
-</section>
-<section id="getting-started" class="level1">
-<h1><strong>Getting started</strong></h1>
-<ul>
-<li><p>A repository has already been created for you and your teammates. Everyone in your team has access to the same repo.</p></li>
-<li><p>Go to the <a href="https://github.com/sta221-fa24">sta221-fa24</a> organization on GitHub. Click on the repo with the prefix <strong>lab-03</strong>. It contains the starter documents you need to complete the lab.</p></li>
-<li><p>Each person on the team should clone the repository and open a new project in RStudio. Throughout the lab, each person should get a chance to make commits and push to the repo.</p></li>
-</ul>
-</section>
-<section id="workflow-using-git-and-github-as-a-team" class="level1">
-<h1><strong>Workflow: Using Git and GitHub as a team</strong></h1>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There are no Team Member markers in this lab; however, you should use a similar workflow as in <a href="../lab-02.html">Lab 02</a>. Only one person should type in the group’s .qmd file at a time to avoid merge conflicts. Once that person has finished typing the group’s responses, they should <em>render, commit, and push</em> the changes to GitHub. All other teammates can <em>pull</em> to see the updates in RStudio.</p>
-<p>Every teammate must have at least one commit in the lab. Everyone is expected to contribute to discussion even when they are not typing.</p>
-</div>
-</div>
-</section>
-<section id="packages" class="level1">
-<h1>Packages</h1>
-<p>You will use the following packages in today’s lab. Add other packages as needed.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) <span class="co">#penguins data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="data" class="level1">
-<h1>Data</h1>
-<p>Today’s data include information about characteristics of three species of penguins living in Palmer Archipelago in Antarctica. The data were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr.&nbsp;Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>, a member of the <a href="https://lternet.edu/">Long Term Ecological Research Network</a> <span class="citation" data-cites="gorman2014">(<a href="#ref-gorman2014" role="doc-biblioref">Gorman, Williams, and Fraser 2014</a>)</span>.</p>
-<p>The data are in the <code>penguins</code> data frame in the <strong>palmerpenguins</strong> R package. This analysis will focus on the following variables:</p>
-<ul>
-<li><p><code>body_mass_g</code>: body mass in grams</p></li>
-<li><p><code>flipper_length_mm</code>: flipper length in millimeters</p></li>
-<li><p><code>species</code>: penguin species (Adélie, Chinstrap and Gentoo)</p></li>
-</ul>
-<p><a href="https://allisonhorst.github.io/palmerpenguins/reference/penguins.html">Click here</a> to see the full data dictionary.</p>
-</section>
-<section id="exercises" class="level1">
-<h1>Exercises</h1>
-<p><strong>Goal:</strong> The goal of this analysis is to use multiples linear regression to draw conclusions about the relationship between penguins’ flipper length and body mass, while accounting for species.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write all code and narrative in your Quarto file. Write all narrative in complete sentences. Make sure the teaching team can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (<code>|&gt;</code>) and plus sign (<code>+</code>).</p>
-</div>
-</div>
-<section id="exercise-0" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-0">Exercise 0</h2>
-<p>There are two penguins in the data frame that do not have reported values for flipper length or body mass and thus will not be included in any analysis. Remove these observations from the data frame, so that we have an accurate count of the number of observations used for the analysis.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Exericse 0 is not graded.</p>
-</div>
-</div>
-</section>
-<section id="exercise-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Let’s begin by exploring the relationship between between flipper length and body mass, while accounting for species.</p>
-<ul>
-<li>Visualize the relationship between flipper length and body mass. Then describe the relationship.</li>
-<li>Fit the main effects linear regression model (no interaction terms) between these three variables. Neatly display the results using three digits.</li>
-<li>Interpret the coefficient of flipper length in the context of the data.</li>
-</ul>
-</section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Now let’s look at the assumptions underlying the regression model. Consider the linear regression model<br>
-<span id="eq-ols"><span class="math display">\[ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{N}(0, \sigma^2 \mathbf{I}_n)  \tag{1}\]</span></span></p>
-<p>and let <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}\)</span> be the least squares estimator. This model relies on four assumptions:</p>
-<ul>
-<li><strong>Linearity:</strong> There is a linear relationship between the response and predictor variables.</li>
-<li><strong>Constant Variance:</strong> The variability about the least squares line is generally constant.</li>
-<li><strong>Normality:</strong> The distribution of the residuals is approximately normal.</li>
-<li><strong>Independence:</strong> The residuals are independent from one another.</li>
-</ul>
-<p>For each condition, state the components of <a href="#eq-ols" class="quarto-xref">Equation&nbsp;1</a> that are used to represent it.</p>
-</section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>We can visually assess the <strong>linearity</strong> and <strong>constant variance</strong> assumptions by examining a scatterplot of the residuals versus fitted (predicted) values.</p>
-<ul>
-<li><p>Create a scatterplot of the residuals (y-axis) versus fitted values (x-axis) for the model fit in Exercise 1.</p></li>
-<li><p>If there is a linear relationship between the response and predictor variables, no discernible pattern should be present between fitted values and residuals. Does the linearity assumption appear to be satisfied?</p></li>
-<li><p>Briefly explain why no discernible pattern in the plot of residuals versus fitted values would indicate the linearity condition is satisfied.</p></li>
-</ul>
-</section>
-<section id="exercise-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>If errors have constant variance, we would expect the variability the of residuals about their mean to be approximately equal as the fitted value increases. Does the constant variance assumption appear to be satisfied? Briefly explain.</p>
-</section>
-<section id="exercise-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<p>Next, let’s assess the assumptions about the distribution fo the residuals. Under the normality assumption, the residuals are expected to be normally distributed. Visualize the distribution of the residuals. Does the normality assumption appear to be satisfied? Briefly explain.</p>
-</section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-<p>The last assumption is that the residuals are independent of one another. Do you think it’s reasonable to assume the independence of residuals in this analysis? Briefly explain.</p>
-</section>
-<section id="exercise-7" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
-<p>Now let’s set up the test of whether the flipper length has a statistically significant effect on body mass in this model.</p>
-<ul>
-<li><p>Write the null and alternative hypotheses in words and in mathematical notation.</p></li>
-<li><p>Show how the test statistic is computed specifically for this problem. In your response, show the code to obtain each relevant quantity in the formula for the test statistic using the matrix form of the model. <em>Do <u>not</u> merely refer to the values in the <code>lm</code> output. You must show how each value is computed using the matrix / vector calculations.</em></p></li>
-<li><p>State the distribution of the test statistic under the null hypothesis for this problem.</p></li>
-</ul>
-</section>
-<section id="exercise-8" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
-<p>In the regression output from Exercise 1, you are provided the <span class="math inline">\(p\)</span>-value for the test of significance of each individual coefficient.</p>
-<ul>
-<li><p>Interpret the p-value for the coefficient of flipper length in the context of the data.</p></li>
-<li><p>Then, use the p-value and a decision-making threshold of <span class="math inline">\(\alpha = 0.05\)</span> to draw a conclusion about the relationship between flipper length and body mass in this model. State your conclusion in the context of the data.</p></li>
-</ul>
-</section>
-<section id="exercise-9" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
-<p>Now let’s construct the 95% confidence interval for the coefficient of flipper length.</p>
-<ul>
-<li><p>Write the general formula for the 95% confidence interval.</p></li>
-<li><p>Use <code>R</code> functions to compute all the quantities you need for the interval, then compute the interval.</p></li>
-</ul>
-</section>
-<section id="exercise-10" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
-<p>Interpret the interval from the previous exercise in the context of the data.</p>
-</section>
-</section>
-<section id="project" class="level1">
-<h1>Project</h1>
-<p>Complete the <a href="https://sta221-fa24.netlify.app/project#research-questions">project research questions</a> (due September 26) or <a href="https://sta221-fa24.netlify.app/project#project-proposal">proposal</a> (due October 3).</p>
-</section>
-<section id="submission" class="level1">
-<h1>Submission</h1>
-<p>You will submit the PDF documents for labs, homework, and exams in to Gradescope as part of your final submission.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
-<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
-</div>
-</div>
-<p>To submit your assignment:</p>
-<ul>
-<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/38867">STA 221 Canvas site.</a></p></li>
-<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
-<li><p>Select all team members’ names, so they receive credit on the assignment. <a href="https://help.gradescope.com/article/m5qz2xsnjy-student-add-group-members">Click here</a> for video on adding team members to assignment on Gradescope.</p></li>
-<li><p>Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).</p></li>
-<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
-</ul>
-</section>
-<section id="grading" class="level1">
-<h1>Grading</h1>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Component</th>
-<th style="text-align: left;">Points</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Ex 1</td>
-<td style="text-align: left;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ex 2</td>
-<td style="text-align: left;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ex 3</td>
-<td style="text-align: left;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ex 4</td>
-<td style="text-align: left;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ex 5</td>
-<td style="text-align: left;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ex 6</td>
-<td style="text-align: left;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ex 7</td>
-<td style="text-align: left;">9</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ex 8</td>
-<td style="text-align: left;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ex 9</td>
-<td style="text-align: left;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ex 10</td>
-<td style="text-align: left;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Workflow &amp; formatting</td>
-<td style="text-align: left;">5</td>
-</tr>
-</tbody>
-</table>
-<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and collaboration. This includes having at least one meaningful commit from each team member, a neatly organized document with readable code, and updating the team name and date in the YAML.</p>
+<p>To be posted.</p>
 
 
 
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-gorman2014" class="csl-entry" role="listitem">
-Gorman, Kristen B., Tony D. Williams, and William R. Fraser. 2014. <span>“Ecological Sexual Dimorphism and Environmental Variability Within a Community of Antarctic Penguins (Genus Pygoscelis).”</span> Edited by André Chiaradia. <em>PLoS ONE</em> 9 (3): e90081. <a href="https://doi.org/10.1371/journal.pone.0090081">https://doi.org/10.1371/journal.pone.0090081</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -829,7 +435,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/sta221-fa24\.netlify\.app");
+      var filterRegex = new RegExp("https:\/\/sta221-sp25\.netlify\.app");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1173,11 +779,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2024, Maria Tackett</p>
+<p>© Copyright 2025, Maria Tackett</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-fa24/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
 </div>

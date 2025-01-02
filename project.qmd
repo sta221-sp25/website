@@ -8,517 +8,519 @@ library(knitr)
 library(broom)
 ```
 
-## Project milestones
+To be posted.
 
-[Research questions](#research-questions) due Thursday, September 26
+<!-- ## Project milestones -->
 
-[Project proposal](#project-proposal) due Thursday, October 3
+<!-- [Research questions](#research-questions) due Thursday, September 26 -->
 
-[Exploratory data analysis](#eda) due Thursday, October 31
+<!-- [Project proposal](#project-proposal) due Thursday, October 3 -->
 
-[Presentation](#presentation) + [Presentation comments](#presentation-comments) Monday, November 11 (in lab)
+<!-- [Exploratory data analysis](#eda) due Thursday, October 31 -->
 
-[Analysis draft + peer review](#draft-report-peer-review) Monday, December 2 (peer review in lab)
+<!-- [Presentation](#presentation) + [Presentation comments](#presentation-comments) Monday, November 11 (in lab) -->
 
-[Round 1 submission (optional)](#round1-submission) due Sunday, December 8 at 11:59pm
+<!-- [Analysis draft + peer review](#draft-report-peer-review) Monday, December 2 (peer review in lab) -->
 
-[Written report](#written-report) due Thursday, December 12 at 9pm
+<!-- [Round 1 submission (optional)](#round1-submission) due Sunday, December 8 at 11:59pm -->
 
-[Reproducibility + organization](#reproducibility-organization) due Thursday, December 12 at 9pm
+<!-- [Written report](#written-report) due Thursday, December 12 at 9pm -->
 
-## Introduction
+<!-- [Reproducibility + organization](#reproducibility-organization) due Thursday, December 12 at 9pm -->
 
-**TL;DR**: *Pick a data set and do a regression analysis. That is your final project.*
+<!-- ## Introduction -->
 
-The goal of the final project is for you to use regression analysis to analyze a data set of your own choosing. The data set may already exist or you may collect your own data by scraping the web.
+<!-- **TL;DR**: *Pick a data set and do a regression analysis. That is your final project.* -->
 
-Choose the data based on your group's interests or work you all have done in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like!) and apply them to a data set to analyze it in a meaningful way.
+<!-- The goal of the final project is for you to use regression analysis to analyze a data set of your own choosing. The data set may already exist or you may collect your own data by scraping the web. -->
 
-**All analyses must be done in RStudio using Quarto and GitHub, and your analysis and written report must be reproducible.**
+<!-- Choose the data based on your group's interests or work you all have done in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like!) and apply them to a data set to analyze it in a meaningful way. -->
 
-### Logistics
+<!-- **All analyses must be done in RStudio using Quarto and GitHub, and your analysis and written report must be reproducible.** -->
 
-You will work on the project with your lab groups. The primary deliverables for the project are
+<!-- ### Logistics -->
 
-1.  an in-person presentation about the exploratory data analysis and initial modeling
+<!-- You will work on the project with your lab groups. The primary deliverables for the project are -->
 
-2.  a written, reproducible final report detailing your analysis
+<!-- 1.  an in-person presentation about the exploratory data analysis and initial modeling -->
 
-3.  a GitHub repository containing all work from the project
+<!-- 2.  a written, reproducible final report detailing your analysis -->
 
-There are intermediate milestones and peer review assignments throughout the semester to help you work towards the final deliverables.
+<!-- 3.  a GitHub repository containing all work from the project -->
 
-## Research questions {#research-questions}
+<!-- There are intermediate milestones and peer review assignments throughout the semester to help you work towards the final deliverables. -->
 
-The goal of this milestone is to discuss topics and develop potential research questions your team is interested in investigating for the project. You are only developing potential research questions; you do not need to have a data set identified at this point.
+<!-- ## Research questions {#research-questions} -->
 
-Develop three potential research questions. Include the following for <u>each</u> question:
+<!-- The goal of this milestone is to discuss topics and develop potential research questions your team is interested in investigating for the project. You are only developing potential research questions; you do not need to have a data set identified at this point. -->
 
-1.  A statement of the research question.
-2.  The target population of interest for this question.
-3.  A statement about your motivation for investigating this research question and why this question is important.
-4.  Ideas about the type of data you might use to answer this question. *Note: These are your ideas about the type of data you could use. You do not need to have a data set at this point.*
+<!-- Develop three potential research questions. Include the following for <u>each</u> question: -->
 
-### Submission
+<!-- 1.  A statement of the research question. -->
+<!-- 2.  The target population of interest for this question. -->
+<!-- 3.  A statement about your motivation for investigating this research question and why this question is important. -->
+<!-- 4.  Ideas about the type of data you might use to answer this question. *Note: These are your ideas about the type of data you could use. You do not need to have a data set at this point.* -->
 
-Write your responses in `research-questions.qmd` in your team's project GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Thursday, September 26 at 11:59pm.**
+<!-- ### Submission -->
 
-## Project proposal {#project-proposal}
+<!-- Write your responses in `research-questions.qmd` in your team's project GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Thursday, September 26 at 11:59pm.** -->
 
-The purpose of the project proposal is for your team to identify the data set you're interested in analyzing to investigate one of your potential research questions. You will also do some preliminary exploration of the response variable and begin thinking about the modeling strategy. If you're unsure where to find data, you can use the list of potential data sources on the [Tips + resources](https://sta221-fa24.netlify.app/project-tips) page as a starting point.
+<!-- ## Project proposal {#project-proposal} -->
 
-::: callout-important
-You must the data set(s) in the proposal for the final project, unless instructed otherwise when given feedback.
-:::
+<!-- The purpose of the project proposal is for your team to identify the data set you're interested in analyzing to investigate one of your potential research questions. You will also do some preliminary exploration of the response variable and begin thinking about the modeling strategy. If you're unsure where to find data, you can use the list of potential data sources on the [Tips + resources](https://sta221-fa24.netlify.app/project-tips) page as a starting point. -->
 
-The data set must meet the following criteria:
+<!-- ::: callout-important -->
+<!-- You must the data set(s) in the proposal for the final project, unless instructed otherwise when given feedback. -->
+<!-- ::: -->
 
--   At least 500 observations
+<!-- The data set must meet the following criteria: -->
 
--   At least 10 columns, such that at least 6 of the columns are useful and unique predictor variables.
+<!-- -   At least 500 observations -->
 
-    -   e.g., identifier variables such as "name", "ID number", etc. are <u>not</u> useful predictor variables.
+<!-- -   At least 10 columns, such that at least 6 of the columns are useful and unique predictor variables. -->
 
-    -   e.g., if you have multiple columns with the same information (e.g. "state abbreviation" and "state name"), then they are not unique predictors.
+<!--     -   e.g., identifier variables such as "name", "ID number", etc. are <u>not</u> useful predictor variables. -->
 
--   At least one variable that can be identified as a reasonable response variable.
+<!--     -   e.g., if you have multiple columns with the same information (e.g. "state abbreviation" and "state name"), then they are not unique predictors. -->
 
-    -   The response variable can be quantitative or categorical.
+<!-- -   At least one variable that can be identified as a reasonable response variable. -->
 
--   A mix of quantitative and categorical variables that can be used as predictors.
+<!--     -   The response variable can be quantitative or categorical. -->
 
--   May not be data that has previously been used in any course materials, or any derivation of data that has been used in course materials.
+<!-- -   A mix of quantitative and categorical variables that can be used as predictors. -->
 
-::: callout-warning
-### Types of data sets to avoid
+<!-- -   May not be data that has previously been used in any course materials, or any derivation of data that has been used in course materials. -->
 
--   Data that are likely violate the independence condition. Therefore, avoid data with repeated measures, data collected over time, etc.
+<!-- ::: callout-warning -->
+<!-- ### Types of data sets to avoid -->
 
--   Data sets in which there is no information about how the data were originally collected
+<!-- -   Data that are likely violate the independence condition. Therefore, avoid data with repeated measures, data collected over time, etc. -->
 
--   Data sets in which there are missing or unclear definitions about the observations and/or variables
-:::
+<!-- -   Data sets in which there is no information about how the data were originally collected -->
 
-**Ask a member of the teaching team if you're unsure whether your data set meets the criteria.**
+<!-- -   Data sets in which there are missing or unclear definitions about the observations and/or variables -->
+<!-- ::: -->
 
-The proposal will include the following sections:
+<!-- **Ask a member of the teaching team if you're unsure whether your data set meets the criteria.** -->
 
-### Section 1: Introduction
+<!-- The proposal will include the following sections: -->
 
-::: callout-tip
-Reuse and iterate on the work from the Research Questions milestone.
-:::
+<!-- ### Section 1: Introduction -->
 
--   An introduction to the subject matter you're investigating (citing any relevant literature)
+<!-- ::: callout-tip -->
+<!-- Reuse and iterate on the work from the Research Questions milestone. -->
+<!-- ::: -->
 
--   Statement of a well-developed research question.
+<!-- -   An introduction to the subject matter you're investigating (citing any relevant literature) -->
 
--   The motivation for your research question and why it is important
+<!-- -   Statement of a well-developed research question. -->
 
--   Your team's hypotheses regarding the research question
+<!-- -   The motivation for your research question and why it is important -->
 
-    -   This is a narrative about what you think regarding the research question, not formal statistical hypotheses.
+<!-- -   Your team's hypotheses regarding the research question -->
 
-### Section 2: Data description
+<!--     -   This is a narrative about what you think regarding the research question, not formal statistical hypotheses. -->
 
--   The source of the data set
+<!-- ### Section 2: Data description -->
 
--   A description of when and how the data were originally collected (by the original data curator, not necessarily how you found the data)
+<!-- -   The source of the data set -->
 
--   A description of the observations and general characteristics being measured
+<!-- -   A description of when and how the data were originally collected (by the original data curator, not necessarily how you found the data) -->
 
-### Section 3: Initial exploratory data analysis
+<!-- -   A description of the observations and general characteristics being measured -->
 
--   Description of data cleaning you need to do to prepare for analysis (can focus on the response variable for now), such as joining data sets, imputing missing values, variable transformation, creating a new variable, etc.
+<!-- ### Section 3: Initial exploratory data analysis -->
 
--   Visualizations, summary statistics, and narrative to describe the distribution of the response variable.
+<!-- -   Description of data cleaning you need to do to prepare for analysis (can focus on the response variable for now), such as joining data sets, imputing missing values, variable transformation, creating a new variable, etc. -->
 
-### Section 4: Analysis approach
+<!-- -   Visualizations, summary statistics, and narrative to describe the distribution of the response variable. -->
 
--   a description of the potential predictor variables of interest
+<!-- ### Section 4: Analysis approach -->
 
--   regression model technique (multiple linear regression for quantitative response variable or logistic regression for a categorical response variable)
+<!-- -   a description of the potential predictor variables of interest -->
 
-### Data dictionary (aka code book)
+<!-- -   regression model technique (multiple linear regression for quantitative response variable or logistic regression for a categorical response variable) -->
 
-Submit a data dictionary for all the variables in your data set in the `README` of the `data` folder. You do <u>not</u> need to include the data dictionary in the PDF document.
+<!-- ### Data dictionary (aka code book) -->
 
-### Submission
+<!-- Submit a data dictionary for all the variables in your data set in the `README` of the `data` folder. You do <u>not</u> need to include the data dictionary in the PDF document. -->
 
-Write your narrative and analysis for Sections 1 - 4 in the `proposal.qmd` file in your team's GitHub repo. Put the data set and the data dictionary in the `data` folder in the repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Thursday, October 3 at 11:59pm.**
+<!-- ### Submission -->
 
-### Grading
+<!-- Write your narrative and analysis for Sections 1 - 4 in the `proposal.qmd` file in your team's GitHub repo. Put the data set and the data dictionary in the `data` folder in the repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Thursday, October 3 at 11:59pm.** -->
 
-The anticipated length, including all graphs, tables, narrative, etc., is 2 -4 pages.
+<!-- ### Grading -->
 
-The proposal is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above. Points will be assigned based on a holistic review of the project proposal.
+<!-- The anticipated length, including all graphs, tables, narrative, etc., is 2 -4 pages. -->
 
--   **Excellent (9 - 10 points) :** All required elements are completed and are accurate. The data set meets the requirements (or the team has otherwise discussed the data with Professor Tackett) and the data do not pose obvious violations to the modeling assumptions. There is a thoughtful and comprehensive description of the data and exploration of the response variable as described above. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.
+<!-- The proposal is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above. Points will be assigned based on a holistic review of the project proposal. -->
 
--   **Strong (7 - 8 points)**: Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some minor revision of the work required before team is ready for modeling.
+<!-- -   **Excellent (9 - 10 points) :** All required elements are completed and are accurate. The data set meets the requirements (or the team has otherwise discussed the data with Professor Tackett) and the data do not pose obvious violations to the modeling assumptions. There is a thoughtful and comprehensive description of the data and exploration of the response variable as described above. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting. -->
 
--   **Satisfactory (5 - 6 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling.
+<!-- -   **Strong (7 - 8 points)**: Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some minor revision of the work required before team is ready for modeling. -->
 
--   **Needs Improvement (4 or fewer points points):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling.
+<!-- -   **Satisfactory (5 - 6 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling. -->
 
-## Exploratory data analysis {#eda}
+<!-- -   **Needs Improvement (4 or fewer points points):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling. -->
 
-::: callout-tip
-Reuse and iterate on the work from the previous milestones.
-:::
+<!-- ## Exploratory data analysis {#eda} -->
 
-The purpose of this milestone is begin exploring the data and get early feedback on your data and analysis. You will submit a draft of the beginning of your report that includes the introduction and exploratory data analysis, with an emphasis on the EDA. It will also help you prepare for the presentation of the exploratory data analysis results.
+<!-- ::: callout-tip -->
+<!-- Reuse and iterate on the work from the previous milestones. -->
+<!-- ::: -->
 
-Below is a brief description of the sections to include in this step:
+<!-- The purpose of this milestone is begin exploring the data and get early feedback on your data and analysis. You will submit a draft of the beginning of your report that includes the introduction and exploratory data analysis, with an emphasis on the EDA. It will also help you prepare for the presentation of the exploratory data analysis results. -->
 
-### Introduction
+<!-- Below is a brief description of the sections to include in this step: -->
 
-This section includes an introduction to the project motivation, background, data, and research question.
+<!-- ### Introduction -->
 
-### Exploratory data analysis
+<!-- This section includes an introduction to the project motivation, background, data, and research question. -->
 
-This section includes the following:
+<!-- ### Exploratory data analysis -->
 
--   Description of the data set and key variables.
+<!-- This section includes the following: -->
 
--   Exploratory data analysis of the response variable and key predictor variables.
+<!-- -   Description of the data set and key variables. -->
 
-    -   Univariate EDA of the response and key predictor variables.
-    -   Bivariate EDA of the response and key predictor variables
-    -   Potential interaction effects.
+<!-- -   Exploratory data analysis of the response variable and key predictor variables. -->
 
-### Submission
+<!--     -   Univariate EDA of the response and key predictor variables. -->
+<!--     -   Bivariate EDA of the response and key predictor variables -->
+<!--     -   Potential interaction effects. -->
 
-Write your draft introduction and exploratory data analysis in the `written-report.qmd` file in your team's GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Thursday, October 31 at 11:59pm.**
+<!-- ### Submission -->
 
-### Grading
+<!-- Write your draft introduction and exploratory data analysis in the `written-report.qmd` file in your team's GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Thursday, October 31 at 11:59pm.** -->
 
-The anticipated length, including all graphs, tables, narrative, etc. with code, warnings, and messages suppressed is about about 4 - 6 pages.
+<!-- ### Grading -->
 
-::: callout-tip
-You can suppress code, warnings, and messages by including the following in the YAML:
+<!-- The anticipated length, including all graphs, tables, narrative, etc. with code, warnings, and messages suppressed is about about 4 - 6 pages. -->
 
-``` r
-execute: 
-  echo: false
-  message: false
-  warning: false
-```
-:::
+<!-- ::: callout-tip -->
+<!-- You can suppress code, warnings, and messages by including the following in the YAML: -->
 
-The exploratory data analysis is worth 15 points and will be graded based on accurately and comprehensively addressing the criteria stated above, along with incorporating the feedback from the proposal. Points will be assigned based on a holistic review of the exploratory data analysis.
+<!-- ``` r -->
+<!-- execute:  -->
+<!--   echo: false -->
+<!--   message: false -->
+<!--   warning: false -->
+<!-- ``` -->
+<!-- ::: -->
 
--   **Excellent (14 - 15 points) :** All required elements are completed and are accurate. There is a thorough exploration of the data as described above, and the team has demonstrated a careful and thoughtful approach exploring the data and preparing it for analysis. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.
+<!-- The exploratory data analysis is worth 15 points and will be graded based on accurately and comprehensively addressing the criteria stated above, along with incorporating the feedback from the proposal. Points will be assigned based on a holistic review of the exploratory data analysis. -->
 
--   **Strong: (11 - 13 points):** Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some revision of the work required before team is ready for modeling.
+<!-- -   **Excellent (14 - 15 points) :** All required elements are completed and are accurate. There is a thorough exploration of the data as described above, and the team has demonstrated a careful and thoughtful approach exploring the data and preparing it for analysis. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting. -->
 
--   **Satisfactory (8 - 10 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling.
+<!-- -   **Strong: (11 - 13 points):** Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some revision of the work required before team is ready for modeling. -->
 
--   **Needs Improvement (7 or fewer points points):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling.
+<!-- -   **Satisfactory (8 - 10 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling. -->
 
-## Presentation {#presentation}
+<!-- -   **Needs Improvement (7 or fewer points points):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling. -->
 
-::: callout-important
-Presentations will take place in class during labs on **November 11**. Presentation order will be announced in advance.
-:::
+<!-- ## Presentation {#presentation} -->
 
-Your team will do an in-person presentation that summarizes and showcases the work you've done on the project thus far. Because the presentations will take place while you're still working on the project, it will also be an opportunity to receive feedback and suggestions as well as provide feedback to other teams. The presentation will focus on introducing the subject matter and research question, showcase key results from the exploratory data analysis, and discuss primary modeling strategies and/or results. The presentation should be supported by slides that serve as a brief visual addition to the presentation. The presentation and slides will be graded for content and clarity.
+<!-- ::: callout-important -->
+<!-- Presentations will take place in class during labs on **November 11**. Presentation order will be announced in advance. -->
+<!-- ::: -->
 
-You can create your slides with any software you like (e.g., Keynote, PowerPoint, Google Slides, etc.). You can also use Quarto to make your slides! While we won't be covering making slides with Quarto in the class, we would be happy to help you with it in office hours. It's no different than writing other documents with Quarto, so the learning curve will not be steep!
+<!-- Your team will do an in-person presentation that summarizes and showcases the work you've done on the project thus far. Because the presentations will take place while you're still working on the project, it will also be an opportunity to receive feedback and suggestions as well as provide feedback to other teams. The presentation will focus on introducing the subject matter and research question, showcase key results from the exploratory data analysis, and discuss primary modeling strategies and/or results. The presentation should be supported by slides that serve as a brief visual addition to the presentation. The presentation and slides will be graded for content and clarity. -->
 
-The presentation is expected to be between 5 to 8 minutes. It may [**not exceed 8 minutes**]{.underline}, due to the limited time during lab.
+<!-- You can create your slides with any software you like (e.g., Keynote, PowerPoint, Google Slides, etc.). You can also use Quarto to make your slides! While we won't be covering making slides with Quarto in the class, we would be happy to help you with it in office hours. It's no different than writing other documents with Quarto, so the learning curve will not be steep! -->
 
-**Every team member is expected to speak in the presentation.** Part of the grade will be whether every team member had a meaningful speaking role in the presentation.
+<!-- The presentation is expected to be between 5 to 8 minutes. It may [**not exceed 8 minutes**]{.underline}, due to the limited time during lab. -->
 
-### Slides
+<!-- **Every team member is expected to speak in the presentation.** Part of the grade will be whether every team member had a meaningful speaking role in the presentation. -->
 
-The slide deck should have no more than 6 content slides + 1 title slide to ensure you have enough time to discuss each slide. s Here is a <u>suggested</u> outline as you think through the slides; you do <u>not</u> have to use this exact format for the 6 slides.
+<!-- ### Slides -->
 
--   Title Slide
+<!-- The slide deck should have no more than 6 content slides + 1 title slide to ensure you have enough time to discuss each slide. s Here is a <u>suggested</u> outline as you think through the slides; you do <u>not</u> have to use this exact format for the 6 slides. -->
 
--   Slide 1: Introduce the subject, motivation, and research question
+<!-- -   Title Slide -->
 
--   Slide 2: Introduce the data set
+<!-- -   Slide 1: Introduce the subject, motivation, and research question -->
 
--   Slide 3 - 4: Highlights from the EDA (be sure to include EDA for the response variable!)
+<!-- -   Slide 2: Introduce the data set -->
 
--   Slide 5: Initial modeling strategies / results
+<!-- -   Slide 3 - 4: Highlights from the EDA (be sure to include EDA for the response variable!) -->
 
--   Slide 6: Next steps and any questions you'd like to get feedback on
+<!-- -   Slide 5: Initial modeling strategies / results -->
 
-### Submission
+<!-- -   Slide 6: Next steps and any questions you'd like to get feedback on -->
 
-You can submit the presentation slides in two ways:
+<!-- ### Submission -->
 
--   Put a PDF of the slides or Quarto slides in the `presentation` folder in your team's GitHub repo.
+<!-- You can submit the presentation slides in two ways: -->
 
--   Put the URL to your slides in the `README` of the `presentation` folder. If you share the URL, please make sure permissions are set so Prof. Tackett can view the slides.
+<!-- -   Put a PDF of the slides or Quarto slides in the `presentation` folder in your team's GitHub repo. -->
 
-::: callout-important
-Slides must be submitted by the start of your lab on November 11. We will use a classroom computer for the presentations.
-:::
+<!-- -   Put the URL to your slides in the `README` of the `presentation` folder. If you share the URL, please make sure permissions are set so Prof. Tackett can view the slides. -->
 
-### Grading
+<!-- ::: callout-important -->
+<!-- Slides must be submitted by the start of your lab on November 11. We will use a classroom computer for the presentations. -->
+<!-- ::: -->
 
-The presentation is worth points. It will be graded based on the following:
+<!-- ### Grading -->
 
--   **Content:** The team told a unified story that clearly introduced the subject matter, research question, and exploration of the data.
+<!-- The presentation is worth points. It will be graded based on the following: -->
 
--   **Slides:** The presentation slides were organized, included clear and informative visualizations, and were easily readable.
+<!-- -   **Content:** The team told a unified story that clearly introduced the subject matter, research question, and exploration of the data. -->
 
--   **Presentation:** The team's communication style was clear and professional. The team divided the time well and stayed within the 8 minute time limit, with each team member making a meaningful contribution to the presentation.
+<!-- -   **Slides:** The presentation slides were organized, included clear and informative visualizations, and were easily readable. -->
 
-80% of the presentation grade will be the average of the teaching team scores and 20% will be the average of the peer scores.
+<!-- -   **Presentation:** The team's communication style was clear and professional. The team divided the time well and stayed within the 8 minute time limit, with each team member making a meaningful contribution to the presentation. -->
 
-## Presentation comments {#presentation-comments}
+<!-- 80% of the presentation grade will be the average of the teaching team scores and 20% will be the average of the peer scores. -->
 
-::: callout-important
-Click here to see the teams you're scoring and a link to the feedback form.
+<!-- ## Presentation comments {#presentation-comments} -->
 
-This portion of the project is worth 2 points and will be assessed individually.
-:::
+<!-- ::: callout-important -->
+<!-- Click here to see the teams you're scoring and a link to the feedback form. -->
 
-You will provide feedback on two teams' presentations. The assigned teams and link to the feedback form will be available in advance of the presentations. Please provide all scores and comments by the end of the lab session. There will be a few minutes between each presentation to submit scores and comments.
+<!-- This portion of the project is worth 2 points and will be assessed individually. -->
+<!-- ::: -->
 
-The grade will be based on submitting the scores and comments for both of your assigned teams by the end of the presentation day, November 11.
+<!-- You will provide feedback on two teams' presentations. The assigned teams and link to the feedback form will be available in advance of the presentations. Please provide all scores and comments by the end of the lab session. There will be a few minutes between each presentation to submit scores and comments. -->
 
-## Analysis + peer review {#draft-report-peer-review}
+<!-- The grade will be based on submitting the scores and comments for both of your assigned teams by the end of the presentation day, November 11. -->
 
-The purpose of the draft and peer review is to give you an opportunity to get early feedback on your analysis. Therefore, the draft and peer review will focus primarily on the exploratory data analysis, modeling, and initial interpretations.
+<!-- ## Analysis + peer review {#draft-report-peer-review} -->
 
-### Draft report
+<!-- The purpose of the draft and peer review is to give you an opportunity to get early feedback on your analysis. Therefore, the draft and peer review will focus primarily on the exploratory data analysis, modeling, and initial interpretations. -->
 
-::: callout-important
-The draft report is due in your GitHub repo by December 2 at 10am.
-:::
+<!-- ### Draft report -->
 
-Write the draft in the `written-report.qmd` file in your project repo.
+<!-- ::: callout-important -->
+<!-- The draft report is due in your GitHub repo by December 2 at 10am. -->
+<!-- ::: -->
 
-Below is a brief description of the sections to focus on in the draft:
+<!-- Write the draft in the `written-report.qmd` file in your project repo. -->
 
-#### Introduction and data
+<!-- Below is a brief description of the sections to focus on in the draft: -->
 
-This section includes an introduction to the project motivation, data, and research question. Describe the data and definitions of key variables. It should also include some exploratory data analysis. All of the EDA won't fit in the body of the report, so focus on the EDA for the response variable and a few other interesting variables and relationships.
+<!-- #### Introduction and data -->
 
-#### Methodology
+<!-- This section includes an introduction to the project motivation, data, and research question. Describe the data and definitions of key variables. It should also include some exploratory data analysis. All of the EDA won't fit in the body of the report, so focus on the EDA for the response variable and a few other interesting variables and relationships. -->
 
-This section includes a brief description of your modeling process. Explain the reasoning for the type of model you're fitting, predictor variables considered for the model including any interactions. Additionally, show how you arrived at the final model by describing the model selection process, any variable transformations (if needed), and any other relevant considerations that were part of the model fitting process.
+<!-- #### Methodology -->
 
-#### Results
+<!-- This section includes a brief description of your modeling process. Explain the reasoning for the type of model you're fitting, predictor variables considered for the model including any interactions. Additionally, show how you arrived at the final model by describing the model selection process, any variable transformations (if needed), and any other relevant considerations that were part of the model fitting process. -->
 
-In this section, you will output the final model and include a brief discussion of the model assumptions, diagnostics, and any relevant model fit statistics.
+<!-- #### Results -->
 
-This section also includes initial interpretations and conclusions drawn from the model.
+<!-- In this section, you will output the final model and include a brief discussion of the model assumptions, diagnostics, and any relevant model fit statistics. -->
 
-#### Grading
+<!-- This section also includes initial interpretations and conclusions drawn from the model. -->
 
-The draft will be graded based on whether there is demonstration of a reasonable attempt at each of the sections described below in the written report file in the GitHub repo by the deadline.
+<!-- #### Grading -->
 
-### Peer review
+<!-- The draft will be graded based on whether there is demonstration of a reasonable attempt at each of the sections described below in the written report file in the GitHub repo by the deadline. -->
 
-::: callout-important
-Peer review comments are due in GitHub on December 3 at 11:59pm.
-:::
+<!-- ### Peer review -->
 
-Critically reviewing others' work is a crucial part of the scientific process, and STA 221 is no exception. Each lab team will be assigned two other teams' projects to review. Each team should push their draft to their GitHub repo by 10 am on the day their lab's draft is due. The lab that week will be dedicated to the peer review, so your team will have time to review and provide quality feedback to two other teams.
+<!-- ::: callout-important -->
+<!-- Peer review comments are due in GitHub on December 3 at 11:59pm. -->
+<!-- ::: -->
 
-During the peer review process, you will be provided read-only access to your partner teams' GitHub repos. Provide your review in the form of GitHub issues to your partner team's GitHub repo using the issue template provided in the repo.
+<!-- Critically reviewing others' work is a crucial part of the scientific process, and STA 221 is no exception. Each lab team will be assigned two other teams' projects to review. Each team should push their draft to their GitHub repo by 10 am on the day their lab's draft is due. The lab that week will be dedicated to the peer review, so your team will have time to review and provide quality feedback to two other teams. -->
 
-#### Steps for peer review
+<!-- During the peer review process, you will be provided read-only access to your partner teams' GitHub repos. Provide your review in the form of GitHub issues to your partner team's GitHub repo using the issue template provided in the repo. -->
 
-::: callout-important
-## Peer review assignments
+<!-- #### Steps for peer review -->
 
-[Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbrBSVVPbNZApOqfoakROssB4-K9I92L9wYWDClTH6Q5MA?e=iNelwG) to see the teams you're peer reviewing.You'll spend about 30 minutes reviewing each project.
-:::
+<!-- ::: callout-important -->
+<!-- ## Peer review assignments -->
 
--   When you get to lab, you should have access to the GitHub repos for the teams you're reviewing. In GitHub, search the repositories for `project`, and you should see the repos for the projects you're reviewing. You will be able to read the files in the repo and post issues, but you cannot push changes to the repo. You will have access to the repo until the deadline for the peer review.
+<!-- [Click here](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EbrBSVVPbNZApOqfoakROssB4-K9I92L9wYWDClTH6Q5MA?e=iNelwG) to see the teams you're peer reviewing.You'll spend about 30 minutes reviewing each project. -->
+<!-- ::: -->
 
--   You may choose to all work on both peer reviews or have some team members focus on a single peer review. Either way there will be one peer review grade assigned per team.
+<!-- -   When you get to lab, you should have access to the GitHub repos for the teams you're reviewing. In GitHub, search the repositories for `project`, and you should see the repos for the projects you're reviewing. You will be able to read the files in the repo and post issues, but you cannot push changes to the repo. You will have access to the repo until the deadline for the peer review. -->
 
--   For each team you're reviewing:
+<!-- -   You may choose to all work on both peer reviews or have some team members focus on a single peer review. Either way there will be one peer review grade assigned per team. -->
 
-    -   Open that team's repo, read the project draft, and browse the rest of the repo.
+<!-- -   For each team you're reviewing: -->
 
-    -   Go to the **Issues** tab in that repo, click on **New issue**, and click on **Get started** for the Peer Review issue. Write your responses to the prompts in the issue. You will answer the the following questions:
+<!--     -   Open that team's repo, read the project draft, and browse the rest of the repo. -->
 
-        -   Describe the goal of the project.
+<!--     -   Go to the **Issues** tab in that repo, click on **New issue**, and click on **Get started** for the Peer Review issue. Write your responses to the prompts in the issue. You will answer the the following questions: -->
 
-        -   Describe the data set used in the project. What are the observations in the data? What is the source of the data? How were the data originally collected?
+<!--         -   Describe the goal of the project. -->
 
-        -   Consider the exploratory data analysis (EDA). Describe one aspect of the EDA that is effective in helping you understand the data. Provide constructive feedback on how the team might improve the EDA.
+<!--         -   Describe the data set used in the project. What are the observations in the data? What is the source of the data? How were the data originally collected? -->
 
-        -   Describe the statistical methods, analysis approach, and discussion of model assumptions, diagnostics, model fit.
+<!--         -   Consider the exploratory data analysis (EDA). Describe one aspect of the EDA that is effective in helping you understand the data. Provide constructive feedback on how the team might improve the EDA. -->
 
-        -   Provide constructive feedback on how the team might improve their analysis. Make sure your feedback includes at least one comment on the statistical modeling aspect of the project, but also feel free to comment on aspects beyond the modeling.
+<!--         -   Describe the statistical methods, analysis approach, and discussion of model assumptions, diagnostics, model fit. -->
 
-        -   Provide constructive feedback on the interpretations and initial conclusion. What is most effective in the presentation of the results? What additional detail can the team provide to make the results and conclusions easier for the reader to understand?
+<!--         -   Provide constructive feedback on how the team might improve their analysis. Make sure your feedback includes at least one comment on the statistical modeling aspect of the project, but also feel free to comment on aspects beyond the modeling. -->
 
-        -   What aspect of this project are you most interested in and think would be interesting to highlight in the written report?
+<!--         -   Provide constructive feedback on the interpretations and initial conclusion. What is most effective in the presentation of the results? What additional detail can the team provide to make the results and conclusions easier for the reader to understand? -->
 
-        -   Provide constructive feedback on any issues with file and/or code organization.
+<!--         -   What aspect of this project are you most interested in and think would be interesting to highlight in the written report? -->
 
-        -   (Optional) Any further comments or feedback?
+<!--         -   Provide constructive feedback on any issues with file and/or code organization. -->
 
-#### Grading
+<!--         -   (Optional) Any further comments or feedback? -->
 
-The peer review will be graded on the extent to which each comprehensively and constructively addresses the components on the peer review form. There will be one peer review grade per team.
+<!-- #### Grading -->
 
-## Round 1 submission (optional) {#round1-submission}
+<!-- The peer review will be graded on the extent to which each comprehensively and constructively addresses the components on the peer review form. There will be one peer review grade per team. -->
 
-::: callout-important
-The Round 1 submission is due on Sunday, December 8 at 11:59pm. Reports submitted after this date will not receive preliminary feedback.
-:::
+<!-- ## Round 1 submission (optional) {#round1-submission} -->
 
-The Round 1 submission is an opportunity to receive detailed feedback on your analysis and [Written report](#written-report) before the final submission. Therefore, to make the feedback most useful, **you must submit a complete written report to receive feedback.** You will also be notified of the grade you would receive at that point. You will have the option to keep the grade (and thus you don't need to turn in an updated report) or resubmit the written report by the final submission deadline to receive a new grade.
+<!-- ::: callout-important -->
+<!-- The Round 1 submission is due on Sunday, December 8 at 11:59pm. Reports submitted after this date will not receive preliminary feedback. -->
+<!-- ::: -->
 
-#### To submit the Round 1 submission:
+<!-- The Round 1 submission is an opportunity to receive detailed feedback on your analysis and [Written report](#written-report) before the final submission. Therefore, to make the feedback most useful, **you must submit a complete written report to receive feedback.** You will also be notified of the grade you would receive at that point. You will have the option to keep the grade (and thus you don't need to turn in an updated report) or resubmit the written report by the final submission deadline to receive a new grade. -->
 
-1.  Push the updated `written-report.qmd` and `written-report.pdf` to your GitHub repo.
+<!-- #### To submit the Round 1 submission: -->
 
-2.  Open an issue with the title "Round 1 Submission". You can use the template issue in the GitHub repo. Make sure I am tagged in the issue (`@matackett`), so I receive an email notification of your Round 1 submission. See [Creating an issue from a repository](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-repository) for instructions on opening an issue. Please ask a member of the teaching team for assistance if you need help opening the issue.
+<!-- 1.  Push the updated `written-report.qmd` and `written-report.pdf` to your GitHub repo. -->
 
-Note that this is optional, so there is <u>no</u> grade penalty for not turning in a Round 1 submission. Due to time constraints at the end of the semester, only high-level feedback will be given for the reports submitted at the final written report deadline on December 12.
+<!-- 2.  Open an issue with the title "Round 1 Submission". You can use the template issue in the GitHub repo. Make sure I am tagged in the issue (`@matackett`), so I receive an email notification of your Round 1 submission. See [Creating an issue from a repository](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-repository) for instructions on opening an issue. Please ask a member of the teaching team for assistance if you need help opening the issue. -->
 
-## Written report {#written-report}
+<!-- Note that this is optional, so there is <u>no</u> grade penalty for not turning in a Round 1 submission. Due to time constraints at the end of the semester, only high-level feedback will be given for the reports submitted at the final written report deadline on December 12. -->
 
-::: callout-important
-The written report is due on Thursday, December 12 at **9pm**.\
-\
-Your written report must be completed in the `written-report.qmd` file and must be reproducible. All team members should contribute to the GitHub repository, with regular meaningful commits.
+<!-- ## Written report {#written-report} -->
 
-Before you finalize your write up, make sure the code chunks are not visible and all messages and warnings are suppressed.
-:::
+<!-- ::: callout-important -->
+<!-- The written report is due on Thursday, December 12 at **9pm**.\ -->
+<!-- \ -->
+<!-- Your written report must be completed in the `written-report.qmd` file and must be reproducible. All team members should contribute to the GitHub repository, with regular meaningful commits. -->
 
--   You will submit the PDF of your final report on GitHub.
+<!-- Before you finalize your write up, make sure the code chunks are not visible and all messages and warnings are suppressed. -->
+<!-- ::: -->
 
--   The PDF you submit must match the .qmd in your GitHub repository *exactly*. The mandatory components of the report are below. You are free to add additional sections as necessary. **The report, including tables and visualizations, must be no more than 10 pages long.** There is no minimum page requirement; however, you should comprehensively address all of the analysis and report.
+<!-- -   You will submit the PDF of your final report on GitHub. -->
 
--   Be selective in what you include in your final write-up. The goal is to write a cohesive narrative that demonstrates a thorough and comprehensive analysis rather than explain every step of the analysis.
+<!-- -   The PDF you submit must match the .qmd in your GitHub repository *exactly*. The mandatory components of the report are below. You are free to add additional sections as necessary. **The report, including tables and visualizations, must be no more than 10 pages long.** There is no minimum page requirement; however, you should comprehensively address all of the analysis and report. -->
 
--   You are welcome to include an appendix with additional work at the end of the written report document; however, grading will overwhelmingly be based on the content in the main body of the report. You should assume the reader will not see the material in the appendix unless prompted to view it in the main body of the report. The appendix should be neatly formatted and easy for the reader to navigate. It is not included in the 10-page limit.
+<!-- -   Be selective in what you include in your final write-up. The goal is to write a cohesive narrative that demonstrates a thorough and comprehensive analysis rather than explain every step of the analysis. -->
 
-### Introduction and data
+<!-- -   You are welcome to include an appendix with additional work at the end of the written report document; however, grading will overwhelmingly be based on the content in the main body of the report. You should assume the reader will not see the material in the appendix unless prompted to view it in the main body of the report. The appendix should be neatly formatted and easy for the reader to navigate. It is not included in the 10-page limit. -->
 
-This section includes an introduction to the project motivation, data, and research question. Describe the data and definitions of key variables. It should also include some exploratory data analysis. All of the EDA won't fit in the paper, so focus on the EDA for the response variable and a few other interesting variables and relationships.
+<!-- ### Introduction and data -->
 
-<!-- #### Grading criteria -->
+<!-- This section includes an introduction to the project motivation, data, and research question. Describe the data and definitions of key variables. It should also include some exploratory data analysis. All of the EDA won't fit in the paper, so focus on the EDA for the response variable and a few other interesting variables and relationships. -->
 
-<!-- The research question and motivation are clearly stated in the introduction, including citations for the data source and any external research. The data are clearly described, including a description about how the data were originally collected and a concise definition of the variables relevant to understanding the report. The data cleaning process is clearly described, including any decisions made in the process (e.g., creating new variables, removing observations, etc.) The explanatory data analysis helps the reader better understand the observations in the data along with interesting and relevant relationships between the variables. It incorporates appropriate visualizations and summary statistics. -->
+<!-- <!-- #### Grading criteria --> -->
 
-### Methodology
+<!-- <!-- The research question and motivation are clearly stated in the introduction, including citations for the data source and any external research. The data are clearly described, including a description about how the data were originally collected and a concise definition of the variables relevant to understanding the report. The data cleaning process is clearly described, including any decisions made in the process (e.g., creating new variables, removing observations, etc.) The explanatory data analysis helps the reader better understand the observations in the data along with interesting and relevant relationships between the variables. It incorporates appropriate visualizations and summary statistics. --> -->
 
-This section includes a brief description of your modeling process. Explain the reasoning for the type of model you're fitting, predictor variables considered for the model including any interactions. Additionally, show how you arrived at the final model by describing the model selection process, interactions considered, variable transformations (if needed), assessment of conditions and diagnostics, and any other relevant considerations that were part of the model fitting process.
+<!-- ### Methodology -->
 
-<!-- #### Grading criteria -->
+<!-- This section includes a brief description of your modeling process. Explain the reasoning for the type of model you're fitting, predictor variables considered for the model including any interactions. Additionally, show how you arrived at the final model by describing the model selection process, interactions considered, variable transformations (if needed), assessment of conditions and diagnostics, and any other relevant considerations that were part of the model fitting process. -->
 
-<!-- The analysis steps are appropriate for the data and research question. The group used a thorough and careful approach to select the variables in the final model; the approach is clearly described in the report. The model selection process took into account potential interaction effects and addressed any violations in model conditions. If violations of model conditions are still present, there was a reasonable attempt to address the violations based on the course content. -->
+<!-- <!-- #### Grading criteria --> -->
 
-### Results
+<!-- <!-- The analysis steps are appropriate for the data and research question. The group used a thorough and careful approach to select the variables in the final model; the approach is clearly described in the report. The model selection process took into account potential interaction effects and addressed any violations in model conditions. If violations of model conditions are still present, there was a reasonable attempt to address the violations based on the course content. --> -->
 
-<!-- This is where you will output the final model with any relevant model fit statistics, conditions, and diagnostics. -->
+<!-- ### Results -->
 
-Describe the key results from the model. The goal is not to interpret every single variable in the model but rather to show that you are proficient in using the model output to address the research questions, using the interpretations to support your conclusions. Focus on the variables that help you answer the research question and that provide relevant context for the reader.
+<!-- <!-- This is where you will output the final model with any relevant model fit statistics, conditions, and diagnostics. --> -->
 
-<!-- #### Grading criteria -->
+<!-- Describe the key results from the model. The goal is not to interpret every single variable in the model but rather to show that you are proficient in using the model output to address the research questions, using the interpretations to support your conclusions. Focus on the variables that help you answer the research question and that provide relevant context for the reader. -->
 
-<!-- The model fit is clearly assessed, and interesting findings from the model are clearly described. The model conditions and diagnostics are thoroughly and accurately assessed for their model. Interpretations of model coefficients are used to support the key findings and conclusions, rather than merely listing the interpretation of every model coefficient. If the primary modeling objective is prediction, the model's predictive power is thoroughly assessed. -->
+<!-- <!-- #### Grading criteria --> -->
 
-### Discussion + Conclusion
+<!-- <!-- The model fit is clearly assessed, and interesting findings from the model are clearly described. The model conditions and diagnostics are thoroughly and accurately assessed for their model. Interpretations of model coefficients are used to support the key findings and conclusions, rather than merely listing the interpretation of every model coefficient. If the primary modeling objective is prediction, the model's predictive power is thoroughly assessed. --> -->
 
-In this section you'll include a summary of what you have learned about your research question along with statistical arguments supporting your conclusions. In addition, discuss the limitations of your analysis and provide suggestions on ways the analysis could be improved. Any potential issues pertaining to the reliability and validity of your data and appropriateness of the statistical analysis should also be discussed here. Lastly, this section will include ideas for future work.
+<!-- ### Discussion + Conclusion -->
 
-<!-- #### Grading criteria -->
+<!-- In this section you'll include a summary of what you have learned about your research question along with statistical arguments supporting your conclusions. In addition, discuss the limitations of your analysis and provide suggestions on ways the analysis could be improved. Any potential issues pertaining to the reliability and validity of your data and appropriateness of the statistical analysis should also be discussed here. Lastly, this section will include ideas for future work. -->
 
-<!-- Overall conclusions from analysis are clearly described, and the model results are put into the larger context of the subject matter and original research question. There is thoughtful consideration of potential limitations of the data and/or analysis, and ideas for future work are clearly described. -->
+<!-- <!-- #### Grading criteria --> -->
 
-### Organization + formatting
+<!-- <!-- Overall conclusions from analysis are clearly described, and the model results are put into the larger context of the subject matter and original research question. There is thoughtful consideration of potential limitations of the data and/or analysis, and ideas for future work are clearly described. --> -->
 
-This is an assessment of the overall presentation and formatting of the written report.
+<!-- ### Organization + formatting -->
 
-<!-- #### Grading criteria -->
+<!-- This is an assessment of the overall presentation and formatting of the written report. -->
 
-<!-- The report neatly written and organized with clear section headers and appropriately sized figures with informative labels. Numerical results are displayed with a reasonable number of digits, and all visualizations are neatly formatted and labeled. All citations and links are properly formatted. If there is an appendix, it is reasonably organized and easy for the reader to find relevant information. All code, warnings, and messages are suppressed. The main body of the written report (not including the appendix) is no longer than 10 pages. -->
+<!-- <!-- #### Grading criteria --> -->
 
-## Reproducibility + organization {#reproducibility-organization}
+<!-- <!-- The report neatly written and organized with clear section headers and appropriately sized figures with informative labels. Numerical results are displayed with a reasonable number of digits, and all visualizations are neatly formatted and labeled. All citations and links are properly formatted. If there is an appendix, it is reasonably organized and easy for the reader to find relevant information. All code, warnings, and messages are suppressed. The main body of the written report (not including the appendix) is no longer than 10 pages. --> -->
 
-::: callout-important
-The repo should be neatly organized by **Thursday, December 12 at 9pm.**
-:::
+<!-- ## Reproducibility + organization {#reproducibility-organization} -->
 
-All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.
+<!-- ::: callout-important -->
+<!-- The repo should be neatly organized by **Thursday, December 12 at 9pm.** -->
+<!-- ::: -->
 
-The GitHub repo should have the following structure:
+<!-- All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized. -->
 
--   `README`: Short project description and data dictionary
+<!-- The GitHub repo should have the following structure: -->
 
--   `written-report.qmd` & `written-report.pdf`: Final written report
+<!-- -   `README`: Short project description and data dictionary -->
 
--   `proposal.qmd` & `proposal.pdf`: Project proposal
+<!-- -   `written-report.qmd` & `written-report.pdf`: Final written report -->
 
--   `research-questions.qmd` & `research-questions.pdf`: Proposed research questions
+<!-- -   `proposal.qmd` & `proposal.pdf`: Project proposal -->
 
--   `/data`: Folder that contains the data set for the final project.
+<!-- -   `research-questions.qmd` & `research-questions.pdf`: Proposed research questions -->
 
--   `project.Rproj`: File specifying the RStudio project
+<!-- -   `/data`: Folder that contains the data set for the final project. -->
 
--   `/presentation`: Folder with the presentation slides or link to slides.
+<!-- -   `project.Rproj`: File specifying the RStudio project -->
 
--   `.gitignore`: File that lists all files that are in the local RStudio project but not the GitHub repo
+<!-- -   `/presentation`: Folder with the presentation slides or link to slides. -->
 
--   `/.github`: Folder for peer review issue template
+<!-- -   `.gitignore`: File that lists all files that are in the local RStudio project but not the GitHub repo -->
 
--   Any other files should be neatly organized into clearly labeled folders.
+<!-- -   `/.github`: Folder for peer review issue template -->
 
-Update the README of the project repo with your project title and a few sentences (\~ 2 -5) describing your final project.
+<!-- -   Any other files should be neatly organized into clearly labeled folders. -->
 
-Points for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, all text in the `README` should be easily readable.
+<!-- Update the README of the project repo with your project title and a few sentences (\~ 2 -5) describing your final project. -->
 
-## Peer teamwork evaluation
+<!-- Points for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, all text in the `README` should be easily readable. -->
 
-There will be an opportunity to provide feedback to Professor Tackett about each team member's contribution to the project. If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation. If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly.
+<!-- ## Peer teamwork evaluation -->
 
-## Overall grading
+<!-- There will be an opportunity to provide feedback to Professor Tackett about each team member's contribution to the project. If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation. If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly. -->
 
-The grade breakdown is as follows:
+<!-- ## Overall grading -->
 
-| Total                          | 100 pts |
-|--------------------------------|---------|
-| Research question              | 3 pts   |
-| Project proposal               | 10 pts  |
-| Exploratory data analysis      | 15 pts  |
-| Presentation                   | 10 pts  |
-| Presentation comments          | 2 pts   |
-| Draft report + peer review     | 15 pts  |
-| Written report                 | 40 pts  |
-| Reproducibility + organization | 5 pts   |
+<!-- The grade breakdown is as follows: -->
 
-### Grading summary
+<!-- | Total                          | 100 pts | -->
+<!-- |--------------------------------|---------| -->
+<!-- | Research question              | 3 pts   | -->
+<!-- | Project proposal               | 10 pts  | -->
+<!-- | Exploratory data analysis      | 15 pts  | -->
+<!-- | Presentation                   | 10 pts  | -->
+<!-- | Presentation comments          | 2 pts   | -->
+<!-- | Draft report + peer review     | 15 pts  | -->
+<!-- | Written report                 | 40 pts  | -->
+<!-- | Reproducibility + organization | 5 pts   | -->
 
-Grading of the project will take into account the following:
+<!-- ### Grading summary -->
 
--   Content - What is the quality of research and/or policy question and relevancy of data to those questions?
+<!-- Grading of the project will take into account the following: -->
 
--   Correctness - Are statistical procedures carried out and explained correctly?
+<!-- -   Content - What is the quality of research and/or policy question and relevancy of data to those questions? -->
 
--   Writing and Presentation - What is the quality of the statistical presentation, writing, and explanations?
+<!-- -   Correctness - Are statistical procedures carried out and explained correctly? -->
 
--   Creativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?
+<!-- -   Writing and Presentation - What is the quality of the statistical presentation, writing, and explanations? -->
 
-A general breakdown of scoring is as follows:
+<!-- -   Creativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project? -->
 
--   *90%-100%*: Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.
+<!-- A general breakdown of scoring is as follows: -->
 
--   *80%-89%*: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.
+<!-- -   *90%-100%*: Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others. -->
 
--   *70%-79%*: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.
+<!-- -   *80%-89%*: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others. -->
 
--   *60%-69%*: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.
+<!-- -   *70%-79%*: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear. -->
 
--   *Below 60%*: Student is not making a sufficient effort.
+<!-- -   *60%-69%*: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear. -->
 
-## Late work policy
+<!-- -   *Below 60%*: Student is not making a sufficient effort. -->
 
-There is no late work accepted on the draft report or presentation. Other components of the project may be accepted up to 48 hours late. A 10% late deduction will apply for each 24-hour period late.
+<!-- ## Late work policy -->
 
-**Be sure to turn in your work early to avoid any technological mishaps.**
+<!-- There is no late work accepted on the draft report or presentation. Other components of the project may be accepted up to 48 hours late. A 10% late deduction will apply for each 24-hour period late. -->
+
+<!-- **Be sure to turn in your work early to avoid any technological mishaps.** -->

@@ -1,307 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sta221-fa24.netlify.app/project-old.html</loc>
-    <lastmod>2024-08-13T20:16:45.097Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/project-old.html</loc>
+    <lastmod>2025-01-02T18:20:00.004Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/computing-troubleshooting.html</loc>
-    <lastmod>2024-08-02T13:51:04.338Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/computing-troubleshooting.html</loc>
+    <lastmod>2025-01-02T18:19:59.987Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/syllabus.html</loc>
-    <lastmod>2024-08-30T16:54:10.151Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/syllabus.html</loc>
+    <lastmod>2025-01-02T18:20:00.078Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/links.html</loc>
-    <lastmod>2024-08-19T20:03:52.285Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/links.html</loc>
+    <lastmod>2025-01-02T18:20:00.002Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/10-prop-of-estimators.html</loc>
-    <lastmod>2024-10-01T03:19:13.402Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/project-peer-review-lab.html</loc>
+    <lastmod>2025-01-02T18:20:00.077Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/21-logistic-inference.html</loc>
-    <lastmod>2024-11-14T16:44:58.517Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/lab-06.html</loc>
+    <lastmod>2025-01-02T18:20:00.077Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/05-slr-matrix-contd.html</loc>
-    <lastmod>2024-10-03T10:31:25.825Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/lab-04.html</loc>
+    <lastmod>2025-01-02T18:20:00.076Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/06-mlr-pt2.html</loc>
-    <lastmod>2024-09-15T19:15:41.288Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/lab-00.html</loc>
+    <lastmod>2025-01-02T18:20:00.075Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/19-logistic-regression.html</loc>
-    <lastmod>2024-11-11T15:12:14.152Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/lab-02.html</loc>
+    <lastmod>2025-01-02T18:20:00.076Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/project-peer-review-lab.html</loc>
-    <lastmod>2024-12-02T01:06:53.764Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/computing-access.html</loc>
+    <lastmod>2025-01-02T18:19:59.987Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/04-slr-matrix.html</loc>
-    <lastmod>2024-09-10T02:33:04.680Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/support.html</loc>
+    <lastmod>2025-01-02T18:20:00.077Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/13-mle.html</loc>
-    <lastmod>2024-10-17T01:22:06.803Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-09-exam-02-review.html</loc>
+    <lastmod>2025-01-02T18:19:59.986Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/07-mlr-pt3.html</loc>
-    <lastmod>2024-09-18T14:04:56.329Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-05-multicollinearity.html</loc>
+    <lastmod>2025-01-02T18:19:59.984Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/14-model-diagnostics.html</loc>
-    <lastmod>2024-10-17T15:27:42.177Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-07-newton-raphson.html</loc>
+    <lastmod>2025-01-02T18:19:59.985Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/08-inference.html</loc>
-    <lastmod>2024-09-24T00:50:42.368Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-03-inference.html</loc>
+    <lastmod>2025-01-02T18:19:59.984Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/lab-06.html</loc>
-    <lastmod>2024-11-18T14:45:29.591Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-aug29.html</loc>
+    <lastmod>2025-01-02T18:20:00.003Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/lab-04.html</loc>
-    <lastmod>2024-10-18T18:15:59.779Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-02.html</loc>
+    <lastmod>2025-01-02T18:35:03.235Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/23-logistic-regression-review.html</loc>
-    <lastmod>2024-11-21T16:22:22.994Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-01.html</loc>
+    <lastmod>2025-01-02T18:34:50.355Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/lab-01.html</loc>
-    <lastmod>2024-09-09T13:22:30.388Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/overview.html</loc>
+    <lastmod>2025-01-02T18:20:00.003Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/20-logistic-prediction.html</loc>
-    <lastmod>2024-11-13T20:29:50.661Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-07.html</loc>
+    <lastmod>2025-01-02T18:34:30.968Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/slides/lab-03.html</loc>
-    <lastmod>2024-09-22T20:43:38.402Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-04.html</loc>
+    <lastmod>2025-01-02T18:40:41.553Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/index.html</loc>
-    <lastmod>2024-09-05T01:50:26.263Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-01.html</loc>
+    <lastmod>2025-01-02T18:40:41.360Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/computing-r-resources.html</loc>
-    <lastmod>2024-09-23T15:09:22.127Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-02.html</loc>
+    <lastmod>2025-01-02T18:40:41.431Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/ae/ae-02-mlr.html</loc>
-    <lastmod>2024-09-19T17:34:16.039Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-03.html</loc>
+    <lastmod>2025-01-02T18:40:41.490Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/ae/ae-01-slr.html</loc>
-    <lastmod>2024-09-03T13:50:46.178Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-00.html</loc>
+    <lastmod>2025-01-02T18:20:00.000Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/ae/ae-06-prob-odds.html</loc>
-    <lastmod>2024-11-04T01:26:12.244Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-05.html</loc>
+    <lastmod>2025-01-02T18:40:41.614Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/ae/ae-04-exam-01-review.html</loc>
-    <lastmod>2024-10-05T13:51:22.705Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-06.html</loc>
+    <lastmod>2025-01-02T18:40:41.679Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/ae/ae-08-logistic-review.html</loc>
-    <lastmod>2024-11-21T16:18:08.393Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-04.html</loc>
+    <lastmod>2025-01-02T18:35:32.625Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/prepare/prepare-nov5.html</loc>
-    <lastmod>2024-11-04T19:10:08.519Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-03.html</loc>
+    <lastmod>2025-01-02T18:35:18.272Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/prepare/prepare-sep5.html</loc>
-    <lastmod>2024-09-03T14:43:42.920Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/hw/stats-experience.html</loc>
+    <lastmod>2025-01-02T18:35:41.701Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/prepare/prepare-sep12.html</loc>
-    <lastmod>2024-09-10T15:24:38.863Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-08-logistic-review.html</loc>
+    <lastmod>2025-01-02T18:19:59.985Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/prepare/prepare-sep10.html</loc>
-    <lastmod>2024-09-05T01:42:43.122Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-04-exam-01-review.html</loc>
+    <lastmod>2025-01-02T18:19:59.984Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/hw/hw-02.html</loc>
-    <lastmod>2024-10-23T20:10:18.042Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-06-prob-odds.html</loc>
+    <lastmod>2025-01-02T18:19:59.985Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/hw/hw-01.html</loc>
-    <lastmod>2024-09-17T03:40:20.030Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-01-slr.html</loc>
+    <lastmod>2025-01-02T18:19:59.984Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/overview.html</loc>
-    <lastmod>2024-08-30T16:54:40.778Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-02-mlr.html</loc>
+    <lastmod>2025-01-02T18:19:59.984Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-05.html</loc>
-    <lastmod>2024-11-17T19:59:46.186Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/computing-r-resources.html</loc>
+    <lastmod>2025-01-02T18:19:59.987Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-00.html</loc>
-    <lastmod>2024-09-11T00:14:20.563Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/index.html</loc>
+    <lastmod>2025-01-02T18:21:39.519Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-03.html</loc>
-    <lastmod>2024-09-23T01:11:59.120Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/lab-03.html</loc>
+    <lastmod>2025-01-02T18:20:00.076Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-02.html</loc>
-    <lastmod>2024-09-18T01:00:06.634Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/02-slr.html</loc>
+    <lastmod>2025-01-02T18:20:00.008Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-01.html</loc>
-    <lastmod>2024-09-07T02:24:48.697Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/lab-05.html</loc>
+    <lastmod>2025-01-02T18:20:00.076Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-04.html</loc>
-    <lastmod>2024-11-03T22:06:53.655Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/01-welcome.html</loc>
+    <lastmod>2025-01-02T18:20:00.008Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/labs/lab-06.html</loc>
-    <lastmod>2024-11-18T14:48:37.043Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/math-rules.html</loc>
+    <lastmod>2025-01-02T18:20:00.002Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/hw/hw-04.html</loc>
-    <lastmod>2024-11-15T19:56:04.096Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/project-tips.html</loc>
+    <lastmod>2025-01-02T18:20:00.004Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/hw/hw-03.html</loc>
-    <lastmod>2024-10-28T18:00:09.881Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/project.html</loc>
+    <lastmod>2025-01-02T18:29:55.613Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-fa24.netlify.app/hw/stats-experience.html</loc>
-    <lastmod>2024-09-19T18:05:00.034Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/prepare/prepare-sep3.html</loc>
-    <lastmod>2024-08-29T15:15:50.725Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/prepare/prepare-aug29.html</loc>
-    <lastmod>2024-08-26T14:25:42.955Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/prepare/prepare-nov12.html</loc>
-    <lastmod>2024-11-12T02:34:14.021Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/prepare/prepare-sep19.html</loc>
-    <lastmod>2024-09-17T15:10:32.247Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/ae/ae-03-inference.html</loc>
-    <lastmod>2024-09-19T17:34:19.943Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/ae/ae-07-newton-raphson.html</loc>
-    <lastmod>2024-11-20T14:26:10.155Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/ae/ae-05-multicollinearity.html</loc>
-    <lastmod>2024-10-22T15:24:15.887Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/ae/ae-09-exam-02-review.html</loc>
-    <lastmod>2024-12-03T11:59:19.151Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/support.html</loc>
-    <lastmod>2024-08-20T15:51:39.996Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/computing-access.html</loc>
-    <lastmod>2024-08-25T18:08:05.411Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/lab-02.html</loc>
-    <lastmod>2024-09-15T19:15:41.279Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/04-slr-model-assessment-contd.html</loc>
-    <lastmod>2024-09-05T13:41:48.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/24-exam-02-review.html</loc>
-    <lastmod>2024-12-03T16:36:35.505Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/lab-00.html</loc>
-    <lastmod>2024-08-21T17:06:43.364Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/02-slr.html</loc>
-    <lastmod>2024-08-29T15:14:16.171Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/lab-05.html</loc>
-    <lastmod>2024-11-04T01:37:10.550Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/01-welcome.html</loc>
-    <lastmod>2024-08-27T15:10:05.476Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/09-inference-pt2.html</loc>
-    <lastmod>2024-09-24T15:27:04.041Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/22-logistic-conditions-estimation.html</loc>
-    <lastmod>2024-11-20T14:23:07.362Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/15-multicollinearity.html</loc>
-    <lastmod>2024-10-24T03:45:21.028Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/16-variable-transformations.html</loc>
-    <lastmod>2024-11-24T19:30:15.710Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/12-exam-01-review.html</loc>
-    <lastmod>2024-10-03T15:19:11.161Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/03-slr-model-assessment.html</loc>
-    <lastmod>2024-09-03T14:43:37.219Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/05-mlr.html</loc>
-    <lastmod>2024-09-11T18:40:26.589Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/11-prop-of-estimators-pt2.html</loc>
-    <lastmod>2024-10-02T20:20:43.826Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/17-compare-models.html</loc>
-    <lastmod>2024-11-24T19:55:36.893Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/slides/18-prob-odds.html</loc>
-    <lastmod>2024-11-11T15:13:01.960Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/math-rules.html</loc>
-    <lastmod>2024-11-24T20:24:11.771Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/project-tips.html</loc>
-    <lastmod>2024-09-30T18:10:16.322Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/project.html</loc>
-    <lastmod>2024-12-12T14:21:46.275Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-fa24.netlify.app/exam-02-practice.html</loc>
-    <lastmod>2024-11-25T01:50:26.525Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/exam-02-practice.html</loc>
+    <lastmod>2025-01-02T18:19:59.987Z</lastmod>
   </url>
 </urlset>

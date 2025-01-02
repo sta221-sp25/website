@@ -1,6 +1,0 @@
----
-title: November 12 lecture
----
-
-\
-📖 [Classification](https://developers.google.com/machine-learning/crash-course/classification) module in Google [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/linear-regression)

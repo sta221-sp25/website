@@ -1,5 +1,5 @@
 ---
-title: "Lab 05"
+title: "Lab 07"
 execute:
   freeze: auto
   echo: true
@@ -9,5 +9,5 @@ execute:
 format: html
 bibliography: references.bib
 ---
-To be posted.
 
+To be posted. 
