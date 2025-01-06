@@ -1,7 +1,7 @@
 ---
 title: "Welcome to STA 221 labs!"
-author: "August 26, 2024"
-footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+author: "January 10, 2025"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
   revealjs:
@@ -58,6 +58,8 @@ countdown::countdown(minutes  = 3)
 
 The rest of the today's lab is focused on setting up the computing for the course and completing the class survey. Click the link below for the Lab 00 instructions. The instructions are available on the course website.
 
+Your TA will demonstrate the steps to set up computing and interact with RStudio and GitHub.
+
 <br>
 
-🔗 [sta221-fa24.netlify.app/labs/lab-00.html](https://sta221-fa24.netlify.app/labs/lab-00.html)
+🔗 [sta221-sp25.netlify.app/labs/lab-00.html](https://sta221-sp25.netlify.app/labs/lab-00.html)

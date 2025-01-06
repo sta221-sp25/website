@@ -1,5 +1,5 @@
 ---
-title: "Lab 00: Welcome + Getting Started"
+title: "Lab 00: Getting Started"
 execute:
   freeze: auto
   echo: true
@@ -14,9 +14,9 @@ Please complete all today's lab tasks before leaving lab today.
 
 # Introduction
 
-The goal of today's lab is to briefly introduce you to the computing tools we'll use in the course, set up your computing access, and complete the STA 221 student survey. We will talk more about these computing tools in lecture.
+The goal of today's lab is to briefly introduce you to the computing tools we'll use in the course, set up your computing access, and complete the STA 221 student survey. We will talk more about these computing tools in lecture and upcoming labs.
 
-# Computing
+# Computing setup
 
 ## RStudio
 
@@ -28,7 +28,7 @@ R is the name of the programming language itself and RStudio is a convenient int
 
 -   Go to <https://cmgr.oit.duke.edu/containers>. You will log in using your NetID credentials.
 
--   Click "**Reserve STA 210**" to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.
+-   Click "**Reserve STA 221**" to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.
 
 You only need to reserve a container once per semester.
 
@@ -36,7 +36,7 @@ You only need to reserve a container once per semester.
 
 -   Go to <https://cmgr.oit.duke.edu/containers> and log in with your Duke NetID and Password.
 
--   Click `STA210` to log into the Docker container. You should now see the RStudio environment.
+-   Click `STA221` to log into the Docker container. You should now see the RStudio environment.
 
 ## Git and GitHub
 
@@ -64,13 +64,13 @@ Now that you have RStudio and a GitHub account, we will configure git so that RS
 
 ### Set up your SSH Key
 
-You will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.
+You will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.
 
 ::: callout-note
 You only need to do this authentication process one time on a single system.
 :::
 
--   **Step 0:** Open your `STA 210` RStudio container.
+-   **Step 0:** Open your `STA 221` RStudio container.
 -   **Step 1**: Type `credentials::ssh_setup_github()` into the **console** on the bottom left of the RStudio environment.
 -   **Step 2**: R will ask "No SSH key found. Generate one now?" Click 1 for yes.
 -   **Step 3**: You will generate a key. It will begin with "ssh-rsa...." R will then ask "Would you like to open a browser now?" Click 1 for yes.
@@ -100,14 +100,72 @@ usethis::use_git_config(
 
 It may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week.
 
+# Update document and push changes to GitHub
+
+Complete the short exercise to make sure RStudio and GitHub are correctly configured and you are able to send work between the two platforms. You are encouraged to follow along as your TA demonstrates the steps.
+
+## Getting started
+
+1.  Click here to create your individual `lab-00` repo: <https://classroom.github.com/a/HJQpdTm_>
+
+2.  Click to open your `lab-00` repo.
+
+3.  Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you’ll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
+
+4.  In RStudio, go to *File* → *New Project* → *Version Control* → *Git*.
+
+5.  Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+
+6.  Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+7.  Click `lab-00.qmd` to open the template Quarto file. This is where you will write up your code and narrative for the lab.
+
+## Update the Quarto document
+
+-   **Task 1**: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.
+
+-   **Task 2**: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.'s [Capital Bikeshare](https://capitalbikeshare.com/) in 2012.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+bikeshare <- read_csv("data/bikeshare-2011.csv")
+
+ggplot(data = bikeshare, aes(x = temperature, y = count)) +
+  geom_point() + 
+  labs(x = "Temperature (in Celsius)", 
+       y = "Bike rentals", 
+       title = "Daily bike rentals versus temperature", 
+       subtitle = "Capital Bikeshare 2012")
+```
+
+Write 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.
+
+## Commit and push changes to GitHub
+
+1.  Once you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.
+
+2.  Check the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.
+
+3.  Next, write a meaningful commit message (for instance, “updated author name”) in the **Commit message** box.
+
+4.  Click **Commit**. Note that every commit needs to have a commit message associated with it.
+
+5.  Now that you have made an update and committed this change, click **Push** to send the changes to GitHub.
+
+6.  Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!
+
 # Submit GitHub username
 
-Use the link below to submit your GitHub username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git.
+Use the link below to submit your GitHub username and confirm that you (1) have access to an RStudio container and (2) have completed the steps to configure git and send files between RStudio and GitHub.
 
-🔗 <https://forms.office.com/r/RbdRjMgKv0>
+🔗 <https://forms.office.com/r/QEwH1ZqeQB>
 
 # STA 221 Student Survey
 
 Use the link below to complete the STA 221 Student Survey. This survey will help me learn more about you, your interests, and your previous statistics and computing experience. I will also use the survey to form lab teams.
 
-🔗 <https://forms.office.com/r/KVEWwuNgAq>
+🔗 <https://forms.office.com/r/PJx9uTbDt0>
