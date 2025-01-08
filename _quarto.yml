@@ -71,6 +71,8 @@ website:
           text: Statistics experience
       - section: Labs
         contents: 
+        - href: labs/lab-00.qmd
+          text: Lab 00
         - href: labs/lab-01.qmd
           text: Lab 01
         - href: labs/lab-02.qmd

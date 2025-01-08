@@ -98,7 +98,7 @@ usethis::use_git_config(
   user.email = "maria.tackett@duke.edu")
 ```
 
-It may look like nothing happened but you are now ready interact between GitHub and RStudio! We will begin working with RStudio and GitHub in lecture this week.
+It may look like nothing happened but you are now ready interact between GitHub and RStudio!
 
 # Update document and push changes to GitHub
 
