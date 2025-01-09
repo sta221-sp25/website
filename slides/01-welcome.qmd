@@ -1,18 +1,20 @@
 ---
 title: "Welcome to STA 221!"
 author: "Prof. Maria Tackett"
-date: "2024-08-27"
+date: "2025-01-09"
 date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
     slide-number: true
     incremental: false 
     chalkboard: true
+  html: 
+    output-file: 01-welcome-notes.html
 execute:
   freeze: auto
   echo: true
@@ -35,30 +37,34 @@ bibliography: references.bib
     -   Assistant Professor of the Practice, Department of Statistical Science at Duke
 -   Work focuses on statistics education and sense of belonging in introductory math and statistics classes
 -   Co-leader of the Bass Connections team Mental Health and the Justice System in Durham County
--   Mom of 19-month-old twins 🙂
+-   Mom of 2-year-old twins 🙂
 :::
 
 ------------------------------------------------------------------------
 
-## Teaching Assistants (TAs)
+## Meet the Teaching Assistants (TAs)!
 
--   Kat Husar (PhD): Head TA + Lab 02 leader
+-   Kat Husar (PhD): Head TA + Lab 01 leader
 
--   Jon Campbell (MS): Lab 01 leader
+-   Kelly Huang (UG): Classroom TA
 
--   Ishrit Gupta (UG): Lab 01 helper
+-   Janice Kim (MS): Classroom TA
 
--   Alan Wang (UG): Lab 02 helper
+-   Cathy Lee (PhD): Lab 02 leader
 
-## Check-in on Ed Discussion!
+-   Alan Wang (UG): Lab 01 helper
+
+## Check-in on Ed Discussion! 
 
 ::: question
 Click on the link or scan the QR code to answer the Ed Discussion poll
 
-<https://edstem.org/us/courses/62513/discussion/625046>
+<https://edstem.org/us/courses/70811/discussion/714555>
 
-<center>\
-![](images/01/ed-discussion-qr-lec-01.png){width="30%"}</center>
+<center>
+
+![](images/01/ed-discussion-qr.png){width="40%"}\
+</center>
 :::
 
 ## Topics
@@ -89,14 +95,30 @@ Source: ChatGPT (with modification)
 
 </div>
 
-## Example: Rent vs. commute time
+## Regression in practice
 
-[New Yorkers Will Pay \$56 A Month To Trim A Minute Off Their Commute](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/)
+![](images/01/harry-potter-regression.png){fig-align="center" width="60%"}
 
-. . .
+::: aside
+[Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.](https://canvas.duke.edu/courses/51767/files?preview=2439624)
+:::
+
+## Regression in practice
+
+![](images/01/harry-potter-graph.png){fig-align="center" width="65%"}
 
 $$
-\text{rent} = \beta_0 + \beta_1 ~ \text{commute_time} + \epsilon
+\text{Lookups} = 23.0 - 0.04 \times \text{Page Number}
+$$
+
+::: aside
+[Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.](https://canvas.duke.edu/courses/51767/files?preview=2439624)
+:::
+
+## Example: Rent vs. commute time
+
+$$
+\text{Lookups} = \beta_0 + \beta_1 ~ \text{Page Number} + \epsilon
 $$
 
 <br>
@@ -157,7 +179,7 @@ Application
 
 <h2><font color="#993399">STA 211</font></h2>
 
-Theory
+Mathematical theory
 
 </center>
 :::
@@ -191,9 +213,10 @@ By the end of the semester, you will be able to...
 -   Prediction
 -   Model assessment
 -   Matrix representation of regression
--   Estimators
 -   Model conditions and diagnostics
+-   Model comparison
 -   Different types of predictor variables
+-   Properties of estimators
 :::
 ::::
 
@@ -221,15 +244,16 @@ By the end of the semester, you will be able to...
 
 ## Course toolkit {.midi}
 
--   **Website**: <https://sta221-fa24.netlify.app>
+-   **Website**: <https://sta221-sp25.netlify.app>
     -   Central hub for the course!
     -   **Tour of the website**
--   **Canvas**: <https://canvas.duke.edu/courses/38867>
+-   **Canvas**: <https://canvas.duke.edu/courses/51767>
     -   Gradebook
+    -   Office hours
     -   Announcements
     -   Gradescope
     -   Ed Discussion
--   **GitHub:** [https://github.com/sta221-fa24](github.com/sta221-fa24)
+-   **GitHub:** <https://github.com/sta221-sp25>
     -   Distribute assignments
     -   Platform for version control and collaboration
 
@@ -246,7 +270,7 @@ By the end of the semester, you will be able to...
 
 -   Write reproducible reports in Quarto
 
--   Access RStudio through [STA 210 Docker Containers](https://cmgr.oit.duke.edu/containers)
+-   Access RStudio through [STA 221 Docker Containers](https://cmgr.oit.duke.edu/containers)
 :::
 :::::
 
@@ -260,7 +284,7 @@ By the end of the semester, you will be able to...
 
 -   Facilitates version control and collaboration
 
--   All work in [STA 221 course organization](https://github.com/sta221-fa24)
+-   All work in [STA 221 course organization](https://github.com/sta221-sp25)
 :::
 :::::
 :::::::::
@@ -290,66 +314,63 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 ## Syllabus activity
 
 ::: question
-1.  Introduce yourself to your group members.
-2.  Choose a reporter. This person will share the group's summary with the class.
-3.  Read the portion of the syllabus assigned to your group.
-4.  Discuss the key points and questions you my have.
-5.  The reporter will share a summary with the class.
+1.  Read the portion of the syllabus assigned to your group.
+2.  Discuss the key points and questions you my have with your neighbors.
+3.  We'll ask for volunteers to share a summary with the class.
 :::
 
 ## Syllabus activity assignments
 
--   Group 1: [What to expect in lectures and labs](https://sta221-fa24.netlify.app/syllabus#lectures-and-labs)
+-   Group 1: [What to expect in lectures and labs](https://sta221-sp25.netlify.app/syllabus#lectures-and-labs)
 
--   Group 2: [Homework and lab assignments](https://sta221-fa24.netlify.app/syllabus#labs)
+-   Group 2: [Homework and lab assignments](https://sta221-sp25.netlify.app/syllabus#labs)
 
--   Group 3: [Exams and project](https://sta221-fa24.netlify.app/syllabus#exams)
+-   Group 3: [Exams and pro](https://sta221-fa24.netlify.app/syllabus#exams)[j](https://sta221-sp25.netlify.app/syllabus#exams)[ect](https://sta221-fa24.netlify.app/syllabus#exams)
 
--   Group 4: [Participation (Application exercises + teamwork)](https://sta221-fa24.netlify.app/syllabus#participation-application-exercises-teamwork)
+-   Group 4: [Participation](https://sta221-sp25.netlify.app/syllabus#participation-application-exercises-teamwork)
 
--   Group 5: [Academic honesty (except AI policy)](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+-   Group 5: [Academic honesty (except AI policy)](https://sta221-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 6: [Artificial intelligence policy](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+-   Group 6: [Artificial intelligence policy](https://sta221-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-fa24.netlify.app/syllabus#attendance-policy)
+-   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-sp25.netlify.app/syllabus#attendance-policy)
 
--   Group 8: [Attendance and lecture recording request](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
+-   Group 8: [Attendance and lecture recording request](https://sta221-sp25.netlify.app/syllabus#late-work-policy)
 
--   Group 9: [Getting help in the course](https://sta221-fa24.netlify.app/syllabus#getting-help-in-the-course)
+-   Group 9: [Getting help in the course](https://sta221-sp25.netlify.app/syllabus#getting-help-in-the-course)
 
 ## Syllabus activity report out
 
 ::: incremental
--   Group 1: [What to expect in lectures and labs](https://sta221-fa24.netlify.app/syllabus#lectures-and-labs)
+-   Group 1: [What to expect in lectures and labs](https://sta221-sp25.netlify.app/syllabus#lectures-and-labs)
 
--   Group 2: [Homework and lab assignments](https://sta221-fa24.netlify.app/syllabus#labs)
+-   Group 2: [Homework and lab assignments](https://sta221-sp25.netlify.app/syllabus#labs)
 
--   Group 3: [Exams and project](https://sta221-fa24.netlify.app/syllabus#exams)
+-   Group 3: [Exams and pro](https://sta221-fa24.netlify.app/syllabus#exams)[j](https://sta221-sp25.netlify.app/syllabus#exams)[ect](https://sta221-fa24.netlify.app/syllabus#exams)
 
--   Group 4: [Participation (Application exercises + teamwork)](https://sta221-fa24.netlify.app/syllabus#participation-application-exercises-teamwork)
+-   Group 4: [Participation](https://sta221-sp25.netlify.app/syllabus#participation-application-exercises-teamwork)
 
--   Group 5: [Academic honesty (except AI policy)](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+-   Group 5: [Academic honesty (except AI policy)](https://sta221-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 6: [Artificial intelligence policy](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+-   Group 6: [Artificial intelligence policy](https://sta221-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
+-   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-sp25.netlify.app/syllabus#attendance-policy)
 
--   Group 8: [Attendance and lecture recording request](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
+-   Group 8: [Attendance and lecture recording request](https://sta221-sp25.netlify.app/syllabus#late-work-policy)
 
--   Group 9: [Getting help in the course](https://sta221-fa24.netlify.app/syllabus#getting-help-in-the-course)
+-   Group 9: [Getting help in the course](https://sta221-sp25.netlify.app/syllabus#getting-help-in-the-course)
 :::
 
 ## Grading
 
-| Category                         | Percentage |
-|----------------------------------|------------|
-| Homework                         | 25%        |
-| Final project                    | 15%        |
-| Lab                              | 15%        |
-| Exam 01                          | 20%        |
-| Exam 02                          | 20%        |
-| Participation (AEs and teamwork) | 5%         |
-| Total                            | 100%       |
+| Category                       | Percentage |
+|--------------------------------|------------|
+| Homework                       | 30%        |
+| Final project                  | 15%        |
+| Lab                            | 10%        |
+| Exams (2 midterms)             | 40%        |
+| Participation (AEs + Teamwork) | 5%         |
+| Total                          | 100%       |
 
 ## Five tips for success in STA 221
 
@@ -364,8 +385,6 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 5.  Stay up-to-date on announcements on Ed Discussion and sent via email.
 
 # Questions?
-
-Raise your hand or post under the Lectures channel on Ed Discussion.
 
 # Reproducible workflow
 
@@ -402,6 +421,20 @@ What does it mean for an analysis to be reproducible?
 -   Contributing to science, which builds and organizes knowledge in terms of testable hypotheses [@alexander2023]
 
 -   Possible to identify and correct errors or biases in the analysis process [@alexander2023]
+
+## Why is reproducibility important?
+
+![](images/01/jama-retraction.png){fig-align="center" width="60%"}
+
+-   Originally reported "the intervention, compared with usual care, resulted in a fewer number of mean COPD-related hospitalizations and emergency department visits at 6 months per participant."
+
+-   There were actually **more** COPD-related hospitalizations and emergency department visits in the intervention group compared to the control group
+
+-   Mixed up the intervention vs. control group using "0/1" coding
+
+::: aside
+<https://jamanetwork.com/journals/jama/fullarticle/2752474>
+:::
 
 ## Toolkit
 
@@ -483,14 +516,14 @@ Provides a clear record of how the analysis methods evolved. This makes analysis
 -   **GitHub** is the home for your git-based projects on the internet (like DropBox but much better).
 -   There are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.
 
-## This week
+## Before next class
 
--   Complete [Lab 00 tasks](https://sta221-fa24.netlify.app/labs/lab-00)
+-   Complete [Lecture 02: Simple linear regression prepare](../prepare/prepare-lec02.html)
 
 -   Review [syllabus](https://sta221-fa24.netlify.app/syllabus)
 
--   Complete reading to prepare for Thursday's lecture
+-   Office hours start Monday, January 13
 
--   Thursday's lecture: Simple linear regression
+    -   Alan's office hours start January 27
 
 ## References

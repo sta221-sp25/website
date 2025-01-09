@@ -159,7 +159,7 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">Aug 27, 2024</p>
+  <p class="date">Jan 09, 2025</p>
 </section>
 <section>
 <section id="welcome" class="title-slide slide level1 center">
@@ -179,27 +179,28 @@ Prof.&nbsp;Maria Tackett
 </ul></li>
 <li class="fragment">Work focuses on statistics education and sense of belonging in introductory math and statistics classes</li>
 <li class="fragment">Co-leader of the Bass Connections team Mental Health and the Justice System in Durham County</li>
-<li class="fragment">Mom of 19-month-old twins 🙂</li>
+<li class="fragment">Mom of 2-year-old twins 🙂</li>
 </ul>
 </div>
 </section>
-<section id="teaching-assistants-tas" class="slide level2">
-<h2>Teaching Assistants (TAs)</h2>
+<section id="meet-the-teaching-assistants-tas" class="slide level2">
+<h2>Meet the Teaching Assistants (TAs)!</h2>
 <ul>
-<li><p>Kat Husar (PhD): Head TA + Lab 02 leader</p></li>
-<li><p>Jon Campbell (MS): Lab 01 leader</p></li>
-<li><p>Ishrit Gupta (UG): Lab 01 helper</p></li>
-<li><p>Alan Wang (UG): Lab 02 helper</p></li>
+<li><p>Kat Husar (PhD): Head TA + Lab 01 leader</p></li>
+<li><p>Kelly Huang (UG): Classroom TA</p></li>
+<li><p>Janice Kim (MS): Classroom TA</p></li>
+<li><p>Cathy Lee (PhD): Lab 02 leader</p></li>
+<li><p>Alan Wang (UG): Lab 01 helper</p></li>
 </ul>
 </section>
 <section id="check-in-on-ed-discussion" class="slide level2">
 <h2>Check-in on Ed Discussion!</h2>
 <div class="question">
 <p>Click on the link or scan the QR code to answer the Ed Discussion poll</p>
-<p><a href="https://edstem.org/us/courses/62513/discussion/625046" class="uri">https://edstem.org/us/courses/62513/discussion/625046</a></p>
+<p><a href="https://edstem.org/us/courses/70811/discussion/714555" class="uri">https://edstem.org/us/courses/70811/discussion/714555</a></p>
 <center>
-<br>
-<img data-src="images/01/ed-discussion-qr-lec-01.png" style="width:30.0%">
+<img data-src="images/01/ed-discussion-qr.png" style="width:40.0%"><br>
+
 </center>
 </div>
 </section>
@@ -233,15 +234,37 @@ Prof.&nbsp;Maria Tackett
 <p>Source: ChatGPT (with modification)</p>
 </div>
 </section>
+<section id="regression-in-practice" class="slide level2">
+<h2>Regression in practice</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/01/harry-potter-regression.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+
+<aside><div>
+<p><a href="https://canvas.duke.edu/courses/51767/files?preview=2439624">Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.</a></p>
+</div></aside></section>
+<section id="regression-in-practice-1" class="slide level2">
+<h2>Regression in practice</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/01/harry-potter-graph.png" class="quarto-figure quarto-figure-center" style="width:65.0%"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\text{Lookups} = 23.0 - 0.04 \times \text{Page Number}
+\]</span></p>
+
+<aside><div>
+<p><a href="https://canvas.duke.edu/courses/51767/files?preview=2439624">Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.</a></p>
+</div></aside></section>
 <section id="example-rent-vs.-commute-time" class="slide level2">
 <h2>Example: Rent vs.&nbsp;commute time</h2>
-<p><a href="https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/">New Yorkers Will Pay $56 A Month To Trim A Minute Off Their Commute</a></p>
-<div class="fragment">
 <p><span class="math display">\[
-\text{rent} = \beta_0 + \beta_1 ~ \text{commute_time} + \epsilon
+\text{Lookups} = \beta_0 + \beta_1 ~ \text{Page Number} + \epsilon
 \]</span></p>
 <p><br></p>
-</div>
 <div class="fragment">
 <p><span class="math display">\[
 \begin{bmatrix}
@@ -295,7 +318,7 @@ y_n
 <h2>
 <font color="#993399">STA 211</font>
 </h2>
-<p>Theory</p>
+<p>Mathematical theory</p>
 </center>
 </div></div>
 <p><br></p>
@@ -325,9 +348,10 @@ y_n
 <li>Prediction</li>
 <li>Model assessment</li>
 <li>Matrix representation of regression</li>
-<li>Estimators</li>
 <li>Model conditions and diagnostics</li>
+<li>Model comparison</li>
 <li>Different types of predictor variables</li>
+<li>Properties of estimators</li>
 </ul>
 </div>
 </div><div class="column" style="width:48%;">
@@ -358,19 +382,20 @@ y_n
 <section id="course-toolkit" class="slide level2 midi">
 <h2>Course toolkit</h2>
 <ul>
-<li><strong>Website</strong>: <a href="https://sta221-fa24.netlify.app" class="uri">https://sta221-fa24.netlify.app</a>
+<li><strong>Website</strong>: <a href="https://sta221-sp25.netlify.app" class="uri">https://sta221-sp25.netlify.app</a>
 <ul>
 <li>Central hub for the course!</li>
 <li><strong>Tour of the website</strong></li>
 </ul></li>
-<li><strong>Canvas</strong>: <a href="https://canvas.duke.edu/courses/38867" class="uri">https://canvas.duke.edu/courses/38867</a>
+<li><strong>Canvas</strong>: <a href="https://canvas.duke.edu/courses/51767" class="uri">https://canvas.duke.edu/courses/51767</a>
 <ul>
 <li>Gradebook</li>
+<li>Office hours</li>
 <li>Announcements</li>
 <li>Gradescope</li>
 <li>Ed Discussion</li>
 </ul></li>
-<li><strong>GitHub:</strong> <a href="github.com/sta221-fa24">https://github.com/sta221-fa24</a>
+<li><strong>GitHub:</strong> <a href="https://github.com/sta221-sp25" class="uri">https://github.com/sta221-sp25</a>
 <ul>
 <li>Distribute assignments</li>
 <li>Platform for version control and collaboration</li>
@@ -392,7 +417,7 @@ y_n
 <ul>
 <li><p>All analyses using R, a statistical programming language</p></li>
 <li><p>Write reproducible reports in Quarto</p></li>
-<li><p>Access RStudio through <a href="https://cmgr.oit.duke.edu/containers">STA 210 Docker Containers</a></p></li>
+<li><p>Access RStudio through <a href="https://cmgr.oit.duke.edu/containers">STA 221 Docker Containers</a></p></li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -407,7 +432,7 @@ y_n
 <ul>
 <li><p>Access assignments</p></li>
 <li><p>Facilitates version control and collaboration</p></li>
-<li><p>All work in <a href="https://github.com/sta221-fa24">STA 221 course organization</a></p></li>
+<li><p>All work in <a href="https://github.com/sta221-sp25">STA 221 course organization</a></p></li>
 </ul>
 </div>
 </div></div>
@@ -436,41 +461,39 @@ y_n
 <h2>Syllabus activity</h2>
 <div class="question">
 <ol type="1">
-<li>Introduce yourself to your group members.</li>
-<li>Choose a reporter. This person will share the group’s summary with the class.</li>
 <li>Read the portion of the syllabus assigned to your group.</li>
-<li>Discuss the key points and questions you my have.</li>
-<li>The reporter will share a summary with the class.</li>
+<li>Discuss the key points and questions you my have with your neighbors.</li>
+<li>We’ll ask for volunteers to share a summary with the class.</li>
 </ol>
 </div>
 </section>
 <section id="syllabus-activity-assignments" class="slide level2">
 <h2>Syllabus activity assignments</h2>
 <ul>
-<li><p>Group 1: <a href="https://sta221-fa24.netlify.app/syllabus#lectures-and-labs">What to expect in lectures and labs</a></p></li>
-<li><p>Group 2: <a href="https://sta221-fa24.netlify.app/syllabus#labs">Homework and lab assignments</a></p></li>
-<li><p>Group 3: <a href="https://sta221-fa24.netlify.app/syllabus#exams">Exams and project</a></p></li>
-<li><p>Group 4: <a href="https://sta221-fa24.netlify.app/syllabus#participation-application-exercises-teamwork">Participation (Application exercises + teamwork)</a></p></li>
-<li><p>Group 5: <a href="https://sta221-fa24.netlify.app/syllabus#academic-honesty">Academic honesty (except AI policy)</a></p></li>
-<li><p>Group 6: <a href="https://sta221-fa24.netlify.app/syllabus#academic-honesty">Artificial intelligence policy</a></p></li>
-<li><p>Group 7: <a href="https://sta221-fa24.netlify.app/syllabus#attendance-policy">Late work policy and waiver for extenuating circumstances</a></p></li>
-<li><p>Group 8: <a href="https://sta221-fa24.netlify.app/syllabus#late-work-policy">Attendance and lecture recording request</a></p></li>
-<li><p>Group 9: <a href="https://sta221-fa24.netlify.app/syllabus#getting-help-in-the-course">Getting help in the course</a></p></li>
+<li><p>Group 1: <a href="https://sta221-sp25.netlify.app/syllabus#lectures-and-labs">What to expect in lectures and labs</a></p></li>
+<li><p>Group 2: <a href="https://sta221-sp25.netlify.app/syllabus#labs">Homework and lab assignments</a></p></li>
+<li><p>Group 3: <a href="https://sta221-fa24.netlify.app/syllabus#exams">Exams and pro</a><a href="https://sta221-sp25.netlify.app/syllabus#exams">j</a><a href="https://sta221-fa24.netlify.app/syllabus#exams">ect</a></p></li>
+<li><p>Group 4: <a href="https://sta221-sp25.netlify.app/syllabus#participation-application-exercises-teamwork">Participation</a></p></li>
+<li><p>Group 5: <a href="https://sta221-sp25.netlify.app/syllabus#academic-honesty">Academic honesty (except AI policy)</a></p></li>
+<li><p>Group 6: <a href="https://sta221-sp25.netlify.app/syllabus#academic-honesty">Artificial intelligence policy</a></p></li>
+<li><p>Group 7: <a href="https://sta221-sp25.netlify.app/syllabus#attendance-policy">Late work policy and waiver for extenuating circumstances</a></p></li>
+<li><p>Group 8: <a href="https://sta221-sp25.netlify.app/syllabus#late-work-policy">Attendance and lecture recording request</a></p></li>
+<li><p>Group 9: <a href="https://sta221-sp25.netlify.app/syllabus#getting-help-in-the-course">Getting help in the course</a></p></li>
 </ul>
 </section>
 <section id="syllabus-activity-report-out" class="slide level2">
 <h2>Syllabus activity report out</h2>
 <div>
 <ul>
-<li class="fragment"><p>Group 1: <a href="https://sta221-fa24.netlify.app/syllabus#lectures-and-labs">What to expect in lectures and labs</a></p></li>
-<li class="fragment"><p>Group 2: <a href="https://sta221-fa24.netlify.app/syllabus#labs">Homework and lab assignments</a></p></li>
-<li class="fragment"><p>Group 3: <a href="https://sta221-fa24.netlify.app/syllabus#exams">Exams and project</a></p></li>
-<li class="fragment"><p>Group 4: <a href="https://sta221-fa24.netlify.app/syllabus#participation-application-exercises-teamwork">Participation (Application exercises + teamwork)</a></p></li>
-<li class="fragment"><p>Group 5: <a href="https://sta221-fa24.netlify.app/syllabus#academic-honesty">Academic honesty (except AI policy)</a></p></li>
-<li class="fragment"><p>Group 6: <a href="https://sta221-fa24.netlify.app/syllabus#academic-honesty">Artificial intelligence policy</a></p></li>
-<li class="fragment"><p>Group 7: <a href="https://sta221-fa24.netlify.app/syllabus#late-work-policy">Late work policy and waiver for extenuating circumstances</a></p></li>
-<li class="fragment"><p>Group 8: <a href="https://sta221-fa24.netlify.app/syllabus#late-work-policy">Attendance and lecture recording request</a></p></li>
-<li class="fragment"><p>Group 9: <a href="https://sta221-fa24.netlify.app/syllabus#getting-help-in-the-course">Getting help in the course</a></p></li>
+<li class="fragment"><p>Group 1: <a href="https://sta221-sp25.netlify.app/syllabus#lectures-and-labs">What to expect in lectures and labs</a></p></li>
+<li class="fragment"><p>Group 2: <a href="https://sta221-sp25.netlify.app/syllabus#labs">Homework and lab assignments</a></p></li>
+<li class="fragment"><p>Group 3: <a href="https://sta221-fa24.netlify.app/syllabus#exams">Exams and pro</a><a href="https://sta221-sp25.netlify.app/syllabus#exams">j</a><a href="https://sta221-fa24.netlify.app/syllabus#exams">ect</a></p></li>
+<li class="fragment"><p>Group 4: <a href="https://sta221-sp25.netlify.app/syllabus#participation-application-exercises-teamwork">Participation</a></p></li>
+<li class="fragment"><p>Group 5: <a href="https://sta221-sp25.netlify.app/syllabus#academic-honesty">Academic honesty (except AI policy)</a></p></li>
+<li class="fragment"><p>Group 6: <a href="https://sta221-sp25.netlify.app/syllabus#academic-honesty">Artificial intelligence policy</a></p></li>
+<li class="fragment"><p>Group 7: <a href="https://sta221-sp25.netlify.app/syllabus#attendance-policy">Late work policy and waiver for extenuating circumstances</a></p></li>
+<li class="fragment"><p>Group 8: <a href="https://sta221-sp25.netlify.app/syllabus#late-work-policy">Attendance and lecture recording request</a></p></li>
+<li class="fragment"><p>Group 9: <a href="https://sta221-sp25.netlify.app/syllabus#getting-help-in-the-course">Getting help in the course</a></p></li>
 </ul>
 </div>
 </section>
@@ -486,7 +509,7 @@ y_n
 <tbody>
 <tr class="odd">
 <td>Homework</td>
-<td>25%</td>
+<td>30%</td>
 </tr>
 <tr class="even">
 <td>Final project</td>
@@ -494,21 +517,17 @@ y_n
 </tr>
 <tr class="odd">
 <td>Lab</td>
-<td>15%</td>
+<td>10%</td>
 </tr>
 <tr class="even">
-<td>Exam 01</td>
-<td>20%</td>
+<td>Exams (2 midterms)</td>
+<td>40%</td>
 </tr>
 <tr class="odd">
-<td>Exam 02</td>
-<td>20%</td>
-</tr>
-<tr class="even">
-<td>Participation (AEs and teamwork)</td>
+<td>Participation (AEs + Teamwork)</td>
 <td>5%</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Total</td>
 <td>100%</td>
 </tr>
@@ -527,7 +546,7 @@ y_n
 </section></section>
 <section id="questions" class="title-slide slide level1 center">
 <h1>Questions?</h1>
-<p>Raise your hand or post under the Lectures channel on Ed Discussion.</p>
+
 </section>
 
 <section>
@@ -561,6 +580,22 @@ y_n
 <li><p>Possible to identify and correct errors or biases in the analysis process <span class="citation" data-cites="alexander2023">(<a href="#/references" role="doc-biblioref" onclick="">Alexander 2023</a>)</span></p></li>
 </ul>
 </section>
+<section id="why-is-reproducibility-important-1" class="slide level2">
+<h2>Why is reproducibility important?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/01/jama-retraction.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+<ul>
+<li><p>Originally reported “the intervention, compared with usual care, resulted in a fewer number of mean COPD-related hospitalizations and emergency department visits at 6 months per participant.”</p></li>
+<li><p>There were actually <strong>more</strong> COPD-related hospitalizations and emergency department visits in the intervention group compared to the control group</p></li>
+<li><p>Mixed up the intervention vs.&nbsp;control group using “0/1” coding</p></li>
+</ul>
+
+<aside><div>
+<p><a href="https://jamanetwork.com/journals/jama/fullarticle/2752474" class="uri">https://jamanetwork.com/journals/jama/fullarticle/2752474</a></p>
+</div></aside></section>
 <section id="toolkit" class="slide level2">
 <h2>Toolkit</h2>
 <ul>
@@ -638,13 +673,15 @@ y_n
 <li>There are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.</li>
 </ul>
 </section>
-<section id="this-week" class="slide level2">
-<h2>This week</h2>
+<section id="before-next-class" class="slide level2">
+<h2>Before next class</h2>
 <ul>
-<li><p>Complete <a href="https://sta221-fa24.netlify.app/labs/lab-00">Lab 00 tasks</a></p></li>
+<li><p>Complete <a href="../prepare/prepare-lec02.html">Lecture 02: Simple linear regression prepare</a></p></li>
 <li><p>Review <a href="https://sta221-fa24.netlify.app/syllabus">syllabus</a></p></li>
-<li><p>Complete reading to prepare for Thursday’s lecture</p></li>
-<li><p>Thursday’s lecture: Simple linear regression</p></li>
+<li><p>Office hours start Monday, January 13</p>
+<ul>
+<li>Alan’s office hours start January 27</li>
+</ul></li>
 </ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
@@ -664,7 +701,7 @@ Ostblom, Joel, and Tiffany Timbers. 2022. <span>“Opinionated Practices for Tea
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta221-fa24.netlify.app">🔗 STA 221 - Fall 2024</a></p>
+<p><a href="https://sta221-sp25.netlify.app">🔗 STA 221 - Spring 2025</a></p>
 </div>
 </div></div>
 

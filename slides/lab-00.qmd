@@ -31,7 +31,7 @@ knitr:
 ::: midi
 -   Get into groups of 2 or 3
 
--   Introduce yourself: Name, year, major (or academic interest), a highlight from the summer
+-   Introduce yourself: Name, year, major (or academic interest), a highlight from winter break or something you're looking forward to this semester
 
 -   Introduce your partner to the class
 :::
