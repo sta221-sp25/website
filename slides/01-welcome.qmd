@@ -63,7 +63,7 @@ Click on the link or scan the QR code to answer the Ed Discussion poll
 
 <center>
 
-![](images/01/ed-discussion-qr.png){width="40%"}\
+![](images/01/ed-discussion-qr.png){width="30%"}\
 </center>
 :::
 
@@ -424,17 +424,21 @@ What does it mean for an analysis to be reproducible?
 
 ## Why is reproducibility important?
 
-![](images/01/jama-retraction.png){fig-align="center" width="60%"}
+![](images/01/jama-retraction.png){fig-align="center" width="50%"}
 
+::: small
 -   Originally reported "the intervention, compared with usual care, resulted in a fewer number of mean COPD-related hospitalizations and emergency department visits at 6 months per participant."
 
 -   There were actually **more** COPD-related hospitalizations and emergency department visits in the intervention group compared to the control group
 
 -   Mixed up the intervention vs. control group using "0/1" coding
+:::
 
-::: aside
+:::: aside
+::: small
 <https://jamanetwork.com/journals/jama/fullarticle/2752474>
 :::
+::::
 
 ## Toolkit
 
@@ -520,7 +524,7 @@ Provides a clear record of how the analysis methods evolved. This makes analysis
 
 -   Complete [Lecture 02: Simple linear regression prepare](../prepare/prepare-lec02.html)
 
--   Review [syllabus](https://sta221-fa24.netlify.app/syllabus)
+-   Review [syllabus](https://sta221-sp25.netlify.app/syllabus)
 
 -   Office hours start Monday, January 13
 
