@@ -54,16 +54,16 @@ bibliography: references.bib
 
 -   Alan Wang (UG): Lab 01 helper
 
-## Check-in on Ed Discussion! 
+## Check-in on Ed Discussion!
 
 ::: question
 Click on the link or scan the QR code to answer the Ed Discussion poll
 
-<https://edstem.org/us/courses/70811/discussion/714555>
+<https://edstem.org/us/courses/70811/discussion/5950645>
 
 <center>
 
-![](images/01/ed-discussion-qr.png){width="30%"}\
+![](images/clipboard-1522596103.png){width="30%"}\
 </center>
 :::
 
@@ -333,9 +333,9 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 -   Group 6: [Artificial intelligence policy](https://sta221-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-sp25.netlify.app/syllabus#attendance-policy)
+-   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-sp25.netlify.app/syllabus#late-work-policy)
 
--   Group 8: [Attendance and lecture recording request](https://sta221-sp25.netlify.app/syllabus#late-work-policy)
+-   Group 8: [Attendance and lecture recording request](https://sta221-sp25.netlify.app/syllabus#attendance-policy)
 
 -   Group 9: [Getting help in the course](https://sta221-sp25.netlify.app/syllabus#getting-help-in-the-course)
 
@@ -354,9 +354,9 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 -   Group 6: [Artificial intelligence policy](https://sta221-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-sp25.netlify.app/syllabus#attendance-policy)
+-   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-sp25.netlify.app/syllabus#late-work-policy)
 
--   Group 8: [Attendance and lecture recording request](https://sta221-sp25.netlify.app/syllabus#late-work-policy)
+-   Group 8: [Attendance and lecture recording request](https://sta221-sp25.netlify.app/syllabus#attendance-policy)
 
 -   Group 9: [Getting help in the course](https://sta221-sp25.netlify.app/syllabus#getting-help-in-the-course)
 :::
