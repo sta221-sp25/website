@@ -48,7 +48,7 @@ countdown::countdown(minutes  = 3)
 
 -   Review lecture content, as needed (\~ 10 minutes)
 
--   Work on the lab assignment (individual for Lab 01 and in teams for the remainder of the semester)
+-   Work on the lab assignment (individual in the beginning and in teams for the remainder of the semester)
 
 -   Starting with Lab 01, you will find the starter materials for lab in your repo in the course GitHub organization.
 
