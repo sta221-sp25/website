@@ -1,21 +1,24 @@
 ---
 title: "Simple linear regression"
 author: "Prof. Maria Tackett"
-date: "2024-08-29"
+date: "2025-01-14"
 date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
     slide-number: true
     incremental: false 
     chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  html: 
+    output-file: 02-slr-notes.html
 execute:
   freeze: auto
   echo: true
@@ -26,9 +29,7 @@ knitr:
 bibliography: references.bib
 ---
 
-## Announcements {.midi}
-
--   No labs on Mon, Sep 2 (Labor Day)
+## Announcements <!--#Update--> {.midi}
 
 -   Application exercises start Tue, Sep 3
 
@@ -85,7 +86,7 @@ knitr::opts_chunk$set(
 
 ## Movie scores
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 -   Data behind the FiveThirtyEight story [*Be Suspicious Of Online Movie Ratings, Especially Fandango's*](https://fivethirtyeight.com/features/fandango-movies-ratings/)
 -   In the **fivethirtyeight** package: [`fandango`](https://fivethirtyeight-r.netlify.app/reference/fandango.html)
@@ -101,7 +102,7 @@ knitr::opts_chunk$set(
 
 ![](images/02/metacritic.png){fig-alt="Metacritic logo" width="200"}
 :::
-:::
+:::::
 
 ## Data prep
 
@@ -202,7 +203,7 @@ What is an example of an inference question for this data set?
 
 ## Terminology
 
-::: columns
+::::: columns
 ::: {.column width="30%"}
 -   **Response,** $Y$: variable describing the outcome of interest
 
@@ -216,28 +217,25 @@ What is an example of an inference question for this data set?
 p 
 ```
 :::
-:::
+:::::
 
 ## Regression model
 
 A **regression model** is a function that describes the relationship between the response, $Y$, and the predictor, $X$.
 
-```{=tex}
 \begin{aligned} Y &= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
 &= \color{black}{f(X)} + \epsilon \\[8pt]
 & = \color{black}{E(Y|X)} + \epsilon \\[8pt]
 &= \color{black}{\mu_{Y|X}} + \epsilon \end{aligned}
-```
+
 ## Regression model
 
-::: columns
+::::: columns
 ::: {.column width="30%"}
-```{=tex}
 \begin{aligned} Y &= \color{purple}{\textbf{Model}} + \text{Error} \\[8pt]
 &= \color{purple}{f(X)} + \epsilon \\[8pt]
 &= \color{purple}{E(Y|X)} + \epsilon \\[8pt]
 &= \color{purple}{\mu_{Y|X}} + \epsilon \end{aligned}
-```
 :::
 
 ::: {.column width="70%"}
@@ -254,13 +252,13 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
   axis.ticks.y = element_blank())
 ```
 :::
-:::
+:::::
 
 $E(Y|X) = \mu_{Y|X}$, the mean value of $Y$ given a particular value of $X$.
 
 ## Regression model
 
-::: columns
+::::: columns
 ::: {.column width="30%"}
 $$
 \begin{aligned} Y &= \color{purple}{\textbf{Model}} + \color{blue}{\textbf{Error}} \\[8pt]
@@ -287,7 +285,7 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
   axis.ticks.y = element_blank())
 ```
 :::
-:::
+:::::
 
 ## Determine $f(X)$
 
@@ -303,7 +301,7 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
 
 ## SLR: Statistical model (population)
 
-When we have a quantitative response, $Y$, and a single quantitative predictor, $X$, we can use a **simple linear regression** model to describe the relationship between $Y$ and $X$. $$\large{Y = \mathbf{\beta_0 + \beta_1 X} + \epsilon}, \hspace{8mm} \epsilon \sim N(0, \sigma_{\epsilon}^2)$$
+When we have a quantitative response, $Y$, and a single quantitative predictor, $X$, we can use a **simple linear regression** model to describe the relationship between $Y$ and $X$. $$\large{Y = \beta_0 + \beta_1X + \epsilon, \hspace{8mm} \epsilon \sim N(0, \sigma_{\epsilon}^2)}$$
 
 . . .
 
@@ -363,7 +361,11 @@ $$e^2_1 + e^2_2 + \dots + e^2_n$$
 
 -   The **least squares line** is the one that minimizes the sum of squared residuals
 
-[Click here](https://introregression.netlify.app/98-appendix#sec-least-sq-math) for full calculations.
+## Least-squares estimate of $\hat{\beta}_0$ 
+
+::: aside
+[Click here](https://introregression.netlify.app/98-appendix#sec-least-sq-math) for full details and finding estimate of $\hat{\beta}_1$ .
+:::
 
 ```{r}
 #| echo: false
@@ -379,7 +381,7 @@ ybar <- round(mean(movie_scores$audience),4)
 ## Properties of least squares regression
 
 ::: incremental
--   The regression line goes through the center of mass point, the coordinates corresponding to average $X$ and average $Y$: $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}$
+-   The regression line goes through the center of mass point, the coordinates corresponding to mean $X$ and mean $Y$: $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}$
 
 -   The slope has the same sign as the correlation coefficient: $\hat{\beta}_1 = r \frac{s_Y}{s_X}$
 
@@ -416,10 +418,10 @@ $$
 
 ## Interpretation
 
-::: panel-tabset
+::::: panel-tabset
 ## Question
 
-::: appex
+:::: appex
 ::: midi
 Submit your answers to the following questions on Ed Discussion:
 
@@ -427,14 +429,14 @@ Submit your answers to the following questions on Ed Discussion:
 
 -   32.3142 is the predicted mean audience score for what type of movies?
 :::
-:::
+::::
 
 ## Submit
 
 ```{=html}
 <iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/5181157" width="100%"></iframe>
 ```
-:::
+:::::
 
 🔗 <https://edstem.org/us/courses/62513/discussion/5181157>
 
@@ -458,13 +460,12 @@ Submit your answers to the following questions on Ed Discussion:
 
 Suppose that a movie has a critics score of 70. According to this model, what is the movie's predicted audience score?
 
-```{=tex}
 \begin{aligned}
 \widehat{\text{audience}} &= 32.3142 + 0.5187 \times \text{critics} \\
 &= 32.3142 + 0.5187 \times 70 \\
 &= \mathbf{68.6232}
 \end{aligned}
-```
+
 # Linear regression in R
 
 ## Fit the model
@@ -480,7 +481,7 @@ movie_fit
 
 ## Tidy results
 
-Use the `tidy()` function from the **broom** R package to "tidy" the data
+Use the `tidy()` function from the **broom** R package to "tidy" the model output
 
 <br>
 
@@ -520,9 +521,11 @@ new_movie <- tibble(critics = 70)
 predict(movie_fit, new_movie)
 ```
 
-<br>
+## Prediction
 
-. . .
+Use the `predict()` function to calculate predictions for new observations
+
+<br>
 
 **Multiple observations**
 
@@ -542,6 +545,6 @@ predict(movie_fit, more_new_movies)
 
 -   Model assessment for simple linear regression
 
-    -   See [Sep 3 prepare](../prepare/prepare-sep3.html)
+    -   Complete [Lec 03: Model Assessment prepare](../prepare/prepare-lec03.html)
 
 -   Bring fully-charged laptop or device with keyboard for in-class application exercise (AE)

@@ -190,6 +190,7 @@
   </style>
 </head>
 <body class="quarto-light">
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
   <div class="reveal">
     <div class="slides">
 
@@ -204,12 +205,11 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">Aug 29, 2024</p>
+  <p class="date">Jan 14, 2025</p>
 </section>
 <section id="announcements" class="slide level2 midi">
-<h2>Announcements</h2>
+<h2>Announcements <!--#Update--></h2>
 <ul>
-<li><p>No labs on Mon, Sep 2 (Labor Day)</p></li>
 <li><p>Application exercises start Tue, Sep 3</p>
 <ul>
 <li>Bring fully-charged laptop or device with keyboard</li>
@@ -456,7 +456,7 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 </section>
 <section id="slr-statistical-model-population" class="slide level2">
 <h2>SLR: Statistical model (population)</h2>
-<p>When we have a quantitative response, <span class="math inline">\(Y\)</span>, and a single quantitative predictor, <span class="math inline">\(X\)</span>, we can use a <strong>simple linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. <span class="math display">\[\large{Y = \mathbf{\beta_0 + \beta_1 X} + \epsilon}, \hspace{8mm} \epsilon \sim N(0, \sigma_{\epsilon}^2)\]</span></p>
+<p>When we have a quantitative response, <span class="math inline">\(Y\)</span>, and a single quantitative predictor, <span class="math inline">\(X\)</span>, we can use a <strong>simple linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. <span class="math display">\[\large{Y = \beta_0 + \beta_1X + \epsilon, \hspace{8mm} \epsilon \sim N(0, \sigma_{\epsilon}^2)}\]</span></p>
 <div class="fragment">
 <ul>
 <li><span class="math inline">\(\beta_1\)</span>: Population (true) slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
@@ -497,8 +497,13 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 <ul>
 <li>The <strong>least squares line</strong> is the one that minimizes the sum of squared residuals</li>
 </ul>
-<p><a href="https://introregression.netlify.app/98-appendix#sec-least-sq-math">Click here</a> for full calculations.</p>
-</section></section>
+</section>
+<section id="least-squares-estimate-of-hatbeta_0" class="slide level2">
+<h2>Least-squares estimate of <span class="math inline">\(\hat{\beta}_0\)</span></h2>
+
+<aside><div>
+<p><a href="https://introregression.netlify.app/98-appendix#sec-least-sq-math">Click here</a> for full details and finding estimate of <span class="math inline">\(\hat{\beta}_1\)</span> .</p>
+</div></aside></section></section>
 <section>
 <section id="slope-and-intercept" class="title-slide slide level1 center">
 <h1>Slope and intercept</h1>
@@ -508,7 +513,7 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 <h2>Properties of least squares regression</h2>
 <div>
 <ul>
-<li class="fragment"><p>The regression line goes through the center of mass point, the coordinates corresponding to average <span class="math inline">\(X\)</span> and average <span class="math inline">\(Y\)</span>: <span class="math inline">\(\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}\)</span></p></li>
+<li class="fragment"><p>The regression line goes through the center of mass point, the coordinates corresponding to mean <span class="math inline">\(X\)</span> and mean <span class="math inline">\(Y\)</span>: <span class="math inline">\(\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}\)</span></p></li>
 <li class="fragment"><p>The slope has the same sign as the correlation coefficient: <span class="math inline">\(\hat{\beta}_1 = r \frac{s_Y}{s_X}\)</span></p></li>
 <li class="fragment"><p>The sum of the residuals is approximately zero: <span class="math inline">\(\sum_{i = 1}^n e_i \approx 0\)</span></p></li>
 <li class="fragment"><p>The residuals and <span class="math inline">\(X\)</span> values are uncorrelated</p></li>
@@ -612,7 +617,7 @@ Coefficients:
 </section>
 <section id="tidy-results" class="slide level2">
 <h2>Tidy results</h2>
-<p>Use the <code>tidy()</code> function from the <strong>broom</strong> R package to “tidy” the data</p>
+<p>Use the <code>tidy()</code> function from the <strong>broom</strong> R package to “tidy” the model output</p>
 <p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>movie_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(audience <span class="sc">~</span> critics, <span class="at">data =</span> movie_scores)</span>
@@ -680,8 +685,11 @@ Coefficients:
 68.62297 </code></pre>
 </div>
 </div>
+</section>
+<section id="prediction-2" class="slide level2">
+<h2>Prediction</h2>
+<p>Use the <code>predict()</code> function to calculate predictions for new observations</p>
 <p><br></p>
-<div class="fragment">
 <p><strong>Multiple observations</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>more_new_movies <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">critics =</span> <span class="fu">c</span>(<span class="dv">24</span>,<span class="dv">70</span>, <span class="dv">85</span>))</span>
@@ -689,7 +697,6 @@ Coefficients:
 <div class="cell-output cell-output-stdout">
 <pre><code>       1        2        3 
 44.76379 68.62297 76.40313 </code></pre>
-</div>
 </div>
 </div>
 </section>
@@ -707,7 +714,7 @@ Coefficients:
 <ul>
 <li><p>Model assessment for simple linear regression</p>
 <ul>
-<li>See <a href="../prepare/prepare-sep3.html">Sep 3 prepare</a></li>
+<li>Complete <a href="../prepare/prepare-lec03.html">Lec 03: Model Assessment prepare</a></li>
 </ul></li>
 <li><p>Bring fully-charged laptop or device with keyboard for in-class application exercise (AE)</p></li>
 </ul>
@@ -718,7 +725,7 @@ Coefficients:
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta221-fa24.netlify.app">🔗 STA 221 - Fall 2024</a></p>
+<p><a href="https://sta221-sp25.netlify.app">🔗 STA 221 - Spring 2025</a></p>
 </div>
 </div></div>
 
