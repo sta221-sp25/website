@@ -31,14 +31,16 @@ bibliography: references.bib
 
 ## Announcements <!--#Update--> {.midi}
 
--   Application exercises start Tue, Sep 3
+-   Application exercises start Thursday
 
     -   Bring fully-charged laptop or device with keyboard
     -   Make sure you have accepted invite to GitHub course organization
 
--   See website for [resources](https://sta221-fa24.netlify.app/computing-r-resources) to learn / review R
+-   Complete [Lab 00](../labs/lab-00.html)
 
--   Office hours start Tue, Sep 3
+-   Office hours start this week
+
+    -   Alan's office hours start January 27
 
 # Questions from last class?
 
@@ -107,7 +109,7 @@ knitr::opts_chunk$set(
 ## Data prep
 
 -   Rename Rotten Tomatoes columns as `critics` and `audience`
--   Rename the dataset as `movie_scores`
+-   Rename the data set as `movie_scores`
 
 ```{r data-prep}
 #| echo: true
@@ -299,25 +301,31 @@ ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
 
 # Simple linear regression (SLR)
 
-## SLR: Statistical model (population)
+## SLR: Statistical model (population) {.midi}
 
-When we have a quantitative response, $Y$, and a single quantitative predictor, $X$, we can use a **simple linear regression** model to describe the relationship between $Y$ and $X$. $$\large{Y = \beta_0 + \beta_1X + \epsilon, \hspace{8mm} \epsilon \sim N(0, \sigma_{\epsilon}^2)}$$
+When we have a quantitative response, $Y$, and a single quantitative predictor, $X$, we can use a (**simple) linear regression** model to describe the relationship between $Y$ and $X$. $$Y = \beta_0 + \beta_1X + \epsilon$$
 
 . . .
 
 -   $\beta_1$: Population (true) slope of the relationship between $X$ and $Y$
 -   $\beta_0$: Population (true) intercept of the relationship between $X$ and $Y$
--   $\epsilon$: Error
+-   $\epsilon$: Error terms with mean 0 and variance $\sigma^2_{\epsilon}$
 
 ## SLR: Regression equation (sample)
 
-$$\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}$$
+$$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X$$
 
 -   $\hat{\beta}_1$: Estimated (sample) slope of the relationship between $X$ and $Y$
 -   $\hat{\beta}_0$: Estimated (sample) intercept of the relationship between $X$ and $Y$
 -   No error term!
 
-## Choosing values for $\hat{\beta}_1$ and $\hat{\beta}_0$
+. . .
+
+::: question
+Why is there no error term in the estimated regression equation?
+:::
+
+## Finding $\hat{\beta}_1$ and $\hat{\beta}_0$
 
 ```{r}
 #| echo: false
@@ -359,12 +367,12 @@ $$e_i = \text{observed} - \text{predicted}
 
 $$e^2_1 + e^2_2 + \dots + e^2_n$$
 
--   The **least squares line** is the one that minimizes the sum of squared residuals
+-   The **Ordinary Least Squares (OLS) line** is the one that minimizes the sum of squared residuals
 
-## Least-squares estimate of $\hat{\beta}_0$ 
+## Least-squares estimate of $\hat{\beta}_0$
 
 ::: aside
-[Click here](https://introregression.netlify.app/98-appendix#sec-least-sq-math) for full details and finding estimate of $\hat{\beta}_1$ .
+[Click here](https://introregression.netlify.app/98-appendix#sec-least-sq-math) for full details on estimating $\hat{\beta}_0$ and $\hat{\beta}_1$ .
 :::
 
 ```{r}
@@ -434,11 +442,11 @@ Submit your answers to the following questions on Ed Discussion:
 ## Submit
 
 ```{=html}
-<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/5181157" width="100%"></iframe>
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/70811/discussion/714677" width="100%"></iframe>
 ```
 :::::
 
-🔗 <https://edstem.org/us/courses/62513/discussion/5181157>
+🔗 <https://edstem.org/us/courses/70811/discussion/714677>
 
 ## Does it make sense to interpret the intercept?
 

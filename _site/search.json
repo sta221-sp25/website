@@ -747,7 +747,7 @@
     "href": "slides/02-slr.html#announcements",
     "title": "Simple linear regression",
     "section": "Announcements ",
-    "text": "Announcements \n\nApplication exercises start Tue, Sep 3\n\nBring fully-charged laptop or device with keyboard\nMake sure you have accepted invite to GitHub course organization\n\nSee website for resources to learn / review R\nOffice hours start Tue, Sep 3"
+    "text": "Announcements \n\nApplication exercises start Thursday\n\nBring fully-charged laptop or device with keyboard\nMake sure you have accepted invite to GitHub course organization\n\nComplete Lab 00\nOffice hours start this week\n\nAlan’s office hours start January 27"
   },
   {
     "objectID": "slides/02-slr.html#topics",
@@ -775,7 +775,7 @@
     "href": "slides/02-slr.html#data-prep",
     "title": "Simple linear regression",
     "section": "Data prep",
-    "text": "Data prep\n\nRename Rotten Tomatoes columns as critics and audience\nRename the dataset as movie_scores\n\n\nmovie_scores &lt;- fandango |&gt;\n  rename(critics = rottentomatoes, \n         audience = rottentomatoes_user)"
+    "text": "Data prep\n\nRename Rotten Tomatoes columns as critics and audience\nRename the data set as movie_scores\n\n\nmovie_scores &lt;- fandango |&gt;\n  rename(critics = rottentomatoes, \n         audience = rottentomatoes_user)"
   },
   {
     "objectID": "slides/02-slr.html#data-overview",
@@ -852,21 +852,21 @@
     "href": "slides/02-slr.html#slr-statistical-model-population",
     "title": "Simple linear regression",
     "section": "SLR: Statistical model (population)",
-    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\). \\[\\large{Y = \\beta_0 + \\beta_1X + \\epsilon, \\hspace{8mm} \\epsilon \\sim N(0, \\sigma_{\\epsilon}^2)}\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error"
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a (simple) linear regression model to describe the relationship between \\(Y\\) and \\(X\\). \\[Y = \\beta_0 + \\beta_1X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms with mean 0 and variance \\(\\sigma^2_{\\epsilon}\\)"
   },
   {
     "objectID": "slides/02-slr.html#slr-regression-equation-sample",
     "href": "slides/02-slr.html#slr-regression-equation-sample",
     "title": "Simple linear regression",
     "section": "SLR: Regression equation (sample)",
-    "text": "SLR: Regression equation (sample)\n\\[\\Large{\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 X}\\]\n\n\\(\\hat{\\beta}_1\\): Estimated (sample) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\hat{\\beta}_0\\): Estimated (sample) intercept of the relationship between \\(X\\) and \\(Y\\)\nNo error term!"
+    "text": "SLR: Regression equation (sample)\n\\[\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 X\\]\n\n\\(\\hat{\\beta}_1\\): Estimated (sample) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\hat{\\beta}_0\\): Estimated (sample) intercept of the relationship between \\(X\\) and \\(Y\\)\nNo error term!\n\n\n\nWhy is there no error term in the estimated regression equation?"
   },
   {
-    "objectID": "slides/02-slr.html#choosing-values-for-hatbeta_1-and-hatbeta_0",
-    "href": "slides/02-slr.html#choosing-values-for-hatbeta_1-and-hatbeta_0",
+    "objectID": "slides/02-slr.html#finding-hatbeta_1-and-hatbeta_0",
+    "href": "slides/02-slr.html#finding-hatbeta_1-and-hatbeta_0",
     "title": "Simple linear regression",
-    "section": "Choosing values for \\(\\hat{\\beta}_1\\) and \\(\\hat{\\beta}_0\\)",
-    "text": "Choosing values for \\(\\hat{\\beta}_1\\) and \\(\\hat{\\beta}_0\\)"
+    "section": "Finding \\(\\hat{\\beta}_1\\) and \\(\\hat{\\beta}_0\\)",
+    "text": "Finding \\(\\hat{\\beta}_1\\) and \\(\\hat{\\beta}_0\\)"
   },
   {
     "objectID": "slides/02-slr.html#residuals",
@@ -880,7 +880,14 @@
     "href": "slides/02-slr.html#least-squares-line",
     "title": "Simple linear regression",
     "section": "Least squares line",
-    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[e_i = \\text{observed} - \\text{predicted}\n= y_i - \\hat{y}_i\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe least squares line is the one that minimizes the sum of squared residuals"
+    "text": "Least squares line\n\nThe residual for the \\(i^{th}\\) observation is\n\n\\[e_i = \\text{observed} - \\text{predicted}\n= y_i - \\hat{y}_i\\]\n\nThe sum of squared residuals is\n\n\\[e^2_1 + e^2_2 + \\dots + e^2_n\\]\n\nThe Ordinary Least Squares (OLS) line is the one that minimizes the sum of squared residuals"
+  },
+  {
+    "objectID": "slides/02-slr.html#least-squares-estimate-of-hatbeta_0",
+    "href": "slides/02-slr.html#least-squares-estimate-of-hatbeta_0",
+    "title": "Simple linear regression",
+    "section": "Least-squares estimate of \\(\\hat{\\beta}_0\\)",
+    "text": "Least-squares estimate of \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details on estimating \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) ."
   },
   {
     "objectID": "slides/02-slr.html#properties-of-least-squares-regression",
@@ -908,7 +915,7 @@
     "href": "slides/02-slr.html#interpretation",
     "title": "Simple linear regression",
     "section": "Interpretation",
-    "text": "Interpretation\n\nQuestionSubmit\n\n\n\n\nSubmit your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/5181157"
+    "text": "Interpretation\n\nQuestionSubmit\n\n\n\n\nSubmit your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/70811/discussion/714677"
   },
   {
     "objectID": "slides/02-slr.html#does-it-make-sense-to-interpret-the-intercept",
@@ -951,6 +958,13 @@
     "title": "Simple linear regression",
     "section": "Prediction",
     "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297"
+  },
+  {
+    "objectID": "slides/02-slr.html#prediction-2",
+    "href": "slides/02-slr.html#prediction-2",
+    "title": "Simple linear regression",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
   },
   {
     "objectID": "slides/02-slr.html#recap",
@@ -2166,19 +2180,5 @@
       "Computing",
       "Troubleshooting"
     ]
-  },
-  {
-    "objectID": "slides/02-slr.html#least-squares-estimate-of-hatbeta_0",
-    "href": "slides/02-slr.html#least-squares-estimate-of-hatbeta_0",
-    "title": "Simple linear regression",
-    "section": "Least-squares estimate of \\(\\hat{\\beta}_0\\)",
-    "text": "Least-squares estimate of \\(\\hat{\\beta}_0\\)\n\n\nClick here for full details and finding estimate of \\(\\hat{\\beta}_1\\) ."
-  },
-  {
-    "objectID": "slides/02-slr.html#prediction-2",
-    "href": "slides/02-slr.html#prediction-2",
-    "title": "Simple linear regression",
-    "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
   }
 ]

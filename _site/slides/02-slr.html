@@ -210,13 +210,16 @@ Prof.&nbsp;Maria Tackett
 <section id="announcements" class="slide level2 midi">
 <h2>Announcements <!--#Update--></h2>
 <ul>
-<li><p>Application exercises start Tue, Sep 3</p>
+<li><p>Application exercises start Thursday</p>
 <ul>
 <li>Bring fully-charged laptop or device with keyboard</li>
 <li>Make sure you have accepted invite to GitHub course organization</li>
 </ul></li>
-<li><p>See website for <a href="https://sta221-fa24.netlify.app/computing-r-resources">resources</a> to learn / review R</p></li>
-<li><p>Office hours start Tue, Sep 3</p></li>
+<li><p>Complete <a href="../labs/lab-00.html">Lab 00</a></p></li>
+<li><p>Office hours start this week</p>
+<ul>
+<li>Alan’s office hours start January 27</li>
+</ul></li>
 </ul>
 </section>
 <section>
@@ -289,7 +292,7 @@ Prof.&nbsp;Maria Tackett
 <h2>Data prep</h2>
 <ul>
 <li>Rename Rotten Tomatoes columns as <code>critics</code> and <code>audience</code></li>
-<li>Rename the dataset as <code>movie_scores</code></li>
+<li>Rename the data set as <code>movie_scores</code></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>movie_scores <span class="ot">&lt;-</span> fandango <span class="sc">|&gt;</span></span>
@@ -454,28 +457,33 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 <h1>Simple linear regression (SLR)</h1>
 
 </section>
-<section id="slr-statistical-model-population" class="slide level2">
+<section id="slr-statistical-model-population" class="slide level2 midi">
 <h2>SLR: Statistical model (population)</h2>
-<p>When we have a quantitative response, <span class="math inline">\(Y\)</span>, and a single quantitative predictor, <span class="math inline">\(X\)</span>, we can use a <strong>simple linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. <span class="math display">\[\large{Y = \beta_0 + \beta_1X + \epsilon, \hspace{8mm} \epsilon \sim N(0, \sigma_{\epsilon}^2)}\]</span></p>
+<p>When we have a quantitative response, <span class="math inline">\(Y\)</span>, and a single quantitative predictor, <span class="math inline">\(X\)</span>, we can use a (<strong>simple) linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. <span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
 <div class="fragment">
 <ul>
 <li><span class="math inline">\(\beta_1\)</span>: Population (true) slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
 <li><span class="math inline">\(\beta_0\)</span>: Population (true) intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
-<li><span class="math inline">\(\epsilon\)</span>: Error</li>
+<li><span class="math inline">\(\epsilon\)</span>: Error terms with mean 0 and variance <span class="math inline">\(\sigma^2_{\epsilon}\)</span></li>
 </ul>
 </div>
 </section>
 <section id="slr-regression-equation-sample" class="slide level2">
 <h2>SLR: Regression equation (sample)</h2>
-<p><span class="math display">\[\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}\]</span></p>
+<p><span class="math display">\[\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X\]</span></p>
 <ul>
 <li><span class="math inline">\(\hat{\beta}_1\)</span>: Estimated (sample) slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
 <li><span class="math inline">\(\hat{\beta}_0\)</span>: Estimated (sample) intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
 <li>No error term!</li>
 </ul>
+<div class="fragment">
+<div class="question">
+<p>Why is there no error term in the estimated regression equation?</p>
+</div>
+</div>
 </section>
-<section id="choosing-values-for-hatbeta_1-and-hatbeta_0" class="slide level2">
-<h2>Choosing values for <span class="math inline">\(\hat{\beta}_1\)</span> and <span class="math inline">\(\hat{\beta}_0\)</span></h2>
+<section id="finding-hatbeta_1-and-hatbeta_0" class="slide level2">
+<h2>Finding <span class="math inline">\(\hat{\beta}_1\)</span> and <span class="math inline">\(\hat{\beta}_0\)</span></h2>
 
 <img data-src="02-slr_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="residuals" class="slide level2">
@@ -495,14 +503,14 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 </ul>
 <p><span class="math display">\[e^2_1 + e^2_2 + \dots + e^2_n\]</span></p>
 <ul>
-<li>The <strong>least squares line</strong> is the one that minimizes the sum of squared residuals</li>
+<li>The <strong>Ordinary Least Squares (OLS) line</strong> is the one that minimizes the sum of squared residuals</li>
 </ul>
 </section>
 <section id="least-squares-estimate-of-hatbeta_0" class="slide level2">
 <h2>Least-squares estimate of <span class="math inline">\(\hat{\beta}_0\)</span></h2>
 
 <aside><div>
-<p><a href="https://introregression.netlify.app/98-appendix#sec-least-sq-math">Click here</a> for full details and finding estimate of <span class="math inline">\(\hat{\beta}_1\)</span> .</p>
+<p><a href="https://introregression.netlify.app/98-appendix#sec-least-sq-math">Click here</a> for full details on estimating <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> .</p>
 </div></aside></section></section>
 <section>
 <section id="slope-and-intercept" class="title-slide slide level1 center">
@@ -559,11 +567,11 @@ $ fandango_difference        &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 </div>
 </div>
 <div id="tabset-1-2">
-<iframe allowfullscreen="" frameborder="0" height="100%" mozallowfullscreen="" style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/5181157" width="100%"></iframe>
+<iframe allowfullscreen="" frameborder="0" height="100%" mozallowfullscreen="" style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/70811/discussion/714677" width="100%"></iframe>
 </div>
 </div>
 </div>
-<p>🔗 <a href="https://edstem.org/us/courses/62513/discussion/5181157" class="uri">https://edstem.org/us/courses/62513/discussion/5181157</a></p>
+<p>🔗 <a href="https://edstem.org/us/courses/70811/discussion/714677" class="uri">https://edstem.org/us/courses/70811/discussion/714677</a></p>
 </section>
 <section id="does-it-make-sense-to-interpret-the-intercept" class="slide level2">
 <h2>Does it make sense to interpret the intercept?</h2>
