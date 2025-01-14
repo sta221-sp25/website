@@ -14,11 +14,12 @@ format:
     incremental: false 
     chalkboard: true
     include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 02-slr-notes.html
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-  html: 
-    output-file: 02-slr-notes.html
+
 execute:
   freeze: auto
   echo: true
@@ -29,18 +30,19 @@ knitr:
 bibliography: references.bib
 ---
 
-## Announcements <!--#Update--> {.midi}
-
--   Application exercises start Thursday
-
-    -   Bring fully-charged laptop or device with keyboard
-    -   Make sure you have accepted invite to GitHub course organization
+## Announcements  {.midi}
 
 -   Complete [Lab 00](../labs/lab-00.html)
 
 -   Office hours start this week
 
     -   Alan's office hours start January 27
+
+-   Introduction to R workshops at Duke library
+
+    -   [Data wrangling with dplyr](https://duke.libcal.com/event/13664829) - Thu, Jan 16 at 12pm
+
+    -   [Data visualization with ggplot2](https://duke.libcal.com/event/13660125) - Thu, Jan 23 at 12pm
 
 # Questions from last class?
 
@@ -234,10 +236,10 @@ A **regression model** is a function that describes the relationship between the
 
 ::::: columns
 ::: {.column width="30%"}
-\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \text{Error} \\[8pt]
-&= \color{purple}{f(X)} + \epsilon \\[8pt]
-&= \color{purple}{E(Y|X)} + \epsilon \\[8pt]
-&= \color{purple}{\mu_{Y|X}} + \epsilon \end{aligned}
+\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \color{black}\text{Error} \\[8pt]
+&= \color{purple}{f(X)} + \color{black}\epsilon \\[8pt]
+&= \color{purple}{E(Y|X)} + \color{black}\epsilon \\[8pt]
+&= \color{purple}{\mu_{Y|X}} + \color{black}\epsilon \end{aligned}
 :::
 
 ::: {.column width="70%"}
@@ -325,7 +327,7 @@ $$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X$$
 Why is there no error term in the estimated regression equation?
 :::
 
-## Finding $\hat{\beta}_1$ and $\hat{\beta}_0$
+## Estimating $\hat{\beta}_1$ and $\hat{\beta}_0$
 
 ```{r}
 #| echo: false
