@@ -30,7 +30,7 @@ knitr:
 bibliography: references.bib
 ---
 
-## Announcements  {.midi}
+## Announcements {.midi}
 
 -   Complete [Lab 00](../labs/lab-00.html)
 
@@ -444,11 +444,11 @@ Submit your answers to the following questions on Ed Discussion:
 ## Submit
 
 ```{=html}
-<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/70811/discussion/714677" width="100%"></iframe>
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/70811/discussion/5967675" width="100%"></iframe>
 ```
 :::::
 
-🔗 <https://edstem.org/us/courses/70811/discussion/714677>
+🔗 <https://edstem.org/us/courses/70811/discussion/5967675>
 
 ## Does it make sense to interpret the intercept?
 
