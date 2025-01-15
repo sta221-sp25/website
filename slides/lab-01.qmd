@@ -21,15 +21,19 @@ knitr:
     width: 200
 ---
 
-## Today's lab
+## Today's lab {.midi}
+
+**Topics**
 
 -   Data wrangling and visualizations in R
 
 -   Review linear algebra concepts and introduce some matrix calculus concepts
 
-. . .
+**Notes**
 
-Put all responses for computing questions in your `lab-01` Quarto document. You may write any mathematical work by hand and attach it to the rendered PDF before uploading to Gradescope.
+-   Put all responses for computing questions in your `lab-01` Quarto document. You may write any mathematical work by hand and attach it to the rendered PDF before uploading to Gradescope.
+
+-   This lab will be graded for completion. You will receive feedback so you know what to expect in future assignments. See [Grading](https://sta221-sp25.netlify.app/labs/lab-01#grading-50-pts) for more detail
 
 ## Tips for working on lab
 
