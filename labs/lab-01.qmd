@@ -354,7 +354,7 @@ A %*% B
 Does the output match your answer to **Exercise 2 (ii)**? What happens if you try to multiply $B\times A$ in R?
 
 ::: callout-warning
-Matrix multiplication is not commutative! Matrix multiplication satisfies left and right distributivity: $(\mathbf{A} + \mathbf{B}) \mathbf{C} = \mathbf{A}\mathbf{C} + \mathbf{B}\mathbf{C}$, and $\mathbf{A}( \mathbf{B}+ \mathbf{C}) = \mathbf{A}\mathbf{B} + \mathbf{A}\mathbf{C}$, but the order here matters. $(\mathbf{A} + \mathbf{B}) \mathbf{C} \neq \mathbf{C}\mathbf{A} +\mathbf{C} \mathbf{B}$, and $\mathbf{A}( \mathbf{B}+ \mathbf{C}) = \mathbf{B}\mathbf{A} + \mathbf{C}\mathbf{A}$. Pay attention to the order and dimensions of matrices.
+Matrix multiplication is not commutative! Matrix multiplication satisfies left and right distributivity: $(\mathbf{A} + \mathbf{B}) \mathbf{C} = \mathbf{A}\mathbf{C} + \mathbf{B}\mathbf{C}$, and $\mathbf{A}( \mathbf{B}+ \mathbf{C}) = \mathbf{A}\mathbf{B} + \mathbf{A}\mathbf{C}$, but the order here matters. $(\mathbf{A} + \mathbf{B}) \mathbf{C} \neq \mathbf{C}\mathbf{A} +\mathbf{C} \mathbf{B}$, and $\mathbf{A}( \mathbf{B}+ \mathbf{C}) \neq \mathbf{B}\mathbf{A} + \mathbf{C}\mathbf{A}$. Pay attention to the order and dimensions of matrices.
 :::
 
 iii\. In this class, we will work a lot with matrix transposes. You can transpose a matrix in `R` by applying `t()` function.
