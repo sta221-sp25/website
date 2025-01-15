@@ -1226,731 +1226,120 @@
     "text": "Next time\n\nModel assessment for simple linear regression\n\nComplete Lec 03: Model Assessment prepare\n\nBring fully-charged laptop or device with keyboard for in-class application exercise (AE)"
   },
   {
-    "objectID": "slides/lab-03.html#goals",
-    "href": "slides/lab-03.html#goals",
-    "title": "Lab 03",
-    "section": "Goals",
-    "text": "Goals\n\nTeam project\nLab 03: Palmer penguins"
-  },
-  {
-    "objectID": "slides/lab-03.html#lab-03-palmer-penguins",
-    "href": "slides/lab-03.html#lab-03-palmer-penguins",
-    "title": "Lab 03",
-    "section": "Lab 03: Palmer penguins",
-    "text": "Lab 03: Palmer penguins\nLab 03 focuses on\n\nusing linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica.\nuse the data to check conditions about the distribution of the model residuals.\n\nUse this week to get started on the lab. We will continue discussing statistical inference in this week’s lectures, so this lab will be due on Thursday, October 3, 2024.\n🔗 https://sta221-fa24.netlify.app/labs/lab-03"
-  },
-  {
-    "objectID": "slides/lab-03.html#final-team-project",
-    "href": "slides/lab-03.html#final-team-project",
-    "title": "Lab 03",
-    "section": "Final Team Project",
-    "text": "Final Team Project\nGoal: Use the methods from STA 221 to analyze data and answer a research question developed by your team\nPrimary deliverables:\n\nan in-person presentation about the exploratory data analysis and initial modeling\na written, reproducible final report detailing your analysis\na GitHub repository containing all work from the project\n\nSubmission: All work for the project will be submitted in your team’s GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow often used in practice."
-  },
-  {
-    "objectID": "slides/lab-03.html#final-team-project-1",
-    "href": "slides/lab-03.html#final-team-project-1",
-    "title": "Lab 03",
-    "section": "Final team project",
-    "text": "Final team project\nMilestones: There are periodic project milestones throughout the semester to help you work towards the final deliverables:\n\nResearch questions (today’s lab)\nProject proposal (next week’s lab)\nExploratory data analysis draft\nPresentation + Presentation comments\nAnalysis draft + peer review\nRound 1 submission (optional)\nWritten report\nReproducibility + organization\n\nSee the Final Project Instructions for a timeline and details for each milestone."
-  },
-  {
-    "objectID": "slides/lab-03.html#today-research-questions",
-    "href": "slides/lab-03.html#today-research-questions",
-    "title": "Lab 03",
-    "section": "Today: Research questions",
-    "text": "Today: Research questions\nGoal: Develop three potential research questions your team may be interested in investigating.\nYou do not need to have a data set at this point\nFull instructions here: sta221-fa24.netlify.app/project#research-questions"
-  },
-  {
-    "objectID": "slides/lab-03.html#reminder-team-workflow",
-    "href": "slides/lab-03.html#reminder-team-workflow",
-    "title": "Lab 03",
-    "section": "Reminder: Team workflow",
-    "text": "Reminder: Team workflow\n\nOnly one team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.\n\nEvery team member should still be engaged in discussion for all questions, even if it’s not your turn type.\n\nDon’t forget to pull to get your teammates’ updates before making changes to the .qmd file.\n\n\n\n\n\n\nImportant\n\n\nOnly one submission per team on Gradescope. Read the submission instructions carefully!"
-  },
-  {
-    "objectID": "slides/lab-03.html#reminder-tips-for-working-on-a-team",
-    "href": "slides/lab-03.html#reminder-tips-for-working-on-a-team",
-    "title": "Lab 03",
-    "section": "Reminder: Tips for working on a team",
-    "text": "Reminder: Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab 04: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Interactions + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "computing-r-resources.html",
-    "href": "computing-r-resources.html",
-    "title": "Resources for learning R",
-    "section": "",
-    "text": "Below are freely available resources to learn or review the following in R: data wrangling, data visualization, Quarto basics.",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "computing-r-resources.html#in-depth-introduction",
-    "href": "computing-r-resources.html#in-depth-introduction",
-    "title": "Resources for learning R",
-    "section": "In-depth introduction",
-    "text": "In-depth introduction\nCoursera: Data Visualization and Transformation with R by Mine Çetinkaya-Rundel and Elijah Meyer\n\nIncludes videos, readings, practice exercise, quizzes, and other resources\nYou can select content within the modules you want to complete.\nFocus on Modules 2 and 3. Review the content in Module 1 as needed.s\nClick here for instructions to register for Coursera for free as a Duke student",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "computing-r-resources.html#in-depth-review",
-    "href": "computing-r-resources.html#in-depth-review",
-    "title": "Resources for learning R",
-    "section": "In-depth review",
-    "text": "In-depth review\nData Science with R videos by Mine Çetinkaya-Rundel and Elijah Meyer\n\nVideos from the data science Coursera course\nFocus on videos on visualizing and summarizing data\nYou need to join the Coursera course to access the files from the code along videos.\n\nLearn R: An interactive introduction to data analysis with R\n\nHands-on tutorial that can be completed within the site (no RStudio required)\nFocus on Chapters 4 - 6",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "computing-r-resources.html#shorter-review",
-    "href": "computing-r-resources.html#shorter-review",
-    "title": "Resources for learning R",
-    "section": "Shorter review",
-    "text": "Shorter review\nR for Data Science (2nd ed) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\n\nFocus on Chapters 1 - 3, 10",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "computing-r-resources.html#additional-resources",
-    "href": "computing-r-resources.html#additional-resources",
-    "title": "Resources for learning R",
-    "section": "Additional resources",
-    "text": "Additional resources\n\nTidy Modeling with R by Max Kuhn & Julia Silge\nPosit Cheatsheets\nR workshops by Duke Center for Data and Visualization Sciences",
-    "crumbs": [
-      "Computing",
-      "R resources"
-    ]
-  },
-  {
-    "objectID": "ae/ae-02-mlr.html",
-    "href": "ae/ae-02-mlr.html",
-    "title": "AE 02: Multiple linear regression",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-02 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\n\n\nPackages\n\nlibrary(tidyverse)   \nlibrary(tidymodels)   \nlibrary(openintro)    \nlibrary(knitr)       \n\n\n\nData\nToday’s data is a sample of 50 loans made through a peer-to-peer lending club. The data is in the loan50 data frame in the openintro R package.\nWe will focus on the following variables:\n\nannual_income_th: Annual income (in $1000s)\ndebt_to_income: Debt-to-income ratio, i.e. the percentage of a borrower’s total debt divided by their total income\nverified_income: Whether borrower’s income source and amount have been verified (Not Verified, Source Verified, Verified)\ninterest_rate: Interest rate for the loan\n\nThe goal of this analysis is to use the annual income, debt-to-income ratio, and income verification to understand variability in the interest rate on the loan.\nWe’ll start with data prep to rescale annual income to $1000’s and recode verified_income to fix an issue with the underlying data.\n\nloan50 &lt;- loan50 |&gt;\n   mutate(annual_income_th = annual_income / 1000, \n          verified_income = \n            case_when(verified_income == \"Not Verified\" ~ \"Not Verified\",\n                      verified_income == \"Source Verified\" ~ \"Source Verified\",\n                      verified_income == \"Verified\" ~ \"Verified\"),\n          verified_income = as_factor(verified_income)\n   )                    \n\n\nglimpse(loan50)\n\nRows: 50\nColumns: 19\n$ state                   &lt;fct&gt; NJ, CA, SC, CA, OH, IN, NY, MO, FL, FL, MD, HI…\n$ emp_length              &lt;dbl&gt; 3, 10, NA, 0, 4, 6, 2, 10, 6, 3, 8, 10, 10, 2,…\n$ term                    &lt;dbl&gt; 60, 36, 36, 36, 60, 36, 36, 36, 60, 60, 36, 36…\n$ homeownership           &lt;fct&gt; rent, rent, mortgage, rent, mortgage, mortgage…\n$ annual_income           &lt;dbl&gt; 59000, 60000, 75000, 75000, 254000, 67000, 288…\n$ verified_income         &lt;fct&gt; Not Verified, Not Verified, Verified, Not Veri…\n$ debt_to_income          &lt;dbl&gt; 0.55752542, 1.30568333, 1.05628000, 0.57434667…\n$ total_credit_limit      &lt;int&gt; 95131, 51929, 301373, 59890, 422619, 349825, 1…\n$ total_credit_utilized   &lt;int&gt; 32894, 78341, 79221, 43076, 60490, 72162, 2872…\n$ num_cc_carrying_balance &lt;int&gt; 8, 2, 14, 10, 2, 4, 1, 3, 10, 4, 3, 4, 3, 2, 3…\n$ loan_purpose            &lt;fct&gt; debt_consolidation, credit_card, debt_consolid…\n$ loan_amount             &lt;int&gt; 22000, 6000, 25000, 6000, 25000, 6400, 3000, 1…\n$ grade                   &lt;fct&gt; B, B, E, B, B, B, D, A, A, C, D, A, A, A, A, E…\n$ interest_rate           &lt;dbl&gt; 10.90, 9.92, 26.30, 9.92, 9.43, 9.92, 17.09, 6…\n$ public_record_bankrupt  &lt;int&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0…\n$ loan_status             &lt;fct&gt; Current, Current, Current, Current, Current, C…\n$ has_second_income       &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…\n$ total_income            &lt;dbl&gt; 59000, 60000, 75000, 75000, 254000, 67000, 288…\n$ annual_income_th        &lt;dbl&gt; 59.0, 60.0, 75.0, 75.0, 254.0, 67.0, 28.8, 80.…\n\n\n\n\nCategorical predictors\n\n\n\n\n\n\nExercise 1\n\n\n\nLet’s take a look at the design matrix for the model with predictors debt_to_income, annual_income_th, and verified_income.\nHow does R choose the baseline level by default?\n\n\n\n## add code here\n\n[Add response here]\n\n\n\n\n\n\nExercise 2\n\n\n\nFit the model with the predictors debt_to_income, annual_income_th, verified_income , and the interaction between annual_income_th and verified_income.\nNeatly display the model results using 3 digits.\n\n\n\n# add code here\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nWrite the estimated regression equation for the people with Not Verified income.\nWrite the estimated regression equation for people with Verified income.\n\n\n\n[add response here]\n\n\n\n\n\n\nExercise 4\n\n\n\nIn general, how do\n\nindicators for categorical predictors impact the model equation?\ninteraction terms impact the model equation?\n\n\n\n[Add response here]\n\n\nModel assessment\n\n\n\n\n\n\nExercise 5\n\n\n\nLet’s compare the original model without interaction effects to the model you fit in Exercise 2.\nCalculate \\(R^2\\) and \\(Adj. R^2\\) for each model. You can find \\(Adj. R^2\\) from the glance function:\nglance(model_name)$adj.r.squared\n\n\n\nint_fit &lt;- lm(interest_rate ~ debt_to_income + annual_income_th +\n                verified_income, data = loan50)\n\n\n# add code here\n\n\n\n\n\n\n\nExercise 6\n\n\n\nWhich model would you choose based on\n\n\\(R^2\\)?\n\\(Adj. R^2\\)?\n\n\n\n[add response here]\n\n\nLaTex\nSometimes, you will need to include mathematical notation in your document. There are two ways you can display mathematics in your document:\nInline: Your mathematics will display within the line of text.\n\nUse $ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Inline Math.\nExample: The text The simple linear regression model is $\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$ produces\n\nThe simple linear regression model is \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)\n\n\nDisplayed: Your mathematics will display outside the line of text\n\nUse a $$ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Display Math.\nExample: The text The estimated regression equation is $$\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}$$produces\n\nThe estimated regression equation is\n\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}\n\\]\n\n\n\n\n\n\nTip\n\n\n\nClick here for a quick reference of LaTex code.\n\n\n\n\nSubmission\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
-  },
-  {
-    "objectID": "ae/ae-01-slr.html",
-    "href": "ae/ae-01-slr.html",
-    "title": "AE 01: Simple linear regression",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-01 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\nThis AE will not count towards your participation grade.\nlibrary(tidyverse)    # data wrangling and visualization\nlibrary(tidymodels)   # broom and yardstick package\nlibrary(openintro)    # duke_forest dataset\nlibrary(knitr)        # format output\nlibrary(scales)       # format plot axes\nlibrary(skimr)        # quickly calculate summary statistics"
-  },
-  {
-    "objectID": "ae/ae-01-slr.html#exercise-1",
-    "href": "ae/ae-01-slr.html#exercise-1",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nWhat are 1 - 2 observations about the distribution of price?"
-  },
-  {
-    "objectID": "ae/ae-01-slr.html#exercise-2",
-    "href": "ae/ae-01-slr.html#exercise-2",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nVisualize the distribution of area and calculate summary statistics.\n\n# add code here\n\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-01-slr.html#exercise-3",
-    "href": "ae/ae-01-slr.html#exercise-3",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nWhat are 1 - 2 observations about the distribution of area?"
-  },
-  {
-    "objectID": "ae/ae-01-slr.html#exercise-4",
-    "href": "ae/ae-01-slr.html#exercise-4",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nFill in the code to visualize the relationship between price and area. What are 1 - 2 observations about the relationship between these two variables?\n\n\n\n\n\n\nImportant\n\n\n\nRemove #|eval: false after you have filled in the code!\n\n\n\nggplot(duke_forest, aes(x = ____, y = ____)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"_______\",\n    y = \"_________\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
-  },
-  {
-    "objectID": "ae/ae-01-slr.html#exercise-5",
-    "href": "ae/ae-01-slr.html#exercise-5",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nYou want to fit a model of the form\n\\[\nprice = \\beta_0 + \\beta_1 ~ area + \\epsilon, \\hspace{5mm} \\epsilon \\sim N(0, \\sigma^2_\\epsilon)\n\\]\nWould a model of this form be a reasonable fit for the data? Why or why not?"
-  },
-  {
-    "objectID": "ae/ae-01-slr.html#exercise-6",
-    "href": "ae/ae-01-slr.html#exercise-6",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nFit the linear model described in the previous exercise and neatly display the output.\nSee notes for example code.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-01-slr.html#exercise-7",
-    "href": "ae/ae-01-slr.html#exercise-7",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nInterpret the slope in the context of the data.\nInterpret the slope in terms of area increasing by 100 sqft.\nWhich interpretation do you think is more meaningful in practice?"
-  },
-  {
-    "objectID": "ae/ae-01-slr.html#exercise-8",
-    "href": "ae/ae-01-slr.html#exercise-8",
-    "title": "AE 01: Simple linear regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\nDoes it make sense to interpret the intercept? If so, interpret it in the context of the data. Otherwise, explain why not."
-  },
-  {
-    "objectID": "ae/ae-06-prob-odds.html",
-    "href": "ae/ae-06-prob-odds.html",
-    "title": "AE 06: Probabilities, Odds, Odds ratios",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-06 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)"
-  },
-  {
-    "objectID": "ae/ae-06-prob-odds.html#footnotes",
-    "href": "ae/ae-06-prob-odds.html#footnotes",
-    "title": "AE 06: Probabilities, Odds, Odds ratios",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nExcerpt from Chapter 5 of Handbook of Regression Modeling in People Analytics by Keith McNulty.↩︎"
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html",
-    "href": "ae/ae-04-exam-01-review.html",
-    "title": "AE 04: Exam 01 Review",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-04 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE."
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#packages",
-    "href": "ae/ae-04-exam-01-review.html#packages",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(patchwork)"
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#restaurant-tips",
-    "href": "ae/ae-04-exam-01-review.html#restaurant-tips",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Restaurant tips",
-    "text": "Restaurant tips\nWhat factors are associated with the amount customers tip at a restaurant? To answer this question, we will use data collected in 2011 by a student at St. Olaf who worked at a local restaurant.1\nThe variables we’ll focus on for this analysis are\n\nTip: amount of the tip\nParty: number of people in the party\nAge: Age of the payer\n\nView the data set to see the remaining variables.\n\ntips &lt;- read_csv(\"data/tip-data.csv\")"
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#exploratory-data-analysis",
-    "href": "ae/ae-04-exam-01-review.html#exploratory-data-analysis",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#exercise-1",
-    "href": "ae/ae-04-exam-01-review.html#exercise-1",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nWe will start with the main effects model.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#exercise-2",
-    "href": "ae/ae-04-exam-01-review.html#exercise-2",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model.\n\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#exercise-3",
-    "href": "ae/ae-04-exam-01-review.html#exercise-3",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nCompute the following directly from the data:\n\nThe regression standard error \\(\\hat{\\sigma}_{\\epsilon}\\) . Interpret this value in the context of the data.\n\\(R^2\\). Interpret this value in the context of the data.\n\\(RMSE\\). Interpret this value in the context of the data.\n\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#exercise-4",
-    "href": "ae/ae-04-exam-01-review.html#exercise-4",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\hat{Tip}_i = \\beta_0 + \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i + \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers?\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#exercise-5",
-    "href": "ae/ae-04-exam-01-review.html#exercise-5",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nThe output for the model with the interaction term and 90% confidence intervals for the coefficients is shown below.\n\ntip_int_fit &lt;- lm(Tip ~ Party + Age + Party * Age, data = tips)\ntidy(tip_int_fit, conf.int = TRUE, conf.level = 0.9) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n0.604\n0.504\n1.199\n0.232\n-0.229\n1.438\n\n\nParty\n1.924\n0.169\n11.359\n0.000\n1.644\n2.204\n\n\nAgeSenCit\n1.033\n0.784\n1.317\n0.190\n-0.265\n2.330\n\n\nAgeYadult\n-1.203\n0.928\n-1.297\n0.197\n-2.739\n0.332\n\n\nParty:AgeSenCit\n-0.259\n0.262\n-0.986\n0.325\n-0.692\n0.175\n\n\nParty:AgeYadult\n0.199\n0.504\n0.395\n0.693\n-0.635\n1.034\n\n\n\n\n\n\nWhat does 0.784, the standard error of AgeSenCit mean in the context of the data?\nWhat does 1.317, the test statistic for AgeSenCit mean in the context of the data?\nWhat does the p-value 0.190 mean in the context of the data?\nThe 90% confidence interval corresponds to what \\(\\alpha\\)-level?\nWhat is your conclusion about the effect of AgeSenCit?"
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#exercise-6",
-    "href": "ae/ae-04-exam-01-review.html#exercise-6",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nThe following are general questions about regression. They are not specific to the tips data set.\n\nWhat does it mean for an estimator to be the “least-squares” estimator?\nConsider the following derivation of \\(Var(\\hat{\\boldsymbol{\\beta}})\\) , the variance of the least-squares estimator:\n\\[\n\\begin{aligned}\nVar(\\hat{\\boldsymbol{\\beta}}) & = E[(\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta})(\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta})^T] \\\\\n& = E[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon})((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon})^T] \\\\\n& = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^TE(\\boldsymbol{\\epsilon}\\boldsymbol{\\epsilon}^T)\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} \\\\\n& = \\sigma^2(\\mathbf{X}^T\\mathbf{X})^{-1}\n\\end{aligned}\n\\]\n\nExplain how to go from Line 1 to Line 2.\n\nWhat assumptions are used to go from Line 3 to Line 4?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
-  },
-  {
-    "objectID": "ae/ae-04-exam-01-review.html#footnotes",
-    "href": "ae/ae-04-exam-01-review.html#footnotes",
-    "title": "AE 04: Exam 01 Review",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
-  },
-  {
-    "objectID": "ae/ae-08-logistic-review.html",
-    "href": "ae/ae-08-logistic-review.html",
-    "title": "AE 08: Logistic regression review",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-08 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(pROC)\nlibrary(Stat2Data)"
-  },
-  {
-    "objectID": "ae/ae-08-logistic-review.html#exercise-1",
-    "href": "ae/ae-08-logistic-review.html#exercise-1",
-    "title": "AE 08: Logistic regression review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nWhy do we use logistic regression (instead of linear regression) for this analysis?\nThe four assumptions for linear regression are Linearity, Constant Variance, Normality, and Independence. For each assumption, state whether it is satisfied in logistic regression. If yes, state what the assumption means in the context of logistic regression. Otherwise, briefly explain why it is not satisfied."
-  },
-  {
-    "objectID": "ae/ae-08-logistic-review.html#exercise-2",
-    "href": "ae/ae-08-logistic-review.html#exercise-2",
-    "title": "AE 08: Logistic regression review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nWrite the interpretation of income in terms of the odds of maxing out a credit card.\nShow mathematically why we include “holding all else constant” in the interpretation for income.\nDescribe the expected change in the odds of maxing out a credit card when income increases from the median value $33,100 to $57,500 (the \\(75^{th}\\)) percentile. Assume rating and region are constant."
-  },
-  {
-    "objectID": "ae/ae-08-logistic-review.html#exercise-3",
-    "href": "ae/ae-08-logistic-review.html#exercise-3",
-    "title": "AE 08: Logistic regression review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\)\n\n\n\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc.\nUse R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?"
-  },
-  {
-    "objectID": "ae/ae-08-logistic-review.html#exercise-4",
-    "href": "ae/ae-08-logistic-review.html#exercise-4",
-    "title": "AE 08: Logistic regression review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic is equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data."
-  },
-  {
-    "objectID": "ae/ae-08-logistic-review.html#exercise-5",
-    "href": "ae/ae-08-logistic-review.html#exercise-5",
-    "title": "AE 08: Logistic regression review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nCompute the predicted probabilities, then use those to predict whether individuals maxed out their credit card using a threshold of \\(\\hat{\\pi}   = 0.5\\).\nWhat is the accuracy? What does it mean in the context of the data?\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?"
-  },
-  {
-    "objectID": "ae/ae-08-logistic-review.html#exercise-6",
-    "href": "ae/ae-08-logistic-review.html#exercise-6",
-    "title": "AE 08: Logistic regression review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nConstruct the ROC curve and compute the area under the curve (AUC).\nBased on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.\nSuppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.\nBased on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
-  },
-  {
-    "objectID": "prepare/prepare-lec02.html",
-    "href": "prepare/prepare-lec02.html",
-    "title": "Prepare for Lecture 02: Simple linear regression",
-    "section": "",
-    "text": "📖 Read Simple linear regression, Section 4.1 - 4.6\n📖 Read R for Data Science, Introduction: What you will learn\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\nFor computing introduction / review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
-  },
-  {
-    "objectID": "prepare/prepare-lec04.html",
-    "href": "prepare/prepare-lec04.html",
-    "title": "Prepare for Lecture 04: SLR - Matrix representation",
-    "section": "",
-    "text": "Review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
-  },
-  {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\nName\nRole\n\n\nKat Husar\nHead TA\nLab 01L leader\n\n\nKelly Huang\nClassroom TA\n\n\nJanice Kim\nClassroom TA\n\n\nCathy Lee\nLab 02L leader\n\n\nAlan Wang\nLab 01L helper\n\n\n\nOffice hours times and locations on Canvas.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 07"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
+    "objectID": "slides/lab-01.html#todays-lab",
+    "href": "slides/lab-01.html#todays-lab",
     "title": "Lab 01",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 01"
-    ]
+    "section": "Today’s lab",
+    "text": "Today’s lab\n\nData wrangling and visualizations in R\nReview linear algebra concepts and introduce some matrix calculus concepts\n\n\nPut all responses for computing questions in your lab-01 Quarto document. You may write any mathematical work by hand and attach it to the rendered PDF before uploading to Gradescope."
   },
   {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
+    "objectID": "slides/lab-01.html#tips-for-working-on-lab",
+    "href": "slides/lab-01.html#tips-for-working-on-lab",
+    "title": "Lab 01",
+    "section": "Tips for working on lab",
+    "text": "Tips for working on lab\n\nLabs will always be due Tuesdays at 11:59pm, but you are encouraged to complete as much as you can during the lab session.\nOne work strategy is to get through portions that you think will be most challenging during lab when a TA can help you on the spot.\nFor today’s lab, start with the material you most need to review - computing or linear algebra concepts.\n\nWe will begin using the linear algebra concepts in class on January 21."
   },
   {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 03"
-    ]
+    "objectID": "slides/lab-01.html#workflow-and-formatting",
+    "href": "slides/lab-01.html#workflow-and-formatting",
+    "title": "Lab 01",
+    "section": "Workflow and formatting",
+    "text": "Workflow and formatting\nPart of the lab grade is for “workflow and formatting” assessing the reproducible workflow and document format. This includes\n\nHaving at least 3 informative commit messages (practicing version control)\n\nThere are markers in Lab 01 to help you incorporate version control in your workflow\n\nThe PDF is neatly organized document with clear exercise headings and readable code and narrative\nThe name (first and last) and date are updated at the top of the document."
   },
   {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Getting Started",
-    "section": "",
-    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
+    "objectID": "slides/lab-01.html#when-youre-done-with-lab",
+    "href": "slides/lab-01.html#when-youre-done-with-lab",
+    "title": "Lab 01",
+    "section": "When you’re done with lab",
+    "text": "When you’re done with lab\n\nMake sure all your final changes have been pushed to your GitHub repo\nSubmit your final PDF to Gradescope\n\nCombine the rendered Quarto document and handwritten math work into a single PDF document if needed.\nAccess Gradescope through the course Canvas site\nMark the pages associated with each exercise."
   },
   {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Getting Started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Getting Started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Getting Started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#getting-started",
-    "href": "labs/lab-00.html#getting-started",
-    "title": "Lab 00: Getting Started",
+    "objectID": "slides/lab-01.html#getting-started",
+    "href": "slides/lab-01.html#getting-started",
+    "title": "Lab 01",
     "section": "Getting started",
-    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/HJQpdTm_\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "text": "Getting started\nAsk your TA if\n\nYou do not have a lab-01 repo in the GitHub course organization: github.com/sta221-sp25\nYou need help cloning the repo and starting a new RStudio project\n\n🔗 sta221-sp25.netlify.app/labs/lab–01.html"
+  },
+  {
+    "objectID": "slides/lab-02.html#goals",
+    "href": "slides/lab-02.html#goals",
+    "title": "Lab 02",
+    "section": "Goals",
+    "text": "Goals\n\nLaTex in this course\nMeet your team!\nTeam agreement\nLab 02: Childcare costs"
+  },
+  {
+    "objectID": "slides/lab-02.html#latex-in-this-class",
+    "href": "slides/lab-02.html#latex-in-this-class",
+    "title": "Lab 02",
+    "section": "LaTex in this class",
+    "text": "LaTex in this class\nFor this class you will need to be able to…\n\nProperly write mathematical symbols, e.g., \\(\\beta_1\\) not B1, \\(R^2\\) not R2\nWrite basic regression equations, e.g., \\(\\hat{y} = \\beta_0 + \\beta_1x_1 + \\beta_2x_2\\)\nWrite matrix equations: \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)\nWrite hypotheses (we’ll start this next week), e.g., \\(H_0: \\beta = 0\\)\n\nYou are welcome to but not required to write math proofs using LaTex."
+  },
+  {
+    "objectID": "slides/lab-02.html#writing-latex-from-ae-02",
+    "href": "slides/lab-02.html#writing-latex-from-ae-02",
+    "title": "Lab 02",
+    "section": "Writing LaTex (from AE 02)",
+    "text": "Writing LaTex (from AE 02)\nInline: Your mathematics will display within the line of text.\n\nUse $ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Inline Math.\nExample: The text The simple linear regression model is $\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$ produces\nThe simple linear regression model is \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)"
+  },
+  {
+    "objectID": "slides/lab-02.html#writing-latex-from-ae-02-1",
+    "href": "slides/lab-02.html#writing-latex-from-ae-02-1",
+    "title": "Lab 02",
+    "section": "Writing LaTex (from AE 02)",
+    "text": "Writing LaTex (from AE 02)\nDisplay: Your mathematics will display outside the line of text\n\nUse a $$ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Display Math.\nExample: The text The estimated regression equation is $$\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}$$ produces\nThe estimated regression equation is\n\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}\n\\]\n\n\n\n\n\n\nTip\n\n\nClick here for a quick reference of LaTex code."
+  },
+  {
+    "objectID": "slides/lab-02.html#meet-your-team",
+    "href": "slides/lab-02.html#meet-your-team",
+    "title": "Lab 02",
+    "section": "Meet your team!",
+    "text": "Meet your team!\n\nClick here to find your team.\nSit with your team."
+  },
+  {
+    "objectID": "slides/lab-02.html#team-name-agreement",
+    "href": "slides/lab-02.html#team-name-agreement",
+    "title": "Lab 02",
+    "section": "Team name + agreement",
+    "text": "Team name + agreement\n\nCome up with a team name. You can’t have the same name as another group in the class, so be creative!\n\nYour TA will get your team name by the end of lab.\n\nFill out the team agreement. The goals of the agreement are to…\n\nGain a common understanding of the team’s goals and expectations for collaboration\nMake a plan for team communication\nMake a plan for working outside of lab"
+  },
+  {
+    "objectID": "slides/lab-02.html#team-workflow",
+    "href": "slides/lab-02.html#team-workflow",
+    "title": "Lab 02",
+    "section": "Team workflow",
+    "text": "Team workflow\n\nOnly one team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.\n\nEvery team member should still be engaged in discussion for all questions, even if it’s not your turn type.\n\nDon’t forget to pull to get your teammates’ updates before making changes to the .qmd file.\n\n\n\n\n\n\nImportant\n\n\nOnly one submission per team on Gradescope. Read the submission instructions carefully!"
+  },
+  {
+    "objectID": "slides/lab-02.html#team-workflow-in-action",
+    "href": "slides/lab-02.html#team-workflow-in-action",
+    "title": "Lab 02",
+    "section": "Team workflow, in action",
+    "text": "Team workflow, in action\n\nComplete the “Workflow: Using Git and GitHub as a team” section of the lab in your teams.\nRaise your hand if you have any questions about the workflow.\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/lab-02.html#tips-for-working-on-a-team",
+    "href": "slides/lab-02.html#tips-for-working-on-a-team",
+    "title": "Lab 02",
+    "section": "Tips for working on a team",
+    "text": "Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
+  },
+  {
+    "objectID": "slides/lab-02.html#lab-02-childcare-costs",
+    "href": "slides/lab-02.html#lab-02-childcare-costs",
+    "title": "Lab 02",
+    "section": "Lab 02: Childcare costs",
+    "text": "Lab 02: Childcare costs\nToday’s lab focuses on using multiple linear regression (Week 03 content) to predict childcare costs for school-aged children in North Carolina.\n🔗 sta221-fa24.netlify.app/labs/lab-02.html"
+  },
+  {
+    "objectID": "computing-access.html",
+    "href": "computing-access.html",
+    "title": "Computing access",
+    "section": "",
+    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA221 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA221 under My reservations to access the RStudio instance you’ll use for the course.",
     "crumbs": [
-      "Labs",
-      "Lab 00"
+      "Computing",
+      "Access"
     ]
-  },
-  {
-    "objectID": "labs/lab-00.html#update-the-quarto-document",
-    "href": "labs/lab-00.html#update-the-quarto-document",
-    "title": "Lab 00: Getting Started",
-    "section": "Update the Quarto document",
-    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "title": "Lab 00: Getting Started",
-    "section": "Commit and push changes to GitHub",
-    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 05"
-    ]
-  },
-  {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 04"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/stats-experience.html",
-    "href": "hw/stats-experience.html",
-    "title": "Statistics Experience",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "Statistics experience"
-    ]
-  },
-  {
-    "objectID": "prepare/prepare-lec05.html",
-    "href": "prepare/prepare-lec05.html",
-    "title": "Prepare for Lecture 05: SLR - Matrix representation cont’d",
-    "section": "",
-    "text": "Review linear algebra concepts (as needed)\n\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
-  },
-  {
-    "objectID": "prepare/prepare-lec03.html",
-    "href": "prepare/prepare-lec03.html",
-    "title": "Prepare for Lecture 03: Model assessment",
-    "section": "",
-    "text": "📖 Read Model assessment\nFor computing introduction / review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
-  },
-  {
-    "objectID": "ae/ae-03-inference.html",
-    "href": "ae/ae-03-inference.html",
-    "title": "AE 03: Inference",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-03 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\n\n\nSet up\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\n\nfootball &lt;- read_csv(\"data/ncaa-football-exp.csv\")\n\n\n\nData\n\n\nRegression model\n\nexp_fit &lt;- lm(total_exp_m ~ enrollment_th + type, data = football)\n\ntidy(exp_fit)|&gt; \n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n\n\n\n\n\n\n\nHypothesis test\nWe want to conduct a hypothesis test to determine if there is a linear relationship between enrollment and football expenditures after accounting for institution type.\nWe’ll start by getting estimates for statistics we’ll need for inference.\n\n\n\n\n\n\nExercise 1\n\n\n\nWe will use the vector of responses \\(\\mathbf{y}\\) and the design matrix \\(\\mathbf{X}\\) to calculate the values needed for inference.\nGet \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the football data frame. What are their dimensions?\n\n\n\n# add code here\n\n\n\n\n\n\n\nExercise 2\n\n\n\nNext, let’s calculate \\(\\hat{\\sigma}_\\epsilon^2\\) the estimate. Use \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the previous exercise to calculate this value.\n\n\n\n## add code here\n\n\n\n\n\n\n\nExercise 3\n\n\n\nNow we’re ready to conduct the hypothesis test. State the null and alternative hypotheses in words and using mathematical notation.\n\n\n. . .\n\n\n\n\n\n\nExercise 4\n\n\n\nCalculate \\(SE(\\beta_j)\\), then use this value to calculate the test statistic for the hypothesis test.\n\n\n\n## add code here\n\n\n\n\n\n\n\nExercise 5\n\n\n\nNow we need to calculate p-value to help make our final conclusion.\n\nState the distribution used to calculate the p-value.\nFill in the code below to calculate the p-value. Remove #| eval: false once you’ve filled in the code.\n\n\n\n\npt([test-statistic], [df], lower.tail = FALSE)\n\n\n\n\n\n\n\nExercise 6\n\n\n\nState your conclusion in the context of the data. Use a threshold of \\(\\alpha = 0.05\\).\n\n\n. . .\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
-  },
-  {
-    "objectID": "ae/ae-07-newton-raphson.html",
-    "href": "ae/ae-07-newton-raphson.html",
-    "title": "AE 07: Newton Raphson",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-07 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)"
-  },
-  {
-    "objectID": "ae/ae-07-newton-raphson.html#covid-19-infection-prevention-practices-at-food-establishments",
-    "href": "ae/ae-07-newton-raphson.html#covid-19-infection-prevention-practices-at-food-establishments",
-    "title": "AE 07: Newton Raphson",
-    "section": "COVID-19 infection prevention practices at food establishments",
-    "text": "COVID-19 infection prevention practices at food establishments\nResearchers at Wollo University in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in Andualem et al. (2022).\nThey were particularly interested in the understanding implementation of prevention practices at food establishments, given the workers’ increased risk due to daily contact with customers.\nWe will use the data from Andualem et al. (2022) to explore the association between age, sex, years of service, and whether someone works at a food establishment with access to personal protective equipment (PPE) as of August 2020. We will use access to PPE as a proxy for wearing PPE.\nThe study participants were selected using a simple random sampling at the selected establishments.\n.\n\ncovid_df &lt;- read_csv(\"data/covid-prevention-study.csv\") |&gt;\n  rename(age = \"Age of food handlers\", \n         years = \"Years of service\", \n         ppe_access = \"Availability of PPEs\") |&gt;\n  mutate(sex = factor(if_else(Sex == 2, \"Female\", \"Male\")),\n         ppe_access = as_factor(ppe_access))"
-  },
-  {
-    "objectID": "ae/ae-07-newton-raphson.html#functions-for-newton-raphson",
-    "href": "ae/ae-07-newton-raphson.html#functions-for-newton-raphson",
-    "title": "AE 07: Newton Raphson",
-    "section": "Functions for Newton-Raphson",
-    "text": "Functions for Newton-Raphson\n\n## Calculate the first derivative of logL (score function)\n\ncalc_first_deriv &lt;- function(beta, X, y){\n  first_deriv &lt;- rep(0, length(beta))\n  for(i in 1:length(y)){\n    first_deriv &lt;- first_deriv + as.numeric(y[i] - exp(X[i,] %*% beta)/(1 + exp(X[i,] %*% beta))) %*% X[i,]\n  }\n  return(colSums(first_deriv)) #return values as a vector \n}\n\n## Calculate the second derivative of logL (Hessian)\n\ncalc_second_deriv &lt;- function(beta, X, y){\n  second_deriv &lt;- matrix(0, nrow = length(beta), ncol = length(beta))\n  for(i in 1:length(y)){\n    second_deriv &lt;- second_deriv + as.numeric(1/(1 + exp(X[i,] %*% beta)))*\n      as.numeric((exp(X[i,] %*% beta)/(1 + exp(X[i,] %*% beta)))) * \n      (X[i,]) %*% t(X[i,])\n  }\n  return(second_deriv)\n}"
-  },
-  {
-    "objectID": "ae/ae-07-newton-raphson.html#get-starting-values",
-    "href": "ae/ae-07-newton-raphson.html#get-starting-values",
-    "title": "AE 07: Newton Raphson",
-    "section": "Get starting values",
-    "text": "Get starting values\n\n# design matrix\nX &lt;- model.matrix(~ age + sex + years, data = covid_df)\n\n# vector of response\ny &lt;- I(covid_df$ppe_access == 1)\n\n# vector of coefficients\nbeta &lt;- c(0, 0, 0, 0)\n\n# keep track of iterations\niter &lt;- 1\n\n# keep track of difference in estimates\ndelta &lt;- 1\n\n# keep track of estimates at each iteration \ntemp &lt;- matrix(0, nrow = 500, ncol = 4)"
-  },
-  {
-    "objectID": "ae/ae-07-newton-raphson.html#estimate-boldsymbolbeta",
-    "href": "ae/ae-07-newton-raphson.html#estimate-boldsymbolbeta",
-    "title": "AE 07: Newton Raphson",
-    "section": "Estimate \\(\\boldsymbol{\\beta}\\)",
-    "text": "Estimate \\(\\boldsymbol{\\beta}\\)\n\nwhile(delta &gt; 0.000001 & iter &lt; 50){\n  old &lt;- beta\n  beta &lt;- old - solve(-1 * calc_second_deriv(beta = beta, X = X, y = y)) %*% \n                calc_first_deriv(beta = beta, X = X, y = y)\n  temp[iter,] &lt;- beta\n  delta &lt;- sqrt(sum((beta - old)^2))\n  iter &lt;- iter + 1\n}"
-  },
-  {
-    "objectID": "ae/ae-07-newton-raphson.html#show-results",
-    "href": "ae/ae-07-newton-raphson.html#show-results",
-    "title": "AE 07: Newton Raphson",
-    "section": "Show results",
-    "text": "Show results\n\niter\n\n[1] 7\n\nbeta\n\n                   [,1]\n(Intercept) -2.12709823\nage          0.05586608\nsexMale      0.34070061\nyears        0.26396205\n\n\nNote that \\((\\nabla^2_{\\boldsymbol{\\beta}} \\log L)^{-1}\\)is the estimate for \\(Var(\\boldsymbol{\\hat{\\beta}})\\) . The square root of the diagonal elements are the estimates for \\(SE(\\hat{\\boldsymbol{\\beta}})\\).\n\n#calculate the hessian matrix\nsecond_deriv &lt;- calc_second_deriv(beta = beta, X = X, y = y)\n  \n# take the inverse\ninv_second_deriv &lt;- solve(second_deriv)\n\n# get estimates for SE\nse_beta &lt;- sqrt(diag(inv_second_deriv))\n\nse_beta\n\n[1] 0.45832580 0.01740581 0.22360561 0.06583117"
-  },
-  {
-    "objectID": "ae/ae-07-newton-raphson.html#coefficient-estimates-from-glm",
-    "href": "ae/ae-07-newton-raphson.html#coefficient-estimates-from-glm",
-    "title": "AE 07: Newton Raphson",
-    "section": "Coefficient estimates from glm",
-    "text": "Coefficient estimates from glm\n\nppe_model &lt;- glm(ppe_access ~ age + sex + years, \n                 data = covid_df, family = binomial)\ntidy(ppe_model, conf.int = TRUE) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-2.127\n0.458\n-4.641\n0.000\n-3.058\n-1.257\n\n\nage\n0.056\n0.017\n3.210\n0.001\n0.023\n0.091\n\n\nsexMale\n0.341\n0.224\n1.524\n0.128\n-0.098\n0.780\n\n\nyears\n0.264\n0.066\n4.010\n0.000\n0.143\n0.401"
-  },
-  {
-    "objectID": "ae/ae-05-multicollinearity.html",
-    "href": "ae/ae-05-multicollinearity.html",
-    "title": "AE 05: Multicollinearity",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-05 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(rms) #calculate VIF"
-  },
-  {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-1",
-    "href": "ae/ae-05-multicollinearity.html#exercise-1",
-    "title": "AE 05: Multicollinearity",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nFit the regression model using high temperature, average temperature, season, and precipitation to predict volume.\nAre there any coefficients that may be not what you expected?\n\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-2",
-    "href": "ae/ae-05-multicollinearity.html#exercise-2",
-    "title": "AE 05: Multicollinearity",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nUse the formula\n\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nto calculate the VIF for avgtemp.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-3",
-    "href": "ae/ae-05-multicollinearity.html#exercise-3",
-    "title": "AE 05: Multicollinearity",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nBased on the VIF from the previous exercise, does avgtemp have a linear dependency with one or more other predictors? Explain."
-  },
-  {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-4",
-    "href": "ae/ae-05-multicollinearity.html#exercise-4",
-    "title": "AE 05: Multicollinearity",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nFill in the name of the model from Exercise 1 to calculate VIF for all predictors. (Remove #| eval: false after you’ve filled in the code.)\nAre there predictors with linear dependencies? If so, which ones?\n\n\nvif(____)"
-  },
-  {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-5",
-    "href": "ae/ae-05-multicollinearity.html#exercise-5",
-    "title": "AE 05: Multicollinearity",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nLet’s try to deal with the mulitcollinearity by removing one of the predictors that are linearly dependent. Choose a final model using this strategy.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html",
-    "href": "ae/ae-09-exam-02-review.html",
-    "title": "AE 09: Exam 02 review",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-09 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(pROC)\nlibrary(Stat2Data)"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-1",
-    "href": "ae/ae-09-exam-02-review.html#exercise-1",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nSuppose you fit a simple linear regression model.\n\nDraw a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw a scatterplot that contains an observation with a large studentized residual."
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-2",
-    "href": "ae/ae-09-exam-02-review.html#exercise-2",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nDescribe what it means for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be the maximum likelihood estimator.\nWhat are properties of MLEs?\n\n\n\n\n\n\n\nNote\n\n\n\nUse this data analysis scenario for Exercises 3 - 6.\n\n\nThe data for this analysis is about credit card customers. It can be found in the file credit.csv. The following variables are in the data set:\n\nincome: Income in $1,000’s\nlimit: Credit limit\nrating: Credit rating\ncards: Number of credit cards\nage: Age in years\neducation: Number of years of education\nown: Whether an individual owns their home ( No or Yes )\nstudent: Whether the individual was a student ( No or Yes )\nmarried: Whether the individual was married (No and Yes)\nregion: Region the individual is from ( South, East, and West)\nbalance: Average credit card balance in $.\n\n\ncredit &lt;- read_csv(\"data/credit.csv\") |&gt;\n  mutate(maxed = factor(if_else(balance == 0, 1, 0)))\n\nThe objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had $0 average card balance.\nWe’ll start with a model predicting the odds of maxed = 1 using income, rating, and region.\n\ncredit_fit &lt;- glm(maxed ~ income + rating + region, data = credit, \n                  family = \"binomial\")\n\ntidy(credit_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n9.898\n1.449\n6.829\n0.000\n\n\nincome\n0.113\n0.021\n5.273\n0.000\n\n\nrating\n-0.057\n0.008\n-7.397\n0.000\n\n\nregionSouth\n-0.595\n0.604\n-0.985\n0.324\n\n\nregionWest\n-0.082\n0.649\n-0.126\n0.900"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-3",
-    "href": "ae/ae-09-exam-02-review.html#exercise-3",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\)\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc.\nUse R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-4",
-    "href": "ae/ae-09-exam-02-review.html#exercise-4",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic are equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data."
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-5",
-    "href": "ae/ae-09-exam-02-review.html#exercise-5",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nCompute the predicted probabilities, then use those to predict whether individuals maxed out their credit card using a threshold of \\(\\hat{\\pi}   = 0.5\\).\nWhat is the accuracy? What does it mean in the context of the data?\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-6",
-    "href": "ae/ae-09-exam-02-review.html#exercise-6",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nConstruct the ROC curve and compute the area under the curve (AUC).\nBased on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.\nSuppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.\nBased on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
   },
   {
     "objectID": "support.html",
@@ -2053,85 +1442,951 @@
     ]
   },
   {
-    "objectID": "computing-access.html",
-    "href": "computing-access.html",
-    "title": "Computing access",
+    "objectID": "ae/ae-09-exam-02-review.html",
+    "href": "ae/ae-09-exam-02-review.html",
+    "title": "AE 09: Exam 02 review",
     "section": "",
-    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA221 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA221 under My reservations to access the RStudio instance you’ll use for the course.",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-09 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(pROC)\nlibrary(Stat2Data)"
+  },
+  {
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-1",
+    "href": "ae/ae-09-exam-02-review.html#exercise-1",
+    "title": "AE 09: Exam 02 review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nSuppose you fit a simple linear regression model.\n\nDraw a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw a scatterplot that contains an observation with a large studentized residual."
+  },
+  {
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-2",
+    "href": "ae/ae-09-exam-02-review.html#exercise-2",
+    "title": "AE 09: Exam 02 review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nDescribe what it means for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be the maximum likelihood estimator.\nWhat are properties of MLEs?\n\n\n\n\n\n\n\nNote\n\n\n\nUse this data analysis scenario for Exercises 3 - 6.\n\n\nThe data for this analysis is about credit card customers. It can be found in the file credit.csv. The following variables are in the data set:\n\nincome: Income in $1,000’s\nlimit: Credit limit\nrating: Credit rating\ncards: Number of credit cards\nage: Age in years\neducation: Number of years of education\nown: Whether an individual owns their home ( No or Yes )\nstudent: Whether the individual was a student ( No or Yes )\nmarried: Whether the individual was married (No and Yes)\nregion: Region the individual is from ( South, East, and West)\nbalance: Average credit card balance in $.\n\n\ncredit &lt;- read_csv(\"data/credit.csv\") |&gt;\n  mutate(maxed = factor(if_else(balance == 0, 1, 0)))\n\nThe objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had $0 average card balance.\nWe’ll start with a model predicting the odds of maxed = 1 using income, rating, and region.\n\ncredit_fit &lt;- glm(maxed ~ income + rating + region, data = credit, \n                  family = \"binomial\")\n\ntidy(credit_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n9.898\n1.449\n6.829\n0.000\n\n\nincome\n0.113\n0.021\n5.273\n0.000\n\n\nrating\n-0.057\n0.008\n-7.397\n0.000\n\n\nregionSouth\n-0.595\n0.604\n-0.985\n0.324\n\n\nregionWest\n-0.082\n0.649\n-0.126\n0.900"
+  },
+  {
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-3",
+    "href": "ae/ae-09-exam-02-review.html#exercise-3",
+    "title": "AE 09: Exam 02 review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\)\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc.\nUse R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?"
+  },
+  {
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-4",
+    "href": "ae/ae-09-exam-02-review.html#exercise-4",
+    "title": "AE 09: Exam 02 review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic are equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data."
+  },
+  {
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-5",
+    "href": "ae/ae-09-exam-02-review.html#exercise-5",
+    "title": "AE 09: Exam 02 review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nCompute the predicted probabilities, then use those to predict whether individuals maxed out their credit card using a threshold of \\(\\hat{\\pi}   = 0.5\\).\nWhat is the accuracy? What does it mean in the context of the data?\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?"
+  },
+  {
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-6",
+    "href": "ae/ae-09-exam-02-review.html#exercise-6",
+    "title": "AE 09: Exam 02 review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nConstruct the ROC curve and compute the area under the curve (AUC).\nBased on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.\nSuppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.\nBased on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+  },
+  {
+    "objectID": "ae/ae-05-multicollinearity.html",
+    "href": "ae/ae-05-multicollinearity.html",
+    "title": "AE 05: Multicollinearity",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-05 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(rms) #calculate VIF"
+  },
+  {
+    "objectID": "ae/ae-05-multicollinearity.html#exercise-1",
+    "href": "ae/ae-05-multicollinearity.html#exercise-1",
+    "title": "AE 05: Multicollinearity",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nFit the regression model using high temperature, average temperature, season, and precipitation to predict volume.\nAre there any coefficients that may be not what you expected?\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-05-multicollinearity.html#exercise-2",
+    "href": "ae/ae-05-multicollinearity.html#exercise-2",
+    "title": "AE 05: Multicollinearity",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nUse the formula\n\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nto calculate the VIF for avgtemp.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-05-multicollinearity.html#exercise-3",
+    "href": "ae/ae-05-multicollinearity.html#exercise-3",
+    "title": "AE 05: Multicollinearity",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nBased on the VIF from the previous exercise, does avgtemp have a linear dependency with one or more other predictors? Explain."
+  },
+  {
+    "objectID": "ae/ae-05-multicollinearity.html#exercise-4",
+    "href": "ae/ae-05-multicollinearity.html#exercise-4",
+    "title": "AE 05: Multicollinearity",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nFill in the name of the model from Exercise 1 to calculate VIF for all predictors. (Remove #| eval: false after you’ve filled in the code.)\nAre there predictors with linear dependencies? If so, which ones?\n\n\nvif(____)"
+  },
+  {
+    "objectID": "ae/ae-05-multicollinearity.html#exercise-5",
+    "href": "ae/ae-05-multicollinearity.html#exercise-5",
+    "title": "AE 05: Multicollinearity",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nLet’s try to deal with the mulitcollinearity by removing one of the predictors that are linearly dependent. Choose a final model using this strategy.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-07-newton-raphson.html",
+    "href": "ae/ae-07-newton-raphson.html",
+    "title": "AE 07: Newton Raphson",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-07 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "ae/ae-07-newton-raphson.html#covid-19-infection-prevention-practices-at-food-establishments",
+    "href": "ae/ae-07-newton-raphson.html#covid-19-infection-prevention-practices-at-food-establishments",
+    "title": "AE 07: Newton Raphson",
+    "section": "COVID-19 infection prevention practices at food establishments",
+    "text": "COVID-19 infection prevention practices at food establishments\nResearchers at Wollo University in Ethiopia conducted a study in July and August 2020 to understand factors associated with good COVID-19 infection prevention practices at food establishments. Their study is published in Andualem et al. (2022).\nThey were particularly interested in the understanding implementation of prevention practices at food establishments, given the workers’ increased risk due to daily contact with customers.\nWe will use the data from Andualem et al. (2022) to explore the association between age, sex, years of service, and whether someone works at a food establishment with access to personal protective equipment (PPE) as of August 2020. We will use access to PPE as a proxy for wearing PPE.\nThe study participants were selected using a simple random sampling at the selected establishments.\n.\n\ncovid_df &lt;- read_csv(\"data/covid-prevention-study.csv\") |&gt;\n  rename(age = \"Age of food handlers\", \n         years = \"Years of service\", \n         ppe_access = \"Availability of PPEs\") |&gt;\n  mutate(sex = factor(if_else(Sex == 2, \"Female\", \"Male\")),\n         ppe_access = as_factor(ppe_access))"
+  },
+  {
+    "objectID": "ae/ae-07-newton-raphson.html#functions-for-newton-raphson",
+    "href": "ae/ae-07-newton-raphson.html#functions-for-newton-raphson",
+    "title": "AE 07: Newton Raphson",
+    "section": "Functions for Newton-Raphson",
+    "text": "Functions for Newton-Raphson\n\n## Calculate the first derivative of logL (score function)\n\ncalc_first_deriv &lt;- function(beta, X, y){\n  first_deriv &lt;- rep(0, length(beta))\n  for(i in 1:length(y)){\n    first_deriv &lt;- first_deriv + as.numeric(y[i] - exp(X[i,] %*% beta)/(1 + exp(X[i,] %*% beta))) %*% X[i,]\n  }\n  return(colSums(first_deriv)) #return values as a vector \n}\n\n## Calculate the second derivative of logL (Hessian)\n\ncalc_second_deriv &lt;- function(beta, X, y){\n  second_deriv &lt;- matrix(0, nrow = length(beta), ncol = length(beta))\n  for(i in 1:length(y)){\n    second_deriv &lt;- second_deriv + as.numeric(1/(1 + exp(X[i,] %*% beta)))*\n      as.numeric((exp(X[i,] %*% beta)/(1 + exp(X[i,] %*% beta)))) * \n      (X[i,]) %*% t(X[i,])\n  }\n  return(second_deriv)\n}"
+  },
+  {
+    "objectID": "ae/ae-07-newton-raphson.html#get-starting-values",
+    "href": "ae/ae-07-newton-raphson.html#get-starting-values",
+    "title": "AE 07: Newton Raphson",
+    "section": "Get starting values",
+    "text": "Get starting values\n\n# design matrix\nX &lt;- model.matrix(~ age + sex + years, data = covid_df)\n\n# vector of response\ny &lt;- I(covid_df$ppe_access == 1)\n\n# vector of coefficients\nbeta &lt;- c(0, 0, 0, 0)\n\n# keep track of iterations\niter &lt;- 1\n\n# keep track of difference in estimates\ndelta &lt;- 1\n\n# keep track of estimates at each iteration \ntemp &lt;- matrix(0, nrow = 500, ncol = 4)"
+  },
+  {
+    "objectID": "ae/ae-07-newton-raphson.html#estimate-boldsymbolbeta",
+    "href": "ae/ae-07-newton-raphson.html#estimate-boldsymbolbeta",
+    "title": "AE 07: Newton Raphson",
+    "section": "Estimate \\(\\boldsymbol{\\beta}\\)",
+    "text": "Estimate \\(\\boldsymbol{\\beta}\\)\n\nwhile(delta &gt; 0.000001 & iter &lt; 50){\n  old &lt;- beta\n  beta &lt;- old - solve(-1 * calc_second_deriv(beta = beta, X = X, y = y)) %*% \n                calc_first_deriv(beta = beta, X = X, y = y)\n  temp[iter,] &lt;- beta\n  delta &lt;- sqrt(sum((beta - old)^2))\n  iter &lt;- iter + 1\n}"
+  },
+  {
+    "objectID": "ae/ae-07-newton-raphson.html#show-results",
+    "href": "ae/ae-07-newton-raphson.html#show-results",
+    "title": "AE 07: Newton Raphson",
+    "section": "Show results",
+    "text": "Show results\n\niter\n\n[1] 7\n\nbeta\n\n                   [,1]\n(Intercept) -2.12709823\nage          0.05586608\nsexMale      0.34070061\nyears        0.26396205\n\n\nNote that \\((\\nabla^2_{\\boldsymbol{\\beta}} \\log L)^{-1}\\)is the estimate for \\(Var(\\boldsymbol{\\hat{\\beta}})\\) . The square root of the diagonal elements are the estimates for \\(SE(\\hat{\\boldsymbol{\\beta}})\\).\n\n#calculate the hessian matrix\nsecond_deriv &lt;- calc_second_deriv(beta = beta, X = X, y = y)\n  \n# take the inverse\ninv_second_deriv &lt;- solve(second_deriv)\n\n# get estimates for SE\nse_beta &lt;- sqrt(diag(inv_second_deriv))\n\nse_beta\n\n[1] 0.45832580 0.01740581 0.22360561 0.06583117"
+  },
+  {
+    "objectID": "ae/ae-07-newton-raphson.html#coefficient-estimates-from-glm",
+    "href": "ae/ae-07-newton-raphson.html#coefficient-estimates-from-glm",
+    "title": "AE 07: Newton Raphson",
+    "section": "Coefficient estimates from glm",
+    "text": "Coefficient estimates from glm\n\nppe_model &lt;- glm(ppe_access ~ age + sex + years, \n                 data = covid_df, family = binomial)\ntidy(ppe_model, conf.int = TRUE) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-2.127\n0.458\n-4.641\n0.000\n-3.058\n-1.257\n\n\nage\n0.056\n0.017\n3.210\n0.001\n0.023\n0.091\n\n\nsexMale\n0.341\n0.224\n1.524\n0.128\n-0.098\n0.780\n\n\nyears\n0.264\n0.066\n4.010\n0.000\n0.143\n0.401"
+  },
+  {
+    "objectID": "ae/ae-03-inference.html",
+    "href": "ae/ae-03-inference.html",
+    "title": "AE 03: Inference",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-03 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\n\n\nSet up\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\n\nfootball &lt;- read_csv(\"data/ncaa-football-exp.csv\")\n\n\n\nData\n\n\nRegression model\n\nexp_fit &lt;- lm(total_exp_m ~ enrollment_th + type, data = football)\n\ntidy(exp_fit)|&gt; \n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n\n\n\n\n\n\n\nHypothesis test\nWe want to conduct a hypothesis test to determine if there is a linear relationship between enrollment and football expenditures after accounting for institution type.\nWe’ll start by getting estimates for statistics we’ll need for inference.\n\n\n\n\n\n\nExercise 1\n\n\n\nWe will use the vector of responses \\(\\mathbf{y}\\) and the design matrix \\(\\mathbf{X}\\) to calculate the values needed for inference.\nGet \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the football data frame. What are their dimensions?\n\n\n\n# add code here\n\n\n\n\n\n\n\nExercise 2\n\n\n\nNext, let’s calculate \\(\\hat{\\sigma}_\\epsilon^2\\) the estimate. Use \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the previous exercise to calculate this value.\n\n\n\n## add code here\n\n\n\n\n\n\n\nExercise 3\n\n\n\nNow we’re ready to conduct the hypothesis test. State the null and alternative hypotheses in words and using mathematical notation.\n\n\n. . .\n\n\n\n\n\n\nExercise 4\n\n\n\nCalculate \\(SE(\\beta_j)\\), then use this value to calculate the test statistic for the hypothesis test.\n\n\n\n## add code here\n\n\n\n\n\n\n\nExercise 5\n\n\n\nNow we need to calculate p-value to help make our final conclusion.\n\nState the distribution used to calculate the p-value.\nFill in the code below to calculate the p-value. Remove #| eval: false once you’ve filled in the code.\n\n\n\n\npt([test-statistic], [df], lower.tail = FALSE)\n\n\n\n\n\n\n\nExercise 6\n\n\n\nState your conclusion in the context of the data. Use a threshold of \\(\\alpha = 0.05\\).\n\n\n. . .\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+  },
+  {
+    "objectID": "prepare/prepare-lec03.html",
+    "href": "prepare/prepare-lec03.html",
+    "title": "Prepare for Lecture 03: Model assessment",
+    "section": "",
+    "text": "📖 Read Model assessment\nFor computing introduction / review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "prepare/prepare-lec05.html",
+    "href": "prepare/prepare-lec05.html",
+    "title": "Prepare for Lecture 05: SLR - Matrix representation cont’d",
+    "section": "",
+    "text": "Review linear algebra concepts (as needed)\n\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+  },
+  {
+    "objectID": "hw/stats-experience.html",
+    "href": "hw/stats-experience.html",
+    "title": "Statistics Experience",
+    "section": "",
+    "text": "To be posted.",
     "crumbs": [
-      "Computing",
-      "Access"
+      "Homework",
+      "Statistics experience"
     ]
   },
   {
-    "objectID": "slides/lab-02.html#goals",
-    "href": "slides/lab-02.html#goals",
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 05"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Getting Started",
+    "section": "",
+    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Getting Started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Getting Started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Getting Started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#getting-started",
+    "href": "labs/lab-00.html#getting-started",
+    "title": "Lab 00: Getting Started",
+    "section": "Getting started",
+    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/HJQpdTm_\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#update-the-quarto-document",
+    "href": "labs/lab-00.html#update-the-quarto-document",
+    "title": "Lab 00: Getting Started",
+    "section": "Update the Quarto document",
+    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "title": "Lab 00: Getting Started",
+    "section": "Commit and push changes to GitHub",
+    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 03"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
     "title": "Lab 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "",
+    "text": "Due date\n\n\n\nThis lab is due on Tuesday, January 21 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#learning-goals",
+    "href": "labs/lab-01.html#learning-goals",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the lab, you will…\n\nRecall some basic matrix operations and linear algebra rules\nBe familiar with the workflow using RStudio and GitHub\nGain practice writing a reproducible report using Quarto\nPractice version control using GitHub\nBe able to produce visualizations and summary statistics to describe distributions",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#clone-the-repo-start-new-rstudio-project",
+    "href": "labs/lab-01.html#clone-the-repo-start-new-rstudio-project",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Clone the repo & start new RStudio project",
+    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta221-sp25 organization on GitHub.\nClick on the repo with the prefix lab-01. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\nSee the Lab 00 instructions if you have not set up the SSH key or configured git.\n\nIn RStudio, go to File \\(\\rightarrow\\) New Project \\(\\rightarrow\\) Version Control \\(\\rightarrow\\) Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#r-and-r-studio",
+    "href": "labs/lab-01.html#r-and-r-studio",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "R and R Studio",
+    "text": "R and R Studio\nBelow are the components of the RStudio IDE.\n\n\n\n\n\nBelow are the components of an Quarto (.qmd) file.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#yaml",
+    "href": "labs/lab-01.html#yaml",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "YAML",
+    "text": "YAML\nThe top portion of your Quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nOpen the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#committing-changes",
+    "href": "labs/lab-01.html#committing-changes",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Committing changes",
+    "text": "Committing changes\nNow, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on Diff. This shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\nIf you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, stage your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the Commit message box. Finally, click Commit. Note that every commit needs to have a commit message associated with it.\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration.\nIn the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#push-changes",
+    "href": "labs/lab-01.html#push-changes",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Push changes",
+    "text": "Push changes\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\nIn order to push your changes to GitHub, you must have staged your commit to be pushed. click on Push.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#instructions",
+    "href": "labs/lab-01.html#instructions",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Instructions",
+    "text": "Instructions\nWrite all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically render your Quarto document to produce the updated PDF, commit the changes in the Git pane, and push the updated files to GitHub.\n\n\n\n\n\n\nTip\n\n\n\nMake sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (|&gt;) and plus sign (+).",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-1",
+    "href": "labs/lab-01.html#exercise-1",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nViewing a summary of the data is a useful starting point for data analysis, especially if the data set has a large number of observations (rows) or variables (columns). Run the code below to use the glimpse function to see a summary of the ikea data set.\nHow many observations are in the ikea data set? How many variables?\n\nglimpse(ikea)\n\n\n\n\n\n\n\nNote\n\n\n\nIn your `lab-01.qmd` document you’ll see that we already added the code required for the exercise as well as a sentence where you can fill in the blanks to report the answer. Use this format for the remaining exercises.\nAlso note that the code chunk has a label: glimpse-data. Labeling your code chunks is not required, but it is good practice and highly encouraged.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-2",
+    "href": "labs/lab-01.html#exercise-2",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nWe begin each regression analysis with exploratory data analysis (EDA) to help us “get to know” the data and examine the variable distributions and relationships between variables. We do this by visualizing the data and calculating summary statistics to describe the variables in our data set. In this lab, we will focus on data visualizations.\nWhen we make visualizations, we want them to be clear and suitable to present to a professional audience. This means that, at a minimum, each visualization should have an informative title and informative axis labels.\nFill in the code below to visualize the distribution of price_usd, the price in US dollars.\n\nggplot(data = ikea, aes(x = _____)) +\n  geom_histogram() +\n    labs(x = \"_____\",\n       y = \"_____\", \n       title = \"_____\")",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-3",
+    "href": "labs/lab-01.html#exercise-3",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nUse the visualization to describe the distribution of price. In your narrative, include descriptions of the shape, approximate center, approximate spread, and any presence of outliers. Briefly explain why the median is more representative of the center of this distribution than the mean.\nNote: You may compute summary statistics to more precisely describe the center and spread.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-4",
+    "href": "labs/lab-01.html#exercise-4",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nIn this course, we’ll be most interested in the relationship between two or more variables, so let’s begin by looking at the distribution of price by category. We’ll focus on two categories, Sofas & armchairs and Bookcases & shelving units, since these may be types of furniture most useful to furnish an office.\nFill in the code below to create a new data frame called ikea_sub that only includes the furniture categories of interest. We’re assigning this subsetted data frame to an object with a new name, so we don’t overwrite the original data.\n\nikea_sub &lt;- ikea |&gt;\n  filter(_____ %in% c( \"_____\",\n                       \"_____\"))\n\nNow, run the code below to remove observations that have that have a missing value for at least one of width or price_usd.\n\nikea_sub &lt;- ikea_sub |&gt;\n  drop_na(width, price_usd)\n\nHow many observations are in the ikea_sub data frame? How many variables?\n\n\n\n\n\n\nImportant\n\n\n\nUse the ikea_sub data frame for the remainder of lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-5",
+    "href": "labs/lab-01.html#exercise-5",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nCreate a visualization of the relationship between the width and price of your items at Ikea in the two categories of interest. Include informative axis labels and an informative title. Use the visualization to describe the relationship between the two variables.\nThen, recreate your visualization, but now adding color based on furniture category. Comment on your observations from this visualization.\nNote: Show both visualizations in the response.\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 - 5”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#instructions-1",
+    "href": "labs/lab-01.html#instructions-1",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Instructions",
+    "text": "Instructions\n\nThe conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.\n\nPut any relevant R code in the Quarto document. You may write the answers and show any associated work for conceptual exercises by hand or type them in your Quarto document using LaTex.\nLet\n\\[\nA = \\begin{bmatrix}\n1 & 2\\\\\n3 & 4\\\\\n5 & 6\\end{bmatrix},\n\\qquad\nB = \\begin{bmatrix}\n1 & 1 & 1 & 1\\\\\n0 & 1 & 2 & 3\n\\end{bmatrix},\n\\qquad\nC = \\begin{bmatrix}\n1 & 4\\\\\n2 & 5\\\\\n3 & 6\\end{bmatrix}\n\\qquad\n\\]\n\\[\n\\mathbf{X} = \\begin{bmatrix}\nx_{11} & x_{12}& \\dots & x_{1p}\\\\\nx_{21} & x_{22}& \\dots & x_{2p}\\\\\n\\vdots & \\vdots& \\ddots & \\vdots\\\\\nx_{n1} & x_{n2}& \\dots & x_{np}\\\\\\end{bmatrix}\n\\]",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-6",
+    "href": "labs/lab-01.html#exercise-6",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nWrite the dimensions of the following matrices:\n\n\\(A\\)\n\\(B\\)\n\\(A^\\top\\)\n\\(\\mathbf{X}\\)\n\\(\\mathbf{X}^\\top\\)",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-7",
+    "href": "labs/lab-01.html#exercise-7",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 7",
+    "text": "Exercise 7\ni. Which of the following is a proper matrix multiplication operation? Explain why.\n\n\\(A\\times C\\)\n\\(A\\times B\\)\n\\(A^\\top \\times B\\)\n\\(B \\times A\\)\n\\(B^\\top \\times C\\)\n\\(B\\times B\\)\n\nii. Perform the multiplication you chose in part (i).",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#matrix-operations-in-r",
+    "href": "labs/lab-01.html#matrix-operations-in-r",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Matrix operations in R",
+    "text": "Matrix operations in R\nR has built in matrix tools such as addition, multiplication, transpose, etc. We will now practice using these tools to review some matrix properties.\nWe first begin by creating matrices using matrix() function. We provide elements of our matrices as the data argument and specify how many rows our matrices have. byrow = TRUE allows us to fill the matrix by row.\n\nA &lt;- matrix(data = c(1, 2,\n                     3, 4,\n                     5, 6),\n            nrow = 3, \n            byrow = TRUE) \n\nB &lt;- matrix(data = c(1, 1, 1, 1, \n                     0, 1, 2, 3), \n            nrow = 2,\n            byrow = TRUE)\n\nC &lt;-  matrix(data = c(1, 4,\n                      2, 5,\n                      3, 6),\n            nrow = 3, \n            byrow = TRUE) \n\nYou can learn more about matrix() function by typing ?matrix in console.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-8",
+    "href": "labs/lab-01.html#exercise-8",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 8",
+    "text": "Exercise 8\ni. To perform addition or subtraction, we can simply use a + or - operators.\n\n# Add A and C\nA + C\n\n     [,1] [,2]\n[1,]    2    6\n[2,]    5    9\n[3,]    8   12\n\n\nUsing R, find \\(C + A\\). Is addition commutative (i.e. does \\(A + C = C + A\\))? Show the work to support your response.\nii. In R, we have to use a special matrix multiplication operator, %*% .\n\n# multiply A and B\nA %*% B\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    3    5    7\n[2,]    3    7   11   15\n[3,]    5   11   17   23\n\n\nDoes the output match your answer to Exercise 2 (ii)? What happens if you try to multiply \\(B\\times A\\) in R?\n\n\n\n\n\n\nWarning\n\n\n\nMatrix multiplication is not commutative! Matrix multiplication satisfies left and right distributivity: \\((\\mathbf{A} + \\mathbf{B}) \\mathbf{C} = \\mathbf{A}\\mathbf{C} + \\mathbf{B}\\mathbf{C}\\), and \\(\\mathbf{A}( \\mathbf{B}+ \\mathbf{C}) = \\mathbf{A}\\mathbf{B} + \\mathbf{A}\\mathbf{C}\\), but the order here matters. \\((\\mathbf{A} + \\mathbf{B}) \\mathbf{C} \\neq \\mathbf{C}\\mathbf{A} +\\mathbf{C} \\mathbf{B}\\), and \\(\\mathbf{A}( \\mathbf{B}+ \\mathbf{C}) = \\mathbf{B}\\mathbf{A} + \\mathbf{C}\\mathbf{A}\\). Pay attention to the order and dimensions of matrices.\n\n\niii. In this class, we will work a lot with matrix transposes. You can transpose a matrix in R by applying t() function.\n\n# transpose A\nt(A)\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\nFind \\(B^\\top \\times A^\\top\\) using R. How is your answer compare to the result of \\(A\\times B\\) you found in previous part?\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 6 - 8”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-9",
+    "href": "labs/lab-01.html#exercise-9",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nLet \\(\\mathbf a = \\begin{bmatrix}a_1 \\\\ \\vdots \\\\ a_n\\end{bmatrix}\\) and \\(\\mathbf b = \\begin{bmatrix}b_1 \\\\ \\vdots \\\\ b_n\\end{bmatrix}\\). Recall, \\[\\mathbf{a}^\\top \\mathbf{a} = \\sum_{i=1}^n a_i^2.\\]\nWrite \\((\\mathbf{a} - \\mathbf{b})^\\top (\\mathbf{a} - \\mathbf{b})\\) using summation notation.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#more-linear-algebra",
+    "href": "labs/lab-01.html#more-linear-algebra",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "More Linear Algebra",
+    "text": "More Linear Algebra\nRecall the definition of linear dependence:\nA sequence of vectors \\(\\mathbf{x_1}, \\mathbf{x_2}, \\dots, \\mathbf{x_p}\\) is said to be linearly dependent if there exists a series of scalars \\(a_1, a_2, \\dots, a_p\\), not all zero, such that\n\\[\na_1 \\mathbf{x_1} + a_2 \\mathbf{x_2} + \\dots + a_p \\mathbf{x_p} = \\mathbf{0}\n\\] Further, matrix \\(\\mathbf{X}\\) has full column rank if all of its columns are linearly independent.\nFor example, the following matrix is not full rank,\n\\[\n\\mathbf{X} = \\begin{bmatrix}\n1 & 2 & 3\\\\\n1 & 1 & 2\n\\end{bmatrix}\n\\] since, letting letting \\(\\mathbf{x_1} = \\begin{bmatrix}1\\\\1 \\end{bmatrix}\\), \\(\\mathbf{x_2} = \\begin{bmatrix}2\\\\1 \\end{bmatrix}\\), \\(\\mathbf{x_3} = \\begin{bmatrix}3\\\\2 \\end{bmatrix}\\), and letting \\(a_1 = 1\\), \\(a_2 = 1\\), and \\(a_3 = -1\\), we have:\n\\[\na_1 \\mathbf{x_1} + a_2\\mathbf{x_2} + a_3\\mathbf{x_3} =  \\begin{bmatrix}1\\\\1 \\end{bmatrix} + \\begin{bmatrix}2\\\\1 \\end{bmatrix} - \\begin{bmatrix}3\\\\2 \\end{bmatrix} = \\mathbf{0}.\n\\]",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#exercise-10",
+    "href": "labs/lab-01.html#exercise-10",
+    "title": "Lab 01: Computing + linear algebra review",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nFor each of the following matrices, state whether it is full rank. If not full rank, show why (find corresponding coefficients \\(a\\)’s).\n\n\\[\\begin{bmatrix}\n1 & 0 & 0\\\\\n1 & 1 & 0\\\\\n1 & 1 & 0\\\\\n1 & 0 & 1\n\\end{bmatrix}\\]\n\\[\\begin{bmatrix}\n0 & 0 & 1\\\\\n1 & 0 & 0\\\\\n1 & 0 & 0\\\\\n0 & 1 & 0\n\\end{bmatrix}\\]\n\\[\\begin{bmatrix}\n1 & 0 & 0 & 1\\\\\n1 & 1 & 0 & 0\\\\\n1 & 1 & 0 & 0\\\\\n1 & 0 & 1 & 0\n\\end{bmatrix}\\]",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 04"
+    ]
+  },
+  {
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 07"
+    ]
+  },
+  {
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\nName\nRole\n\n\nKat Husar\nHead TA\nLab 01L leader\n\n\nKelly Huang\nClassroom TA\n\n\nJanice Kim\nClassroom TA\n\n\nCathy Lee\nLab 02L leader\n\n\nAlan Wang\nLab 01L helper\n\n\n\nOffice hours times and locations on Canvas.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "prepare/prepare-lec04.html",
+    "href": "prepare/prepare-lec04.html",
+    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "section": "",
+    "text": "Review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+  },
+  {
+    "objectID": "prepare/prepare-lec02.html",
+    "href": "prepare/prepare-lec02.html",
+    "title": "Prepare for Lecture 02: Simple linear regression",
+    "section": "",
+    "text": "📖 Read Simple linear regression, Section 4.1 - 4.6\n📖 Read R for Data Science, Introduction: What you will learn\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\nFor computing introduction / review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "ae/ae-08-logistic-review.html",
+    "href": "ae/ae-08-logistic-review.html",
+    "title": "AE 08: Logistic regression review",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-08 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(pROC)\nlibrary(Stat2Data)"
+  },
+  {
+    "objectID": "ae/ae-08-logistic-review.html#exercise-1",
+    "href": "ae/ae-08-logistic-review.html#exercise-1",
+    "title": "AE 08: Logistic regression review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nWhy do we use logistic regression (instead of linear regression) for this analysis?\nThe four assumptions for linear regression are Linearity, Constant Variance, Normality, and Independence. For each assumption, state whether it is satisfied in logistic regression. If yes, state what the assumption means in the context of logistic regression. Otherwise, briefly explain why it is not satisfied."
+  },
+  {
+    "objectID": "ae/ae-08-logistic-review.html#exercise-2",
+    "href": "ae/ae-08-logistic-review.html#exercise-2",
+    "title": "AE 08: Logistic regression review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nWrite the interpretation of income in terms of the odds of maxing out a credit card.\nShow mathematically why we include “holding all else constant” in the interpretation for income.\nDescribe the expected change in the odds of maxing out a credit card when income increases from the median value $33,100 to $57,500 (the \\(75^{th}\\)) percentile. Assume rating and region are constant."
+  },
+  {
+    "objectID": "ae/ae-08-logistic-review.html#exercise-3",
+    "href": "ae/ae-08-logistic-review.html#exercise-3",
+    "title": "AE 08: Logistic regression review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\)\n\n\n\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc.\nUse R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?"
+  },
+  {
+    "objectID": "ae/ae-08-logistic-review.html#exercise-4",
+    "href": "ae/ae-08-logistic-review.html#exercise-4",
+    "title": "AE 08: Logistic regression review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic is equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data."
+  },
+  {
+    "objectID": "ae/ae-08-logistic-review.html#exercise-5",
+    "href": "ae/ae-08-logistic-review.html#exercise-5",
+    "title": "AE 08: Logistic regression review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nCompute the predicted probabilities, then use those to predict whether individuals maxed out their credit card using a threshold of \\(\\hat{\\pi}   = 0.5\\).\nWhat is the accuracy? What does it mean in the context of the data?\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?"
+  },
+  {
+    "objectID": "ae/ae-08-logistic-review.html#exercise-6",
+    "href": "ae/ae-08-logistic-review.html#exercise-6",
+    "title": "AE 08: Logistic regression review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nConstruct the ROC curve and compute the area under the curve (AUC).\nBased on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.\nSuppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.\nBased on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html",
+    "href": "ae/ae-04-exam-01-review.html",
+    "title": "AE 04: Exam 01 Review",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-04 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE."
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#packages",
+    "href": "ae/ae-04-exam-01-review.html#packages",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(patchwork)"
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#restaurant-tips",
+    "href": "ae/ae-04-exam-01-review.html#restaurant-tips",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Restaurant tips",
+    "text": "Restaurant tips\nWhat factors are associated with the amount customers tip at a restaurant? To answer this question, we will use data collected in 2011 by a student at St. Olaf who worked at a local restaurant.1\nThe variables we’ll focus on for this analysis are\n\nTip: amount of the tip\nParty: number of people in the party\nAge: Age of the payer\n\nView the data set to see the remaining variables.\n\ntips &lt;- read_csv(\"data/tip-data.csv\")"
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#exploratory-data-analysis",
+    "href": "ae/ae-04-exam-01-review.html#exploratory-data-analysis",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\np1 &lt;- ggplot(data = tips, aes(x = Tip)) + \n  geom_histogram(color = \"white\", binwidth = 2) +\n  labs(x = \"Tips ($)\",\n       title = \"Tips at local restaurant\")\n\np2 &lt;- ggplot(data = tips, aes(x = Party)) + \n  geom_histogram(color = \"white\") +\n  labs(x = \"Party\",\n       title = \"Number of diners in party\") +\n  xlim(c(0, 7))\n\np3 &lt;- ggplot(data = tips, aes(x = Age)) + \n  geom_bar(color = \"white\") +\n  labs(x = \"\",\n       title = \"Age of Payer\") \n\np1 / (p2 + p3)\n\n\n\n\n\n\n\n\n\np4 &lt;- ggplot(data = tips, aes(x = Party, y = Tip)) + \n  geom_jitter() + \n  labs(x = \"Number of diners in party\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Party\")\n\np5 &lt;- ggplot(data = tips, aes(x = Age, y = Tip)) + \n  geom_boxplot() + \n  labs(x = \"Age of payer\", \n       y = \"Tips ($)\",\n       title = \"Tips vs. Age\")\n\np4 + p5\n\n\n\n\n\n\n\n\nWe will use the number of diners in the party and age of the payer to understand variability in the tips."
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#exercise-1",
+    "href": "ae/ae-04-exam-01-review.html#exercise-1",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWe will start with the main effects model.\n\nHow many indicator variables for Age can we create from the data?\nHow many indicator variables for Age will be in the regression model?\nAre the responses to parts a and b equal? If not, explain why not.\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age."
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#exercise-2",
+    "href": "ae/ae-04-exam-01-review.html#exercise-2",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nWhat is the dimension of the design matrix \\(\\mathbf{X}\\) for the main effects model?\nCalculate the coefficient estimates \\(\\hat{\\boldsymbol{\\beta}}\\) directly from the data.\nWrite the equation of the estimated regression model.\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#exercise-3",
+    "href": "ae/ae-04-exam-01-review.html#exercise-3",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nCompute the following directly from the data:\n\nThe regression standard error \\(\\hat{\\sigma}_{\\epsilon}\\) . Interpret this value in the context of the data.\n\\(R^2\\). Interpret this value in the context of the data.\n\\(RMSE\\). Interpret this value in the context of the data.\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#exercise-4",
+    "href": "ae/ae-04-exam-01-review.html#exercise-4",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nYou decide to add an interaction effect between Age and Party to the model and fit a model of the following form:\n\\[\n\\hat{Tip}_i = \\beta_0 + \\beta_1Party_i + \\beta_2SenCit_i + \\beta_3Yadult_i + \\beta_4Party_i \\times SenCit_i + \\beta_5 Party_i \\times Yadult_i\n\\]\n\nWhich of the following is true for this model? Select all that apply.\n\nThe intercepts are the same for every level of Age.\nThe intercepts differ by Age.\nThe effect of Party is the same for every level of Age.\nThe effect of Party differs by Age.\n\nBy how much does the intercept for tables with young adult payers differ from tables with middle age payers?\nWrite the equation of the model for tables in which the payer is a senior citizen.\nSuppose you wish to test the hypotheses: \\(H_0: \\beta_5 = 0 \\text{ vs. }H_a: \\beta_5 \\neq 0\\) . State what is being tested in terms of the effect of Party."
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#exercise-5",
+    "href": "ae/ae-04-exam-01-review.html#exercise-5",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nThe output for the model with the interaction term and 90% confidence intervals for the coefficients is shown below.\n\ntip_int_fit &lt;- lm(Tip ~ Party + Age + Party * Age, data = tips)\ntidy(tip_int_fit, conf.int = TRUE, conf.level = 0.9) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n0.604\n0.504\n1.199\n0.232\n-0.229\n1.438\n\n\nParty\n1.924\n0.169\n11.359\n0.000\n1.644\n2.204\n\n\nAgeSenCit\n1.033\n0.784\n1.317\n0.190\n-0.265\n2.330\n\n\nAgeYadult\n-1.203\n0.928\n-1.297\n0.197\n-2.739\n0.332\n\n\nParty:AgeSenCit\n-0.259\n0.262\n-0.986\n0.325\n-0.692\n0.175\n\n\nParty:AgeYadult\n0.199\n0.504\n0.395\n0.693\n-0.635\n1.034\n\n\n\n\n\n\nWhat does 0.784, the standard error of AgeSenCit mean in the context of the data?\nWhat does 1.317, the test statistic for AgeSenCit mean in the context of the data?\nWhat does the p-value 0.190 mean in the context of the data?\nThe 90% confidence interval corresponds to what \\(\\alpha\\)-level?\nWhat is your conclusion about the effect of AgeSenCit?"
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#exercise-6",
+    "href": "ae/ae-04-exam-01-review.html#exercise-6",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nThe following are general questions about regression. They are not specific to the tips data set.\n\nWhat does it mean for an estimator to be the “least-squares” estimator?\nConsider the following derivation of \\(Var(\\hat{\\boldsymbol{\\beta}})\\) , the variance of the least-squares estimator:\n\\[\n\\begin{aligned}\nVar(\\hat{\\boldsymbol{\\beta}}) & = E[(\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta})(\\hat{\\boldsymbol{\\beta}} - \\boldsymbol{\\beta})^T] \\\\\n& = E[((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon})((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\boldsymbol{\\epsilon})^T] \\\\\n& = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^TE(\\boldsymbol{\\epsilon}\\boldsymbol{\\epsilon}^T)\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} \\\\\n& = \\sigma^2(\\mathbf{X}^T\\mathbf{X})^{-1}\n\\end{aligned}\n\\]\n\nExplain how to go from Line 1 to Line 2.\n\nWhat assumptions are used to go from Line 3 to Line 4?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+  },
+  {
+    "objectID": "ae/ae-04-exam-01-review.html#footnotes",
+    "href": "ae/ae-04-exam-01-review.html#footnotes",
+    "title": "AE 04: Exam 01 Review",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College.↩︎"
+  },
+  {
+    "objectID": "ae/ae-06-prob-odds.html",
+    "href": "ae/ae-06-prob-odds.html",
+    "title": "AE 06: Probabilities, Odds, Odds ratios",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-06 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "ae/ae-06-prob-odds.html#footnotes",
+    "href": "ae/ae-06-prob-odds.html#footnotes",
+    "title": "AE 06: Probabilities, Odds, Odds ratios",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nExcerpt from Chapter 5 of Handbook of Regression Modeling in People Analytics by Keith McNulty.↩︎"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html",
+    "href": "ae/ae-01-slr.html",
+    "title": "AE 01: Simple linear regression",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-01 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\nThis AE will not count towards your participation grade.\nlibrary(tidyverse)    # data wrangling and visualization\nlibrary(tidymodels)   # broom and yardstick package\nlibrary(openintro)    # duke_forest dataset\nlibrary(knitr)        # format output\nlibrary(scales)       # format plot axes\nlibrary(skimr)        # quickly calculate summary statistics"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-1",
+    "href": "ae/ae-01-slr.html#exercise-1",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWhat are 1 - 2 observations about the distribution of price?"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-2",
+    "href": "ae/ae-01-slr.html#exercise-2",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nVisualize the distribution of area and calculate summary statistics.\n\n# add code here\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-3",
+    "href": "ae/ae-01-slr.html#exercise-3",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWhat are 1 - 2 observations about the distribution of area?"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-4",
+    "href": "ae/ae-01-slr.html#exercise-4",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nFill in the code to visualize the relationship between price and area. What are 1 - 2 observations about the relationship between these two variables?\n\n\n\n\n\n\nImportant\n\n\n\nRemove #|eval: false after you have filled in the code!\n\n\n\nggplot(duke_forest, aes(x = ____, y = ____)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"_______\",\n    y = \"_________\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-5",
+    "href": "ae/ae-01-slr.html#exercise-5",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nYou want to fit a model of the form\n\\[\nprice = \\beta_0 + \\beta_1 ~ area + \\epsilon, \\hspace{5mm} \\epsilon \\sim N(0, \\sigma^2_\\epsilon)\n\\]\nWould a model of this form be a reasonable fit for the data? Why or why not?"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-6",
+    "href": "ae/ae-01-slr.html#exercise-6",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nFit the linear model described in the previous exercise and neatly display the output.\nSee notes for example code.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-7",
+    "href": "ae/ae-01-slr.html#exercise-7",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\nInterpret the slope in the context of the data.\nInterpret the slope in terms of area increasing by 100 sqft.\nWhich interpretation do you think is more meaningful in practice?"
+  },
+  {
+    "objectID": "ae/ae-01-slr.html#exercise-8",
+    "href": "ae/ae-01-slr.html#exercise-8",
+    "title": "AE 01: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nDoes it make sense to interpret the intercept? If so, interpret it in the context of the data. Otherwise, explain why not."
+  },
+  {
+    "objectID": "ae/ae-02-mlr.html",
+    "href": "ae/ae-02-mlr.html",
+    "title": "AE 02: Multiple linear regression",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-02 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\n\n\nPackages\n\nlibrary(tidyverse)   \nlibrary(tidymodels)   \nlibrary(openintro)    \nlibrary(knitr)       \n\n\n\nData\nToday’s data is a sample of 50 loans made through a peer-to-peer lending club. The data is in the loan50 data frame in the openintro R package.\nWe will focus on the following variables:\n\nannual_income_th: Annual income (in $1000s)\ndebt_to_income: Debt-to-income ratio, i.e. the percentage of a borrower’s total debt divided by their total income\nverified_income: Whether borrower’s income source and amount have been verified (Not Verified, Source Verified, Verified)\ninterest_rate: Interest rate for the loan\n\nThe goal of this analysis is to use the annual income, debt-to-income ratio, and income verification to understand variability in the interest rate on the loan.\nWe’ll start with data prep to rescale annual income to $1000’s and recode verified_income to fix an issue with the underlying data.\n\nloan50 &lt;- loan50 |&gt;\n   mutate(annual_income_th = annual_income / 1000, \n          verified_income = \n            case_when(verified_income == \"Not Verified\" ~ \"Not Verified\",\n                      verified_income == \"Source Verified\" ~ \"Source Verified\",\n                      verified_income == \"Verified\" ~ \"Verified\"),\n          verified_income = as_factor(verified_income)\n   )                    \n\n\nglimpse(loan50)\n\nRows: 50\nColumns: 19\n$ state                   &lt;fct&gt; NJ, CA, SC, CA, OH, IN, NY, MO, FL, FL, MD, HI…\n$ emp_length              &lt;dbl&gt; 3, 10, NA, 0, 4, 6, 2, 10, 6, 3, 8, 10, 10, 2,…\n$ term                    &lt;dbl&gt; 60, 36, 36, 36, 60, 36, 36, 36, 60, 60, 36, 36…\n$ homeownership           &lt;fct&gt; rent, rent, mortgage, rent, mortgage, mortgage…\n$ annual_income           &lt;dbl&gt; 59000, 60000, 75000, 75000, 254000, 67000, 288…\n$ verified_income         &lt;fct&gt; Not Verified, Not Verified, Verified, Not Veri…\n$ debt_to_income          &lt;dbl&gt; 0.55752542, 1.30568333, 1.05628000, 0.57434667…\n$ total_credit_limit      &lt;int&gt; 95131, 51929, 301373, 59890, 422619, 349825, 1…\n$ total_credit_utilized   &lt;int&gt; 32894, 78341, 79221, 43076, 60490, 72162, 2872…\n$ num_cc_carrying_balance &lt;int&gt; 8, 2, 14, 10, 2, 4, 1, 3, 10, 4, 3, 4, 3, 2, 3…\n$ loan_purpose            &lt;fct&gt; debt_consolidation, credit_card, debt_consolid…\n$ loan_amount             &lt;int&gt; 22000, 6000, 25000, 6000, 25000, 6400, 3000, 1…\n$ grade                   &lt;fct&gt; B, B, E, B, B, B, D, A, A, C, D, A, A, A, A, E…\n$ interest_rate           &lt;dbl&gt; 10.90, 9.92, 26.30, 9.92, 9.43, 9.92, 17.09, 6…\n$ public_record_bankrupt  &lt;int&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0…\n$ loan_status             &lt;fct&gt; Current, Current, Current, Current, Current, C…\n$ has_second_income       &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…\n$ total_income            &lt;dbl&gt; 59000, 60000, 75000, 75000, 254000, 67000, 288…\n$ annual_income_th        &lt;dbl&gt; 59.0, 60.0, 75.0, 75.0, 254.0, 67.0, 28.8, 80.…\n\n\n\n\nCategorical predictors\n\n\n\n\n\n\nExercise 1\n\n\n\nLet’s take a look at the design matrix for the model with predictors debt_to_income, annual_income_th, and verified_income.\nHow does R choose the baseline level by default?\n\n\n\n## add code here\n\n[Add response here]\n\n\n\n\n\n\nExercise 2\n\n\n\nFit the model with the predictors debt_to_income, annual_income_th, verified_income , and the interaction between annual_income_th and verified_income.\nNeatly display the model results using 3 digits.\n\n\n\n# add code here\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nWrite the estimated regression equation for the people with Not Verified income.\nWrite the estimated regression equation for people with Verified income.\n\n\n\n[add response here]\n\n\n\n\n\n\nExercise 4\n\n\n\nIn general, how do\n\nindicators for categorical predictors impact the model equation?\ninteraction terms impact the model equation?\n\n\n\n[Add response here]\n\n\nModel assessment\n\n\n\n\n\n\nExercise 5\n\n\n\nLet’s compare the original model without interaction effects to the model you fit in Exercise 2.\nCalculate \\(R^2\\) and \\(Adj. R^2\\) for each model. You can find \\(Adj. R^2\\) from the glance function:\nglance(model_name)$adj.r.squared\n\n\n\nint_fit &lt;- lm(interest_rate ~ debt_to_income + annual_income_th +\n                verified_income, data = loan50)\n\n\n# add code here\n\n\n\n\n\n\n\nExercise 6\n\n\n\nWhich model would you choose based on\n\n\\(R^2\\)?\n\\(Adj. R^2\\)?\n\n\n\n[add response here]\n\n\nLaTex\nSometimes, you will need to include mathematical notation in your document. There are two ways you can display mathematics in your document:\nInline: Your mathematics will display within the line of text.\n\nUse $ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Inline Math.\nExample: The text The simple linear regression model is $\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$ produces\n\nThe simple linear regression model is \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)\n\n\nDisplayed: Your mathematics will display outside the line of text\n\nUse a $$ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Display Math.\nExample: The text The estimated regression equation is $$\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}$$produces\n\nThe estimated regression equation is\n\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}\n\\]\n\n\n\n\n\n\nTip\n\n\n\nClick here for a quick reference of LaTex code.\n\n\n\n\nSubmission\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+  },
+  {
+    "objectID": "computing-r-resources.html",
+    "href": "computing-r-resources.html",
+    "title": "Resources for learning R",
+    "section": "",
+    "text": "Below are freely available resources to learn or review the following in R: data wrangling, data visualization, Quarto basics.",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#in-depth-introduction",
+    "href": "computing-r-resources.html#in-depth-introduction",
+    "title": "Resources for learning R",
+    "section": "In-depth introduction",
+    "text": "In-depth introduction\nCoursera: Data Visualization and Transformation with R by Mine Çetinkaya-Rundel and Elijah Meyer\n\nIncludes videos, readings, practice exercise, quizzes, and other resources\nYou can select content within the modules you want to complete.\nFocus on Modules 2 and 3. Review the content in Module 1 as needed.s\nClick here for instructions to register for Coursera for free as a Duke student",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#in-depth-review",
+    "href": "computing-r-resources.html#in-depth-review",
+    "title": "Resources for learning R",
+    "section": "In-depth review",
+    "text": "In-depth review\nData Science with R videos by Mine Çetinkaya-Rundel and Elijah Meyer\n\nVideos from the data science Coursera course\nFocus on videos on visualizing and summarizing data\nYou need to join the Coursera course to access the files from the code along videos.\n\nLearn R: An interactive introduction to data analysis with R\n\nHands-on tutorial that can be completed within the site (no RStudio required)\nFocus on Chapters 4 - 6",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#shorter-review",
+    "href": "computing-r-resources.html#shorter-review",
+    "title": "Resources for learning R",
+    "section": "Shorter review",
+    "text": "Shorter review\nR for Data Science (2nd ed) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\n\nFocus on Chapters 1 - 3, 10",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "computing-r-resources.html#additional-resources",
+    "href": "computing-r-resources.html#additional-resources",
+    "title": "Resources for learning R",
+    "section": "Additional resources",
+    "text": "Additional resources\n\nTidy Modeling with R by Max Kuhn & Julia Silge\nPosit Cheatsheets\nR workshops by Duke Center for Data and Visualization Sciences",
+    "crumbs": [
+      "Computing",
+      "R resources"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab 04: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Interactions + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "slides/lab-03.html#goals",
+    "href": "slides/lab-03.html#goals",
+    "title": "Lab 03",
     "section": "Goals",
-    "text": "Goals\n\nLaTex in this course\nMeet your team!\nTeam agreement\nLab 02: Childcare costs"
+    "text": "Goals\n\nTeam project\nLab 03: Palmer penguins"
   },
   {
-    "objectID": "slides/lab-02.html#latex-in-this-class",
-    "href": "slides/lab-02.html#latex-in-this-class",
-    "title": "Lab 02",
-    "section": "LaTex in this class",
-    "text": "LaTex in this class\nFor this class you will need to be able to…\n\nProperly write mathematical symbols, e.g., \\(\\beta_1\\) not B1, \\(R^2\\) not R2\nWrite basic regression equations, e.g., \\(\\hat{y} = \\beta_0 + \\beta_1x_1 + \\beta_2x_2\\)\nWrite matrix equations: \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)\nWrite hypotheses (we’ll start this next week), e.g., \\(H_0: \\beta = 0\\)\n\nYou are welcome to but not required to write math proofs using LaTex."
+    "objectID": "slides/lab-03.html#lab-03-palmer-penguins",
+    "href": "slides/lab-03.html#lab-03-palmer-penguins",
+    "title": "Lab 03",
+    "section": "Lab 03: Palmer penguins",
+    "text": "Lab 03: Palmer penguins\nLab 03 focuses on\n\nusing linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica.\nuse the data to check conditions about the distribution of the model residuals.\n\nUse this week to get started on the lab. We will continue discussing statistical inference in this week’s lectures, so this lab will be due on Thursday, October 3, 2024.\n🔗 https://sta221-fa24.netlify.app/labs/lab-03"
   },
   {
-    "objectID": "slides/lab-02.html#writing-latex-from-ae-02",
-    "href": "slides/lab-02.html#writing-latex-from-ae-02",
-    "title": "Lab 02",
-    "section": "Writing LaTex (from AE 02)",
-    "text": "Writing LaTex (from AE 02)\nInline: Your mathematics will display within the line of text.\n\nUse $ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Inline Math.\nExample: The text The simple linear regression model is $\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$ produces\nThe simple linear regression model is \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)"
+    "objectID": "slides/lab-03.html#final-team-project",
+    "href": "slides/lab-03.html#final-team-project",
+    "title": "Lab 03",
+    "section": "Final Team Project",
+    "text": "Final Team Project\nGoal: Use the methods from STA 221 to analyze data and answer a research question developed by your team\nPrimary deliverables:\n\nan in-person presentation about the exploratory data analysis and initial modeling\na written, reproducible final report detailing your analysis\na GitHub repository containing all work from the project\n\nSubmission: All work for the project will be submitted in your team’s GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow often used in practice."
   },
   {
-    "objectID": "slides/lab-02.html#writing-latex-from-ae-02-1",
-    "href": "slides/lab-02.html#writing-latex-from-ae-02-1",
-    "title": "Lab 02",
-    "section": "Writing LaTex (from AE 02)",
-    "text": "Writing LaTex (from AE 02)\nDisplay: Your mathematics will display outside the line of text\n\nUse a $$ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Display Math.\nExample: The text The estimated regression equation is $$\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}$$ produces\nThe estimated regression equation is\n\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}\n\\]\n\n\n\n\n\n\nTip\n\n\nClick here for a quick reference of LaTex code."
+    "objectID": "slides/lab-03.html#final-team-project-1",
+    "href": "slides/lab-03.html#final-team-project-1",
+    "title": "Lab 03",
+    "section": "Final team project",
+    "text": "Final team project\nMilestones: There are periodic project milestones throughout the semester to help you work towards the final deliverables:\n\nResearch questions (today’s lab)\nProject proposal (next week’s lab)\nExploratory data analysis draft\nPresentation + Presentation comments\nAnalysis draft + peer review\nRound 1 submission (optional)\nWritten report\nReproducibility + organization\n\nSee the Final Project Instructions for a timeline and details for each milestone."
   },
   {
-    "objectID": "slides/lab-02.html#meet-your-team",
-    "href": "slides/lab-02.html#meet-your-team",
-    "title": "Lab 02",
-    "section": "Meet your team!",
-    "text": "Meet your team!\n\nClick here to find your team.\nSit with your team."
+    "objectID": "slides/lab-03.html#today-research-questions",
+    "href": "slides/lab-03.html#today-research-questions",
+    "title": "Lab 03",
+    "section": "Today: Research questions",
+    "text": "Today: Research questions\nGoal: Develop three potential research questions your team may be interested in investigating.\nYou do not need to have a data set at this point\nFull instructions here: sta221-fa24.netlify.app/project#research-questions"
   },
   {
-    "objectID": "slides/lab-02.html#team-name-agreement",
-    "href": "slides/lab-02.html#team-name-agreement",
-    "title": "Lab 02",
-    "section": "Team name + agreement",
-    "text": "Team name + agreement\n\nCome up with a team name. You can’t have the same name as another group in the class, so be creative!\n\nYour TA will get your team name by the end of lab.\n\nFill out the team agreement. The goals of the agreement are to…\n\nGain a common understanding of the team’s goals and expectations for collaboration\nMake a plan for team communication\nMake a plan for working outside of lab"
+    "objectID": "slides/lab-03.html#reminder-team-workflow",
+    "href": "slides/lab-03.html#reminder-team-workflow",
+    "title": "Lab 03",
+    "section": "Reminder: Team workflow",
+    "text": "Reminder: Team workflow\n\nOnly one team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.\n\nEvery team member should still be engaged in discussion for all questions, even if it’s not your turn type.\n\nDon’t forget to pull to get your teammates’ updates before making changes to the .qmd file.\n\n\n\n\n\n\nImportant\n\n\nOnly one submission per team on Gradescope. Read the submission instructions carefully!"
   },
   {
-    "objectID": "slides/lab-02.html#team-workflow",
-    "href": "slides/lab-02.html#team-workflow",
-    "title": "Lab 02",
-    "section": "Team workflow",
-    "text": "Team workflow\n\nOnly one team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.\n\nEvery team member should still be engaged in discussion for all questions, even if it’s not your turn type.\n\nDon’t forget to pull to get your teammates’ updates before making changes to the .qmd file.\n\n\n\n\n\n\nImportant\n\n\nOnly one submission per team on Gradescope. Read the submission instructions carefully!"
-  },
-  {
-    "objectID": "slides/lab-02.html#team-workflow-in-action",
-    "href": "slides/lab-02.html#team-workflow-in-action",
-    "title": "Lab 02",
-    "section": "Team workflow, in action",
-    "text": "Team workflow, in action\n\nComplete the “Workflow: Using Git and GitHub as a team” section of the lab in your teams.\nRaise your hand if you have any questions about the workflow.\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/lab-02.html#tips-for-working-on-a-team",
-    "href": "slides/lab-02.html#tips-for-working-on-a-team",
-    "title": "Lab 02",
-    "section": "Tips for working on a team",
-    "text": "Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
-  },
-  {
-    "objectID": "slides/lab-02.html#lab-02-childcare-costs",
-    "href": "slides/lab-02.html#lab-02-childcare-costs",
-    "title": "Lab 02",
-    "section": "Lab 02: Childcare costs",
-    "text": "Lab 02: Childcare costs\nToday’s lab focuses on using multiple linear regression (Week 03 content) to predict childcare costs for school-aged children in North Carolina.\n🔗 sta221-fa24.netlify.app/labs/lab-02.html"
+    "objectID": "slides/lab-03.html#reminder-tips-for-working-on-a-team",
+    "href": "slides/lab-03.html#reminder-tips-for-working-on-a-team",
+    "title": "Lab 03",
+    "section": "Reminder: Tips for working on a team",
+    "text": "Reminder: Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
   },
   {
     "objectID": "slides/lab-00.html#meet-your-tas",
