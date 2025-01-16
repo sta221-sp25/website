@@ -11,7 +11,7 @@ bibliography: references.bib
 ---
 
 ::: callout-important
-Go to the [course GitHub organization](https://github.com/sta221-fa24) and locate your `ae-01` repo to get started.
+Go to the [course GitHub organization](https://github.com/sta221-sp25) and locate your `ae-01` repo to get started.
 
 If you do not see an `ae-01` repo, use the link below to create one:
 
