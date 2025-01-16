@@ -469,7 +469,7 @@
     "href": "ae/ae-01-model-assessment.html",
     "title": "AE 01: Model assessment",
     "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-01 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\n\n\nThis AE will not count towards your participation grade.\nlibrary(tidyverse)    # data wrangling and visualization\nlibrary(tidymodels)   # broom and yardstick package\nlibrary(knitr)        # format output"
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-01 repo to get started.\nIf you do not see an ae-01 repo, use the link below to create one:\nhttps://classroom.github.com/a/6jpkfA8n\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\n\nThis AE will not count towards your participation grade.\nlibrary(tidyverse)    # data wrangling and visualization\nlibrary(tidymodels)   # broom and yardstick package\nlibrary(knitr)        # format output"
   },
   {
     "objectID": "ae/ae-01-model-assessment.html#exercise-1",
@@ -2596,7 +2596,7 @@
     "href": "slides/03-slr-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
     "title": "SLR: Model Assessment",
     "section": "Clone repo + Start new RStudio project",
-    "text": "Clone repo + Start new RStudio project\n\nGo to the course organization. Click on the repo with the prefix ae-01. It contains the starter documents you need to complete the AE.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the AE."
+    "text": "Clone repo + Start new RStudio project\n\nGo to the course organization. Click on the repo with the prefix ae-01. It contains the starter documents you need to complete the AE.\n\nIf you do not see an ae-01 repo, use this link to create one: https://classroom.github.com/a/6jpkfA8n\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the AE."
   },
   {
     "objectID": "slides/03-slr-model-assessment-notes.html#two-statistics",
@@ -2813,7 +2813,7 @@
     "href": "slides/03-slr-model-assessment.html#clone-repo-start-new-rstudio-project",
     "title": "SLR: Model Assessment",
     "section": "Clone repo + Start new RStudio project",
-    "text": "Clone repo + Start new RStudio project\n\nGo to the course organization. Click on the repo with the prefix ae-01. It contains the starter documents you need to complete the AE.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the AE."
+    "text": "Clone repo + Start new RStudio project\n\nGo to the course organization. Click on the repo with the prefix ae-01. It contains the starter documents you need to complete the AE.\n\nIf you do not see an ae-01 repo, use this link to create one: https://classroom.github.com/a/6jpkfA8n\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the AE."
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#two-statistics",

@@ -212,7 +212,7 @@ The data set comes from @zarulli2021 who analyze the effects of a country's heal
 
 There are `r nrow(life_exp)` countries (observations) in the data set.
 
-`<br> `{=html}
+<br>
 
 **Goal: Use the income inequality in a country to understand variability in the life expectancy.**
 
@@ -269,6 +269,8 @@ Complete Part 1.
 ## Clone repo + Start new RStudio project {.midi}
 
 -   Go to the course organization. Click on the repo with the prefix `ae-01`. It contains the starter documents you need to complete the AE.
+
+    -   If you do not see an `ae-01` repo, use this link to create one: <https://classroom.github.com/a/6jpkfA8n>
 
 -   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you’ll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
 
@@ -442,7 +444,7 @@ $$\large{R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}}$$
 What is the range of $R^2$? Does $R^2$ have units?
 :::
 
-## Interpreting $R^2$  {.smaller}
+## Interpreting $R^2$ {.smaller}
 
 ```{r}
 #| echo: false
