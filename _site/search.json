@@ -2561,35 +2561,35 @@
     "href": "slides/03-model-assessment-notes.html#prediction-2",
     "title": "SLR: Model Assessment",
     "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313 \n\n\n\n. . .\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#data-life-expectancy-in-140-countries",
     "href": "slides/03-model-assessment-notes.html#data-life-expectancy-in-140-countries",
     "title": "SLR: Model Assessment",
     "section": "Data: Life expectancy in 140 countries",
-    "text": "Data: Life expectancy in 140 countries\nThe data set comes from (zarulli2021?) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\nGoal: Use the income inequality in a country to understand variability in the life expectancy.\n\n\nClick here for the original research paper."
+    "text": "Data: Life expectancy in 140 countries\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\nGoal: Use the income inequality in a country to understand variability in the life expectancy.\n\n\nClick here for the original research paper."
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#variables",
     "href": "slides/03-model-assessment-notes.html#variables",
     "title": "SLR: Model Assessment",
     "section": "Variables",
-    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient)."
+    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from Zarulli et al. (2021))"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#univariate-exploratory-data-analysis",
     "href": "slides/03-model-assessment-notes.html#univariate-exploratory-data-analysis",
     "title": "SLR: Model Assessment",
     "section": "Univariate exploratory data analysis",
-    "text": "Univariate exploratory data analysis\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Univariate exploratory data analysis"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#bivariate-exploratory-data-analysis",
     "href": "slides/03-model-assessment-notes.html#bivariate-exploratory-data-analysis",
     "title": "SLR: Model Assessment",
     "section": "Bivariate exploratory data analysis",
-    "text": "Bivariate exploratory data analysis\n\n\n`geom_smooth()` using formula = 'y ~ x'\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Bivariate exploratory data analysis"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
@@ -2631,28 +2631,28 @@
     "href": "slides/03-model-assessment-notes.html#partition-sources-of-variability-in-life_exp",
     "title": "SLR: Model Assessment",
     "section": "Partition sources of variability in life_exp",
-    "text": "Partition sources of variability in life_exp\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "Partition sources of variability in life_exp"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#total-variability-response-1",
     "href": "slides/03-model-assessment-notes.html#total-variability-response-1",
     "title": "SLR: Model Assessment",
     "section": "Total variability (Response)",
-    "text": "Total variability (Response)\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
+    "text": "Total variability (Response)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#explained-variability-model",
     "href": "slides/03-model-assessment-notes.html#explained-variability-model",
     "title": "SLR: Model Assessment",
     "section": "Explained variability (Model)",
-    "text": "Explained variability (Model)\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+    "text": "Explained variability (Model)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#unexplained-variability-residuals",
     "href": "slides/03-model-assessment-notes.html#unexplained-variability-residuals",
     "title": "SLR: Model Assessment",
     "section": "Unexplained variability (Residuals)",
-    "text": "Unexplained variability (Residuals)\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+    "text": "Unexplained variability (Residuals)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#sum-of-squares",
@@ -2708,7 +2708,7 @@
     "href": "slides/03-model-assessment-notes.html#next-class",
     "title": "SLR: Model Assessment",
     "section": "Next class",
-    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Sep 5 prepare"
+    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Lec 04: SLR - Matrix representation prepare"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#announcements",
@@ -2778,35 +2778,35 @@
     "href": "slides/03-slr-model-assessment.html#prediction-2",
     "title": "SLR: Model Assessment",
     "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313 \n\n\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#data-life-expectancy-in-140-countries",
     "href": "slides/03-slr-model-assessment.html#data-life-expectancy-in-140-countries",
     "title": "SLR: Model Assessment",
     "section": "Data: Life expectancy in 140 countries",
-    "text": "Data: Life expectancy in 140 countries\nThe data set comes from (zarulli2021?) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\nGoal: Use the income inequality in a country to understand variability in the life expectancy.\n\n\nClick here for the original research paper."
+    "text": "Data: Life expectancy in 140 countries\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\nGoal: Use the income inequality in a country to understand variability in the life expectancy.\n\n\nClick here for the original research paper."
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#variables",
     "href": "slides/03-slr-model-assessment.html#variables",
     "title": "SLR: Model Assessment",
     "section": "Variables",
-    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient)."
+    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from Zarulli et al. (2021))"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#univariate-exploratory-data-analysis",
     "href": "slides/03-slr-model-assessment.html#univariate-exploratory-data-analysis",
     "title": "SLR: Model Assessment",
     "section": "Univariate exploratory data analysis",
-    "text": "Univariate exploratory data analysis\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Univariate exploratory data analysis"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#bivariate-exploratory-data-analysis",
     "href": "slides/03-slr-model-assessment.html#bivariate-exploratory-data-analysis",
     "title": "SLR: Model Assessment",
     "section": "Bivariate exploratory data analysis",
-    "text": "Bivariate exploratory data analysis\n\n\n`geom_smooth()` using formula = 'y ~ x'\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Bivariate exploratory data analysis"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#clone-repo-start-new-rstudio-project",
@@ -2848,28 +2848,28 @@
     "href": "slides/03-slr-model-assessment.html#partition-sources-of-variability-in-life_exp",
     "title": "SLR: Model Assessment",
     "section": "Partition sources of variability in life_exp",
-    "text": "Partition sources of variability in life_exp\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "Partition sources of variability in life_exp"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#total-variability-response-1",
     "href": "slides/03-slr-model-assessment.html#total-variability-response-1",
     "title": "SLR: Model Assessment",
     "section": "Total variability (Response)",
-    "text": "Total variability (Response)\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\n\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
+    "text": "Total variability (Response)\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#explained-variability-model",
     "href": "slides/03-slr-model-assessment.html#explained-variability-model",
     "title": "SLR: Model Assessment",
     "section": "Explained variability (Model)",
-    "text": "Explained variability (Model)\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\n\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+    "text": "Explained variability (Model)\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#unexplained-variability-residuals",
     "href": "slides/03-slr-model-assessment.html#unexplained-variability-residuals",
     "title": "SLR: Model Assessment",
     "section": "Unexplained variability (Residuals)",
-    "text": "Unexplained variability (Residuals)\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\n\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+    "text": "Unexplained variability (Residuals)\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#sum-of-squares",
@@ -2925,7 +2925,7 @@
     "href": "slides/03-slr-model-assessment.html#next-class",
     "title": "SLR: Model Assessment",
     "section": "Next class",
-    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Sep 5 prepare"
+    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Lec 04: SLR - Matrix representation prepare\n\n\n\n\n\n\nZarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. “Health Care System Efficiency and Life Expectancy: A 140-Country Study.” Edited by Srinivas Goli. PLOS ONE 16 (7): e0253450. https://doi.org/10.1371/journal.pone.0253450."
   },
   {
     "objectID": "links.html",

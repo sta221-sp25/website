@@ -93,7 +93,27 @@
     code span.va { color: #111111; } /* Variable */
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-838dce6f7d96b3b0f46f4e1776f281c4.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -248,7 +268,7 @@ Prof.&nbsp;Maria Tackett
 <section id="data-movie-scores-on-rotten-tomatoes" class="slide level2">
 <h2>Data: Movie scores on Rotten Tomatoes</h2>
 
-<img data-src="03-slr-model-assessment_files/figure-html/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[
+<img data-src="03-slr-model-assessment_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[
 \widehat{\text{audience}} = 32.3142 + 0.5187 \times \text{critics}
 \]</span></p>
 </section></section>
@@ -373,6 +393,10 @@ Coefficients:
 44.76379 68.62297 76.40313 </code></pre>
 </div>
 </div>
+<p><br></p>
+<div class="fragment">
+<p>Using the model to predict for values outside the range of the original data is <strong>extrapolation.</strong> Why do we want to avoid extrapolation?</p>
+</div>
 </section></section>
 <section>
 <section id="model-assessment" class="title-slide slide level1 center">
@@ -381,7 +405,7 @@ Coefficients:
 </section>
 <section id="data-life-expectancy-in-140-countries" class="slide level2">
 <h2>Data: Life expectancy in 140 countries</h2>
-<p>The data set comes from <span class="citation" data-cites="zarulli2021">(<a href="" role="doc-biblioref" onclick="return false;"><strong>zarulli2021?</strong></a>)</span> who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the <a href="http://hdr.undp.org/en/data">Human Development Database</a> and <a href="https://apps.who.int/nha/database/">World Health Organization</a>.</p>
+<p>The data set comes from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/next-class" role="doc-biblioref" onclick="">2021</a>)</span> who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the <a href="http://hdr.undp.org/en/data">Human Development Database</a> and <a href="https://apps.who.int/nha/database/">World Health Organization</a>.</p>
 <p>There are 140 countries (observations) in the data set.</p>
 <p><br></p>
 <p><strong>Goal: Use the income inequality in a country to understand variability in the life expectancy.</strong></p>
@@ -393,36 +417,24 @@ Coefficients:
 <h2>Variables</h2>
 <div>
 <ul>
-<li class="fragment"><p><code>life_exp</code>: <em>The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality.</em> ( from the <a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.">World Health Organization</a>)</p></li>
-<li class="fragment"><p><code>income_inequality</code>: <em>Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).</em></p></li>
+<li class="fragment"><p><code>life_exp</code>: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the <a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.">World Health Organization</a>)</p></li>
+<li class="fragment"><p><code>income_inequality</code>: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/next-class" role="doc-biblioref" onclick="">2021</a>)</span>)</p></li>
 </ul>
 </div>
 </section>
 <section id="univariate-exploratory-data-analysis" class="slide level2">
 <h2>Univariate exploratory data analysis</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
 
-</div>
-<img data-src="03-slr-model-assessment_files/figure-html/univariate-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="03-slr-model-assessment_files/figure-revealjs/univariate-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="bivariate-exploratory-data-analysis" class="slide level2">
 <h2>Bivariate exploratory data analysis</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
 
-</div>
-<img data-src="03-slr-model-assessment_files/figure-html/bivariate-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section></section>
+<img data-src="03-slr-model-assessment_files/figure-revealjs/bivariate-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section></section>
 <section>
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="../ae/ae-01-model-assessment.html" class="uri">sta221-sp25.netlify.app/ae/ae-01-model-assessment.htmll</a></p>
+<p>📋 <a href="../ae/ae-01-model-assessment.html" class="uri">sta221-sp25.netlify.app/ae/ae-01-model-assessment.html</a></p>
 <p>Complete Part 1.</p>
 </div>
 </section>
@@ -483,7 +495,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <section id="total-variability-response" class="slide level2">
 <h2>Total variability (Response)</h2>
 
-<img data-src="03-slr-model-assessment_files/figure-html/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="cell" data-layout-align="center">
+<img data-src="03-slr-model-assessment_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -510,62 +522,22 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </section>
 <section id="partition-sources-of-variability-in-life_exp" class="slide level2">
 <h2>Partition sources of variability in <code>life_exp</code></h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in is.na(x): is.na() applied to non-(list or vector) of type
-'expression'</code></pre>
-</div>
 
-</div>
-<img data-src="03-slr-model-assessment_files/figure-html/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<img data-src="03-slr-model-assessment_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="total-variability-response-1" class="slide level2">
 <h2>Total variability (Response)</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in is.na(x): is.na() applied to non-(list or vector) of type
-'expression'</code></pre>
-</div>
 
-</div>
-<img data-src="03-slr-model-assessment_files/figure-html/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{Sum of Squares Total (SST)} = \sum_{i=1}^n(y_i - \bar{y})^2 = (n-1)s_y^2\]</span></p>
+<img data-src="03-slr-model-assessment_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{Sum of Squares Total (SST)} = \sum_{i=1}^n(y_i - \bar{y})^2 = (n-1)s_y^2\]</span></p>
 </section>
 <section id="explained-variability-model" class="slide level2">
 <h2>Explained variability (Model)</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in is.na(x): is.na() applied to non-(list or vector) of type
-'expression'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in is.na(x): is.na() applied to non-(list or vector) of type
-'expression'</code></pre>
-</div>
 
-</div>
-<img data-src="03-slr-model-assessment_files/figure-html/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{Sum of Squares Model (SSM)} = \sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2\]</span></p>
+<img data-src="03-slr-model-assessment_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{Sum of Squares Model (SSM)} = \sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2\]</span></p>
 </section>
 <section id="unexplained-variability-residuals" class="slide level2">
 <h2>Unexplained variability (Residuals)</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in is.na(x): is.na() applied to non-(list or vector) of type
-'expression'
-Warning in is.na(x): is.na() applied to non-(list or vector) of type
-'expression'</code></pre>
-</div>
 
-</div>
-<img data-src="03-slr-model-assessment_files/figure-html/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{Sum of Squares Residuals (SSR)} = \sum_{i = 1}^{n}(y_i - \hat{y}_i)^2\]</span></p>
+<img data-src="03-slr-model-assessment_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{Sum of Squares Residuals (SSR)} = \sum_{i = 1}^{n}(y_i - \hat{y}_i)^2\]</span></p>
 </section>
 <section id="sum-of-squares" class="slide level2">
 <h2>Sum of Squares</h2>
@@ -623,8 +595,8 @@ Warning in is.na(x): is.na() applied to non-(list or vector) of type
 <p>Use the <code>augment()</code> function from the <strong>broom</strong> package to add columns for predicted values, residuals, and other observation-level model statistics</p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>life_exp_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(life_exp_fit)</span>
-<span id="cb21-2"><a></a>life_exp_aug</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>life_exp_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(life_exp_fit)</span>
+<span id="cb11-2"><a></a>life_exp_aug</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 140 × 8
    life_exp income_inequality .fitted .resid    .hat .sigma   .cooksd .std.resid
@@ -648,7 +620,7 @@ Warning in is.na(x): is.na() applied to non-(list or vector) of type
 <h2>Finding RMSE in R</h2>
 <p>Use the <code>rmse()</code> function from the <strong>yardstick</strong> package (part of <strong>tidymodels</strong>)</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">rmse</span>(life_exp_aug, <span class="at">truth =</span> life_exp, <span class="at">estimate =</span> .fitted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">rmse</span>(life_exp_aug, <span class="at">truth =</span> life_exp, <span class="at">estimate =</span> .fitted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   .metric .estimator .estimate
@@ -661,7 +633,7 @@ Warning in is.na(x): is.na() applied to non-(list or vector) of type
 <h2>Finding <span class="math inline">\(R^2\)</span> in R</h2>
 <p>Use the <code>rsq()</code> function from the <strong>yardstick</strong> package (part of <strong>tidymodels</strong>)</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">rsq</span>(life_exp_aug, <span class="at">truth =</span> life_exp, <span class="at">estimate =</span> .fitted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">rsq</span>(life_exp_aug, <span class="at">truth =</span> life_exp, <span class="at">estimate =</span> .fitted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   .metric .estimator .estimate
@@ -673,7 +645,7 @@ Warning in is.na(x): is.na() applied to non-(list or vector) of type
 <div class="fragment">
 <p>Alternatively, use <code>glance()</code> to construct a single row summary of the model fit, including <span class="math inline">\(R^2\)</span>:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">glance</span>(life_exp_fit)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">glance</span>(life_exp_fit)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7003831</code></pre>
 </div>
@@ -684,7 +656,7 @@ Warning in is.na(x): is.na() applied to non-(list or vector) of type
 <section id="application-exercise-1" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="../ae/ae-01-model-assessment.html" class="uri">sta221-sp25.netlify.app/ae/ae-01-model-assessment.htmll</a></p>
+<p>📋 <a href="../ae/ae-01-model-assessment.html" class="uri">sta221-sp25.netlify.app/ae/ae-01-model-assessment.html</a></p>
 <p>Complete Part 2.</p>
 </div>
 </section>
@@ -696,16 +668,21 @@ Warning in is.na(x): is.na() applied to non-(list or vector) of type
 <li><p>Used analysis of variance to partition variability in the response variable</p></li>
 </ul>
 </section>
-<section id="next-class" class="slide level2">
+<section id="next-class" class="slide level2 smaller scrollable">
 <h2>Next class</h2>
 <ul>
 <li>Matrix representation of simple linear regression
 <ul>
-<li>See <a href="../prepare/prepare-sep5.html">Sep 5 prepare</a></li>
+<li>See <a href="../prepare/prepare-lec04.html">Lec 04: SLR - Matrix representation prepare</a></li>
 </ul></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-zarulli2021" class="csl-entry" role="listitem">
+Zarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. <span>“Health Care System Efficiency and Life Expectancy: A 140-Country Study.”</span> Edited by Srinivas Goli. <em>PLOS ONE</em> 16 (7): e0253450. <a href="https://doi.org/10.1371/journal.pone.0253450">https://doi.org/10.1371/journal.pone.0253450</a>.
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -925,6 +902,44 @@ Warning in is.na(x): is.na() applied to non-(list or vector) of type
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

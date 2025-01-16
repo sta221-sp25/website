@@ -185,6 +185,12 @@ more_new_movies <- tibble(critics = c(24,70, 85))
 predict(movie_fit, more_new_movies)
 ```
 
+<br>
+
+. . .
+
+Using the model to predict for values outside the range of the original data is **extrapolation.** Why do we want to avoid extrapolation?
+
 # Model assessment
 
 ## Data: Life expectancy in 140 countries
@@ -215,9 +221,9 @@ There are `r nrow(life_exp)` countries (observations) in the data set.
 ## Variables
 
 ::: incremental
--   `life_exp`: *The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality.* ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
+-   `life_exp`: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
 
--   `income_inequality`: *Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).*
+-   `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from @zarulli2021)
 :::
 
 ## Univariate exploratory data analysis
@@ -253,7 +259,7 @@ p1 + p2
 # Application exercise
 
 ::: appex
-📋 [sta221-sp25.netlify.app/ae/ae-01-model-assessment.htmll](../ae/ae-01-model-assessment.html){.uri}
+📋 [sta221-sp25.netlify.app/ae/ae-01-model-assessment.html](../ae/ae-01-model-assessment.html){.uri}
 
 Complete Part 1.
 :::
@@ -514,7 +520,7 @@ glance(life_exp_fit)$r.squared
 # Application exercise
 
 ::: appex
-📋 [sta221-sp25.netlify.app/ae/ae-01-model-assessment.htmll](../ae/ae-01-model-assessment.html){.uri}
+📋 [sta221-sp25.netlify.app/ae/ae-01-model-assessment.html](../ae/ae-01-model-assessment.html){.uri}
 
 Complete Part 2.
 :::
@@ -530,4 +536,4 @@ Complete Part 2.
 ## Next class
 
 -   Matrix representation of simple linear regression
-    -   See [Sep 5 prepare](../prepare/prepare-sep5.html)
+    -   See [Lec 04: SLR - Matrix representation prepare](../prepare/prepare-lec04.html)
