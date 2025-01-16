@@ -117,6 +117,14 @@ Suppose that a movie has a critics score of 70. According to this model, what is
 &= \mathbf{68.6232}
 \end{aligned}
 
+<br>
+
+. . .
+
+::: callout-caution
+Using the model to predict for values outside the range of the original data is **extrapolation.** Why do we want to avoid extrapolation?
+:::
+
 # Linear regression in R
 
 ## Fit the model
@@ -184,12 +192,6 @@ Use the `predict()` function to calculate predictions for new observations
 more_new_movies <- tibble(critics = c(24,70, 85))
 predict(movie_fit, more_new_movies)
 ```
-
-<br>
-
-. . .
-
-Using the model to predict for values outside the range of the original data is **extrapolation.** Why do we want to avoid extrapolation?
 
 # Model assessment
 

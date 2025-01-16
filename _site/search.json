@@ -2526,7 +2526,7 @@
     "href": "slides/03-model-assessment-notes.html#making-a-prediction",
     "title": "SLR: Model Assessment",
     "section": "Making a prediction",
-    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]"
+    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]\n\n. . .\n\n\n\n\n\n\nCaution\n\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#fit-the-model",
@@ -2561,7 +2561,7 @@
     "href": "slides/03-model-assessment-notes.html#prediction-2",
     "title": "SLR: Model Assessment",
     "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313 \n\n\n\n. . .\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
   },
   {
     "objectID": "slides/03-model-assessment-notes.html#data-life-expectancy-in-140-countries",
@@ -2743,7 +2743,7 @@
     "href": "slides/03-slr-model-assessment.html#making-a-prediction",
     "title": "SLR: Model Assessment",
     "section": "Making a prediction",
-    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]"
+    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]\n\n\n\n\n\n\n\n\nCaution\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#fit-the-model",
@@ -2778,7 +2778,7 @@
     "href": "slides/03-slr-model-assessment.html#prediction-2",
     "title": "SLR: Model Assessment",
     "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313 \n\n\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#data-life-expectancy-in-140-countries",
