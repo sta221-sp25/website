@@ -225,7 +225,7 @@ There are `r nrow(life_exp)` countries (observations) in the data set.
 ::: incremental
 -   `life_exp`: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
 
--   `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from @zarulli2021)
+-   `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from @zarulli2021)
 :::
 
 ## Univariate exploratory data analysis
@@ -474,11 +474,11 @@ The $R^2$ of the model of life expectancy and income inequality is `r life_exp_f
 ## Submit
 
 ```{=html}
-<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/62513/discussion/629888" width="100%"></iframe>
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://edstem.org/us/courses/70811/discussion/5978094" width="100%"></iframe>
 ```
 :::::
 
-🔗 <https://edstem.org/us/courses/62513/discussion/629888>
+🔗 <https://edstem.org/us/courses/70811/discussion/5978094>
 
 # Using R
 

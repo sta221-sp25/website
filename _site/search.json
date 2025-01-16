@@ -2575,7 +2575,7 @@
     "href": "slides/03-slr-model-assessment-notes.html#variables",
     "title": "SLR: Model Assessment",
     "section": "Variables",
-    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from Zarulli et al. (2021))"
+    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from Zarulli et al. (2021))"
   },
   {
     "objectID": "slides/03-slr-model-assessment-notes.html#univariate-exploratory-data-analysis",
@@ -2673,7 +2673,7 @@
     "href": "slides/03-slr-model-assessment-notes.html#interpreting-r2",
     "title": "SLR: Model Assessment",
     "section": "Interpreting \\(R^2\\)",
-    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/629888"
+    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/70811/discussion/5978094"
   },
   {
     "objectID": "slides/03-slr-model-assessment-notes.html#augmented-data-frame",
@@ -2792,7 +2792,7 @@
     "href": "slides/03-slr-model-assessment.html#variables",
     "title": "SLR: Model Assessment",
     "section": "Variables",
-    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from Zarulli et al. (2021))"
+    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from Zarulli et al. (2021))"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#univariate-exploratory-data-analysis",
@@ -2890,7 +2890,7 @@
     "href": "slides/03-slr-model-assessment.html#interpreting-r2",
     "title": "SLR: Model Assessment",
     "section": "Interpreting \\(R^2\\)",
-    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/629888"
+    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/70811/discussion/5978094"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#augmented-data-frame",

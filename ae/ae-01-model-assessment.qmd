@@ -39,7 +39,7 @@ The data set comes from @zarulli2021 who analyze the effects of a country's heal
 
 -   `life_exp`: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
 
--   `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from @zarulli2021)
+-   `income_inequality`: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from @zarulli2021)
 
 -   `health_expend`: Per capita current spending on on healthcare good sand services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar ([from the World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4952))
 
