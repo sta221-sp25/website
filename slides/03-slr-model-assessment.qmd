@@ -15,7 +15,7 @@ format:
     chalkboard: true
     include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
   html: 
-    output-file: 03-model-assessment-notes.html
+    output-file: 03-slr-model-assessment-notes.html
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -233,12 +233,12 @@ There are `r nrow(life_exp)` countries (observations) in the data set.
 ```{r univariate}
 #| echo: false
 p1 <- ggplot(data = life_exp, aes(x = life_exp))  + 
-  geom_histogram(fill = "steelblue", color = "black") + 
+  geom_histogram(fill = "steelblue", color = "black", binwidth = 2) + 
   labs(x = "Life expectancy (in years)", 
        y = "Count")
 
 p2 <- ggplot(data = life_exp, aes(x = income_inequality))  + 
-  geom_histogram(fill = "steelblue", color = "black") + 
+  geom_histogram(fill = "steelblue", color = "black",binwidth = 2) + 
   labs(x = "Income inequality", 
        y = "Count") 
 
@@ -255,7 +255,7 @@ p1 <- ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) +
   labs(x = "Income inequality (Gini coefficient)", 
       y  = "Life expectancy (in years)", 
       title = "Income inequality versus life expectancy")
-p1 + p2
+p1 
 ```
 
 # Application exercise
@@ -442,7 +442,7 @@ $$\large{R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}}$$
 What is the range of $R^2$? Does $R^2$ have units?
 :::
 
-## Interpreting \$R\^2\$ {.smaller}
+## Interpreting $R^2$  {.smaller}
 
 ```{r}
 #| echo: false
@@ -457,14 +457,16 @@ life_exp_fit_rsq <- round(glance(life_exp_fit)$r.squared, 3) * 100
 :::: appex
 Submit your response to the following question on Ed Discussion.
 
-::: midi
+<div>
+
 The $R^2$ of the model of life expectancy and income inequality is `r life_exp_fit_rsq`%. Which of the following is the correct interpretation of this value?
 
 1.  A country's income inequality correctly predicts `r life_exp_fit_rsq`% of its life expectancy.
 2.  `r life_exp_fit_rsq`% of the variability in life expectancy can be explained by income inequality.
 3.  `r life_exp_fit_rsq`% of the variability in income inequality can be explained by life expectancy.
 4.  `r life_exp_fit_rsq`% of the time a country's life expectancy can be predicted by its income inequality.
-:::
+
+</div>
 ::::
 
 ## Submit
@@ -539,3 +541,5 @@ Complete Part 2.
 
 -   Matrix representation of simple linear regression
     -   See [Lec 04: SLR - Matrix representation prepare](../prepare/prepare-lec04.html)
+
+## References

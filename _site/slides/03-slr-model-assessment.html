@@ -417,7 +417,7 @@ Coefficients:
 </section>
 <section id="data-life-expectancy-in-140-countries" class="slide level2">
 <h2>Data: Life expectancy in 140 countries</h2>
-<p>The data set comes from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/next-class" role="doc-biblioref" onclick="">2021</a>)</span> who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the <a href="http://hdr.undp.org/en/data">Human Development Database</a> and <a href="https://apps.who.int/nha/database/">World Health Organization</a>.</p>
+<p>The data set comes from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the <a href="http://hdr.undp.org/en/data">Human Development Database</a> and <a href="https://apps.who.int/nha/database/">World Health Organization</a>.</p>
 <p>There are 140 countries (observations) in the data set.</p>
 <p><br></p>
 <p><strong>Goal: Use the income inequality in a country to understand variability in the life expectancy.</strong></p>
@@ -430,7 +430,7 @@ Coefficients:
 <div>
 <ul>
 <li class="fragment"><p><code>life_exp</code>: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the <a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.">World Health Organization</a>)</p></li>
-<li class="fragment"><p><code>income_inequality</code>: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/next-class" role="doc-biblioref" onclick="">2021</a>)</span>)</p></li>
+<li class="fragment"><p><code>income_inequality</code>: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span>)</p></li>
 </ul>
 </div>
 </section>
@@ -572,14 +572,14 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 </section>
 <section id="interpreting-r2" class="slide level2 smaller">
-<h2>Interpreting $R^2$</h2>
+<h2>Interpreting <span class="math inline">\(R^2\)</span></h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question</a></li><li><a href="#tabset-1-2">Submit</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="appex">
 <p>Submit your response to the following question on Ed Discussion.</p>
-<div class="midi">
+<div>
 <p>The <span class="math inline">\(R^2\)</span> of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?</p>
 <ol type="1">
 <li>A country’s income inequality correctly predicts 70% of its life expectancy.</li>
@@ -680,7 +680,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <li><p>Used analysis of variance to partition variability in the response variable</p></li>
 </ul>
 </section>
-<section id="next-class" class="slide level2 smaller scrollable">
+<section id="next-class" class="slide level2">
 <h2>Next class</h2>
 <ul>
 <li>Matrix representation of simple linear regression
@@ -688,6 +688,9 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <li>See <a href="../prepare/prepare-lec04.html">Lec 04: SLR - Matrix representation prepare</a></li>
 </ul></li>
 </ul>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

@@ -397,7 +397,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab 04: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Interactions + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab 04: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Interactions + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -2487,225 +2487,225 @@
     "text": "References\n\n\n\n\nAlexander, Rohan. 2023. “Telling Stories with Data,” June. https://doi.org/10.1201/9781003229407.\n\n\nOstblom, Joel, and Tiffany Timbers. 2022. “Opinionated Practices for Teaching Reproducibility: Motivation, Guided Instruction and Practice.” Journal of Statistics and Data Science Education 30 (3): 241–50. https://doi.org/10.1080/26939169.2022.2074922."
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html",
-    "href": "slides/03-model-assessment-notes.html",
+    "objectID": "slides/03-slr-model-assessment-notes.html",
+    "href": "slides/03-slr-model-assessment-notes.html",
     "title": "SLR: Model Assessment",
     "section": "",
     "text": "No office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday\nIntroduction to R workshops at Duke library\n\nData wrangling with dplyr - Thu, Jan 16 at 12pm\nData visualization with ggplot2 - Thu, Jan 23 at 12pm"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#announcements",
-    "href": "slides/03-model-assessment-notes.html#announcements",
+    "objectID": "slides/03-slr-model-assessment-notes.html#announcements",
+    "href": "slides/03-slr-model-assessment-notes.html#announcements",
     "title": "SLR: Model Assessment",
     "section": "",
     "text": "No office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday\nIntroduction to R workshops at Duke library\n\nData wrangling with dplyr - Thu, Jan 16 at 12pm\nData visualization with ggplot2 - Thu, Jan 23 at 12pm"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#topics",
-    "href": "slides/03-model-assessment-notes.html#topics",
+    "objectID": "slides/03-slr-model-assessment-notes.html#topics",
+    "href": "slides/03-slr-model-assessment-notes.html#topics",
     "title": "SLR: Model Assessment",
     "section": "Topics",
     "text": "Topics\n\nPredict the response given a value of the predictor\nUse R to conduct exploratory data analysis and fit a model\nEvaluate models using RMSE and \\(R^2\\)\nUse analysis of variance to partition variability in the response variable"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#computing-set-up",
-    "href": "slides/03-model-assessment-notes.html#computing-set-up",
+    "objectID": "slides/03-slr-model-assessment-notes.html#computing-set-up",
+    "href": "slides/03-slr-model-assessment-notes.html#computing-set-up",
     "title": "SLR: Model Assessment",
     "section": "Computing set up",
     "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling (includes broom, yardstick, and other packages)\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme for ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#data-movie-scores-on-rotten-tomatoes",
-    "href": "slides/03-model-assessment-notes.html#data-movie-scores-on-rotten-tomatoes",
+    "objectID": "slides/03-slr-model-assessment-notes.html#data-movie-scores-on-rotten-tomatoes",
+    "href": "slides/03-slr-model-assessment-notes.html#data-movie-scores-on-rotten-tomatoes",
     "title": "SLR: Model Assessment",
     "section": "Data: Movie scores on Rotten Tomatoes",
     "text": "Data: Movie scores on Rotten Tomatoes\n\n\n\n\n\n\n\n\n\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#making-a-prediction",
-    "href": "slides/03-model-assessment-notes.html#making-a-prediction",
+    "objectID": "slides/03-slr-model-assessment-notes.html#making-a-prediction",
+    "href": "slides/03-slr-model-assessment-notes.html#making-a-prediction",
     "title": "SLR: Model Assessment",
     "section": "Making a prediction",
     "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]\n\n. . .\n\n\n\n\n\n\nCaution\n\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#fit-the-model",
-    "href": "slides/03-model-assessment-notes.html#fit-the-model",
+    "objectID": "slides/03-slr-model-assessment-notes.html#fit-the-model",
+    "href": "slides/03-slr-model-assessment-notes.html#fit-the-model",
     "title": "SLR: Model Assessment",
     "section": "Fit the model",
     "text": "Fit the model\nUse the lm() function to fit a linear regression model\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\nmovie_fit\n\n\nCall:\nlm(formula = audience ~ critics, data = movie_scores)\n\nCoefficients:\n(Intercept)      critics  \n    32.3155       0.5187"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#tidy-results",
-    "href": "slides/03-model-assessment-notes.html#tidy-results",
+    "objectID": "slides/03-slr-model-assessment-notes.html#tidy-results",
+    "href": "slides/03-slr-model-assessment-notes.html#tidy-results",
     "title": "SLR: Model Assessment",
     "section": "Tidy results",
     "text": "Tidy results\nUse the tidy() function from the broom R package to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   32.3      2.34        13.8 4.03e-28\n2 critics        0.519    0.0345      15.0 2.70e-31"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#format-results",
-    "href": "slides/03-model-assessment-notes.html#format-results",
+    "objectID": "slides/03-slr-model-assessment-notes.html#format-results",
+    "href": "slides/03-slr-model-assessment-notes.html#format-results",
     "title": "SLR: Model Assessment",
     "section": "Format results",
     "text": "Format results\nUse the kable() function from the knitr package to neatly format the results\n\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics\n0.519\n0.035\n15.028\n0"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#prediction-1",
-    "href": "slides/03-model-assessment-notes.html#prediction-1",
+    "objectID": "slides/03-slr-model-assessment-notes.html#prediction-1",
+    "href": "slides/03-slr-model-assessment-notes.html#prediction-1",
     "title": "SLR: Model Assessment",
     "section": "Prediction",
     "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#prediction-2",
-    "href": "slides/03-model-assessment-notes.html#prediction-2",
+    "objectID": "slides/03-slr-model-assessment-notes.html#prediction-2",
+    "href": "slides/03-slr-model-assessment-notes.html#prediction-2",
     "title": "SLR: Model Assessment",
     "section": "Prediction",
     "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#data-life-expectancy-in-140-countries",
-    "href": "slides/03-model-assessment-notes.html#data-life-expectancy-in-140-countries",
+    "objectID": "slides/03-slr-model-assessment-notes.html#data-life-expectancy-in-140-countries",
+    "href": "slides/03-slr-model-assessment-notes.html#data-life-expectancy-in-140-countries",
     "title": "SLR: Model Assessment",
     "section": "Data: Life expectancy in 140 countries",
     "text": "Data: Life expectancy in 140 countries\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\nGoal: Use the income inequality in a country to understand variability in the life expectancy.\n\n\nClick here for the original research paper."
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#variables",
-    "href": "slides/03-model-assessment-notes.html#variables",
+    "objectID": "slides/03-slr-model-assessment-notes.html#variables",
+    "href": "slides/03-slr-model-assessment-notes.html#variables",
     "title": "SLR: Model Assessment",
     "section": "Variables",
     "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient). (from Zarulli et al. (2021))"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#univariate-exploratory-data-analysis",
-    "href": "slides/03-model-assessment-notes.html#univariate-exploratory-data-analysis",
+    "objectID": "slides/03-slr-model-assessment-notes.html#univariate-exploratory-data-analysis",
+    "href": "slides/03-slr-model-assessment-notes.html#univariate-exploratory-data-analysis",
     "title": "SLR: Model Assessment",
     "section": "Univariate exploratory data analysis",
     "text": "Univariate exploratory data analysis"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#bivariate-exploratory-data-analysis",
-    "href": "slides/03-model-assessment-notes.html#bivariate-exploratory-data-analysis",
+    "objectID": "slides/03-slr-model-assessment-notes.html#bivariate-exploratory-data-analysis",
+    "href": "slides/03-slr-model-assessment-notes.html#bivariate-exploratory-data-analysis",
     "title": "SLR: Model Assessment",
     "section": "Bivariate exploratory data analysis",
     "text": "Bivariate exploratory data analysis"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
-    "href": "slides/03-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
+    "objectID": "slides/03-slr-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
+    "href": "slides/03-slr-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
     "title": "SLR: Model Assessment",
     "section": "Clone repo + Start new RStudio project",
     "text": "Clone repo + Start new RStudio project\n\nGo to the course organization. Click on the repo with the prefix ae-01. It contains the starter documents you need to complete the AE.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the AE."
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#two-statistics",
-    "href": "slides/03-model-assessment-notes.html#two-statistics",
+    "objectID": "slides/03-slr-model-assessment-notes.html#two-statistics",
+    "href": "slides/03-slr-model-assessment-notes.html#two-statistics",
     "title": "SLR: Model Assessment",
     "section": "Two statistics",
     "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n. . .\n\nWhat indicates a good model fit? Higher or lower RMSE? Higher or lower \\(R^2\\)?"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#rmse",
-    "href": "slides/03-model-assessment-notes.html#rmse",
+    "objectID": "slides/03-slr-model-assessment-notes.html#rmse",
+    "href": "slides/03-slr-model-assessment-notes.html#rmse",
     "title": "SLR: Model Assessment",
     "section": "RMSE",
     "text": "RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\n. . .\n\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the response variable\nThe value of RMSE is more useful for comparing across models than evaluating a single model"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#analysis-of-variance-anova",
-    "href": "slides/03-model-assessment-notes.html#analysis-of-variance-anova",
+    "objectID": "slides/03-slr-model-assessment-notes.html#analysis-of-variance-anova",
+    "href": "slides/03-slr-model-assessment-notes.html#analysis-of-variance-anova",
     "title": "SLR: Model Assessment",
     "section": "ANOVA",
     "text": "ANOVA\nAnalysis of Variance (ANOVA): Technique to partition variability in \\(Y\\) by the sources of variability"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#total-variability-response",
-    "href": "slides/03-model-assessment-notes.html#total-variability-response",
+    "objectID": "slides/03-slr-model-assessment-notes.html#total-variability-response",
+    "href": "slides/03-slr-model-assessment-notes.html#total-variability-response",
     "title": "SLR: Model Assessment",
     "section": "Total variability (Response)",
     "text": "Total variability (Response)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMin\nMedian\nMax\nMean\nStd.Dev\n\n\n\n\n51.6\n72.85\n84.1\n71.614\n8.075"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#partition-sources-of-variability-in-life_exp",
-    "href": "slides/03-model-assessment-notes.html#partition-sources-of-variability-in-life_exp",
+    "objectID": "slides/03-slr-model-assessment-notes.html#partition-sources-of-variability-in-life_exp",
+    "href": "slides/03-slr-model-assessment-notes.html#partition-sources-of-variability-in-life_exp",
     "title": "SLR: Model Assessment",
     "section": "Partition sources of variability in life_exp",
     "text": "Partition sources of variability in life_exp"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#total-variability-response-1",
-    "href": "slides/03-model-assessment-notes.html#total-variability-response-1",
+    "objectID": "slides/03-slr-model-assessment-notes.html#total-variability-response-1",
+    "href": "slides/03-slr-model-assessment-notes.html#total-variability-response-1",
     "title": "SLR: Model Assessment",
     "section": "Total variability (Response)",
     "text": "Total variability (Response)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#explained-variability-model",
-    "href": "slides/03-model-assessment-notes.html#explained-variability-model",
+    "objectID": "slides/03-slr-model-assessment-notes.html#explained-variability-model",
+    "href": "slides/03-slr-model-assessment-notes.html#explained-variability-model",
     "title": "SLR: Model Assessment",
     "section": "Explained variability (Model)",
     "text": "Explained variability (Model)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#unexplained-variability-residuals",
-    "href": "slides/03-model-assessment-notes.html#unexplained-variability-residuals",
+    "objectID": "slides/03-slr-model-assessment-notes.html#unexplained-variability-residuals",
+    "href": "slides/03-slr-model-assessment-notes.html#unexplained-variability-residuals",
     "title": "SLR: Model Assessment",
     "section": "Unexplained variability (Residuals)",
     "text": "Unexplained variability (Residuals)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#sum-of-squares",
-    "href": "slides/03-model-assessment-notes.html#sum-of-squares",
+    "objectID": "slides/03-slr-model-assessment-notes.html#sum-of-squares",
+    "href": "slides/03-slr-model-assessment-notes.html#sum-of-squares",
     "title": "SLR: Model Assessment",
     "section": "Sum of Squares",
     "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#r2",
-    "href": "slides/03-model-assessment-notes.html#r2",
+    "objectID": "slides/03-slr-model-assessment-notes.html#r2",
+    "href": "slides/03-slr-model-assessment-notes.html#r2",
     "title": "SLR: Model Assessment",
     "section": "\\(R^2\\)",
     "text": "\\(R^2\\)\nThe coefficient of determination \\(R^2\\) is the proportion of variation in the response, \\(Y\\), that is explained by the regression model\n\n\\[\\large{R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}}\\]\n\n\nWhat is the range of \\(R^2\\)? Does \\(R^2\\) have units?"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#interpreting-r2",
-    "href": "slides/03-model-assessment-notes.html#interpreting-r2",
+    "objectID": "slides/03-slr-model-assessment-notes.html#interpreting-r2",
+    "href": "slides/03-slr-model-assessment-notes.html#interpreting-r2",
     "title": "SLR: Model Assessment",
-    "section": "Interpreting $R^2$",
-    "text": "Interpreting $R^2$\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/629888"
+    "section": "Interpreting \\(R^2\\)",
+    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/629888"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#augmented-data-frame",
-    "href": "slides/03-model-assessment-notes.html#augmented-data-frame",
+    "objectID": "slides/03-slr-model-assessment-notes.html#augmented-data-frame",
+    "href": "slides/03-slr-model-assessment-notes.html#augmented-data-frame",
     "title": "SLR: Model Assessment",
     "section": "Augmented data frame",
     "text": "Augmented data frame\nUse the augment() function from the broom package to add columns for predicted values, residuals, and other observation-level model statistics\n. . .\n\nlife_exp_aug &lt;- augment(life_exp_fit)\nlife_exp_aug\n\n# A tibble: 140 × 8\n   life_exp income_inequality .fitted .resid    .hat .sigma   .cooksd .std.resid\n      &lt;dbl&gt;             &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1     63.8              28.2    65.8 -1.96  0.0125    4.45 0.00125       -0.444\n 2     78.2              12.2    76.9  1.29  0.0116    4.45 0.000498       0.292\n 3     59.9              32.4    62.8 -2.93  0.0193    4.44 0.00437       -0.667\n 4     76.2              14      75.7  0.542 0.00972   4.45 0.0000739      0.123\n 5     74.6               8.6    79.4 -4.82  0.0168    4.43 0.0102        -1.10 \n 6     83                 8.3    79.6  3.37  0.0173    4.44 0.00515        0.766\n 7     81.3               7.4    80.3  1.04  0.0189    4.45 0.000540       0.237\n 8     72.5              10.1    78.4 -5.88  0.0144    4.42 0.0130        -1.33 \n 9     71.8              27.6    66.2  5.62  0.0118    4.43 0.00972        1.28 \n10     74                 6.5    80.9 -6.89  0.0207    4.41 0.0260        -1.57 \n# ℹ 130 more rows"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#finding-rmse-in-r",
-    "href": "slides/03-model-assessment-notes.html#finding-rmse-in-r",
+    "objectID": "slides/03-slr-model-assessment-notes.html#finding-rmse-in-r",
+    "href": "slides/03-slr-model-assessment-notes.html#finding-rmse-in-r",
     "title": "SLR: Model Assessment",
     "section": "Finding RMSE in R",
     "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard        4.40"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#finding-r2-in-r",
-    "href": "slides/03-model-assessment-notes.html#finding-r2-in-r",
+    "objectID": "slides/03-slr-model-assessment-notes.html#finding-r2-in-r",
+    "href": "slides/03-slr-model-assessment-notes.html#finding-r2-in-r",
     "title": "SLR: Model Assessment",
     "section": "Finding \\(R^2\\) in R",
     "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.700\n\n\n\n. . .\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\):\n\nglance(life_exp_fit)$r.squared\n\n[1] 0.7003831"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#recap",
-    "href": "slides/03-model-assessment-notes.html#recap",
+    "objectID": "slides/03-slr-model-assessment-notes.html#recap",
+    "href": "slides/03-slr-model-assessment-notes.html#recap",
     "title": "SLR: Model Assessment",
     "section": "Recap",
     "text": "Recap\n\nUsed R to conduct exploratory data analysis and fit a model\nEvaluated models using RMSE and \\(R^2\\)\nUsed analysis of variance to partition variability in the response variable"
   },
   {
-    "objectID": "slides/03-model-assessment-notes.html#next-class",
-    "href": "slides/03-model-assessment-notes.html#next-class",
+    "objectID": "slides/03-slr-model-assessment-notes.html#next-class",
+    "href": "slides/03-slr-model-assessment-notes.html#next-class",
     "title": "SLR: Model Assessment",
     "section": "Next class",
     "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Lec 04: SLR - Matrix representation prepare"
@@ -2889,8 +2889,8 @@
     "objectID": "slides/03-slr-model-assessment.html#interpreting-r2",
     "href": "slides/03-slr-model-assessment.html#interpreting-r2",
     "title": "SLR: Model Assessment",
-    "section": "Interpreting $R^2$",
-    "text": "Interpreting $R^2$\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/629888"
+    "section": "Interpreting \\(R^2\\)",
+    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/62513/discussion/629888"
   },
   {
     "objectID": "slides/03-slr-model-assessment.html#augmented-data-frame",
@@ -2925,7 +2925,14 @@
     "href": "slides/03-slr-model-assessment.html#next-class",
     "title": "SLR: Model Assessment",
     "section": "Next class",
-    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Lec 04: SLR - Matrix representation prepare\n\n\n\n\n\n\nZarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. “Health Care System Efficiency and Life Expectancy: A 140-Country Study.” Edited by Srinivas Goli. PLOS ONE 16 (7): e0253450. https://doi.org/10.1371/journal.pone.0253450."
+    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Lec 04: SLR - Matrix representation prepare"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#references",
+    "href": "slides/03-slr-model-assessment.html#references",
+    "title": "SLR: Model Assessment",
+    "section": "References",
+    "text": "References\n\n\n\n\nZarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. “Health Care System Efficiency and Life Expectancy: A 140-Country Study.” Edited by Srinivas Goli. PLOS ONE 16 (7): e0253450. https://doi.org/10.1371/journal.pone.0253450."
   },
   {
     "objectID": "links.html",
