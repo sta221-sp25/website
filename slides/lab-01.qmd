@@ -69,7 +69,7 @@ Part of the lab grade is for “workflow and formatting” assessing the reprodu
 
     -   Mark the pages associated with each exercise.
 
-## Getting started 
+## Getting started
 
 Ask your TA if
 
