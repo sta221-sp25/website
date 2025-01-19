@@ -3114,5 +3114,327 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#announcements",
+    "href": "slides/04-slr-matrix.html#announcements",
+    "title": "SLR: Matrix representation",
+    "section": "Announcements",
+    "text": "Announcements\n\nLab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#topics",
+    "href": "slides/04-slr-matrix.html#topics",
+    "title": "SLR: Matrix representation",
+    "section": "Topics",
+    "text": "Topics\n\nApplication exercise on model assessment\nMatrix representation of simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#two-statistics",
+    "href": "slides/04-slr-matrix.html#two-statistics",
+    "title": "SLR: Matrix representation",
+    "section": "Two statistics",
+    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n\\[R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#slr-statistical-model-population",
+    "href": "slides/04-slr-matrix.html#slr-statistical-model-population",
+    "title": "SLR: Matrix representation",
+    "section": "SLR: Statistical model (population)",
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms centered at 0 with variance \\(\\sigma^2_{\\epsilon}\\)"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form",
+    "href": "slides/04-slr-matrix.html#slr-in-matrix-form",
+    "title": "SLR: Matrix representation",
+    "section": "SLR in matrix form",
+    "text": "SLR in matrix form\nThe simple linear regression model to describe the relationship between the response \\(Y\\) and single quantitative predictor \\(X\\) can be represented as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#find-estimator-for-beta",
+    "href": "slides/04-slr-matrix.html#find-estimator-for-beta",
+    "title": "SLR: Matrix representation",
+    "section": "Find estimator for \\(\\beta\\)",
+    "text": "Find estimator for \\(\\beta\\)\nGoal: Find \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes the sum of squared residuals \\[\n\\begin{aligned}\nSSR = \\sum_{i=1}^n e_i^2 = \\mathbf{e}^T\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals",
+    "href": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} = \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta})\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals-1",
+    "href": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals-1",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\nThe estimate of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes SSR is the one such that\n\\[\n\\nabla_{\\boldsymbol{\\beta}} SSR = \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) = 0\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals-2",
+    "href": "slides/04-slr-matrix.html#minimize-sum-of-squared-residuals-2",
+    "title": "SLR: Matrix representation",
+    "section": "Minimize sum of squared residuals",
+    "text": "Minimize sum of squared residuals\nThe estimate of \\(\\boldsymbol{\\beta} = \\begin{bmatrix}\\beta_0 \\\\ \\beta_1 \\end{bmatrix}\\) that minimizes SSR is the one such that\n\\[\n\\nabla_{\\boldsymbol{\\beta}} SSR = \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}) = 0\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-vector-operations",
+    "href": "slides/04-slr-matrix.html#side-note-vector-operations",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-vector-operations-1",
+    "href": "slides/04-slr-matrix.html#side-note-vector-operations-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-vector-operations-2",
+    "href": "slides/04-slr-matrix.html#side-note-vector-operations-2",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\n\n\n\nProperty 1\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\mathbf{z}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-proposition-1",
+    "href": "slides/04-slr-matrix.html#side-note-proposition-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Proposition 1",
+    "text": "Side note: Proposition 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^T\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-proposition-1-1",
+    "href": "slides/04-slr-matrix.html#side-note-proposition-1-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Proposition 1",
+    "text": "Side note: Proposition 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^T\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-vector-matrix-operations",
+    "href": "slides/04-slr-matrix.html#side-note-vector-matrix-operations",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector + matrix operations",
+    "text": "Side note: Vector + matrix operations\n\n\n\nProperty 2\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^\\mathsf{T} \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\n\n\n\nProof in HW 01"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#find-the-least-squares-estimators",
+    "href": "slides/04-slr-matrix.html#find-the-least-squares-estimators",
+    "title": "SLR: Matrix representation",
+    "section": "Find the least squares estimators",
+    "text": "Find the least squares estimators\n\\[\n\\begin{aligned}\n\\nabla_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta})  \\\\[10pt]\n& \\class{fragment}{= \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\nabla_\\boldsymbol{\\beta} \\hspace{1mm} \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}} \\\\[10pt]\n&\\class{fragment}{= 0 - 2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}}\\class{fragment}{=0} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow \\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} = \\mathbf{X}^\\mathsf{T}\\mathbf{y}} \\\\[10pt]\n&\\class{fragment}{\\Rightarrow   (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}} \\\\[10pt]\n&\\class{fragment}{\\color{#993399}{\\Rightarrow \\hat{\\boldsymbol{\\beta}} =  (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}}}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#did-we-find-a-minimum",
+    "href": "slides/04-slr-matrix.html#did-we-find-a-minimum",
+    "title": "SLR: Matrix representation",
+    "section": "Did we find a minimum?",
+    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{=-2\\nabla_{\\boldsymbol{\\beta}}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&\\class{fragment}{\\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}}\\class{fragment}{ &gt; 0}\n\\end{aligned}\n\\]\n\nShow the details in HW 01"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#predicted-fitted-values",
+    "href": "slides/04-slr-matrix.html#predicted-fitted-values",
+    "title": "SLR: Matrix representation",
+    "section": "Predicted (fitted) values",
+    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\)\n\n\n\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)\nIt is only a function of \\(\\mathbf{X}\\) not \\(\\mathbf{y}\\)"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#residuals",
+    "href": "slides/04-slr-matrix.html#residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Residuals",
+    "text": "Residuals\nRecall that the residuals are the difference between the observed and predicted values\n\\[\n\\begin{aligned}\n\\mathbf{e} &= \\mathbf{y} - \\hat{\\mathbf{y}}\\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}}} \\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{H}\\mathbf{y}} \\\\[20pt]\n\\class{fragment}{\\color{#993399}{\\mathbf{e}}} &\\class{fragment}{\\color{#993399}{=(\\mathbf{I} - \\mathbf{H})\\mathbf{y}}} \\\\[10pt]\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#recap",
+    "href": "slides/04-slr-matrix.html#recap",
+    "title": "SLR: Matrix representation",
+    "section": "Recap",
+    "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator-for-boldsymbolbeta",
+    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator-for-boldsymbolbeta",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)",
+    "text": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)\nGoal: Find estimator \\(\\hat{\\boldsymbol{\\beta}}= \\begin{bmatrix}\\hat{\\beta}_0 \\\\ \\hat{\\beta}_1 \\end{bmatrix}\\) that minimizes the sum of squared errors \\[\n\\sum_{i=1}^n \\epsilon_i^2 = \\mathbf{\\epsilon}^\\mathsf{T}\\mathbf{\\epsilon} = (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#proposition-1",
+    "href": "slides/04-slr-matrix.html#proposition-1",
+    "title": "SLR: Matrix representation",
+    "section": "Proposition 1",
+    "text": "Proposition 1\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^T\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{z} = \\mathbf{z}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#proposition-2",
+    "href": "slides/04-slr-matrix.html#proposition-2",
+    "title": "SLR: Matrix representation",
+    "section": "Proposition 2",
+    "text": "Proposition 2\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^T \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\nProof in HW 01"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-vector-operations-3",
+    "href": "slides/04-slr-matrix.html#side-note-vector-operations-3",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-vector-operations-4",
+    "href": "slides/04-slr-matrix.html#side-note-vector-operations-4",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\n\n\n\nProperty 1\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^T\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{z} = \\mathbf{z}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-vector-operations-5",
+    "href": "slides/04-slr-matrix.html#side-note-vector-operations-5",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector operations",
+    "text": "Side note: Vector operations\n\n\n\nProposition 1\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^T\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{z} = \\mathbf{z}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-proposition-1-2",
+    "href": "slides/04-slr-matrix.html#side-note-proposition-1-2",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Proposition 1",
+    "text": "Side note: Proposition 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^T\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-proposition-1-3",
+    "href": "slides/04-slr-matrix.html#side-note-proposition-1-3",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Proposition 1",
+    "text": "Side note: Proposition 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^T\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^T\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-vector-matrix-operations-1",
+    "href": "slides/04-slr-matrix.html#side-note-vector-matrix-operations-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Vector + matrix operations",
+    "text": "Side note: Vector + matrix operations\n\n\n\nProposition 2\n\n\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^T \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\n\n\n\nProof in HW 01"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-gradient",
+    "href": "slides/04-slr-matrix.html#side-note-gradient",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Gradient",
+    "text": "Side note: Gradient\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\n\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#property-1",
+    "href": "slides/04-slr-matrix.html#property-1",
+    "title": "SLR: Matrix representation",
+    "section": "Property 1",
+    "text": "Property 1\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\mathbf{z}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-property-1",
+    "href": "slides/04-slr-matrix.html#side-note-property-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Property 1",
+    "text": "Side note: Property 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^\\mathsf{T}\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-property-1-1",
+    "href": "slides/04-slr-matrix.html#side-note-property-1-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Property 1",
+    "text": "Side note: Property 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#property-2",
+    "href": "slides/04-slr-matrix.html#property-2",
+    "title": "SLR: Matrix representation",
+    "section": "Property 2",
+    "text": "Property 2\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^\\mathsf{T} \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\nProof in HW 01."
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-property-1-2",
+    "href": "slides/04-slr-matrix.html#side-note-property-1-2",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Property 1",
+    "text": "Side note: Property 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^\\mathsf{T}\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-property-1-3",
+    "href": "slides/04-slr-matrix.html#side-note-property-1-3",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Property 1",
+    "text": "Side note: Property 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#gradient",
+    "href": "slides/04-slr-matrix.html#gradient",
+    "title": "SLR: Matrix representation",
+    "section": "Gradient",
+    "text": "Gradient\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\n\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator-of-boldsymbolbeta",
+    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator-of-boldsymbolbeta",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator of \\(\\boldsymbol{\\beta}\\)",
+    "text": "Derive least squares estimator of \\(\\boldsymbol{\\beta}\\)\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes\n\\[\n\\begin{aligned}\n\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^\\mathsf{T} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T})(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\mathbf{y}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator",
+    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator",
+    "text": "Derive least squares estimator\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes\n\\[\n\\begin{aligned}\n\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^\\mathsf{T} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T})(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\mathbf{y}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator-1",
+    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator-1",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator",
+    "text": "Derive least squares estimator\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[\n-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\n\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#section",
+    "href": "slides/04-slr-matrix.html#section",
+    "title": "SLR: Matrix representation",
+    "section": "",
+    "text": "\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{=-2\\nabla_{\\boldsymbol{\\beta}}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&\\class{fragment}{\\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}}\\class{fragment}{ &gt; 0}\n\\end{aligned}\n\\]\n\nShow the details in HW 01"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#minimum",
+    "href": "slides/04-slr-matrix.html#minimum",
+    "title": "SLR: Matrix representation",
+    "section": "Minimum?",
+    "text": "Minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} SSR &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&\\class{fragment}{=-2\\nabla_{\\boldsymbol{\\beta}}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&\\class{fragment}{\\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}}\\class{fragment}{ &gt; 0}\n\\end{aligned}\n\\]\n\nShow the details in HW 01"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#hessian-matrix",
+    "href": "slides/04-slr-matrix.html#hessian-matrix",
+    "title": "SLR: Matrix representation",
+    "section": "Hessian matrix",
+    "text": "Hessian matrix\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#using-the-hessian-matrix",
+    "href": "slides/04-slr-matrix.html#using-the-hessian-matrix",
+    "title": "SLR: Matrix representation",
+    "section": "Using the Hessian matrix",
+    "text": "Using the Hessian matrix\nIf the Hessian matrix is…\n\npositive-definite, then we have found a minimum.\nnegative-definite, then we have found a maximum.\nneither positive or negative-definite, then we have found a saddle point"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#did-we-find-a-minimum-1",
+    "href": "slides/04-slr-matrix.html#did-we-find-a-minimum-1",
+    "title": "SLR: Matrix representation",
+    "section": "Did we find a minimum?",
+    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&{=-2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{y}) + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&{\\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}}\n\\end{aligned}\n\\]\n\nShow that \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite in HW 01."
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form-1",
+    "href": "slides/04-slr-matrix.html#slr-in-matrix-form-1",
+    "title": "SLR: Matrix representation",
+    "section": "SLR in matrix form",
+    "text": "SLR in matrix form\n\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), and \\(\\boldsymbol{\\epsilon}\\)?"
   }
 ]
