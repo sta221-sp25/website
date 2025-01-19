@@ -121,7 +121,7 @@ ikea <- read_csv("data/ikea.csv")
 The variable definitions are as follows:
 
 | variable | class | description |
-|:---|:---|:---|
+|:-----------------------|:-----------------------|:-----------------------|
 | item_id | double | item id which can be used later to merge with other IKEA data frames |
 | name | character | the commercial name of items |
 | category | character | the furniture category that the item belongs to (Sofas, beds, chairs, Trolleys,...) |
@@ -480,7 +480,7 @@ In particular, given an $n\times p$ matrix $\mathbf{M}$, $\mathbf{M^\top M}$ is 
 $$
 
 ::: render-commit-push
-You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that [all]{.underline} documents are updated in your repo on GitHub. The PDF document you submit to Gradescope should be identical to the one in your GitHub repo.
+You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 1!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that [all]{.underline} documents are updated in your repo on GitHub. The PDF document you submit to Gradescope for the computing exercises should be identical to the rendered PDF with the computing exercises in your GitHub repo.
 :::
 
 # Submission
