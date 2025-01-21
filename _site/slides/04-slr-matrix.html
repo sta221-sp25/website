@@ -214,6 +214,12 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 \large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}
 \]</span></p>
 </div>
+<ul>
+<li><p><span class="math inline">\(\mathbf{y}\)</span> : Vector of responses</p></li>
+<li><p><span class="math inline">\(\mathbf{X}\)</span>: Design matrix (columns for predictors + intercept)</p></li>
+<li><p><span class="math inline">\(\boldsymbol{\beta}\)</span>: Vector of model coefficients</p></li>
+<li><p><span class="math inline">\(\boldsymbol{\epsilon}\)</span>: Vector of error terms centered at <span class="math inline">\(\mathbf{0}\)</span> with variance <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{I}\)</span></p></li>
+</ul>
 </section>
 <section id="slr-in-matrix-form-1" class="slide level2">
 <h2>SLR in matrix form</h2>
@@ -337,12 +343,12 @@ y_n
 <h2>Derive least squares estimator</h2>
 <p><span class="math display">\[\begin{aligned}
 \nabla_{\beta}\boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &amp;= \nabla_{\boldsymbol{\beta}}( \mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
-&amp; = -2\mathbf{X}^\mathsf{T}\mathbf{y} + \mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
+&amp; = -2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
 \end{aligned}
 \]</span><br></p>
 <p>Find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that satisfies</p>
 <p><span class="math display">\[
--2\mathbf{X}^\mathsf{T}\mathbf{y} + \mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}
+-2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}
 \]</span></p>
 <div class="equation">
 <p><span class="math display">\[\hat{\boldsymbol{\beta}} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}\]</span></p>

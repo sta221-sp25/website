@@ -2526,7 +2526,7 @@
     "href": "slides/04-slr-matrix-notes.html#slr-in-matrix-form",
     "title": "SLR: Matrix representation",
     "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]"
+    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#slr-in-matrix-form-1",
@@ -2589,7 +2589,7 @@
     "href": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator-1",
     "title": "SLR: Matrix representation",
     "section": "Derive least squares estimator",
-    "text": "Derive least squares estimator\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[\n-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\n\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
+    "text": "Derive least squares estimator\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[\n-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\n\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
   },
   {
     "objectID": "slides/04-slr-matrix-notes.html#hessian-matrix",
@@ -2673,7 +2673,7 @@
     "href": "slides/04-slr-matrix.html#slr-in-matrix-form",
     "title": "SLR: Matrix representation",
     "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]"
+    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
   },
   {
     "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form-1",
@@ -2736,7 +2736,7 @@
     "href": "slides/04-slr-matrix.html#derive-least-squares-estimator-1",
     "title": "SLR: Matrix representation",
     "section": "Derive least squares estimator",
-    "text": "Derive least squares estimator\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[\n-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\n\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
+    "text": "Derive least squares estimator\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[\n-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\n\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
   },
   {
     "objectID": "slides/04-slr-matrix.html#hessian-matrix",

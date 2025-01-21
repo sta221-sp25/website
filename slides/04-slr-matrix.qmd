@@ -127,6 +127,14 @@ $$
 $$
 :::
 
+-   $\mathbf{y}$ : Vector of responses
+
+-   $\mathbf{X}$: Design matrix (columns for predictors + intercept)
+
+-   $\boldsymbol{\beta}$: Vector of model coefficients
+
+-   $\boldsymbol{\epsilon}$: Vector of error terms centered at $\mathbf{0}$ with variance $\sigma^2_{\epsilon}\mathbf{I}$
+
 ## SLR in matrix form
 
 $$
@@ -261,14 +269,14 @@ $$
 
 $$\begin{aligned}
  \nabla_{\beta}\boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} &= \nabla_{\boldsymbol{\beta}}( \mathbf{y}^\mathsf{T}\mathbf{y} - 2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} + \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}) \\[10pt]
- & = -2\mathbf{X}^\mathsf{T}\mathbf{y} + \mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
+ & = -2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}
  \end{aligned}
 $$<br>
 
 Find $\hat{\boldsymbol{\beta}}$ that satisfies
 
 $$
--2\mathbf{X}^\mathsf{T}\mathbf{y} + \mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}
+-2\mathbf{X}^\mathsf{T}\mathbf{y} + 2\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{0}
 $$
 
 ::: equation
