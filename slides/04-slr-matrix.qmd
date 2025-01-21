@@ -105,7 +105,7 @@ Open `ae-01` from last class. Complete Part 2.
 
 # Matrix representation of simple linear regression
 
-## SLR: Statistical model (population)
+## SLR: Statistical model (population) {.midi}
 
 When we have a quantitative response, $Y$, and a single quantitative predictor, $X$, we can use a **simple linear regression** model to describe the relationship between $Y$ and $X$.
 
@@ -119,7 +119,7 @@ $$Y = \beta_0 + \beta_1 X + \epsilon$$
 
 ## SLR in matrix form
 
-The simple linear regression model to describe the relationship between the response $Y$ and single quantitative predictor $X$ can be represented as
+The simple linear regression model can be represented using vectors and matrices as
 
 ::: equation
 $$
@@ -127,7 +127,7 @@ $$
 $$
 :::
 
-## SLR in matrix form 
+## SLR in matrix form
 
 $$
 \underbrace{
@@ -193,6 +193,8 @@ $$
 
 Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{z}$ be a $k \times 1$ vector, such that $\mathbf{z}$ is not a function of $\mathbf{x}$ .
 
+\
+
 The gradient of $\mathbf{x}^\mathsf{T}\mathbf{z}$ with respect to $\mathbf{x}$ is
 
 $$
@@ -222,11 +224,15 @@ $$
 
 Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{A}$ be a $k \times k$ matrix, such that $\mathbf{A}$ is not a function of $\mathbf{x}$ .
 
+\
+
 Then the gradient of $\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x}$ with respect to $\mathbf{x}$ is
 
 $$
 \nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\mathsf{T} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x}
 $$
+
+\
 
 If $\mathbf{A}$ is symmetric, then
 
@@ -269,7 +275,7 @@ $$
 $$\hat{\boldsymbol{\beta}} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}$$
 :::
 
-# Did we find a minimum? 
+# Did we find a minimum?
 
 ## Hessian matrix {background-color="#ccddeb"}
 
@@ -292,7 +298,7 @@ If the Hessian matrix is...
 
 -   neither positive or negative-definite, then we have found a saddle point
 
-## Did we find a minimum? 
+## Did we find a minimum?
 
 $$
 \begin{aligned}
@@ -349,3 +355,7 @@ $$
     -   Least square estimate
     -   Predicted (fitted) values
     -   Residuals
+
+## For next class
+
+-   Complete Prepare for [Lecture 05 - SLR: matrix representation cont'd](../prepare/prepare-lec05.html)

@@ -195,7 +195,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <h1>Matrix representation of simple linear regression</h1>
 
 </section>
-<section id="slr-statistical-model-population" class="slide level2">
+<section id="slr-statistical-model-population" class="slide level2 midi">
 <h2>SLR: Statistical model (population)</h2>
 <p>When we have a quantitative response, <span class="math inline">\(Y\)</span>, and a single quantitative predictor, <span class="math inline">\(X\)</span>, we can use a <strong>simple linear regression</strong> model to describe the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>.</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1 X + \epsilon\]</span></p>
@@ -208,7 +208,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </section>
 <section id="slr-in-matrix-form" class="slide level2">
 <h2>SLR in matrix form</h2>
-<p>The simple linear regression model to describe the relationship between the response <span class="math inline">\(Y\)</span> and single quantitative predictor <span class="math inline">\(X\)</span> can be represented as</p>
+<p>The simple linear regression model can be represented using vectors and matrices as</p>
 <div class="equation">
 <p><span class="math display">\[
 \large{\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}}
@@ -276,6 +276,8 @@ y_n
 <section id="property-1" class="slide level2" data-background-color="#ccddeb">
 <h2>Property 1</h2>
 <p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{z}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector, such that <span class="math inline">\(\mathbf{z}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .</p>
+<p><br>
+</p>
 <p>The gradient of <span class="math inline">\(\mathbf{x}^\mathsf{T}\mathbf{z}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
 <p><span class="math display">\[
 \nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{z} = \mathbf{z}
@@ -303,10 +305,14 @@ y_n
 <section id="property-2" class="slide level2" data-background-color="#ccddeb">
 <h2>Property 2</h2>
 <p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{A}\)</span> be a <span class="math inline">\(k \times k\)</span> matrix, such that <span class="math inline">\(\mathbf{A}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span> .</p>
+<p><br>
+</p>
 <p>Then the gradient of <span class="math inline">\(\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
 <p><span class="math display">\[
 \nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\mathsf{T} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x}
 \]</span></p>
+<p><br>
+</p>
 <p>If <span class="math inline">\(\mathbf{A}\)</span> is symmetric, then</p>
 <p><span class="math display">\[
 (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x} = 2\mathbf{A}\mathbf{x}
@@ -425,6 +431,12 @@ y_n
 <li>Predicted (fitted) values</li>
 <li>Residuals</li>
 </ul></li>
+</ul>
+</section>
+<section id="for-next-class" class="slide level2">
+<h2>For next class</h2>
+<ul>
+<li>Complete Prepare for <a href="../prepare/prepare-lec05.html">Lecture 05 - SLR: matrix representation cont’d</a></li>
 </ul>
 
 
