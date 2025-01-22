@@ -9,6 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.39">
 
+  <meta name="dcterms.date" content="2025-01-24">
   <title>STA 221 - Spring 2025 – Lab 02</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -122,8 +123,6 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
@@ -132,12 +131,12 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Lab 02</h1>
-  <p class="subtitle">Childcare costs + Collaborative workflows</p>
+  <p class="subtitle">Linear regression</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">Sep 16, 2024</p>
+  <p class="date">January 24, 2025</p>
 </section>
 <section>
 <section id="welcome" class="title-slide slide level1 center">
@@ -162,17 +161,17 @@
 </ul>
 <p>You are welcome to but <u>not</u> required to write math proofs using LaTex.</p>
 </section>
-<section id="writing-latex-from-ae-02" class="slide level2 midi">
-<h2>Writing LaTex (from <a href="https://sta221-fa24.netlify.app/ae/ae-02-mlr">AE 02</a>)</h2>
+<section id="writing-latex" class="slide level2 midi">
+<h2>Writing LaTex</h2>
 <p><strong>Inline:</strong> Your mathematics will display within the line of text.</p>
 <ul>
 <li><p>Use <code>$</code> to start and end your LaTex syntax. You can also use the menu: <em>Insert -&gt; LaTex Math -&gt; Inline Math</em>.</p></li>
-<li><p><em>Example</em>: The text <code>The simple linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$</code> produces</p>
-<p>The simple linear regression model is <span class="math inline">\(\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\)</span></p></li>
+<li><p><em>Example</em>: The text <code>The linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$</code> produces</p>
+<p>The linear regression model is <span class="math inline">\(\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\)</span></p></li>
 </ul>
 </section>
-<section id="writing-latex-from-ae-02-1" class="slide level2 midi">
-<h2>Writing LaTex (from <a href="https://sta221-fa24.netlify.app/ae/ae-02-mlr">AE 02</a>)</h2>
+<section id="writing-latex-1" class="slide level2 midi">
+<h2>Writing LaTex</h2>
 <p><strong>Display:</strong> Your mathematics will display outside the line of text</p>
 <ul>
 <li><p>Use a <code>$$</code> to start and end your LaTex syntax. You can also use the menu: <em>Insert -&gt; LaTex Math -&gt; Display Math</em>.</p></li>
@@ -195,84 +194,12 @@
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="teams" class="title-slide slide level1 center">
-<h1>Teams</h1>
-
 </section>
-<section id="meet-your-team" class="slide level2">
-<h2>Meet your team!</h2>
-<ul>
-<li><p><a href="https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/Ea9WHPhr91VAphXfELUbLBsB50LvI-KohMqfQcnpR_6guA?e=JgEpVq"><strong>Click here</strong></a> to find your team.</p></li>
-<li><p>Sit with your team.</p></li>
-</ul>
-</section>
-<section id="team-name-agreement" class="slide level2">
-<h2>Team name + agreement</h2>
-<ul>
-<li><p>Come up with a team name. You can’t have the same name as another group in the class, so be creative!</p>
-<ul>
-<li>Your TA will get your team name by the end of lab.</li>
-</ul></li>
-<li><p>Fill out the team agreement. The goals of the agreement are to…</p>
-<ul>
-<li>Gain a common understanding of the team’s goals and expectations for collaboration</li>
-<li>Make a plan for team communication</li>
-<li>Make a plan for working outside of lab</li>
-</ul></li>
-</ul>
-</section>
-<section id="team-workflow" class="slide level2">
-<h2>Team workflow</h2>
-<ul>
-<li><p>Only <u><strong>one</strong></u> team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.</p>
-<ul>
-<li>Every team member should still be engaged in discussion for all questions, even if it’s not your turn type.</li>
-</ul></li>
-<li><p>Don’t forget to <strong>pull</strong> to get your teammates’ updates before making changes to the <code>.qmd</code> file.</p>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Only one submission per team on Gradescope. Read the submission instructions carefully!</strong></p>
-</div>
-</div>
-</div></li>
-</ul>
-</section>
-<section id="team-workflow-in-action" class="slide level2">
-<h2>Team workflow, in action</h2>
-<ul>
-<li>Complete the “Workflow: Using Git and GitHub as a team” section of the lab in your teams.</li>
-<li>Raise your hand if you have any questions about the workflow.</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_16e21b55" data-update-every="1" tabindex="0" style="right:0;bottom:0;font-size:2em;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="tips-for-working-on-a-team" class="slide level2 midi">
-<h2>Tips for working on a team</h2>
-<ul>
-<li><p>Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.</p></li>
-<li><p>The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.</p></li>
-<li><p>Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.</p></li>
-</ul>
-</section>
-<section id="lab-02-childcare-costs" class="slide level2">
-<h2>Lab 02: Childcare costs</h2>
-<p>Today’s lab focuses on using multiple linear regression (Week 03 content) to predict childcare costs for school-aged children in North Carolina.</p>
-<p>🔗 <a href="https://sta221-fa24.netlify.app/labs/lab-02">sta221-fa24.netlify.app/labs/lab-02.html</a></p>
+<section id="lab-02-linear-regression" class="slide level2">
+<h2>Lab 02: Linear regression</h2>
+<p>Today’s lab focuses on using simple and multiple linear regression to understand variability in coffee quality ratings.</p>
+<p><br></p>
+<p>🔗 <a href="../labs/lab-02.html">sta221-sp25.netlify.app/labs/lab-02.html</a></p>
 
 
 </section></section>
@@ -280,7 +207,7 @@
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta221-fa24.netlify.app">🔗 STA 221 - Fall 2024</a></p>
+<p><a href="https://sta221-sp25.netlify.app">🔗 STA 221 - Spring 2025</a></p>
 </div>
 </div></div>
 

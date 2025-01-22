@@ -1310,60 +1310,25 @@
     "text": "LaTex in this class\nFor this class you will need to be able to…\n\nProperly write mathematical symbols, e.g., \\(\\beta_1\\) not B1, \\(R^2\\) not R2\nWrite basic regression equations, e.g., \\(\\hat{y} = \\beta_0 + \\beta_1x_1 + \\beta_2x_2\\)\nWrite matrix equations: \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)\nWrite hypotheses (we’ll start this next week), e.g., \\(H_0: \\beta = 0\\)\n\nYou are welcome to but not required to write math proofs using LaTex."
   },
   {
-    "objectID": "slides/lab-02.html#writing-latex-from-ae-02",
-    "href": "slides/lab-02.html#writing-latex-from-ae-02",
+    "objectID": "slides/lab-02.html#writing-latex",
+    "href": "slides/lab-02.html#writing-latex",
     "title": "Lab 02",
-    "section": "Writing LaTex (from AE 02)",
-    "text": "Writing LaTex (from AE 02)\nInline: Your mathematics will display within the line of text.\n\nUse $ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Inline Math.\nExample: The text The simple linear regression model is $\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$ produces\nThe simple linear regression model is \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)"
+    "section": "Writing LaTex",
+    "text": "Writing LaTex\nInline: Your mathematics will display within the line of text.\n\nUse $ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Inline Math.\nExample: The text The linear regression model is $\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$ produces\nThe linear regression model is \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\)"
   },
   {
-    "objectID": "slides/lab-02.html#writing-latex-from-ae-02-1",
-    "href": "slides/lab-02.html#writing-latex-from-ae-02-1",
+    "objectID": "slides/lab-02.html#writing-latex-1",
+    "href": "slides/lab-02.html#writing-latex-1",
     "title": "Lab 02",
-    "section": "Writing LaTex (from AE 02)",
-    "text": "Writing LaTex (from AE 02)\nDisplay: Your mathematics will display outside the line of text\n\nUse a $$ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Display Math.\nExample: The text The estimated regression equation is $$\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}$$ produces\nThe estimated regression equation is\n\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}\n\\]\n\n\n\n\n\n\nTip\n\n\nClick here for a quick reference of LaTex code."
+    "section": "Writing LaTex",
+    "text": "Writing LaTex\nDisplay: Your mathematics will display outside the line of text\n\nUse a $$ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Display Math.\nExample: The text The estimated regression equation is $$\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}$$ produces\nThe estimated regression equation is\n\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}\n\\]\n\n\n\n\n\n\nTip\n\n\nClick here for a quick reference of LaTex code."
   },
   {
-    "objectID": "slides/lab-02.html#meet-your-team",
-    "href": "slides/lab-02.html#meet-your-team",
+    "objectID": "slides/lab-02.html#lab-02-linear-regression",
+    "href": "slides/lab-02.html#lab-02-linear-regression",
     "title": "Lab 02",
-    "section": "Meet your team!",
-    "text": "Meet your team!\n\nClick here to find your team.\nSit with your team."
-  },
-  {
-    "objectID": "slides/lab-02.html#team-name-agreement",
-    "href": "slides/lab-02.html#team-name-agreement",
-    "title": "Lab 02",
-    "section": "Team name + agreement",
-    "text": "Team name + agreement\n\nCome up with a team name. You can’t have the same name as another group in the class, so be creative!\n\nYour TA will get your team name by the end of lab.\n\nFill out the team agreement. The goals of the agreement are to…\n\nGain a common understanding of the team’s goals and expectations for collaboration\nMake a plan for team communication\nMake a plan for working outside of lab"
-  },
-  {
-    "objectID": "slides/lab-02.html#team-workflow",
-    "href": "slides/lab-02.html#team-workflow",
-    "title": "Lab 02",
-    "section": "Team workflow",
-    "text": "Team workflow\n\nOnly one team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.\n\nEvery team member should still be engaged in discussion for all questions, even if it’s not your turn type.\n\nDon’t forget to pull to get your teammates’ updates before making changes to the .qmd file.\n\n\n\n\n\n\nImportant\n\n\nOnly one submission per team on Gradescope. Read the submission instructions carefully!"
-  },
-  {
-    "objectID": "slides/lab-02.html#team-workflow-in-action",
-    "href": "slides/lab-02.html#team-workflow-in-action",
-    "title": "Lab 02",
-    "section": "Team workflow, in action",
-    "text": "Team workflow, in action\n\nComplete the “Workflow: Using Git and GitHub as a team” section of the lab in your teams.\nRaise your hand if you have any questions about the workflow.\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/lab-02.html#tips-for-working-on-a-team",
-    "href": "slides/lab-02.html#tips-for-working-on-a-team",
-    "title": "Lab 02",
-    "section": "Tips for working on a team",
-    "text": "Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
-  },
-  {
-    "objectID": "slides/lab-02.html#lab-02-childcare-costs",
-    "href": "slides/lab-02.html#lab-02-childcare-costs",
-    "title": "Lab 02",
-    "section": "Lab 02: Childcare costs",
-    "text": "Lab 02: Childcare costs\nToday’s lab focuses on using multiple linear regression (Week 03 content) to predict childcare costs for school-aged children in North Carolina.\n🔗 sta221-fa24.netlify.app/labs/lab-02.html"
+    "section": "Lab 02: Linear regression",
+    "text": "Lab 02: Linear regression\nToday’s lab focuses on using simple and multiple linear regression to understand variability in coffee quality ratings.\n\n🔗 sta221-sp25.netlify.app/labs/lab-02.html"
   },
   {
     "objectID": "computing-access.html",
