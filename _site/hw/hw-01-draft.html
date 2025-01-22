@@ -505,13 +505,13 @@ Due date
 <p>Let <span class="math inline">\(\mathbf{x}\)</span> be a <span class="math inline">\(k \times 1\)</span> vector and <span class="math inline">\(\mathbf{A}\)</span> be a symmetric <span class="math inline">\(k \times k\)</span> matrix, such that <span class="math inline">\(\mathbf{A}\)</span> is not a function of <span class="math inline">\(\mathbf{x}\)</span>.</p>
 <p>Show that the gradient of <span class="math inline">\(\boldsymbol{x}^\mathsf{T}\mathbf{A}\mathbf{x}\)</span> with respect to <span class="math inline">\(\mathbf{x}\)</span> is</p>
 <p><span class="math display">\[
-\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{A}\mathbf{x} = 2\mathbf{A}\mathbf{x}
+\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = 2\mathbf{A}\mathbf{x}
 \]</span></p>
 <p>(<a href="https://sta221-sp25.netlify.app/slides/04-slr-matrix#/property-2">Property 2</a> from class)</p>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>In class we used the sum of squared errors, <span class="math inline">\(\boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon}\)</span> , to estimate the regression coefficients, <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}\)</span> . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of <span class="math inline">\(\boldsymbol{\beta}\)</span> that minimizes the sum of</p>
+<p>In class we used the sum of squared errors, <span class="math inline">\(\boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon}\)</span> , to estimate the regression coefficients, <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{Y}\)</span> . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of <span class="math inline">\(\boldsymbol{\beta}\)</span> that minimizes the sum of</p>
 <p>If the Hessian matrix <span class="math inline">\(\nabla_{\boldsymbol{\beta}}^2 \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon}\)</span> is positive definite, then we know we have found the <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes the sum of squared errors, i.e., the least squares estimator.</p>
 <p>Show that <span class="math inline">\(\nabla_{\boldsymbol{\beta}}^2 \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon} \propto \mathbf{X}^\mathsf{T}\mathbf{X}\)</span> is positive definite.</p>
 </section>
@@ -523,7 +523,7 @@ Due date
 <h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <p>Show that the sum of squared residuals (SSR) can be written as the following:</p>
 <p><span class="math display">\[
-\mathbf{y}^\mathsf{T}\mathbf{y} - \hat{\boldsymbol{\beta}}\mathbf{X}^\mathsf{T}\mathbf{y}
+\mathbf{y}^\mathsf{T}\mathbf{y} - \hat{\boldsymbol{\beta}}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y}
 \]</span></p>
 </section>
 </section>

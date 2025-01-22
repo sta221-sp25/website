@@ -70,14 +70,14 @@ Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{A}$ be a symmetric $k \ti
 Show that the gradient of $\boldsymbol{x}^\mathsf{T}\mathbf{A}\mathbf{x}$ with respect to $\mathbf{x}$ is
 
 $$
-\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{A}\mathbf{x} = 2\mathbf{A}\mathbf{x}
+\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = 2\mathbf{A}\mathbf{x}
 $$
 
 ([Property 2](https://sta221-sp25.netlify.app/slides/04-slr-matrix#/property-2) from class)
 
 ## Exercise 3
 
-In class we used the sum of squared errors, $\boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon}$ , to estimate the regression coefficients, $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}$ . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of $\boldsymbol{\beta}$ that minimizes the sum of
+In class we used the sum of squared errors, $\boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon}$ , to estimate the regression coefficients, $\hat{\boldsymbol{\beta}} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{Y}$ . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of $\boldsymbol{\beta}$ that minimizes the sum of
 
 If the Hessian matrix $\nabla_{\boldsymbol{\beta}}^2 \boldsymbol{\epsilon}^\mathsf{T}\boldsymbol{\epsilon}$ is positive definite, then we know we have found the $\hat{\boldsymbol{\beta}}$ that minimizes the sum of squared errors, i.e., the least squares estimator.
 
@@ -92,7 +92,7 @@ Prove that the maximum value of $R^2$ must be less than 1 if the data set contai
 Show that the sum of squared residuals (SSR) can be written as the following:
 
 $$
-\mathbf{y}^\mathsf{T}\mathbf{y} - \hat{\boldsymbol{\beta}}\mathbf{X}^\mathsf{T}\mathbf{y}
+\mathbf{y}^\mathsf{T}\mathbf{y} - \hat{\boldsymbol{\beta}}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y}
 $$
 
 # Applied exercises

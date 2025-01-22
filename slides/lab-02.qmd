@@ -32,9 +32,7 @@ bibliography: references.bib
 ## Goals
 
 -   LaTex in this course
--   Meet your team!
--   Team agreement
--   Lab 02: Childcare costs
+-   Lab 02: Linear regression
 
 ## LaTex in this class
 
