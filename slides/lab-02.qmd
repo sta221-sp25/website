@@ -1,12 +1,12 @@
 ---
 title: "Lab 02"
-subtitle: "Childcare costs + Collaborative workflows"
-date: "2024-09-16"
-date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+subtitle: "Linear regression"
+date: "January 24, 2025"
+date-format: long
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
@@ -17,6 +17,7 @@ format:
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
 execute:
   freeze: auto
   echo: true
@@ -24,7 +25,6 @@ knitr:
   opts_chunk: 
     R.options:      
     width: 200
-bibliography: references.bib
 ---
 
 # Welcome
@@ -48,17 +48,17 @@ For this class you will need to be able to...
 
 You are welcome to but <u>not</u> required to write math proofs using LaTex.
 
-## Writing LaTex (from [AE 02](https://sta221-fa24.netlify.app/ae/ae-02-mlr)) {.midi}
+## Writing LaTex {.midi}
 
 **Inline:** Your mathematics will display within the line of text.
 
 -   Use `$` to start and end your LaTex syntax. You can also use the menu: *Insert -\> LaTex Math -\> Inline Math*.
 
--   *Example*: The text `The simple linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$` produces
+-   *Example*: The text `The linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$` produces
 
-    The simple linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$
+    The linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$
 
-## Writing LaTex (from [AE 02](https://sta221-fa24.netlify.app/ae/ae-02-mlr)) {.midi}
+## Writing LaTex  {.midi}
 
 **Display:** Your mathematics will display outside the line of text
 
@@ -76,58 +76,10 @@ $$
 [Click here](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) for a quick reference of LaTex code.
 :::
 
-# Teams
+## Lab 02: Linear regression
 
-## Meet your team!
+Today’s lab focuses on using simple and multiple linear regression to understand variability in coffee quality ratings.
 
--   [**Click here**](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/Ea9WHPhr91VAphXfELUbLBsB50LvI-KohMqfQcnpR_6guA?e=JgEpVq) to find your team.
+<br>
 
--   Sit with your team.
-
-## Team name + agreement
-
--   Come up with a team name. You can't have the same name as another group in the class, so be creative!
-
-    -   Your TA will get your team name by the end of lab.
-
--   Fill out the team agreement. The goals of the agreement are to...
-
-    -   Gain a common understanding of the team's goals and expectations for collaboration
-    -   Make a plan for team communication
-    -   Make a plan for working outside of lab
-
-## Team workflow
-
--   Only <u>**one**</u> team member should type at a time. There are markers in today's lab to help you determine whose turn it is to type.
-
-    -   Every team member should still be engaged in discussion for all questions, even if it's not your turn type.
-
--   Don't forget to **pull** to get your teammates' updates before making changes to the `.qmd` file.
-
-    ::: callout-important
-    **Only one submission per team on Gradescope. Read the submission instructions carefully!**
-    :::
-
-## Team workflow, in action
-
--   Complete the "Workflow: Using Git and GitHub as a team" section of the lab in your teams.
--   Raise your hand if you have any questions about the workflow.
-
-```{r}
-#| echo: false
-countdown::countdown(minutes = 5, font_size = "2em")
-```
-
-## Tips for working on a team {.midi}
-
--   Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.
-
--   The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.
-
--   Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.
-
-## Lab 02: Childcare costs
-
-Today’s lab focuses on using multiple linear regression (Week 03 content) to predict childcare costs for school-aged children in North Carolina.
-
-🔗 [sta221-fa24.netlify.app/labs/lab-02.html](https://sta221-fa24.netlify.app/labs/lab-02)
+🔗 [sta221-sp25.netlify.app/labs/lab-02.html](../labs/lab-02.html)
