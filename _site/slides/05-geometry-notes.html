@@ -468,7 +468,7 @@ window.Quarto = {
 <section id="geometry-of-least-squares-regression-2" class="level2">
 <h2 class="anchored" data-anchor-id="geometry-of-least-squares-regression-2">Geometry of least-squares regression</h2>
 <ul>
-<li><p><strong>Note:</strong> If <span class="math inline">\(\mathbf{A}\)</span>, an <span class="math inline">\(n \times p\)</span> matrix, is orthogonal to an <span class="math inline">\(n \times 1\)</span> vector <span class="math inline">\(\mathbf{c}\)</span>, then <span class="math inline">\(\mathbf{A}^\mathsf{T}\mathbf{c} = \mathbf{0}\)</span></p></li>
+<li><p><strong>Note:</strong> If <span class="math inline">\(\mathbf{A}\)</span>, an <span class="math inline">\(n \times k\)</span> matrix, is orthogonal to an <span class="math inline">\(n \times 1\)</span> vector <span class="math inline">\(\mathbf{c}\)</span>, then <span class="math inline">\(\mathbf{A}^\mathsf{T}\mathbf{c} = \mathbf{0}\)</span></p></li>
 <li><p>Therefore, we have <span class="math inline">\(\mathbf{X}^\mathsf{T}\mathbf{e} = \mathbf{0}\)</span> , and thus</p>
 <p><span class="math display">\[
 \mathbf{X}^\mathsf{T}(\mathbf{y} - \mathbf{Xb}) = \mathbf{0}
@@ -482,7 +482,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="hat-matrix">Hat matrix</h2>
 <ul>
 <li><p>Recall the hat matrix <span class="math inline">\(\mathbf{H} = \mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\)</span>.</p></li>
-<li><p><span class="math inline">\(\hat{\mathbf{y}} = \mathbf{Hy}\)</span>, so <span class="math inline">\(\mathbf{H}\)</span> is a projection of <span class="math inline">\(\mathbf{y}\)</span> onto <span class="math inline">\(\mathbf{\hat{y}} = \mathbf{X}\mathbf{b}\)</span></p></li>
+<li><p><span class="math inline">\(\hat{\mathbf{y}} = \mathbf{Hy}\)</span>, so <span class="math inline">\(\mathbf{H}\)</span> is a projection of <span class="math inline">\(\mathbf{y}\)</span> onto <span class="math inline">\(\mathbf{Xb}\)</span></p></li>
 <li><p>Properties of <span class="math inline">\(\mathbf{H}\)</span>, a projection matrix</p>
 <ul>
 <li><p><span class="math inline">\(\mathbf{H}\)</span> is symmetric (<span class="math inline">\(\mathbf{H}^\mathsf{T} = \mathbf{H}\)</span>)</p></li>

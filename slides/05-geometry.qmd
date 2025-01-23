@@ -98,7 +98,7 @@ Now let's consider how to derive the least-squares estimator using a geometric i
 
 ## Geometry of least-squares regression
 
--   **Note:** If $\mathbf{A}$, an $n \times p$ matrix, is orthogonal to an $n \times 1$ vector $\mathbf{c}$, then $\mathbf{A}^\mathsf{T}\mathbf{c} = \mathbf{0}$
+-   **Note:** If $\mathbf{A}$, an $n \times k$ matrix, is orthogonal to an $n \times 1$ vector $\mathbf{c}$, then $\mathbf{A}^\mathsf{T}\mathbf{c} = \mathbf{0}$
 
 -   Therefore, we have $\mathbf{X}^\mathsf{T}\mathbf{e} = \mathbf{0}$ , and thus
 
@@ -114,7 +114,7 @@ Solve for $\mathbf{b}$ .
 
 -   Recall the hat matrix $\mathbf{H} = \mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}$.
 
--   $\hat{\mathbf{y}} = \mathbf{Hy}$, so $\mathbf{H}$ is a projection of $\mathbf{y}$ onto $\mathbf{\hat{y}} = \mathbf{X}\mathbf{b}$
+-   $\hat{\mathbf{y}} = \mathbf{Hy}$, so $\mathbf{H}$ is a projection of $\mathbf{y}$ onto $\mathbf{Xb}$
 
 -   Properties of $\mathbf{H}$, a projection matrix
 
