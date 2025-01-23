@@ -17,7 +17,7 @@ This assignment is due on **Thursday, January 30 at 11:59pm**. To be considered 
 
 You will use simple linear regression to analyze the relationship between air temperature and ice duration for two lakes in Madison, Wisconsin. You will also explore the mathematical properties of simple linear regression models.
 
-# **Learning goals**
+# Learning goals
 
 In this assignment, you will…
 
@@ -27,7 +27,7 @@ In this assignment, you will…
 -   evaluate model fit.
 -   continue developing a workflow for reproducible data analysis.
 
-# **Getting started**
+# Getting started
 
 -   Go to the [sta221-sp25](https://www.github.com/sta221-sp25) organization on GitHub. Click on the repo with the prefix **hw-01**. It contains the starter documents you need to complete the lab.
 
