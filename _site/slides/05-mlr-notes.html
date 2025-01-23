@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Prof.&nbsp;Maria Tackett">
 
-<title>Lab 02: Linear regression – STA 221 - Spring 2025</title>
+<title>Multiple linear regression (MLR) – STA 221 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -142,7 +143,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 02: Linear regression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Multiple linear regression (MLR)</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -385,41 +386,59 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#topics" id="toc-topics" class="nav-link active" data-scroll-target="#topics">Topics</a></li>
+  <li><a href="#computing-setup" id="toc-computing-setup" class="nav-link" data-scroll-target="#computing-setup">Computing setup</a></li>
+  <li><a href="#data-peer-to-peer-lender" id="toc-data-peer-to-peer-lender" class="nav-link" data-scroll-target="#data-peer-to-peer-lender">Data: Peer-to-peer lender</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
+  <li><a href="#outcome-interest_rate" id="toc-outcome-interest_rate" class="nav-link" data-scroll-target="#outcome-interest_rate">Outcome: <code>interest_rate</code></a></li>
+  <li><a href="#predictors" id="toc-predictors" class="nav-link" data-scroll-target="#predictors">Predictors</a></li>
+  <li><a href="#data-manipulation-1-rescale-income" id="toc-data-manipulation-1-rescale-income" class="nav-link" data-scroll-target="#data-manipulation-1-rescale-income">Data manipulation 1: Rescale income</a></li>
+  <li><a href="#outcome-vs.-predictors" id="toc-outcome-vs.-predictors" class="nav-link" data-scroll-target="#outcome-vs.-predictors">Outcome vs.&nbsp;predictors</a></li>
+  <li><a href="#multiple-linear-regression-mlr" id="toc-multiple-linear-regression-mlr" class="nav-link" data-scroll-target="#multiple-linear-regression-mlr">Multiple linear regression (MLR)</a>
   <ul class="collapse">
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#multiple-linear-regression-mlr-1" id="toc-multiple-linear-regression-mlr-1" class="nav-link" data-scroll-target="#multiple-linear-regression-mlr-1">Multiple linear regression (MLR)</a></li>
+  <li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression" class="nav-link" data-scroll-target="#multiple-linear-regression">Multiple linear regression</a></li>
+  <li><a href="#fitting-the-least-squares-line" id="toc-fitting-the-least-squares-line" class="nav-link" data-scroll-target="#fitting-the-least-squares-line">Fitting the least squares line</a></li>
+  <li><a href="#matrix-form-of-multiple-linear-regression" id="toc-matrix-form-of-multiple-linear-regression" class="nav-link" data-scroll-target="#matrix-form-of-multiple-linear-regression">Matrix form of multiple linear regression</a></li>
+  <li><a href="#matrix-form-of-multiple-linear-regression-1" id="toc-matrix-form-of-multiple-linear-regression-1" class="nav-link" data-scroll-target="#matrix-form-of-multiple-linear-regression-1">Matrix form of multiple linear regression</a></li>
+  <li><a href="#model-fit-in-r" id="toc-model-fit-in-r" class="nav-link" data-scroll-target="#model-fit-in-r">Model fit in R</a></li>
+  <li><a href="#model-equation" id="toc-model-equation" class="nav-link" data-scroll-target="#model-equation">Model equation</a></li>
+  <li><a href="#interpreting-hatbeta_j" id="toc-interpreting-hatbeta_j" class="nav-link" data-scroll-target="#interpreting-hatbeta_j">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></a></li>
+  <li><a href="#interpreting-hatbeta_j-1" id="toc-interpreting-hatbeta_j-1" class="nav-link" data-scroll-target="#interpreting-hatbeta_j-1">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></a></li>
+  <li><a href="#interpreting-hatbeta_0" id="toc-interpreting-hatbeta_0" class="nav-link" data-scroll-target="#interpreting-hatbeta_0">Interpreting <span class="math inline">\(\hat{\beta}_0\)</span></a></li>
+  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction">Prediction</a></li>
+  <li><a href="#prediction-in-r" id="toc-prediction-in-r" class="nav-link" data-scroll-target="#prediction-in-r">Prediction in R</a></li>
+  <li><a href="#cautions" id="toc-cautions" class="nav-link" data-scroll-target="#cautions">Cautions</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   </ul></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data-coffee-ratings" id="toc-data-coffee-ratings" class="nav-link" data-scroll-target="#data-coffee-ratings">Data: Coffee ratings</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
-  <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
-  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
-  </ul></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="05-mlr.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 02: Linear regression</h1>
+<h1 class="title">Multiple linear regression (MLR)</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Prof.&nbsp;Maria Tackett </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Jan 23, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -429,276 +448,547 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Due date
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This lab is due on <strong>Tuesday, January 28 at 11:59pm</strong>. To be considered on time, the following must be done by the due date:</p>
+<section id="topics" class="level2">
+<h2 class="anchored" data-anchor-id="topics">Topics</h2>
 <ul>
-<li>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your GitHub repo</li>
-<li>Final <code>.pdf</code> file submitted on Gradescope</li>
-</ul>
-</div>
-</div>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>In today’s lab you will analyze data from over 1,000 different coffees to explore the relationship between a coffee’s aroma, flavor, and overall quality using linear regression.</p>
-<section id="learning-goals" class="level2">
-<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
-<p>By the end of the lab, you will…</p>
+<li><p>Introducing multiple linear regression</p>
 <ul>
-<li>Continue developing a reproducible workflow using RStudio and GitHub</li>
-<li>Produce visualizations and summary statistics to describe distributions</li>
-<li>Fit, interpret, and evaluate linear regression models</li>
-<li>Use the matrix representation of the linear regression model to estimate coefficients</li>
-<li>Explore properties of the linear regression model</li>
+<li><p>Exploratory data analysis for multiple linear regression</p></li>
+<li><p>Fitting the least squares line</p></li>
+<li><p>Interpreting coefficients for quantitative predictors</p></li>
+<li><p>Prediction</p></li>
+</ul></li>
 </ul>
 </section>
-</section>
-<section id="getting-started" class="level1">
-<h1>Getting Started</h1>
-<ul>
-<li><p>Go to the <a href="https://www.github.com/sta221-sp25">sta221-sp25</a> organization on GitHub. Click on the repo with the prefix <strong>lab-02</strong>. It contains the starter documents you need to complete the lab.</p></li>
-<li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta221-sp25.netlify.app/labs/lab-00#getting-started">Lab 00 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
-</ul>
-</section>
-<section id="packages" class="level1">
-<h1>Packages</h1>
-<p>You will need the following packages for the lab:</p>
+<section id="computing-setup" class="level2">
+<h2 class="anchored" data-anchor-id="computing-setup">Computing setup</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels) <span class="co"># contains broom, yardstick, and other modeling packages</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add other packages as needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="data-coffee-ratings" class="level1">
-<h1>Data: Coffee ratings</h1>
-<p>The data set for this lab comes from the <a href="https://github.com/jldbc/coffee-quality-database">Coffee Quality Database</a> and was obtained from the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-07-07/readme.md">#TidyTuesday GitHub repo</a>. It includes information about the origin, producer, measures of various characteristics, and the quality measure for over 1,000 coffees. The coffees can be reasonably be treated as a random sample.</p>
-<p>This lab will focus on the following variables:</p>
-<ul>
-<li><p><code>total_cup_points</code>: Total rating/points (0 - 100 scale)</p></li>
-<li><p><code>aroma</code>: Aroma grade, 0 (worst aroma) - 10 (best aroma)</p></li>
-<li><p><code>flavor</code>: Flavor grade, 0 (worst flavor) - 10 (best flavor)</p></li>
-<li><!--# maybe add a second variable--></li>
-</ul>
-<p><a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-07-07/readme.md">Click here</a> for the definitions of all variables in the data set. <a href="http://www.scaa.org/?page=resources&amp;d=cupping-protocols&amp;mod=article_inline">Click here</a> for more details about how these measures are obtained.</p>
+<section id="data-peer-to-peer-lender" class="level2">
+<h2 class="anchored" data-anchor-id="data-peer-to-peer-lender">Data: Peer-to-peer lender</h2>
+<p>Today’s data is a sample of 50 loans made through a peer-to-peer lending club. The data is in the <code>loan50</code> data frame in the <strong>openintro</strong> R package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>coffee <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/coffee-ratings.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercises" class="level1">
-<h1>Exercises</h1>
-<p><strong>Goal:</strong> The goal of this analysis is to use a coffee’s aroma and flavor to understand variability in it total cup points.</p>
-<hr>
-<p>Write all code and narrative in your Quarto file. Write all narrative in complete sentences. Throughout the assignment, you should periodically <strong>render</strong> your Quarto document to produce the updated PDF, <strong>commit</strong> the changes in the Git pane, and <strong>push</strong> the updated files to GitHub.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Make sure we can read all of your code in your PDF document. This means you will need to break up long lines of code. One way to help avoid long lines of code is is start a new line after every pipe (<code>|&gt;</code>) and plus sign (<code>+</code>).</p>
-</div>
-</div>
-<section id="exercise-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>We begin with univariate exploratory data analysis.</p>
-<ol type="a">
-<li>Visualize the distribution of the response variable <code>total_cup_points</code> and calculate summary statistics.</li>
-<li>Comment on the features of the distribution of this variable by describing the shape, center, spread, and presence of potential outliers.</li>
-<li>Based on this distribution, do you think the data set is representative of all coffee available to consumers? Briefly explain.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Make sure your data visualizations have clear and informative <strong>titles</strong> and <strong>axis labels</strong>.</p>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 50 × 4
+   annual_income debt_to_income verified_income interest_rate
+           &lt;dbl&gt;          &lt;dbl&gt; &lt;fct&gt;                   &lt;dbl&gt;
+ 1         59000         0.558  Not Verified            10.9 
+ 2         60000         1.31   Not Verified             9.92
+ 3         75000         1.06   Verified                26.3 
+ 4         75000         0.574  Not Verified             9.92
+ 5        254000         0.238  Not Verified             9.43
+ 6         67000         1.08   Source Verified          9.92
+ 7         28800         0.0997 Source Verified         17.1 
+ 8         80000         0.351  Not Verified             6.08
+ 9         34000         0.698  Not Verified             7.97
+10         80000         0.167  Source Verified         12.6 
+# ℹ 40 more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Now let’s consider the relationship between how good a coffee smells and its overall quality.</p>
-<ol type="a">
-<li>Visualize the relationship between <code>aroma</code> and <code>total_cup_points</code>.</li>
-<li>Does there appear to be a relationship between a coffee’s aroma and its overall quality? If so, what is the shape and direction of the relationship?</li>
-</ol>
-</section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>We have seen the mathematical formulation for simple linear regression in class. In particular, given a response variable <span class="math inline">\(Y\)</span> and predictor variable <span class="math inline">\(X\)</span>, the simple linear regression model is <span class="math display">\[Y = \beta_0 + \beta_1 X + \epsilon\]</span></p>
-<p>for some unknown regression coefficients for slope and intercept<span class="math inline">\((\beta_0, \beta_1)\)</span> and error terms <span class="math inline">\(\epsilon\)</span> that are centered at 0 and have variance <span class="math inline">\(\sigma^2_{\epsilon}\)</span> . This means that the expected value of each observation lies on the regression line<br>
-<span class="math display">\[ E(Y|X) = \beta_0 + \beta_1 X\]</span></p>
-<p>Answer the following questions about simple linear regression. Your response should be in general terms about simple linear, <u>not</u> be specific to the <code>coffee</code> data.</p>
-<ol type="a">
-<li>What does <span class="math inline">\(E(Y|X) = \beta_0 + \beta_1X\)</span> mean in terms of a given value of <span class="math inline">\(X\)</span>?</li>
-<li>What are the interpretations of the coefficients <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> in terms of the expected value of <span class="math inline">\(Y\)</span>?</li>
-</ol>
-<div class="render-commit-push">
-<p>This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.</p>
-</div>
-</section>
-<section id="exercise-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<ol type="a">
-<li>Fit the model of the relationship between <code>aroma</code> and <code>total_cup_points</code>. Neatly display the output using 3 digits.</li>
-<li>Interpret the slope in the context of the data.</li>
-<li>What is the expected <code>total_cup_points</code> for coffees that receive the worst aroma score of <code>0</code>? Is this a reliable estimate of the <code>total_cup_points</code> for these coffees? Briefly explain why or why not.</li>
-</ol>
-</section>
-<section id="exercise-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<p>Now let’s add flavor to the model, so we will use both flavor and aroma to understand variability in the overall quality of coffees.</p>
-<p>In class we have seen how vectors and matrices can be used to represent the linear regression model:</p>
-<p><span class="math display">\[
-\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
-\]</span></p>
-<ol type="a">
-<li>State the dimensions of <span class="math inline">\(\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \boldsymbol{\epsilon}\)</span> for this model. Your answer should have exact values given the <code>coffee</code> data set.</li>
-<li>Compute the estimated regression coefficients using the matrix form of the model. Show the code used to get the answer.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You can use the <code>model.matrix()</code> function to get the design matrix. The code takes the general form:</p>
-<center>
-<p><code>model.matrix(y ~ x, data = my_data)</code></p>
-</center>
-<p>See <a href="https://sta221-sp25.netlify.app/labs/lab-01.html#matrix-operations-in-r">Lab 01</a> for other matrix operations in R.</p>
-</div>
-</div>
-<ol start="3" type="a">
-<li>Check your results from part (b) by using the <code>lm</code> function to fit the model. Neatly display your results using 3 digits.</li>
-<li>Write the estimated regression equation.</li>
-</ol>
-<div class="render-commit-push">
-<p>This is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 4 - 5”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.</p>
-</div>
-</section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-<ol type="a">
-<li>The coefficient for <code>aroma</code> for the model fit in Exercise 5 is different than the coefficient from the model fit in Exercise 4. Briefly explain why these coefficients are different.</li>
-<li>Would you willingly drink a coffee represented by the intercept of the model in Exercise 5? Briefly explain why or why not.</li>
-</ol>
-</section>
-<section id="exercise-7" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
-<ol type="a">
-<li><p>Compute <span class="math inline">\(\mathbf{H}\)</span>, the hat matrix corresponding to the model from Exercise 5. Then use <span class="math inline">\(\mathbf{H}\)</span> to compute the residuals for this model. <strong>Do not print out</strong> <span class="math inline">\(\mathbf{H}\)</span> <strong>or the residuals.</strong></p></li>
-<li><p>Compute the mean and standard deviation of the residuals.</p></li>
-<li><p>Recall root mean square error RMSE</p>
-<p><span class="math display">\[
-RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}}
-\]</span></p>
-<p>Similar to other statistics we’ve seen thus far, we can write the RMSE in matrix form. Compute RMSE for the model from Exercise 5 using matrix form. Show the code used to get the answer.</p></li>
-<li><p>How do the standard deviation of the residuals and RMSE compare?</p></li>
-</ol>
-<div class="render-commit-push">
-<p>You’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 02!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that <u>all</u> documents are updated in your repo on GitHub. The PDF document you submit to Gradescope should be identical to the one in your GitHub repo.</p>
-</div>
-</section>
-</section>
-<section id="submission" class="level1">
-<h1>Submission</h1>
-<p>You will submit the PDF documents for labs, homework, and exams in to Gradescope as part of your final submission.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.</p>
-<p>Remember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.</p>
-</div>
-</div>
-<p>To submit your assignment:</p>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<p><strong>Predictors</strong>:</p>
+<div class="nonincremental">
 <ul>
-<li><p>Access Gradescope through the menu on the <a href="https://canvas.duke.edu/courses/51767">STA 221 Canvas site.</a></p></li>
-<li><p>Click on the assignment, and you’ll be prompted to submit it.</p></li>
-<li><p>Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).</p></li>
-<li><p>Select the first page of your .PDF submission to be associated with the <em>“Workflow &amp; formatting”</em> section.</p></li>
+<li><code>annual_income</code>: Annual income</li>
+<li><code>debt_to_income</code>: Debt-to-income ratio, i.e.&nbsp;the percentage of a borrower’s total debt divided by their total income</li>
+<li><code>verified_income</code>: Whether borrower’s income source and amount have been verified (<code>Not Verified</code>, <code>Source Verified</code>, <code>Verified</code>)</li>
 </ul>
+</div>
+<p><strong>Outcome</strong>: <code>interest_rate</code>: Interest rate for the loan</p>
 </section>
-<section id="grading" class="level1">
-<h1>Grading</h1>
-<table class="caption-top table">
+<section id="outcome-interest_rate" class="level2">
+<h2 class="anchored" data-anchor-id="outcome-interest_rate">Outcome: <code>interest_rate</code></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-mlr_files/figure-revealjs/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Component</th>
-<th style="text-align: left;">Points</th>
+<th style="text-align: right;">Min</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Max</th>
+<th style="text-align: right;">IQR</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Ex 1</td>
-<td style="text-align: left;">6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ex 2</td>
-<td style="text-align: left;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ex 3</td>
-<td style="text-align: left;">7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ex 4</td>
-<td style="text-align: left;">7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ex 5</td>
-<td style="text-align: left;">8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ex 6</td>
-<td style="text-align: left;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ex 7</td>
-<td style="text-align: left;">8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Workflow &amp; formatting</td>
-<td style="text-align: left;">4</td>
+<td style="text-align: right;">5.31</td>
+<td style="text-align: right;">9.93</td>
+<td style="text-align: right;">26.3</td>
+<td style="text-align: right;">5.755</td>
 </tr>
 </tbody>
 </table>
-<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow and document format. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.</p>
+</div>
+</div>
+</section>
+<section id="predictors" class="level2 small">
+<h2 class="small anchored" data-anchor-id="predictors">Predictors</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-mlr_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="data-manipulation-1-rescale-income" class="level2">
+<h2 class="anchored" data-anchor-id="data-manipulation-1-rescale-income">Data manipulation 1: Rescale income</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>loan50 <span class="ot">&lt;-</span> loan50 <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">annual_income_th =</span> annual_income <span class="sc">/</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="05-mlr_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>. . .</p>
+<div class="question">
+<p>Why did we rescale income?</p>
+</div>
+</section>
+<section id="outcome-vs.-predictors" class="level2 small">
+<h2 class="small anchored" data-anchor-id="outcome-vs.-predictors">Outcome vs.&nbsp;predictors</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-mlr_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>. . .</p>
+<p><strong>Goal</strong>: Use these predictors in a single model to understand variability in interest rate.</p>
+<p>. . .</p>
+<div class="question">
+<p>Why do we want to use a single model versus 3 separate simple linear regression models?</p>
+</div>
+</section>
+<section id="multiple-linear-regression-mlr" class="level1">
+<h1>Multiple linear regression (MLR)</h1>
+<section id="multiple-linear-regression-mlr-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="multiple-linear-regression-mlr-1">Multiple linear regression (MLR)</h2>
+<p>Based on the analysis goals, we will use a <strong>multiple linear regression</strong> model of the following form</p>
+<p><span class="math display">\[
+\begin{aligned}\text{interest_rate} ~ =
+\beta_0 &amp; + \beta_1 ~ \text{debt_to_income} \\ &amp; + \beta_2 ~ \text{verified_income} \\ &amp;+ \beta_3~ \text{annual_income_th} \\
+&amp; +\epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
+\end{aligned}
+\]</span></p>
+</section>
+<section id="multiple-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-linear-regression">Multiple linear regression</h2>
+<p><strong>Recall:</strong> The simple linear regression model</p>
+<p><span class="math display">\[
+Y = \beta_0 + \beta_1~ X + \epsilon
+\]</span></p>
+<p>. . .</p>
+<p>The form of the multiple linear regression model is</p>
+<p><span class="math display">\[
+Y = \beta_0 + \beta_1X_1 +  \dots + \beta_pX_p + \epsilon
+\]</span></p>
+<p><br></p>
+<p>. . .</p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+E(Y|X_1, \ldots, X_p) = \beta_0 + \beta_1X_1 +  \dots + \beta_pX_p
+\]</span></p>
+</section>
+<section id="fitting-the-least-squares-line" class="level2">
+<h2 class="anchored" data-anchor-id="fitting-the-least-squares-line">Fitting the least squares line</h2>
+<p>Similar to simple linear regression, we want to find estimates for <span class="math inline">\(\beta_0, \beta_1, \ldots, \beta_p\)</span> that minimize</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n}\epsilon_i^2 = \sum_{i=1}^n[y_i - \hat{y}_i]^2 = \sum_{i=1}^n[y_i - (\beta_0 + \beta_1x_{i1} + \dots + \beta_px_{ip})]^2
+\]</span></p>
+<p><br></p>
+<p>. . .</p>
+<p>The calculations can be very tedious, especially if <span class="math inline">\(p\)</span> is large</p>
+</section>
+<section id="matrix-form-of-multiple-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-form-of-multiple-linear-regression">Matrix form of multiple linear regression</h2>
+<p>Suppose we have <span class="math inline">\(n\)</span> observations, a quantitative response variable, and <span class="math inline">\(p\)</span> &gt; 1 predictors <span class="math display">\[
+\underbrace{
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix} }_
+{\mathbf{y}} \hspace{3mm}
+=
+\hspace{3mm}
+\underbrace{
+\begin{bmatrix}
+1 &amp;x_{11} &amp; \dots &amp; x_{1p}\\
+\vdots &amp; \vdots &amp;\ddots &amp; \vdots \\
+1 &amp;  x_{n1} &amp; \dots &amp;x_{np}
+\end{bmatrix}
+}_{\mathbf{X}}
+\hspace{2mm}
+\underbrace{
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_p
+\end{bmatrix}
+}_{\boldsymbol{\beta}}
+\hspace{3mm}
++
+\hspace{3mm}
+\underbrace{
+\begin{bmatrix}
+\epsilon_1 \\
+\vdots\\
+\epsilon_n
+\end{bmatrix}
+}_\boldsymbol{\epsilon}
+\]</span></p>
+<div class="question">
+<p>What are the dimensions of <span class="math inline">\(\mathbf{y}\)</span>, <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\boldsymbol{\epsilon}\)</span>?</p>
+</div>
+</section>
+<section id="matrix-form-of-multiple-linear-regression-1" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-form-of-multiple-linear-regression-1">Matrix form of multiple linear regression</h2>
+<p>As with simple linear regression, we have</p>
+<p><span class="math display">\[
+\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
+\]</span></p>
+<p>. . .</p>
+<p>Generalizing the derivations from SLR to <span class="math inline">\(p &gt; 2\)</span>, we have</p>
+<p><span class="math display">\[
+\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}
+\]</span></p>
+<p>as before.</p>
+</section>
+<section id="model-fit-in-r" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="model-fit-in-r">Model fit in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>int_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_income <span class="sc">+</span> verified_income  <span class="sc">+</span> annual_income_th,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> loan50)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(int_fit) <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">10.726</td>
+<td style="text-align: right;">1.507</td>
+<td style="text-align: right;">7.116</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">debt_to_income</td>
+<td style="text-align: right;">0.671</td>
+<td style="text-align: right;">0.676</td>
+<td style="text-align: right;">0.993</td>
+<td style="text-align: right;">0.326</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">verified_incomeSource Verified</td>
+<td style="text-align: right;">2.211</td>
+<td style="text-align: right;">1.399</td>
+<td style="text-align: right;">1.581</td>
+<td style="text-align: right;">0.121</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">verified_incomeVerified</td>
+<td style="text-align: right;">6.880</td>
+<td style="text-align: right;">1.801</td>
+<td style="text-align: right;">3.820</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">annual_income_th</td>
+<td style="text-align: right;">-0.021</td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">-1.804</td>
+<td style="text-align: right;">0.078</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="model-equation" class="level2">
+<h2 class="anchored" data-anchor-id="model-equation">Model equation</h2>
+<p><span class="math display">\[
+\begin{align}\hat{\text{interest_rate}} =  10.726 &amp;+0.671 \times \text{debt_to_income}\\
+&amp;+ 2.211 \times \text{source_verified}\\  
+&amp;+ 6.880 \times \text{verified}\\
+&amp; -0.021 \times \text{annual_income_th}
+\end{align}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will talk about why there are only two terms in the model for <code>verified_income</code> soon!</p>
+</div>
+</div>
+</section>
+<section id="interpreting-hatbeta_j" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-hatbeta_j">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
+<ul>
+<li>The estimated coefficient <span class="math inline">\(\hat{\beta}_j\)</span> is the expected change in the mean of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X_j\)</span> increases by one unit, <i><b>holding the values of all other predictor variables constant</b></i>.</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li><strong>Example:</strong> The estimated coefficient for <code>debt_to_income</code> is 0.671. This means for each point in an borrower’s debt to income ratio, the interest rate on the loan is expected to be greater by 0.671%, on average, holding annual income and income verification constant.</li>
+</ul>
+</section>
+<section id="interpreting-hatbeta_j-1" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-hatbeta_j-1">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
+<div class="question">
+<p>The estimated coefficient for <code>annual_income_th</code> is -0.021. Interpret this coefficient in the context of the data.</p>
+</div>
+<p><br></p>
+<!--# Make ed discussion poll-->
+<div class="question">
+<p>Why do we need to include a statement about holding all other predictors constant?</p>
+</div>
+</section>
+<section id="interpreting-hatbeta_0" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-hatbeta_0">Interpreting <span class="math inline">\(\hat{\beta}_0\)</span></h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 10%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">10.726</td>
+<td style="text-align: right;">1.507</td>
+<td style="text-align: right;">7.116</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">7.690</td>
+<td style="text-align: right;">13.762</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">debt_to_income</td>
+<td style="text-align: right;">0.671</td>
+<td style="text-align: right;">0.676</td>
+<td style="text-align: right;">0.993</td>
+<td style="text-align: right;">0.326</td>
+<td style="text-align: right;">-0.690</td>
+<td style="text-align: right;">2.033</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">verified_incomeSource Verified</td>
+<td style="text-align: right;">2.211</td>
+<td style="text-align: right;">1.399</td>
+<td style="text-align: right;">1.581</td>
+<td style="text-align: right;">0.121</td>
+<td style="text-align: right;">-0.606</td>
+<td style="text-align: right;">5.028</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">verified_incomeVerified</td>
+<td style="text-align: right;">6.880</td>
+<td style="text-align: right;">1.801</td>
+<td style="text-align: right;">3.820</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">3.253</td>
+<td style="text-align: right;">10.508</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">annual_income_th</td>
+<td style="text-align: right;">-0.021</td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">-1.804</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">-0.043</td>
+<td style="text-align: right;">0.002</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>. . .</p>
+<div class="question">
+<div class="midi">
+<p>Describe the subset of borrowers who are expected to get an interest rate of 10.726% based on our model. Is this interpretation meaningful? Why or why not?</p>
+</div>
+</div>
+</section>
+<section id="prediction" class="level2">
+<h2 class="anchored" data-anchor-id="prediction">Prediction</h2>
+<div class="question">
+<p>What is the predicted interest rate for an borrower with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000?</p>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fl">10.726</span> <span class="sc">+</span> <span class="fl">0.671</span> <span class="sc">*</span> <span class="fl">0.558</span> <span class="sc">+</span> <span class="fl">2.211</span> <span class="sc">*</span> <span class="dv">0</span> <span class="sc">+</span> <span class="fl">6.880</span> <span class="sc">*</span> <span class="dv">0</span> <span class="sc">-</span> <span class="fl">0.021</span> <span class="sc">*</span> <span class="dv">59</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9.861418</code></pre>
+</div>
+</div>
+<p>. . .</p>
+<p>The predicted interest rate for an borrower with with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000 is 9.86%.</p>
+</section>
+<section id="prediction-in-r" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="prediction-in-r">Prediction in R</h2>
+<p>Just like with simple linear regression, we can use the <code>predict()</code> function in R to calculate the appropriate intervals for our predicted values:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>new_borrower <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">debt_to_income  =</span> <span class="fl">0.558</span>, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">verified_income =</span> <span class="st">"Not Verified"</span>, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">annual_income_th =</span> <span class="dv">59</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(int_fit, new_borrower)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+9.890888 </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Difference in predicted value due to rounding the coefficients on the previous slide.</p>
+</div>
+</div>
+</section>
+<section id="cautions" class="level2">
+<h2 class="anchored" data-anchor-id="cautions">Cautions</h2>
+<ul>
+<li><strong>Do not extrapolate!</strong> Because there are multiple predictor variables, there is the potential to extrapolate in many directions</li>
+<li>The multiple regression model only shows <strong>association, not causality</strong>
+<ul>
+<li>To show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study</li>
+</ul></li>
+</ul>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<ul>
+<li><p>Showed exploratory data analysis for multiple linear regression</p></li>
+<li><p>Used least squares to fit the regression line</p></li>
+<li><p>Interpreted the coefficients for quantitative predictors</p></li>
+<li><p>Predicted the response for new observations</p></li>
+</ul>
 
 
 </section>
+</section>
 
 </main> <!-- /main -->
+
+<script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script>
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

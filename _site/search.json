@@ -218,39 +218,753 @@
     "text": "Probability distributions\n\nNormal distribution\nLet \\(X\\) be a random variable, such that \\(X \\sim N(\\mu, \\sigma^2)\\). Then the probability function is\n\\[\nP(X = x | \\mu, \\sigma^2) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\Big\\{-{\\frac{1}{2\\sigma^2}(x - \\mu)^2}\\Big\\}\n\\]"
   },
   {
-    "objectID": "slides/project-peer-review-lab.html#goals",
-    "href": "slides/project-peer-review-lab.html#goals",
-    "title": "Project peer review",
-    "section": "Goals",
-    "text": "Goals\n\nProject milestones\nProject peer review"
+    "objectID": "slides/03-slr-model-assessment.html#announcements",
+    "href": "slides/03-slr-model-assessment.html#announcements",
+    "title": "SLR: Model Assessment",
+    "section": "Announcements",
+    "text": "Announcements\n\nNo office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday\nIntroduction to R workshops at Duke library\n\nData wrangling with dplyr - Thu, Jan 16 at 12pm\nData visualization with ggplot2 - Thu, Jan 23 at 12pm"
   },
   {
-    "objectID": "slides/project-peer-review-lab.html#upcoming-project-milestones",
-    "href": "slides/project-peer-review-lab.html#upcoming-project-milestones",
-    "title": "Project peer review",
-    "section": "Upcoming project milestones",
-    "text": "Upcoming project milestones\n\nDecember 3: Peer review due\nDecember 8: Deadline for Round 1 submission (optional)\nDecember 12: Final report + organized GitHub repo due\n\nSee project instructions for more detail."
+    "objectID": "slides/03-slr-model-assessment.html#topics",
+    "href": "slides/03-slr-model-assessment.html#topics",
+    "title": "SLR: Model Assessment",
+    "section": "Topics",
+    "text": "Topics\n\nPredict the response given a value of the predictor\nUse R to conduct exploratory data analysis and fit a model\nEvaluate models using RMSE and \\(R^2\\)\nUse analysis of variance to partition variability in the response variable"
   },
   {
-    "objectID": "slides/project-peer-review-lab.html#peer-review-assignments---section-01l",
-    "href": "slides/project-peer-review-lab.html#peer-review-assignments---section-01l",
-    "title": "Project peer review",
-    "section": "Peer review assignments - Section 01L",
-    "text": "Peer review assignments - Section 01L"
+    "objectID": "slides/03-slr-model-assessment.html#computing-set-up",
+    "href": "slides/03-slr-model-assessment.html#computing-set-up",
+    "title": "SLR: Model Assessment",
+    "section": "Computing set up",
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling (includes broom, yardstick, and other packages)\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme for ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
-    "objectID": "slides/project-peer-review-lab.html#peer-review-assignments---section-02l",
-    "href": "slides/project-peer-review-lab.html#peer-review-assignments---section-02l",
-    "title": "Project peer review",
-    "section": "Peer review assignments - Section 02L",
-    "text": "Peer review assignments - Section 02L"
+    "objectID": "slides/03-slr-model-assessment.html#data-movie-scores-on-rotten-tomatoes",
+    "href": "slides/03-slr-model-assessment.html#data-movie-scores-on-rotten-tomatoes",
+    "title": "SLR: Model Assessment",
+    "section": "Data: Movie scores on Rotten Tomatoes",
+    "text": "Data: Movie scores on Rotten Tomatoes\n\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]"
   },
   {
-    "objectID": "slides/project-peer-review-lab.html#getting-started",
-    "href": "slides/project-peer-review-lab.html#getting-started",
-    "title": "Project peer review",
-    "section": "Getting started",
-    "text": "Getting started\nFor each team you’re reviewing…\n\nOpen that team’s repo, read the project draft, and browse the rest of the repo.\nGo to the Issues tab in that repo, click on New issue, and click on Get started for the Peer Review issue.\nWrite your responses to the prompts in the issue.\n\n\n\n\n\n\n\nNote\n\n\nYou may choose to all work on both peer reviews or have some team members focus on a single peer review. Either way there will be one peer review grade assigned per team."
+    "objectID": "slides/03-slr-model-assessment.html#making-a-prediction",
+    "href": "slides/03-slr-model-assessment.html#making-a-prediction",
+    "title": "SLR: Model Assessment",
+    "section": "Making a prediction",
+    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]\n\n\n\n\n\n\n\n\nCaution\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#fit-the-model",
+    "href": "slides/03-slr-model-assessment.html#fit-the-model",
+    "title": "SLR: Model Assessment",
+    "section": "Fit the model",
+    "text": "Fit the model\nUse the lm() function to fit a linear regression model\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\nmovie_fit\n\n\nCall:\nlm(formula = audience ~ critics, data = movie_scores)\n\nCoefficients:\n(Intercept)      critics  \n    32.3155       0.5187"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#tidy-results",
+    "href": "slides/03-slr-model-assessment.html#tidy-results",
+    "title": "SLR: Model Assessment",
+    "section": "Tidy results",
+    "text": "Tidy results\nUse the tidy() function from the broom R package to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   32.3      2.34        13.8 4.03e-28\n2 critics        0.519    0.0345      15.0 2.70e-31"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#format-results",
+    "href": "slides/03-slr-model-assessment.html#format-results",
+    "title": "SLR: Model Assessment",
+    "section": "Format results",
+    "text": "Format results\nUse the kable() function from the knitr package to neatly format the results\n\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics\n0.519\n0.035\n15.028\n0"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#prediction-1",
+    "href": "slides/03-slr-model-assessment.html#prediction-1",
+    "title": "SLR: Model Assessment",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#prediction-2",
+    "href": "slides/03-slr-model-assessment.html#prediction-2",
+    "title": "SLR: Model Assessment",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#data-life-expectancy-in-140-countries",
+    "href": "slides/03-slr-model-assessment.html#data-life-expectancy-in-140-countries",
+    "title": "SLR: Model Assessment",
+    "section": "Data: Life expectancy in 140 countries",
+    "text": "Data: Life expectancy in 140 countries\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\nGoal: Use the income inequality in a country to understand variability in the life expectancy.\n\n\nClick here for the original research paper."
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#variables",
+    "href": "slides/03-slr-model-assessment.html#variables",
+    "title": "SLR: Model Assessment",
+    "section": "Variables",
+    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from Zarulli et al. (2021))"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#univariate-exploratory-data-analysis",
+    "href": "slides/03-slr-model-assessment.html#univariate-exploratory-data-analysis",
+    "title": "SLR: Model Assessment",
+    "section": "Univariate exploratory data analysis",
+    "text": "Univariate exploratory data analysis"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#bivariate-exploratory-data-analysis",
+    "href": "slides/03-slr-model-assessment.html#bivariate-exploratory-data-analysis",
+    "title": "SLR: Model Assessment",
+    "section": "Bivariate exploratory data analysis",
+    "text": "Bivariate exploratory data analysis"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#clone-repo-start-new-rstudio-project",
+    "href": "slides/03-slr-model-assessment.html#clone-repo-start-new-rstudio-project",
+    "title": "SLR: Model Assessment",
+    "section": "Clone repo + Start new RStudio project",
+    "text": "Clone repo + Start new RStudio project\n\nGo to the course organization. Click on the repo with the prefix ae-01. It contains the starter documents you need to complete the AE.\n\nIf you do not see an ae-01 repo, use this link to create one: https://classroom.github.com/a/6jpkfA8n\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the AE."
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#two-statistics",
+    "href": "slides/03-slr-model-assessment.html#two-statistics",
+    "title": "SLR: Model Assessment",
+    "section": "Two statistics",
+    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n\n\nWhat indicates a good model fit? Higher or lower RMSE? Higher or lower \\(R^2\\)?"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#rmse",
+    "href": "slides/03-slr-model-assessment.html#rmse",
+    "title": "SLR: Model Assessment",
+    "section": "RMSE",
+    "text": "RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\n\n\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the response variable\nThe value of RMSE is more useful for comparing across models than evaluating a single model"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#analysis-of-variance-anova",
+    "href": "slides/03-slr-model-assessment.html#analysis-of-variance-anova",
+    "title": "SLR: Model Assessment",
+    "section": "ANOVA",
+    "text": "ANOVA\nAnalysis of Variance (ANOVA): Technique to partition variability in \\(Y\\) by the sources of variability"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#total-variability-response",
+    "href": "slides/03-slr-model-assessment.html#total-variability-response",
+    "title": "SLR: Model Assessment",
+    "section": "Total variability (Response)",
+    "text": "Total variability (Response)\n\n\n\n\n\n\nMin\nMedian\nMax\nMean\nStd.Dev\n\n\n\n\n51.6\n72.85\n84.1\n71.614\n8.075"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#partition-sources-of-variability-in-life_exp",
+    "href": "slides/03-slr-model-assessment.html#partition-sources-of-variability-in-life_exp",
+    "title": "SLR: Model Assessment",
+    "section": "Partition sources of variability in life_exp",
+    "text": "Partition sources of variability in life_exp"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#total-variability-response-1",
+    "href": "slides/03-slr-model-assessment.html#total-variability-response-1",
+    "title": "SLR: Model Assessment",
+    "section": "Total variability (Response)",
+    "text": "Total variability (Response)\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#explained-variability-model",
+    "href": "slides/03-slr-model-assessment.html#explained-variability-model",
+    "title": "SLR: Model Assessment",
+    "section": "Explained variability (Model)",
+    "text": "Explained variability (Model)\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#unexplained-variability-residuals",
+    "href": "slides/03-slr-model-assessment.html#unexplained-variability-residuals",
+    "title": "SLR: Model Assessment",
+    "section": "Unexplained variability (Residuals)",
+    "text": "Unexplained variability (Residuals)\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#sum-of-squares",
+    "href": "slides/03-slr-model-assessment.html#sum-of-squares",
+    "title": "SLR: Model Assessment",
+    "section": "Sum of Squares",
+    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]\n\n\nClick here to see why this equality holds."
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#r2",
+    "href": "slides/03-slr-model-assessment.html#r2",
+    "title": "SLR: Model Assessment",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\nThe coefficient of determination \\(R^2\\) is the proportion of variation in the response, \\(Y\\), that is explained by the regression model\n\n\\[\\large{R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}}\\]\n\n\nWhat is the range of \\(R^2\\)? Does \\(R^2\\) have units?"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#interpreting-r2",
+    "href": "slides/03-slr-model-assessment.html#interpreting-r2",
+    "title": "SLR: Model Assessment",
+    "section": "Interpreting \\(R^2\\)",
+    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/70811/discussion/5978094"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#augmented-data-frame",
+    "href": "slides/03-slr-model-assessment.html#augmented-data-frame",
+    "title": "SLR: Model Assessment",
+    "section": "Augmented data frame",
+    "text": "Augmented data frame\nUse the augment() function from the broom package to add columns for predicted values, residuals, and other observation-level model statistics\n\n\nlife_exp_aug &lt;- augment(life_exp_fit)\nlife_exp_aug\n\n# A tibble: 140 × 8\n   life_exp income_inequality .fitted .resid    .hat .sigma   .cooksd .std.resid\n      &lt;dbl&gt;             &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1     63.8              28.2    65.8 -1.96  0.0125    4.45 0.00125       -0.444\n 2     78.2              12.2    76.9  1.29  0.0116    4.45 0.000498       0.292\n 3     59.9              32.4    62.8 -2.93  0.0193    4.44 0.00437       -0.667\n 4     76.2              14      75.7  0.542 0.00972   4.45 0.0000739      0.123\n 5     74.6               8.6    79.4 -4.82  0.0168    4.43 0.0102        -1.10 \n 6     83                 8.3    79.6  3.37  0.0173    4.44 0.00515        0.766\n 7     81.3               7.4    80.3  1.04  0.0189    4.45 0.000540       0.237\n 8     72.5              10.1    78.4 -5.88  0.0144    4.42 0.0130        -1.33 \n 9     71.8              27.6    66.2  5.62  0.0118    4.43 0.00972        1.28 \n10     74                 6.5    80.9 -6.89  0.0207    4.41 0.0260        -1.57 \n# ℹ 130 more rows"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#finding-rmse-in-r",
+    "href": "slides/03-slr-model-assessment.html#finding-rmse-in-r",
+    "title": "SLR: Model Assessment",
+    "section": "Finding RMSE in R",
+    "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard        4.40"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#finding-r2-in-r",
+    "href": "slides/03-slr-model-assessment.html#finding-r2-in-r",
+    "title": "SLR: Model Assessment",
+    "section": "Finding \\(R^2\\) in R",
+    "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.700\n\n\n\n\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\):\n\nglance(life_exp_fit)$r.squared\n\n[1] 0.7003831"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#recap",
+    "href": "slides/03-slr-model-assessment.html#recap",
+    "title": "SLR: Model Assessment",
+    "section": "Recap",
+    "text": "Recap\n\nUsed R to conduct exploratory data analysis and fit a model\nEvaluated models using RMSE and \\(R^2\\)\nUsed analysis of variance to partition variability in the response variable"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#next-class",
+    "href": "slides/03-slr-model-assessment.html#next-class",
+    "title": "SLR: Model Assessment",
+    "section": "Next class",
+    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Lec 04: SLR - Matrix representation prepare"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment.html#references",
+    "href": "slides/03-slr-model-assessment.html#references",
+    "title": "SLR: Model Assessment",
+    "section": "References",
+    "text": "References\n\n\n\n\nZarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. “Health Care System Efficiency and Life Expectancy: A 140-Country Study.” Edited by Srinivas Goli. PLOS ONE 16 (7): e0253450. https://doi.org/10.1371/journal.pone.0253450."
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html",
+    "href": "slides/03-slr-model-assessment-notes.html",
+    "title": "SLR: Model Assessment",
+    "section": "",
+    "text": "No office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday\nIntroduction to R workshops at Duke library\n\nData wrangling with dplyr - Thu, Jan 16 at 12pm\nData visualization with ggplot2 - Thu, Jan 23 at 12pm"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#announcements",
+    "href": "slides/03-slr-model-assessment-notes.html#announcements",
+    "title": "SLR: Model Assessment",
+    "section": "",
+    "text": "No office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday\nIntroduction to R workshops at Duke library\n\nData wrangling with dplyr - Thu, Jan 16 at 12pm\nData visualization with ggplot2 - Thu, Jan 23 at 12pm"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#topics",
+    "href": "slides/03-slr-model-assessment-notes.html#topics",
+    "title": "SLR: Model Assessment",
+    "section": "Topics",
+    "text": "Topics\n\nPredict the response given a value of the predictor\nUse R to conduct exploratory data analysis and fit a model\nEvaluate models using RMSE and \\(R^2\\)\nUse analysis of variance to partition variability in the response variable"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#computing-set-up",
+    "href": "slides/03-slr-model-assessment-notes.html#computing-set-up",
+    "title": "SLR: Model Assessment",
+    "section": "Computing set up",
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling (includes broom, yardstick, and other packages)\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme for ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#data-movie-scores-on-rotten-tomatoes",
+    "href": "slides/03-slr-model-assessment-notes.html#data-movie-scores-on-rotten-tomatoes",
+    "title": "SLR: Model Assessment",
+    "section": "Data: Movie scores on Rotten Tomatoes",
+    "text": "Data: Movie scores on Rotten Tomatoes\n\n\n\n\n\n\n\n\n\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#making-a-prediction",
+    "href": "slides/03-slr-model-assessment-notes.html#making-a-prediction",
+    "title": "SLR: Model Assessment",
+    "section": "Making a prediction",
+    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]\n\n. . .\n\n\n\n\n\n\nCaution\n\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#fit-the-model",
+    "href": "slides/03-slr-model-assessment-notes.html#fit-the-model",
+    "title": "SLR: Model Assessment",
+    "section": "Fit the model",
+    "text": "Fit the model\nUse the lm() function to fit a linear regression model\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\nmovie_fit\n\n\nCall:\nlm(formula = audience ~ critics, data = movie_scores)\n\nCoefficients:\n(Intercept)      critics  \n    32.3155       0.5187"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#tidy-results",
+    "href": "slides/03-slr-model-assessment-notes.html#tidy-results",
+    "title": "SLR: Model Assessment",
+    "section": "Tidy results",
+    "text": "Tidy results\nUse the tidy() function from the broom R package to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   32.3      2.34        13.8 4.03e-28\n2 critics        0.519    0.0345      15.0 2.70e-31"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#format-results",
+    "href": "slides/03-slr-model-assessment-notes.html#format-results",
+    "title": "SLR: Model Assessment",
+    "section": "Format results",
+    "text": "Format results\nUse the kable() function from the knitr package to neatly format the results\n\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics\n0.519\n0.035\n15.028\n0"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#prediction-1",
+    "href": "slides/03-slr-model-assessment-notes.html#prediction-1",
+    "title": "SLR: Model Assessment",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#prediction-2",
+    "href": "slides/03-slr-model-assessment-notes.html#prediction-2",
+    "title": "SLR: Model Assessment",
+    "section": "Prediction",
+    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#data-life-expectancy-in-140-countries",
+    "href": "slides/03-slr-model-assessment-notes.html#data-life-expectancy-in-140-countries",
+    "title": "SLR: Model Assessment",
+    "section": "Data: Life expectancy in 140 countries",
+    "text": "Data: Life expectancy in 140 countries\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\nGoal: Use the income inequality in a country to understand variability in the life expectancy.\n\n\nClick here for the original research paper."
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#variables",
+    "href": "slides/03-slr-model-assessment-notes.html#variables",
+    "title": "SLR: Model Assessment",
+    "section": "Variables",
+    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from Zarulli et al. (2021))"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#univariate-exploratory-data-analysis",
+    "href": "slides/03-slr-model-assessment-notes.html#univariate-exploratory-data-analysis",
+    "title": "SLR: Model Assessment",
+    "section": "Univariate exploratory data analysis",
+    "text": "Univariate exploratory data analysis"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#bivariate-exploratory-data-analysis",
+    "href": "slides/03-slr-model-assessment-notes.html#bivariate-exploratory-data-analysis",
+    "title": "SLR: Model Assessment",
+    "section": "Bivariate exploratory data analysis",
+    "text": "Bivariate exploratory data analysis"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
+    "href": "slides/03-slr-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
+    "title": "SLR: Model Assessment",
+    "section": "Clone repo + Start new RStudio project",
+    "text": "Clone repo + Start new RStudio project\n\nGo to the course organization. Click on the repo with the prefix ae-01. It contains the starter documents you need to complete the AE.\n\nIf you do not see an ae-01 repo, use this link to create one: https://classroom.github.com/a/6jpkfA8n\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the AE."
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#two-statistics",
+    "href": "slides/03-slr-model-assessment-notes.html#two-statistics",
+    "title": "SLR: Model Assessment",
+    "section": "Two statistics",
+    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n. . .\n\nWhat indicates a good model fit? Higher or lower RMSE? Higher or lower \\(R^2\\)?"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#rmse",
+    "href": "slides/03-slr-model-assessment-notes.html#rmse",
+    "title": "SLR: Model Assessment",
+    "section": "RMSE",
+    "text": "RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\n. . .\n\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the response variable\nThe value of RMSE is more useful for comparing across models than evaluating a single model"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#analysis-of-variance-anova",
+    "href": "slides/03-slr-model-assessment-notes.html#analysis-of-variance-anova",
+    "title": "SLR: Model Assessment",
+    "section": "ANOVA",
+    "text": "ANOVA\nAnalysis of Variance (ANOVA): Technique to partition variability in \\(Y\\) by the sources of variability"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#total-variability-response",
+    "href": "slides/03-slr-model-assessment-notes.html#total-variability-response",
+    "title": "SLR: Model Assessment",
+    "section": "Total variability (Response)",
+    "text": "Total variability (Response)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMin\nMedian\nMax\nMean\nStd.Dev\n\n\n\n\n51.6\n72.85\n84.1\n71.614\n8.075"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#partition-sources-of-variability-in-life_exp",
+    "href": "slides/03-slr-model-assessment-notes.html#partition-sources-of-variability-in-life_exp",
+    "title": "SLR: Model Assessment",
+    "section": "Partition sources of variability in life_exp",
+    "text": "Partition sources of variability in life_exp"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#total-variability-response-1",
+    "href": "slides/03-slr-model-assessment-notes.html#total-variability-response-1",
+    "title": "SLR: Model Assessment",
+    "section": "Total variability (Response)",
+    "text": "Total variability (Response)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#explained-variability-model",
+    "href": "slides/03-slr-model-assessment-notes.html#explained-variability-model",
+    "title": "SLR: Model Assessment",
+    "section": "Explained variability (Model)",
+    "text": "Explained variability (Model)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#unexplained-variability-residuals",
+    "href": "slides/03-slr-model-assessment-notes.html#unexplained-variability-residuals",
+    "title": "SLR: Model Assessment",
+    "section": "Unexplained variability (Residuals)",
+    "text": "Unexplained variability (Residuals)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#sum-of-squares",
+    "href": "slides/03-slr-model-assessment-notes.html#sum-of-squares",
+    "title": "SLR: Model Assessment",
+    "section": "Sum of Squares",
+    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]\n\n\nClick here to see why this equality holds."
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#r2",
+    "href": "slides/03-slr-model-assessment-notes.html#r2",
+    "title": "SLR: Model Assessment",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\nThe coefficient of determination \\(R^2\\) is the proportion of variation in the response, \\(Y\\), that is explained by the regression model\n\n\\[\\large{R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}}\\]\n\n\nWhat is the range of \\(R^2\\)? Does \\(R^2\\) have units?"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#interpreting-r2",
+    "href": "slides/03-slr-model-assessment-notes.html#interpreting-r2",
+    "title": "SLR: Model Assessment",
+    "section": "Interpreting \\(R^2\\)",
+    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/70811/discussion/5978094"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#augmented-data-frame",
+    "href": "slides/03-slr-model-assessment-notes.html#augmented-data-frame",
+    "title": "SLR: Model Assessment",
+    "section": "Augmented data frame",
+    "text": "Augmented data frame\nUse the augment() function from the broom package to add columns for predicted values, residuals, and other observation-level model statistics\n. . .\n\nlife_exp_aug &lt;- augment(life_exp_fit)\nlife_exp_aug\n\n# A tibble: 140 × 8\n   life_exp income_inequality .fitted .resid    .hat .sigma   .cooksd .std.resid\n      &lt;dbl&gt;             &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1     63.8              28.2    65.8 -1.96  0.0125    4.45 0.00125       -0.444\n 2     78.2              12.2    76.9  1.29  0.0116    4.45 0.000498       0.292\n 3     59.9              32.4    62.8 -2.93  0.0193    4.44 0.00437       -0.667\n 4     76.2              14      75.7  0.542 0.00972   4.45 0.0000739      0.123\n 5     74.6               8.6    79.4 -4.82  0.0168    4.43 0.0102        -1.10 \n 6     83                 8.3    79.6  3.37  0.0173    4.44 0.00515        0.766\n 7     81.3               7.4    80.3  1.04  0.0189    4.45 0.000540       0.237\n 8     72.5              10.1    78.4 -5.88  0.0144    4.42 0.0130        -1.33 \n 9     71.8              27.6    66.2  5.62  0.0118    4.43 0.00972        1.28 \n10     74                 6.5    80.9 -6.89  0.0207    4.41 0.0260        -1.57 \n# ℹ 130 more rows"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#finding-rmse-in-r",
+    "href": "slides/03-slr-model-assessment-notes.html#finding-rmse-in-r",
+    "title": "SLR: Model Assessment",
+    "section": "Finding RMSE in R",
+    "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard        4.40"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#finding-r2-in-r",
+    "href": "slides/03-slr-model-assessment-notes.html#finding-r2-in-r",
+    "title": "SLR: Model Assessment",
+    "section": "Finding \\(R^2\\) in R",
+    "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.700\n\n\n\n. . .\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\):\n\nglance(life_exp_fit)$r.squared\n\n[1] 0.7003831"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#recap",
+    "href": "slides/03-slr-model-assessment-notes.html#recap",
+    "title": "SLR: Model Assessment",
+    "section": "Recap",
+    "text": "Recap\n\nUsed R to conduct exploratory data analysis and fit a model\nEvaluated models using RMSE and \\(R^2\\)\nUsed analysis of variance to partition variability in the response variable"
+  },
+  {
+    "objectID": "slides/03-slr-model-assessment-notes.html#next-class",
+    "href": "slides/03-slr-model-assessment-notes.html#next-class",
+    "title": "SLR: Model Assessment",
+    "section": "Next class",
+    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Lec 04: SLR - Matrix representation prepare"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#announcements",
+    "href": "slides/04-slr-matrix.html#announcements",
+    "title": "SLR: Matrix representation",
+    "section": "Announcements",
+    "text": "Announcements\n\nLab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#topics",
+    "href": "slides/04-slr-matrix.html#topics",
+    "title": "SLR: Matrix representation",
+    "section": "Topics",
+    "text": "Topics\n\nApplication exercise on model assessment\nMatrix representation of simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#two-statistics",
+    "href": "slides/04-slr-matrix.html#two-statistics",
+    "title": "SLR: Matrix representation",
+    "section": "Two statistics",
+    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n\\[R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#slr-statistical-model-population",
+    "href": "slides/04-slr-matrix.html#slr-statistical-model-population",
+    "title": "SLR: Matrix representation",
+    "section": "SLR: Statistical model (population)",
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms centered at 0 with variance \\(\\sigma^2_{\\epsilon}\\)"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form",
+    "href": "slides/04-slr-matrix.html#slr-in-matrix-form",
+    "title": "SLR: Matrix representation",
+    "section": "SLR in matrix form",
+    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form-1",
+    "href": "slides/04-slr-matrix.html#slr-in-matrix-form-1",
+    "title": "SLR: Matrix representation",
+    "section": "SLR in matrix form",
+    "text": "SLR in matrix form\n\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), and \\(\\boldsymbol{\\epsilon}\\)?"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator-for-boldsymbolbeta",
+    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator-for-boldsymbolbeta",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)",
+    "text": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)\nGoal: Find estimator \\(\\hat{\\boldsymbol{\\beta}}= \\begin{bmatrix}\\hat{\\beta}_0 \\\\ \\hat{\\beta}_1 \\end{bmatrix}\\) that minimizes the sum of squared errors \\[\n\\sum_{i=1}^n \\epsilon_i^2 = \\mathbf{\\epsilon}^\\mathsf{T}\\mathbf{\\epsilon} = (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#gradient",
+    "href": "slides/04-slr-matrix.html#gradient",
+    "title": "SLR: Matrix representation",
+    "section": "Gradient",
+    "text": "Gradient\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\n\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#property-1",
+    "href": "slides/04-slr-matrix.html#property-1",
+    "title": "SLR: Matrix representation",
+    "section": "Property 1",
+    "text": "Property 1\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\n\n\nThe gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\mathbf{z}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-property-1",
+    "href": "slides/04-slr-matrix.html#side-note-property-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Property 1",
+    "text": "Side note: Property 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^\\mathsf{T}\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#side-note-property-1-1",
+    "href": "slides/04-slr-matrix.html#side-note-property-1-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Property 1",
+    "text": "Side note: Property 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#property-2",
+    "href": "slides/04-slr-matrix.html#property-2",
+    "title": "SLR: Matrix representation",
+    "section": "Property 2",
+    "text": "Property 2\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\n\n\nThen the gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^\\mathsf{T} \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x}\n\\]\n\n\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\nProof in HW 01."
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator",
+    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator",
+    "text": "Derive least squares estimator\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes\n\\[\n\\begin{aligned}\n\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^\\mathsf{T} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T})(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\mathbf{y}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator-1",
+    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator-1",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator",
+    "text": "Derive least squares estimator\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[\n-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\n\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#hessian-matrix",
+    "href": "slides/04-slr-matrix.html#hessian-matrix",
+    "title": "SLR: Matrix representation",
+    "section": "Hessian matrix",
+    "text": "Hessian matrix\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#using-the-hessian-matrix",
+    "href": "slides/04-slr-matrix.html#using-the-hessian-matrix",
+    "title": "SLR: Matrix representation",
+    "section": "Using the Hessian matrix",
+    "text": "Using the Hessian matrix\nIf the Hessian matrix is…\n\npositive-definite, then we have found a minimum.\nnegative-definite, then we have found a maximum.\nneither positive or negative-definite, then we have found a saddle point"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#did-we-find-a-minimum-1",
+    "href": "slides/04-slr-matrix.html#did-we-find-a-minimum-1",
+    "title": "SLR: Matrix representation",
+    "section": "Did we find a minimum?",
+    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&{=-2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{y}) + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&{\\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}}\n\\end{aligned}\n\\]\n\nShow that \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite in HW 01."
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#predicted-fitted-values",
+    "href": "slides/04-slr-matrix.html#predicted-fitted-values",
+    "title": "SLR: Matrix representation",
+    "section": "Predicted (fitted) values",
+    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\)\n\n\n\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)\nIt is only a function of \\(\\mathbf{X}\\) not \\(\\mathbf{y}\\)"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#residuals",
+    "href": "slides/04-slr-matrix.html#residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Residuals",
+    "text": "Residuals\nRecall that the residuals are the difference between the observed and predicted values\n\\[\n\\begin{aligned}\n\\mathbf{e} &= \\mathbf{y} - \\hat{\\mathbf{y}}\\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}}} \\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{H}\\mathbf{y}} \\\\[20pt]\n\\class{fragment}{\\color{#993399}{\\mathbf{e}}} &\\class{fragment}{\\color{#993399}{=(\\mathbf{I} - \\mathbf{H})\\mathbf{y}}} \\\\[10pt]\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#recap",
+    "href": "slides/04-slr-matrix.html#recap",
+    "title": "SLR: Matrix representation",
+    "section": "Recap",
+    "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+  },
+  {
+    "objectID": "slides/04-slr-matrix.html#for-next-class",
+    "href": "slides/04-slr-matrix.html#for-next-class",
+    "title": "SLR: Matrix representation",
+    "section": "For next class",
+    "text": "For next class\n\nComplete Prepare for Lecture 05 - SLR: matrix representation cont’d"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html",
+    "href": "slides/04-slr-matrix-notes.html",
+    "title": "SLR: Matrix representation",
+    "section": "",
+    "text": "Lab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#announcements",
+    "href": "slides/04-slr-matrix-notes.html#announcements",
+    "title": "SLR: Matrix representation",
+    "section": "",
+    "text": "Lab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#topics",
+    "href": "slides/04-slr-matrix-notes.html#topics",
+    "title": "SLR: Matrix representation",
+    "section": "Topics",
+    "text": "Topics\n\nApplication exercise on model assessment\nMatrix representation of simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#two-statistics",
+    "href": "slides/04-slr-matrix-notes.html#two-statistics",
+    "title": "SLR: Matrix representation",
+    "section": "Two statistics",
+    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n\\[R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#slr-statistical-model-population",
+    "href": "slides/04-slr-matrix-notes.html#slr-statistical-model-population",
+    "title": "SLR: Matrix representation",
+    "section": "SLR: Statistical model (population)",
+    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms centered at 0 with variance \\(\\sigma^2_{\\epsilon}\\)"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#slr-in-matrix-form",
+    "href": "slides/04-slr-matrix-notes.html#slr-in-matrix-form",
+    "title": "SLR: Matrix representation",
+    "section": "SLR in matrix form",
+    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#slr-in-matrix-form-1",
+    "href": "slides/04-slr-matrix-notes.html#slr-in-matrix-form-1",
+    "title": "SLR: Matrix representation",
+    "section": "SLR in matrix form",
+    "text": "SLR in matrix form\n\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), and \\(\\boldsymbol{\\epsilon}\\)?"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator-for-boldsymbolbeta",
+    "href": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator-for-boldsymbolbeta",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)",
+    "text": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)\nGoal: Find estimator \\(\\hat{\\boldsymbol{\\beta}}= \\begin{bmatrix}\\hat{\\beta}_0 \\\\ \\hat{\\beta}_1 \\end{bmatrix}\\) that minimizes the sum of squared errors \\[\n\\sum_{i=1}^n \\epsilon_i^2 = \\mathbf{\\epsilon}^\\mathsf{T}\\mathbf{\\epsilon} = (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#gradient",
+    "href": "slides/04-slr-matrix-notes.html#gradient",
+    "title": "SLR: Matrix representation",
+    "section": "Gradient",
+    "text": "Gradient\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\n. . .\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#property-1",
+    "href": "slides/04-slr-matrix-notes.html#property-1",
+    "title": "SLR: Matrix representation",
+    "section": "Property 1",
+    "text": "Property 1\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\n\n\nThe gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\mathbf{z}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#side-note-property-1",
+    "href": "slides/04-slr-matrix-notes.html#side-note-property-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Property 1",
+    "text": "Side note: Property 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^\\mathsf{T}\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#side-note-property-1-1",
+    "href": "slides/04-slr-matrix-notes.html#side-note-property-1-1",
+    "title": "SLR: Matrix representation",
+    "section": "Side note: Property 1",
+    "text": "Side note: Property 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#property-2",
+    "href": "slides/04-slr-matrix-notes.html#property-2",
+    "title": "SLR: Matrix representation",
+    "section": "Property 2",
+    "text": "Property 2\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\n\n\nThen the gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^\\mathsf{T} \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x}\n\\]\n\n\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\nProof in HW 01."
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator",
+    "href": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator",
+    "text": "Derive least squares estimator\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes\n\\[\n\\begin{aligned}\n\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^\\mathsf{T} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T})(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\mathbf{y}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator-1",
+    "href": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator-1",
+    "title": "SLR: Matrix representation",
+    "section": "Derive least squares estimator",
+    "text": "Derive least squares estimator\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[\n-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\n\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#hessian-matrix",
+    "href": "slides/04-slr-matrix-notes.html#hessian-matrix",
+    "title": "SLR: Matrix representation",
+    "section": "Hessian matrix",
+    "text": "Hessian matrix\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#using-the-hessian-matrix",
+    "href": "slides/04-slr-matrix-notes.html#using-the-hessian-matrix",
+    "title": "SLR: Matrix representation",
+    "section": "Using the Hessian matrix",
+    "text": "Using the Hessian matrix\nIf the Hessian matrix is…\n\npositive-definite, then we have found a minimum.\nnegative-definite, then we have found a maximum.\nneither positive or negative-definite, then we have found a saddle point"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#did-we-find-a-minimum-1",
+    "href": "slides/04-slr-matrix-notes.html#did-we-find-a-minimum-1",
+    "title": "SLR: Matrix representation",
+    "section": "Did we find a minimum?",
+    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&{=-2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{y}) + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&{\\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}}\n\\end{aligned}\n\\]\n\nShow that \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite in HW 01."
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#predicted-fitted-values",
+    "href": "slides/04-slr-matrix-notes.html#predicted-fitted-values",
+    "title": "SLR: Matrix representation",
+    "section": "Predicted (fitted) values",
+    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n. . .\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\)\n\n. . .\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)\nIt is only a function of \\(\\mathbf{X}\\) not \\(\\mathbf{y}\\)"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#residuals",
+    "href": "slides/04-slr-matrix-notes.html#residuals",
+    "title": "SLR: Matrix representation",
+    "section": "Residuals",
+    "text": "Residuals\nRecall that the residuals are the difference between the observed and predicted values\n\\[\n\\begin{aligned}\n\\mathbf{e} &= \\mathbf{y} - \\hat{\\mathbf{y}}\\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}}} \\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{H}\\mathbf{y}} \\\\[20pt]\n\\class{fragment}{\\color{#993399}{\\mathbf{e}}} &\\class{fragment}{\\color{#993399}{=(\\mathbf{I} - \\mathbf{H})\\mathbf{y}}} \\\\[10pt]\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#recap",
+    "href": "slides/04-slr-matrix-notes.html#recap",
+    "title": "SLR: Matrix representation",
+    "section": "Recap",
+    "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+  },
+  {
+    "objectID": "slides/04-slr-matrix-notes.html#for-next-class",
+    "href": "slides/04-slr-matrix-notes.html#for-next-class",
+    "title": "SLR: Matrix representation",
+    "section": "For next class",
+    "text": "For next class\n\nComplete Prepare for Lecture 05 - SLR: matrix representation cont’d"
   },
   {
     "objectID": "slides/01-welcome.html#meet-prof.-tackett",
@@ -2040,7 +2754,7 @@
     "href": "labs/lab-02-draft.html#learning-goals",
     "title": "Lab 02: Linear regression",
     "section": "Learning goals",
-    "text": "Learning goals\nBy the end of the lab, you will…\n\nBe familiar with the workflow using RStudio and GitHub\nGain practice writing a reproducible report using Quarto\nPractice version control using GitHub\nBe able to produce visualizations and summary statistics to describe distributions\nBe able to fit, interpret, and evaluate simple linear regression models"
+    "text": "Learning goals\nBy the end of the lab, you will…\n\nContinue developing a reproducible workflow using RStudio and GitHub\nProduce visualizations and summary statistics to describe distributions\nFit, interpret, and evaluate linear regression models\nUse the matrix representation of the linear regression model to estimate coefficients\nExplore properties of the linear regression model"
   },
   {
     "objectID": "labs/lab-02-draft.html#exercise-1",
@@ -2481,7 +3195,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nSLR: Matrix representation cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab 04: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Interactions + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nGeometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab 04: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Interactions + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -2627,753 +3341,473 @@
     "text": "Reminder: Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html",
-    "href": "slides/04-slr-matrix-notes.html",
-    "title": "SLR: Matrix representation",
+    "objectID": "slides/05-geometry-notes.html",
+    "href": "slides/05-geometry-notes.html",
+    "title": "Geometric interpretation of least-squares regression",
     "section": "",
-    "text": "Lab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
+    "text": "HW 01 due Thursday, January 30 at 11:59pm\n\nReleased after class.\nMake sure you are a member of the course GitHub organization\n\nIf you can see the number of people in the org, then you are a member!"
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#announcements",
-    "href": "slides/04-slr-matrix-notes.html#announcements",
-    "title": "SLR: Matrix representation",
+    "objectID": "slides/05-geometry-notes.html#announcements",
+    "href": "slides/05-geometry-notes.html#announcements",
+    "title": "Geometric interpretation of least-squares regression",
     "section": "",
-    "text": "Lab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
+    "text": "HW 01 due Thursday, January 30 at 11:59pm\n\nReleased after class.\nMake sure you are a member of the course GitHub organization\n\nIf you can see the number of people in the org, then you are a member!"
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#topics",
-    "href": "slides/04-slr-matrix-notes.html#topics",
-    "title": "SLR: Matrix representation",
+    "objectID": "slides/05-geometry-notes.html#topics",
+    "href": "slides/05-geometry-notes.html#topics",
+    "title": "Geometric interpretation of least-squares regression",
     "section": "Topics",
-    "text": "Topics\n\nApplication exercise on model assessment\nMatrix representation of simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+    "text": "Topics\n\nGeometric interpretation of least-squares regression"
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#two-statistics",
-    "href": "slides/04-slr-matrix-notes.html#two-statistics",
-    "title": "SLR: Matrix representation",
-    "section": "Two statistics",
-    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n\\[R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}\\]"
+    "objectID": "slides/05-geometry-notes.html#recap-regression-in-matrix-from",
+    "href": "slides/05-geometry-notes.html#recap-regression-in-matrix-from",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Recap: Regression in matrix from",
+    "text": "Recap: Regression in matrix from\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#slr-statistical-model-population",
-    "href": "slides/04-slr-matrix-notes.html#slr-statistical-model-population",
-    "title": "SLR: Matrix representation",
-    "section": "SLR: Statistical model (population)",
-    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms centered at 0 with variance \\(\\sigma^2_{\\epsilon}\\)"
+    "objectID": "slides/05-geometry-notes.html#recap-derive-hatboldsymbolbeta",
+    "href": "slides/05-geometry-notes.html#recap-derive-hatboldsymbolbeta",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Recap: Derive \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Recap: Derive \\(\\hat{\\boldsymbol{\\beta}}\\)\nWe used matrix calculus to derive the estimator \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes \\(\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon}\\)\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]\n\n. . .\nNow let’s consider how to derive the least-squares estimator using a geometric interpretation of regression"
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#slr-in-matrix-form",
-    "href": "slides/04-slr-matrix-notes.html#slr-in-matrix-form",
-    "title": "SLR: Matrix representation",
-    "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
+    "objectID": "slides/05-geometry-notes.html#geometry-of-least-squares-regression",
+    "href": "slides/05-geometry-notes.html#geometry-of-least-squares-regression",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Geometry of least-squares regression",
+    "text": "Geometry of least-squares regression\n\n\nLet \\(\\text{Col}(\\mathbf{X})\\) be the column space of \\(\\mathbf{X}\\): the set all possible linear combinations (span) of the columns of \\(\\mathbf{X}\\)\nThe vector of responses \\(\\mathbf{y}\\) is not in \\(\\text{Col}(\\mathbf{X})\\).\nGoal: Find another vector \\(\\mathbf{z} = \\mathbf{Xb}\\) that is in \\(\\text{Col}(\\mathbf{X})\\) and is as close as possible to \\(\\mathbf{y}\\).\n\n\\(\\mathbf{z}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) ."
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#slr-in-matrix-form-1",
-    "href": "slides/04-slr-matrix-notes.html#slr-in-matrix-form-1",
-    "title": "SLR: Matrix representation",
-    "section": "SLR in matrix form",
-    "text": "SLR in matrix form\n\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), and \\(\\boldsymbol{\\epsilon}\\)?"
+    "objectID": "slides/05-geometry-notes.html#geometry-of-least-squares-regression-1",
+    "href": "slides/05-geometry-notes.html#geometry-of-least-squares-regression-1",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Geometry of least-squares regression",
+    "text": "Geometry of least-squares regression\n\n\nFor any \\(\\mathbf{z} = \\mathbf{Xb}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\mathbf{e} = \\mathbf{y} - \\mathbf{Xb}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{Xb}\\).\n\nWe want to find \\(\\mathbf{b}\\) such that \\(\\mathbf{z} = \\mathbf{Xb}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\mathbf{e} = \\mathbf{y} - \\mathbf{Xb}\\)\n\nThis distance is minimized when \\(\\mathbf{e}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator-for-boldsymbolbeta",
-    "href": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator-for-boldsymbolbeta",
-    "title": "SLR: Matrix representation",
-    "section": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)",
-    "text": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)\nGoal: Find estimator \\(\\hat{\\boldsymbol{\\beta}}= \\begin{bmatrix}\\hat{\\beta}_0 \\\\ \\hat{\\beta}_1 \\end{bmatrix}\\) that minimizes the sum of squared errors \\[\n\\sum_{i=1}^n \\epsilon_i^2 = \\mathbf{\\epsilon}^\\mathsf{T}\\mathbf{\\epsilon} = (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\n\\]"
+    "objectID": "slides/05-geometry-notes.html#geometry-of-least-squares-regression-2",
+    "href": "slides/05-geometry-notes.html#geometry-of-least-squares-regression-2",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Geometry of least-squares regression",
+    "text": "Geometry of least-squares regression\n\nNote: If \\(\\mathbf{A}\\), an \\(n \\times p\\) matrix, is orthogonal to an \\(n \\times 1\\) vector \\(\\mathbf{c}\\), then \\(\\mathbf{A}^\\mathsf{T}\\mathbf{c} = \\mathbf{0}\\)\nTherefore, we have \\(\\mathbf{X}^\\mathsf{T}\\mathbf{e} = \\mathbf{0}\\) , and thus\n\\[\n\\mathbf{X}^\\mathsf{T}(\\mathbf{y} - \\mathbf{Xb}) = \\mathbf{0}\n\\]\n\n\nSolve for \\(\\mathbf{b}\\) ."
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#gradient",
-    "href": "slides/04-slr-matrix-notes.html#gradient",
-    "title": "SLR: Matrix representation",
-    "section": "Gradient",
-    "text": "Gradient\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\n. . .\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
+    "objectID": "slides/05-geometry-notes.html#hat-matrix",
+    "href": "slides/05-geometry-notes.html#hat-matrix",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Hat matrix",
+    "text": "Hat matrix\n\nRecall the hat matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\).\n\\(\\hat{\\mathbf{y}} = \\mathbf{Hy}\\), so \\(\\mathbf{H}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\mathbf{\\hat{y}} = \\mathbf{X}\\mathbf{b}\\)\nProperties of \\(\\mathbf{H}\\), a projection matrix\n\n\\(\\mathbf{H}\\) is symmetric (\\(\\mathbf{H}^\\mathsf{T} = \\mathbf{H}\\))\n\\(\\mathbf{H}\\) is idempotent (\\(\\mathbf{H}^2 = \\mathbf{H}\\))\nIf \\(\\mathbf{v}\\) in \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{v}\\)\nIf \\(\\mathbf{v}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{0}\\)"
   },
   {
-    "objectID": "slides/04-slr-matrix-notes.html#property-1",
-    "href": "slides/04-slr-matrix-notes.html#property-1",
-    "title": "SLR: Matrix representation",
-    "section": "Property 1",
-    "text": "Property 1\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\n\n\nThe gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\mathbf{z}\n\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#side-note-property-1",
-    "href": "slides/04-slr-matrix-notes.html#side-note-property-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Property 1",
-    "text": "Side note: Property 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^\\mathsf{T}\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#side-note-property-1-1",
-    "href": "slides/04-slr-matrix-notes.html#side-note-property-1-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Property 1",
-    "text": "Side note: Property 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#property-2",
-    "href": "slides/04-slr-matrix-notes.html#property-2",
-    "title": "SLR: Matrix representation",
-    "section": "Property 2",
-    "text": "Property 2\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\n\n\nThen the gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^\\mathsf{T} \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x}\n\\]\n\n\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\nProof in HW 01."
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator",
-    "href": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator",
-    "title": "SLR: Matrix representation",
-    "section": "Derive least squares estimator",
-    "text": "Derive least squares estimator\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes\n\\[\n\\begin{aligned}\n\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^\\mathsf{T} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T})(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\mathbf{y}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator-1",
-    "href": "slides/04-slr-matrix-notes.html#derive-least-squares-estimator-1",
-    "title": "SLR: Matrix representation",
-    "section": "Derive least squares estimator",
-    "text": "Derive least squares estimator\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[\n-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\n\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#hessian-matrix",
-    "href": "slides/04-slr-matrix-notes.html#hessian-matrix",
-    "title": "SLR: Matrix representation",
-    "section": "Hessian matrix",
-    "text": "Hessian matrix\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#using-the-hessian-matrix",
-    "href": "slides/04-slr-matrix-notes.html#using-the-hessian-matrix",
-    "title": "SLR: Matrix representation",
-    "section": "Using the Hessian matrix",
-    "text": "Using the Hessian matrix\nIf the Hessian matrix is…\n\npositive-definite, then we have found a minimum.\nnegative-definite, then we have found a maximum.\nneither positive or negative-definite, then we have found a saddle point"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#did-we-find-a-minimum-1",
-    "href": "slides/04-slr-matrix-notes.html#did-we-find-a-minimum-1",
-    "title": "SLR: Matrix representation",
-    "section": "Did we find a minimum?",
-    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&{=-2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{y}) + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&{\\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}}\n\\end{aligned}\n\\]\n\nShow that \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite in HW 01."
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#predicted-fitted-values",
-    "href": "slides/04-slr-matrix-notes.html#predicted-fitted-values",
-    "title": "SLR: Matrix representation",
-    "section": "Predicted (fitted) values",
-    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n. . .\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\)\n\n. . .\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)\nIt is only a function of \\(\\mathbf{X}\\) not \\(\\mathbf{y}\\)"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#residuals",
-    "href": "slides/04-slr-matrix-notes.html#residuals",
-    "title": "SLR: Matrix representation",
-    "section": "Residuals",
-    "text": "Residuals\nRecall that the residuals are the difference between the observed and predicted values\n\\[\n\\begin{aligned}\n\\mathbf{e} &= \\mathbf{y} - \\hat{\\mathbf{y}}\\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}}} \\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{H}\\mathbf{y}} \\\\[20pt]\n\\class{fragment}{\\color{#993399}{\\mathbf{e}}} &\\class{fragment}{\\color{#993399}{=(\\mathbf{I} - \\mathbf{H})\\mathbf{y}}} \\\\[10pt]\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#recap",
-    "href": "slides/04-slr-matrix-notes.html#recap",
-    "title": "SLR: Matrix representation",
-    "section": "Recap",
-    "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
-  },
-  {
-    "objectID": "slides/04-slr-matrix-notes.html#for-next-class",
-    "href": "slides/04-slr-matrix-notes.html#for-next-class",
-    "title": "SLR: Matrix representation",
-    "section": "For next class",
-    "text": "For next class\n\nComplete Prepare for Lecture 05 - SLR: matrix representation cont’d"
-  },
-  {
-    "objectID": "slides/04-slr-matrix.html#announcements",
-    "href": "slides/04-slr-matrix.html#announcements",
-    "title": "SLR: Matrix representation",
+    "objectID": "slides/05-geometry.html#announcements",
+    "href": "slides/05-geometry.html#announcements",
+    "title": "Geometric interpretation of least-squares regression",
     "section": "Announcements",
-    "text": "Announcements\n\nLab 01 due on TODAY at 11:59pm\n\nPush work to GitHub repo\nSubmit final PDF on Gradescope + mark pages for each question\n\nHW 01 will be assigned on Thursday"
+    "text": "Announcements\n\nHW 01 due Thursday, January 30 at 11:59pm\n\nReleased after class.\nMake sure you are a member of the course GitHub organization\n\nIf you can see the number of people in the org, then you are a member!"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#topics",
-    "href": "slides/04-slr-matrix.html#topics",
-    "title": "SLR: Matrix representation",
+    "objectID": "slides/05-geometry.html#topics",
+    "href": "slides/05-geometry.html#topics",
+    "title": "Geometric interpretation of least-squares regression",
     "section": "Topics",
-    "text": "Topics\n\nApplication exercise on model assessment\nMatrix representation of simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
+    "text": "Topics\n\nGeometric interpretation of least-squares regression"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#two-statistics",
-    "href": "slides/04-slr-matrix.html#two-statistics",
-    "title": "SLR: Matrix representation",
-    "section": "Two statistics",
-    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n\\[R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}\\]"
+    "objectID": "slides/05-geometry.html#recap-regression-in-matrix-from",
+    "href": "slides/05-geometry.html#recap-regression-in-matrix-from",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Recap: Regression in matrix from",
+    "text": "Recap: Regression in matrix from\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#slr-statistical-model-population",
-    "href": "slides/04-slr-matrix.html#slr-statistical-model-population",
-    "title": "SLR: Matrix representation",
-    "section": "SLR: Statistical model (population)",
-    "text": "SLR: Statistical model (population)\nWhen we have a quantitative response, \\(Y\\), and a single quantitative predictor, \\(X\\), we can use a simple linear regression model to describe the relationship between \\(Y\\) and \\(X\\).\n\\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\n\n\n\\(\\beta_1\\): Population (true) slope of the relationship between \\(X\\) and \\(Y\\)\n\\(\\beta_0\\): Population (true) intercept of the relationship between \\(X\\) and \\(Y\\)\n\\(\\epsilon\\): Error terms centered at 0 with variance \\(\\sigma^2_{\\epsilon}\\)"
+    "objectID": "slides/05-geometry.html#recap-derive-hatboldsymbolbeta",
+    "href": "slides/05-geometry.html#recap-derive-hatboldsymbolbeta",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Recap: Derive \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Recap: Derive \\(\\hat{\\boldsymbol{\\beta}}\\)\nWe used matrix calculus to derive the estimator \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes \\(\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon}\\)\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]\n\n\nNow let’s consider how to derive the least-squares estimator using a geometric interpretation of regression"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form",
-    "href": "slides/04-slr-matrix.html#slr-in-matrix-form",
-    "title": "SLR: Matrix representation",
-    "section": "SLR in matrix form",
-    "text": "SLR in matrix form\nThe simple linear regression model can be represented using vectors and matrices as\n\n\\[\n\\large{\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}}\n\\]\n\n\n\\(\\mathbf{y}\\) : Vector of responses\n\\(\\mathbf{X}\\): Design matrix (columns for predictors + intercept)\n\\(\\boldsymbol{\\beta}\\): Vector of model coefficients\n\\(\\boldsymbol{\\epsilon}\\): Vector of error terms centered at \\(\\mathbf{0}\\) with variance \\(\\sigma^2_{\\epsilon}\\mathbf{I}\\)"
+    "objectID": "slides/05-geometry.html#geometry-of-least-squares-regression",
+    "href": "slides/05-geometry.html#geometry-of-least-squares-regression",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Geometry of least-squares regression",
+    "text": "Geometry of least-squares regression\n\n\nLet \\(\\text{Col}(\\mathbf{X})\\) be the column space of \\(\\mathbf{X}\\): the set all possible linear combinations (span) of the columns of \\(\\mathbf{X}\\)\nThe vector of responses \\(\\mathbf{y}\\) is not in \\(\\text{Col}(\\mathbf{X})\\).\nGoal: Find another vector \\(\\mathbf{z} = \\mathbf{Xb}\\) that is in \\(\\text{Col}(\\mathbf{X})\\) and is as close as possible to \\(\\mathbf{y}\\).\n\n\\(\\mathbf{z}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\text{Col}(\\mathbf{X})\\) ."
   },
   {
-    "objectID": "slides/04-slr-matrix.html#slr-in-matrix-form-1",
-    "href": "slides/04-slr-matrix.html#slr-in-matrix-form-1",
-    "title": "SLR: Matrix representation",
-    "section": "SLR in matrix form",
-    "text": "SLR in matrix form\n\\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_1 \\\\\n\\vdots &  \\vdots \\\\\n1 &  x_n\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), and \\(\\boldsymbol{\\epsilon}\\)?"
+    "objectID": "slides/05-geometry.html#geometry-of-least-squares-regression-1",
+    "href": "slides/05-geometry.html#geometry-of-least-squares-regression-1",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Geometry of least-squares regression",
+    "text": "Geometry of least-squares regression\n\n\nFor any \\(\\mathbf{z} = \\mathbf{Xb}\\) in \\(\\text{Col}(\\mathbf{X})\\), the vector \\(\\mathbf{e} = \\mathbf{y} - \\mathbf{Xb}\\) is the difference between \\(\\mathbf{y}\\) and \\(\\mathbf{Xb}\\).\n\nWe want to find \\(\\mathbf{b}\\) such that \\(\\mathbf{z} = \\mathbf{Xb}\\) is as close as possible to \\(\\mathbf{y}\\), i.e, we want to minimize the difference \\(\\mathbf{e} = \\mathbf{y} - \\mathbf{Xb}\\)\n\nThis distance is minimized when \\(\\mathbf{e}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\)"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator-for-boldsymbolbeta",
-    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator-for-boldsymbolbeta",
-    "title": "SLR: Matrix representation",
-    "section": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)",
-    "text": "Derive least squares estimator for \\(\\boldsymbol{\\beta}\\)\nGoal: Find estimator \\(\\hat{\\boldsymbol{\\beta}}= \\begin{bmatrix}\\hat{\\beta}_0 \\\\ \\hat{\\beta}_1 \\end{bmatrix}\\) that minimizes the sum of squared errors \\[\n\\sum_{i=1}^n \\epsilon_i^2 = \\mathbf{\\epsilon}^\\mathsf{T}\\mathbf{\\epsilon} = (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\n\\]"
+    "objectID": "slides/05-geometry.html#geometry-of-least-squares-regression-2",
+    "href": "slides/05-geometry.html#geometry-of-least-squares-regression-2",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Geometry of least-squares regression",
+    "text": "Geometry of least-squares regression\n\nNote: If \\(\\mathbf{A}\\), an \\(n \\times p\\) matrix, is orthogonal to an \\(n \\times 1\\) vector \\(\\mathbf{c}\\), then \\(\\mathbf{A}^\\mathsf{T}\\mathbf{c} = \\mathbf{0}\\)\nTherefore, we have \\(\\mathbf{X}^\\mathsf{T}\\mathbf{e} = \\mathbf{0}\\) , and thus\n\\[\n\\mathbf{X}^\\mathsf{T}(\\mathbf{y} - \\mathbf{Xb}) = \\mathbf{0}\n\\]\n\n\nSolve for \\(\\mathbf{b}\\) ."
   },
   {
-    "objectID": "slides/04-slr-matrix.html#gradient",
-    "href": "slides/04-slr-matrix.html#gradient",
-    "title": "SLR: Matrix representation",
-    "section": "Gradient",
-    "text": "Gradient\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\n\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]"
+    "objectID": "slides/05-geometry.html#hat-matrix",
+    "href": "slides/05-geometry.html#hat-matrix",
+    "title": "Geometric interpretation of least-squares regression",
+    "section": "Hat matrix",
+    "text": "Hat matrix\n\nRecall the hat matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\).\n\\(\\hat{\\mathbf{y}} = \\mathbf{Hy}\\), so \\(\\mathbf{H}\\) is a projection of \\(\\mathbf{y}\\) onto \\(\\mathbf{\\hat{y}} = \\mathbf{X}\\mathbf{b}\\)\nProperties of \\(\\mathbf{H}\\), a projection matrix\n\n\\(\\mathbf{H}\\) is symmetric (\\(\\mathbf{H}^\\mathsf{T} = \\mathbf{H}\\))\n\\(\\mathbf{H}\\) is idempotent (\\(\\mathbf{H}^2 = \\mathbf{H}\\))\nIf \\(\\mathbf{v}\\) in \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{v}\\)\nIf \\(\\mathbf{v}\\) is orthogonal to \\(\\text{Col}(\\mathbf{X})\\), then \\(\\mathbf{Hv} = \\mathbf{0}\\)"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#property-1",
-    "href": "slides/04-slr-matrix.html#property-1",
-    "title": "SLR: Matrix representation",
-    "section": "Property 1",
-    "text": "Property 1\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\n\n\nThe gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\mathbf{z}\n\\]"
+    "objectID": "slides/project-peer-review-lab.html#goals",
+    "href": "slides/project-peer-review-lab.html#goals",
+    "title": "Project peer review",
+    "section": "Goals",
+    "text": "Goals\n\nProject milestones\nProject peer review"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#side-note-property-1",
-    "href": "slides/04-slr-matrix.html#side-note-property-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Property 1",
-    "text": "Side note: Property 1\n\\[\n\\begin{aligned}\n\\mathbf{x}^\\mathsf{T}\\mathbf{z} &= \\class{fragment}{\\begin{bmatrix}x_1 & x_2 & \\dots &x_k\\end{bmatrix}\n\\begin{bmatrix}z_1 \\\\ z_2 \\\\ \\vdots \\\\z_k\\end{bmatrix}} \\\\[10pt]\n&\\class{fragment}{= x_1z_1 + x_2z_2 + \\dots + x_kz_k} \\\\\n&\\class{fragment}{= \\sum_{i=1}^k x_iz_i}\n\\end{aligned}\n\\]"
+    "objectID": "slides/project-peer-review-lab.html#upcoming-project-milestones",
+    "href": "slides/project-peer-review-lab.html#upcoming-project-milestones",
+    "title": "Project peer review",
+    "section": "Upcoming project milestones",
+    "text": "Upcoming project milestones\n\nDecember 3: Peer review due\nDecember 8: Deadline for Round 1 submission (optional)\nDecember 12: Final report + organized GitHub repo due\n\nSee project instructions for more detail."
   },
   {
-    "objectID": "slides/04-slr-matrix.html#side-note-property-1-1",
-    "href": "slides/04-slr-matrix.html#side-note-property-1-1",
-    "title": "SLR: Matrix representation",
-    "section": "Side note: Property 1",
-    "text": "Side note: Property 1\n\\[\n\\nabla_\\mathbf{x}\\hspace{1mm}\\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\class{fragment}{\\begin{bmatrix}\\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_1} \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial \\mathbf{x}^\\mathsf{T}\\mathbf{z}}{\\partial x_k}\\end{bmatrix}}  \n= \\class{fragment}{\\begin{bmatrix}\\frac{\\partial}{\\partial x_1} (x_1z_1 + x_2z_2 + \\dots + x_kz_k) \\\\ \\frac{\\partial}{\\partial x_2} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\\\ \\vdots \\\\ \\frac{\\partial}{\\partial x_k} (x_1z_1 + x_2z_2 + \\dots + x_kz_k)\\end{bmatrix}}\n= \\class{fragment}{\\begin{bmatrix} z_1 \\\\ z_2 \\\\ \\vdots \\\\ z_k\\end{bmatrix} = \\mathbf{z}}\n\\]"
+    "objectID": "slides/project-peer-review-lab.html#peer-review-assignments---section-01l",
+    "href": "slides/project-peer-review-lab.html#peer-review-assignments---section-01l",
+    "title": "Project peer review",
+    "section": "Peer review assignments - Section 01L",
+    "text": "Peer review assignments - Section 01L"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#property-2",
-    "href": "slides/04-slr-matrix.html#property-2",
-    "title": "SLR: Matrix representation",
-    "section": "Property 2",
-    "text": "Property 2\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\n\n\nThen the gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^\\mathsf{T} \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x}\n\\]\n\n\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\nProof in HW 01."
+    "objectID": "slides/project-peer-review-lab.html#peer-review-assignments---section-02l",
+    "href": "slides/project-peer-review-lab.html#peer-review-assignments---section-02l",
+    "title": "Project peer review",
+    "section": "Peer review assignments - Section 02L",
+    "text": "Peer review assignments - Section 02L"
   },
   {
-    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator",
-    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator",
-    "title": "SLR: Matrix representation",
-    "section": "Derive least squares estimator",
-    "text": "Derive least squares estimator\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes\n\\[\n\\begin{aligned}\n\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&= (\\mathbf{y}^\\mathsf{T} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T})(\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\mathbf{y}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\\\\[10pt]\n&=\\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]"
+    "objectID": "slides/project-peer-review-lab.html#getting-started",
+    "href": "slides/project-peer-review-lab.html#getting-started",
+    "title": "Project peer review",
+    "section": "Getting started",
+    "text": "Getting started\nFor each team you’re reviewing…\n\nOpen that team’s repo, read the project draft, and browse the rest of the repo.\nGo to the Issues tab in that repo, click on New issue, and click on Get started for the Peer Review issue.\nWrite your responses to the prompts in the issue.\n\n\n\n\n\n\n\nNote\n\n\nYou may choose to all work on both peer reviews or have some team members focus on a single peer review. Either way there will be one peer review grade assigned per team."
   },
   {
-    "objectID": "slides/04-slr-matrix.html#derive-least-squares-estimator-1",
-    "href": "slides/04-slr-matrix.html#derive-least-squares-estimator-1",
-    "title": "SLR: Matrix representation",
-    "section": "Derive least squares estimator",
-    "text": "Derive least squares estimator\n\\[\\begin{aligned}\n\\nabla_{\\beta}\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}}( \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n& = -2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}\n\\end{aligned}\n\\]\nFind \\(\\hat{\\boldsymbol{\\beta}}\\) that satisfies\n\\[\n-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{0}\n\\]\n\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix.html#hessian-matrix",
-    "href": "slides/04-slr-matrix.html#hessian-matrix",
-    "title": "SLR: Matrix representation",
-    "section": "Hessian matrix",
-    "text": "Hessian matrix\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix.html#using-the-hessian-matrix",
-    "href": "slides/04-slr-matrix.html#using-the-hessian-matrix",
-    "title": "SLR: Matrix representation",
-    "section": "Using the Hessian matrix",
-    "text": "Using the Hessian matrix\nIf the Hessian matrix is…\n\npositive-definite, then we have found a minimum.\nnegative-definite, then we have found a maximum.\nneither positive or negative-definite, then we have found a saddle point"
-  },
-  {
-    "objectID": "slides/04-slr-matrix.html#did-we-find-a-minimum-1",
-    "href": "slides/04-slr-matrix.html#did-we-find-a-minimum-1",
-    "title": "SLR: Matrix representation",
-    "section": "Did we find a minimum?",
-    "text": "Did we find a minimum?\n\\[\n\\begin{aligned}\n\\nabla^2_{\\boldsymbol{\\beta}} \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} &= \\nabla_{\\boldsymbol{\\beta}} (-2\\mathbf{X}^\\mathsf{T}\\mathbf{y} + 2\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta}) \\\\[10pt]\n&{=-2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{y}) + 2\\nabla_{\\boldsymbol{\\beta}}(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\mathbf{\\beta})} \\\\[10pt]\n&{\\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}}\n\\end{aligned}\n\\]\n\nShow that \\(\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite in HW 01."
-  },
-  {
-    "objectID": "slides/04-slr-matrix.html#predicted-fitted-values",
-    "href": "slides/04-slr-matrix.html#predicted-fitted-values",
-    "title": "SLR: Matrix representation",
-    "section": "Predicted (fitted) values",
-    "text": "Predicted (fitted) values\nNow that we have \\(\\hat{\\boldsymbol{\\beta}}\\), let’s predict values of \\(\\mathbf{y}\\) using the model\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H}\\mathbf{y}\n\\]\n\n\nHat matrix: \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\)\n\n\n\n\n\\(\\mathbf{H}\\) is an \\(n\\times n\\) matrix\nMaps vector of observed values \\(\\mathbf{y}\\) to a vector of fitted values \\(\\hat{\\mathbf{y}}\\)\nIt is only a function of \\(\\mathbf{X}\\) not \\(\\mathbf{y}\\)"
-  },
-  {
-    "objectID": "slides/04-slr-matrix.html#residuals",
-    "href": "slides/04-slr-matrix.html#residuals",
-    "title": "SLR: Matrix representation",
-    "section": "Residuals",
-    "text": "Residuals\nRecall that the residuals are the difference between the observed and predicted values\n\\[\n\\begin{aligned}\n\\mathbf{e} &= \\mathbf{y} - \\hat{\\mathbf{y}}\\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}}} \\\\[10pt]\n&\\class{fragment}{ = \\mathbf{y} - \\mathbf{H}\\mathbf{y}} \\\\[20pt]\n\\class{fragment}{\\color{#993399}{\\mathbf{e}}} &\\class{fragment}{\\color{#993399}{=(\\mathbf{I} - \\mathbf{H})\\mathbf{y}}} \\\\[10pt]\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/04-slr-matrix.html#recap",
-    "href": "slides/04-slr-matrix.html#recap",
-    "title": "SLR: Matrix representation",
-    "section": "Recap",
-    "text": "Recap\n\nIntroduced matrix representation for simple linear regression\n\nModel form\nLeast square estimate\nPredicted (fitted) values\nResiduals"
-  },
-  {
-    "objectID": "slides/04-slr-matrix.html#for-next-class",
-    "href": "slides/04-slr-matrix.html#for-next-class",
-    "title": "SLR: Matrix representation",
-    "section": "For next class",
-    "text": "For next class\n\nComplete Prepare for Lecture 05 - SLR: matrix representation cont’d"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment-notes.html",
-    "href": "slides/03-slr-model-assessment-notes.html",
-    "title": "SLR: Model Assessment",
+    "objectID": "slides/05-mlr-notes.html",
+    "href": "slides/05-mlr-notes.html",
+    "title": "Multiple linear regression (MLR)",
     "section": "",
-    "text": "No office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday\nIntroduction to R workshops at Duke library\n\nData wrangling with dplyr - Thu, Jan 16 at 12pm\nData visualization with ggplot2 - Thu, Jan 23 at 12pm"
+    "text": "Introducing multiple linear regression\n\nExploratory data analysis for multiple linear regression\nFitting the least squares line\nInterpreting coefficients for quantitative predictors\nPrediction"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#announcements",
-    "href": "slides/03-slr-model-assessment-notes.html#announcements",
-    "title": "SLR: Model Assessment",
+    "objectID": "slides/05-mlr-notes.html#topics",
+    "href": "slides/05-mlr-notes.html#topics",
+    "title": "Multiple linear regression (MLR)",
     "section": "",
-    "text": "No office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday\nIntroduction to R workshops at Duke library\n\nData wrangling with dplyr - Thu, Jan 16 at 12pm\nData visualization with ggplot2 - Thu, Jan 23 at 12pm"
+    "text": "Introducing multiple linear regression\n\nExploratory data analysis for multiple linear regression\nFitting the least squares line\nInterpreting coefficients for quantitative predictors\nPrediction"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#topics",
-    "href": "slides/03-slr-model-assessment-notes.html#topics",
-    "title": "SLR: Model Assessment",
-    "section": "Topics",
-    "text": "Topics\n\nPredict the response given a value of the predictor\nUse R to conduct exploratory data analysis and fit a model\nEvaluate models using RMSE and \\(R^2\\)\nUse analysis of variance to partition variability in the response variable"
+    "objectID": "slides/05-mlr-notes.html#computing-setup",
+    "href": "slides/05-mlr-notes.html#computing-setup",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Computing setup",
+    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#computing-set-up",
-    "href": "slides/03-slr-model-assessment-notes.html#computing-set-up",
-    "title": "SLR: Model Assessment",
-    "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling (includes broom, yardstick, and other packages)\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme for ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "objectID": "slides/05-mlr-notes.html#data-peer-to-peer-lender",
+    "href": "slides/05-mlr-notes.html#data-peer-to-peer-lender",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Data: Peer-to-peer lender",
+    "text": "Data: Peer-to-peer lender\nToday’s data is a sample of 50 loans made through a peer-to-peer lending club. The data is in the loan50 data frame in the openintro R package.\n\n\n# A tibble: 50 × 4\n   annual_income debt_to_income verified_income interest_rate\n           &lt;dbl&gt;          &lt;dbl&gt; &lt;fct&gt;                   &lt;dbl&gt;\n 1         59000         0.558  Not Verified            10.9 \n 2         60000         1.31   Not Verified             9.92\n 3         75000         1.06   Verified                26.3 \n 4         75000         0.574  Not Verified             9.92\n 5        254000         0.238  Not Verified             9.43\n 6         67000         1.08   Source Verified          9.92\n 7         28800         0.0997 Source Verified         17.1 \n 8         80000         0.351  Not Verified             6.08\n 9         34000         0.698  Not Verified             7.97\n10         80000         0.167  Source Verified         12.6 \n# ℹ 40 more rows"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#data-movie-scores-on-rotten-tomatoes",
-    "href": "slides/03-slr-model-assessment-notes.html#data-movie-scores-on-rotten-tomatoes",
-    "title": "SLR: Model Assessment",
-    "section": "Data: Movie scores on Rotten Tomatoes",
-    "text": "Data: Movie scores on Rotten Tomatoes\n\n\n\n\n\n\n\n\n\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment-notes.html#making-a-prediction",
-    "href": "slides/03-slr-model-assessment-notes.html#making-a-prediction",
-    "title": "SLR: Model Assessment",
-    "section": "Making a prediction",
-    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]\n\n. . .\n\n\n\n\n\n\nCaution\n\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment-notes.html#fit-the-model",
-    "href": "slides/03-slr-model-assessment-notes.html#fit-the-model",
-    "title": "SLR: Model Assessment",
-    "section": "Fit the model",
-    "text": "Fit the model\nUse the lm() function to fit a linear regression model\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\nmovie_fit\n\n\nCall:\nlm(formula = audience ~ critics, data = movie_scores)\n\nCoefficients:\n(Intercept)      critics  \n    32.3155       0.5187"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment-notes.html#tidy-results",
-    "href": "slides/03-slr-model-assessment-notes.html#tidy-results",
-    "title": "SLR: Model Assessment",
-    "section": "Tidy results",
-    "text": "Tidy results\nUse the tidy() function from the broom R package to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   32.3      2.34        13.8 4.03e-28\n2 critics        0.519    0.0345      15.0 2.70e-31"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment-notes.html#format-results",
-    "href": "slides/03-slr-model-assessment-notes.html#format-results",
-    "title": "SLR: Model Assessment",
-    "section": "Format results",
-    "text": "Format results\nUse the kable() function from the knitr package to neatly format the results\n\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics\n0.519\n0.035\n15.028\n0"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment-notes.html#prediction-1",
-    "href": "slides/03-slr-model-assessment-notes.html#prediction-1",
-    "title": "SLR: Model Assessment",
-    "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment-notes.html#prediction-2",
-    "href": "slides/03-slr-model-assessment-notes.html#prediction-2",
-    "title": "SLR: Model Assessment",
-    "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment-notes.html#data-life-expectancy-in-140-countries",
-    "href": "slides/03-slr-model-assessment-notes.html#data-life-expectancy-in-140-countries",
-    "title": "SLR: Model Assessment",
-    "section": "Data: Life expectancy in 140 countries",
-    "text": "Data: Life expectancy in 140 countries\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\nGoal: Use the income inequality in a country to understand variability in the life expectancy.\n\n\nClick here for the original research paper."
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment-notes.html#variables",
-    "href": "slides/03-slr-model-assessment-notes.html#variables",
-    "title": "SLR: Model Assessment",
+    "objectID": "slides/05-mlr-notes.html#variables",
+    "href": "slides/05-mlr-notes.html#variables",
+    "title": "Multiple linear regression (MLR)",
     "section": "Variables",
-    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from Zarulli et al. (2021))"
+    "text": "Variables\nPredictors:\n\n\nannual_income: Annual income\ndebt_to_income: Debt-to-income ratio, i.e. the percentage of a borrower’s total debt divided by their total income\nverified_income: Whether borrower’s income source and amount have been verified (Not Verified, Source Verified, Verified)\n\n\nOutcome: interest_rate: Interest rate for the loan"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#univariate-exploratory-data-analysis",
-    "href": "slides/03-slr-model-assessment-notes.html#univariate-exploratory-data-analysis",
-    "title": "SLR: Model Assessment",
-    "section": "Univariate exploratory data analysis",
-    "text": "Univariate exploratory data analysis"
+    "objectID": "slides/05-mlr-notes.html#outcome-interest_rate",
+    "href": "slides/05-mlr-notes.html#outcome-interest_rate",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Outcome: interest_rate",
+    "text": "Outcome: interest_rate\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMin\nMedian\nMax\nIQR\n\n\n\n\n5.31\n9.93\n26.3\n5.755"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#bivariate-exploratory-data-analysis",
-    "href": "slides/03-slr-model-assessment-notes.html#bivariate-exploratory-data-analysis",
-    "title": "SLR: Model Assessment",
-    "section": "Bivariate exploratory data analysis",
-    "text": "Bivariate exploratory data analysis"
+    "objectID": "slides/05-mlr-notes.html#predictors",
+    "href": "slides/05-mlr-notes.html#predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Predictors",
+    "text": "Predictors"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
-    "href": "slides/03-slr-model-assessment-notes.html#clone-repo-start-new-rstudio-project",
-    "title": "SLR: Model Assessment",
-    "section": "Clone repo + Start new RStudio project",
-    "text": "Clone repo + Start new RStudio project\n\nGo to the course organization. Click on the repo with the prefix ae-01. It contains the starter documents you need to complete the AE.\n\nIf you do not see an ae-01 repo, use this link to create one: https://classroom.github.com/a/6jpkfA8n\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the AE."
+    "objectID": "slides/05-mlr-notes.html#data-manipulation-1-rescale-income",
+    "href": "slides/05-mlr-notes.html#data-manipulation-1-rescale-income",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Data manipulation 1: Rescale income",
+    "text": "Data manipulation 1: Rescale income\n\nloan50 &lt;- loan50 |&gt;\n  mutate(annual_income_th = annual_income / 1000)\n\n\n\n\n\n\n\n\n\n\n. . .\n\nWhy did we rescale income?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#two-statistics",
-    "href": "slides/03-slr-model-assessment-notes.html#two-statistics",
-    "title": "SLR: Model Assessment",
-    "section": "Two statistics",
-    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n. . .\n\nWhat indicates a good model fit? Higher or lower RMSE? Higher or lower \\(R^2\\)?"
+    "objectID": "slides/05-mlr-notes.html#outcome-vs.-predictors",
+    "href": "slides/05-mlr-notes.html#outcome-vs.-predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Outcome vs. predictors",
+    "text": "Outcome vs. predictors\n\n\n\n\n\n\n\n\n\n. . .\nGoal: Use these predictors in a single model to understand variability in interest rate.\n. . .\n\nWhy do we want to use a single model versus 3 separate simple linear regression models?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#rmse",
-    "href": "slides/03-slr-model-assessment-notes.html#rmse",
-    "title": "SLR: Model Assessment",
-    "section": "RMSE",
-    "text": "RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\n. . .\n\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the response variable\nThe value of RMSE is more useful for comparing across models than evaluating a single model"
+    "objectID": "slides/05-mlr-notes.html#multiple-linear-regression-mlr-1",
+    "href": "slides/05-mlr-notes.html#multiple-linear-regression-mlr-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression (MLR)",
+    "text": "Multiple linear regression (MLR)\nBased on the analysis goals, we will use a multiple linear regression model of the following form\n\\[\n\\begin{aligned}\\text{interest_rate} ~ =\n\\beta_0 & + \\beta_1 ~ \\text{debt_to_income} \\\\ & + \\beta_2 ~ \\text{verified_income} \\\\ &+ \\beta_3~ \\text{annual_income_th} \\\\\n& +\\epsilon, \\quad \\epsilon \\sim N(0, \\sigma^2_{\\epsilon})\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#analysis-of-variance-anova",
-    "href": "slides/03-slr-model-assessment-notes.html#analysis-of-variance-anova",
-    "title": "SLR: Model Assessment",
-    "section": "ANOVA",
-    "text": "ANOVA\nAnalysis of Variance (ANOVA): Technique to partition variability in \\(Y\\) by the sources of variability"
+    "objectID": "slides/05-mlr-notes.html#multiple-linear-regression",
+    "href": "slides/05-mlr-notes.html#multiple-linear-regression",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression",
+    "text": "Multiple linear regression\nRecall: The simple linear regression model\n\\[\nY = \\beta_0 + \\beta_1~ X + \\epsilon\n\\]\n. . .\nThe form of the multiple linear regression model is\n\\[\nY = \\beta_0 + \\beta_1X_1 +  \\dots + \\beta_pX_p + \\epsilon\n\\]\n\n. . .\nTherefore,\n\\[\nE(Y|X_1, \\ldots, X_p) = \\beta_0 + \\beta_1X_1 +  \\dots + \\beta_pX_p\n\\]"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#total-variability-response",
-    "href": "slides/03-slr-model-assessment-notes.html#total-variability-response",
-    "title": "SLR: Model Assessment",
-    "section": "Total variability (Response)",
-    "text": "Total variability (Response)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMin\nMedian\nMax\nMean\nStd.Dev\n\n\n\n\n51.6\n72.85\n84.1\n71.614\n8.075"
+    "objectID": "slides/05-mlr-notes.html#fitting-the-least-squares-line",
+    "href": "slides/05-mlr-notes.html#fitting-the-least-squares-line",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Fitting the least squares line",
+    "text": "Fitting the least squares line\nSimilar to simple linear regression, we want to find estimates for \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) that minimize\n\\[\n\\sum_{i=1}^{n}\\epsilon_i^2 = \\sum_{i=1}^n[y_i - \\hat{y}_i]^2 = \\sum_{i=1}^n[y_i - (\\beta_0 + \\beta_1x_{i1} + \\dots + \\beta_px_{ip})]^2\n\\]\n\n. . .\nThe calculations can be very tedious, especially if \\(p\\) is large"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#partition-sources-of-variability-in-life_exp",
-    "href": "slides/03-slr-model-assessment-notes.html#partition-sources-of-variability-in-life_exp",
-    "title": "SLR: Model Assessment",
-    "section": "Partition sources of variability in life_exp",
-    "text": "Partition sources of variability in life_exp"
+    "objectID": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression",
+    "href": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Matrix form of multiple linear regression",
+    "text": "Matrix form of multiple linear regression\nSuppose we have \\(n\\) observations, a quantitative response variable, and \\(p\\) &gt; 1 predictors \\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_{11} & \\dots & x_{1p}\\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n1 &  x_{n1} & \\dots &x_{np}\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\vdots \\\\\n\\beta_p\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\)?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#total-variability-response-1",
-    "href": "slides/03-slr-model-assessment-notes.html#total-variability-response-1",
-    "title": "SLR: Model Assessment",
-    "section": "Total variability (Response)",
-    "text": "Total variability (Response)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
+    "objectID": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression-1",
+    "href": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Matrix form of multiple linear regression",
+    "text": "Matrix form of multiple linear regression\nAs with simple linear regression, we have\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n. . .\nGeneralizing the derivations from SLR to \\(p &gt; 2\\), we have\n\\[\n\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\n\\]\nas before."
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#explained-variability-model",
-    "href": "slides/03-slr-model-assessment-notes.html#explained-variability-model",
-    "title": "SLR: Model Assessment",
-    "section": "Explained variability (Model)",
-    "text": "Explained variability (Model)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+    "objectID": "slides/05-mlr-notes.html#model-fit-in-r",
+    "href": "slides/05-mlr-notes.html#model-fit-in-r",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model fit in R",
+    "text": "Model fit in R\n\nint_fit &lt;- lm(interest_rate ~ debt_to_income + verified_income  + annual_income_th,\n              data = loan50)\n\ntidy(int_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n10.726\n1.507\n7.116\n0.000\n\n\ndebt_to_income\n0.671\n0.676\n0.993\n0.326\n\n\nverified_incomeSource Verified\n2.211\n1.399\n1.581\n0.121\n\n\nverified_incomeVerified\n6.880\n1.801\n3.820\n0.000\n\n\nannual_income_th\n-0.021\n0.011\n-1.804\n0.078"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#unexplained-variability-residuals",
-    "href": "slides/03-slr-model-assessment-notes.html#unexplained-variability-residuals",
-    "title": "SLR: Model Assessment",
-    "section": "Unexplained variability (Residuals)",
-    "text": "Unexplained variability (Residuals)\n\n\n\n\n\n\n\n\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+    "objectID": "slides/05-mlr-notes.html#model-equation",
+    "href": "slides/05-mlr-notes.html#model-equation",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model equation",
+    "text": "Model equation\n\\[\n\\begin{align}\\hat{\\text{interest_rate}} =  10.726 &+0.671 \\times \\text{debt_to_income}\\\\\n&+ 2.211 \\times \\text{source_verified}\\\\  \n&+ 6.880 \\times \\text{verified}\\\\\n& -0.021 \\times \\text{annual_income_th}\n\\end{align}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nWe will talk about why there are only two terms in the model for verified_income soon!"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#sum-of-squares",
-    "href": "slides/03-slr-model-assessment-notes.html#sum-of-squares",
-    "title": "SLR: Model Assessment",
-    "section": "Sum of Squares",
-    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]\n\n\nClick here to see why this equality holds."
+    "objectID": "slides/05-mlr-notes.html#interpreting-hatbeta_j",
+    "href": "slides/05-mlr-notes.html#interpreting-hatbeta_j",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)\n\nThe estimated coefficient \\(\\hat{\\beta}_j\\) is the expected change in the mean of \\(Y\\) when \\(X_j\\) increases by one unit, holding the values of all other predictor variables constant.\n\n. . .\n\nExample: The estimated coefficient for debt_to_income is 0.671. This means for each point in an borrower’s debt to income ratio, the interest rate on the loan is expected to be greater by 0.671%, on average, holding annual income and income verification constant."
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#r2",
-    "href": "slides/03-slr-model-assessment-notes.html#r2",
-    "title": "SLR: Model Assessment",
-    "section": "\\(R^2\\)",
-    "text": "\\(R^2\\)\nThe coefficient of determination \\(R^2\\) is the proportion of variation in the response, \\(Y\\), that is explained by the regression model\n\n\\[\\large{R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}}\\]\n\n\nWhat is the range of \\(R^2\\)? Does \\(R^2\\) have units?"
+    "objectID": "slides/05-mlr-notes.html#interpreting-hatbeta_j-1",
+    "href": "slides/05-mlr-notes.html#interpreting-hatbeta_j-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)\n\nThe estimated coefficient for annual_income_th is -0.021. Interpret this coefficient in the context of the data.\n\n\n\n\nWhy do we need to include a statement about holding all other predictors constant?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#interpreting-r2",
-    "href": "slides/03-slr-model-assessment-notes.html#interpreting-r2",
-    "title": "SLR: Model Assessment",
-    "section": "Interpreting \\(R^2\\)",
-    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/70811/discussion/5978094"
+    "objectID": "slides/05-mlr-notes.html#interpreting-hatbeta_0",
+    "href": "slides/05-mlr-notes.html#interpreting-hatbeta_0",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_0\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n10.726\n1.507\n7.116\n0.000\n7.690\n13.762\n\n\ndebt_to_income\n0.671\n0.676\n0.993\n0.326\n-0.690\n2.033\n\n\nverified_incomeSource Verified\n2.211\n1.399\n1.581\n0.121\n-0.606\n5.028\n\n\nverified_incomeVerified\n6.880\n1.801\n3.820\n0.000\n3.253\n10.508\n\n\nannual_income_th\n-0.021\n0.011\n-1.804\n0.078\n-0.043\n0.002\n\n\n\n\n\n. . .\n\n\nDescribe the subset of borrowers who are expected to get an interest rate of 10.726% based on our model. Is this interpretation meaningful? Why or why not?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#augmented-data-frame",
-    "href": "slides/03-slr-model-assessment-notes.html#augmented-data-frame",
-    "title": "SLR: Model Assessment",
-    "section": "Augmented data frame",
-    "text": "Augmented data frame\nUse the augment() function from the broom package to add columns for predicted values, residuals, and other observation-level model statistics\n. . .\n\nlife_exp_aug &lt;- augment(life_exp_fit)\nlife_exp_aug\n\n# A tibble: 140 × 8\n   life_exp income_inequality .fitted .resid    .hat .sigma   .cooksd .std.resid\n      &lt;dbl&gt;             &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1     63.8              28.2    65.8 -1.96  0.0125    4.45 0.00125       -0.444\n 2     78.2              12.2    76.9  1.29  0.0116    4.45 0.000498       0.292\n 3     59.9              32.4    62.8 -2.93  0.0193    4.44 0.00437       -0.667\n 4     76.2              14      75.7  0.542 0.00972   4.45 0.0000739      0.123\n 5     74.6               8.6    79.4 -4.82  0.0168    4.43 0.0102        -1.10 \n 6     83                 8.3    79.6  3.37  0.0173    4.44 0.00515        0.766\n 7     81.3               7.4    80.3  1.04  0.0189    4.45 0.000540       0.237\n 8     72.5              10.1    78.4 -5.88  0.0144    4.42 0.0130        -1.33 \n 9     71.8              27.6    66.2  5.62  0.0118    4.43 0.00972        1.28 \n10     74                 6.5    80.9 -6.89  0.0207    4.41 0.0260        -1.57 \n# ℹ 130 more rows"
+    "objectID": "slides/05-mlr-notes.html#prediction",
+    "href": "slides/05-mlr-notes.html#prediction",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction",
+    "text": "Prediction\n\nWhat is the predicted interest rate for an borrower with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000?\n\n\n\n10.726 + 0.671 * 0.558 + 2.211 * 0 + 6.880 * 0 - 0.021 * 59\n\n[1] 9.861418\n\n\n. . .\nThe predicted interest rate for an borrower with with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000 is 9.86%."
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#finding-rmse-in-r",
-    "href": "slides/03-slr-model-assessment-notes.html#finding-rmse-in-r",
-    "title": "SLR: Model Assessment",
-    "section": "Finding RMSE in R",
-    "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard        4.40"
+    "objectID": "slides/05-mlr-notes.html#prediction-in-r",
+    "href": "slides/05-mlr-notes.html#prediction-in-r",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction in R",
+    "text": "Prediction in R\nJust like with simple linear regression, we can use the predict() function in R to calculate the appropriate intervals for our predicted values:\n\nnew_borrower &lt;- tibble(\n  debt_to_income  = 0.558, \n  verified_income = \"Not Verified\", \n  annual_income_th = 59\n)\n\npredict(int_fit, new_borrower)\n\n       1 \n9.890888 \n\n\n\n\n\n\n\n\nNote\n\n\n\nDifference in predicted value due to rounding the coefficients on the previous slide."
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#finding-r2-in-r",
-    "href": "slides/03-slr-model-assessment-notes.html#finding-r2-in-r",
-    "title": "SLR: Model Assessment",
-    "section": "Finding \\(R^2\\) in R",
-    "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.700\n\n\n\n. . .\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\):\n\nglance(life_exp_fit)$r.squared\n\n[1] 0.7003831"
+    "objectID": "slides/05-mlr-notes.html#cautions",
+    "href": "slides/05-mlr-notes.html#cautions",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Cautions",
+    "text": "Cautions\n\nDo not extrapolate! Because there are multiple predictor variables, there is the potential to extrapolate in many directions\nThe multiple regression model only shows association, not causality\n\nTo show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#recap",
-    "href": "slides/03-slr-model-assessment-notes.html#recap",
-    "title": "SLR: Model Assessment",
+    "objectID": "slides/05-mlr-notes.html#recap",
+    "href": "slides/05-mlr-notes.html#recap",
+    "title": "Multiple linear regression (MLR)",
     "section": "Recap",
-    "text": "Recap\n\nUsed R to conduct exploratory data analysis and fit a model\nEvaluated models using RMSE and \\(R^2\\)\nUsed analysis of variance to partition variability in the response variable"
+    "text": "Recap\n\nShowed exploratory data analysis for multiple linear regression\nUsed least squares to fit the regression line\nInterpreted the coefficients for quantitative predictors\nPredicted the response for new observations"
   },
   {
-    "objectID": "slides/03-slr-model-assessment-notes.html#next-class",
-    "href": "slides/03-slr-model-assessment-notes.html#next-class",
-    "title": "SLR: Model Assessment",
-    "section": "Next class",
-    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Lec 04: SLR - Matrix representation prepare"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#announcements",
-    "href": "slides/03-slr-model-assessment.html#announcements",
-    "title": "SLR: Model Assessment",
-    "section": "Announcements",
-    "text": "Announcements\n\nNo office hours Mon, Jan 20 - Martin Luther King, Jr. Holiday\nIntroduction to R workshops at Duke library\n\nData wrangling with dplyr - Thu, Jan 16 at 12pm\nData visualization with ggplot2 - Thu, Jan 23 at 12pm"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#topics",
-    "href": "slides/03-slr-model-assessment.html#topics",
-    "title": "SLR: Model Assessment",
+    "objectID": "slides/05-mlr.html#topics",
+    "href": "slides/05-mlr.html#topics",
+    "title": "Multiple linear regression (MLR)",
     "section": "Topics",
-    "text": "Topics\n\nPredict the response given a value of the predictor\nUse R to conduct exploratory data analysis and fit a model\nEvaluate models using RMSE and \\(R^2\\)\nUse analysis of variance to partition variability in the response variable"
+    "text": "Topics\n\nIntroducing multiple linear regression\n\nExploratory data analysis for multiple linear regression\nFitting the least squares line\nInterpreting coefficients for quantitative predictors\nPrediction"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#computing-set-up",
-    "href": "slides/03-slr-model-assessment.html#computing-set-up",
-    "title": "SLR: Model Assessment",
-    "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)   # for data wrangling and visualization\nlibrary(tidymodels)  # for modeling (includes broom, yardstick, and other packages)\nlibrary(knitr)       # for pretty tables\nlibrary(patchwork)   # arrange plots\n\n# set default theme for ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "objectID": "slides/05-mlr.html#computing-setup",
+    "href": "slides/05-mlr.html#computing-setup",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Computing setup",
+    "text": "Computing setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#data-movie-scores-on-rotten-tomatoes",
-    "href": "slides/03-slr-model-assessment.html#data-movie-scores-on-rotten-tomatoes",
-    "title": "SLR: Model Assessment",
-    "section": "Data: Movie scores on Rotten Tomatoes",
-    "text": "Data: Movie scores on Rotten Tomatoes\n\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]"
+    "objectID": "slides/05-mlr.html#data-peer-to-peer-lender",
+    "href": "slides/05-mlr.html#data-peer-to-peer-lender",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Data: Peer-to-peer lender",
+    "text": "Data: Peer-to-peer lender\nToday’s data is a sample of 50 loans made through a peer-to-peer lending club. The data is in the loan50 data frame in the openintro R package.\n\n\n# A tibble: 50 × 4\n   annual_income debt_to_income verified_income interest_rate\n           &lt;dbl&gt;          &lt;dbl&gt; &lt;fct&gt;                   &lt;dbl&gt;\n 1         59000         0.558  Not Verified            10.9 \n 2         60000         1.31   Not Verified             9.92\n 3         75000         1.06   Verified                26.3 \n 4         75000         0.574  Not Verified             9.92\n 5        254000         0.238  Not Verified             9.43\n 6         67000         1.08   Source Verified          9.92\n 7         28800         0.0997 Source Verified         17.1 \n 8         80000         0.351  Not Verified             6.08\n 9         34000         0.698  Not Verified             7.97\n10         80000         0.167  Source Verified         12.6 \n# ℹ 40 more rows"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#making-a-prediction",
-    "href": "slides/03-slr-model-assessment.html#making-a-prediction",
-    "title": "SLR: Model Assessment",
-    "section": "Making a prediction",
-    "text": "Making a prediction\nSuppose that a movie has a critics score of 70. According to this model, what is the movie’s predicted audience score?\n\\[\\begin{aligned}\n\\widehat{\\text{audience}} &= 32.3142 + 0.5187 \\times \\text{critics} \\\\\n&= 32.3142 + 0.5187 \\times 70 \\\\\n&= \\mathbf{68.6232}\n\\end{aligned}\\]\n\n\n\n\n\n\n\n\nCaution\n\n\nUsing the model to predict for values outside the range of the original data is extrapolation. Why do we want to avoid extrapolation?"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#fit-the-model",
-    "href": "slides/03-slr-model-assessment.html#fit-the-model",
-    "title": "SLR: Model Assessment",
-    "section": "Fit the model",
-    "text": "Fit the model\nUse the lm() function to fit a linear regression model\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\nmovie_fit\n\n\nCall:\nlm(formula = audience ~ critics, data = movie_scores)\n\nCoefficients:\n(Intercept)      critics  \n    32.3155       0.5187"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#tidy-results",
-    "href": "slides/03-slr-model-assessment.html#tidy-results",
-    "title": "SLR: Model Assessment",
-    "section": "Tidy results",
-    "text": "Tidy results\nUse the tidy() function from the broom R package to “tidy” the model output\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   32.3      2.34        13.8 4.03e-28\n2 critics        0.519    0.0345      15.0 2.70e-31"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#format-results",
-    "href": "slides/03-slr-model-assessment.html#format-results",
-    "title": "SLR: Model Assessment",
-    "section": "Format results",
-    "text": "Format results\nUse the kable() function from the knitr package to neatly format the results\n\n\n\nmovie_fit &lt;- lm(audience ~ critics, data = movie_scores)\ntidy(movie_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n32.316\n2.343\n13.795\n0\n\n\ncritics\n0.519\n0.035\n15.028\n0"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#prediction-1",
-    "href": "slides/03-slr-model-assessment.html#prediction-1",
-    "title": "SLR: Model Assessment",
-    "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nSingle observation\n\nnew_movie &lt;- tibble(critics = 70)\npredict(movie_fit, new_movie)\n\n       1 \n68.62297"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#prediction-2",
-    "href": "slides/03-slr-model-assessment.html#prediction-2",
-    "title": "SLR: Model Assessment",
-    "section": "Prediction",
-    "text": "Prediction\nUse the predict() function to calculate predictions for new observations\n\nMultiple observations\n\nmore_new_movies &lt;- tibble(critics = c(24,70, 85))\npredict(movie_fit, more_new_movies)\n\n       1        2        3 \n44.76379 68.62297 76.40313"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#data-life-expectancy-in-140-countries",
-    "href": "slides/03-slr-model-assessment.html#data-life-expectancy-in-140-countries",
-    "title": "SLR: Model Assessment",
-    "section": "Data: Life expectancy in 140 countries",
-    "text": "Data: Life expectancy in 140 countries\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\nGoal: Use the income inequality in a country to understand variability in the life expectancy.\n\n\nClick here for the original research paper."
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#variables",
-    "href": "slides/03-slr-model-assessment.html#variables",
-    "title": "SLR: Model Assessment",
+    "objectID": "slides/05-mlr.html#variables",
+    "href": "slides/05-mlr.html#variables",
+    "title": "Multiple linear regression (MLR)",
     "section": "Variables",
-    "text": "Variables\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from Zarulli et al. (2021))"
+    "text": "Variables\nPredictors:\n\n\nannual_income: Annual income\ndebt_to_income: Debt-to-income ratio, i.e. the percentage of a borrower’s total debt divided by their total income\nverified_income: Whether borrower’s income source and amount have been verified (Not Verified, Source Verified, Verified)\n\n\nOutcome: interest_rate: Interest rate for the loan"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#univariate-exploratory-data-analysis",
-    "href": "slides/03-slr-model-assessment.html#univariate-exploratory-data-analysis",
-    "title": "SLR: Model Assessment",
-    "section": "Univariate exploratory data analysis",
-    "text": "Univariate exploratory data analysis"
+    "objectID": "slides/05-mlr.html#outcome-interest_rate",
+    "href": "slides/05-mlr.html#outcome-interest_rate",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Outcome: interest_rate",
+    "text": "Outcome: interest_rate\n\n\n\n\n\n\nMin\nMedian\nMax\nIQR\n\n\n\n\n5.31\n9.93\n26.3\n5.755"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#bivariate-exploratory-data-analysis",
-    "href": "slides/03-slr-model-assessment.html#bivariate-exploratory-data-analysis",
-    "title": "SLR: Model Assessment",
-    "section": "Bivariate exploratory data analysis",
-    "text": "Bivariate exploratory data analysis"
+    "objectID": "slides/05-mlr.html#predictors",
+    "href": "slides/05-mlr.html#predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Predictors",
+    "text": "Predictors"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#clone-repo-start-new-rstudio-project",
-    "href": "slides/03-slr-model-assessment.html#clone-repo-start-new-rstudio-project",
-    "title": "SLR: Model Assessment",
-    "section": "Clone repo + Start new RStudio project",
-    "text": "Clone repo + Start new RStudio project\n\nGo to the course organization. Click on the repo with the prefix ae-01. It contains the starter documents you need to complete the AE.\n\nIf you do not see an ae-01 repo, use this link to create one: https://classroom.github.com/a/6jpkfA8n\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-01.qmd to open the template Quarto file. This is where you will write up your code and narrative for the AE."
+    "objectID": "slides/05-mlr.html#data-manipulation-1-rescale-income",
+    "href": "slides/05-mlr.html#data-manipulation-1-rescale-income",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Data manipulation 1: Rescale income",
+    "text": "Data manipulation 1: Rescale income\n\nloan50 &lt;- loan50 |&gt;\n  mutate(annual_income_th = annual_income / 1000)\n\n\n\n\nWhy did we rescale income?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#two-statistics",
-    "href": "slides/03-slr-model-assessment.html#two-statistics",
-    "title": "SLR: Model Assessment",
-    "section": "Two statistics",
-    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n\n\nWhat indicates a good model fit? Higher or lower RMSE? Higher or lower \\(R^2\\)?"
+    "objectID": "slides/05-mlr.html#outcome-vs.-predictors",
+    "href": "slides/05-mlr.html#outcome-vs.-predictors",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Outcome vs. predictors",
+    "text": "Outcome vs. predictors\n\n\nGoal: Use these predictors in a single model to understand variability in interest rate.\n\n\n\nWhy do we want to use a single model versus 3 separate simple linear regression models?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#rmse",
-    "href": "slides/03-slr-model-assessment.html#rmse",
-    "title": "SLR: Model Assessment",
-    "section": "RMSE",
-    "text": "RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\n\n\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the response variable\nThe value of RMSE is more useful for comparing across models than evaluating a single model"
+    "objectID": "slides/05-mlr.html#multiple-linear-regression-mlr-1",
+    "href": "slides/05-mlr.html#multiple-linear-regression-mlr-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression (MLR)",
+    "text": "Multiple linear regression (MLR)\nBased on the analysis goals, we will use a multiple linear regression model of the following form\n\\[\n\\begin{aligned}\\text{interest_rate} ~ =\n\\beta_0 & + \\beta_1 ~ \\text{debt_to_income} \\\\ & + \\beta_2 ~ \\text{verified_income} \\\\ &+ \\beta_3~ \\text{annual_income_th} \\\\\n& +\\epsilon, \\quad \\epsilon \\sim N(0, \\sigma^2_{\\epsilon})\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#analysis-of-variance-anova",
-    "href": "slides/03-slr-model-assessment.html#analysis-of-variance-anova",
-    "title": "SLR: Model Assessment",
-    "section": "ANOVA",
-    "text": "ANOVA\nAnalysis of Variance (ANOVA): Technique to partition variability in \\(Y\\) by the sources of variability"
+    "objectID": "slides/05-mlr.html#multiple-linear-regression",
+    "href": "slides/05-mlr.html#multiple-linear-regression",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Multiple linear regression",
+    "text": "Multiple linear regression\nRecall: The simple linear regression model\n\\[\nY = \\beta_0 + \\beta_1~ X + \\epsilon\n\\]\n\nThe form of the multiple linear regression model is\n\\[\nY = \\beta_0 + \\beta_1X_1 +  \\dots + \\beta_pX_p + \\epsilon\n\\]\n\n\n\nTherefore,\n\\[\nE(Y|X_1, \\ldots, X_p) = \\beta_0 + \\beta_1X_1 +  \\dots + \\beta_pX_p\n\\]"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#total-variability-response",
-    "href": "slides/03-slr-model-assessment.html#total-variability-response",
-    "title": "SLR: Model Assessment",
-    "section": "Total variability (Response)",
-    "text": "Total variability (Response)\n\n\n\n\n\n\nMin\nMedian\nMax\nMean\nStd.Dev\n\n\n\n\n51.6\n72.85\n84.1\n71.614\n8.075"
+    "objectID": "slides/05-mlr.html#fitting-the-least-squares-line",
+    "href": "slides/05-mlr.html#fitting-the-least-squares-line",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Fitting the least squares line",
+    "text": "Fitting the least squares line\nSimilar to simple linear regression, we want to find estimates for \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) that minimize\n\\[\n\\sum_{i=1}^{n}\\epsilon_i^2 = \\sum_{i=1}^n[y_i - \\hat{y}_i]^2 = \\sum_{i=1}^n[y_i - (\\beta_0 + \\beta_1x_{i1} + \\dots + \\beta_px_{ip})]^2\n\\]\n\n\nThe calculations can be very tedious, especially if \\(p\\) is large"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#partition-sources-of-variability-in-life_exp",
-    "href": "slides/03-slr-model-assessment.html#partition-sources-of-variability-in-life_exp",
-    "title": "SLR: Model Assessment",
-    "section": "Partition sources of variability in life_exp",
-    "text": "Partition sources of variability in life_exp"
+    "objectID": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression",
+    "href": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Matrix form of multiple linear regression",
+    "text": "Matrix form of multiple linear regression\nSuppose we have \\(n\\) observations, a quantitative response variable, and \\(p\\) &gt; 1 predictors \\[\n\\underbrace{\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} }_\n{\\mathbf{y}} \\hspace{3mm}\n=\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n1 &x_{11} & \\dots & x_{1p}\\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n1 &  x_{n1} & \\dots &x_{np}\n\\end{bmatrix}\n}_{\\mathbf{X}}\n\\hspace{2mm}\n\\underbrace{\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\vdots \\\\\n\\beta_p\n\\end{bmatrix}\n}_{\\boldsymbol{\\beta}}\n\\hspace{3mm}\n+\n\\hspace{3mm}\n\\underbrace{\n\\begin{bmatrix}\n\\epsilon_1 \\\\\n\\vdots\\\\\n\\epsilon_n\n\\end{bmatrix}\n}_\\boldsymbol{\\epsilon}\n\\]\n\nWhat are the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\)?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#total-variability-response-1",
-    "href": "slides/03-slr-model-assessment.html#total-variability-response-1",
-    "title": "SLR: Model Assessment",
-    "section": "Total variability (Response)",
-    "text": "Total variability (Response)\n\n\\[\\text{Sum of Squares Total (SST)} = \\sum_{i=1}^n(y_i - \\bar{y})^2 = (n-1)s_y^2\\]"
+    "objectID": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression-1",
+    "href": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Matrix form of multiple linear regression",
+    "text": "Matrix form of multiple linear regression\nAs with simple linear regression, we have\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\nGeneralizing the derivations from SLR to \\(p &gt; 2\\), we have\n\\[\n\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\n\\]\nas before."
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#explained-variability-model",
-    "href": "slides/03-slr-model-assessment.html#explained-variability-model",
-    "title": "SLR: Model Assessment",
-    "section": "Explained variability (Model)",
-    "text": "Explained variability (Model)\n\n\\[\\text{Sum of Squares Model (SSM)} = \\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2\\]"
+    "objectID": "slides/05-mlr.html#model-fit-in-r",
+    "href": "slides/05-mlr.html#model-fit-in-r",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model fit in R",
+    "text": "Model fit in R\n\nint_fit &lt;- lm(interest_rate ~ debt_to_income + verified_income  + annual_income_th,\n              data = loan50)\n\ntidy(int_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n10.726\n1.507\n7.116\n0.000\n\n\ndebt_to_income\n0.671\n0.676\n0.993\n0.326\n\n\nverified_incomeSource Verified\n2.211\n1.399\n1.581\n0.121\n\n\nverified_incomeVerified\n6.880\n1.801\n3.820\n0.000\n\n\nannual_income_th\n-0.021\n0.011\n-1.804\n0.078"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#unexplained-variability-residuals",
-    "href": "slides/03-slr-model-assessment.html#unexplained-variability-residuals",
-    "title": "SLR: Model Assessment",
-    "section": "Unexplained variability (Residuals)",
-    "text": "Unexplained variability (Residuals)\n\n\\[\\text{Sum of Squares Residuals (SSR)} = \\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2\\]"
+    "objectID": "slides/05-mlr.html#model-equation",
+    "href": "slides/05-mlr.html#model-equation",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Model equation",
+    "text": "Model equation\n\\[\n\\begin{align}\\hat{\\text{interest_rate}} =  10.726 &+0.671 \\times \\text{debt_to_income}\\\\\n&+ 2.211 \\times \\text{source_verified}\\\\  \n&+ 6.880 \\times \\text{verified}\\\\\n& -0.021 \\times \\text{annual_income_th}\n\\end{align}\n\\]\n\n\n\n\n\n\nNote\n\n\nWe will talk about why there are only two terms in the model for verified_income soon!"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#sum-of-squares",
-    "href": "slides/03-slr-model-assessment.html#sum-of-squares",
-    "title": "SLR: Model Assessment",
-    "section": "Sum of Squares",
-    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]\n\n\nClick here to see why this equality holds."
+    "objectID": "slides/05-mlr.html#interpreting-hatbeta_j",
+    "href": "slides/05-mlr.html#interpreting-hatbeta_j",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)\n\nThe estimated coefficient \\(\\hat{\\beta}_j\\) is the expected change in the mean of \\(Y\\) when \\(X_j\\) increases by one unit, holding the values of all other predictor variables constant.\n\n\n\nExample: The estimated coefficient for debt_to_income is 0.671. This means for each point in an borrower’s debt to income ratio, the interest rate on the loan is expected to be greater by 0.671%, on average, holding annual income and income verification constant."
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#r2",
-    "href": "slides/03-slr-model-assessment.html#r2",
-    "title": "SLR: Model Assessment",
-    "section": "\\(R^2\\)",
-    "text": "\\(R^2\\)\nThe coefficient of determination \\(R^2\\) is the proportion of variation in the response, \\(Y\\), that is explained by the regression model\n\n\\[\\large{R^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST}}\\]\n\n\nWhat is the range of \\(R^2\\)? Does \\(R^2\\) have units?"
+    "objectID": "slides/05-mlr.html#interpreting-hatbeta_j-1",
+    "href": "slides/05-mlr.html#interpreting-hatbeta_j-1",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)\n\nThe estimated coefficient for annual_income_th is -0.021. Interpret this coefficient in the context of the data.\n\n\n\n\nWhy do we need to include a statement about holding all other predictors constant?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#interpreting-r2",
-    "href": "slides/03-slr-model-assessment.html#interpreting-r2",
-    "title": "SLR: Model Assessment",
-    "section": "Interpreting \\(R^2\\)",
-    "text": "Interpreting \\(R^2\\)\n\nQuestionSubmit\n\n\n\nSubmit your response to the following question on Ed Discussion.\n\nThe \\(R^2\\) of the model of life expectancy and income inequality is 70%. Which of the following is the correct interpretation of this value?\n\nA country’s income inequality correctly predicts 70% of its life expectancy.\n70% of the variability in life expectancy can be explained by income inequality.\n70% of the variability in income inequality can be explained by life expectancy.\n70% of the time a country’s life expectancy can be predicted by its income inequality.\n\n\n\n\n\n\n\n\n\n🔗 https://edstem.org/us/courses/70811/discussion/5978094"
+    "objectID": "slides/05-mlr.html#interpreting-hatbeta_0",
+    "href": "slides/05-mlr.html#interpreting-hatbeta_0",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Interpreting \\(\\hat{\\beta}_0\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n10.726\n1.507\n7.116\n0.000\n7.690\n13.762\n\n\ndebt_to_income\n0.671\n0.676\n0.993\n0.326\n-0.690\n2.033\n\n\nverified_incomeSource Verified\n2.211\n1.399\n1.581\n0.121\n-0.606\n5.028\n\n\nverified_incomeVerified\n6.880\n1.801\n3.820\n0.000\n3.253\n10.508\n\n\nannual_income_th\n-0.021\n0.011\n-1.804\n0.078\n-0.043\n0.002\n\n\n\n\n\n\n\n\nDescribe the subset of borrowers who are expected to get an interest rate of 10.726% based on our model. Is this interpretation meaningful? Why or why not?"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#augmented-data-frame",
-    "href": "slides/03-slr-model-assessment.html#augmented-data-frame",
-    "title": "SLR: Model Assessment",
-    "section": "Augmented data frame",
-    "text": "Augmented data frame\nUse the augment() function from the broom package to add columns for predicted values, residuals, and other observation-level model statistics\n\n\nlife_exp_aug &lt;- augment(life_exp_fit)\nlife_exp_aug\n\n# A tibble: 140 × 8\n   life_exp income_inequality .fitted .resid    .hat .sigma   .cooksd .std.resid\n      &lt;dbl&gt;             &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n 1     63.8              28.2    65.8 -1.96  0.0125    4.45 0.00125       -0.444\n 2     78.2              12.2    76.9  1.29  0.0116    4.45 0.000498       0.292\n 3     59.9              32.4    62.8 -2.93  0.0193    4.44 0.00437       -0.667\n 4     76.2              14      75.7  0.542 0.00972   4.45 0.0000739      0.123\n 5     74.6               8.6    79.4 -4.82  0.0168    4.43 0.0102        -1.10 \n 6     83                 8.3    79.6  3.37  0.0173    4.44 0.00515        0.766\n 7     81.3               7.4    80.3  1.04  0.0189    4.45 0.000540       0.237\n 8     72.5              10.1    78.4 -5.88  0.0144    4.42 0.0130        -1.33 \n 9     71.8              27.6    66.2  5.62  0.0118    4.43 0.00972        1.28 \n10     74                 6.5    80.9 -6.89  0.0207    4.41 0.0260        -1.57 \n# ℹ 130 more rows"
+    "objectID": "slides/05-mlr.html#prediction",
+    "href": "slides/05-mlr.html#prediction",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction",
+    "text": "Prediction\n\nWhat is the predicted interest rate for an borrower with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000?\n\n\n\n10.726 + 0.671 * 0.558 + 2.211 * 0 + 6.880 * 0 - 0.021 * 59\n\n[1] 9.861418\n\n\n\nThe predicted interest rate for an borrower with with an debt-to-income ratio of 0.558, whose income is not verified, and who has an annual income of $59,000 is 9.86%."
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#finding-rmse-in-r",
-    "href": "slides/03-slr-model-assessment.html#finding-rmse-in-r",
-    "title": "SLR: Model Assessment",
-    "section": "Finding RMSE in R",
-    "text": "Finding RMSE in R\nUse the rmse() function from the yardstick package (part of tidymodels)\n\nrmse(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard        4.40"
+    "objectID": "slides/05-mlr.html#prediction-in-r",
+    "href": "slides/05-mlr.html#prediction-in-r",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Prediction in R",
+    "text": "Prediction in R\nJust like with simple linear regression, we can use the predict() function in R to calculate the appropriate intervals for our predicted values:\n\nnew_borrower &lt;- tibble(\n  debt_to_income  = 0.558, \n  verified_income = \"Not Verified\", \n  annual_income_th = 59\n)\n\npredict(int_fit, new_borrower)\n\n       1 \n9.890888 \n\n\n\n\n\n\n\n\nNote\n\n\nDifference in predicted value due to rounding the coefficients on the previous slide."
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#finding-r2-in-r",
-    "href": "slides/03-slr-model-assessment.html#finding-r2-in-r",
-    "title": "SLR: Model Assessment",
-    "section": "Finding \\(R^2\\) in R",
-    "text": "Finding \\(R^2\\) in R\nUse the rsq() function from the yardstick package (part of tidymodels)\n\nrsq(life_exp_aug, truth = life_exp, estimate = .fitted)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rsq     standard       0.700\n\n\n\n\nAlternatively, use glance() to construct a single row summary of the model fit, including \\(R^2\\):\n\nglance(life_exp_fit)$r.squared\n\n[1] 0.7003831"
+    "objectID": "slides/05-mlr.html#cautions",
+    "href": "slides/05-mlr.html#cautions",
+    "title": "Multiple linear regression (MLR)",
+    "section": "Cautions",
+    "text": "Cautions\n\nDo not extrapolate! Because there are multiple predictor variables, there is the potential to extrapolate in many directions\nThe multiple regression model only shows association, not causality\n\nTo show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study"
   },
   {
-    "objectID": "slides/03-slr-model-assessment.html#recap",
-    "href": "slides/03-slr-model-assessment.html#recap",
-    "title": "SLR: Model Assessment",
+    "objectID": "slides/05-mlr.html#recap",
+    "href": "slides/05-mlr.html#recap",
+    "title": "Multiple linear regression (MLR)",
     "section": "Recap",
-    "text": "Recap\n\nUsed R to conduct exploratory data analysis and fit a model\nEvaluated models using RMSE and \\(R^2\\)\nUsed analysis of variance to partition variability in the response variable"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#next-class",
-    "href": "slides/03-slr-model-assessment.html#next-class",
-    "title": "SLR: Model Assessment",
-    "section": "Next class",
-    "text": "Next class\n\nMatrix representation of simple linear regression\n\nSee Lec 04: SLR - Matrix representation prepare"
-  },
-  {
-    "objectID": "slides/03-slr-model-assessment.html#references",
-    "href": "slides/03-slr-model-assessment.html#references",
-    "title": "SLR: Model Assessment",
-    "section": "References",
-    "text": "References\n\n\n\n\nZarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. “Health Care System Efficiency and Life Expectancy: A 140-Country Study.” Edited by Srinivas Goli. PLOS ONE 16 (7): e0253450. https://doi.org/10.1371/journal.pone.0253450."
+    "text": "Recap\n\nShowed exploratory data analysis for multiple linear regression\nUsed least squares to fit the regression line\nInterpreted the coefficients for quantitative predictors\nPredicted the response for new observations"
   },
   {
     "objectID": "links.html",

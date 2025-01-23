@@ -19,21 +19,19 @@ This lab is due on **Tuesday, January 28 at 11:59pm**. To be considered on time,
 -   Final `.pdf` file submitted on Gradescope
 :::
 
-# Introduction
+# Introduction 
 
-In this lab, you will use linear regression to predict a county’s median childcare cost for school-age children based on demographic and labor market factors. You will also start working with your lab teams, write a team agreement, and be introduced to using GitHub for collaboration.
-
-<!--# Update - do I want to use a different data set?-->
+In today’s lab you will analyze data from over 1,000 different coffees to explore the relationship between a coffee’s aroma, flavor, and overall quality using linear regression.
 
 ## Learning goals
 
 By the end of the lab, you will...
 
--   Be familiar with the workflow using RStudio and GitHub
--   Gain practice writing a reproducible report using Quarto
--   Practice version control using GitHub
--   Be able to produce visualizations and summary statistics to describe distributions
--   Be able to fit, interpret, and evaluate simple linear regression models
+-   Continue developing a reproducible workflow using RStudio and GitHub
+-   Produce visualizations and summary statistics to describe distributions
+-   Fit, interpret, and evaluate linear regression models
+-   Use the matrix representation of the linear regression model to estimate coefficients
+-   Explore properties of the linear regression model
 
 # Getting Started
 
