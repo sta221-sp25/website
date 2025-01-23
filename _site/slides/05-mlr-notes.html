@@ -595,8 +595,8 @@ window.Quarto = {
 </section>
 <section id="multiple-linear-regression-mlr" class="level1">
 <h1>Multiple linear regression (MLR)</h1>
-<section id="multiple-linear-regression-mlr-1" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="multiple-linear-regression-mlr-1">Multiple linear regression (MLR)</h2>
+<section id="multiple-linear-regression-mlr-1" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-linear-regression-mlr-1">Multiple linear regression (MLR)</h2>
 <p>Based on the analysis goals, we will use a <strong>multiple linear regression</strong> model of the following form</p>
 <p><span class="math display">\[
 \begin{aligned}\text{interest_rate} ~ =
@@ -685,12 +685,13 @@ y_n
 <p>. . .</p>
 <p>Generalizing the derivations from SLR to <span class="math inline">\(p &gt; 2\)</span>, we have</p>
 <p><span class="math display">\[
-\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}
+\hat{\boldsymbol{\beta}} = (\mathbf{X}^
+\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}
 \]</span></p>
 <p>as before.</p>
 </section>
-<section id="model-fit-in-r" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="model-fit-in-r">Model fit in R</h2>
+<section id="model-fit-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="model-fit-in-r">Model fit in R</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>int_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_income <span class="sc">+</span> verified_income  <span class="sc">+</span> annual_income_th,</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> loan50)</span>

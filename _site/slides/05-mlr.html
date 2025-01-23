@@ -328,7 +328,7 @@ Prof.&nbsp;Maria Tackett
 <h1>Multiple linear regression (MLR)</h1>
 
 </section>
-<section id="multiple-linear-regression-mlr-1" class="slide level2 smaller">
+<section id="multiple-linear-regression-mlr-1" class="slide level2">
 <h2>Multiple linear regression (MLR)</h2>
 <p>Based on the analysis goals, we will use a <strong>multiple linear regression</strong> model of the following form</p>
 <p><span class="math display">\[
@@ -421,12 +421,13 @@ y_n
 <div class="fragment">
 <p>Generalizing the derivations from SLR to <span class="math inline">\(p &gt; 2\)</span>, we have</p>
 <p><span class="math display">\[
-\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}
+\hat{\boldsymbol{\beta}} = (\mathbf{X}^
+\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}
 \]</span></p>
 <p>as before.</p>
 </div>
 </section>
-<section id="model-fit-in-r" class="slide level2 smaller">
+<section id="model-fit-in-r" class="slide level2">
 <h2>Model fit in R</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>int_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_income <span class="sc">+</span> verified_income  <span class="sc">+</span> annual_income_th,</span>

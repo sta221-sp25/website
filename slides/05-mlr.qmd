@@ -193,7 +193,7 @@ Why do we want to use a single model versus 3 separate simple linear regression 
 
 # Multiple linear regression (MLR)
 
-## Multiple linear regression (MLR) {.smaller}
+## Multiple linear regression (MLR)
 
 Based on the analysis goals, we will use a **multiple linear regression** model of the following form
 
@@ -301,12 +301,13 @@ $$
 Generalizing the derivations from SLR to $p > 2$, we have
 
 $$
-\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}
+\hat{\boldsymbol{\beta}} = (\mathbf{X}^
+ \mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}
 $$
 
 as before.
 
-## Model fit in R {.smaller}
+## Model fit in R
 
 ```{r}
 #| echo: true

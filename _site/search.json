@@ -3643,7 +3643,7 @@
     "href": "slides/05-mlr-notes.html#matrix-form-of-multiple-linear-regression-1",
     "title": "Multiple linear regression (MLR)",
     "section": "Matrix form of multiple linear regression",
-    "text": "Matrix form of multiple linear regression\nAs with simple linear regression, we have\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n. . .\nGeneralizing the derivations from SLR to \\(p &gt; 2\\), we have\n\\[\n\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\n\\]\nas before."
+    "text": "Matrix form of multiple linear regression\nAs with simple linear regression, we have\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n. . .\nGeneralizing the derivations from SLR to \\(p &gt; 2\\), we have\n\\[\n\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\n\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\n\\]\nas before."
   },
   {
     "objectID": "slides/05-mlr-notes.html#model-fit-in-r",
@@ -3797,7 +3797,7 @@
     "href": "slides/05-mlr.html#matrix-form-of-multiple-linear-regression-1",
     "title": "Multiple linear regression (MLR)",
     "section": "Matrix form of multiple linear regression",
-    "text": "Matrix form of multiple linear regression\nAs with simple linear regression, we have\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\nGeneralizing the derivations from SLR to \\(p &gt; 2\\), we have\n\\[\n\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\n\\]\nas before."
+    "text": "Matrix form of multiple linear regression\nAs with simple linear regression, we have\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\nGeneralizing the derivations from SLR to \\(p &gt; 2\\), we have\n\\[\n\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\n\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\n\\]\nas before."
   },
   {
     "objectID": "slides/05-mlr.html#model-fit-in-r",
