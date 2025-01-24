@@ -2038,6 +2038,13 @@
     "text": "Writing LaTex\nDisplay: Your mathematics will display outside the line of text\n\nUse a $$ to start and end your LaTex syntax. You can also use the menu: Insert -&gt; LaTex Math -&gt; Display Math.\nExample: The text The estimated regression equation is $$\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}$$ produces\nThe estimated regression equation is\n\n\\[\n\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}\n\\]\n\n\n\n\n\n\nTip\n\n\nClick here for a quick reference of LaTex code."
   },
   {
+    "objectID": "slides/lab-02.html#describing-bivariate-relationships",
+    "href": "slides/lab-02.html#describing-bivariate-relationships",
+    "title": "Lab 02",
+    "section": "Describing bivariate relationships",
+    "text": "Describing bivariate relationships\nDescribe the relationship between the price and width of Ikea sofas, armchairs, and bookcases/shelving."
+  },
+  {
     "objectID": "slides/lab-02.html#lab-02-linear-regression",
     "href": "slides/lab-02.html#lab-02-linear-regression",
     "title": "Lab 02",

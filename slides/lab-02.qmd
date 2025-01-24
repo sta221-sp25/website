@@ -76,6 +76,39 @@ $$
 [Click here](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) for a quick reference of LaTex code.
 :::
 
+## Describing bivariate relationships 
+
+Describe the relationship between the price and width of Ikea sofas, armchairs, and bookcases/shelving.
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| out-width: 60%
+
+library(tidyverse)
+library(viridis)
+ikea <- read_csv("data/ikea.csv")
+
+ikea_sub <- ikea |>
+    filter(category %in% c( "Sofas & armchairs",
+                       "Bookcases & shelving units"))
+
+ikea_sub <- ikea_sub |>
+  drop_na(width, price_usd)
+
+ggplot(data = ikea_sub, aes(x = width, y = price_usd, color = category)) +
+  geom_point() +
+    theme(legend.position="bottom") +
+    labs(x = "Width (cm)",
+       y = "Price (USD)", 
+       title = "Relationship Between Width and Price of Select Items in Ikea",
+        subtitle = "based on category",
+       color = "Category") +
+  scale_color_viridis_d(end = 0.9) +
+  theme_bw()
+  
+```
+
 ## Lab 02: Linear regression
 
 Today’s lab focuses on using simple and multiple linear regression to understand variability in coffee quality ratings.
