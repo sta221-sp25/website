@@ -58,7 +58,7 @@ You are welcome to but <u>not</u> required to write math proofs using LaTex.
 
     The linear regression model is $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$
 
-## Writing LaTex  {.midi}
+## Writing LaTex {.midi}
 
 **Display:** Your mathematics will display outside the line of text
 
