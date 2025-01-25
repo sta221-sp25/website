@@ -2,6 +2,7 @@
 title: "HW 01: Simple linear regression"
 subtitle: Ice duration and air temperature in Madison, WI
 bibliography: references.bib
+suppress-bibliography: true
 ---
 
 ::: callout-important
