@@ -89,68 +89,72 @@
     <lastmod>2025-01-09T03:40:33.960Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec05.html</loc>
-    <lastmod>2025-01-14T14:26:30.008Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec07.html</loc>
+    <lastmod>2025-01-27T15:39:33.583Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/hw/stats-experience.html</loc>
-    <lastmod>2025-01-02T18:35:41.701Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/hw/hw-03.html</loc>
-    <lastmod>2025-01-02T18:35:18.272Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/hw/hw-04.html</loc>
-    <lastmod>2025-01-02T18:35:32.625Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-06.html</loc>
-    <lastmod>2025-01-02T18:40:41.679Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-05.html</loc>
-    <lastmod>2025-01-02T18:40:41.614Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-00.html</loc>
-    <lastmod>2025-01-06T19:14:47.155Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-03.html</loc>
-    <lastmod>2025-01-02T18:40:41.490Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-02.html</loc>
-    <lastmod>2025-01-24T02:03:00.803Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-01.html</loc>
-    <lastmod>2025-01-22T03:55:47.202Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-04.html</loc>
-    <lastmod>2025-01-02T18:40:41.553Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-07.html</loc>
-    <lastmod>2025-01-02T18:34:30.968Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/overview.html</loc>
-    <lastmod>2025-01-08T16:17:52.673Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/hw/hw-01.html</loc>
-    <lastmod>2025-01-25T12:09:53.330Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec04.html</loc>
+    <lastmod>2025-01-14T14:25:45.030Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/hw/hw-02.html</loc>
     <lastmod>2025-01-02T18:35:03.235Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec04.html</loc>
-    <lastmod>2025-01-14T14:25:45.030Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-01.html</loc>
+    <lastmod>2025-01-25T12:09:53.330Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/overview.html</loc>
+    <lastmod>2025-01-08T16:17:52.673Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-07.html</loc>
+    <lastmod>2025-01-02T18:34:30.968Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-04.html</loc>
+    <lastmod>2025-01-02T18:40:41.553Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-01.html</loc>
+    <lastmod>2025-01-22T03:55:47.202Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-02.html</loc>
+    <lastmod>2025-01-24T02:03:00.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-03.html</loc>
+    <lastmod>2025-01-02T18:40:41.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-00.html</loc>
+    <lastmod>2025-01-06T19:14:47.155Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-05.html</loc>
+    <lastmod>2025-01-02T18:40:41.614Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-06.html</loc>
+    <lastmod>2025-01-02T18:40:41.679Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-04.html</loc>
+    <lastmod>2025-01-02T18:35:32.625Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-03.html</loc>
+    <lastmod>2025-01-02T18:35:18.272Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/hw/stats-experience.html</loc>
+    <lastmod>2025-01-02T18:35:41.701Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec05.html</loc>
+    <lastmod>2025-01-14T14:26:30.008Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec02.html</loc>

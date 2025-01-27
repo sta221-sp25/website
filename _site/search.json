@@ -2317,241 +2317,256 @@
     "text": "📖 Read Model assessment\nFor computing introduction / review\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
   },
   {
-    "objectID": "prepare/prepare-lec05.html",
-    "href": "prepare/prepare-lec05.html",
-    "title": "Prepare for Lecture 05: SLR - Matrix representation cont’d",
+    "objectID": "prepare/prepare-lec07.html",
+    "href": "prepare/prepare-lec07.html",
+    "title": "Prepare for Lecture 05: Inference for regression",
     "section": "",
-    "text": "Review linear algebra concepts (as needed)\n\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+    "text": "📖 Read Inference for Simple Linear Regression:\n\nSections 5.1 - 5.3\nSection 5.6\nSection 5.8\nSection 5.9"
   },
   {
-    "objectID": "hw/stats-experience.html",
-    "href": "hw/stats-experience.html",
-    "title": "Statistics Experience",
+    "objectID": "prepare/prepare-lec04.html",
+    "href": "prepare/prepare-lec04.html",
+    "title": "Prepare for Lecture 04: SLR - Matrix representation",
     "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Homework",
-      "Statistics experience"
-    ]
+    "text": "Review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
   },
   {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03",
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01: Simple linear regression",
     "section": "",
-    "text": "To be posted.",
+    "text": "Due date\n\n\n\nThis assignment is due on Thursday, January 30 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Homework",
-      "HW 04"
+      "HW 01"
     ]
   },
   {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
-    "section": "",
-    "text": "To be posted.",
+    "objectID": "hw/hw-01.html#instructions",
+    "href": "hw/hw-01.html#instructions",
+    "title": "HW 01: Simple linear regression",
+    "section": "Instructions",
+    "text": "Instructions\nThe conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.\n\nYou may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.",
     "crumbs": [
-      "Labs",
-      "Lab 05"
+      "Homework",
+      "HW 01"
     ]
   },
   {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Getting Started",
-    "section": "",
-    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Getting Started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Getting Started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Getting Started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#getting-started",
-    "href": "labs/lab-00.html#getting-started",
-    "title": "Lab 00: Getting Started",
-    "section": "Getting started",
-    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/HJQpdTm_\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#update-the-quarto-document",
-    "href": "labs/lab-00.html#update-the-quarto-document",
-    "title": "Lab 00: Getting Started",
-    "section": "Update the Quarto document",
-    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "title": "Lab 00: Getting Started",
-    "section": "Commit and push changes to GitHub",
-    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!",
-    "crumbs": [
-      "Labs",
-      "Lab 00"
-    ]
-  },
-  {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 03"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02: Linear regression",
-    "section": "",
-    "text": "Due date\n\n\n\nThis lab is due on Tuesday, January 28 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html#learning-goals",
-    "href": "labs/lab-02.html#learning-goals",
-    "title": "Lab 02: Linear regression",
-    "section": "Learning goals",
-    "text": "Learning goals\nBy the end of the lab, you will…\n\nContinue developing a reproducible workflow using RStudio and GitHub\nProduce visualizations and summary statistics to describe distributions\nFit, interpret, and evaluate linear regression models\nUse the matrix representation of the linear regression model to estimate coefficients\nExplore properties of the linear regression model",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html#exercise-1",
-    "href": "labs/lab-02.html#exercise-1",
-    "title": "Lab 02: Linear regression",
+    "objectID": "hw/hw-01.html#exercise-1",
+    "href": "hw/hw-01.html#exercise-1",
+    "title": "HW 01: Simple linear regression",
     "section": "Exercise 1",
-    "text": "Exercise 1\nWe begin with univariate exploratory data analysis.\n\nVisualize the distribution of the response variable total_cup_points and calculate summary statistics.\nComment on the features of the distribution of this variable by describing the shape, center, spread, and presence of potential outliers.\nBased on this distribution, do you think the data set is representative of all coffee available to consumers? Briefly explain.\n\n\n\n\n\n\n\nTip\n\n\n\nMake sure your data visualizations have clear and informative titles and axis labels.",
+    "text": "Exercise 1\na. Show that the hat matrix \\(\\mathbf{H}\\) is symmetric \\((\\mathbf{H}^\\mathsf{T} = \\mathbf{H})\\) and idempotent \\((\\mathbf{H}^2 = \\mathbf{H})\\).\nb. Show that \\((\\mathbf{I} - \\mathbf{H})\\) is symmetric and idempotent.",
     "crumbs": [
-      "Labs",
-      "Lab 02"
+      "Homework",
+      "HW 01"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-2",
-    "href": "labs/lab-02.html#exercise-2",
-    "title": "Lab 02: Linear regression",
+    "objectID": "hw/hw-01.html#exercise-2",
+    "href": "hw/hw-01.html#exercise-2",
+    "title": "HW 01: Simple linear regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nNow let’s consider the relationship between how good a coffee smells and its overall quality.\n\nVisualize the relationship between aroma and total_cup_points.\nDoes there appear to be a relationship between a coffee’s aroma and its overall quality? If so, what is the shape and direction of the relationship?",
+    "text": "Exercise 2\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a symmetric \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\).\nShow that the gradient of \\(\\boldsymbol{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n(Property 2 from class)",
     "crumbs": [
-      "Labs",
-      "Lab 02"
+      "Homework",
+      "HW 01"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-3",
-    "href": "labs/lab-02.html#exercise-3",
-    "title": "Lab 02: Linear regression",
+    "objectID": "hw/hw-01.html#exercise-3",
+    "href": "hw/hw-01.html#exercise-3",
+    "title": "HW 01: Simple linear regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nWe have seen the mathematical formulation for simple linear regression in class. In particular, given a response variable \\(Y\\) and predictor variable \\(X\\), the simple linear regression model is \\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\nfor some unknown regression coefficients for intercept and slope\\((\\beta_0, \\beta_1)\\) and error terms \\(\\epsilon\\) that are centered at 0 and have variance \\(\\sigma^2_{\\epsilon}\\) . This means that the expected value of each observation lies on the regression line\n\\[ E(Y|X) = \\beta_0 + \\beta_1 X\\]\nAnswer the following questions about simple linear regression. Your response should be in general terms about regression, not be specific to the coffee data.\n\nWhat does \\(E(Y|X) = \\beta_0 + \\beta_1X\\) mean in terms of a given value of \\(X\\)?\nWhat are the interpretations of the coefficients \\(\\beta_0\\) and \\(\\beta_1\\) in terms of the expected value of \\(Y\\)?\n\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
+    "text": "Exercise 3\nIn class we used the sum of squared errors, \\(\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon}\\) , to estimate the regression coefficients, \\(\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{Y}\\) . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of \\(\\boldsymbol{\\beta}\\) that minimizes the sum of\nIf the Hessian matrix \\(\\nabla_{\\boldsymbol{\\beta}}^2 \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon}\\) is positive definite, then we know we have found the \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes the sum of squared errors, i.e., the least squares estimator.\nShow that \\(\\nabla_{\\boldsymbol{\\beta}}^2 \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} \\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite.",
     "crumbs": [
-      "Labs",
-      "Lab 02"
+      "Homework",
+      "HW 01"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-4",
-    "href": "labs/lab-02.html#exercise-4",
-    "title": "Lab 02: Linear regression",
+    "objectID": "hw/hw-01.html#exercise-4",
+    "href": "hw/hw-01.html#exercise-4",
+    "title": "HW 01: Simple linear regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nFit the model of the relationship between aroma and total_cup_points. Neatly display the output using 3 digits.\nInterpret the slope in the context of the data.\nWhat is the expected total_cup_points for coffees that receive the worst aroma score of 0? Is this a reliable estimate of the total_cup_points for these coffees? Briefly explain why or why not.",
+    "text": "Exercise 4\nProve that the maximum value of \\(R^2\\) must be less than 1 if the data set contains observations such that there are different observed values of the response for the same value of the predictor (e.g., the data set contains observations \\((x_i, y_i)\\) and \\((x_j, y_j)\\) such that \\(x_i = x_j\\) and \\(y_i \\neq y_j\\) ).",
     "crumbs": [
-      "Labs",
-      "Lab 02"
+      "Homework",
+      "HW 01"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-5",
-    "href": "labs/lab-02.html#exercise-5",
-    "title": "Lab 02: Linear regression",
+    "objectID": "hw/hw-01.html#exercise-5",
+    "href": "hw/hw-01.html#exercise-5",
+    "title": "HW 01: Simple linear regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\nNow let’s add flavor to the model, so we will use both flavor and aroma to understand variability in the overall quality of coffees. Use this model for the remainder of the lab.\nIn class we have seen how vectors and matrices can be used to represent the linear regression model:\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon}\n\\]\n\nState the dimensions of \\(\\mathbf{y}, \\mathbf{X}, \\boldsymbol{\\beta}, \\boldsymbol{\\epsilon}\\) for this model. Your answer should have exact values given the coffee data set.\nCompute the estimated regression coefficients using the matrix form of the model. Show the code used to get the answer.\n\n\n\n\n\n\n\nTip\n\n\n\nYou can use the model.matrix() function to get the design matrix. The code takes the general form:\n\nmodel.matrix(y ~ x, data = my_data)\n\nSee Lab 01 for other matrix operations in R.\n\n\n\nCheck your results from part (b) by using the lm function to fit the model. Neatly display your results using 3 digits.\nWrite the estimated regression equation.\n\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 4 - 5”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
+    "text": "Exercise 5\nShow that the sum of squared residuals (SSR) can be written as the following:\n\\[\n\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\n\\]",
     "crumbs": [
-      "Labs",
-      "Lab 02"
+      "Homework",
+      "HW 01"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-6",
-    "href": "labs/lab-02.html#exercise-6",
-    "title": "Lab 02: Linear regression",
+    "objectID": "hw/hw-01.html#instructions-1",
+    "href": "hw/hw-01.html#instructions-1",
+    "title": "HW 01: Simple linear regression",
+    "section": "Instructions",
+    "text": "Instructions\nThe applied exercises are focused on applying the concepts to analyze data.\nAll work for the applied exercises must be typed in your Quarto document following a reproducible workflow.\nWrite all narrative using complete sentences and include informative axis labels / titles on visualizations.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#data",
+    "href": "hw/hw-01.html#data",
+    "title": "HW 01: Simple linear regression",
+    "section": "Data",
+    "text": "Data\nThe datasets wi-icecover.csv and wi-air-temperature.csv contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota (both in Madison, Wisconsin) for days in 1886 through 2019. The data were obtained from the ntl_icecover and ntl_airtemp data frames in the lterdatasampler R package. They were originally collected by the US Long Term Ecological Research program (LTER) Network.\n\nicecover &lt;- read_csv(\"data/wi-icecover.csv\")\nairtemp &lt;- read_csv(\"data/wi-air-temperature.csv\")\n\nThe analysis will focus on the following variables:\n\nyear: year of observation\nlakeid: lake name\nice_duration: number of days between the freeze and ice breakup dates of each lake\nair_temp_avg: yearly average air temperature in Madison, WI (degrees Celsius)",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#analysis-goal",
+    "href": "hw/hw-01.html#analysis-goal",
+    "title": "HW 01: Simple linear regression",
+    "section": "Analysis goal",
+    "text": "Analysis goal\nThe goal of this analysis is to use linear regression explain variability in ice duration for lakes in Madison, WI based on air temperature. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these two factors to better understand the changing climate.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-6",
+    "href": "hw/hw-01.html#exercise-6",
+    "title": "HW 01: Simple linear regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nThe coefficient for aroma for the model fit in Exercise 5 is different than the coefficient from the model fit in Exercise 4. Briefly explain why these coefficients are different.\nWould you willingly drink a coffee represented by the intercept of the model in Exercise 5? Briefly explain why or why not.",
+    "text": "Exercise 6\nLet’s start by looking at the response variable ice_duration.\n\nVisualize the distribution of ice duration versus year with separate lines for each lake.\nThere are separate yearly measurements for each lake in the icecover data frame. In this analysis, we will combine the data from both lakes and use the average ice duration each year.\nComment on the analysis choice to use the average per year rather than the individual lake measurements. Some things to consider in your comments: Does the average accurately reflects the ice duration for these lakes in a given year year? Will there be information lost? How might that impact (or not) the analysis conclusions? Etc.\n\n\n\n\n\n\n\nTip\n\n\n\nSee the ggplot2 reference for example code and plots.",
     "crumbs": [
-      "Labs",
-      "Lab 02"
+      "Homework",
+      "HW 01"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-7",
-    "href": "labs/lab-02.html#exercise-7",
-    "title": "Lab 02: Linear regression",
+    "objectID": "hw/hw-01.html#exercise-7",
+    "href": "hw/hw-01.html#exercise-7",
+    "title": "HW 01: Simple linear regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nCompute \\(\\mathbf{H}\\), the hat matrix corresponding to the model from Exercise 5. Then use \\(\\mathbf{H}\\) to compute the residuals for this model. Do not print out \\(\\mathbf{H}\\) or the residuals.\nCompute the mean and standard deviation of the residuals.\nRecall root mean square error RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}}\n\\]\nSimilar to other statistics we’ve seen thus far, we can write the RMSE in matrix form. Compute RMSE for the model from Exercise 5 using matrix form. Show the code used to get the answer.\nHow do the standard deviation of the residuals and RMSE compare?\n\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 02!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that all documents are updated in your repo on GitHub. The PDF document you submit to Gradescope should be identical to the one in your GitHub repo.",
+    "text": "Exercise 7\nNext, let’s combine the ice duration and air temperature data into a single analysis data frame.\n\nFill in the code below to create a new data frame, icecover_avg, of the average ice duration by year.\nThen join icecover_avg and airtemp to create a new data frame. The new data frame should have 134 observations.\n\nicecover_avg &lt;- icecover |&gt;\n  group_by(_____) |&gt;\n  summarise(_____) |&gt;\n  ungroup()\n\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will use the new data frame with average ice duration and average air temperature for the remainder of the assignment.\n\n\n\nVisualize the relationship between the air temperature and average ice duration. Do you think a linear model is a reasonable choice to model the relationship between the two variables? Briefly explain.\n\n\nNow is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-8",
+    "href": "hw/hw-01.html#exercise-8",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nWe will fit a model using the average air temperature to explain variability in ice duration. The model takes the form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\nState the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\) for this analysis. Your answer should have exact values given this data set.\nEstimate the regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) in R using the matrix representation. Show the code used to get the answer.\nCheck your results from part (b) by using the lm function to fit the model. Neatly display your results using 3 digits.",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-9",
+    "href": "hw/hw-01.html#exercise-9",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nCalculate \\(R^2\\) for the model in the previous exercise and interpret it in the context of the data.\nCalculate \\(RMSE\\) for the model from the previous exercise and interpret it in the context of the data.\nComment on the model fit based on \\(R^2\\) and \\(RMSE\\).",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#exercise-10",
+    "href": "hw/hw-01.html#exercise-10",
+    "title": "HW 01: Simple linear regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\na. Interpret the slope in the context of the data.\nb. The average air temperature in 2019, the most recent year in the data set, was 7.925 degrees Celsius. What was the predicted ice duration for 2019? What is the residual?",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html#footnotes",
+    "href": "hw/hw-01.html#footnotes",
+    "title": "HW 01: Simple linear regression",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nExercise 4 is adapted from Montgomery, Peck, and Vining (2021) .↩︎",
+    "crumbs": [
+      "Homework",
+      "HW 01"
+    ]
+  },
+  {
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "",
+    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 221 - Regression Analysis: Theory and Applications",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\nName\nRole\n\n\nKat Husar\nHead TA\nLab 01L leader\n\n\nKelly Huang\nClassroom TA\n\n\nJanice Kim\nClassroom TA\n\n\nCathy Lee\nLab 02L leader\n\n\nAlan Wang\nLab 01L helper\n\n\n\nOffice hours times and locations on Canvas.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "labs/lab-07.html",
+    "href": "labs/lab-07.html",
+    "title": "Lab 07",
+    "section": "",
+    "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 07"
+    ]
+  },
+  {
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 04"
     ]
   },
   {
@@ -2786,250 +2801,242 @@
     ]
   },
   {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02: Linear regression",
     "section": "",
-    "text": "To be posted.",
+    "text": "Due date\n\n\n\nThis lab is due on Tuesday, January 28 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "labs/lab-07.html",
-    "href": "labs/lab-07.html",
-    "title": "Lab 07",
-    "section": "",
-    "text": "To be posted.",
+    "objectID": "labs/lab-02.html#learning-goals",
+    "href": "labs/lab-02.html#learning-goals",
+    "title": "Lab 02: Linear regression",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the lab, you will…\n\nContinue developing a reproducible workflow using RStudio and GitHub\nProduce visualizations and summary statistics to describe distributions\nFit, interpret, and evaluate linear regression models\nUse the matrix representation of the linear regression model to estimate coefficients\nExplore properties of the linear regression model",
     "crumbs": [
       "Labs",
-      "Lab 07"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "In STA 221, students will learn how linear and logistic regression models are used to explore multivariable relationships, apply these methods to answer relevant and engaging questions using a data-driven approach, and learn the mathematical underpinnings of the models. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, analysis of variance, model diagnostics, and model selection. Regression parameter estimation via maximum likelihood least squares will also be discussed. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields.\n\n\nEither any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "",
-    "text": "Either any STA 100-level course or STA 230, 231, or 240L and MATH 216, 218, or 221. The recommended co-requisite is STA 230, 231, or 240L. Interested students with different backgrounds should seek instructor consent.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 221 - Regression Analysis: Theory and Applications",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\nName\nRole\n\n\nKat Husar\nHead TA\nLab 01L leader\n\n\nKelly Huang\nClassroom TA\n\n\nJanice Kim\nClassroom TA\n\n\nCathy Lee\nLab 02L leader\n\n\nAlan Wang\nLab 01L helper\n\n\n\nOffice hours times and locations on Canvas.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01: Simple linear regression",
-    "section": "",
-    "text": "Due date\n\n\n\nThis assignment is due on Thursday, January 30 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#instructions",
-    "href": "hw/hw-01.html#instructions",
-    "title": "HW 01: Simple linear regression",
-    "section": "Instructions",
-    "text": "Instructions\nThe conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.\n\nYou may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#exercise-1",
-    "href": "hw/hw-01.html#exercise-1",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "labs/lab-02.html#exercise-1",
+    "href": "labs/lab-02.html#exercise-1",
+    "title": "Lab 02: Linear regression",
     "section": "Exercise 1",
-    "text": "Exercise 1\na. Show that the hat matrix \\(\\mathbf{H}\\) is symmetric \\((\\mathbf{H}^\\mathsf{T} = \\mathbf{H})\\) and idempotent \\((\\mathbf{H}^2 = \\mathbf{H})\\).\nb. Show that \\((\\mathbf{I} - \\mathbf{H})\\) is symmetric and idempotent.",
+    "text": "Exercise 1\nWe begin with univariate exploratory data analysis.\n\nVisualize the distribution of the response variable total_cup_points and calculate summary statistics.\nComment on the features of the distribution of this variable by describing the shape, center, spread, and presence of potential outliers.\nBased on this distribution, do you think the data set is representative of all coffee available to consumers? Briefly explain.\n\n\n\n\n\n\n\nTip\n\n\n\nMake sure your data visualizations have clear and informative titles and axis labels.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 02"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-2",
-    "href": "hw/hw-01.html#exercise-2",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "labs/lab-02.html#exercise-2",
+    "href": "labs/lab-02.html#exercise-2",
+    "title": "Lab 02: Linear regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a symmetric \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\).\nShow that the gradient of \\(\\boldsymbol{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n(Property 2 from class)",
+    "text": "Exercise 2\nNow let’s consider the relationship between how good a coffee smells and its overall quality.\n\nVisualize the relationship between aroma and total_cup_points.\nDoes there appear to be a relationship between a coffee’s aroma and its overall quality? If so, what is the shape and direction of the relationship?",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 02"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-3",
-    "href": "hw/hw-01.html#exercise-3",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "labs/lab-02.html#exercise-3",
+    "href": "labs/lab-02.html#exercise-3",
+    "title": "Lab 02: Linear regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nIn class we used the sum of squared errors, \\(\\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon}\\) , to estimate the regression coefficients, \\(\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{X}^\\mathsf{T}\\mathbf{Y}\\) . To show this is the least squares estimate, we now need to show that we have, in fact, found the estimate of \\(\\boldsymbol{\\beta}\\) that minimizes the sum of\nIf the Hessian matrix \\(\\nabla_{\\boldsymbol{\\beta}}^2 \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon}\\) is positive definite, then we know we have found the \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes the sum of squared errors, i.e., the least squares estimator.\nShow that \\(\\nabla_{\\boldsymbol{\\beta}}^2 \\boldsymbol{\\epsilon}^\\mathsf{T}\\boldsymbol{\\epsilon} \\propto \\mathbf{X}^\\mathsf{T}\\mathbf{X}\\) is positive definite.",
+    "text": "Exercise 3\nWe have seen the mathematical formulation for simple linear regression in class. In particular, given a response variable \\(Y\\) and predictor variable \\(X\\), the simple linear regression model is \\[Y = \\beta_0 + \\beta_1 X + \\epsilon\\]\nfor some unknown regression coefficients for intercept and slope\\((\\beta_0, \\beta_1)\\) and error terms \\(\\epsilon\\) that are centered at 0 and have variance \\(\\sigma^2_{\\epsilon}\\) . This means that the expected value of each observation lies on the regression line\n\\[ E(Y|X) = \\beta_0 + \\beta_1 X\\]\nAnswer the following questions about simple linear regression. Your response should be in general terms about regression, not be specific to the coffee data.\n\nWhat does \\(E(Y|X) = \\beta_0 + \\beta_1X\\) mean in terms of a given value of \\(X\\)?\nWhat are the interpretations of the coefficients \\(\\beta_0\\) and \\(\\beta_1\\) in terms of the expected value of \\(Y\\)?\n\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 02"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-4",
-    "href": "hw/hw-01.html#exercise-4",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "labs/lab-02.html#exercise-4",
+    "href": "labs/lab-02.html#exercise-4",
+    "title": "Lab 02: Linear regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\nProve that the maximum value of \\(R^2\\) must be less than 1 if the data set contains observations such that there are different observed values of the response for the same value of the predictor (e.g., the data set contains observations \\((x_i, y_i)\\) and \\((x_j, y_j)\\) such that \\(x_i = x_j\\) and \\(y_i \\neq y_j\\) ).",
+    "text": "Exercise 4\n\nFit the model of the relationship between aroma and total_cup_points. Neatly display the output using 3 digits.\nInterpret the slope in the context of the data.\nWhat is the expected total_cup_points for coffees that receive the worst aroma score of 0? Is this a reliable estimate of the total_cup_points for these coffees? Briefly explain why or why not.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 02"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-5",
-    "href": "hw/hw-01.html#exercise-5",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "labs/lab-02.html#exercise-5",
+    "href": "labs/lab-02.html#exercise-5",
+    "title": "Lab 02: Linear regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\nShow that the sum of squared residuals (SSR) can be written as the following:\n\\[\n\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\n\\]",
+    "text": "Exercise 5\nNow let’s add flavor to the model, so we will use both flavor and aroma to understand variability in the overall quality of coffees. Use this model for the remainder of the lab.\nIn class we have seen how vectors and matrices can be used to represent the linear regression model:\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon}\n\\]\n\nState the dimensions of \\(\\mathbf{y}, \\mathbf{X}, \\boldsymbol{\\beta}, \\boldsymbol{\\epsilon}\\) for this model. Your answer should have exact values given the coffee data set.\nCompute the estimated regression coefficients using the matrix form of the model. Show the code used to get the answer.\n\n\n\n\n\n\n\nTip\n\n\n\nYou can use the model.matrix() function to get the design matrix. The code takes the general form:\n\nmodel.matrix(y ~ x, data = my_data)\n\nSee Lab 01 for other matrix operations in R.\n\n\n\nCheck your results from part (b) by using the lm function to fit the model. Neatly display your results using 3 digits.\nWrite the estimated regression equation.\n\n\nThis is a good place to render, commit, and push changes to your lab-01 repo on GitHub. Write an informative commit message (e.g., “Completed exercises 4 - 5”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 02"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#instructions-1",
-    "href": "hw/hw-01.html#instructions-1",
-    "title": "HW 01: Simple linear regression",
-    "section": "Instructions",
-    "text": "Instructions\nThe applied exercises are focused on applying the concepts to analyze data.\nAll work for the applied exercises must be typed in your Quarto document following a reproducible workflow.\nWrite all narrative using complete sentences and include informative axis labels / titles on visualizations.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#data",
-    "href": "hw/hw-01.html#data",
-    "title": "HW 01: Simple linear regression",
-    "section": "Data",
-    "text": "Data\nThe datasets wi-icecover.csv and wi-air-temperature.csv contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota (both in Madison, Wisconsin) for days in 1886 through 2019. The data were obtained from the ntl_icecover and ntl_airtemp data frames in the lterdatasampler R package. They were originally collected by the US Long Term Ecological Research program (LTER) Network.\n\nicecover &lt;- read_csv(\"data/wi-icecover.csv\")\nairtemp &lt;- read_csv(\"data/wi-air-temperature.csv\")\n\nThe analysis will focus on the following variables:\n\nyear: year of observation\nlakeid: lake name\nice_duration: number of days between the freeze and ice breakup dates of each lake\nair_temp_avg: yearly average air temperature in Madison, WI (degrees Celsius)",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#analysis-goal",
-    "href": "hw/hw-01.html#analysis-goal",
-    "title": "HW 01: Simple linear regression",
-    "section": "Analysis goal",
-    "text": "Analysis goal\nThe goal of this analysis is to use linear regression explain variability in ice duration for lakes in Madison, WI based on air temperature. Because ice cover is impacted by various environmental factors, researchers are interested in examining the association between these two factors to better understand the changing climate.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#exercise-6",
-    "href": "hw/hw-01.html#exercise-6",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "labs/lab-02.html#exercise-6",
+    "href": "labs/lab-02.html#exercise-6",
+    "title": "Lab 02: Linear regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\nLet’s start by looking at the response variable ice_duration.\n\nVisualize the distribution of ice duration versus year with separate lines for each lake.\nThere are separate yearly measurements for each lake in the icecover data frame. In this analysis, we will combine the data from both lakes and use the average ice duration each year.\nComment on the analysis choice to use the average per year rather than the individual lake measurements. Some things to consider in your comments: Does the average accurately reflects the ice duration for these lakes in a given year year? Will there be information lost? How might that impact (or not) the analysis conclusions? Etc.\n\n\n\n\n\n\n\nTip\n\n\n\nSee the ggplot2 reference for example code and plots.",
+    "text": "Exercise 6\n\nThe coefficient for aroma for the model fit in Exercise 5 is different than the coefficient from the model fit in Exercise 4. Briefly explain why these coefficients are different.\nWould you willingly drink a coffee represented by the intercept of the model in Exercise 5? Briefly explain why or why not.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 02"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-7",
-    "href": "hw/hw-01.html#exercise-7",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "labs/lab-02.html#exercise-7",
+    "href": "labs/lab-02.html#exercise-7",
+    "title": "Lab 02: Linear regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\nNext, let’s combine the ice duration and air temperature data into a single analysis data frame.\n\nFill in the code below to create a new data frame, icecover_avg, of the average ice duration by year.\nThen join icecover_avg and airtemp to create a new data frame. The new data frame should have 134 observations.\n\nicecover_avg &lt;- icecover |&gt;\n  group_by(_____) |&gt;\n  summarise(_____) |&gt;\n  ungroup()\n\n\n\n\n\n\n\n\nImportant\n\n\n\nYou will use the new data frame with average ice duration and average air temperature for the remainder of the assignment.\n\n\n\nVisualize the relationship between the air temperature and average ice duration. Do you think a linear model is a reasonable choice to model the relationship between the two variables? Briefly explain.\n\n\nNow is a good time to render your document again if you haven’t done so recently and commit (with a meaningful commit message) and push all updates.",
+    "text": "Exercise 7\n\nCompute \\(\\mathbf{H}\\), the hat matrix corresponding to the model from Exercise 5. Then use \\(\\mathbf{H}\\) to compute the residuals for this model. Do not print out \\(\\mathbf{H}\\) or the residuals.\nCompute the mean and standard deviation of the residuals.\nRecall root mean square error RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}}\n\\]\nSimilar to other statistics we’ve seen thus far, we can write the RMSE in matrix form. Compute RMSE for the model from Exercise 5 using matrix form. Show the code used to get the answer.\nHow do the standard deviation of the residuals and RMSE compare?\n\n\nYou’re done and ready to submit your work! render, commit, and push all remaining changes. You can use the commit message “Done with Lab 02!”, and make sure you have pushed all the files to GitHub (your Git pane in RStudio should be empty) and that all documents are updated in your repo on GitHub. The PDF document you submit to Gradescope should be identical to the one in your GitHub repo.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 02"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-8",
-    "href": "hw/hw-01.html#exercise-8",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\nWe will fit a model using the average air temperature to explain variability in ice duration. The model takes the form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]\n\nState the dimensions of \\(\\mathbf{y}\\), \\(\\mathbf{X}\\), \\(\\boldsymbol{\\beta}\\), \\(\\boldsymbol{\\epsilon}\\) for this analysis. Your answer should have exact values given this data set.\nEstimate the regression coefficients \\(\\hat{\\boldsymbol{\\beta}}\\) in R using the matrix representation. Show the code used to get the answer.\nCheck your results from part (b) by using the lm function to fit the model. Neatly display your results using 3 digits.",
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 03"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-9",
-    "href": "hw/hw-01.html#exercise-9",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nCalculate \\(R^2\\) for the model in the previous exercise and interpret it in the context of the data.\nCalculate \\(RMSE\\) for the model from the previous exercise and interpret it in the context of the data.\nComment on the model fit based on \\(R^2\\) and \\(RMSE\\).",
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Getting Started",
+    "section": "",
+    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 00"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#exercise-10",
-    "href": "hw/hw-01.html#exercise-10",
-    "title": "HW 01: Simple linear regression",
-    "section": "Exercise 10",
-    "text": "Exercise 10\na. Interpret the slope in the context of the data.\nb. The average air temperature in 2019, the most recent year in the data set, was 7.925 degrees Celsius. What was the predicted ice duration for 2019? What is the residual?",
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Getting Started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 221” to reserve an RStudio container. Be sure you reserve the container labeled STA 221 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA221 to log into the Docker container. You should now see the RStudio environment.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 00"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#footnotes",
-    "href": "hw/hw-01.html#footnotes",
-    "title": "HW 01: Simple linear regression",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nExercise 4 is adapted from Montgomery, Peck, and Vining (2021) .↩︎",
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Getting Started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step.",
     "crumbs": [
-      "Homework",
-      "HW 01"
+      "Labs",
+      "Lab 00"
     ]
   },
   {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02",
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Getting Started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 221 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta221)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#getting-started",
+    "href": "labs/lab-00.html#getting-started",
+    "title": "Lab 00: Getting Started",
+    "section": "Getting started",
+    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/HJQpdTm_\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#update-the-quarto-document",
+    "href": "labs/lab-00.html#update-the-quarto-document",
+    "title": "Lab 00: Getting Started",
+    "section": "Update the Quarto document",
+    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "title": "Lab 00: Getting Started",
+    "section": "Commit and push changes to GitHub",
+    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 05"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 04"
     ]
   },
   {
-    "objectID": "prepare/prepare-lec04.html",
-    "href": "prepare/prepare-lec04.html",
-    "title": "Prepare for Lecture 04: SLR - Matrix representation",
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03",
     "section": "",
-    "text": "Review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nMatrix multiplication: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/stats-experience.html",
+    "href": "hw/stats-experience.html",
+    "title": "Statistics Experience",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Homework",
+      "Statistics experience"
+    ]
+  },
+  {
+    "objectID": "prepare/prepare-lec05.html",
+    "href": "prepare/prepare-lec05.html",
+    "title": "Prepare for Lecture 05: SLR - Matrix representation cont’d",
+    "section": "",
+    "text": "Review linear algebra concepts (as needed)\n\nVector geometry: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
   },
   {
     "objectID": "prepare/prepare-lec02.html",
@@ -3280,7 +3287,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nGeometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Categorical predictors + Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab 04: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Interactions + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nGeometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\n\n\n\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab 04: Inference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nMLR: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Interactions + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
