@@ -1,8 +1,9 @@
 ---
-title: "Multiple linear regression (MLR)"
+title: "Multiple linear regression"
 subtitle: "Types of predictors"
 date: "2025-01-28"
 date-format: "MMM DD, YYYY"
+author: "Prof. Maria Tackett"
 footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
@@ -39,9 +40,11 @@ bibliography: references.bib
 
 -   Categorical predictors
 
--   Interaction terms
+-   Centering quantitative predictors
 
--   Centering predictors
+-   Standardizing quantitative predictors
+
+-   Interaction terms
 
 ## Computing setup
 
@@ -175,6 +178,18 @@ $$
 
 <center>How might we include a categorical predictor with $k$ levels in the design matrix, $\mathbf{X}$ ?</center>
 
+## Indicator variables
+
+-   Suppose there is a categorical variable with $k$ levels
+
+-   We can make $k$ indicator variables from the data - one indicator for each level
+
+-   An **indicator (dummy) variable** takes values 1 or 0
+
+    -   1 if the observation belongs to that level
+
+    -   0 if the observation does not belong to that level
+
 ## Indicator variables {.midi}
 
 Suppose we want to predict the amount of sleep a Duke student gets based on whether they are in Pratt (Pratt Yes/ No are the only two options). Consider the model
@@ -191,18 +206,6 @@ $$
 -   Use this intuition to explain why when we include categorical predictors, we cannot include both indicators for every level of the variable *and* an intercept.
 :::
 
-## Indicator variables
-
--   Suppose there is a categorical variable with $k$ levels
-
--   We can make $k$ indicator variables from the data - one indicator for each level
-
--   An **indicator (dummy) variable** takes values 1 or 0
-
-    -   1 if the observation belongs to that level
-
-    -   0 if the observation does not belong to that level
-
 ## Indicator variables for `verified_income`
 
 ```{r}
@@ -210,9 +213,9 @@ $$
 
 loan50 <- loan50 |>
   mutate(
-    not_verified = if_else(verified_income == "Not Verified", 1, 0),
-    source_verified = if_else(verified_income == "Source Verified", 1, 0),
-    verified = if_else(verified_income == "Verified", 1, 0)
+    not_verified = factor(if_else(verified_income == "Not Verified", 1, 0)),
+    source_verified = factor(if_else(verified_income == "Source Verified", 1, 0)),
+    verified = factor(if_else(verified_income == "Verified", 1, 0))
   )
 ```
 
@@ -227,20 +230,19 @@ loan50 |>
 
 ## Indicator variables in the model {.midi}
 
--   We will use $k-1$ of the indicator variables in the model.
--   The **baseline** is the category that doesn't have a term in the model.
+Given a categorical predictor with $k$ levels...
+
+-   Use $k-1$ indicator variables in the model
+-   The **baseline** is the category that doesn't have a term in the model
+    -   This is also called the *reference level*
 -   The coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.
 
-. . .
-
-```{r}
-loan50 |>
-  select(verified_income, source_verified, verified) |>
-  slice(1, 3, 6)
-```
+# Application exercise
 
 ::: appex
-Take a look at the design matrix in [AE 02](https://sta221-fa24.netlify.app/ae/ae-02-mlr)
+📋 <https://sta221-sp25/netlify.app/ae/ae-02-mlr.html>
+
+Complete Part 1
 :::
 
 ## Interpreting `verified_income` {.small}
@@ -260,10 +262,100 @@ tidy(int_fit
 -   People with source verified income are expected to take a loan with an interest rate that is 2.211% higher, on average, than the rate on loans to those whose income is not verified, holding all else constant.
 :::
 
-. . .
+## Centering
+
+-   Centering a quantitative predictor means shifting every value by some constant $C$
+
+-   One common type of centering is **mean-centering**, which every value of a predictor is shifted by its mean
+
+-   Only quantitative predictors are centered
+
+-   Center all quantitative predictors in the model for ease of interpretation
 
 ::: question
-What is the expected interest rate for someone whose income is `Verified`, who has a debt-to-income ratio of 0 and annual income of \$0?
+What is one reason one might want to center the quantitative predictors? What is are the units of centered variables?
+:::
+
+## Centering {.midi}
+
+Use the `scale()` function with `center = TRUE` and `scale = FALSE` to mean-center variables
+
+```{r}
+#| output-location: fragment 
+
+loan50 <- loan50 |>
+  mutate(debt_to_inc_cent = scale(debt_to_income, center = TRUE, scale = FALSE), 
+         annual_inc_cent = scale(annual_income_th, center = TRUE, scale = FALSE))
+
+lm(interest_rate ~ debt_to_inc_cent + verified_income + annual_inc_cent, data = loan50) |> 
+  tidy() |> kable(digits = 3)
+```
+
+## Centering
+
+```{r}
+#| echo: false
+
+orig_model <- tidy(int_fit) |>
+  select(term, estimate) 
+
+cent_model <- lm(interest_rate ~ debt_to_inc_cent + verified_income + annual_inc_cent, data = loan50) |> tidy() |>
+select(estimate)
+
+orig_model |> bind_cols(cent_model) |> 
+  kable(digits = 3, 
+        col.names = c("Term", "Original Model", "Centered Model"))
+```
+
+::: question
+How has the model changed? How has the model remained the same?
+:::
+
+## Standardizing
+
+-   Standardizing a quantitative predictor mean shifting every value by the mean and diving by the standard deviation of that variable
+
+-   Only quantitative predictors are standardized
+
+-   Standardize all quantitative predictors in the model for ease of interpretation
+
+::: question
+What is one reason one might want to standardize the quantitative predictors? What is are the units of standardized variables?
+:::
+
+## Standardizing {.midi}
+
+Use the `scale()` function with `center = TRUE` and `scale = TRUE` to standardized variables
+
+```{r}
+#| output-location: fragment 
+#| 
+loan50 <- loan50 |>
+  mutate(debt_to_inc_std = scale(debt_to_income, center = TRUE, scale = TRUE), 
+         annual_inc_std = scale(annual_income_th, center = TRUE, scale = TRUE))
+
+lm(interest_rate ~ debt_to_inc_std + verified_income + annual_inc_std, data = loan50) |>
+  tidy() |> kable(digits = 3)
+```
+
+## Standardizing
+
+```{r}
+#| echo: false
+
+orig_model <- tidy(int_fit) |>
+  select(term, estimate) 
+
+std_model <- lm(interest_rate ~ debt_to_inc_std + verified_income + annual_inc_std, data = loan50) |> tidy() |>
+select(estimate)
+
+orig_model |> bind_cols(std_model) |> 
+  kable(digits = 3, 
+        col.names = c("Term", "Original Model", "Standardized Model"))
+```
+
+::: question
+How has the model changed? How has the model remained the same?
 :::
 
 # Interaction terms
@@ -280,6 +372,7 @@ The lines are not parallel indicating there is a potential **interaction effect*
 
 ```{r}
 #| echo: false
+#| fig-align: center
 
 p1 <- ggplot(loan50, 
              aes(x = annual_income_th, y = interest_rate)) +
@@ -306,7 +399,9 @@ p1 + p2 +
 # Application exercise
 
 ::: appex
-📋 <https://sta221-fa24.netlify.app/ae/ae-02-mlr>
+📋 <https://sta221-sp25/netlify.app/ae/ae-02-mlr.html>
+
+Complete Part 2
 :::
 
 ## Interaction term in model {.smaller}
@@ -329,94 +424,20 @@ tidy(int_fit_2) |>
 -   What the interaction means: The effect of annual income on the interest rate differs by -0.016 when the income is source verified compared to when it is not verified, holding all else constant.
 -   Interpreting `annual_income` for source verified: If the income is source verified, we expect the interest rate to decrease by 0.023% (-0.007 + -0.016) for each additional thousand dollars in annual income, holding all else constant.
 
-# Model assessment and comparison
-
-## RMSE & $R^2$
-
--   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
-
--   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model
-
-## Comparing models
-
-::: incremental
--   When comparing models, do we prefer the model with the lower or higher RMSE?
-
--   Though we use $R^2$ to assess the model fit, it is generally unreliable for comparing models with different number of predictors. Why?
-
-    -   $R^2$ will stay the same or increase as we add more variables to the model . Let's show why this is true.
-
-    -   If we only use $R^2$ to choose a best fit model, we will be prone to choose the model with the most predictor variables.
-:::
-
-## Adjusted $R^2$
-
--   **Adjusted** $R^2$: measure that includes a penalty for unnecessary predictor variables
--   Similar to $R^2$, it is a measure of the amount of variation in the response that is explained by the regression model
-
-## $R^2$ and Adjusted $R^2$
-
-$$R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}$$
-
-<br>
-
-. . .
-
-$$R^2_{adj} = 1 - \frac{SSR/(n-p-1)}{SST/(n-1)}$$
-
-where
-
--   $n$ is the number of observations used to fit the model
-
--   $p$ is the number of terms (not including the intercept) in the model
-
-## Using $R^2$ and Adjusted $R^2$
-
--   Adjusted $R^2$ can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment!
--   Use $R^2$ when describing the relationship between the response and predictor variables
-
-. . .
-
-::: appex
-📋 <https://sta221-fa24.netlify.app/ae/ae-02-mlr>
-:::
-
-# LaTex
-
-## Latex in this class
-
-For this class you will need to be able to...
-
--   Properly write mathematical symbols, e.g., $\beta_1$ not *B1,* $R^2$ not *R2*
-
--   Write basic regression equations, e.g., $\hat{y} = \beta_0 + \beta_1x_1 + \beta_2x_2$
-
--   Write matrix equations: $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$
-
--   Write hypotheses (we'll start this next week), e.g., $H_0: \beta = 0$
-
-You are welcome to but <u>not</u> required to write math proofs using LaTex.
-
-# Application exercise
-
-::: appex
-📋 <https://sta221-fa24.netlify.app/ae/ae-02-mlr>
-:::
-
 ## Recap
 
--   Interpreted categorical predictors and interaction terms
+-   Interpreted categorical predictors
 
--   Assessed model fit using RSME and $R^2$
+-   Explored by $k-1$ indicators are included in a model
 
--   Compared models using $Adj. R^2$
+-   Fit and interpreted models with centered and standardized variables
 
--   Introduced LaTex
+-   Interpreted interaction terms
 
 ## Next class
 
--   Geometric interpretation
+-   Model comparison for multiple linear regression
 
 -   Inference for regression
 
--   See Sep 17 prepare
+-   See [Prepare for Lecture 07](../prepare/prepare-lec07.html)

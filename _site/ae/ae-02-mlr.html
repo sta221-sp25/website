@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-12">
+<meta name="dcterms.date" content="2025-01-28">
 
 <title>AE 02: Multiple linear regression – STA 221 - Spring 2025</title>
 <style>
@@ -388,8 +388,18 @@ window.Quarto = {
   <ul>
   <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#categorical-predictors" id="toc-categorical-predictors" class="nav-link" data-scroll-target="#categorical-predictors">Categorical predictors</a></li>
-  <li><a href="#model-assessment" id="toc-model-assessment" class="nav-link" data-scroll-target="#model-assessment">Model assessment</a></li>
+  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  </ul></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a>
+  <ul class="collapse">
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  </ul></li>
   <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex">LaTex</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   </ul>
@@ -412,7 +422,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 12, 2024</p>
+      <p class="date">January 28, 2025</p>
     </div>
   </div>
   
@@ -434,7 +444,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Go to the <a href="https://github.com/sta221-fa24">course GitHub organization</a> and locate your <code>ae-02</code> repo to get started.</p>
+<p>Go to the <a href="https://github.com/sta221-sp25">course GitHub organization</a> and locate your <code>ae-02</code> repo to get started.</p>
 <p>Render, commit, and push your responses to GitHub by the end of class to submit your AE.</p>
 </div>
 </div>
@@ -496,121 +506,70 @@ $ annual_income_th        &lt;dbl&gt; 59.0, 60.0, 75.0, 75.0, 254.0, 67.0, 28.8,
 </div>
 </div>
 </section>
-<section id="categorical-predictors" class="level1">
-<h1>Categorical predictors</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let’s take a look at the design matrix for the model with predictors <code>debt_to_income</code>, <code>annual_income_th</code>, and <code>verified_income</code>.</p>
-<p>How does R choose the baseline level by default?</p>
-</div>
-</div>
+<section id="part-1" class="level1">
+<h1>Part 1</h1>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>We’ll start by fitting a model in which we include all levels of <code>verified_income</code>.</p>
+<ul>
+<li><p>Fit a model using <code>debt_to_income</code>, <code>annual_income_th</code>, and the indicator variables created below to predict <code>interest_rate</code>.</p></li>
+<li><p>What do you notice about the model output? Why did this happen?</p></li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>[Add response here]</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Fit the model with the predictors <code>debt_to_income</code>, <code>annual_income_th</code>, <code>verified_income</code> , and the interaction between <code>annual_income_th</code> and <code>verified_income</code>.</p>
-<p>Neatly display the model results using 3 digits.</p>
-</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>loan50 <span class="ot">&lt;-</span> loan50 <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">not_verified =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(verified_income <span class="sc">==</span> <span class="st">"Not Verified"</span>, <span class="dv">1</span>, <span class="dv">0</span>)),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_verified =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(verified_income <span class="sc">==</span> <span class="st">"Source Verified"</span>, <span class="dv">1</span>, <span class="dv">0</span>)),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">verified =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(verified_income <span class="sc">==</span> <span class="st">"Verified"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Now let’s take a look at the design matrix for the model with predictors <code>debt_to_income</code>, <code>annual_income_th</code>, and <code>verified_income</code>.</p>
+<p>How does R choose the baseline level by default?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Exercise 3
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>What is the intercept for individuals with</p>
+<ul>
+<li><p>Not verified income?</p></li>
+<li><p>Source verified income?</p></li>
+<li><p>Verified income?</p></li>
+</ul>
+</section>
+</section>
+<section id="part-2" class="level1">
+<h1>Part 2</h1>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Fit the model with the predictors <code>debt_to_income</code>, <code>annual_income_th</code>, <code>verified_income</code> , and the interaction between <code>annual_income_th</code> and <code>verified_income</code>.</p>
+<p>Neatly display the model results using 3 digits.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div class="callout-body-container callout-body">
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <ul>
 <li><p>Write the estimated regression equation for the people with <code>Not Verified</code> income.</p></li>
 <li><p>Write the estimated regression equation for people with <code>Verified</code> income.</p></li>
 </ul>
-</div>
-</div>
-<p>[add response here]</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 4
-</div>
-</div>
-<div class="callout-body-container callout-body">
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <p>In general, how do</p>
 <ul>
 <li><p>indicators for categorical predictors impact the model equation?</p></li>
 <li><p>interaction terms impact the model equation?</p></li>
 </ul>
-</div>
-</div>
-<p>[Add response here]</p>
 </section>
-<section id="model-assessment" class="level1">
-<h1>Model assessment</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 5
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let’s compare the original model without interaction effects to the model you fit in Exercise 2.</p>
-<p>Calculate <span class="math inline">\(R^2\)</span> and <span class="math inline">\(Adj. R^2\)</span> for each model. You can find <span class="math inline">\(Adj. R^2\)</span> from the <code>glance</code> function:</p>
-<p><code>glance(model_name)$adj.r.squared</code></p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>int_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_income <span class="sc">+</span> annual_income_th <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                verified_income, <span class="at">data =</span> loan50)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 6
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Which model would you choose based on</p>
-<ul>
-<li><p><span class="math inline">\(R^2\)</span>?</p></li>
-<li><p><span class="math inline">\(Adj. R^2\)</span>?</p></li>
-</ul>
-</div>
-</div>
-<p>[add response here]</p>
 </section>
 <section id="latex" class="level1">
 <h1>LaTex</h1>

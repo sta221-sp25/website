@@ -1,12 +1,12 @@
 ---
 title: "AE 02: Multiple linear regression"
 subtitle: "Peer-to-peer lending"
-date: "Sep 12, 2024"
+date: "January 28, 2025"
 editor: visual
 ---
 
 ::: callout-important
-Go to the [course GitHub organization](https://github.com/sta221-fa24) and locate your `ae-02` repo to get started.
+Go to the [course GitHub organization](https://github.com/sta221-sp25) and locate your `ae-02` repo to get started.
 
 Render, commit, and push your responses to GitHub by the end of class to submit your AE.
 :::
@@ -57,15 +57,39 @@ loan50 <- loan50 |>
 glimpse(loan50)
 ```
 
-# Categorical predictors
+# Part 1
 
-::: callout-note
 ## Exercise 1
 
-Let's take a look at the design matrix for the model with predictors `debt_to_income`, `annual_income_th`, and `verified_income`.
+We'll start by fitting a model in which we include all levels of `verified_income`.
+
+-   Fit a model using `debt_to_income`, `annual_income_th`, and the indicator variables created below to predict `interest_rate`.
+
+-   What do you notice about the model output? Why did this happen?
+
+```{r}
+#| label: make-indicators
+
+loan50 <- loan50 |>
+  mutate(
+    not_verified = factor(if_else(verified_income == "Not Verified", 1, 0)),
+    source_verified = factor(if_else(verified_income == "Source Verified", 1, 0)),
+    verified = factor(if_else(verified_income == "Verified", 1, 0))
+  )
+```
+
+```{r}
+#| label: fit-model-all-indicators 
+
+# add code here
+
+```
+
+## Exercise 2
+
+Now let's take a look at the design matrix for the model with predictors `debt_to_income`, `annual_income_th`, and `verified_income`.
 
 How does R choose the baseline level by default?
-:::
 
 ```{r}
 #| label: ex-1
@@ -74,15 +98,23 @@ How does R choose the baseline level by default?
 
 ```
 
-\[Add response here\]
+## Exercise 3
 
-::: callout-note
-## Exercise 2
+What is the intercept for individuals with
+
+-   Not verified income?
+
+-   Source verified income?
+
+-   Verified income?
+
+# Part 2
+
+## Exercise 4
 
 Fit the model with the predictors `debt_to_income`, `annual_income_th`, `verified_income` , and the interaction between `annual_income_th` and `verified_income`.
 
 Neatly display the model results using 3 digits.
-:::
 
 ```{r}
 #| label: ex-2
@@ -91,65 +123,19 @@ Neatly display the model results using 3 digits.
 
 ```
 
-::: callout-note
-## Exercise 3
+## Exercise 5
 
 -   Write the estimated regression equation for the people with `Not Verified` income.
 
 -   Write the estimated regression equation for people with `Verified` income.
-:::
 
-\[add response here\]
-
-::: callout-note
-## Exercise 4
+## Exercise 6
 
 In general, how do
 
 -   indicators for categorical predictors impact the model equation?
 
 -   interaction terms impact the model equation?
-:::
-
-\[Add response here\]
-
-# Model assessment
-
-::: callout-note
-## Exercise 5
-
-Let's compare the original model without interaction effects to the model you fit in Exercise 2.
-
-Calculate $R^2$ and $Adj. R^2$ for each model. You can find $Adj. R^2$ from the `glance` function:
-
-`glance(model_name)$adj.r.squared`
-:::
-
-```{r}
-#| label: original-model 
-
-int_fit <- lm(interest_rate ~ debt_to_income + annual_income_th +
-                verified_income, data = loan50)
-```
-
-```{r}
-#| label: ex-5
-
-# add code here
-
-```
-
-::: callout-note
-## Exercise 6
-
-Which model would you choose based on
-
--   $R^2$?
-
--   $Adj. R^2$?
-:::
-
-\[add response here\]
 
 # LaTex
 
