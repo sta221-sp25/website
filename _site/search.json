@@ -1840,7 +1840,7 @@
   {
     "objectID": "prepare/prepare-lec07.html",
     "href": "prepare/prepare-lec07.html",
-    "title": "Prepare for Lecture 05: Inference for regression",
+    "title": "Prepare for Lecture 07: Inference for regression",
     "section": "",
     "text": "📖 Read Inference for Simple Linear Regression:\n\nSections 5.1 - 5.3\nSection 5.6\nSection 5.8\nSection 5.9"
   },
@@ -4046,7 +4046,7 @@
     "href": "slides/06-mlr-pt2-notes.html#centering",
     "title": "Multiple linear regression",
     "section": "Centering",
-    "text": "Centering\n\nCentering a quantitative predictor means shifting every value by some constant \\(C\\)\nOne common type of centering is mean-centering, which every value of a predictor is shifted by its mean\nOnly quantitative predictors are centered\nCenter all quantitative predictors in the model for ease of interpretation\n\n\nWhat is one reason one might want to center the quantitative predictors? What is are the units of centered variables?"
+    "text": "Centering\n\nCentering a quantitative predictor means shifting every value by some constant \\(C\\)\nOne common type of centering is mean-centering, in which every value of a predictor is shifted by its mean\nOnly quantitative predictors are centered\nCenter all quantitative predictors in the model for ease of interpretation\n\n\nWhat is one reason one might want to center the quantitative predictors? What is are the units of centered variables?"
   },
   {
     "objectID": "slides/06-mlr-pt2-notes.html#centering-1",
@@ -4060,14 +4060,14 @@
     "href": "slides/06-mlr-pt2-notes.html#centering-2",
     "title": "Multiple linear regression",
     "section": "Centering",
-    "text": "Centering\n\n\nNew names:\n• `estimate` -&gt; `estimate...2`\n• `estimate` -&gt; `estimate...3`\n\n\n\n\n\nTerm\nOriginal Model\nCentered Model\n\n\n\n\n(Intercept)\n10.726\n9.444\n\n\ndebt_to_income\n0.671\n0.671\n\n\nverified_incomeSource Verified\n2.211\n2.211\n\n\nverified_incomeVerified\n6.880\n6.880\n\n\nannual_income_th\n-0.021\n-0.021\n\n\n\n\n\n\nHow has the model changed? How has the model remained the same?"
+    "text": "Centering\n\n\n\n\n\nTerm\nOriginal Model\nCentered Model\n\n\n\n\n(Intercept)\n10.726\n9.444\n\n\ndebt_to_income\n0.671\n0.671\n\n\nverified_incomeSource Verified\n2.211\n2.211\n\n\nverified_incomeVerified\n6.880\n6.880\n\n\nannual_income_th\n-0.021\n-0.021\n\n\n\n\n\n\nHow has the model changed? How has the model remained the same?"
   },
   {
     "objectID": "slides/06-mlr-pt2-notes.html#standardizing",
     "href": "slides/06-mlr-pt2-notes.html#standardizing",
     "title": "Multiple linear regression",
     "section": "Standardizing",
-    "text": "Standardizing\n\nStandardizing a quantitative predictor mean shifting every value by the mean and diving by the standard deviation of that variable\nOnly quantitative predictors are standardized\nStandardize all quantitative predictors in the model for ease of interpretation\n\n\nWhat is one reason one might want to standardize the quantitative predictors? What is are the units of standardized variables?"
+    "text": "Standardizing\n\nStandardizing a quantitative predictor mean shifting every value by the mean and dividing by the standard deviation of that variable\nOnly quantitative predictors are standardized\nStandardize all quantitative predictors in the model for ease of interpretation\n\n\nWhat is one reason one might want to standardize the quantitative predictors? What is are the units of standardized variables?"
   },
   {
     "objectID": "slides/06-mlr-pt2-notes.html#standardizing-1",
@@ -4081,7 +4081,7 @@
     "href": "slides/06-mlr-pt2-notes.html#standardizing-2",
     "title": "Multiple linear regression",
     "section": "Standardizing",
-    "text": "Standardizing\n\n\nNew names:\n• `estimate` -&gt; `estimate...2`\n• `estimate` -&gt; `estimate...3`\n\n\n\n\n\nTerm\nOriginal Model\nStandardized Model\n\n\n\n\n(Intercept)\n10.726\n9.444\n\n\ndebt_to_income\n0.671\n0.643\n\n\nverified_incomeSource Verified\n2.211\n2.211\n\n\nverified_incomeVerified\n6.880\n6.880\n\n\nannual_income_th\n-0.021\n-1.180\n\n\n\n\n\n\nHow has the model changed? How has the model remained the same?"
+    "text": "Standardizing\n\n\n\n\n\nTerm\nOriginal Model\nStandardized Model\n\n\n\n\n(Intercept)\n10.726\n9.444\n\n\ndebt_to_income\n0.671\n0.643\n\n\nverified_incomeSource Verified\n2.211\n2.211\n\n\nverified_incomeVerified\n6.880\n6.880\n\n\nannual_income_th\n-0.021\n-1.180\n\n\n\n\n\n\nHow has the model changed? How has the model remained the same?"
   },
   {
     "objectID": "slides/06-mlr-pt2-notes.html#interaction-terms-1",
@@ -4095,7 +4095,7 @@
     "href": "slides/06-mlr-pt2-notes.html#interest-rate-vs.-annual-income",
     "title": "Multiple linear regression",
     "section": "Interest rate vs. annual income",
-    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is a potential interaction effect. The slope of annual income differs based on the income verification.\n\n\nWarning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2\n3.5.0.\nℹ Please use the `legend.position.inside` argument of `theme()` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is a potential interaction effect. The slope of annual income differs based on the income verification."
   },
   {
     "objectID": "slides/06-mlr-pt2-notes.html#interaction-term-in-model",
@@ -4221,7 +4221,7 @@
     "href": "slides/06-mlr-pt2.html#centering",
     "title": "Multiple linear regression",
     "section": "Centering",
-    "text": "Centering\n\nCentering a quantitative predictor means shifting every value by some constant \\(C\\)\nOne common type of centering is mean-centering, which every value of a predictor is shifted by its mean\nOnly quantitative predictors are centered\nCenter all quantitative predictors in the model for ease of interpretation\n\n\nWhat is one reason one might want to center the quantitative predictors? What is are the units of centered variables?"
+    "text": "Centering\n\nCentering a quantitative predictor means shifting every value by some constant \\(C\\)\nOne common type of centering is mean-centering, in which every value of a predictor is shifted by its mean\nOnly quantitative predictors are centered\nCenter all quantitative predictors in the model for ease of interpretation\n\n\nWhat is one reason one might want to center the quantitative predictors? What is are the units of centered variables?"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#centering-1",
@@ -4235,14 +4235,14 @@
     "href": "slides/06-mlr-pt2.html#centering-2",
     "title": "Multiple linear regression",
     "section": "Centering",
-    "text": "Centering\n\n\nNew names:\n• `estimate` -&gt; `estimate...2`\n• `estimate` -&gt; `estimate...3`\n\n\n\n\n\nTerm\nOriginal Model\nCentered Model\n\n\n\n\n(Intercept)\n10.726\n9.444\n\n\ndebt_to_income\n0.671\n0.671\n\n\nverified_incomeSource Verified\n2.211\n2.211\n\n\nverified_incomeVerified\n6.880\n6.880\n\n\nannual_income_th\n-0.021\n-0.021\n\n\n\n\n\n\nHow has the model changed? How has the model remained the same?"
+    "text": "Centering\n\n\n\n\n\nTerm\nOriginal Model\nCentered Model\n\n\n\n\n(Intercept)\n10.726\n9.444\n\n\ndebt_to_income\n0.671\n0.671\n\n\nverified_incomeSource Verified\n2.211\n2.211\n\n\nverified_incomeVerified\n6.880\n6.880\n\n\nannual_income_th\n-0.021\n-0.021\n\n\n\n\n\n\nHow has the model changed? How has the model remained the same?"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#standardizing",
     "href": "slides/06-mlr-pt2.html#standardizing",
     "title": "Multiple linear regression",
     "section": "Standardizing",
-    "text": "Standardizing\n\nStandardizing a quantitative predictor mean shifting every value by the mean and diving by the standard deviation of that variable\nOnly quantitative predictors are standardized\nStandardize all quantitative predictors in the model for ease of interpretation\n\n\nWhat is one reason one might want to standardize the quantitative predictors? What is are the units of standardized variables?"
+    "text": "Standardizing\n\nStandardizing a quantitative predictor mean shifting every value by the mean and dividing by the standard deviation of that variable\nOnly quantitative predictors are standardized\nStandardize all quantitative predictors in the model for ease of interpretation\n\n\nWhat is one reason one might want to standardize the quantitative predictors? What is are the units of standardized variables?"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#standardizing-1",
@@ -4256,7 +4256,7 @@
     "href": "slides/06-mlr-pt2.html#standardizing-2",
     "title": "Multiple linear regression",
     "section": "Standardizing",
-    "text": "Standardizing\n\n\nNew names:\n• `estimate` -&gt; `estimate...2`\n• `estimate` -&gt; `estimate...3`\n\n\n\n\n\nTerm\nOriginal Model\nStandardized Model\n\n\n\n\n(Intercept)\n10.726\n9.444\n\n\ndebt_to_income\n0.671\n0.643\n\n\nverified_incomeSource Verified\n2.211\n2.211\n\n\nverified_incomeVerified\n6.880\n6.880\n\n\nannual_income_th\n-0.021\n-1.180\n\n\n\n\n\n\nHow has the model changed? How has the model remained the same?"
+    "text": "Standardizing\n\n\n\n\n\nTerm\nOriginal Model\nStandardized Model\n\n\n\n\n(Intercept)\n10.726\n9.444\n\n\ndebt_to_income\n0.671\n0.643\n\n\nverified_incomeSource Verified\n2.211\n2.211\n\n\nverified_incomeVerified\n6.880\n6.880\n\n\nannual_income_th\n-0.021\n-1.180\n\n\n\n\n\n\nHow has the model changed? How has the model remained the same?"
   },
   {
     "objectID": "slides/06-mlr-pt2.html#interaction-terms-1",
@@ -4270,7 +4270,7 @@
     "href": "slides/06-mlr-pt2.html#interest-rate-vs.-annual-income",
     "title": "Multiple linear regression",
     "section": "Interest rate vs. annual income",
-    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is a potential interaction effect. The slope of annual income differs based on the income verification.\n\n\nWarning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2\n3.5.0.\nℹ Please use the `legend.position.inside` argument of `theme()` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is a potential interaction effect. The slope of annual income differs based on the income verification."
   },
   {
     "objectID": "slides/06-mlr-pt2.html#interaction-term-in-model",

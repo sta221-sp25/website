@@ -279,7 +279,7 @@ Prof.&nbsp;Maria Tackett
 <section id="response-vs.-predictors" class="slide level2 small">
 <h2>Response vs.&nbsp;predictors</h2>
 
-<img data-src="06-mlr-pt2_files/figure-html/unnamed-chunk-2-1.png" width="672" class="r-stretch"><p><strong>Goal</strong>: Use these predictors in a single model to understand variability in interest rate.</p>
+<img data-src="06-mlr-pt2_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p><strong>Goal</strong>: Use these predictors in a single model to understand variability in interest rate.</p>
 </section>
 <section id="model-fit-in-r" class="slide level2">
 <h2>Model fit in R</h2>
@@ -461,7 +461,7 @@ Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="https://sta221-sp25/netlify.app/ae/ae-02-mlr.html" class="uri">https://sta221-sp25/netlify.app/ae/ae-02-mlr.html</a></p>
+<p>📋 <a href="../ae/ae-02-mlr.html" class="uri">https://sta221-sp25.netlify.app/ae/ae-02-mlr.html</a></p>
 <p>Complete Part 1</p>
 </div>
 </section>
@@ -546,7 +546,7 @@ Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1
 <h2>Centering</h2>
 <ul>
 <li><p>Centering a quantitative predictor means shifting every value by some constant <span class="math inline">\(C\)</span></p></li>
-<li><p>One common type of centering is <strong>mean-centering</strong>, which every value of a predictor is shifted by its mean</p></li>
+<li><p>One common type of centering is <strong>mean-centering</strong>, in which every value of a predictor is shifted by its mean</p></li>
 <li><p>Only quantitative predictors are centered</p></li>
 <li><p>Center all quantitative predictors in the model for ease of interpretation</p></li>
 </ul>
@@ -628,11 +628,6 @@ Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1
 <section id="centering-2" class="slide level2">
 <h2>Centering</h2>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>New names:
-• `estimate` -&gt; `estimate...2`
-• `estimate` -&gt; `estimate...3`</code></pre>
-</div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -679,7 +674,7 @@ Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1
 <section id="standardizing" class="slide level2">
 <h2>Standardizing</h2>
 <ul>
-<li><p>Standardizing a quantitative predictor mean shifting every value by the mean and diving by the standard deviation of that variable</p></li>
+<li><p>Standardizing a quantitative predictor mean shifting every value by the mean and dividing by the standard deviation of that variable</p></li>
 <li><p>Only quantitative predictors are standardized</p></li>
 <li><p>Standardize all quantitative predictors in the model for ease of interpretation</p></li>
 </ul>
@@ -691,12 +686,12 @@ Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1
 <h2>Standardizing</h2>
 <p>Use the <code>scale()</code> function with <code>center = TRUE</code> and <code>scale = TRUE</code> to standardized variables</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>loan50 <span class="ot">&lt;-</span> loan50 <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">mutate</span>(<span class="at">debt_to_inc_std =</span> <span class="fu">scale</span>(debt_to_income, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb8-3"><a></a>         <span class="at">annual_inc_std =</span> <span class="fu">scale</span>(annual_income_th, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb8-4"><a></a></span>
-<span id="cb8-5"><a></a><span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_inc_std <span class="sc">+</span> verified_income <span class="sc">+</span> annual_inc_std, <span class="at">data =</span> loan50) <span class="sc">|&gt;</span></span>
-<span id="cb8-6"><a></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>loan50 <span class="ot">&lt;-</span> loan50 <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">mutate</span>(<span class="at">debt_to_inc_std =</span> <span class="fu">scale</span>(debt_to_income, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb7-3"><a></a>         <span class="at">annual_inc_std =</span> <span class="fu">scale</span>(annual_income_th, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb7-4"><a></a></span>
+<span id="cb7-5"><a></a><span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_inc_std <span class="sc">+</span> verified_income <span class="sc">+</span> annual_inc_std, <span class="at">data =</span> loan50) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
@@ -761,11 +756,6 @@ Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1
 <section id="standardizing-2" class="slide level2">
 <h2>Standardizing</h2>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>New names:
-• `estimate` -&gt; `estimate...2`
-• `estimate` -&gt; `estimate...3`</code></pre>
-</div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -825,32 +815,21 @@ Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1
 <section id="interest-rate-vs.-annual-income" class="slide level2">
 <h2>Interest rate vs.&nbsp;annual income</h2>
 <p>The lines are not parallel indicating there is a potential <strong>interaction effect</strong>. The slope of annual income differs based on the income verification.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2
-3.5.0.
-ℹ Please use the `legend.position.inside` argument of `theme()` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 
-</div>
-<img data-src="06-mlr-pt2_files/figure-html/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section></section>
+<img data-src="06-mlr-pt2_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
 <section>
 <section id="application-exercise-1" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="https://sta221-sp25/netlify.app/ae/ae-02-mlr.html" class="uri">https://sta221-sp25/netlify.app/ae/ae-02-mlr.html</a></p>
+<p>📋 <a href="../ae/ae-02-mlr.html" class="uri">https://sta221-sp25.netlify.app/ae/ae-02-mlr.html</a></p>
 <p>Complete Part 2</p>
 </div>
 </section>
 <section id="interaction-term-in-model" class="slide level2 smaller">
 <h2>Interaction term in model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>int_fit_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_income <span class="sc">+</span> verified_income <span class="sc">+</span> annual_income_th <span class="sc">+</span> verified_income <span class="sc">*</span> annual_income_th,</span>
-<span id="cb12-2"><a></a>      <span class="at">data =</span> loan50)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>int_fit_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(interest_rate <span class="sc">~</span> debt_to_income <span class="sc">+</span> verified_income <span class="sc">+</span> annual_income_th <span class="sc">+</span> verified_income <span class="sc">*</span> annual_income_th,</span>
+<span id="cb8-2"><a></a>      <span class="at">data =</span> loan50)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1165,6 +1144,44 @@ Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

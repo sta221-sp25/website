@@ -95,6 +95,8 @@ loan50 |>
 
 ```{r}
 #| echo: false
+#| fig-align: center
+#| fig-width: 10
 p4 <- ggplot(loan50, aes(x = verified_income, y = interest_rate)) +
   geom_boxplot(fill = "steelblue") +
   labs(
@@ -240,7 +242,7 @@ Given a categorical predictor with $k$ levels...
 # Application exercise
 
 ::: appex
-📋 <https://sta221-sp25/netlify.app/ae/ae-02-mlr.html>
+📋 [https://sta221-sp25.netlify.app/ae/ae-02-mlr.html](../ae/ae-02-mlr.html){.uri}
 
 Complete Part 1
 :::
@@ -266,7 +268,7 @@ tidy(int_fit
 
 -   Centering a quantitative predictor means shifting every value by some constant $C$
 
--   One common type of centering is **mean-centering**, which every value of a predictor is shifted by its mean
+-   One common type of centering is **mean-centering**, in which every value of a predictor is shifted by its mean
 
 -   Only quantitative predictors are centered
 
@@ -295,6 +297,8 @@ lm(interest_rate ~ debt_to_inc_cent + verified_income + annual_inc_cent, data = 
 
 ```{r}
 #| echo: false
+#| message: false
+#| warning: false
 
 orig_model <- tidy(int_fit) |>
   select(term, estimate) 
@@ -313,7 +317,7 @@ How has the model changed? How has the model remained the same?
 
 ## Standardizing
 
--   Standardizing a quantitative predictor mean shifting every value by the mean and diving by the standard deviation of that variable
+-   Standardizing a quantitative predictor mean shifting every value by the mean and dividing by the standard deviation of that variable
 
 -   Only quantitative predictors are standardized
 
@@ -342,6 +346,8 @@ lm(interest_rate ~ debt_to_inc_std + verified_income + annual_inc_std, data = lo
 
 ```{r}
 #| echo: false
+#| warning: false
+#| message: false
 
 orig_model <- tidy(int_fit) |>
   select(term, estimate) 
@@ -373,6 +379,8 @@ The lines are not parallel indicating there is a potential **interaction effect*
 ```{r}
 #| echo: false
 #| fig-align: center
+#| warning: false
+#| message: false
 
 p1 <- ggplot(loan50, 
              aes(x = annual_income_th, y = interest_rate)) +
@@ -399,7 +407,7 @@ p1 + p2 +
 # Application exercise
 
 ::: appex
-📋 <https://sta221-sp25/netlify.app/ae/ae-02-mlr.html>
+📋 [https://sta221-sp25.netlify.app/ae/ae-02-mlr.html](../ae/ae-02-mlr.html){.uri}
 
 Complete Part 2
 :::

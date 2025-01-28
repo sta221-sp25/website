@@ -1,5 +1,5 @@
 ---
-title: "Prepare for Lecture 05: Inference for regression"
+title: "Prepare for Lecture 07: Inference for regression"
 ---
 
 <br>
