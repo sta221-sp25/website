@@ -1,12 +1,13 @@
 ---
 title: "Lab 03"
-subtitle: "Palmer Penguins + Team project"
-date: "2024-09-23"
+subtitle: "Multiple linear regression + Meet your Team!"
+date: "2025-01-31"
 date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+author: "Prof. Maria Tackett"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
@@ -31,57 +32,31 @@ bibliography: references.bib
 
 ## Goals
 
--   Team project
--   Lab 03: Palmer penguins
+-   Meet your team!
+-   Team agreement
+-   Lab 03: Multiple linear regression
 
-## Lab 03: Palmer penguins
+# Teams
 
-Lab 03 focuses on
+## Meet your team!
 
--   using linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica.
+-   [**Click here**](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EWmBSHOfYhJLlxYJKEDFpT8BZNmQsC41rm4hA6uaOqrA1w?e=sUNxBJ) to find your team.
 
--   use the data to check conditions about the distribution of the model residuals.
+-   Sit with your team.
 
-Use this week to get started on the lab. We will continue discussing statistical inference in this week's lectures, so **this lab will be due on Thursday, October 3, 2024.**
+## Team name + agreement
 
-🔗 [https://sta221-fa24.netlify.app/labs/lab-03](https://sta221-fa24.netlify.app/labs/lab-03In%20this%20lab%20you%20will%20use%20linear%20regression%20and%20statistical%20inference%20to%20draw%20conclusions%20about%20penguins%20living%20in%20Palmer%20Archipelago%20in%20Antarctica.%20You%20will%20also%20use%20the%20data%20to%20check%20conditions%20about%20the%20distribution%20of%20the%20model%20residuals.%20During%20the%20lab%20session,%20you%20will%20also%20begin%20developing%20research%20questions%20for%20your%20final%20project.)
+-   Come up with a team name. You can't have the same name as another team in the class, so be creative!
 
-## Final Team Project {.midi}
+    -   Your TA will get your team name by the end of lab.
 
-**Goal**: Use the methods from STA 221 to analyze data and answer a research question developed by your team
+-   Fill out the team agreement. The goals of the agreement are to...
 
-**Primary deliverables:**
+    -   Gain a common understanding of the team's goals and expectations for collaboration
+    -   Make a plan for team communication
+    -   Make a plan for working outside of lab
 
-1.  an in-person presentation about the exploratory data analysis and initial modeling
-2.  a written, reproducible final report detailing your analysis
-3.  a GitHub repository containing all work from the project
-
-**Submission**: All work for the project will be submitted in your team's GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow often used in practice.
-
-## Final team project {.midi}
-
-**Milestones**: There are periodic project milestones throughout the semester to help you work towards the final deliverables:
-
--   Research questions (today's lab)
--   Project proposal (next week's lab)
--   Exploratory data analysis draft
--   Presentation + Presentation comments
--   Analysis draft + peer review
--   Round 1 submission (optional)
--   Written report
--   Reproducibility + organization
-
-See the [Final Project Instructions](../project.html) for a timeline and details for each milestone.
-
-## Today: Research questions
-
-**Goal:** Develop three potential research questions your team may be interested in investigating.
-
-You do [**not**]{.underline} need to have a data set at this point
-
-Full instructions here: [sta221-fa24.netlify.app/project#research-questions](https://sta221-fa24.netlify.app/project#research-questions)
-
-## Reminder: Team workflow
+## Team workflow
 
 -   Only <u>**one**</u> team member should type at a time. There are markers in today's lab to help you determine whose turn it is to type.
 
@@ -93,10 +68,26 @@ Full instructions here: [sta221-fa24.netlify.app/project#research-questions](htt
     **Only one submission per team on Gradescope. Read the submission instructions carefully!**
     :::
 
-## Reminder: Tips for working on a team {.midi}
+## Team workflow, in action
+
+-   Complete the "Workflow: Using Git and GitHub as a team" section of the lab in your teams.
+-   Raise your hand if you have any questions about the workflow.
+
+```{r}
+#| echo: false
+countdown::countdown(minutes = 5, font_size = "2em")
+```
+
+## Tips for working on a team {.midi}
 
 -   Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.
 
 -   The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.
 
 -   Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.
+
+## Lab 03: Multiple linear regression
+
+Today’s lab focuses on using multiple linear regression to predict childcare costs for preschool-aged children in North Carolina.
+
+🔗 [sta221-sp25.netlify.app/labs/lab-03.html](../labs/lab-03.html)

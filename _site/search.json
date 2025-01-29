@@ -782,49 +782,49 @@
     "href": "slides/lab-03.html#goals",
     "title": "Lab 03",
     "section": "Goals",
-    "text": "Goals\n\nTeam project\nLab 03: Palmer penguins"
+    "text": "Goals\n\nMeet your team!\nTeam agreement\nLab 03: Multiple linear regression"
   },
   {
-    "objectID": "slides/lab-03.html#lab-03-palmer-penguins",
-    "href": "slides/lab-03.html#lab-03-palmer-penguins",
+    "objectID": "slides/lab-03.html#meet-your-team",
+    "href": "slides/lab-03.html#meet-your-team",
     "title": "Lab 03",
-    "section": "Lab 03: Palmer penguins",
-    "text": "Lab 03: Palmer penguins\nLab 03 focuses on\n\nusing linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica.\nuse the data to check conditions about the distribution of the model residuals.\n\nUse this week to get started on the lab. We will continue discussing statistical inference in this week’s lectures, so this lab will be due on Thursday, October 3, 2024.\n🔗 https://sta221-fa24.netlify.app/labs/lab-03"
+    "section": "Meet your team!",
+    "text": "Meet your team!\n\nClick here to find your team.\nSit with your team."
   },
   {
-    "objectID": "slides/lab-03.html#final-team-project",
-    "href": "slides/lab-03.html#final-team-project",
+    "objectID": "slides/lab-03.html#team-name-agreement",
+    "href": "slides/lab-03.html#team-name-agreement",
     "title": "Lab 03",
-    "section": "Final Team Project",
-    "text": "Final Team Project\nGoal: Use the methods from STA 221 to analyze data and answer a research question developed by your team\nPrimary deliverables:\n\nan in-person presentation about the exploratory data analysis and initial modeling\na written, reproducible final report detailing your analysis\na GitHub repository containing all work from the project\n\nSubmission: All work for the project will be submitted in your team’s GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow often used in practice."
+    "section": "Team name + agreement",
+    "text": "Team name + agreement\n\nCome up with a team name. You can’t have the same name as another team in the class, so be creative!\n\nYour TA will get your team name by the end of lab.\n\nFill out the team agreement. The goals of the agreement are to…\n\nGain a common understanding of the team’s goals and expectations for collaboration\nMake a plan for team communication\nMake a plan for working outside of lab"
   },
   {
-    "objectID": "slides/lab-03.html#final-team-project-1",
-    "href": "slides/lab-03.html#final-team-project-1",
+    "objectID": "slides/lab-03.html#team-workflow",
+    "href": "slides/lab-03.html#team-workflow",
     "title": "Lab 03",
-    "section": "Final team project",
-    "text": "Final team project\nMilestones: There are periodic project milestones throughout the semester to help you work towards the final deliverables:\n\nResearch questions (today’s lab)\nProject proposal (next week’s lab)\nExploratory data analysis draft\nPresentation + Presentation comments\nAnalysis draft + peer review\nRound 1 submission (optional)\nWritten report\nReproducibility + organization\n\nSee the Final Project Instructions for a timeline and details for each milestone."
+    "section": "Team workflow",
+    "text": "Team workflow\n\nOnly one team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.\n\nEvery team member should still be engaged in discussion for all questions, even if it’s not your turn type.\n\nDon’t forget to pull to get your teammates’ updates before making changes to the .qmd file.\n\n\n\n\n\n\nImportant\n\n\nOnly one submission per team on Gradescope. Read the submission instructions carefully!"
   },
   {
-    "objectID": "slides/lab-03.html#today-research-questions",
-    "href": "slides/lab-03.html#today-research-questions",
+    "objectID": "slides/lab-03.html#team-workflow-in-action",
+    "href": "slides/lab-03.html#team-workflow-in-action",
     "title": "Lab 03",
-    "section": "Today: Research questions",
-    "text": "Today: Research questions\nGoal: Develop three potential research questions your team may be interested in investigating.\nYou do not need to have a data set at this point\nFull instructions here: sta221-fa24.netlify.app/project#research-questions"
+    "section": "Team workflow, in action",
+    "text": "Team workflow, in action\n\nComplete the “Workflow: Using Git and GitHub as a team” section of the lab in your teams.\nRaise your hand if you have any questions about the workflow.\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/lab-03.html#reminder-team-workflow",
-    "href": "slides/lab-03.html#reminder-team-workflow",
+    "objectID": "slides/lab-03.html#tips-for-working-on-a-team",
+    "href": "slides/lab-03.html#tips-for-working-on-a-team",
     "title": "Lab 03",
-    "section": "Reminder: Team workflow",
-    "text": "Reminder: Team workflow\n\nOnly one team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.\n\nEvery team member should still be engaged in discussion for all questions, even if it’s not your turn type.\n\nDon’t forget to pull to get your teammates’ updates before making changes to the .qmd file.\n\n\n\n\n\n\nImportant\n\n\nOnly one submission per team on Gradescope. Read the submission instructions carefully!"
+    "section": "Tips for working on a team",
+    "text": "Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
   },
   {
-    "objectID": "slides/lab-03.html#reminder-tips-for-working-on-a-team",
-    "href": "slides/lab-03.html#reminder-tips-for-working-on-a-team",
+    "objectID": "slides/lab-03.html#lab-03-multiple-linear-regression",
+    "href": "slides/lab-03.html#lab-03-multiple-linear-regression",
     "title": "Lab 03",
-    "section": "Reminder: Tips for working on a team",
-    "text": "Reminder: Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
+    "section": "Lab 03: Multiple linear regression",
+    "text": "Lab 03: Multiple linear regression\nToday’s lab focuses on using multiple linear regression to predict childcare costs for preschool-aged children in North Carolina.\n🔗 sta221-sp25.netlify.app/labs/lab-03.html"
   },
   {
     "objectID": "index.html",
