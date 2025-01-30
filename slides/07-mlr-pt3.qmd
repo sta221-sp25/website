@@ -279,7 +279,7 @@ How has the model changed? How has the model remained the same?
 
 ## Interest rate vs. annual income
 
-The lines are not parallel indicating there is a potential **interaction effect**. The slope of annual income differs based on the income verification.
+The lines are not parallel indicating there is a potential **interaction effect**. The slope of annual income potentially differs based on the income verification.
 
 ```{r}
 #| echo: false

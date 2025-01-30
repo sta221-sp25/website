@@ -3442,7 +3442,7 @@
     "href": "slides/07-mlr-pt3-notes.html#interest-rate-vs.-annual-income",
     "title": "Multiple linear regression",
     "section": "Interest rate vs. annual income",
-    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is a potential interaction effect. The slope of annual income differs based on the income verification."
+    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is a potential interaction effect. The slope of annual income potentially differs based on the income verification."
   },
   {
     "objectID": "slides/07-mlr-pt3-notes.html#interaction-term-in-model",
@@ -3638,7 +3638,7 @@
     "href": "slides/07-mlr-pt3.html#interest-rate-vs.-annual-income",
     "title": "Multiple linear regression",
     "section": "Interest rate vs. annual income",
-    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is a potential interaction effect. The slope of annual income differs based on the income verification."
+    "text": "Interest rate vs. annual income\nThe lines are not parallel indicating there is a potential interaction effect. The slope of annual income potentially differs based on the income verification."
   },
   {
     "objectID": "slides/07-mlr-pt3.html#interaction-term-in-model",
