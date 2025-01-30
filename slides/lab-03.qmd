@@ -36,6 +36,8 @@ bibliography: references.bib
 -   Team agreement
 -   Lab 03: Multiple linear regression
 
+## Icebreaker
+
 # Teams
 
 ## Meet your team!

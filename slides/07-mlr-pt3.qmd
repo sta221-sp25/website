@@ -1,7 +1,7 @@
 ---
 title: "Multiple linear regression"
-subtitle: "Types of predictors"
-date: "2025-01-28"
+subtitle: "Types of predictors cont'd + Model comparison"
+date: "2025-01-30"
 date-format: "MMM DD, YYYY"
 author: "Prof. Maria Tackett"
 footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
@@ -16,7 +16,7 @@ format:
     chalkboard: true
     include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
   html: 
-    output-file: 06-mlr-pt2-notes.html
+    output-file: 07-mlr-pt3-notes.html
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -32,19 +32,27 @@ bibliography: references.bib
 
 ## Announcements
 
--   Lab 02 due **TODAY** at 11:59pm
+-   HW 01 due **TODAY** at 11:59pm
 
--   HW 01 due **Thursday, January 30** at 11:59pm
+-   Team labs start on Friday
+
+-   [Click here](https://prodduke.sharepoint.com/:p:/s/ARCStaff839/EZ4PKTRTlCVMpFZiR6XoRycB4UUlRMuI2_Rda9hKxNZtsA) to learn more about the Academic Resource Center
+
+-   [Statistics experience](../hw/stats-experience.html) due **Tuesday, April 22**
 
 ## Topics
-
--   Categorical predictors
 
 -   Centering quantitative predictors
 
 -   Standardizing quantitative predictors
 
 -   Interaction terms
+
+-   Model comparison
+
+    -   RMSE
+
+    -   $Adj. R^2$
 
 ## Computing setup
 
@@ -138,115 +146,6 @@ tidy(int_fit) |>
 
 # Categorical predictors
 
-## Matrix form of multiple linear regression
-
-$$
-\underbrace{
-\begin{bmatrix}
-y_1 \\
-\vdots \\
-y_n
-\end{bmatrix} }_
-{\mathbf{y}} \hspace{3mm}
-= 
-\hspace{3mm}
-\underbrace{
-\begin{bmatrix}
-1 &x_{11} & \dots & x_{1p}\\
-\vdots & \vdots &\ddots & \vdots \\
-1 &  x_{n1} & \dots &x_{np}
-\end{bmatrix}
-}_{\mathbf{X}}
-\hspace{2mm}
-\underbrace{
-\begin{bmatrix}
-\beta_0 \\
-\beta_1 \\
-\vdots \\
-\beta_p
-\end{bmatrix}
-}_{\boldsymbol{\beta}}
-\hspace{3mm}
-+
-\hspace{3mm}
-\underbrace{
-\begin{bmatrix}
-\epsilon_1 \\
-\vdots\\
-\epsilon_n
-\end{bmatrix}
-}_\boldsymbol{\epsilon}
-$$
-
-<center>How might we include a categorical predictor with $k$ levels in the design matrix, $\mathbf{X}$ ?</center>
-
-## Indicator variables
-
--   Suppose there is a categorical variable with $k$ levels
-
--   We can make $k$ indicator variables from the data - one indicator for each level
-
--   An **indicator (dummy) variable** takes values 1 or 0
-
-    -   1 if the observation belongs to that level
-
-    -   0 if the observation does not belong to that level
-
-## Indicator variables {.midi}
-
-Suppose we want to predict the amount of sleep a Duke student gets based on whether they are in Pratt (Pratt Yes/ No are the only two options). Consider the model
-
-$$
-Sleep_i = \beta_0 + \beta_1\mathbf{1}(Pratt_i = \texttt{Yes}) + \beta_2\mathbf{1}(Pratt_i = \texttt{No})
-$$
-
-::: question
--   Write out the design matrix for this hypothesized linear model.
-
--   Demonstrate that the design matrix is not of full column rank (that is, affirmatively provide one of the columns in terms of the others).
-
--   Use this intuition to explain why when we include categorical predictors, we cannot include both indicators for every level of the variable *and* an intercept.
-:::
-
-## Indicator variables for `verified_income`
-
-```{r}
-#| echo: true
-
-loan50 <- loan50 |>
-  mutate(
-    not_verified = factor(if_else(verified_income == "Not Verified", 1, 0)),
-    source_verified = factor(if_else(verified_income == "Source Verified", 1, 0)),
-    verified = factor(if_else(verified_income == "Verified", 1, 0))
-  )
-```
-
-. . .
-
-```{r}
-#| echo: false
-loan50 |>
-  select(verified_income, not_verified, source_verified, verified) |>
-  slice(1, 3, 6)
-```
-
-## Indicator variables in the model {.midi}
-
-Given a categorical predictor with $k$ levels...
-
--   Use $k-1$ indicator variables in the model
--   The **baseline** is the category that doesn't have a term in the model
-    -   This is also called the *reference level*
--   The coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.
-
-# Application exercise
-
-::: appex
-📋 [https://sta221-sp25.netlify.app/ae/ae-02-mlr.html](../ae/ae-02-mlr.html){.uri}
-
-Complete Part 1
-:::
-
 ## Interpreting `verified_income` {.small}
 
 ```{r}
@@ -257,16 +156,18 @@ tidy(int_fit
   row_spec(c(3,4), background = "#dce5b2")
 ```
 
-. . .
-
 ::: incremental
 -   The baseline level is `Not verified`.
 -   People with source verified income are expected to take a loan with an interest rate that is 2.211% higher, on average, than the rate on loans to those whose income is not verified, holding all else constant.
 :::
 
-## Centering
+## Centering {.midi}
 
 -   Centering a quantitative predictor means shifting every value by some constant $C$
+
+$$
+X_{cent} = X  - C
+$$
 
 -   One common type of centering is **mean-centering**, in which every value of a predictor is shifted by its mean
 
@@ -315,9 +216,13 @@ orig_model |> bind_cols(cent_model) |>
 How has the model changed? How has the model remained the same?
 :::
 
-## Standardizing
+## Standardizing {.midi}
 
 -   Standardizing a quantitative predictor mean shifting every value by the mean and dividing by the standard deviation of that variable
+
+$$
+X_{std} = \frac{X - \bar{X}}{S_X}
+$$
 
 -   Only quantitative predictors are standardized
 
@@ -404,14 +309,6 @@ p1 + p2 +
   plot_annotation(title = "Interest rate vs. annual income")
 ```
 
-# Application exercise
-
-::: appex
-📋 [https://sta221-sp25.netlify.app/ae/ae-02-mlr.html](../ae/ae-02-mlr.html){.uri}
-
-Complete Part 2
-:::
-
 ## Interaction term in model {.smaller}
 
 ```{r}
@@ -427,21 +324,133 @@ tidy(int_fit_2) |>
   row_spec(c(6,7), background = "#dce5b2")
 ```
 
+## Interaction term in model {.midi}
+
+```{r}
+#| echo: false
+tidy(int_fit_2) |>
+  kable(digits = 3) |>
+  row_spec(c(6,7), background = "#dce5b2")
+```
+
+::: question
+-   Write the regression equation for the people with `Not Verified` income.
+
+-   Write the regression equation for people with `Verified` income.
+:::
+
 ## Interpreting interaction terms
 
 -   What the interaction means: The effect of annual income on the interest rate differs by -0.016 when the income is source verified compared to when it is not verified, holding all else constant.
 -   Interpreting `annual_income` for source verified: If the income is source verified, we expect the interest rate to decrease by 0.023% (-0.007 + -0.016) for each additional thousand dollars in annual income, holding all else constant.
 
+## Summary
+
+::: question
+In general, how do
+
+-   indicators for categorical predictors impact the model equation?
+
+-   interaction terms impact the model equation?
+:::
+
+# Model comparison
+
+## Model assessment: RMSE & $R^2$
+
+-   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
+
+-   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model
+
+## Comparing models
+
+::: incremental
+-   When comparing models, do we prefer the model with the lower or higher RMSE?
+
+-   Though we use $R^2$ to assess the model fit, it is generally unreliable for comparing models with different number of predictors. Why?
+
+    -   $R^2$ will stay the same or increase as we add more variables to the model . Let's show why this is true.
+
+    -   If we only use $R^2$ to choose a best fit model, we will be prone to choose the model with the most predictor variables.
+:::
+
+## Adjusted $R^2$
+
+-   **Adjusted** $R^2$: measure that includes a penalty for unnecessary predictor variables
+-   Similar to $R^2$, it is a measure of the amount of variation in the response that is explained by the regression model
+-   Use the `glance()` function to get $Adj. R^2$ in R
+
+```{r}
+glance(int_fit)$adj.r.squared
+```
+
+## $R^2$ and Adjusted $R^2$
+
+$$R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}$$
+
+<br>
+
+. . .
+
+$$R^2_{adj} = 1 - \frac{SSR/(n-p-1)}{SST/(n-1)}$$
+
+where
+
+-   $n$ is the number of observations used to fit the model
+
+-   $p$ is the number of terms (not including the intercept) in the model
+
+## Using $R^2$ and Adjusted $R^2$
+
+-   Adjusted $R^2$ can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment!
+-   Use $R^2$ when describing the relationship between the response and predictor variables
+
+## Comparing interest rate models
+
+::::: columns
+::: {.column width="50%"}
+**Model without interaction**
+
+```{r}
+# r-squared
+glance(int_fit)$r.squared
+```
+
+<br>
+
+```{r}
+# adj-r-squared
+glance(int_fit)$adj.r.squared
+```
+:::
+
+::: {.column width="50%"}
+**Model with interaction**
+
+```{r}
+# r-squared
+glance(int_fit_2)$r.squared
+```
+
+<br>
+
+```{r}
+# adj-r-squared
+glance(int_fit_2)$adj.r.squared
+```
+:::
+:::::
+
 ## Recap
-
--   Interpreted categorical predictors
-
--   Explored by $k-1$ indicators are included in a model
 
 -   Fit and interpreted models with centered and standardized variables
 
 -   Interpreted interaction terms
 
+-   Used RMSE and $Adj. R^2$ to compare models
+
 ## Next class
 
--   Model comparison for multiple linear regression
+-   Inference for regression
+
+-   See [Prepare for Lecture 08](../prepare/prepare-lec08.html)
