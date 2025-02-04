@@ -401,8 +401,8 @@ window.Quarto = {
   <li><a href="#inference-for-linear-regression" id="toc-inference-for-linear-regression" class="nav-link" data-scroll-target="#inference-for-linear-regression">Inference for linear regression</a></li>
   <li><a href="#linear-regression-model" id="toc-linear-regression-model" class="nav-link" data-scroll-target="#linear-regression-model">Linear regression model</a></li>
   <li><a href="#linear-regression-model-1" id="toc-linear-regression-model-1" class="nav-link" data-scroll-target="#linear-regression-model-1">Linear regression model</a></li>
-  <li><a href="#distribution-of-error-terms" id="toc-distribution-of-error-terms" class="nav-link" data-scroll-target="#distribution-of-error-terms">Distribution of error terms</a></li>
   <li><a href="#describing-random-phenomena" id="toc-describing-random-phenomena" class="nav-link" data-scroll-target="#describing-random-phenomena">Describing random phenomena</a></li>
+  <li><a href="#distribution-of-error-terms" id="toc-distribution-of-error-terms" class="nav-link" data-scroll-target="#distribution-of-error-terms">Distribution of error terms</a></li>
   <li><a href="#visualizing-distribution-of-mathbfymathbfx" id="toc-visualizing-distribution-of-mathbfymathbfx" class="nav-link" data-scroll-target="#visualizing-distribution-of-mathbfymathbfx">Visualizing distribution of <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span></a></li>
   <li><a href="#expected-value" id="toc-expected-value" class="nav-link" data-scroll-target="#expected-value">Expected value</a></li>
   <li><a href="#expected-value-1" id="toc-expected-value-1" class="nav-link" data-scroll-target="#expected-value-1">Expected value</a></li>
@@ -420,8 +420,8 @@ window.Quarto = {
   <li><a href="#sampling-distribution-of-hatbeta" id="toc-sampling-distribution-of-hatbeta" class="nav-link" data-scroll-target="#sampling-distribution-of-hatbeta">Sampling distribution of <span class="math inline">\(\hat{\beta}\)</span></a></li>
   <li><a href="#expected-value-of-boldsymbolhatbeta" id="toc-expected-value-of-boldsymbolhatbeta" class="nav-link" data-scroll-target="#expected-value-of-boldsymbolhatbeta">Expected value of <span class="math inline">\(\boldsymbol{\hat{\beta}}\)</span></a></li>
   <li><a href="#sampling-distribution-of-hatbeta_j" id="toc-sampling-distribution-of-hatbeta_j" class="nav-link" data-scroll-target="#sampling-distribution-of-hatbeta_j">Sampling distribution of <span class="math inline">\(\hat{\beta}_j\)</span></a></li>
+  <li><a href="#varhatboldsymbolbeta-for-ncaa-data" id="toc-varhatboldsymbolbeta-for-ncaa-data" class="nav-link" data-scroll-target="#varhatboldsymbolbeta-for-ncaa-data"><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</a></li>
   <li><a href="#sehatboldsymbolbeta-for-ncaa-data" id="toc-sehatboldsymbolbeta-for-ncaa-data" class="nav-link" data-scroll-target="#sehatboldsymbolbeta-for-ncaa-data"><span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</a></li>
-  <li><a href="#sehatboldsymbolbeta-for-ncaa-data-1" id="toc-sehatboldsymbolbeta-for-ncaa-data-1" class="nav-link" data-scroll-target="#sehatboldsymbolbeta-for-ncaa-data-1"><span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</a></li>
   </ul></li>
   <li><a href="#hypothesis-test-for-beta_j" id="toc-hypothesis-test-for-beta_j" class="nav-link" data-scroll-target="#hypothesis-test-for-beta_j">Hypothesis test for <span class="math inline">\(\beta_j\)</span></a>
   <ul class="collapse">
@@ -433,10 +433,9 @@ window.Quarto = {
   <li><a href="#hypothesis-test-for-beta_j-p-value" id="toc-hypothesis-test-for-beta_j-p-value" class="nav-link" data-scroll-target="#hypothesis-test-for-beta_j-p-value">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: P-value</a></li>
   <li><a href="#understanding-the-p-value" id="toc-understanding-the-p-value" class="nav-link" data-scroll-target="#understanding-the-p-value">Understanding the p-value</a></li>
   <li><a href="#hypothesis-test-for-beta_j-conclusion" id="toc-hypothesis-test-for-beta_j-conclusion" class="nav-link" data-scroll-target="#hypothesis-test-for-beta_j-conclusion">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Conclusion</a></li>
-  </ul></li>
-  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
-  <ul class="collapse">
+  <li><a href="#hypothesis-test-for-hatbeta_j" id="toc-hypothesis-test-for-hatbeta_j" class="nav-link" data-scroll-target="#hypothesis-test-for-hatbeta_j">Hypothesis test for <span class="math inline">\(\hat{\beta}_{j}\)</span></a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#next-class" id="toc-next-class" class="nav-link" data-scroll-target="#next-class">Next class</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="08-inference.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -681,13 +680,6 @@ window.Quarto = {
 <li><strong>Normally distributed</strong>: The distribution follows a particular mathematical model that is unimodal and symmetric</li>
 </ul>
 </section>
-<section id="distribution-of-error-terms" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-of-error-terms">Distribution of error terms</h2>
-<p>The error terms follow a (multivariate) normal distribution with mean <span class="math inline">\(\mathbf{0}\)</span> and variance <span class="math inline">\(\sigma^2\mathbf{I}\)</span></p>
-<p><span class="math display">\[f(\boldsymbol{\epsilon}) = \frac{1}{(2\pi)^{n/2}|\sigma^2_{\epsilon}\mathbf{I}|^{1/2}}\exp\Big\{-\frac{1}{2}(\boldsymbol{\epsilon} - \mathbf{0})^\mathsf{T}(\sigma^2_{\epsilon}\mathbf{I})^{-1}(\boldsymbol{\epsilon}- \mathbf{0})\Big\}\]</span></p>
-<p><br></p>
-<p>This probability density function is a mathematical function that tells us about the shape of the distribution.</p>
-</section>
 <section id="describing-random-phenomena" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="describing-random-phenomena">Describing random phenomena</h2>
 <div class="incremental">
@@ -702,6 +694,11 @@ window.Quarto = {
 </ul></li>
 </ul>
 </div>
+</section>
+<section id="distribution-of-error-terms" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-of-error-terms">Distribution of error terms</h2>
+<p>The error terms follow a (multivariate) normal distribution with mean <span class="math inline">\(\mathbf{0}\)</span> and variance <span class="math inline">\(\sigma^2\mathbf{I}\)</span></p>
+<p><span class="math display">\[f(\boldsymbol{\epsilon}) = \frac{1}{(2\pi)^{n/2}|\sigma^2_{\epsilon}\mathbf{I}|^{1/2}}\exp\Big\{-\frac{1}{2}(\boldsymbol{\epsilon} - \mathbf{0})^\mathsf{T}(\sigma^2_{\epsilon}\mathbf{I})^{-1}(\boldsymbol{\epsilon}- \mathbf{0})\Big\}\]</span></p>
 </section>
 <section id="visualizing-distribution-of-mathbfymathbfx" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="visualizing-distribution-of-mathbfymathbfx">Visualizing distribution of <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span></h2>
@@ -724,7 +721,7 @@ window.Quarto = {
 </section>
 <section id="expected-value-1" class="level2" data-background-color="#ccddeb">
 <h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="expected-value-1">Expected value</h2>
-<p>Let <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{C}\)</span> be <span class="math inline">\(n \times p\)</span> matrices of constants and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants, <span class="math inline">\(\mathbf{C}\)</span> a <span class="math inline">\(n \times 1\)</span> vector of constants, and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
 <p><span class="math display">\[
 E(\mathbf{Az}) = \mathbf{A}E(\mathbf{z})
 \]</span></p>
@@ -776,7 +773,7 @@ Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
 </section>
 <section id="linear-transformation-of-normal-random-variable" class="level2" data-background-color="#ccddeb">
 <h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="linear-transformation-of-normal-random-variable">Linear transformation of normal random variable</h2>
-<p>Suppose <span class="math inline">\(\mathbf{z}\)</span> is (multivariate) normal random variable such that <span class="math inline">\(\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})\)</span></p>
+<p>Suppose <span class="math inline">\(\mathbf{z}\)</span> is a (multivariate) normal random variable such that <span class="math inline">\(\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})\)</span></p>
 <p><br></p>
 <p>A linear transformation of <span class="math inline">\(\mathbf{z}\)</span> is also multivariate normal, such that</p>
 <p><span class="math display">\[
@@ -823,7 +820,7 @@ Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
 <li>The <strong>regression standard error</strong> <span class="math inline">\(\hat{\sigma}_{\epsilon}\)</span> is a measure of the average distance between the observations and regression line</li>
 </ul>
 <p><span class="math display">\[
-\hat{\sigma}_\epsilon = \sqrt{\frac{SSR}{n - p - 1}}
+\hat{\sigma}_\epsilon = \sqrt{\frac{SSR}{n - p - 1}} = \hat{\sigma}_\epsilon = \sqrt{\frac{\mathbf{e}^\mathsf{T}\mathbf{e}}{n - p - 1}}
 \]</span></p>
 </section>
 </section>
@@ -860,6 +857,8 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 <p>Show</p>
 <p><span class="math display">\[E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}\]</span></p>
 </div>
+<p><br></p>
+<p>Will show <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span> in homework</p>
 </section>
 <section id="sampling-distribution-of-hatbeta_j" class="level2">
 <h2 class="anchored" data-anchor-id="sampling-distribution-of-hatbeta_j">Sampling distribution of <span class="math inline">\(\hat{\beta}_j\)</span></h2>
@@ -875,14 +874,15 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 </ul>
 </div>
 </section>
-<section id="sehatboldsymbolbeta-for-ncaa-data" class="level2">
-<h2 class="anchored" data-anchor-id="sehatboldsymbolbeta-for-ncaa-data"><span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</h2>
+<section id="varhatboldsymbolbeta-for-ncaa-data" class="level2">
+<h2 class="anchored" data-anchor-id="varhatboldsymbolbeta-for-ncaa-data"><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(total_exp_m <span class="sc">~</span> enrollment_th <span class="sc">+</span> type, <span class="at">data =</span> football)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sigma_sq <span class="ot">&lt;-</span> <span class="fu">glance</span>(exp_fit)<span class="sc">$</span>sigma<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>var_beta <span class="ot">&lt;-</span> sigma_sq <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>var_beta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(total_exp_m <span class="sc">~</span> enrollment_th <span class="sc">+</span> type, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> football)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sigma_sq <span class="ot">&lt;-</span> <span class="fu">glance</span>(exp_fit)<span class="sc">$</span>sigma<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>var_beta <span class="ot">&lt;-</span> sigma_sq <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>var_beta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              (Intercept) enrollment_th typePublic
 (Intercept)     8.9054556   -0.13323338 -6.0899556
@@ -891,8 +891,8 @@ typePublic     -6.0899556   -0.12394079  9.9388370</code></pre>
 </div>
 </div>
 </section>
-<section id="sehatboldsymbolbeta-for-ncaa-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="sehatboldsymbolbeta-for-ncaa-data-1"><span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</h2>
+<section id="sehatboldsymbolbeta-for-ncaa-data" class="level2">
+<h2 class="anchored" data-anchor-id="sehatboldsymbolbeta-for-ncaa-data"><span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -1059,12 +1059,48 @@ p-value = P(|t| &gt; |\text{test statistic}|),
 <li><p>State the conclusion in the context of the data</p></li>
 </ul>
 </section>
-</section>
-<section id="application-exercise" class="level1">
-<h1>Application exercise</h1>
-<div class="appex">
-<p>📋 <a href="../ae/ae-03-inference" class="uri">https://sta221-sp25.netlify.app/ae/ae-03-inference</a></p>
+<section id="hypothesis-test-for-hatbeta_j" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-test-for-hatbeta_j">Hypothesis test for <span class="math inline">\(\hat{\beta}_{j}\)</span></h2>
+<p>Let’s walk through the steps to test the effect of <code>enrollment_th</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
 </div>
+</div>
+</section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <ul>
@@ -1072,6 +1108,14 @@ p-value = P(|t| &gt; |\text{test statistic}|),
 <li><p>Described the assumptions for regression</p></li>
 <li><p>Connected the distribution of residuals and inferential procedures</p></li>
 <li><p>Conducted inference on a single coefficient</p></li>
+</ul>
+</section>
+<section id="next-class" class="level2">
+<h2 class="anchored" data-anchor-id="next-class">Next class</h2>
+<ul>
+<li><p>Confidence intervals for <span class="math inline">\(\hat{\beta}_j\)</span></p></li>
+<li><p>Hypothesis testing based on ANOVA</p></li>
+<li><p>See <a href="https://sta221-sp25.netlify.app/prepare/prepare-lec09">Prepare for Lecture 09</a></p></li>
 </ul>
 
 

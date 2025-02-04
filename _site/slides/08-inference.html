@@ -402,13 +402,6 @@ Prof.&nbsp;Maria Tackett
 </ul>
 </div>
 </section>
-<section id="distribution-of-error-terms" class="slide level2">
-<h2>Distribution of error terms</h2>
-<p>The error terms follow a (multivariate) normal distribution with mean <span class="math inline">\(\mathbf{0}\)</span> and variance <span class="math inline">\(\sigma^2\mathbf{I}\)</span></p>
-<p><span class="math display">\[f(\boldsymbol{\epsilon}) = \frac{1}{(2\pi)^{n/2}|\sigma^2_{\epsilon}\mathbf{I}|^{1/2}}\exp\Big\{-\frac{1}{2}(\boldsymbol{\epsilon} - \mathbf{0})^\mathsf{T}(\sigma^2_{\epsilon}\mathbf{I})^{-1}(\boldsymbol{\epsilon}- \mathbf{0})\Big\}\]</span></p>
-<p><br></p>
-<p>This probability density function is a mathematical function that tells us about the shape of the distribution.</p>
-</section>
 <section id="describing-random-phenomena" class="slide level2 midi">
 <h2>Describing random phenomena</h2>
 <div>
@@ -423,6 +416,11 @@ Prof.&nbsp;Maria Tackett
 </ul></li>
 </ul>
 </div>
+</section>
+<section id="distribution-of-error-terms" class="slide level2">
+<h2>Distribution of error terms</h2>
+<p>The error terms follow a (multivariate) normal distribution with mean <span class="math inline">\(\mathbf{0}\)</span> and variance <span class="math inline">\(\sigma^2\mathbf{I}\)</span></p>
+<p><span class="math display">\[f(\boldsymbol{\epsilon}) = \frac{1}{(2\pi)^{n/2}|\sigma^2_{\epsilon}\mathbf{I}|^{1/2}}\exp\Big\{-\frac{1}{2}(\boldsymbol{\epsilon} - \mathbf{0})^\mathsf{T}(\sigma^2_{\epsilon}\mathbf{I})^{-1}(\boldsymbol{\epsilon}- \mathbf{0})\Big\}\]</span></p>
 </section>
 <section id="visualizing-distribution-of-mathbfymathbfx" class="slide level2 midi">
 <h2>Visualizing distribution of <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span></h2>
@@ -441,7 +439,7 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="expected-value-1" class="slide level2" data-background-color="#ccddeb">
 <h2>Expected value</h2>
-<p>Let <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{C}\)</span> be <span class="math inline">\(n \times p\)</span> matrices of constants and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants, <span class="math inline">\(\mathbf{C}\)</span> a <span class="math inline">\(n \times 1\)</span> vector of constants, and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
 <p><span class="math display">\[
 E(\mathbf{Az}) = \mathbf{A}E(\mathbf{z})
 \]</span></p>
@@ -496,7 +494,7 @@ Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
 </section>
 <section id="linear-transformation-of-normal-random-variable" class="slide level2" data-background-color="#ccddeb">
 <h2>Linear transformation of normal random variable</h2>
-<p>Suppose <span class="math inline">\(\mathbf{z}\)</span> is (multivariate) normal random variable such that <span class="math inline">\(\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})\)</span></p>
+<p>Suppose <span class="math inline">\(\mathbf{z}\)</span> is a (multivariate) normal random variable such that <span class="math inline">\(\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})\)</span></p>
 <p><br></p>
 <p>A linear transformation of <span class="math inline">\(\mathbf{z}\)</span> is also multivariate normal, such that</p>
 <p><span class="math display">\[
@@ -542,7 +540,7 @@ Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
 <li>The <strong>regression standard error</strong> <span class="math inline">\(\hat{\sigma}_{\epsilon}\)</span> is a measure of the average distance between the observations and regression line</li>
 </ul>
 <p><span class="math display">\[
-\hat{\sigma}_\epsilon = \sqrt{\frac{SSR}{n - p - 1}}
+\hat{\sigma}_\epsilon = \sqrt{\frac{SSR}{n - p - 1}} = \hat{\sigma}_\epsilon = \sqrt{\frac{\mathbf{e}^\mathsf{T}\mathbf{e}}{n - p - 1}}
 \]</span></p>
 </div>
 </section></section>
@@ -584,6 +582,8 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 <p>Show</p>
 <p><span class="math display">\[E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}\]</span></p>
 </div>
+<p><br></p>
+<p>Will show <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span> in homework</p>
 </section>
 <section id="sampling-distribution-of-hatbeta_j" class="slide level2">
 <h2>Sampling distribution of <span class="math inline">\(\hat{\beta}_j\)</span></h2>
@@ -599,14 +599,15 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 </ul>
 </div>
 </section>
-<section id="sehatboldsymbolbeta-for-ncaa-data" class="slide level2">
-<h2><span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</h2>
+<section id="varhatboldsymbolbeta-for-ncaa-data" class="slide level2">
+<h2><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(total_exp_m <span class="sc">~</span> enrollment_th <span class="sc">+</span> type, <span class="at">data =</span> football)</span>
-<span id="cb4-2"><a></a>sigma_sq <span class="ot">&lt;-</span> <span class="fu">glance</span>(exp_fit)<span class="sc">$</span>sigma<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>var_beta <span class="ot">&lt;-</span> sigma_sq <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span>
-<span id="cb4-5"><a></a>var_beta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(total_exp_m <span class="sc">~</span> enrollment_th <span class="sc">+</span> type, </span>
+<span id="cb4-2"><a></a>                  <span class="at">data =</span> football)</span>
+<span id="cb4-3"><a></a>sigma_sq <span class="ot">&lt;-</span> <span class="fu">glance</span>(exp_fit)<span class="sc">$</span>sigma<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a>var_beta <span class="ot">&lt;-</span> sigma_sq <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span>
+<span id="cb4-6"><a></a>var_beta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              (Intercept) enrollment_th typePublic
 (Intercept)     8.9054556   -0.13323338 -6.0899556
@@ -615,7 +616,7 @@ typePublic     -6.0899556   -0.12394079  9.9388370</code></pre>
 </div>
 </div>
 </section>
-<section id="sehatboldsymbolbeta-for-ncaa-data-1" class="slide level2">
+<section id="sehatboldsymbolbeta-for-ncaa-data" class="slide level2">
 <h2><span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -776,12 +777,47 @@ p-value = P(|t| &gt; |\text{test statistic}|),
 </ul></li>
 <li><p>State the conclusion in the context of the data</p></li>
 </ul>
-</section></section>
-<section>
-<section id="application-exercise" class="title-slide slide level1 center">
-<h1>Application exercise</h1>
-<div class="appex">
-<p>📋 <a href="../ae/ae-03-inference" class="uri">https://sta221-sp25.netlify.app/ae/ae-03-inference</a></p>
+</section>
+<section id="hypothesis-test-for-hatbeta_j" class="slide level2">
+<h2>Hypothesis test for <span class="math inline">\(\hat{\beta}_{j}\)</span></h2>
+<p>Let’s walk through the steps to test the effect of <code>enrollment_th</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </section>
 <section id="recap" class="slide level2">
@@ -791,6 +827,14 @@ p-value = P(|t| &gt; |\text{test statistic}|),
 <li><p>Described the assumptions for regression</p></li>
 <li><p>Connected the distribution of residuals and inferential procedures</p></li>
 <li><p>Conducted inference on a single coefficient</p></li>
+</ul>
+</section>
+<section id="next-class" class="slide level2">
+<h2>Next class</h2>
+<ul>
+<li><p>Confidence intervals for <span class="math inline">\(\hat{\beta}_j\)</span></p></li>
+<li><p>Hypothesis testing based on ANOVA</p></li>
+<li><p>See <a href="https://sta221-sp25.netlify.app/prepare/prepare-lec09">Prepare for Lecture 09</a></p></li>
 </ul>
 
 

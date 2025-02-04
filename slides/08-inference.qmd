@@ -148,7 +148,7 @@ p2 <- ggplot(data = football, aes(x = enrollment_th)) +
 
 p3 <- ggplot(data = football, aes(x = type)) + 
   geom_bar(fill = "steelblue", color = "black") + 
-  labs(x = "Insitution Type")
+  labs(x = "Institution Type")
 
 p1 + (p2 / p3)
 ```
@@ -168,7 +168,7 @@ p5 <- ggplot(data = football, aes(x = type, y = total_exp_m, fill = type)) +
   geom_boxplot() +
   labs(x = "Institution Type", 
        y = "",
-       title = "Football Expenditure vs. Type") + 
+       title = "Football Expenditures vs. Type") + 
   theme(legend.position = "none")
 
 p4 + p5
@@ -266,16 +266,6 @@ such that the errors are independent and normally distributed.
 -   **Independent**: Knowing the error term for one observation doesn't tell us about the error term for another observation
 -   **Normally distributed**: The distribution follows a particular mathematical model that is unimodal and symmetric
 
-## Distribution of error terms
-
-The error terms follow a (multivariate) normal distribution with mean $\mathbf{0}$ and variance $\sigma^2\mathbf{I}$
-
-$$f(\boldsymbol{\epsilon}) = \frac{1}{(2\pi)^{n/2}|\sigma^2_{\epsilon}\mathbf{I}|^{1/2}}\exp\Big\{-\frac{1}{2}(\boldsymbol{\epsilon} - \mathbf{0})^\mathsf{T}(\sigma^2_{\epsilon}\mathbf{I})^{-1}(\boldsymbol{\epsilon}- \mathbf{0})\Big\}$$
-
-<br>
-
-This probability density function is a mathematical function that tells us about the shape of the distribution.
-
 ## Describing random phenomena {.midi}
 
 ::: incremental
@@ -291,6 +281,12 @@ This probability density function is a mathematical function that tells us about
 
     -   **Probability density function:** Mathematical function that produces probability of occurrences for events in the sample space for a continuous random variable
 :::
+
+## Distribution of error terms
+
+The error terms follow a (multivariate) normal distribution with mean $\mathbf{0}$ and variance $\sigma^2\mathbf{I}$
+
+$$f(\boldsymbol{\epsilon}) = \frac{1}{(2\pi)^{n/2}|\sigma^2_{\epsilon}\mathbf{I}|^{1/2}}\exp\Big\{-\frac{1}{2}(\boldsymbol{\epsilon} - \mathbf{0})^\mathsf{T}(\sigma^2_{\epsilon}\mathbf{I})^{-1}(\boldsymbol{\epsilon}- \mathbf{0})\Big\}$$
 
 ## Visualizing distribution of $\mathbf{y}|\mathbf{X}$ {.midi}
 
@@ -312,7 +308,7 @@ Then $E(\mathbf{z}) = E\begin{bmatrix}z_1 \\ \vdots \\ z_p\end{bmatrix} = \begin
 
 ## Expected value {background-color="#ccddeb"}
 
-Let $\mathbf{A}$ and $\mathbf{C}$ be $n \times p$ matrices of constants and $\mathbf{z}$ a $p \times 1$ vector of random variables. Then
+Let $\mathbf{A}$ be an $n \times p$ matrix of constants, $\mathbf{C}$ a $n \times 1$ vector of constants, and $\mathbf{z}$ a $p \times 1$ vector of random variables. Then
 
 $$
 E(\mathbf{Az}) = \mathbf{A}E(\mathbf{z})
@@ -376,7 +372,7 @@ $$
 
 ## Linear transformation of normal random variable {background-color="#ccddeb"}
 
-Suppose $\mathbf{z}$ is (multivariate) normal random variable such that $\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})$
+Suppose $\mathbf{z}$ is a (multivariate) normal random variable such that $\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})$
 
 <br>
 
@@ -424,7 +420,7 @@ $$
 -   The **regression standard error** $\hat{\sigma}_{\epsilon}$ is a measure of the average distance between the observations and regression line
 
 $$
-\hat{\sigma}_\epsilon = \sqrt{\frac{SSR}{n - p - 1}} 
+\hat{\sigma}_\epsilon = \sqrt{\frac{SSR}{n - p - 1}} = \hat{\sigma}_\epsilon = \sqrt{\frac{\mathbf{e}^\mathsf{T}\mathbf{e}}{n - p - 1}}
 $$
 
 # Inference for a single coefficient
@@ -467,6 +463,10 @@ Show
 $$E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}$$
 :::
 
+<br>
+
+Will show $Var(\hat{\boldsymbol{\beta}})$ in homework
+
 ## Sampling distribution of $\hat{\beta}_j$
 
 $$
@@ -483,10 +483,11 @@ Let $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$. Then, for each coeffi
 -   $Cov(\hat{\beta}_i, \hat{\beta}_j) = \sigma^2_{\epsilon}C_{ij}$
 :::
 
-## $SE(\hat{\boldsymbol{\beta}})$ for NCAA data
+## $Var(\hat{\boldsymbol{\beta}})$ for NCAA data
 
 ```{r}
-X <- model.matrix(total_exp_m ~ enrollment_th + type, data = football)
+X <- model.matrix(total_exp_m ~ enrollment_th + type, 
+                  data = football)
 sigma_sq <- glance(exp_fit)$sigma^2
 
 var_beta <- sigma_sq * solve(t(X) %*% X)
@@ -623,11 +624,14 @@ Why do we take into account "extreme" on both the high and low ends?
 
 -   State the conclusion in the context of the data
 
-# Application exercise
+## Hypothesis test for $\hat{\beta}_{j}$ 
 
-::: appex
-📋 [https://sta221-sp25.netlify.app/ae/ae-03-inference](../ae/ae-03-inference){.uri}
-:::
+Let's walk through the steps to test the effect of `enrollment_th`.
+
+```{r}
+#| echo: false
+tidy(exp_fit) |> kable(digits = 3)
+```
 
 ## Recap
 
@@ -638,3 +642,11 @@ Why do we take into account "extreme" on both the high and low ends?
 -   Connected the distribution of residuals and inferential procedures
 
 -   Conducted inference on a single coefficient
+
+## Next class 
+
+-   Confidence intervals for $\hat{\beta}_j$
+
+-   Hypothesis testing based on ANOVA
+
+-   See [Prepare for Lecture 09](https://sta221-sp25.netlify.app/prepare/prepare-lec09)
