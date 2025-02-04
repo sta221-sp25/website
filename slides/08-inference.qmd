@@ -54,7 +54,7 @@ options(scipen=999)
 
 -   [Statistics experience](../hw/stats-experience.html) due **Tuesday, April 22**
 
-## Poll: Office hours availability 
+## Poll: Office hours availability
 
 <center>
 
@@ -292,7 +292,7 @@ This probability density function is a mathematical function that tells us about
     -   **Probability density function:** Mathematical function that produces probability of occurrences for events in the sample space for a continuous random variable
 :::
 
-## Visualizing distribution of $\mathbf{y}|\mathbf{X}$  {.midi}
+## Visualizing distribution of $\mathbf{y}|\mathbf{X}$ {.midi}
 
 $$
 \mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma_\epsilon^2\mathbf{I})
@@ -300,7 +300,7 @@ $$
 
 ![Image source: *Introduction to the Practice of Statistics (5th ed)*](images/08/regression.png){fig-align="center"}
 
-## Expected value  {background-color="#ccddeb"}
+## Expected value {background-color="#ccddeb"}
 
 Let $\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
 
@@ -310,7 +310,7 @@ Let $\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}$ be a $p \time
 
 Then $E(\mathbf{z}) = E\begin{bmatrix}z_1 \\ \vdots \\ z_p\end{bmatrix} = \begin{bmatrix}E(z_1) \\ \vdots \\ E(z_p)\end{bmatrix}$
 
-## Expected value  {background-color="ccddeb"}
+## Expected value {background-color="#ccddeb"}
 
 Let $\mathbf{A}$ and $\mathbf{C}$ be $n \times p$ matrices of constants and $\mathbf{z}$ a $p \times 1$ vector of random variables. Then
 
@@ -345,7 +345,7 @@ Let $\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}$ be a $p \time
 
 Then $Var(\mathbf{z}) = \begin{bmatrix}Var(z_1) & Cov(z_1, z_2) & \dots & Cov(z_1, z_p)\\ Cov(z_2, z_1) & Var(z_2) & \dots & Cov(z_2, z_p) \\ \vdots & \vdots & \dots & \cdot \\ Cov(z_p, z_1) & Cov(z_p, z_2) & \dots & Var(z_p)\end{bmatrix}$
 
-## Variance  {background-color="#ccddeb"}
+## Variance {background-color="#ccddeb"}
 
 Let $\mathbf{A}$ be an $n \times p$ matrix of constants and $\mathbf{z}$ a $p \times 1$ vector of random variables. Then
 
@@ -364,7 +364,7 @@ Var(\mathbf{Az}) &= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}
 \end{aligned}
 $$
 
-## Variance of  the response
+## Variance of the response
 
 ::: question
 Show
