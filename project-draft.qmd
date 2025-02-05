@@ -1,5 +1,5 @@
 ---
-title: Final project
+title: Final projectgb
 ---
 
 ```{r include = F}
@@ -20,7 +20,7 @@ library(broom)
 
 [Analysis draft + peer review](#draft-report-peer-review) Friday, April 11 (peer review in lab)
 
-[Written report] due Monday, April 28
+[Written report](#written-report) due Monday, April 28
 
 [Project highlights] due Wednesday, April 30
 
@@ -469,7 +469,7 @@ Update the README of the project repo with your project title and a few sentence
 
 Points for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo. The repo should be neatly organized as described above, there should be no extraneous files, all text in the `README` should be easily readable.
 
-## Final project survey 
+## Final project survey
 
 ## Peer teamwork evaluation
 
