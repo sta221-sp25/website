@@ -387,7 +387,6 @@ window.Quarto = {
    
   <ul>
   <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#poll-office-hours-availability" id="toc-poll-office-hours-availability" class="nav-link" data-scroll-target="#poll-office-hours-availability">Poll: Office hours availability</a></li>
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
   <li><a href="#computing-setup" id="toc-computing-setup" class="nav-link" data-scroll-target="#computing-setup">Computing setup</a></li>
   <li><a href="#data-ncaa-football-expenditures" id="toc-data-ncaa-football-expenditures" class="nav-link" data-scroll-target="#data-ncaa-football-expenditures">Data: NCAA Football expenditures</a></li>
@@ -398,24 +397,46 @@ window.Quarto = {
   <li><a href="#inference-for-regression" id="toc-inference-for-regression" class="nav-link" data-scroll-target="#inference-for-regression">Inference for regression</a>
   <ul class="collapse">
   <li><a href="#statistical-inference" id="toc-statistical-inference" class="nav-link" data-scroll-target="#statistical-inference">Statistical inference</a></li>
-  <li><a href="#inference-for-linear-regression" id="toc-inference-for-linear-regression" class="nav-link" data-scroll-target="#inference-for-linear-regression">Inference for linear regression</a></li>
   <li><a href="#linear-regression-model" id="toc-linear-regression-model" class="nav-link" data-scroll-target="#linear-regression-model">Linear regression model</a></li>
-  <li><a href="#linear-regression-model-1" id="toc-linear-regression-model-1" class="nav-link" data-scroll-target="#linear-regression-model-1">Linear regression model</a></li>
-  <li><a href="#describing-random-phenomena" id="toc-describing-random-phenomena" class="nav-link" data-scroll-target="#describing-random-phenomena">Describing random phenomena</a></li>
-  <li><a href="#distribution-of-error-terms" id="toc-distribution-of-error-terms" class="nav-link" data-scroll-target="#distribution-of-error-terms">Distribution of error terms</a></li>
   <li><a href="#visualizing-distribution-of-mathbfymathbfx" id="toc-visualizing-distribution-of-mathbfymathbfx" class="nav-link" data-scroll-target="#visualizing-distribution-of-mathbfymathbfx">Visualizing distribution of <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span></a></li>
-  <li><a href="#expected-value" id="toc-expected-value" class="nav-link" data-scroll-target="#expected-value">Expected value</a></li>
-  <li><a href="#expected-value-1" id="toc-expected-value-1" class="nav-link" data-scroll-target="#expected-value-1">Expected value</a></li>
-  <li><a href="#expected-value-of-the-response" id="toc-expected-value-of-the-response" class="nav-link" data-scroll-target="#expected-value-of-the-response">Expected value of the response</a></li>
-  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance">Variance</a></li>
-  <li><a href="#variance-1" id="toc-variance-1" class="nav-link" data-scroll-target="#variance-1">Variance</a></li>
-  <li><a href="#variance-of-the-response" id="toc-variance-of-the-response" class="nav-link" data-scroll-target="#variance-of-the-response">Variance of the response</a></li>
   <li><a href="#linear-transformation-of-normal-random-variable" id="toc-linear-transformation-of-normal-random-variable" class="nav-link" data-scroll-target="#linear-transformation-of-normal-random-variable">Linear transformation of normal random variable</a></li>
+  <li><a href="#assumptions-for-regression" id="toc-assumptions-for-regression" class="nav-link" data-scroll-target="#assumptions-for-regression">Assumptions for regression</a></li>
+  <li><a href="#estimating-sigma2_epsilon" id="toc-estimating-sigma2_epsilon" class="nav-link" data-scroll-target="#estimating-sigma2_epsilon">Estimating <span class="math inline">\(\sigma^2_{\epsilon}\)</span></a></li>
+  </ul></li>
+  <li><a href="#inference-for-a-single-coefficient" id="toc-inference-for-a-single-coefficient" class="nav-link" data-scroll-target="#inference-for-a-single-coefficient">Inference for a single coefficient</a>
+  <ul class="collapse">
+  <li><a href="#inference-for-beta_j" id="toc-inference-for-beta_j" class="nav-link" data-scroll-target="#inference-for-beta_j">Inference for <span class="math inline">\(\beta_j\)</span></a></li>
+  <li><a href="#sampling-distribution-of-hatbeta" id="toc-sampling-distribution-of-hatbeta" class="nav-link" data-scroll-target="#sampling-distribution-of-hatbeta">Sampling distribution of <span class="math inline">\(\hat{\beta}\)</span></a></li>
+  <li><a href="#expected-value-of-boldsymbolhatbeta" id="toc-expected-value-of-boldsymbolhatbeta" class="nav-link" data-scroll-target="#expected-value-of-boldsymbolhatbeta">Expected value of <span class="math inline">\(\boldsymbol{\hat{\beta}}\)</span></a></li>
+  <li><a href="#sampling-distribution-of-hatbeta_j" id="toc-sampling-distribution-of-hatbeta_j" class="nav-link" data-scroll-target="#sampling-distribution-of-hatbeta_j">Sampling distribution of <span class="math inline">\(\hat{\beta}_j\)</span></a></li>
+  <li><a href="#varhatboldsymbolbeta-for-ncaa-data" id="toc-varhatboldsymbolbeta-for-ncaa-data" class="nav-link" data-scroll-target="#varhatboldsymbolbeta-for-ncaa-data"><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</a></li>
+  <li><a href="#sehatboldsymbolbeta-for-ncaa-data" id="toc-sehatboldsymbolbeta-for-ncaa-data" class="nav-link" data-scroll-target="#sehatboldsymbolbeta-for-ncaa-data"><span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</a></li>
+  </ul></li>
+  <li><a href="#hypothesis-test-for-beta_j" id="toc-hypothesis-test-for-beta_j" class="nav-link" data-scroll-target="#hypothesis-test-for-beta_j">Hypothesis test for <span class="math inline">\(\beta_j\)</span></a>
+  <ul class="collapse">
+  <li><a href="#steps-for-a-hypothesis-test" id="toc-steps-for-a-hypothesis-test" class="nav-link" data-scroll-target="#steps-for-a-hypothesis-test">Steps for a hypothesis test</a></li>
+  <li><a href="#hypothesis-test-for-beta_j-hypotheses" id="toc-hypothesis-test-for-beta_j-hypotheses" class="nav-link" data-scroll-target="#hypothesis-test-for-beta_j-hypotheses">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Hypotheses</a></li>
+  <li><a href="#hypothesis-test-for-beta_j-test-statistic" id="toc-hypothesis-test-for-beta_j-test-statistic" class="nav-link" data-scroll-target="#hypothesis-test-for-beta_j-test-statistic">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Test statistic</a></li>
+  <li><a href="#hypothesis-test-for-beta_j-test-statistic-1" id="toc-hypothesis-test-for-beta_j-test-statistic-1" class="nav-link" data-scroll-target="#hypothesis-test-for-beta_j-test-statistic-1">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Test statistic</a></li>
+  <li><a href="#t-vs.-n01" id="toc-t-vs.-n01" class="nav-link" data-scroll-target="#t-vs.-n01"><em>t</em> vs.&nbsp;N(0,1)</a></li>
+  <li><a href="#hypothesis-test-for-beta_j-p-value" id="toc-hypothesis-test-for-beta_j-p-value" class="nav-link" data-scroll-target="#hypothesis-test-for-beta_j-p-value">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: P-value</a></li>
+  <li><a href="#understanding-the-p-value" id="toc-understanding-the-p-value" class="nav-link" data-scroll-target="#understanding-the-p-value">Understanding the p-value</a></li>
+  <li><a href="#hypothesis-test-for-beta_j-conclusion" id="toc-hypothesis-test-for-beta_j-conclusion" class="nav-link" data-scroll-target="#hypothesis-test-for-beta_j-conclusion">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Conclusion</a></li>
+  </ul></li>
+  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a></li>
+  <li><a href="#confidence-interval-for-beta_j" id="toc-confidence-interval-for-beta_j" class="nav-link" data-scroll-target="#confidence-interval-for-beta_j">Confidence interval for <span class="math inline">\(\beta_j\)</span></a>
+  <ul class="collapse">
+  <li><a href="#confidence-interval-for-beta_j-1" id="toc-confidence-interval-for-beta_j-1" class="nav-link" data-scroll-target="#confidence-interval-for-beta_j-1">Confidence interval for <span class="math inline">\(\beta_j\)</span></a></li>
+  <li><a href="#what-confidence-means" id="toc-what-confidence-means" class="nav-link" data-scroll-target="#what-confidence-means">What “confidence” means</a></li>
+  <li><a href="#confidence-interval-for-beta_j-2" id="toc-confidence-interval-for-beta_j-2" class="nav-link" data-scroll-target="#confidence-interval-for-beta_j-2">Confidence interval for <span class="math inline">\(\beta_j\)</span></a></li>
+  <li><a href="#confidence-interval-critical-value" id="toc-confidence-interval-critical-value" class="nav-link" data-scroll-target="#confidence-interval-critical-value">Confidence interval: Critical value</a></li>
+  <li><a href="#ci-for-beta_j-calculation" id="toc-ci-for-beta_j-calculation" class="nav-link" data-scroll-target="#ci-for-beta_j-calculation">95% CI for <span class="math inline">\(\beta_j\)</span>: Calculation</a></li>
+  <li><a href="#ci-for-beta_j-in-r" id="toc-ci-for-beta_j-in-r" class="nav-link" data-scroll-target="#ci-for-beta_j-in-r">95% CI for <span class="math inline">\(\beta_j\)</span> in R</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   <li><a href="#next-class" id="toc-next-class" class="nav-link" data-scroll-target="#next-class">Next class</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="08-inference.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="09-inference-pt2.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -423,6 +444,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Inference for regression</h1>
+<p class="subtitle lead">Cont’d</p>
 </div>
 
 
@@ -439,7 +461,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Feb 04, 2025</p>
+      <p class="date">Feb 06, 2025</p>
     </div>
   </div>
   
@@ -454,17 +476,16 @@ window.Quarto = {
 <section id="announcements" class="level2">
 <h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li><p>Lab 03 due <strong>TODAY</strong> at 11:59pm</p></li>
+<li><p>HW 02 due Tuesday, February 11 at 11:59pm</p>
+<ul>
+<li>Released after class</li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
 <li><p><a href="https://prodduke.sharepoint.com/:p:/s/ARCStaff839/EZ4PKTRTlCVMpFZiR6XoRycB4UUlRMuI2_Rda9hKxNZtsA">Click here</a> to learn more about the Academic Resource Center</p></li>
 <li><p><a href="../hw/stats-experience.html">Statistics experience</a> due <strong>Tuesday, April 22</strong></p></li>
 </ul>
-</section>
-<section id="poll-office-hours-availability" class="level2">
-<h2 class="anchored" data-anchor-id="poll-office-hours-availability">Poll: Office hours availability</h2>
-<center>
-<iframe width="640px" height="480px" src="https://forms.office.com/r/DL8rBQ988y?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
-<p>🔗 <a href="https://forms.office.com/r/DL8rBQ988y" class="uri">https://forms.office.com/r/DL8rBQ988y</a></p>
-</center>
 </section>
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
@@ -508,7 +529,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="08-inference_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="09-inference-pt2_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -520,7 +541,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="08-inference_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="09-inference-pt2_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -608,44 +629,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="inference-for-linear-regression" class="level2">
-<h2 class="anchored" data-anchor-id="inference-for-linear-regression">Inference for linear regression</h2>
-<ul>
-<li><p><strong>Inference based on ANOVA</strong></p>
-<ul>
-<li><p>Hypothesis test for the statistical significance of the overall regression model</p></li>
-<li><p>Hypothesis test for a subset of coefficients</p></li>
-</ul></li>
-<li><p><strong>Inference for a single coefficient</strong> <span class="math inline">\(\beta_j\)</span> (today’s focus)</p>
-<ul>
-<li><p>Hypothesis test for a coefficient <span class="math inline">\(\beta_j\)</span></p></li>
-<li><p>Confidence interval for a coefficient <span class="math inline">\(\beta_j\)</span></p></li>
-</ul></li>
-</ul>
-</section>
-<section id="linear-regression-model" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="linear-regression-model">Linear regression model</h2>
-<p><span class="math display">\[
-\begin{aligned}
-\mathbf{y} &amp;= \text{Model} + \text{Error} \\[5pt]
-&amp;= f(\mathbf{X}) + \boldsymbol{\epsilon} \\[5pt]
-&amp;= E(\mathbf{y}|\mathbf{X}) + \mathbf{\epsilon} \\[5pt]
-&amp;= \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
-\end{aligned}
-\]</span></p>
-<p>. . .</p>
-<div class="incremental">
-<ul class="incremental">
-<li><p>We have discussed multiple ways to find the least squares estimates of <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix}\beta_0 \\\beta_1\end{bmatrix}\)</span></p>
-<ul class="incremental">
-<li>None of these approaches depend on the distribution of <span class="math inline">\(\boldsymbol{\epsilon}\)</span></li>
-</ul></li>
-<li><p>Now we will use statistical inference to draw conclusions about <span class="math inline">\(\boldsymbol{\beta}\)</span> that depend on particular assumptions about the distribution of <span class="math inline">\(\boldsymbol{\epsilon}\)</span></p></li>
-</ul>
-</div>
-</section>
-<section id="linear-regression-model-1" class="level2">
-<h2 class="anchored" data-anchor-id="linear-regression-model-1">Linear regression model</h2>
+<section id="linear-regression-model" class="level2">
+<h2 class="anchored" data-anchor-id="linear-regression-model">Linear regression model</h2>
 <p><span class="math display">\[\begin{aligned}
 \mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{8mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
 \end{aligned}
@@ -656,26 +641,6 @@ window.Quarto = {
 <li><strong>Independent</strong>: Knowing the error term for one observation doesn’t tell us about the error term for another observation</li>
 <li><strong>Normally distributed</strong>: The distribution follows a particular mathematical model that is unimodal and symmetric</li>
 </ul>
-</section>
-<section id="describing-random-phenomena" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="describing-random-phenomena">Describing random phenomena</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p>There is some uncertainty in the error terms (and thus the response variable), so we use mathematical models to describe that uncertainty.</p></li>
-<li><p>Some terminology:</p>
-<ul class="incremental">
-<li><p><strong>Sample space</strong>: Set of all possible outcomes</p></li>
-<li><p><strong>Random variable</strong>: Function (mapping) from the sample space onto real numbers</p></li>
-<li><p><strong>Event:</strong> Subset of the sample space, i.e., a set of possible outcomes (possible values the random variable can take)</p></li>
-<li><p><strong>Probability density function:</strong> Mathematical function that produces probability of occurrences for events in the sample space for a continuous random variable</p></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="distribution-of-error-terms" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-of-error-terms">Distribution of error terms</h2>
-<p>The error terms follow a (multivariate) normal distribution with mean <span class="math inline">\(\mathbf{0}\)</span> and variance <span class="math inline">\(\sigma^2\mathbf{I}\)</span></p>
-<p><span class="math display">\[f(\boldsymbol{\epsilon}) = \frac{1}{(2\pi)^{n/2}|\sigma^2_{\epsilon}\mathbf{I}|^{1/2}}\exp\Big\{-\frac{1}{2}(\boldsymbol{\epsilon} - \mathbf{0})^\mathsf{T}(\sigma^2_{\epsilon}\mathbf{I})^{-1}(\boldsymbol{\epsilon}- \mathbf{0})\Big\}\]</span></p>
 </section>
 <section id="visualizing-distribution-of-mathbfymathbfx" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="visualizing-distribution-of-mathbfymathbfx">Visualizing distribution of <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span></h2>
@@ -688,65 +653,7 @@ window.Quarto = {
 <figcaption>Image source: <em>Introduction to the Practice of Statistics (5th ed)</em></figcaption>
 </figure>
 </div>
-</section>
-<section id="expected-value" class="level2" data-background-color="#ccddeb">
-<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="expected-value">Expected value</h2>
-<p>Let <span class="math inline">\(\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of random variables.</p>
-<p><br></p>
-<p>. . .</p>
-<p>Then <span class="math inline">\(E(\mathbf{z}) = E\begin{bmatrix}z_1 \\ \vdots \\ z_p\end{bmatrix} = \begin{bmatrix}E(z_1) \\ \vdots \\ E(z_p)\end{bmatrix}\)</span></p>
-</section>
-<section id="expected-value-1" class="level2" data-background-color="#ccddeb">
-<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="expected-value-1">Expected value</h2>
-<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants, <span class="math inline">\(\mathbf{C}\)</span> a <span class="math inline">\(n \times 1\)</span> vector of constants, and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
-<p><span class="math display">\[
-E(\mathbf{Az}) = \mathbf{A}E(\mathbf{z})
-\]</span></p>
-<p><br></p>
-<p>. . .</p>
-<p><span class="math display">\[
-E(\mathbf{Az} + \mathbf{C}) = E(\mathbf{Az}) + E(\mathbf{C}) = \mathbf{A}E(\mathbf{z}) + \mathbf{C}
-\]</span></p>
-</section>
-<section id="expected-value-of-the-response" class="level2">
-<h2 class="anchored" data-anchor-id="expected-value-of-the-response">Expected value of the response</h2>
-<div class="question">
-<p>Show <span class="math display">\[
-E(\mathbf{y}|\mathbf{X}) = \mathbf{X}\boldsymbol{\beta}
-\]</span></p>
-</div>
-</section>
-<section id="variance" class="level2" data-background-color="#ccddeb">
-<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="variance">Variance</h2>
-<p><br>
-Let <span class="math inline">\(\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}\)</span> be a <span class="math inline">\(p \times 1\)</span> vector of random variables.</p>
-<p><br></p>
-<p>. . .</p>
-<p>Then <span class="math inline">\(Var(\mathbf{z}) = \begin{bmatrix}Var(z_1) &amp; Cov(z_1, z_2) &amp; \dots &amp; Cov(z_1, z_p)\\ Cov(z_2, z_1) &amp; Var(z_2) &amp; \dots &amp; Cov(z_2, z_p) \\ \vdots &amp; \vdots &amp; \dots &amp; \cdot \\ Cov(z_p, z_1) &amp; Cov(z_p, z_2) &amp; \dots &amp; Var(z_p)\end{bmatrix}\)</span></p>
-</section>
-<section id="variance-1" class="level2" data-background-color="#ccddeb">
-<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="variance-1">Variance</h2>
-<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
-<p><span class="math display">\[
-Var(\mathbf{z}) = E[(\mathbf{z} - E(\mathbf{z}))(\mathbf{z} - E(\mathbf{z}))^\mathsf{T}]
-\]</span></p>
-<p><br></p>
-<p>. . .</p>
-<p><span class="math display">\[
-\begin{aligned}
-Var(\mathbf{Az}) &amp;= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}))^\mathsf{T}] \\[8pt]
-&amp; = \mathbf{A}Var(\mathbf{z})\mathbf{A}^\mathsf{T}
-\end{aligned}
-\]</span></p>
-</section>
-<section id="variance-of-the-response" class="level2">
-<h2 class="anchored" data-anchor-id="variance-of-the-response">Variance of the response</h2>
-<div class="question">
-<p>Show</p>
-<p><span class="math display">\[
-Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
-\]</span></p>
-</div>
+<p><span class="math inline">\(Var(\mathbf{z}) = \begin{bmatrix}Var(z_1) &amp; Cov(z_1, z_2) &amp; \dots &amp; Cov(z_1, z_p)\\ Cov(z_2, z_1) &amp; Var(z_2) &amp; \dots &amp; Cov(z_2, z_p) \\ \vdots &amp; \vdots &amp; \dots &amp; \cdot \\ Cov(z_p, z_1) &amp; Cov(z_p, z_2) &amp; \dots &amp; Var(z_p)\end{bmatrix}\)</span></p>
 </section>
 <section id="linear-transformation-of-normal-random-variable" class="level2" data-background-color="#ccddeb">
 <h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="linear-transformation-of-normal-random-variable">Linear transformation of normal random variable</h2>
@@ -760,20 +667,483 @@ Var(\mathbf{y}|\mathbf{X}) = \sigma^2_\epsilon\mathbf{I}
 <p>Explain why <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span> is normally distributed.</p>
 </div>
 </section>
+<section id="assumptions-for-regression" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-for-regression">Assumptions for regression</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="math display">\[
+\mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma_\epsilon^2\mathbf{I})
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/08/regression.png" class="img-fluid figure-img"></p>
+<figcaption>Image source: <em>Introduction to the Practice of Statistics (5th ed)</em></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ol type="1">
+<li><strong>Linearity:</strong> There is a linear relationship between the response and predictor variables.</li>
+<li><strong>Constant Variance:</strong> The variability about the least squares line is generally constant.</li>
+<li><strong>Normality:</strong> The distribution of the residuals is approximately normal.</li>
+<li><strong>Independence:</strong> The residuals are independent from one another.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="estimating-sigma2_epsilon" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="estimating-sigma2_epsilon">Estimating <span class="math inline">\(\sigma^2_{\epsilon}\)</span></h2>
+<ul>
+<li><p>Once we fit the model, we can use the residuals to estimate <span class="math inline">\(\sigma_{\epsilon}^2\)</span></p></li>
+<li><p>The estimated value <span class="math inline">\(\hat{\sigma}^2_{\epsilon}\)</span> is needed for hypothesis testing and constructing confidence intervals for regression</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{\sigma}^2_\epsilon = \frac{SSR}{n - p - 1} = \frac{\mathbf{e}^\mathsf{T}\mathbf{e}}{n-p-1}
+\]</span></p>
+<p>. . .</p>
+<ul>
+<li>The <strong>regression standard error</strong> <span class="math inline">\(\hat{\sigma}_{\epsilon}\)</span> is a measure of the average distance between the observations and regression line</li>
+</ul>
+<p><span class="math display">\[
+\hat{\sigma}_\epsilon = \sqrt{\frac{SSR}{n - p - 1}} = \hat{\sigma}_\epsilon = \sqrt{\frac{\mathbf{e}^\mathsf{T}\mathbf{e}}{n - p - 1}}
+\]</span></p>
+</section>
+</section>
+<section id="inference-for-a-single-coefficient" class="level1">
+<h1>Inference for a single coefficient</h1>
+<section id="inference-for-beta_j" class="level2">
+<h2 class="anchored" data-anchor-id="inference-for-beta_j">Inference for <span class="math inline">\(\beta_j\)</span></h2>
+<p>We often want to conduct inference on individual model coefficients</p>
+<ul>
+<li><p><strong>Hypothesis test:</strong> Is there a linear relationship between the response and <span class="math inline">\(x_j\)</span>?</p></li>
+<li><p><strong>Confidence interval</strong>: What is a plausible range of values <span class="math inline">\(\beta_j\)</span> can take?</p></li>
+</ul>
+<p>. . .</p>
+<p>But first we need to understand the distribution of <span class="math inline">\(\hat{\beta}_j\)</span></p>
+</section>
+<section id="sampling-distribution-of-hatbeta" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="sampling-distribution-of-hatbeta">Sampling distribution of <span class="math inline">\(\hat{\beta}\)</span></h2>
+<ul>
+<li><p>A <strong>sampling distribution</strong> is the probability distribution of a statistic for a large number of random samples of size <span class="math inline">\(n\)</span> from a population</p></li>
+<li><p>The sampling distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the probability distribution of the estimated coefficients if we repeatedly took samples of size <span class="math inline">\(n\)</span> and fit the regression model</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_\epsilon(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})
+\]</span></p>
+<p>. . .</p>
+<p>The estimated coefficients <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> are <strong>normally distributed</strong> with</p>
+<p><span class="math display">\[
+E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\boldsymbol{X}^\mathsf{T}\boldsymbol{X})^{-1}
+\]</span></p>
+</section>
+<section id="expected-value-of-boldsymbolhatbeta" class="level2">
+<h2 class="anchored" data-anchor-id="expected-value-of-boldsymbolhatbeta">Expected value of <span class="math inline">\(\boldsymbol{\hat{\beta}}\)</span></h2>
+<div class="question">
+<p>Show</p>
+<p><span class="math display">\[E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}\]</span></p>
+</div>
+<p><br></p>
+<p>Will show <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span> in homework</p>
+</section>
+<section id="sampling-distribution-of-hatbeta_j" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-distribution-of-hatbeta_j">Sampling distribution of <span class="math inline">\(\hat{\beta}_j\)</span></h2>
+<p><span class="math display">\[
+\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_\epsilon(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})
+\]</span></p>
+<p>Let <span class="math inline">\(\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\)</span>. Then, for each coefficient <span class="math inline">\(\hat{\beta}_j\)</span>,</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p><span class="math inline">\(E(\hat{\beta}_j) = \boldsymbol{\beta}_j\)</span>, the <span class="math inline">\(j^{th}\)</span> element of <span class="math inline">\(\boldsymbol{\beta}\)</span></p></li>
+<li><p><span class="math inline">\(Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}\)</span></p></li>
+<li><p><span class="math inline">\(Cov(\hat{\beta}_i, \hat{\beta}_j) = \sigma^2_{\epsilon}C_{ij}\)</span></p></li>
+</ul>
+</div>
+</section>
+<section id="varhatboldsymbolbeta-for-ncaa-data" class="level2">
+<h2 class="anchored" data-anchor-id="varhatboldsymbolbeta-for-ncaa-data"><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(total_exp_m <span class="sc">~</span> enrollment_th <span class="sc">+</span> type, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> football)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sigma_sq <span class="ot">&lt;-</span> <span class="fu">glance</span>(exp_fit)<span class="sc">$</span>sigma<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>var_beta <span class="ot">&lt;-</span> sigma_sq <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>var_beta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              (Intercept) enrollment_th typePublic
+(Intercept)     8.9054556   -0.13323338 -6.0899556
+enrollment_th  -0.1332334    0.01216984 -0.1239408
+typePublic     -6.0899556   -0.12394079  9.9388370</code></pre>
+</div>
+</div>
+</section>
+<section id="sehatboldsymbolbeta-for-ncaa-data" class="level2">
+<h2 class="anchored" data-anchor-id="sehatboldsymbolbeta-for-ncaa-data"><span class="math inline">\(SE(\hat{\boldsymbol{\beta}})\)</span> for NCAA data</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">diag</span>(var_beta))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  (Intercept) enrollment_th    typePublic 
+     2.984201      0.110317      3.152592 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="hypothesis-test-for-beta_j" class="level1">
+<h1>Hypothesis test for <span class="math inline">\(\beta_j\)</span></h1>
+<section id="steps-for-a-hypothesis-test" class="level2">
+<h2 class="anchored" data-anchor-id="steps-for-a-hypothesis-test">Steps for a hypothesis test</h2>
+<ol type="1">
+<li>State the null and alternative hypotheses.</li>
+<li>Calculate a test statistic.</li>
+<li>Calculate the p-value.</li>
+<li>State the conclusion.</li>
+</ol>
+</section>
+<section id="hypothesis-test-for-beta_j-hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-test-for-beta_j-hypotheses">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Hypotheses</h2>
+<p>We will generally test the hypotheses:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;H_0: \beta_j = 0 \\
+&amp;H_a: \beta_j \neq 0
+\end{aligned}
+\]</span></p>
+<div class="question">
+<p>State these hypotheses in words.</p>
+</div>
+</section>
+<section id="hypothesis-test-for-beta_j-test-statistic" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="hypothesis-test-for-beta_j-test-statistic">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Test statistic</h2>
+<p><strong>Test statistic:</strong> Number of standard errors the estimate is away from the null</p>
+<p><span class="math display">\[
+\text{Test Statistic} = \frac{\text{Estimate - Null}}{\text{Standard error}} \\
+\]</span></p>
+<p>. . .</p>
+<p>If <span class="math inline">\(\sigma^2_{\epsilon}\)</span> was known, the test statistic would be</p>
+<p><span class="math display">\[Z = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)} ~ = ~\frac{\hat{\beta}_j - 0}{\sqrt{\sigma^2_\epsilon C_{jj}}} ~\sim ~ N(0, 1)
+\]</span></p>
+<p>. . .</p>
+<p>In general, <span class="math inline">\(\sigma^2_{\epsilon}\)</span> is <u><strong>not</strong></u> known, so we use <span class="math inline">\(\hat{\sigma}_{\epsilon}^2\)</span> to calculate <span class="math inline">\(SE(\hat{\beta}_j)\)</span></p>
+<p><span class="math display">\[T = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)} ~ = ~\frac{\hat{\beta}_j - 0}{\sqrt{\hat{\sigma}^2_\epsilon C_{jj}}} ~\sim ~ t_{n-p-1}
+\]</span></p>
+</section>
+<section id="hypothesis-test-for-beta_j-test-statistic-1" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-test-for-beta_j-test-statistic-1">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Test statistic</h2>
+<ul>
+<li><p>The test statistic <span class="math inline">\(T\)</span> follows a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n - p -1\)</span> degrees of freedom.</p></li>
+<li><p>We need to account for the additional variability introduced by calculating <span class="math inline">\(SE(\hat{\beta}_j)\)</span> using an estimated value instead of a constant</p></li>
+</ul>
+</section>
+<section id="t-vs.-n01" class="level2">
+<h2 class="anchored" data-anchor-id="t-vs.-n01"><em>t</em> vs.&nbsp;N(0,1)</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-normal-t-curves" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normal-t-curves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="09-inference-pt2_files/figure-revealjs/fig-normal-t-curves-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normal-t-curves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Standard normal vs.&nbsp;t distributions
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="hypothesis-test-for-beta_j-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-test-for-beta_j-p-value">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: P-value</h2>
+<p>The <strong>p-value</strong> is the probability of observing a test statistic at least as extreme (in the direction of the alternative hypothesis) from the null value as the one observed</p>
+<p><span class="math display">\[
+p-value = P(|t| &gt; |\text{test statistic}|),
+\]</span></p>
+<p>calculated from a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n- p - 1\)</span> degrees of freedom</p>
+<p>. . .</p>
+<div class="question">
+<p>Why do we take into account “extreme” on both the high and low ends?</p>
+</div>
+</section>
+<section id="understanding-the-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-the-p-value">Understanding the p-value</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Magnitude of p-value</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">p-value &lt; 0.01</td>
+<td style="text-align: left;">strong evidence against <span class="math inline">\(H_0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0.01 &lt; p-value &lt; 0.05</td>
+<td style="text-align: left;">moderate evidence against <span class="math inline">\(H_0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0.05 &lt; p-value &lt; 0.1</td>
+<td style="text-align: left;">weak evidence against <span class="math inline">\(H_0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">p-value &gt; 0.1</td>
+<td style="text-align: left;">effectively no evidence against <span class="math inline">\(H_0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>These are general guidelines. The strength of evidence depends on the context of the problem.</strong></p>
+</section>
+<section id="hypothesis-test-for-beta_j-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-test-for-beta_j-conclusion">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Conclusion</h2>
+<p><strong>There are two parts to the conclusion</strong></p>
+<ul>
+<li><p>Make a conclusion by comparing the p-value to a predetermined decision-making threshold called the significance level ( <span class="math inline">\(\alpha\)</span> level)</p>
+<ul>
+<li><p>If <span class="math inline">\(\text{P-value} &lt; \alpha\)</span>: Reject <span class="math inline">\(H_0\)</span></p></li>
+<li><p>If <span class="math inline">\(\text{P-value} \geq \alpha\)</span>: Fail to reject <span class="math inline">\(H_0\)</span></p></li>
+</ul></li>
+<li><p>State the conclusion in the context of the data</p></li>
+</ul>
+</section>
+</section>
+<section id="application-exercise" class="level1">
+<h1>Application exercise</h1>
+<div class="appex">
+<p>📋 <a href="../ae/ae-03-inference.html">sta221-sp25.netlify.app/ae/ae-03-inference</a></p>
+</div>
+</section>
+<section id="confidence-interval-for-beta_j" class="level1">
+<h1>Confidence interval for <span class="math inline">\(\beta_j\)</span></h1>
+<section id="confidence-interval-for-beta_j-1" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="confidence-interval-for-beta_j-1">Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>A plausible range of values for a population parameter is called a <strong>confidence interval</strong></p></li>
+<li><p>Using only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net</p>
+<ul class="incremental">
+<li><p>We can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish</p></li>
+<li><p>Similarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="what-confidence-means" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="what-confidence-means">What “confidence” means</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>We will construct <span class="math inline">\(C\%\)</span> confidence intervals.</p>
+<ul class="incremental">
+<li>The confidence level impacts the width of the interval</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul class="incremental">
+<li>“Confident” means if we were to take repeated samples of the same size as our data, fit regression lines using the same predictors, and calculate <span class="math inline">\(C\%\)</span> CIs for the coefficient of <span class="math inline">\(x_j\)</span>, then <span class="math inline">\(C\%\)</span> of those intervals will contain the true value of the coefficient <span class="math inline">\(\beta_j\)</span></li>
+</ul>
+<p><br></p>
+<ul class="incremental">
+<li>Balance precision and accuracy when selecting a confidence level</li>
+</ul>
+</div>
+</section>
+<section id="confidence-interval-for-beta_j-2" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval-for-beta_j-2">Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
+<p><span class="math display">\[
+\text{Estimate} \pm \text{ (critical value) } \times \text{SE}
+\]</span></p>
+<p><br></p>
+<p>. . .</p>
+<p><span class="math display">\[
+\hat{\beta}_1 \pm t^* \times SE({\hat{\beta}_j})
+\]</span></p>
+<p>where <span class="math inline">\(t^*\)</span> is calculated from a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n-p-1\)</span> degrees of freedom</p>
+</section>
+<section id="confidence-interval-critical-value" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval-critical-value">Confidence interval: Critical value</h2>
+<div class="fragment" data-fragment-index="1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># confidence level: 95%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> <span class="fu">nrow</span>(football) <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.97928</code></pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="fragment" data-fragment-index="2">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># confidence level: 90%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.95</span>, <span class="at">df =</span> <span class="fu">nrow</span>(football) <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.657235</code></pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="fragment" data-fragment-index="3">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># confidence level: 99%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.995</span>, <span class="at">df =</span> <span class="fu">nrow</span>(football) <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.61606</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="ci-for-beta_j-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="ci-for-beta_j-calculation">95% CI for <span class="math inline">\(\beta_j\)</span>: Calculation</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ci-for-beta_j-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="ci-for-beta_j-in-r">95% CI for <span class="math inline">\(\beta_j\)</span> in R</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(exp_fit, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">19.332</td>
+<td style="text-align: right;">2.984</td>
+<td style="text-align: right;">6.478</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13.426</td>
+<td style="text-align: right;">25.239</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">enrollment_th</td>
+<td style="text-align: right;">0.780</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">7.074</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.562</td>
+<td style="text-align: right;">0.999</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typePublic</td>
+<td style="text-align: right;">-13.226</td>
+<td style="text-align: right;">3.153</td>
+<td style="text-align: right;">-4.195</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-19.466</td>
+<td style="text-align: right;">-6.986</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+<p><strong>Interpretation</strong>: We are 95% confident that for each additional 1,000 students enrolled, the institution’s expenditures on football will be greater by $562,000 to $999,000, on average, holding institution type constant.</p>
+</section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <ul>
 <li><p>Introduced statistical inference in the context of regression</p></li>
 <li><p>Described the assumptions for regression</p></li>
 <li><p>Connected the distribution of residuals and inferential procedures</p></li>
+<li><p>Conducted inference on a single coefficient</p></li>
 </ul>
 </section>
 <section id="next-class" class="level2">
 <h2 class="anchored" data-anchor-id="next-class">Next class</h2>
 <ul>
-<li><p>Confidence intervals for <span class="math inline">\(\hat{\beta}_j\)</span></p></li>
-<li><p>Hypothesis testing based on ANOVA</p></li>
-<li><p>See <a href="https://sta221-sp25.netlify.app/prepare/prepare-lec09">Prepare for Lecture 09</a></p></li>
+<li>Hypothesis testing based on ANOVA</li>
 </ul>
 
 

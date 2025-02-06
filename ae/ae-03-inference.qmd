@@ -1,7 +1,7 @@
 ---
 title: "AE 03: Inference"
 subtitle: "NCAA Football Expenditures"
-date: "February 4 & 6, 2025"
+date: "February 6, 2025"
 editor: visual
 ---
 

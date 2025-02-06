@@ -12,12 +12,13 @@ This assignment is due on **Thursday, February 13 at 11:59pm**.
 
 # Introduction
 
-You will use multiple linear regression to analyze the relationship between three or more variables for multiple data sets. You will conduct statistical inference to draw conclusions about these relationships.
+The goal of this assignment is to use multiple linear regression to analyze the relationships between various features and the Amazon.com price for LEGO<sup>®</sup> sets and to draw conclusions using statistical inference.
 
 # **Learning goals**
 
 In this assignment, you will…
 
+-   explore mathematical properties of linear regression models.
 -   use multiple linear regression to model the relationship between three or more variables.
 -   draw conclusions from the model using statistical inference.
 -   fit and interpret models with interaction terms.
@@ -54,10 +55,10 @@ The conceptual exercises are focused on explaining concepts and showing results 
 
 ## Exercise 1
 
-In [lecture](https://sta221-sp25.netlify.app/slides/05-geometry#/hat-matrix), we defined the hat matrix $\mathbf{H}$ as a projection matrix that projects $\mathbf{y}$ onto $\text{Col}(\mathbf{X}) = \mathbf{X}\hat{\boldsymbol{\beta}}$ and discussed the properties of a projection matrix. You have previously shown that $\mathbf{H}$ is symmetric and $\mathbf{H}$ is idempotent. Now we will focus on two other properties:
+In [lecture](https://sta221-sp25.netlify.app/slides/05-geometry#/hat-matrix), we defined the hat matrix $\mathbf{H}$ as a projection matrix that projects $\mathbf{y}$ onto $\text{Col}(\mathbf{X})$ and discussed the properties of a projection matrix. You have previously shown that $\mathbf{H}$ is symmetric and $\mathbf{H}$ is idempotent. Now we will focus on two other properties.
 
 a.  Show that for any vector $\mathbf{v}$ in $\text{Col}(\mathbf{X})$, $\mathbf{Hv} = \mathbf{v}$.
-b.  Show that for any vector $\mathbf{z}$ orthogonal to $\text{Col}(\mathbf{X})$, $\mathbf{Hv} = \mathbf{0}$.
+b.  Show that for any vector $\mathbf{v}$ orthogonal to $\text{Col}(\mathbf{X})$, $\mathbf{Hv} = \mathbf{0}$.
 
 ## Exercise 2
 
@@ -66,15 +67,15 @@ b.  Find the $E(\mathbf{e})$ , the expected value of the residuals.
 
 ## Exercise 3
 
-Let $\hat{\boldsymbol{\beta}}$ be the least-squares estimator for the linear regression model. Show that$Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$ .
+Let $\hat{\boldsymbol{\beta}}$ be the least-squares estimator for a linear regression model. Show that$Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$ .
 
 ## Exercise 4
 
 Suppose we fit the model $\mathbf{y} = \mathbf{X}_1\boldsymbol{\beta}_1 + \boldsymbol{\epsilon}$ when the true model is actually given by $\mathbf{y} = \mathbf{X}_1\boldsymbol{\beta}_1 + \mathbf{X}_2\boldsymbol{\beta}_2 + \boldsymbol{\epsilon}$. Assume $E(\boldsymbol{\epsilon}) = \mathbf{0}$ for both models.
 
-a.  Find $E(\hat{\boldsymbol{\beta}})$, the expected value of the least-squares estimate $\hat{\boldsymbol{\beta}}_1$.
+a.  Find $E(\hat{\boldsymbol{\beta}}_1)$, the expected value of the least-squares estimate $\hat{\boldsymbol{\beta}}_1$.
 
-b.  Under what condition does $E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}$ ? What does this tell us about the relationship between $\mathbf{X}_1$ and $\mathbf{X}_2$ ?
+b.  Under what condition does $E(\hat{\boldsymbol{\beta}}_1) = \boldsymbol{\beta}$ ? What is the relationship between $\mathbf{X}_1$ and $\mathbf{X}_2$ under this condition?
 
 <!--# Exercise 3.37 from Introduction to linear regression-->
 
@@ -110,23 +111,29 @@ Write all narrative using complete sentences and include informative axis labels
 
 ## Data: LEGO<sup>®</sup> sets
 
-The data includes information about LEGO<sup>®</sup> sets from themes produced January 1, 2018 and September 11, 2020. The data were originally scraped from Brickset.com, an online LEGO set guide and were obtained for this assignment from @peterson2021.
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+legos <- read_csv("data/lego-sample.csv")
 
-You will work with data on about 400 randomly selected LEGO sets produced during this time period. The primary variables are interest in this analysis are
+```
+
+The data set includes information about LEGO<sup>®</sup> sets from themes produced January 1, 2018 and September 11, 2020. The data were originally scraped from Brickset.com, an online LEGO set guide and were obtained for this assignment from @peterson2021.
+
+You will work with data on `r nrow(legos)` randomly selected LEGO<sup>®</sup> sets produced during this time period. The primary variables are interest in this analysis are
 
 -   `Pieces`: Number of pieces in the set from brickset.com.
 -   `Minifigures`: Number of minifigures (LEGO<sup>®</sup> people) in the set scraped from brickset.com.
 -   `Amazon_Price`: Price of the set on Amazon.com (in U.S. dollars)
 -   `Size`: General size of the interlocking bricks (Large = LEGO Duplo<sup>®</sup> sets - which include large brick pieces safe for children ages 1 to 5, Small = LEGO<sup>®</sup> sets which- include the traditional smaller brick pieces created for age groups 5 and - older, e.g., City, Friends)
 
-The data are contained in `lego-sample.csv`. Use the code below to read in the data and remove any observations that have missing values for the relevant variables.
+The data are contained in `lego-sample.csv`.
 
 ```{r}
 #| echo: true
-#| warning: false
-#| message: false
-legos <- read_csv("data/lego-sample.csv")|>
-  drop_na(Pieces, Amazon_Price, Size, Minifigures)
+#| eval: false
+legos <- read_csv("data/lego-sample.csv")
 ```
 
 ::: callout-note
@@ -141,11 +148,11 @@ a.  Instead of using the number of minifigures in the model, you decide to creat
 
     Create an indicator variable that takes the value "No" if there are zero minifigures in the LEGO<sup>®</sup> set, and "Yes" if there is at least one minifigure.
 
-b.  Fit the regression model using the number of pieces, size of the blocks, and the indicator for minifigures to predict the price on Amazon. Neatly display the results, including the 95% confdience interval for the coefficients, using three digits
+b.  Fit the regression model using the number of pieces, size of the blocks, and the indicator for minifigures to predict the price on Amazon. Neatly display the results, including the 95% confidence interval for the coefficients, using three digits.
 
 ## Exercise 7
 
-We want to understand the relationship between `Pieces` and `Amazon_Price` based on this model that also takes into the size of the blocks and number of minifigures.
+We want to understand the relationship between `Pieces` and `Amazon_Price` in the model from the previous exercise.
 
 You are convinced from the model output that there is evidence of a linear relationship between the two variables. Now you want to be more specific and test whether the slope is actually [**different from 0.1**]{.underline} (\$10 increase in the price for every 100 additional pieces).
 
@@ -156,9 +163,9 @@ d.  Calculate the p-value and state your conclusion in the context of the data u
 
 ## Exercise 8
 
-a.  Interpret the 95% confidence interval for pieces in the context of the data.
+a.  Interpret the 95% confidence interval for the effect of pieces in the context of the data.
 
-b.  Is the confidence interval consistent with your conclusion from the hypothesis test? Briefly explain.
+b.  Is the confidence interval consistent with your conclusion from the hypothesis test in the previous exercise? Briefly explain.
 
 ## Exercise 9
 
@@ -194,7 +201,7 @@ Instructions to combine PDFs:
 
 To submit your assignment:
 
--   Access Gradescope through the menu on the [STA 221 Canvas site.](https://canvas.duke.edu/courses/38867)
+-   Access Gradescope through the menu on the [STA 221 Canvas site.](https://canvas.duke.edu/courses/51767)
 
 -   Click on the assignment, and you’ll be prompted to submit it.
 
