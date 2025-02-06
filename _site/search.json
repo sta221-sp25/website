@@ -5049,14 +5049,14 @@
     "href": "slides/09-inference-pt2-notes.html",
     "title": "Inference for regression",
     "section": "",
-    "text": "HW 02 due Tuesday, February 11 at 11:59pm\n\nReleased after class\n\n\n\n\nClick here to learn more about the Academic Resource Center\nStatistics experience due Tuesday, April 22"
+    "text": "HW 02 due Tuesday, February 11 at 11:59pm\n\nReleased after class\n\nLecture recordings available until start of exam, February 18 at 10:05am\n\nSee link under “Exam 01” on menu of course website\n\nStatistics experience due Tuesday, April 22"
   },
   {
     "objectID": "slides/09-inference-pt2-notes.html#announcements",
     "href": "slides/09-inference-pt2-notes.html#announcements",
     "title": "Inference for regression",
     "section": "",
-    "text": "HW 02 due Tuesday, February 11 at 11:59pm\n\nReleased after class\n\n\n\n\nClick here to learn more about the Academic Resource Center\nStatistics experience due Tuesday, April 22"
+    "text": "HW 02 due Tuesday, February 11 at 11:59pm\n\nReleased after class\n\nLecture recordings available until start of exam, February 18 at 10:05am\n\nSee link under “Exam 01” on menu of course website\n\nStatistics experience due Tuesday, April 22"
   },
   {
     "objectID": "slides/09-inference-pt2-notes.html#topics",
@@ -5308,7 +5308,7 @@
     "href": "slides/09-inference-pt2.html#announcements",
     "title": "Inference for regression",
     "section": "Announcements",
-    "text": "Announcements\n\nHW 02 due Tuesday, February 11 at 11:59pm\n\nReleased after class\n\n\n\n\nClick here to learn more about the Academic Resource Center\nStatistics experience due Tuesday, April 22"
+    "text": "Announcements\n\nHW 02 due Tuesday, February 11 at 11:59pm\n\nReleased after class\n\nLecture recordings available until start of exam, February 18 at 10:05am\n\nSee link under “Exam 01” on menu of course website\n\nStatistics experience due Tuesday, April 22"
   },
   {
     "objectID": "slides/09-inference-pt2.html#topics",
@@ -6029,35 +6029,50 @@
     "href": "math-rules.html",
     "title": "Math rules",
     "section": "",
-    "text": "This page contains mathematical rules we’ll use in this course that may be beyond what is covered in a linear algebra course."
+    "text": "This page contains mathematical rules we’ll use in this course that may be beyond what is covered in a linear algebra course.",
+    "crumbs": [
+      "Math rules"
+    ]
   },
   {
     "objectID": "math-rules.html#matrix-calculus",
     "href": "math-rules.html#matrix-calculus",
     "title": "Math rules",
     "section": "Matrix calculus",
-    "text": "Matrix calculus\n\nDefinition of gradient\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]\n\n\n\nGradient of \\(\\mathbf{x}^T\\mathbf{z}\\)\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^T\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{z} = \\mathbf{z}\n\\]\n\n\n\nGradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\)\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^T\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^T\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^T \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^T)\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\n\n\nHessian matrix\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]"
+    "text": "Matrix calculus\n\nDefinition of gradient\nLet \\(\\mathbf{x} = \\begin{bmatrix}x_1 \\\\ x_2 \\\\ \\vdots \\\\x_k\\end{bmatrix}\\)be a \\(k \\times 1\\) vector and \\(f(\\mathbf{x})\\) be a function of \\(\\mathbf{x}\\).\nThen \\(\\nabla_\\mathbf{x}f\\), the gradient of \\(f\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x}f = \\begin{bmatrix}\\frac{\\partial f}{\\partial x_1} \\\\ \\frac{\\partial f}{\\partial x_2} \\\\ \\vdots \\\\ \\frac{\\partial f}{\\partial x_k}\\end{bmatrix}\n\\]\n\n\n\nGradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{z}\\)\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{z}\\) be a \\(k \\times 1\\) vector, such that \\(\\mathbf{z}\\) is not a function of \\(\\mathbf{x}\\) .\nThe gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{z}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{z} = \\mathbf{z}\n\\]\n\n\n\nGradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\)\nLet \\(\\mathbf{x}\\) be a \\(k \\times 1\\) vector and \\(\\mathbf{A}\\) be a \\(k \\times k\\) matrix, such that \\(\\mathbf{A}\\) is not a function of \\(\\mathbf{x}\\) .\nThen the gradient of \\(\\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x}\\) with respect to \\(\\mathbf{x}\\) is\n\\[\n\\nabla_\\mathbf{x} \\hspace{1mm} \\mathbf{x}^\\mathsf{T}\\mathbf{A}\\mathbf{x} = (\\mathbf{A}\\mathbf{x} + \\mathbf{A}^\\mathsf{T} \\mathbf{x}) = (\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x}\n\\]\nIf \\(\\mathbf{A}\\) is symmetric, then\n\\[\n(\\mathbf{A} + \\mathbf{A}^\\mathsf{T})\\mathbf{x} = 2\\mathbf{A}\\mathbf{x}\n\\]\n\n\n\nHessian matrix\nThe Hessian matrix, \\(\\nabla_\\mathbf{x}^2f\\) is a \\(k \\times k\\) matrix of partial second derivatives\n\\[\n\\nabla_{\\mathbf{x}}^2f = \\begin{bmatrix} \\frac{\\partial^2f}{\\partial x_1^2} & \\frac{\\partial^2f}{\\partial x_1 \\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_1\\partial x_k} \\\\\n\\frac{\\partial^2f}{\\partial\\ x_2 \\partial x_1} & \\frac{\\partial^2f}{\\partial x_2^2} & \\dots & \\frac{\\partial^2f}{\\partial x_2 \\partial x_k} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial^2f}{\\partial x_k\\partial x_1} & \\frac{\\partial^2f}{\\partial x_k\\partial x_2} & \\dots & \\frac{\\partial^2f}{\\partial x_k^2} \\end{bmatrix}\n\\]",
+    "crumbs": [
+      "Math rules"
+    ]
   },
   {
     "objectID": "math-rules.html#expected-value",
     "href": "math-rules.html#expected-value",
     "title": "Math rules",
     "section": "Expected value",
-    "text": "Expected value\n\nExpected value of random variable \\(X\\)\nThe expected value of a random variable \\(\\mathbf{X}\\) is a weighted average, i.e., the mean value of the possible values a random variable can take weighted by the probability of the outcomes.\nLet \\(f_X(x)\\) be the probability distribution of \\(X\\). If \\(X\\) is continuous then\n\\[\nE(X) = \\int_{-\\infty}^{\\infty}xf_X(x)dx\n\\]\nIf \\(X\\) is discrete then\n\\[\nE(X) = \\sum_{x \\in X}xf_X(x) = \\sum_{x\\in X}xP(X = x)\n\\]\n\n\n\nExpected value of \\(aX + b\\)\nLet \\(X\\) be a random variable and \\(a\\) and \\(b\\) be constants. Then\n\\[\nE(aX + b) = E(aX) + E(b) = aE(X) + b\n\\]\n\n\n\nExpected value of \\(a g_1(X) + bg_2(X) + c\\)\nLet \\(X\\) be a random variable and \\(a\\), \\(b\\), and \\(c\\) be constants. For any functions \\(g_1(x)\\) and \\(g_2(x)\\), then\n\\[E(ag_1(X) + bg_2(X) + c) = aE(g_1(X)) + bE(g_2(X)) + c\\]\n\n\n\nExpected value of vector \\(\\mathbf{b}\\)\nLet \\(\\mathbf{b} = \\begin{bmatrix}b_1 \\\\ \\vdots \\\\b_p\\end{bmatrix}\\) be a \\(p \\times 1\\) vector of random variables.\nThen \\(E(\\mathbf{b}) = E\\begin{bmatrix}b_1 \\\\ \\vdots \\\\ b_p\\end{bmatrix} = \\begin{bmatrix}E(b_1) \\\\ \\vdots \\\\ E(b_p)\\end{bmatrix}\\)\n\n\n\nExpected value of \\(\\mathbf{Ab}\\)\nLet \\(\\mathbf{A}\\) be a \\(n \\times p\\) matrix of constants and \\(\\mathbf{b}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\nE(\\mathbf{Ab}) = \\mathbf{A}E(\\mathbf{b})\n\\]"
+    "text": "Expected value\n\nExpected value of random variable \\(X\\)\nThe expected value of a random variable \\(\\mathbf{X}\\) is a weighted average, i.e., the mean value of the possible values a random variable can take weighted by the probability of the outcomes.\nLet \\(f_X(x)\\) be the probability distribution of \\(X\\). If \\(X\\) is continuous then\n\\[\nE(X) = \\int_{-\\infty}^{\\infty}xf_X(x)dx\n\\]\nIf \\(X\\) is discrete then\n\\[\nE(X) = \\sum_{x \\in X}xf_X(x) = \\sum_{x\\in X}xP(X = x)\n\\]\n\n\n\nExpected value of vector \\(\\mathbf{z}\\)\nLet \\(\\mathbf{z} = \\begin{bmatrix}z_1 \\\\ \\vdots \\\\z_p\\end{bmatrix}\\) be a \\(p \\times 1\\) vector of random variables.\n\nThen \\(E(\\mathbf{z}) = E\\begin{bmatrix}z_1 \\\\ \\vdots \\\\ z_p\\end{bmatrix} = \\begin{bmatrix}E(z_1) \\\\ \\vdots \\\\ E(z_p)\\end{bmatrix}\\)\n\n\n\nExpected value of vector \\(\\mathbf{Az}\\)\nLet \\(\\mathbf{A}\\) be an \\(n \\times p\\) matrix of constants and \\(\\mathbf{z}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\nE(\\mathbf{Az}) = \\mathbf{A}E(\\mathbf{z})\n\\]\n\n\n\nExpected value of \\(\\mathbf{Az} + \\mathbf{C}\\)\nLet \\(\\mathbf{A}\\) be an \\(n \\times p\\) matrix of constants, \\(\\mathbf{C}\\) a \\(n \\times 1\\) vector of constants, and \\(\\mathbf{z}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\nE(\\mathbf{Az} + \\mathbf{C}) = E(\\mathbf{Az}) + E(\\mathbf{C}) = \\mathbf{A}E(\\mathbf{z}) + \\mathbf{C}\n\\]",
+    "crumbs": [
+      "Math rules"
+    ]
   },
   {
     "objectID": "math-rules.html#variance",
     "href": "math-rules.html#variance",
     "title": "Math rules",
     "section": "Variance",
-    "text": "Variance\n\nVariance of random variable \\(X\\)\nThe variance of a random variable \\(X\\) is a measure of the spread of a distribution about its mean.\n\\[\nVar(X) = E[(X - E(X))^2] = E(X^2) - E(X)^2\n\\]\n\n\n\nVariance of \\(aX + b\\)\nLet \\(X\\) be a random variable and \\(a\\) and \\(b\\) be constants. Then\n\\[\nVar(aX + b) = a^2Var(X)\n\\]\n\n\n\nVariance of vector \\(\\mathbf{b}\\)\nLet \\(\\mathbf{b} = \\begin{bmatrix}b_1 \\\\ \\vdots \\\\b_p\\end{bmatrix}\\) be a \\(p \\times 1\\) vector of random variables.\nThen\n\\[\nVar(\\mathbf{b}) = E[(\\mathbf{b} - E(\\mathbf{b}))(\\mathbf{b} - E(\\mathbf{b}))^T]\n\\]\n\n\n\nVariance of \\(\\mathbf{Ab}\\)\nLet \\(\\mathbf{A}\\) be a \\(n \\times p\\) matrix of constants and \\(\\mathbf{b}\\) a \\(p \\times 1\\) vector of random variables. Then\n\\[\n\\begin{aligned}\nVar(\\mathbf{Ab}) &= E[(\\mathbf{Ab} - E(\\mathbf{Ab}))(\\mathbf{Ab} - E(\\mathbf{Ab}))^T]\\\\& = \\mathbf{A}Var(\\mathbf{b})\\mathbf{A}^T\n\\end{aligned}\n\\]"
+    "text": "Variance\n\nVariance of random variable \\(X\\)\nThe variance of a random variable \\(X\\) is a measure of the spread of a distribution about its mean.\n\\[\nVar(X) = E[(X - E(X))^2] = E(X^2) - E(X)^2\n\\]\n\n\n\nVariance of vector \\(\\mathbf{z}\\)\nLet \\(\\mathbf{z} = \\begin{bmatrix}z_1 \\\\ \\vdots \\\\z_p\\end{bmatrix}\\) be a \\(p \\times 1\\) vector of random variables. Then\n\\[\nVar(\\mathbf{z}) = E[(\\mathbf{z} - E(\\mathbf{z}))(\\mathbf{z} - E(\\mathbf{z}))^\\mathsf{T}]\n\\]\n\nThis produced the variance-covariance matrix\n\\(Var(\\mathbf{z}) = \\begin{bmatrix}Var(z_1) & Cov(z_1, z_2) & \\dots & Cov(z_1, z_p)\\\\ Cov(z_2, z_1) & Var(z_2) & \\dots & Cov(z_2, z_p) \\\\ \\vdots & \\vdots & \\dots & \\cdot \\\\ Cov(z_p, z_1) & Cov(z_p, z_2) & \\dots & Var(z_p)\\end{bmatrix}\\)",
+    "crumbs": [
+      "Math rules"
+    ]
   },
   {
     "objectID": "math-rules.html#probability-distributions",
     "href": "math-rules.html#probability-distributions",
     "title": "Math rules",
     "section": "Probability distributions",
-    "text": "Probability distributions\n\nNormal distribution\nLet \\(X\\) be a random variable, such that \\(X \\sim N(\\mu, \\sigma^2)\\). Then the probability function is\n\\[\nP(X = x | \\mu, \\sigma^2) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\Big\\{-{\\frac{1}{2\\sigma^2}(x - \\mu)^2}\\Big\\}\n\\]"
+    "text": "Probability distributions\n\nMultivariate normal distribution\nLet \\(\\mathbf{z}\\) be a \\(p \\times 1\\) vector of random variables, such that \\(\\mathbf{z}\\) follows a multivariate normal distribution with mean \\(\\boldsymbol{\\mu}\\) and variance \\(\\boldsymbol{\\Sigma}\\). Then the probability density function of \\(\\mathbf{z}\\) is\n\\[f(\\mathbf{z}) = \\frac{1}{(2\\pi)^{p/2}|\\boldsymbol{\\Sigma}|^{1/2}}\\exp\\Big\\{-\\frac{1}{2}(\\mathbf{z} - \\boldsymbol{\\mu})^\\mathsf{T}\\boldsymbol{\\Sigma}^{-1}(\\mathbf{z}- \\boldsymbol{\\mu})\\Big\\}\\]\n\n\n\n\n\n\nLinear transformation of normal random variable\nSuppose \\(\\mathbf{z}\\) is a multivariate normal random variable with mean \\(\\boldsymbol{\\mu}\\) and variance \\(\\boldsymbol{\\Sigma}\\). A linear transformation of \\(\\mathbf{z}\\) is also multivariate normal, such that\n\\[\n\\mathbf{A}\\mathbf{z} + \\mathbf{B} \\sim N(\\mathbf{A}\\boldsymbol{\\mu} + \\mathbf{B}, \\mathbf{A}\\boldsymbol{\\Sigma}\\mathbf{A}^\\mathsf{T})\n\\]",
+    "crumbs": [
+      "Math rules"
+    ]
   },
   {
     "objectID": "project-tips.html",

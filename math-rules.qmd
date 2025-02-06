@@ -18,32 +18,32 @@ $$
 
 <hr>
 
-### Gradient of $\mathbf{x}^T\mathbf{z}$
+### Gradient of $\mathbf{x}^\mathsf{T}\mathbf{z}$
 
 Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{z}$ be a $k \times 1$ vector, such that $\mathbf{z}$ is not a function of $\mathbf{x}$ .
 
-The gradient of $\mathbf{x}^T\mathbf{z}$ with respect to $\mathbf{x}$ is
+The gradient of $\mathbf{x}^\mathsf{T}\mathbf{z}$ with respect to $\mathbf{x}$ is
 
 $$
-\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{z} = \mathbf{z}
+\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{z} = \mathbf{z}
 $$
 
 <hr>
 
-### Gradient of $\mathbf{x}^T\mathbf{A}\mathbf{x}$
+### Gradient of $\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x}$
 
 Let $\mathbf{x}$ be a $k \times 1$ vector and $\mathbf{A}$ be a $k \times k$ matrix, such that $\mathbf{A}$ is not a function of $\mathbf{x}$ .
 
-Then the gradient of $\mathbf{x}^T\mathbf{A}\mathbf{x}$ with respect to $\mathbf{x}$ is
+Then the gradient of $\mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x}$ with respect to $\mathbf{x}$ is
 
 $$
-\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^T\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^T \mathbf{x}) = (\mathbf{A} + \mathbf{A}^T)\mathbf{x}
+\nabla_\mathbf{x} \hspace{1mm} \mathbf{x}^\mathsf{T}\mathbf{A}\mathbf{x} = (\mathbf{A}\mathbf{x} + \mathbf{A}^\mathsf{T} \mathbf{x}) = (\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x}
 $$
 
 If $\mathbf{A}$ is symmetric, then
 
 $$
-(\mathbf{A} + \mathbf{A}^T)\mathbf{x} = 2\mathbf{A}\mathbf{x}
+(\mathbf{A} + \mathbf{A}^\mathsf{T})\mathbf{x} = 2\mathbf{A}\mathbf{x}
 $$
 
 <hr>
@@ -79,38 +79,32 @@ $$
 
 <hr>
 
-### Expected value of $aX + b$
+### Expected value of vector $\mathbf{z}$
 
-Let $X$ be a random variable and $a$ and $b$ be constants. Then
+Let $\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
+
+<br>
+
+Then $E(\mathbf{z}) = E\begin{bmatrix}z_1 \\ \vdots \\ z_p\end{bmatrix} = \begin{bmatrix}E(z_1) \\ \vdots \\ E(z_p)\end{bmatrix}$
+
+<hr>
+
+### Expected value of vector $\mathbf{Az}$ {background-color="#ccddeb"}
+
+Let $\mathbf{A}$ be an $n \times p$ matrix of constants and $\mathbf{z}$ a $p \times 1$ vector of random variables. Then
 
 $$
-E(aX + b) = E(aX) + E(b) = aE(X) + b
+E(\mathbf{Az}) = \mathbf{A}E(\mathbf{z})
 $$
 
 <hr>
 
-### Expected value of $a g_1(X) + bg_2(X) + c$
+### Expected value of $\mathbf{Az} + \mathbf{C}$
 
-Let $X$ be a random variable and $a$, $b$, and $c$ be constants. For any functions $g_1(x)$ and $g_2(x)$, then
-
-$$E(ag_1(X) + bg_2(X) + c) = aE(g_1(X)) + bE(g_2(X)) + c$$
-
-<hr>
-
-### Expected value of vector $\mathbf{b}$
-
-Let $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
-
-Then $E(\mathbf{b}) = E\begin{bmatrix}b_1 \\ \vdots \\ b_p\end{bmatrix} = \begin{bmatrix}E(b_1) \\ \vdots \\ E(b_p)\end{bmatrix}$
-
-<hr>
-
-### Expected value of $\mathbf{Ab}$
-
-Let $\mathbf{A}$ be a $n \times p$ matrix of constants and $\mathbf{b}$ a $p \times 1$ vector of random variables. Then
+Let $\mathbf{A}$ be an $n \times p$ matrix of constants, $\mathbf{C}$ a $n \times 1$ vector of constants, and $\mathbf{z}$ a $p \times 1$ vector of random variables. Then
 
 $$
-E(\mathbf{Ab}) = \mathbf{A}E(\mathbf{b})
+E(\mathbf{Az} + \mathbf{C}) = E(\mathbf{Az}) + E(\mathbf{C}) = \mathbf{A}E(\mathbf{z}) + \mathbf{C}
 $$
 
 ## Variance
@@ -125,44 +119,42 @@ $$
 
 <hr>
 
-### Variance of $aX + b$
+### Variance of vector $\mathbf{z}$
 
-Let $X$ be a random variable and $a$ and $b$ be constants. Then
+Let $\mathbf{z} = \begin{bmatrix}z_1 \\ \vdots \\z_p\end{bmatrix}$ be a $p \times 1$ vector of random variables. Then
 
 $$
-Var(aX + b) = a^2Var(X) 
+Var(\mathbf{z}) = E[(\mathbf{z} - E(\mathbf{z}))(\mathbf{z} - E(\mathbf{z}))^\mathsf{T}]
 $$
+
+<br>
+
+This produced the variance-covariance matrix
+
+$Var(\mathbf{z}) = \begin{bmatrix}Var(z_1) & Cov(z_1, z_2) & \dots & Cov(z_1, z_p)\\ Cov(z_2, z_1) & Var(z_2) & \dots & Cov(z_2, z_p) \\ \vdots & \vdots & \dots & \cdot \\ Cov(z_p, z_1) & Cov(z_p, z_2) & \dots & Var(z_p)\end{bmatrix}$
 
 <hr>
 
-### Variance of vector $\mathbf{b}$
-
-Let $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\b_p\end{bmatrix}$ be a $p \times 1$ vector of random variables.
-
-Then
-
-$$
-Var(\mathbf{b}) = E[(\mathbf{b} - E(\mathbf{b}))(\mathbf{b} - E(\mathbf{b}))^T]
-$$
-
-<!--# Can add in the drop-down the resulting matrix-->
-
-### Variance of $\mathbf{Ab}$
-
-Let $\mathbf{A}$ be a $n \times p$ matrix of constants and $\mathbf{b}$ a $p \times 1$ vector of random variables. Then
-
-$$
-\begin{aligned}
-Var(\mathbf{Ab}) &= E[(\mathbf{Ab} - E(\mathbf{Ab}))(\mathbf{Ab} - E(\mathbf{Ab}))^T]\\& = \mathbf{A}Var(\mathbf{b})\mathbf{A}^T
-\end{aligned}
-$$
-
 ## Probability distributions
 
-### Normal distribution
+### Multivariate normal distribution
 
-Let $X$ be a random variable, such that $X \sim N(\mu, \sigma^2)$. Then the probability function is
+Let $\mathbf{z}$ be a $p \times 1$ vector of random variables, such that $\mathbf{z}$ follows a multivariate normal distribution with mean $\boldsymbol{\mu}$ and variance $\boldsymbol{\Sigma}$. Then the probability density function of $\mathbf{z}$ is
+
+$$f(\mathbf{z}) = \frac{1}{(2\pi)^{p/2}|\boldsymbol{\Sigma}|^{1/2}}\exp\Big\{-\frac{1}{2}(\mathbf{z} - \boldsymbol{\mu})^\mathsf{T}\boldsymbol{\Sigma}^{-1}(\mathbf{z}- \boldsymbol{\mu})\Big\}$$
+
+<!-- Let $X$ be a random variable, such that $X \sim N(\mu, \sigma^2)$. Then the probability function is -->
+
+<!-- $$ -->
+
+<!-- P(X = x | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(x - \mu)^2}\Big\} -->
+
+<!-- $$ -->
+
+### Linear transformation of normal random variable {background-color="#ccddeb"}
+
+Suppose $\mathbf{z}$ is a multivariate normal random variable with mean $\boldsymbol{\mu}$ and variance $\boldsymbol{\Sigma}$. A linear transformation of $\mathbf{z}$ is also multivariate normal, such that
 
 $$
-P(X = x | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(x - \mu)^2}\Big\}
+\mathbf{A}\mathbf{z} + \mathbf{B} \sim N(\mathbf{A}\boldsymbol{\mu} + \mathbf{B}, \mathbf{A}\boldsymbol{\Sigma}\mathbf{A}^\mathsf{T})
 $$

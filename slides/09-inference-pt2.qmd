@@ -53,9 +53,9 @@ options(scipen=999)
 
     -   Released after class
 
-<!-- -->
+-   Lecture recordings available until start of exam, February 18 at 10:05am
 
--   [Click here](https://prodduke.sharepoint.com/:p:/s/ARCStaff839/EZ4PKTRTlCVMpFZiR6XoRycB4UUlRMuI2_Rda9hKxNZtsA) to learn more about the Academic Resource Center
+    -   See link under "Exam 01" on menu of course website
 
 -   [Statistics experience](../hw/stats-experience.html) due **Tuesday, April 22**
 
