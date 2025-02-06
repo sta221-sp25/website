@@ -49,7 +49,7 @@ options(scipen=999)
 
 ## Announcements
 
--   HW 02 due Tuesday, February 11 at 11:59pm
+-   HW 02 due Thursday, February 13 at 11:59pm
 
     -   Released after class
 
