@@ -232,25 +232,23 @@ $$
 
 ![Image source: *Introduction to the Practice of Statistics (5th ed)*](images/08/regression.png){fig-align="center"}
 
-$Var(\mathbf{z}) = \begin{bmatrix}Var(z_1) & Cov(z_1, z_2) & \dots & Cov(z_1, z_p)\\ Cov(z_2, z_1) & Var(z_2) & \dots & Cov(z_2, z_p) \\ \vdots & \vdots & \dots & \cdot \\ Cov(z_p, z_1) & Cov(z_p, z_2) & \dots & Var(z_p)\end{bmatrix}$
-
 ## Linear transformation of normal random variable {background-color="#ccddeb"}
 
-Suppose $\mathbf{z}$ is a (multivariate) normal random variable such that $\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})$
+Suppose $\mathbf{z}$ is a (multivariate) normal random variable such that $\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})$, $\mathbf{A}$ is a matrix of constants, and $\mathbf{b}$ is a vector of constants.
 
 <br>
 
 A linear transformation of $\mathbf{z}$ is also multivariate normal, such that
 
 $$
-\mathbf{A}\mathbf{z} + \mathbf{B} \sim N(\mathbf{A}\boldsymbol{\mu} + \mathbf{B}, \mathbf{A}\boldsymbol{\Sigma}\mathbf{A}^\mathsf{T})
+\mathbf{A}\mathbf{z} + \mathbf{b} \sim N(\mathbf{A}\boldsymbol{\mu} + \mathbf{b}, \mathbf{A}\boldsymbol{\Sigma}\mathbf{A}^\mathsf{T})
 $$
 
 ::: question
 Explain why $\mathbf{y}|\mathbf{X}$ is normally distributed.
 :::
 
-## Assumptions for regression
+## Assumptions for regression {.midi}
 
 ::::: columns
 ::: {.column width="50%"}

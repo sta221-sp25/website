@@ -5126,14 +5126,14 @@
     "href": "slides/09-inference-pt2-notes.html#visualizing-distribution-of-mathbfymathbfx",
     "title": "Inference for regression",
     "section": "Visualizing distribution of \\(\\mathbf{y}|\\mathbf{X}\\)",
-    "text": "Visualizing distribution of \\(\\mathbf{y}|\\mathbf{X}\\)\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma_\\epsilon^2\\mathbf{I})\n\\]\n\n\n\nImage source: Introduction to the Practice of Statistics (5th ed)\n\n\n\\(Var(\\mathbf{z}) = \\begin{bmatrix}Var(z_1) & Cov(z_1, z_2) & \\dots & Cov(z_1, z_p)\\\\ Cov(z_2, z_1) & Var(z_2) & \\dots & Cov(z_2, z_p) \\\\ \\vdots & \\vdots & \\dots & \\cdot \\\\ Cov(z_p, z_1) & Cov(z_p, z_2) & \\dots & Var(z_p)\\end{bmatrix}\\)"
+    "text": "Visualizing distribution of \\(\\mathbf{y}|\\mathbf{X}\\)\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma_\\epsilon^2\\mathbf{I})\n\\]\n\n\n\nImage source: Introduction to the Practice of Statistics (5th ed)"
   },
   {
     "objectID": "slides/09-inference-pt2-notes.html#linear-transformation-of-normal-random-variable",
     "href": "slides/09-inference-pt2-notes.html#linear-transformation-of-normal-random-variable",
     "title": "Inference for regression",
     "section": "Linear transformation of normal random variable",
-    "text": "Linear transformation of normal random variable\nSuppose \\(\\mathbf{z}\\) is a (multivariate) normal random variable such that \\(\\mathbf{z} \\sim N(\\boldsymbol{\\mu}, \\boldsymbol{\\Sigma})\\)\n\nA linear transformation of \\(\\mathbf{z}\\) is also multivariate normal, such that\n\\[\n\\mathbf{A}\\mathbf{z} + \\mathbf{B} \\sim N(\\mathbf{A}\\boldsymbol{\\mu} + \\mathbf{B}, \\mathbf{A}\\boldsymbol{\\Sigma}\\mathbf{A}^\\mathsf{T})\n\\]\n\nExplain why \\(\\mathbf{y}|\\mathbf{X}\\) is normally distributed."
+    "text": "Linear transformation of normal random variable\nSuppose \\(\\mathbf{z}\\) is a (multivariate) normal random variable such that \\(\\mathbf{z} \\sim N(\\boldsymbol{\\mu}, \\boldsymbol{\\Sigma})\\), \\(\\mathbf{A}\\) is a matrix of constants, and \\(\\mathbf{b}\\) is a vector of constants.\n\nA linear transformation of \\(\\mathbf{z}\\) is also multivariate normal, such that\n\\[\n\\mathbf{A}\\mathbf{z} + \\mathbf{b} \\sim N(\\mathbf{A}\\boldsymbol{\\mu} + \\mathbf{b}, \\mathbf{A}\\boldsymbol{\\Sigma}\\mathbf{A}^\\mathsf{T})\n\\]\n\nExplain why \\(\\mathbf{y}|\\mathbf{X}\\) is normally distributed."
   },
   {
     "objectID": "slides/09-inference-pt2-notes.html#assumptions-for-regression",
@@ -5378,14 +5378,14 @@
     "href": "slides/09-inference-pt2.html#visualizing-distribution-of-mathbfymathbfx",
     "title": "Inference for regression",
     "section": "Visualizing distribution of \\(\\mathbf{y}|\\mathbf{X}\\)",
-    "text": "Visualizing distribution of \\(\\mathbf{y}|\\mathbf{X}\\)\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma_\\epsilon^2\\mathbf{I})\n\\]\n\nImage source: Introduction to the Practice of Statistics (5th ed)\\(Var(\\mathbf{z}) = \\begin{bmatrix}Var(z_1) & Cov(z_1, z_2) & \\dots & Cov(z_1, z_p)\\\\ Cov(z_2, z_1) & Var(z_2) & \\dots & Cov(z_2, z_p) \\\\ \\vdots & \\vdots & \\dots & \\cdot \\\\ Cov(z_p, z_1) & Cov(z_p, z_2) & \\dots & Var(z_p)\\end{bmatrix}\\)"
+    "text": "Visualizing distribution of \\(\\mathbf{y}|\\mathbf{X}\\)\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim N(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma_\\epsilon^2\\mathbf{I})\n\\]\n\nImage source: Introduction to the Practice of Statistics (5th ed)"
   },
   {
     "objectID": "slides/09-inference-pt2.html#linear-transformation-of-normal-random-variable",
     "href": "slides/09-inference-pt2.html#linear-transformation-of-normal-random-variable",
     "title": "Inference for regression",
     "section": "Linear transformation of normal random variable",
-    "text": "Linear transformation of normal random variable\nSuppose \\(\\mathbf{z}\\) is a (multivariate) normal random variable such that \\(\\mathbf{z} \\sim N(\\boldsymbol{\\mu}, \\boldsymbol{\\Sigma})\\)\n\nA linear transformation of \\(\\mathbf{z}\\) is also multivariate normal, such that\n\\[\n\\mathbf{A}\\mathbf{z} + \\mathbf{B} \\sim N(\\mathbf{A}\\boldsymbol{\\mu} + \\mathbf{B}, \\mathbf{A}\\boldsymbol{\\Sigma}\\mathbf{A}^\\mathsf{T})\n\\]\n\nExplain why \\(\\mathbf{y}|\\mathbf{X}\\) is normally distributed."
+    "text": "Linear transformation of normal random variable\nSuppose \\(\\mathbf{z}\\) is a (multivariate) normal random variable such that \\(\\mathbf{z} \\sim N(\\boldsymbol{\\mu}, \\boldsymbol{\\Sigma})\\), \\(\\mathbf{A}\\) is a matrix of constants, and \\(\\mathbf{b}\\) is a vector of constants.\n\nA linear transformation of \\(\\mathbf{z}\\) is also multivariate normal, such that\n\\[\n\\mathbf{A}\\mathbf{z} + \\mathbf{b} \\sim N(\\mathbf{A}\\boldsymbol{\\mu} + \\mathbf{b}, \\mathbf{A}\\boldsymbol{\\Sigma}\\mathbf{A}^\\mathsf{T})\n\\]\n\nExplain why \\(\\mathbf{y}|\\mathbf{X}\\) is normally distributed."
   },
   {
     "objectID": "slides/09-inference-pt2.html#assumptions-for-regression",

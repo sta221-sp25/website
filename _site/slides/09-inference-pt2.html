@@ -371,21 +371,20 @@ Prof.&nbsp;Maria Tackett
 \mathbf{y}|\mathbf{X} \sim N(\mathbf{X}\boldsymbol{\beta}, \sigma_\epsilon^2\mathbf{I})
 \]</span></p>
 
-<img data-src="images/08/regression.png" class="r-stretch quarto-figure-center"><p class="caption">Image source: <em>Introduction to the Practice of Statistics (5th ed)</em></p><p><span class="math inline">\(Var(\mathbf{z}) = \begin{bmatrix}Var(z_1) &amp; Cov(z_1, z_2) &amp; \dots &amp; Cov(z_1, z_p)\\ Cov(z_2, z_1) &amp; Var(z_2) &amp; \dots &amp; Cov(z_2, z_p) \\ \vdots &amp; \vdots &amp; \dots &amp; \cdot \\ Cov(z_p, z_1) &amp; Cov(z_p, z_2) &amp; \dots &amp; Var(z_p)\end{bmatrix}\)</span></p>
-</section>
+<img data-src="images/08/regression.png" class="r-stretch quarto-figure-center"><p class="caption">Image source: <em>Introduction to the Practice of Statistics (5th ed)</em></p></section>
 <section id="linear-transformation-of-normal-random-variable" class="slide level2" data-background-color="#ccddeb">
 <h2>Linear transformation of normal random variable</h2>
-<p>Suppose <span class="math inline">\(\mathbf{z}\)</span> is a (multivariate) normal random variable such that <span class="math inline">\(\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})\)</span></p>
+<p>Suppose <span class="math inline">\(\mathbf{z}\)</span> is a (multivariate) normal random variable such that <span class="math inline">\(\mathbf{z} \sim N(\boldsymbol{\mu}, \boldsymbol{\Sigma})\)</span>, <span class="math inline">\(\mathbf{A}\)</span> is a matrix of constants, and <span class="math inline">\(\mathbf{b}\)</span> is a vector of constants.</p>
 <p><br></p>
 <p>A linear transformation of <span class="math inline">\(\mathbf{z}\)</span> is also multivariate normal, such that</p>
 <p><span class="math display">\[
-\mathbf{A}\mathbf{z} + \mathbf{B} \sim N(\mathbf{A}\boldsymbol{\mu} + \mathbf{B}, \mathbf{A}\boldsymbol{\Sigma}\mathbf{A}^\mathsf{T})
+\mathbf{A}\mathbf{z} + \mathbf{b} \sim N(\mathbf{A}\boldsymbol{\mu} + \mathbf{b}, \mathbf{A}\boldsymbol{\Sigma}\mathbf{A}^\mathsf{T})
 \]</span></p>
 <div class="question">
 <p>Explain why <span class="math inline">\(\mathbf{y}|\mathbf{X}\)</span> is normally distributed.</p>
 </div>
 </section>
-<section id="assumptions-for-regression" class="slide level2">
+<section id="assumptions-for-regression" class="slide level2 midi">
 <h2>Assumptions for regression</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
