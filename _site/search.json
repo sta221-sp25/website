@@ -3664,7 +3664,49 @@
     "href": "ae/ae-03-inference.html",
     "title": "AE 03: Inference",
     "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-03 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\n\n\nSet up\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\n\nfootball &lt;- read_csv(\"data/ncaa-football-exp.csv\")\n\n\n\nData\n\n\nRegression model\n\nexp_fit &lt;- lm(total_exp_m ~ enrollment_th + type, data = football)\n\ntidy(exp_fit)|&gt; \n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n19.332\n2.984\n6.478\n0\n\n\nenrollment_th\n0.780\n0.110\n7.074\n0\n\n\ntypePublic\n-13.226\n3.153\n-4.195\n0\n\n\n\n\n\n\n\nHypothesis test\nWe want to conduct a hypothesis test to determine if there is a linear relationship between enrollment and football expenditures after accounting for institution type.\nWe’ll start by getting estimates for statistics we’ll need for inference.\n\n\n\n\n\n\nExercise 1\n\n\n\nWe will use the vector of responses \\(\\mathbf{y}\\) and the design matrix \\(\\mathbf{X}\\) to calculate the values needed for inference.\nGet \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the football data frame. What are their dimensions?\n\n\n\n# add code here\n\n\n\n\n\n\n\nExercise 2\n\n\n\nNext, let’s calculate \\(\\hat{\\sigma}_\\epsilon^2\\) the estimate. Use \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the previous exercise to calculate this value.\n\n\n\n## add code here\n\n\n\n\n\n\n\nExercise 3\n\n\n\nNow we’re ready to conduct the hypothesis test. State the null and alternative hypotheses in words and using mathematical notation.\n\n\n. . .\n\n\n\n\n\n\nExercise 4\n\n\n\nCalculate \\(SE(\\beta_j)\\), then use this value to calculate the test statistic for the hypothesis test.\n\n\n\n## add code here\n\n\n\n\n\n\n\nExercise 5\n\n\n\nNow we need to calculate p-value to help make our final conclusion.\n\nState the distribution used to calculate the p-value.\nFill in the code below to calculate the p-value. Remove #| eval: false once you’ve filled in the code.\n\n\n\n\npt([test-statistic], [df], lower.tail = FALSE)\n\n\n\n\n\n\n\nExercise 6\n\n\n\nState your conclusion in the context of the data. Use a threshold of \\(\\alpha = 0.05\\).\n\n\n. . .\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-03 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE."
+  },
+  {
+    "objectID": "ae/ae-03-inference.html#exercise-1",
+    "href": "ae/ae-03-inference.html#exercise-1",
+    "title": "AE 03: Inference",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWe will use the vector of responses \\(\\mathbf{y}\\) and the design matrix \\(\\mathbf{X}\\) to calculate the values needed for inference.\nGet \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the football data frame. What are their dimensions?"
+  },
+  {
+    "objectID": "ae/ae-03-inference.html#exercise-2",
+    "href": "ae/ae-03-inference.html#exercise-2",
+    "title": "AE 03: Inference",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nNext, let’s calculate \\(\\hat{\\sigma}_\\epsilon^2\\) the estimate. Use \\(\\mathbf{y}\\) and \\(\\mathbf{X}\\) from the previous exercise to calculate this value."
+  },
+  {
+    "objectID": "ae/ae-03-inference.html#exercise-3",
+    "href": "ae/ae-03-inference.html#exercise-3",
+    "title": "AE 03: Inference",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nNow we’re ready to conduct the hypothesis test between enrollment and football expenditures. State the null and alternative hypotheses in words and using mathematical notation."
+  },
+  {
+    "objectID": "ae/ae-03-inference.html#exercise-4",
+    "href": "ae/ae-03-inference.html#exercise-4",
+    "title": "AE 03: Inference",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nCalculate \\(SE(\\beta_j)\\), then use this value to calculate the test statistic for the hypothesis test."
+  },
+  {
+    "objectID": "ae/ae-03-inference.html#exercise-5",
+    "href": "ae/ae-03-inference.html#exercise-5",
+    "title": "AE 03: Inference",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nNow we need to calculate p-value to help make our final conclusion.\n\nState the distribution used to calculate the p-value.\nFill in the code below to calculate the p-value. Remove #| eval: false once you’ve filled in the code.\n\n\n2 * pt([test-statistic], [df], lower.tail = FALSE)"
+  },
+  {
+    "objectID": "ae/ae-03-inference.html#exercise-6",
+    "href": "ae/ae-03-inference.html#exercise-6",
+    "title": "AE 03: Inference",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nState your conclusion in the context of the data. Use a threshold of \\(\\alpha = 0.05\\).\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
   },
   {
     "objectID": "ae/ae-07-newton-raphson.html",
