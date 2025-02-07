@@ -4,7 +4,7 @@ editor: visual
 ---
 
 ::: callout-important
-This assignment is due on **Tuesday, April 22 at 11:59pm.**
+This assignment is due on **Tuesday, April 22 at 11:59pm** on Gradescope.
 :::
 
 The world of statistics and data science is vast and continually growing! The goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom.
@@ -133,4 +133,4 @@ Make sure the slide includes the information mentioned above and is easily reada
 
 ## Submission
 
-This assignment is due on **Tuesday, April 22.** Standard homework late policy applies. More submission instructions to come.
+This assignment is due on **Tuesday, April 22 on Gradescope.** Standard homework late policy applies.
