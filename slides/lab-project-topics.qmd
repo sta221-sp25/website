@@ -1,0 +1,105 @@
+---
+title: "Project: Research Topics"
+date: "2025-02-07"
+date-format: "MMM DD, YYYY"
+author: "Prof. Maria Tackett"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+# Welcome
+
+## Goals
+
+-   Team icebreaker
+-   Hypothesis testing practice
+-   Final project - research topics
+
+## Icebreaker
+
+-   Get into your lab teams.
+-   Choose a reporter
+    -   Need help choosing? Person with birthday closest to today’s date.
+-   Identify **8 things** everyone in the group has in common (\~ 5 minutes)
+    -   Not being a Duke student
+
+    -   Not clothes (e.g., we’re all wearing socks)
+
+    -   Not body parts (e.g., we all have a nose)
+-   Reporter will share list with the class.
+
+## Hypothesis testing {.midi}
+
+Below is the model using student enrollment (in thousands) and institution type to predict an institution's football expenditures (in millions). [Click here](https://sta221-sp25.netlify.app/slides/09-inference-pt2#/data-ncaa-football-expenditures) for more details about the data.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+
+football <- read_csv("data/ncaa-football-exp.csv")
+
+exp_fit <- lm(total_exp_m ~ enrollment_th + type, data = football)
+tidy(exp_fit) |>
+  kable(digits = 3)
+```
+
+\
+
+::: question
+-   Explain what each value in the row for `typePublic` means.
+
+-   Do the data provide evidence that institution type is a useful predictor in this model?
+:::
+
+## Final team project {.midi}
+
+-   **Goal**: Use the methods from STA 221 to analyze data and answer a research question developed by your team
+
+-   **Primary deliverables:**
+
+    1.  an in-person presentation about the exploratory data analysis and initial modeling
+
+    2.  a written, reproducible final report detailing your analysis
+
+    3.  a summary of your project highlights to share with the class
+
+    4.  a GitHub repository containing all work from the project
+
+-   There are periodic project milestones throughout the semester to help you work towards the primary deliverables
+
+## Today's focus: Research topics
+
+-   **Goals:** Identify three potential research topics your team is interested in investigating and draft research questions.
+
+-   You do [**not**]{.underline} need to have a data set at this point
+
+-   You can discuss the topics you put in the student survey to help generate ideas
+
+-   **Submission**: All work for the project will be submitted in your team’s GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow often used in practice.
+
+🔗 <https://sta221-sp25.netlify.app/project>
