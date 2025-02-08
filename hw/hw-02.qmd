@@ -75,7 +75,7 @@ Suppose we fit the model $\mathbf{y} = \mathbf{X}_1\boldsymbol{\beta}_1 + \bolds
 
 a.  Find $E(\hat{\boldsymbol{\beta}}_1)$, the expected value of the least-squares estimate $\hat{\boldsymbol{\beta}}_1$.
 
-b.  Under what condition does $E(\hat{\boldsymbol{\beta}}_1) = \boldsymbol{\beta}$ ? What is the relationship between $\mathbf{X}_1$ and $\mathbf{X}_2$ under this condition?
+b.  Under what condition does $E(\hat{\boldsymbol{\beta}}_1) = \boldsymbol{\beta}_1$ ? What is the relationship between $\mathbf{X}_1$ and $\mathbf{X}_2$ under this condition?
 
 <!--# Exercise 3.37 from Introduction to linear regression-->
 

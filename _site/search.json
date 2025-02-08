@@ -2139,7 +2139,7 @@
     "href": "hw/hw-02.html#exercise-4",
     "title": "HW 02: Multiple linear regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\nSuppose we fit the model \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\boldsymbol{\\epsilon}\\) when the true model is actually given by \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\mathbf{X}_2\\boldsymbol{\\beta}_2 + \\boldsymbol{\\epsilon}\\). Assume \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\) for both models.\n\nFind \\(E(\\hat{\\boldsymbol{\\beta}}_1)\\), the expected value of the least-squares estimate \\(\\hat{\\boldsymbol{\\beta}}_1\\).\nUnder what condition does \\(E(\\hat{\\boldsymbol{\\beta}}_1) = \\boldsymbol{\\beta}\\) ? What is the relationship between \\(\\mathbf{X}_1\\) and \\(\\mathbf{X}_2\\) under this condition?",
+    "text": "Exercise 4\nSuppose we fit the model \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\boldsymbol{\\epsilon}\\) when the true model is actually given by \\(\\mathbf{y} = \\mathbf{X}_1\\boldsymbol{\\beta}_1 + \\mathbf{X}_2\\boldsymbol{\\beta}_2 + \\boldsymbol{\\epsilon}\\). Assume \\(E(\\boldsymbol{\\epsilon}) = \\mathbf{0}\\) for both models.\n\nFind \\(E(\\hat{\\boldsymbol{\\beta}}_1)\\), the expected value of the least-squares estimate \\(\\hat{\\boldsymbol{\\beta}}_1\\).\nUnder what condition does \\(E(\\hat{\\boldsymbol{\\beta}}_1) = \\boldsymbol{\\beta}_1\\) ? What is the relationship between \\(\\mathbf{X}_1\\) and \\(\\mathbf{X}_2\\) under this condition?",
     "crumbs": [
       "Homework",
       "HW 02"
