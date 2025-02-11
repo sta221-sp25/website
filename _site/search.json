@@ -5296,7 +5296,7 @@
     "href": "slides/10-inference-pt3-notes.html#hypothesis-test-for-beta_j-p-value",
     "title": "Inference for regression",
     "section": "Hypothesis test for \\(\\beta_j\\): p-value",
-    "text": "Hypothesis test for \\(\\beta_j\\): p-value\n\nThe test statistic follows a \\(t\\) distribution with 123 degrees of freedom.\n\n\\[\np-value = P(|T| &gt; |-13.226|)\n\\]\n. . .\n\n2 * pt(13.226, df = nrow(football) - 3 - 1, lower.tail = FALSE)\n\n[1] 0.0000000000000000000000002191402\n\n\n\n. . .\nGiven \\(\\beta_j = 0\\) ( \\(H_0\\) is true), the probability of observing a slope of -13.226 or more extreme is \\(\\approx 0\\) ."
+    "text": "Hypothesis test for \\(\\beta_j\\): p-value\n\nThe test statistic follows a \\(t\\) distribution with 124 degrees of freedom.\n\n\\[\np-value = P(|T| &gt; |-4.195|)\n\\]\n. . .\n\n2 * pt(4.195, df = nrow(football) - 2 - 1, lower.tail = FALSE)\n\n[1] 0.00005153923\n\n\n\n. . .\nGiven \\(\\beta_j = 0\\) ( \\(H_0\\) is true), the probability of observing a slope of -13.226 or more extreme is \\(\\approx 0\\) ."
   },
   {
     "objectID": "slides/10-inference-pt3-notes.html#hypothesis-test-for-beta_j-conclusion",
@@ -5464,7 +5464,7 @@
     "href": "slides/10-inference-pt3.html#hypothesis-test-for-beta_j-p-value",
     "title": "Inference for regression",
     "section": "Hypothesis test for \\(\\beta_j\\): p-value",
-    "text": "Hypothesis test for \\(\\beta_j\\): p-value\n\nThe test statistic follows a \\(t\\) distribution with 123 degrees of freedom.\n\n\\[\np-value = P(|T| &gt; |-13.226|)\n\\]\n\n\n2 * pt(13.226, df = nrow(football) - 3 - 1, lower.tail = FALSE)\n\n[1] 0.0000000000000000000000002191402\n\n\n\n\n\nGiven \\(\\beta_j = 0\\) ( \\(H_0\\) is true), the probability of observing a slope of -13.226 or more extreme is \\(\\approx 0\\) ."
+    "text": "Hypothesis test for \\(\\beta_j\\): p-value\n\nThe test statistic follows a \\(t\\) distribution with 124 degrees of freedom.\n\n\\[\np-value = P(|T| &gt; |-4.195|)\n\\]\n\n\n2 * pt(4.195, df = nrow(football) - 2 - 1, lower.tail = FALSE)\n\n[1] 0.00005153923\n\n\n\n\n\nGiven \\(\\beta_j = 0\\) ( \\(H_0\\) is true), the probability of observing a slope of -13.226 or more extreme is \\(\\approx 0\\) ."
   },
   {
     "objectID": "slides/10-inference-pt3.html#hypothesis-test-for-beta_j-conclusion",

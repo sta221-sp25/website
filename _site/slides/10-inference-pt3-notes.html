@@ -710,16 +710,16 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 <section id="hypothesis-test-for-beta_j-p-value" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="hypothesis-test-for-beta_j-p-value">Hypothesis test for <span class="math inline">\(\beta_j\)</span>: p-value</h2>
 <ul>
-<li>The test statistic follows a <span class="math inline">\(t\)</span> distribution with 123 degrees of freedom.</li>
+<li>The test statistic follows a <span class="math inline">\(t\)</span> distribution with 124 degrees of freedom.</li>
 </ul>
 <p><span class="math display">\[
-p-value = P(|T| &gt; |-13.226|)
+p-value = P(|T| &gt; |-4.195|)
 \]</span></p>
 <p>. . .</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="fl">13.226</span>, <span class="at">df =</span> <span class="fu">nrow</span>(football) <span class="sc">-</span> <span class="dv">3</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="fl">4.195</span>, <span class="at">df =</span> <span class="fu">nrow</span>(football) <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0000000000000000000000002191402</code></pre>
+<pre><code>[1] 0.00005153923</code></pre>
 </div>
 </div>
 <p><br></p>

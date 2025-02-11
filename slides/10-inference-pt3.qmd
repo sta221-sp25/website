@@ -249,16 +249,16 @@ This means the estimated slope of -13.226 is 4.195 standard errors below the hyp
 
 ## Hypothesis test for $\beta_j$: p-value {.midi}
 
--   The test statistic follows a $t$ distribution with `r nrow(football) - 3 - 1` degrees of freedom.
+-   The test statistic follows a $t$ distribution with `r nrow(football) - 2 - 1` degrees of freedom.
 
 $$
-p-value = P(|T| > |-13.226|)
+p-value = P(|T| > |-4.195|)
 $$
 
 . . .
 
 ```{r}
-2 * pt(13.226, df = nrow(football) - 3 - 1, lower.tail = FALSE)
+2 * pt(4.195, df = nrow(football) - 2 - 1, lower.tail = FALSE)
 ```
 
 <br>
