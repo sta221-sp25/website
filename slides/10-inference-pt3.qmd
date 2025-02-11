@@ -72,6 +72,26 @@ options(scipen=999)
 
 -   If you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice
 
+## Tips for studying {.midi}
+
+-   Rework derivations from assignments and lecture notes
+
+-   Review exercises in AEs and assignments, asking “why” as you review your process and reasoning
+
+    -   e.g., Why do we include “holding all else constant” in interpretations?
+
+-   Understand similarities and differences between linear and logistic regression
+
+    -   How are interpretations for logistic regression similar to interpretations for linear regression with response log⁡(y)? How are they different?
+
+-   Focus on understanding not memorization
+
+-   Explain concepts / process to others
+
+-   Ask questions in office hours
+
+-   Review lecture recordings as needed
+
 ## Topics
 
 -   Conduct inference on a single coefficient
@@ -170,7 +190,6 @@ $$
 
 ## Sampling distribution of $\hat{\beta}_j$
 
-
 $$
 \hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_\epsilon(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})
 $$
@@ -240,10 +259,10 @@ $$
 ```{r}
 2 * pt(13.226, df = nrow(football) - 3 - 1, lower.tail = FALSE)
 ```
-<br>
-. . .
 
-Given $\beta_j = 0$ ( $H_0$ is true), the probability of observing a slope of -13.226 or more extreme is $\approx 0$ . 
+<br> . . .
+
+Given $\beta_j = 0$ ( $H_0$ is true), the probability of observing a slope of -13.226 or more extreme is $\approx 0$ .
 
 ## Hypothesis test for $\beta_j$: Conclusion
 
