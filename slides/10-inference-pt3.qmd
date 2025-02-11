@@ -75,7 +75,6 @@ options(scipen=999)
 -   Rework derivations from assignments and lecture notes
 -   Review exercises in AEs and assignments, asking “why” as you review your process and reasoning
     -   e.g., Why do we include “holding all else constant” in interpretations?
--   Understand similarities and differences between linear and logistic regression
 -   Focus on understanding not memorization
 -   Explain concepts / process to others
 -   Ask questions in office hours
