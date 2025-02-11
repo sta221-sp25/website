@@ -3187,119 +3187,170 @@
     "href": "exam-01-practice.html",
     "title": "Exam 01 practice",
     "section": "",
-    "text": "Important\n\n\n\nThis page contains practice problems to help prepare for Exam 01. This set of practice problems is not comprehensive. You should review these study tips  as you prepare for the exam.\n\nThere is no answer key for these problems. You may ask questions in office hours and on Ed Discussion."
+    "text": "Important\n\n\n\nThis page contains practice problems to help prepare for Exam 01. This set of practice problems is not comprehensive. You should review these study tips as you prepare for the exam.\n\nThere is no answer key for these problems. You may ask questions in office hours and on Ed Discussion.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-1",
     "href": "exam-01-practice.html#exercise-1",
     "title": "Exam 01 practice",
     "section": "Exercise 1",
-    "text": "Exercise 1\nWe will use data from nrow(penguins) penguins at Palmer Station in Antartica to fit linear regression model model using species (Adelie, Chinstrap, or Gentoo), flipper length (in millimeters), and bill depth (in millimeters) to predict its body mass (in grams). Click here to read more about the variables.\nThe linear regression model has the form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]Write the dimensions of \\(\\mathbf{y}, \\mathbf{X},\\boldsymbol{\\beta}, \\boldsymbol{\\epsilon}\\) specifically for this analysis."
+    "text": "Exercise 1\nWe will use data from nrow(penguins) penguins at Palmer Station in Antartica to fit linear regression model model using species (Adelie, Chinstrap, or Gentoo), flipper length (in millimeters), and bill depth (in millimeters) to predict its body mass (in grams). Click here to read more about the variables.\nThe linear regression model has the form\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\n\\]Write the dimensions of \\(\\mathbf{y}, \\mathbf{X},\\boldsymbol{\\beta}, \\boldsymbol{\\epsilon}\\) specifically for this analysis.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-2",
     "href": "exam-01-practice.html#exercise-2",
     "title": "Exam 01 practice",
     "section": "Exercise 2",
-    "text": "Exercise 2\nThe output for the model described in Exercise 1, along with 95% confidence intervals for the model coefficients, is shown below:\n\npenguins_fit &lt;- lm(body_mass_g ~ species + flipper_length_mm + \n                     bill_depth_mm + body_mass_g, \n                   data = penguins)\n\nWarning in model.matrix.default(mt, mf, contrasts): the response appeared on\nthe right-hand side and was dropped\n\n\nWarning in model.matrix.default(mt, mf, contrasts): problem with term 4 in\nmodel.matrix: no columns are assigned\n\ntidy(penguins_fit,conf.int = TRUE) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-4526.887\n516.931\n-8.757\n0.000\n-5543.705\n-3510.068\n\n\nspeciesChinstrap\n-131.968\n51.400\n-2.567\n0.011\n-233.073\n-30.863\n\n\nspeciesGentoo\n1288.968\n132.774\n9.708\n0.000\n1027.798\n1550.138\n\n\nflipper_length_mm\n25.700\n3.098\n8.295\n0.000\n19.606\n31.794\n\n\nbill_depth_mm\n182.364\n18.358\n9.934\n0.000\n146.252\n218.475\n\n\n\n\n\n\nInterpret the coefficient of flipper_length_mm in the context of the data.\nWhat is the baseline category for speices?\nInterpret the coefficient of speciesChinstrap in the context of the data."
+    "text": "Exercise 2\nThe output for the model described in Exercise 1, along with 95% confidence intervals for the model coefficients, is shown below:\n\npenguins_fit &lt;- lm(body_mass_g ~ species + flipper_length_mm + \n                     bill_depth_mm + body_mass_g, \n                   data = penguins)\n\nWarning in model.matrix.default(mt, mf, contrasts): the response appeared on\nthe right-hand side and was dropped\n\n\nWarning in model.matrix.default(mt, mf, contrasts): problem with term 4 in\nmodel.matrix: no columns are assigned\n\ntidy(penguins_fit,conf.int = TRUE) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-4526.887\n516.931\n-8.757\n0.000\n-5543.705\n-3510.068\n\n\nspeciesChinstrap\n-131.968\n51.400\n-2.567\n0.011\n-233.073\n-30.863\n\n\nspeciesGentoo\n1288.968\n132.774\n9.708\n0.000\n1027.798\n1550.138\n\n\nflipper_length_mm\n25.700\n3.098\n8.295\n0.000\n19.606\n31.794\n\n\nbill_depth_mm\n182.364\n18.358\n9.934\n0.000\n146.252\n218.475\n\n\n\n\n\n\nInterpret the coefficient of flipper_length_mm in the context of the data.\nWhat is the baseline category for speices?\nInterpret the coefficient of speciesChinstrap in the context of the data.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-3",
     "href": "exam-01-practice.html#exercise-3",
     "title": "Exam 01 practice",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nDoes the intercept have a meaningful interpretation?\nIf not, what are some strategies we can use to fit a model such that the intercept is meaningful?"
+    "text": "Exercise 3\n\nDoes the intercept have a meaningful interpretation?\nIf not, what are some strategies we can use to fit a model such that the intercept is meaningful?",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-4",
     "href": "exam-01-practice.html#exercise-4",
     "title": "Exam 01 practice",
     "section": "Exercise 4",
-    "text": "Exercise 4\nThere are three species in the data set (Adelie, Chinstrap, Gentoo), but only two terms for species in the model. Use the design matrix to show why we cannot put indicators for all three species and the intercept in the model."
+    "text": "Exercise 4\nThere are three species in the data set (Adelie, Chinstrap, Gentoo), but only two terms for species in the model. Use the design matrix to show why we cannot put indicators for all three species and the intercept in the model.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-5",
     "href": "exam-01-practice.html#exercise-5",
     "title": "Exam 01 practice",
     "section": "Exercise 5",
-    "text": "Exercise 5\nWe conduct the following hypothesis test for the coefficient of flipper_length_mm.\n\nNull: There is no linear relationship between flipper length and body mass, after accounting for species and bill depth\nAlternative: There is a linear relationship between flipper length and body mass, after accounting for species and bill depth\n\n\nWrite these hypotheses in mathematical notation.\nThe standard error is 3.098. Explain how this value is computed and what this value means in the context of the data.\nThe test statistic is 8.295. Explain how this value is computed and what this value means in the context of the data.\nWhat distribution is used to compute the p-value?\nWhat is the conclusion from the test in the context of the data?"
+    "text": "Exercise 5\nWe conduct the following hypothesis test for the coefficient of flipper_length_mm.\n\nNull: There is no linear relationship between flipper length and body mass, after accounting for species and bill depth\nAlternative: There is a linear relationship between flipper length and body mass, after accounting for species and bill depth\n\n\nWrite these hypotheses in mathematical notation.\nThe standard error is 3.098. Explain how this value is computed and what this value means in the context of the data.\nThe test statistic is 8.295. Explain how this value is computed and what this value means in the context of the data.\nWhat distribution is used to compute the p-value?\nWhat is the conclusion from the test in the context of the data?",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-6",
     "href": "exam-01-practice.html#exercise-6",
     "title": "Exam 01 practice",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nInterpret the 95% confidence interval for flipper_length_mm in the context of the data.\nIs the interval consistent with the test from the previous exercise? Briefly explain."
+    "text": "Exercise 6\n\nInterpret the 95% confidence interval for flipper_length_mm in the context of the data.\nIs the interval consistent with the test from the previous exercise? Briefly explain.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-7",
     "href": "exam-01-practice.html#exercise-7",
     "title": "Exam 01 practice",
     "section": "Exercise 7",
-    "text": "Exercise 7\nSketch a scatterplot of the relationship between bill depth and body mass such that the effect of bill depth differs by species."
+    "text": "Exercise 7\nSketch a scatterplot of the relationship between bill depth and body mass such that the effect of bill depth differs by species.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-8",
     "href": "exam-01-practice.html#exercise-8",
     "title": "Exam 01 practice",
     "section": "Exercise 8",
-    "text": "Exercise 8\nWhen we conduct inference for regression, we assume the following distribution for \\(\\mathbf{y}|\\mathbf{X}\\)\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2_\\epsilon\\mathbf{I})\n\\]\n\nShow that \\(E(\\mathbf{y}|\\mathbf{X}) = \\mathbf{X}\\boldsymbol{\\beta}\\)\nShow that \\(Var(\\mathbf{y}|\\mathbf{X})= \\sigma^2_{\\epsilon}\\mathbf{I}\\)\n\nSee February 4 lecture “Inference for Regression” to check your work."
+    "text": "Exercise 8\nWhen we conduct inference for regression, we assume the following distribution for \\(\\mathbf{y}|\\mathbf{X}\\)\n\\[\n\\mathbf{y}|\\mathbf{X} \\sim(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2_\\epsilon\\mathbf{I})\n\\]\n\nShow that \\(E(\\mathbf{y}|\\mathbf{X}) = \\mathbf{X}\\boldsymbol{\\beta}\\)\nShow that \\(Var(\\mathbf{y}|\\mathbf{X})= \\sigma^2_{\\epsilon}\\mathbf{I}\\)\n\nSee February 4 lecture “Inference for Regression” to check your work.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-9",
     "href": "exam-01-practice.html#exercise-9",
     "title": "Exam 01 practice",
     "section": "Exercise 9",
-    "text": "Exercise 9\nWe conduct inference on the coefficients \\(\\boldsymbol{\\beta}\\) assuming that the variability of \\(\\mathbf{y}|\\mathbf{X}\\) is constant for value (or combination) of predictors. Briefly explain why is assumption is important."
+    "text": "Exercise 9\nWe conduct inference on the coefficients \\(\\boldsymbol{\\beta}\\) assuming that the variability of \\(\\mathbf{y}|\\mathbf{X}\\) is constant for value (or combination) of predictors. Briefly explain why is assumption is important.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-10",
     "href": "exam-01-practice.html#exercise-10",
     "title": "Exam 01 practice",
     "section": "Exercise 10",
-    "text": "Exercise 10\nGiven the model \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\), derive the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) using matrix calculus.\nSee January 21 lecture “SLR: Matrix representation” to check your work."
+    "text": "Exercise 10\nGiven the model \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\), derive the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) using matrix calculus.\nSee January 21 lecture “SLR: Matrix representation” to check your work.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-11",
     "href": "exam-01-practice.html#exercise-11",
     "title": "Exam 01 practice",
     "section": "Exercise 11",
-    "text": "Exercise 11\nGiven the model \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\), derive the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) using the geometric interpretation of the model.\nSee January 23 lecture “Geometric interpretation of least-squares regression” to check your work."
+    "text": "Exercise 11\nGiven the model \\(\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}\\), derive the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) using the geometric interpretation of the model.\nSee January 23 lecture “Geometric interpretation of least-squares regression” to check your work.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-12",
     "href": "exam-01-practice.html#exercise-12",
     "title": "Exam 01 practice",
     "section": "Exercise 12",
-    "text": "Exercise 12\nExplain why we say “holding all else constant” when interpreting the coefficients in a multiple linear regression model."
+    "text": "Exercise 12\nExplain why we say “holding all else constant” when interpreting the coefficients in a multiple linear regression model.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-13",
     "href": "exam-01-practice.html#exercise-13",
     "title": "Exam 01 practice",
     "section": "Exercise 13",
-    "text": "Exercise 13\nSuppose we have two models:\n\nModel 1 includes predictors \\(X_1\\) and \\(X_2\\)\nModel 2 includes predictors \\(X_1, X_2, X_3\\) and \\(X_4\\)\n\nExplain why we should use \\(Adj. R^2\\) and not \\(R^2\\) to compare these models."
+    "text": "Exercise 13\nSuppose we have two models:\n\nModel 1 includes predictors \\(X_1\\) and \\(X_2\\)\nModel 2 includes predictors \\(X_1, X_2, X_3\\) and \\(X_4\\)\n\nExplain why we should use \\(Adj. R^2\\) and not \\(R^2\\) to compare these models.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-14",
     "href": "exam-01-practice.html#exercise-14",
     "title": "Exam 01 practice",
     "section": "Exercise 14",
-    "text": "Exercise 14\nRework Exercises 1 - 5 in HW 01 for more practice with theory and math."
+    "text": "Exercise 14\nRework Exercises 1 - 5 in HW 01 for more practice with theory and math.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#exercise-15",
     "href": "exam-01-practice.html#exercise-15",
     "title": "Exam 01 practice",
     "section": "Exercise 15",
-    "text": "Exercise 15\nRework Exercises 1 - 5 in HW 02 for more practice with theory and math."
+    "text": "Exercise 15\nRework Exercises 1 - 5 in HW 02 for more practice with theory and math.",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "exam-01-practice.html#relevant-lectures-assignments-and-aes",
     "href": "exam-01-practice.html#relevant-lectures-assignments-and-aes",
     "title": "Exam 01 practice",
     "section": "Relevant lectures, assignments and AEs",
-    "text": "Relevant lectures, assignments and AEs\nAsk yourself “why” questions as you the slides, review your answers, process, and derivations on these assignments. It may also be helpful to explain your process to others.\n\nLectures: January 9 - February 13 (February 13 lecture is an exam review)\nHW 01 - 02\nLab 01 - 04 (Lab 04 is an exam review)\nAE 01 - 04 (AE 04 is an exam review)"
+    "text": "Relevant lectures, assignments and AEs\nAsk yourself “why” questions as you the slides, review your answers, process, and derivations on these assignments. It may also be helpful to explain your process to others.\n\nLectures: January 9 - February 13 (February 13 lecture is an exam review)\nHW 01 - 02\nLab 01 - 04 (Lab 04 is an exam review)\nAE 01 - 04 (AE 04 is an exam review)",
+    "crumbs": [
+      "Exam 01 Practice"
+    ]
   },
   {
     "objectID": "hw/hw-02.html",
@@ -5140,14 +5191,14 @@
     "href": "slides/10-inference-pt3-notes.html",
     "title": "Inference for regression",
     "section": "",
-    "text": "Research topics due TODAY at 11:59pm on GitHub\nHW 02 due Thursday at 11:59pm\n\nReleased after class\n\nStatistics experience due Tuesday, April 22"
+    "text": "Research topics due TODAY at 11:59pm on GitHub\nHW 02 due Thursday at 11:59pm\nStatistics experience due Tuesday, April 22"
   },
   {
     "objectID": "slides/10-inference-pt3-notes.html#announcements",
     "href": "slides/10-inference-pt3-notes.html#announcements",
     "title": "Inference for regression",
     "section": "",
-    "text": "Research topics due TODAY at 11:59pm on GitHub\nHW 02 due Thursday at 11:59pm\n\nReleased after class\n\nStatistics experience due Tuesday, April 22"
+    "text": "Research topics due TODAY at 11:59pm on GitHub\nHW 02 due Thursday at 11:59pm\nStatistics experience due Tuesday, April 22"
   },
   {
     "objectID": "slides/10-inference-pt3-notes.html#exam-01",
@@ -5161,7 +5212,14 @@
     "href": "slides/10-inference-pt3-notes.html#tips-for-studying",
     "title": "Inference for regression",
     "section": "Tips for studying",
-    "text": "Tips for studying\n\nRework derivations from assignments and lecture notes\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nUnderstand similarities and differences between linear and logistic regression\n\nHow are interpretations for logistic regression similar to interpretations for linear regression with response log⁡(y)? How are they different?\n\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
+    "text": "Tips for studying\n\nRework derivations from assignments and lecture notes\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nUnderstand similarities and differences between linear and logistic regression\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
+  },
+  {
+    "objectID": "slides/10-inference-pt3-notes.html#resources",
+    "href": "slides/10-inference-pt3-notes.html#resources",
+    "title": "Inference for regression",
+    "section": "Resources",
+    "text": "Resources\n\nExam 01 practice\nLecture recordings\nPrepare readings (see course schedule)\nLecture notes (use search bar to find specific topics)\nAEs\nAssignments"
   },
   {
     "objectID": "slides/10-inference-pt3-notes.html#topics",
@@ -5224,7 +5282,7 @@
     "href": "slides/10-inference-pt3-notes.html#hypothesis-test-for-beta_j-hypotheses",
     "title": "Inference for regression",
     "section": "Hypothesis test for \\(\\beta_j\\): Hypotheses",
-    "text": "Hypothesis test for \\(\\beta_j\\): Hypotheses\nWe will generally test the hypotheses:\n\nNull: There is no linear relationship between institution type and football expenditure, after adjusting for enrollment \\(H_0: \\beta_j = 0\\)\nAlternative: There is a linear relationship between institution type and football expenditure, after adjusting for enrollment \\(H_a: \\beta_j \\neq 0\\)"
+    "text": "Hypothesis test for \\(\\beta_j\\): Hypotheses\n\nNull: There is no linear relationship between institution type and football expenditure, after adjusting for enrollment \\(H_0: \\beta_j = 0\\)\nAlternative: There is a linear relationship between institution type and football expenditure, after adjusting for enrollment \\(H_a: \\beta_j \\neq 0\\)"
   },
   {
     "objectID": "slides/10-inference-pt3-notes.html#hypothesis-test-for-beta_j-test-statistic",
@@ -5238,7 +5296,7 @@
     "href": "slides/10-inference-pt3-notes.html#hypothesis-test-for-beta_j-p-value",
     "title": "Inference for regression",
     "section": "Hypothesis test for \\(\\beta_j\\): p-value",
-    "text": "Hypothesis test for \\(\\beta_j\\): p-value\n\nThe test statistic follows a \\(t\\) distribution with 123 degrees of freedom.\n\n\\[\np-value = P(|T| &gt; |-13.226|)\n\\]\n. . .\n\n2 * pt(13.226, df = nrow(football) - 3 - 1, lower.tail = FALSE)\n\n[1] 0.0000000000000000000000002191402\n\n\n . . .\nGiven \\(\\beta_j = 0\\) ( \\(H_0\\) is true), the probability of observing a slope of -13.226 or more extreme is \\(\\approx 0\\) ."
+    "text": "Hypothesis test for \\(\\beta_j\\): p-value\n\nThe test statistic follows a \\(t\\) distribution with 123 degrees of freedom.\n\n\\[\np-value = P(|T| &gt; |-13.226|)\n\\]\n. . .\n\n2 * pt(13.226, df = nrow(football) - 3 - 1, lower.tail = FALSE)\n\n[1] 0.0000000000000000000000002191402\n\n\n\n. . .\nGiven \\(\\beta_j = 0\\) ( \\(H_0\\) is true), the probability of observing a slope of -13.226 or more extreme is \\(\\approx 0\\) ."
   },
   {
     "objectID": "slides/10-inference-pt3-notes.html#hypothesis-test-for-beta_j-conclusion",
@@ -5308,7 +5366,7 @@
     "href": "slides/10-inference-pt3.html#announcements",
     "title": "Inference for regression",
     "section": "Announcements",
-    "text": "Announcements\n\nResearch topics due TODAY at 11:59pm on GitHub\nHW 02 due Thursday at 11:59pm\n\nReleased after class\n\nStatistics experience due Tuesday, April 22"
+    "text": "Announcements\n\nResearch topics due TODAY at 11:59pm on GitHub\nHW 02 due Thursday at 11:59pm\nStatistics experience due Tuesday, April 22"
   },
   {
     "objectID": "slides/10-inference-pt3.html#exam-01",
@@ -5322,7 +5380,14 @@
     "href": "slides/10-inference-pt3.html#tips-for-studying",
     "title": "Inference for regression",
     "section": "Tips for studying",
-    "text": "Tips for studying\n\nRework derivations from assignments and lecture notes\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nUnderstand similarities and differences between linear and logistic regression\n\nHow are interpretations for logistic regression similar to interpretations for linear regression with response log⁡(y)? How are they different?\n\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
+    "text": "Tips for studying\n\nRework derivations from assignments and lecture notes\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nUnderstand similarities and differences between linear and logistic regression\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
+  },
+  {
+    "objectID": "slides/10-inference-pt3.html#resources",
+    "href": "slides/10-inference-pt3.html#resources",
+    "title": "Inference for regression",
+    "section": "Resources",
+    "text": "Resources\n\nExam 01 practice\nLecture recordings\nPrepare readings (see course schedule)\nLecture notes (use search bar to find specific topics)\nAEs\nAssignments"
   },
   {
     "objectID": "slides/10-inference-pt3.html#topics",
@@ -5385,7 +5450,7 @@
     "href": "slides/10-inference-pt3.html#hypothesis-test-for-beta_j-hypotheses",
     "title": "Inference for regression",
     "section": "Hypothesis test for \\(\\beta_j\\): Hypotheses",
-    "text": "Hypothesis test for \\(\\beta_j\\): Hypotheses\nWe will generally test the hypotheses:\n\nNull: There is no linear relationship between institution type and football expenditure, after adjusting for enrollment \\(H_0: \\beta_j = 0\\)\nAlternative: There is a linear relationship between institution type and football expenditure, after adjusting for enrollment \\(H_a: \\beta_j \\neq 0\\)"
+    "text": "Hypothesis test for \\(\\beta_j\\): Hypotheses\n\nNull: There is no linear relationship between institution type and football expenditure, after adjusting for enrollment \\(H_0: \\beta_j = 0\\)\nAlternative: There is a linear relationship between institution type and football expenditure, after adjusting for enrollment \\(H_a: \\beta_j \\neq 0\\)"
   },
   {
     "objectID": "slides/10-inference-pt3.html#hypothesis-test-for-beta_j-test-statistic",
@@ -5399,7 +5464,7 @@
     "href": "slides/10-inference-pt3.html#hypothesis-test-for-beta_j-p-value",
     "title": "Inference for regression",
     "section": "Hypothesis test for \\(\\beta_j\\): p-value",
-    "text": "Hypothesis test for \\(\\beta_j\\): p-value\n\nThe test statistic follows a \\(t\\) distribution with 123 degrees of freedom.\n\n\\[\np-value = P(|T| &gt; |-13.226|)\n\\]\n\n\n2 * pt(13.226, df = nrow(football) - 3 - 1, lower.tail = FALSE)\n\n[1] 0.0000000000000000000000002191402\n\n\n . . .\nGiven \\(\\beta_j = 0\\) ( \\(H_0\\) is true), the probability of observing a slope of -13.226 or more extreme is \\(\\approx 0\\) ."
+    "text": "Hypothesis test for \\(\\beta_j\\): p-value\n\nThe test statistic follows a \\(t\\) distribution with 123 degrees of freedom.\n\n\\[\np-value = P(|T| &gt; |-13.226|)\n\\]\n\n\n2 * pt(13.226, df = nrow(football) - 3 - 1, lower.tail = FALSE)\n\n[1] 0.0000000000000000000000002191402\n\n\n\n\n\nGiven \\(\\beta_j = 0\\) ( \\(H_0\\) is true), the probability of observing a slope of -13.226 or more extreme is \\(\\approx 0\\) ."
   },
   {
     "objectID": "slides/10-inference-pt3.html#hypothesis-test-for-beta_j-conclusion",

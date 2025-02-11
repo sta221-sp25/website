@@ -53,8 +53,6 @@ options(scipen=999)
 
 -   HW 02 due Thursday at 11:59pm
 
-    -   Released after class
-
 -   [Statistics experience](../hw/stats-experience.html) due **Tuesday, April 22**
 
 ## Exam 01
@@ -75,22 +73,27 @@ options(scipen=999)
 ## Tips for studying {.midi}
 
 -   Rework derivations from assignments and lecture notes
-
 -   Review exercises in AEs and assignments, asking “why” as you review your process and reasoning
-
     -   e.g., Why do we include “holding all else constant” in interpretations?
-
 -   Understand similarities and differences between linear and logistic regression
-
-    -   How are interpretations for logistic regression similar to interpretations for linear regression with response log⁡(y)? How are they different?
-
 -   Focus on understanding not memorization
-
 -   Explain concepts / process to others
-
 -   Ask questions in office hours
-
 -   Review lecture recordings as needed
+
+## Resources
+
+-   [Exam 01 practice](../exam-01-practice.html)
+
+-   [Lecture recordings](https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=0b5392d5-d61b-465a-80eb-b25e014a75a9)
+
+-   Prepare readings (see course schedule)
+
+-   Lecture notes (use search bar to find specific topics)
+
+-   AEs
+
+-   Assignments
 
 ## Topics
 
@@ -221,8 +224,6 @@ Let's walk through the steps to test $\beta_j$, the coefficient for `typePublic`
 
 ## Hypothesis test for $\beta_j$: Hypotheses
 
-We will generally test the hypotheses:
-
 -   **Null:** There is no linear relationship between institution type and football expenditure, after adjusting for enrollment $H_0: \beta_j = 0$
 
 -   **Alternative:** There is a linear relationship between institution type and football expenditure, after adjusting for enrollment $H_a: \beta_j \neq 0$
@@ -260,7 +261,9 @@ $$
 2 * pt(13.226, df = nrow(football) - 3 - 1, lower.tail = FALSE)
 ```
 
-<br> . . .
+<br>
+
+. . .
 
 Given $\beta_j = 0$ ( $H_0$ is true), the probability of observing a slope of -13.226 or more extreme is $\approx 0$ .
 
@@ -269,12 +272,6 @@ Given $\beta_j = 0$ ( $H_0$ is true), the probability of observing a slope of -1
 -   The p-value is $\approx 0$, so we **reject** $H_0$.
 
 -   The data provide sufficient evidence that $\beta_j \neq 0$, meaning evidence there is a linear relationship between institution type and football expenditure, after adjusting for enrollment.
-
-# Application exercise
-
-::: appex
-📋 sat[221-tip25.Netflix.app/eye/eye-03-inference](../ae/ae-03-inference.html)
-:::
 
 # Confidence interval for $\beta_j$
 
@@ -367,6 +364,12 @@ tidy(exp_fit, conf.int = TRUE, conf.level = 0.95) |>
 <br>
 
 **Interpretation**: We are 95% confident that for each additional 1,000 students enrolled, the institution's expenditures on football will be greater by \$562,000 to \$999,000, on average, holding institution type constant.
+
+# Application exercise
+
+::: appex
+📋 [sta221-sp25.netlify.app/ae/ae-03-inference.html](../ae/ae-03-inference.html)
+:::
 
 ## Recap
 

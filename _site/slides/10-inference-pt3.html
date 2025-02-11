@@ -212,10 +212,7 @@ Prof.&nbsp;Maria Tackett
 <h2>Announcements</h2>
 <ul>
 <li><p>Research topics due TODAY at 11:59pm on GitHub</p></li>
-<li><p>HW 02 due Thursday at 11:59pm</p>
-<ul>
-<li>Released after class</li>
-</ul></li>
+<li><p>HW 02 due Thursday at 11:59pm</p></li>
 <li><p><a href="../hw/stats-experience.html">Statistics experience</a> due <strong>Tuesday, April 22</strong></p></li>
 </ul>
 </section>
@@ -238,19 +235,27 @@ Prof.&nbsp;Maria Tackett
 <section id="tips-for-studying" class="slide level2 midi">
 <h2>Tips for studying</h2>
 <ul>
-<li><p>Rework derivations from assignments and lecture notes</p></li>
-<li><p>Review exercises in AEs and assignments, asking “why” as you review your process and reasoning</p>
+<li>Rework derivations from assignments and lecture notes</li>
+<li>Review exercises in AEs and assignments, asking “why” as you review your process and reasoning
 <ul>
 <li>e.g., Why do we include “holding all else constant” in interpretations?</li>
 </ul></li>
-<li><p>Understand similarities and differences between linear and logistic regression</p>
+<li>Understand similarities and differences between linear and logistic regression</li>
+<li>Focus on understanding not memorization</li>
+<li>Explain concepts / process to others</li>
+<li>Ask questions in office hours</li>
+<li>Review lecture recordings as needed</li>
+</ul>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
 <ul>
-<li>How are interpretations for logistic regression similar to interpretations for linear regression with response log⁡(y)? How are they different?</li>
-</ul></li>
-<li><p>Focus on understanding not memorization</p></li>
-<li><p>Explain concepts / process to others</p></li>
-<li><p>Ask questions in office hours</p></li>
-<li><p>Review lecture recordings as needed</p></li>
+<li><p><a href="../exam-01-practice.html">Exam 01 practice</a></p></li>
+<li><p><a href="https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=0b5392d5-d61b-465a-80eb-b25e014a75a9">Lecture recordings</a></p></li>
+<li><p>Prepare readings (see course schedule)</p></li>
+<li><p>Lecture notes (use search bar to find specific topics)</p></li>
+<li><p>AEs</p></li>
+<li><p>Assignments</p></li>
 </ul>
 </section>
 <section id="topics" class="slide level2">
@@ -391,7 +396,6 @@ E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta} \hspace{10mm} Var(\hat{\boldsym
 </section>
 <section id="hypothesis-test-for-beta_j-hypotheses" class="slide level2">
 <h2>Hypothesis test for <span class="math inline">\(\beta_j\)</span>: Hypotheses</h2>
-<p>We will generally test the hypotheses:</p>
 <ul>
 <li><p><strong>Null:</strong> There is no linear relationship between institution type and football expenditure, after adjusting for enrollment <span class="math inline">\(H_0: \beta_j = 0\)</span></p></li>
 <li><p><strong>Alternative:</strong> There is a linear relationship between institution type and football expenditure, after adjusting for enrollment <span class="math inline">\(H_a: \beta_j \neq 0\)</span></p></li>
@@ -460,7 +464,9 @@ p-value = P(|T| &gt; |-13.226|)
 <pre><code>[1] 0.0000000000000000000000002191402</code></pre>
 </div>
 </div>
-<p><br> . . .</p>
+<p><br></p>
+</div>
+<div class="fragment">
 <p>Given <span class="math inline">\(\beta_j = 0\)</span> ( <span class="math inline">\(H_0\)</span> is true), the probability of observing a slope of -13.226 or more extreme is <span class="math inline">\(\approx 0\)</span> .</p>
 </div>
 </section>
@@ -471,13 +477,6 @@ p-value = P(|T| &gt; |-13.226|)
 <li><p>The data provide sufficient evidence that <span class="math inline">\(\beta_j \neq 0\)</span>, meaning evidence there is a linear relationship between institution type and football expenditure, after adjusting for enrollment.</p></li>
 </ul>
 </section></section>
-<section id="application-exercise" class="title-slide slide level1 center">
-<h1>Application exercise</h1>
-<div class="appex">
-<p>📋 sat<a href="../ae/ae-03-inference.html">221-tip25.Netflix.app/eye/eye-03-inference</a></p>
-</div>
-</section>
-
 <section>
 <section id="confidence-interval-for-beta_j" class="title-slide slide level1 center">
 <h1>Confidence interval for <span class="math inline">\(\beta_j\)</span></h1>
@@ -656,6 +655,13 @@ p-value = P(|T| &gt; |-13.226|)
 </div>
 <p><br></p>
 <p><strong>Interpretation</strong>: We are 95% confident that for each additional 1,000 students enrolled, the institution’s expenditures on football will be greater by $562,000 to $999,000, on average, holding institution type constant.</p>
+</section></section>
+<section>
+<section id="application-exercise" class="title-slide slide level1 center">
+<h1>Application exercise</h1>
+<div class="appex">
+<p>📋 <a href="../ae/ae-03-inference.html">sta221-sp25.netlify.app/ae/ae-03-inference.html</a></p>
+</div>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
