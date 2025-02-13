@@ -46,13 +46,50 @@ bibliography: references.bib
 -   50 points total
 
     -   in-class: 35 points
+
     -   take-home: 15 points
 
 -   In-class: 75 minutes during February 18 lecture
 
 -   Take-home: due February 20 at 9pm (no lecture on Thursday)
 
--   If you miss any part of the exam for an excused absence (with academic dean's note), your Exam 02 score will be counted twice
+-   If you miss any part of the exam for an excused absence (with academic dean’s note), your Exam 02 score will be counted twice
+
+## Outline of in-class portion {.midi}
+
+-   Closed-book, closed-note.
+
+-   Question types:
+
+    -   Short answer (show work / explain response)
+    -   True/ False.
+        -   If false, write 1 - 2 sentence justification about why it is false.
+    -   Derivations
+
+-   Will be provided all relevant R output and a page of [matrix calculus and probability rules](../math-rules.html)
+
+-   Can use any results from class or assignments without reproving them (e.g., $\mathbf{H}$ is symmetric and idempotent)
+
+-   Just need a pencil or pen. No calculator permitted on exam.
+
+## Outline of take-home portion
+
+-   Released: Tuesday, February 18 right after class
+-   Due: Thursday, February 20 at 9pm (no lecture February 20)
+-   Similar in format to a lab/ HW
+    -   Will receive Exam questions in README of GitHub repo
+    -   Formatting + using a reproducible workflow will be part of grade
+-   Submit a PDF of responses to GitHub
+
+## Tips for studying {.midi}
+
+-   Rework derivations from assignments and lecture notes
+-   Review exercises in AEs and assignments, asking “why” as you review your process and reasoning
+    -   e.g., Why do we include “holding all else constant” in interpretations?
+-   Focus on understanding not memorization
+-   Explain concepts / process to others
+-   Ask questions in office hours
+-   Review lecture recordings as needed
 
 ## Content: Weeks 1 - 6
 
@@ -81,32 +118,6 @@ bibliography: references.bib
 -   Assumptions for least-squares regression
 :::
 :::::
-
-## Outline of in-class portion {.midi}
-
--   Closed-book, closed-note.
-
--   Question types:
-
-    -   Short answer (show work / explain response)
-    -   True/ False.
-        -   If false, write 1 - 2 sentence justification about why it is false.
-    -   Derivations
-
--   Will be provided all relevant R output and a page of [matrix calculus and probability rules](../math-rules.html)
-
--   Can use any results from class or assignments without reproving them (e.g., $\mathbf{H}$ is symmetric and idempotent)
-
--   Just need a pencil or pen. No calculator permitted on exam.
-
-## Outline of take-home portion
-
--   Released: Tuesday, February 18 right after class
--   Due: Thursday, February 20 at pm (no lecture February 20)
--   Similar in format to a lab/ HW
-    -   Will receive Exam questions in README of GitHub repo
-    -   Formatting + using a reproducible workflow will be part of grade
--   Submit a PDF of responses to GitHub
 
 ## Population-level vs. sample-level models
 

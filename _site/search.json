@@ -727,13 +727,6 @@
     "text": "Exam 01\n\n50 points total\n\nin-class: 35 points\ntake-home: 15 points\n\nIn-class: 75 minutes during February 18 lecture\nTake-home: due February 20 at 9pm (no lecture on Thursday)\nIf you miss any part of the exam for an excused absence (with academic dean’s note), your Exam 02 score will be counted twice"
   },
   {
-    "objectID": "slides/11-exam-01-review.html#content-weeks-1---6",
-    "href": "slides/11-exam-01-review.html#content-weeks-1---6",
-    "title": "Exam 01 review",
-    "section": "Content: Weeks 1 - 6",
-    "text": "Content: Weeks 1 - 6\n\n\n\nExploratory data analysis\nFitting and interpreting linear regression models\nModel assessment and comparison\nANOVA\nCategorical + interaction terms\nInference for model coefficients\n\n\n\nMatrix representation of regression\nHat matrix\nFinding the least-squares estimator\nAssumptions for least-squares regression"
-  },
-  {
     "objectID": "slides/11-exam-01-review.html#outline-of-in-class-portion",
     "href": "slides/11-exam-01-review.html#outline-of-in-class-portion",
     "title": "Exam 01 review",
@@ -745,7 +738,21 @@
     "href": "slides/11-exam-01-review.html#outline-of-take-home-portion",
     "title": "Exam 01 review",
     "section": "Outline of take-home portion",
-    "text": "Outline of take-home portion\n\nReleased: Tuesday, February 18 right after class\nDue: Thursday, February 20 at pm (no lecture February 20)\nSimilar in format to a lab/ HW\n\nWill receive Exam questions in README of GitHub repo\nFormatting + using a reproducible workflow will be part of grade\n\nSubmit a PDF of responses to GitHub"
+    "text": "Outline of take-home portion\n\nReleased: Tuesday, February 18 right after class\nDue: Thursday, February 20 at 9pm (no lecture February 20)\nSimilar in format to a lab/ HW\n\nWill receive Exam questions in README of GitHub repo\nFormatting + using a reproducible workflow will be part of grade\n\nSubmit a PDF of responses to GitHub"
+  },
+  {
+    "objectID": "slides/11-exam-01-review.html#tips-for-studying",
+    "href": "slides/11-exam-01-review.html#tips-for-studying",
+    "title": "Exam 01 review",
+    "section": "Tips for studying",
+    "text": "Tips for studying\n\nRework derivations from assignments and lecture notes\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
+  },
+  {
+    "objectID": "slides/11-exam-01-review.html#content-weeks-1---6",
+    "href": "slides/11-exam-01-review.html#content-weeks-1---6",
+    "title": "Exam 01 review",
+    "section": "Content: Weeks 1 - 6",
+    "text": "Content: Weeks 1 - 6\n\n\n\nExploratory data analysis\nFitting and interpreting linear regression models\nModel assessment and comparison\nANOVA\nCategorical + interaction terms\nInference for model coefficients\n\n\n\nMatrix representation of regression\nHat matrix\nFinding the least-squares estimator\nAssumptions for least-squares regression"
   },
   {
     "objectID": "slides/11-exam-01-review.html#population-level-vs.-sample-level-models",
@@ -818,13 +825,6 @@
     "text": "Exam 01\n\n50 points total\n\nin-class: 35 points\ntake-home: 15 points\n\nIn-class: 75 minutes during February 18 lecture\nTake-home: due February 20 at 9pm (no lecture on Thursday)\nIf you miss any part of the exam for an excused absence (with academic dean’s note), your Exam 02 score will be counted twice"
   },
   {
-    "objectID": "slides/11-exam-01-review-notes.html#content-weeks-1---6",
-    "href": "slides/11-exam-01-review-notes.html#content-weeks-1---6",
-    "title": "Exam 01 review",
-    "section": "Content: Weeks 1 - 6",
-    "text": "Content: Weeks 1 - 6\n\n\n\nExploratory data analysis\nFitting and interpreting linear regression models\nModel assessment and comparison\nANOVA\nCategorical + interaction terms\nInference for model coefficients\n\n\n\nMatrix representation of regression\nHat matrix\nFinding the least-squares estimator\nAssumptions for least-squares regression"
-  },
-  {
     "objectID": "slides/11-exam-01-review-notes.html#outline-of-in-class-portion",
     "href": "slides/11-exam-01-review-notes.html#outline-of-in-class-portion",
     "title": "Exam 01 review",
@@ -836,7 +836,21 @@
     "href": "slides/11-exam-01-review-notes.html#outline-of-take-home-portion",
     "title": "Exam 01 review",
     "section": "Outline of take-home portion",
-    "text": "Outline of take-home portion\n\nReleased: Tuesday, February 18 right after class\nDue: Thursday, February 20 at pm (no lecture February 20)\nSimilar in format to a lab/ HW\n\nWill receive Exam questions in README of GitHub repo\nFormatting + using a reproducible workflow will be part of grade\n\nSubmit a PDF of responses to GitHub"
+    "text": "Outline of take-home portion\n\nReleased: Tuesday, February 18 right after class\nDue: Thursday, February 20 at 9pm (no lecture February 20)\nSimilar in format to a lab/ HW\n\nWill receive Exam questions in README of GitHub repo\nFormatting + using a reproducible workflow will be part of grade\n\nSubmit a PDF of responses to GitHub"
+  },
+  {
+    "objectID": "slides/11-exam-01-review-notes.html#tips-for-studying",
+    "href": "slides/11-exam-01-review-notes.html#tips-for-studying",
+    "title": "Exam 01 review",
+    "section": "Tips for studying",
+    "text": "Tips for studying\n\nRework derivations from assignments and lecture notes\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
+  },
+  {
+    "objectID": "slides/11-exam-01-review-notes.html#content-weeks-1---6",
+    "href": "slides/11-exam-01-review-notes.html#content-weeks-1---6",
+    "title": "Exam 01 review",
+    "section": "Content: Weeks 1 - 6",
+    "text": "Content: Weeks 1 - 6\n\n\n\nExploratory data analysis\nFitting and interpreting linear regression models\nModel assessment and comparison\nANOVA\nCategorical + interaction terms\nInference for model coefficients\n\n\n\nMatrix representation of regression\nHat matrix\nFinding the least-squares estimator\nAssumptions for least-squares regression"
   },
   {
     "objectID": "slides/11-exam-01-review-notes.html#population-level-vs.-sample-level-models",
@@ -1238,13 +1252,6 @@
     "text": "Exam 01\n\n50 points total\n\nin-class: 35-40 points\ntake-home: 10 - 15 points\n\nIn-class (35 -40 pts): 75 minutes during February 18 lecture\n\nWill be randomly assigned to exam room\n\nTake-home (10 -15 pts): released after class on Tuesday\nIf you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice"
   },
   {
-    "objectID": "slides/10-inference-pt3.html#tips-for-studying",
-    "href": "slides/10-inference-pt3.html#tips-for-studying",
-    "title": "Inference for regression",
-    "section": "Tips for studying",
-    "text": "Tips for studying\n\nRework derivations from assignments and lecture notes\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
-  },
-  {
     "objectID": "slides/10-inference-pt3.html#resources",
     "href": "slides/10-inference-pt3.html#resources",
     "title": "Inference for regression",
@@ -1411,13 +1418,6 @@
     "title": "Inference for regression",
     "section": "Exam 01",
     "text": "Exam 01\n\n50 points total\n\nin-class: 35-40 points\ntake-home: 10 - 15 points\n\nIn-class (35 -40 pts): 75 minutes during February 18 lecture\n\nWill be randomly assigned to exam room\n\nTake-home (10 -15 pts): released after class on Tuesday\nIf you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice"
-  },
-  {
-    "objectID": "slides/10-inference-pt3-notes.html#tips-for-studying",
-    "href": "slides/10-inference-pt3-notes.html#tips-for-studying",
-    "title": "Inference for regression",
-    "section": "Tips for studying",
-    "text": "Tips for studying\n\nRework derivations from assignments and lecture notes\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
   },
   {
     "objectID": "slides/10-inference-pt3-notes.html#resources",

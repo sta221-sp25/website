@@ -70,16 +70,6 @@ options(scipen=999)
 
 -   If you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice
 
-## Tips for studying {.midi}
-
--   Rework derivations from assignments and lecture notes
--   Review exercises in AEs and assignments, asking “why” as you review your process and reasoning
-    -   e.g., Why do we include “holding all else constant” in interpretations?
--   Focus on understanding not memorization
--   Explain concepts / process to others
--   Ask questions in office hours
--   Review lecture recordings as needed
-
 ## Resources
 
 -   [Exam 01 practice](../exam-01-practice.html)
