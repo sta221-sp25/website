@@ -1,12 +1,12 @@
 ---
 title: "Lab 04"
-subtitle: "Maximum likelihood estimation"
-date: "2024-10-21"
+subtitle: "Exam 01 Review"
+date: "2025-02-14"
 date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
@@ -29,50 +29,30 @@ bibliography: references.bib
 
 # Welcome
 
-## Goals
+## Reminders
 
--   Team feedback
--   Mid-semester survey
--   Lab 04: Maximum likelihood estimation (with Palmer penguins)
+-   Exam 01 will be during lecture on Tuesday, February 18
 
-## Team feedback
+    -   Go directly to your assigned room (let us know if you don't know your room assignment)
 
--   **Purpose**: To reflect on the team's collaboration and your contribution thus far
+-   Exam 01 take home will be released Tuesday and is due Thursday, February 20 at 9pm
 
--   You should have received an email from Teammates with a link to the feedback from on October 21 around 11am
+-   Next week:
 
-    -   Please let your TA know if you do not see the email (check your spam folder first!)
+    -   No lecture on Thursday (use time for take-home exam)
 
--   Team feedback is due **Thursday, October 24 at 11:59pm**
+    -   No office hours Tuesday - Thursday
 
--   ***This feedback will be graded for completion only*** (go towards the Participation grade)
+    -   Ed Discussion will be read-only Tuesday - Thursday
 
-## Mid-semester feedback
+## Today's lab: Exam 01 review
 
--   **Purpose**: To give the teaching team feedback on what is working well (or not as well) in helping you learn the course content
+This lab focuses on reviewing for Exam 01. It includes exercises from AE 03 and the Exam review that we didn't go over in lecture.
 
--   The feedback is **anonymous** and will not be graded
+-   Complete the exercise assigned to your team. If you finish early you can work on other exercises.
 
--   It will be available until Thursday, October 24 at 11:59pm.
+-   Assign one person to post the group's response on the Google slide (link on board)
 
-**We (the teaching team) appreciate you taking a few minutes to fill it out!**
+-   Assign one person to present the group's response to the class.
 
-🔗 [duke.qualtrics.com/jfe/form/SV_244HYi8U8X85pgW](https://duke.qualtrics.com/jfe/form/SV_244HYi8U8X85pgW)
-
-## Lab 04: Maximum likelihood estimation
-
-This lab focuses on
-
--   using linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica.
-
--   exploring maximum likelihood estimators and their connection to least-squares estimators
-
-🔗 <https://sta221-fa24.netlify.app/labs/lab-04>
-
-## Reminder: Tips for working on a team
-
--   Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.
-
--   The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.
-
--   Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.
+🔗 <https://sta221-sp25.netlify.app/labs/lab-04>

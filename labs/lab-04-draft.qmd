@@ -223,7 +223,9 @@ SSR = \mathbf{e}^\mathsf{T}\mathbf{e} &= (\mathbf{y} - \mathbf{X}\hat{\boldsymbo
 \end{aligned}
 $$
 
-a\. Explain how $-\mathbf{y}^\mathsf{T}\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y}$ is simplified to $-2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y}$ when going from lines 2 to b. Explain how we know $\hat{\boldsymbol{\beta}}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} = \hat{\boldsymbol{\beta}}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}}$ when going from lines 3 to 4.
+a\. Explain how $-\mathbf{y}^\mathsf{T}\mathbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y}$ is simplified to $-2\boldsymbol{\beta}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y}$ when going from lines 2 to
+
+b\. Explain how we know $\hat{\boldsymbol{\beta}}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{y} = \hat{\boldsymbol{\beta}}^\mathsf{T}\mathbf{X}^\mathsf{T}\mathbf{X}\hat{\boldsymbol{\beta}}$ when going from lines 3 to 4.
 
 ::: callout-important
 # Submission

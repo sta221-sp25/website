@@ -1952,39 +1952,18 @@
     "text": "Reminder: Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
   },
   {
-    "objectID": "slides/lab-04.html#goals",
-    "href": "slides/lab-04.html#goals",
+    "objectID": "slides/lab-04.html#reminders",
+    "href": "slides/lab-04.html#reminders",
     "title": "Lab 04",
-    "section": "Goals",
-    "text": "Goals\n\nTeam feedback\nMid-semester survey\nLab 04: Maximum likelihood estimation (with Palmer penguins)"
+    "section": "Reminders",
+    "text": "Reminders\n\nExam 01 will be during lecture on Tuesday, February 18\n\nGo directly to your assigned room (let us know if you don’t know your room assignment)\n\nExam 01 take home will be released Tuesday and is due Thursday, February 20 at 9pm\nNext week:\n\nNo lecture on Thursday (use time for take-home exam)\nNo office hours Tuesday - Thursday\nEd Discussion will be read-only Tuesday - Thursday"
   },
   {
-    "objectID": "slides/lab-04.html#team-feedback",
-    "href": "slides/lab-04.html#team-feedback",
+    "objectID": "slides/lab-04.html#todays-lab-exam-01-review",
+    "href": "slides/lab-04.html#todays-lab-exam-01-review",
     "title": "Lab 04",
-    "section": "Team feedback",
-    "text": "Team feedback\n\nPurpose: To reflect on the team’s collaboration and your contribution thus far\nYou should have received an email from Teammates with a link to the feedback from on October 21 around 11am\n\nPlease let your TA know if you do not see the email (check your spam folder first!)\n\nTeam feedback is due Thursday, October 24 at 11:59pm\nThis feedback will be graded for completion only (go towards the Participation grade)"
-  },
-  {
-    "objectID": "slides/lab-04.html#mid-semester-feedback",
-    "href": "slides/lab-04.html#mid-semester-feedback",
-    "title": "Lab 04",
-    "section": "Mid-semester feedback",
-    "text": "Mid-semester feedback\n\nPurpose: To give the teaching team feedback on what is working well (or not as well) in helping you learn the course content\nThe feedback is anonymous and will not be graded\nIt will be available until Thursday, October 24 at 11:59pm.\n\nWe (the teaching team) appreciate you taking a few minutes to fill it out!\n🔗 duke.qualtrics.com/jfe/form/SV_244HYi8U8X85pgW"
-  },
-  {
-    "objectID": "slides/lab-04.html#lab-04-maximum-likelihood-estimation",
-    "href": "slides/lab-04.html#lab-04-maximum-likelihood-estimation",
-    "title": "Lab 04",
-    "section": "Lab 04: Maximum likelihood estimation",
-    "text": "Lab 04: Maximum likelihood estimation\nThis lab focuses on\n\nusing linear regression and statistical inference to draw conclusions about penguins living in Palmer Archipelago in Antarctica.\nexploring maximum likelihood estimators and their connection to least-squares estimators\n\n🔗 https://sta221-fa24.netlify.app/labs/lab-04"
-  },
-  {
-    "objectID": "slides/lab-04.html#reminder-tips-for-working-on-a-team",
-    "href": "slides/lab-04.html#reminder-tips-for-working-on-a-team",
-    "title": "Lab 04",
-    "section": "Reminder: Tips for working on a team",
-    "text": "Reminder: Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
+    "section": "Today’s lab: Exam 01 review",
+    "text": "Today’s lab: Exam 01 review\nThis lab focuses on reviewing for Exam 01. It includes exercises from AE 03 and the Exam review that we didn’t go over in lecture.\n\nComplete the exercise assigned to your team. If you finish early you can work on other exercises.\nAssign one person to post the group’s response on the Google slide (link on board)\nAssign one person to present the group’s response to the class.\n\n🔗 https://sta221-sp25.netlify.app/labs/lab-04"
   },
   {
     "objectID": "slides/lab-00.html#meet-your-tas",
@@ -2514,7 +2493,7 @@
     "href": "labs/lab-04-draft.html#exercise-8",
     "title": "Lab 04: Exam 01 Review",
     "section": "Exercise 8",
-    "text": "Exercise 8\nBelow we show how SSR = \\(\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\)\n\\[\n\\begin{aligned}\nSSR = \\mathbf{e}^\\mathsf{T}\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\hat{\\mathbf{\\beta}}) \\\\[5pt]\n& = \\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\mathbf{y}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} \\\\[5pt]\n&= \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}+\\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}}\\\\[5pt]\n& = \\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\n\\end{aligned}\n\\]\na. Explain how \\(-\\mathbf{y}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\) is simplified to \\(-2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\) when going from lines 2 to b. Explain how we know \\(\\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} = \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}}\\) when going from lines 3 to 4.\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+    "text": "Exercise 8\nBelow we show how SSR = \\(\\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\)\n\\[\n\\begin{aligned}\nSSR = \\mathbf{e}^\\mathsf{T}\\mathbf{e} &= (\\mathbf{y} - \\mathbf{X}\\hat{\\boldsymbol{\\beta}})^\\mathsf{T}(\\mathbf{y} - \\mathbf{X}\\hat{\\mathbf{\\beta}}) \\\\[5pt]\n& = \\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\mathbf{y}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} + \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}} \\\\[5pt]\n&= \\mathbf{y}^\\mathsf{T}\\mathbf{y} - 2\\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}+\\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}}\\\\[5pt]\n& = \\mathbf{y}^\\mathsf{T}\\mathbf{y} - \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\n\\end{aligned}\n\\]\na. Explain how \\(-\\mathbf{y}^\\mathsf{T}\\mathbf{X}\\boldsymbol{\\beta} - \\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\) is simplified to \\(-2\\boldsymbol{\\beta}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y}\\) when going from lines 2 to\nb. Explain how we know \\(\\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{y} = \\hat{\\boldsymbol{\\beta}}^\\mathsf{T}\\mathbf{X}^\\mathsf{T}\\mathbf{X}\\hat{\\boldsymbol{\\beta}}\\) when going from lines 3 to 4.\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
   },
   {
     "objectID": "labs/lab-04-draft.html#footnotes",

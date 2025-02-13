@@ -3,7 +3,6 @@ title: "Lab 03"
 subtitle: "Multiple linear regression + Meet your Team!"
 date: "2025-01-31"
 date-format: "MMM DD, YYYY"
-author: "Prof. Maria Tackett"
 footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
