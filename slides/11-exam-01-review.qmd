@@ -1,0 +1,167 @@
+---
+title: "Exam 01 review"
+author: "Prof. Maria Tackett"
+date: "2025-02-13"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 11-exam-01-review-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Announcements
+
+-   HW 02 due TODAY at 11:59pm
+
+-   Exam 01: Tuesday, February 18 (in-class + take-home)
+
+    -   Go directly to assigned room (emailed Wednesday evening)
+
+-   Friday's lab: Exam 01 review - Graded on attendance and participation
+
+-   No office hours February 18 - 20
+
+## Exam 01
+
+-   50 points total
+
+    -   in-class: 35 points
+    -   take-home: 15 points
+
+-   In-class: 75 minutes during February 18 lecture
+
+-   Take-home: due February 20 at 9pm (we will have class Thursday)
+
+-   If you miss any part of the exam for an excused absence (with academic dean's note), your Exam 02 score will be counted twice
+
+## Content: Weeks 1 - 6
+
+::::: columns
+::: {.column width="50%"}
+-   Exploratory data analysis
+
+-   Fitting and interpreting linear regression models
+
+-   Model assessment and comparison
+
+-   ANOVA
+
+-   Categorical + interaction terms
+
+-   Inference for model coefficients
+:::
+
+::: {.column width="50%"}
+-   Matrix representation of regression
+
+-   Hat matrix
+
+-   Finding the least-squares estimator
+
+-   Assumptions for least-squares regression
+:::
+:::::
+
+## Outline of in-class portion {.midi}
+
+-   Closed-book, closed-note.
+
+-   Question types:
+
+    -   Short answer (show work / explain response)
+    -   True/ False.
+        -   If false, write 1 - 2 sentence justification about why it is false.
+    -   Derivations
+
+-   Will be provided all relevant R output and a page of [matrix calculus and probability rules](../math-rules.html)
+
+-   Can use any results from class or assignments without reproving them (e.g., $\mathbf{H}$ is symmetric and idempotent)
+
+-   Just need a pencil or pen. No calculator permitted on exam.
+
+## Outline of take-home portion
+
+-   Released: Tuesday, February 18 right after class
+-   Due: Thursday, February 20 at pm (no lecture February 20)
+-   Similar in format to a lab/ HW
+    -   Will receive Exam questions in README of GitHub repo
+    -   Formatting + using a reproducible workflow will be part of grade
+-   Submit a PDF of responses to GitHub
+
+## Population-level vs. sample-level models
+
+**Statistical model (population-level model)**
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \epsilon \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+$$
+
+<br>
+
+**Estimated regression model (sample-level model)**
+
+$$
+\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}\quad \quad \mathbf{e} = \mathbf{y} - \hat{\mathbf{y}}
+$$
+
+## Model in matrix form 
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
+$$
+
+<br>
+
+::: question
+1.  What are the dimensions of $\mathbf{y}, \mathbf{X}, \boldsymbol{\beta}, \boldsymbol{\epsilon}$ ?
+2.  What assumption do we make about the columns of $\mathbf{X}$? Why is that important?
+:::
+
+## Model in matrix form 
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
+$$
+
+<br>
+
+::: question
+1.  What assumptions do we make about $\boldsymbol{\epsilon}$ making given this model?
+2.  What does this model tell us about the distribution of $\mathbf{y}$ ?
+:::
+
+## Find least-squares estimator $\hat{\boldsymbol{\beta}}$ 
+
+## Expected value  of $\hat{\boldsymbol{\beta}}$ 
+
+## Variance of $\hat{\boldsymbol{\beta}}$ 
+
+## SSR
+
+::: question
+Show
+
+$$
+SSR = \mathbf{y}^\mathsf{T}\mathbf{y} - \hat{\boldsymbol{\beta}}\mathbf{X}^\mathsf{T}\mathbf{y}
+$$
+:::
