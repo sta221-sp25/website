@@ -50,7 +50,7 @@ bibliography: references.bib
 
 -   In-class: 75 minutes during February 18 lecture
 
--   Take-home: due February 20 at 9pm (we will have class Thursday)
+-   Take-home: due February 20 at 9pm (no lecture on Thursday)
 
 -   If you miss any part of the exam for an excused absence (with academic dean's note), your Exam 02 score will be counted twice
 
@@ -124,7 +124,7 @@ $$
 \hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}\quad \quad \mathbf{e} = \mathbf{y} - \hat{\mathbf{y}}
 $$
 
-## Model in matrix form 
+## Model in matrix form
 
 $$
 \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
@@ -137,7 +137,7 @@ $$
 2.  What assumption do we make about the columns of $\mathbf{X}$? Why is that important?
 :::
 
-## Model in matrix form 
+## Model in matrix form
 
 $$
 \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
@@ -150,11 +150,11 @@ $$
 2.  What does this model tell us about the distribution of $\mathbf{y}$ ?
 :::
 
-## Find least-squares estimator $\hat{\boldsymbol{\beta}}$ 
+## Find least-squares estimator $\hat{\boldsymbol{\beta}}$
 
-## Expected value  of $\hat{\boldsymbol{\beta}}$ 
+## Expected value of $\hat{\boldsymbol{\beta}}$
 
-## Variance of $\hat{\boldsymbol{\beta}}$ 
+## Variance of $\hat{\boldsymbol{\beta}}$
 
 ## SSR
 
