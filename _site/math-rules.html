@@ -377,6 +377,7 @@ window.Quarto = {
   <li><a href="#expected-value-of-vector-mathbfz" id="toc-expected-value-of-vector-mathbfz" class="nav-link" data-scroll-target="#expected-value-of-vector-mathbfz">Expected value of vector <span class="math inline">\(\mathbf{z}\)</span></a></li>
   <li><a href="#expected-value-of-vector-mathbfaz" id="toc-expected-value-of-vector-mathbfaz" class="nav-link" data-scroll-target="#expected-value-of-vector-mathbfaz">Expected value of vector <span class="math inline">\(\mathbf{Az}\)</span></a></li>
   <li><a href="#expected-value-of-mathbfaz-mathbfc" id="toc-expected-value-of-mathbfaz-mathbfc" class="nav-link" data-scroll-target="#expected-value-of-mathbfaz-mathbfc">Expected value of <span class="math inline">\(\mathbf{Az} + \mathbf{C}\)</span></a></li>
+  <li><a href="#expected-value-of-mathbfaxamathsft" id="toc-expected-value-of-mathbfaxamathsft" class="nav-link" data-scroll-target="#expected-value-of-mathbfaxamathsft">Expected value of <span class="math inline">\(\mathbf{AXA}\mathsf{^T}\)</span></a></li>
   </ul></li>
   <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance">Variance</a>
   <ul class="collapse">
@@ -493,6 +494,13 @@ E(\mathbf{Az}) = \mathbf{A}E(\mathbf{z})
 <p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants, <span class="math inline">\(\mathbf{C}\)</span> a <span class="math inline">\(n \times 1\)</span> vector of constants, and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
 <p><span class="math display">\[
 E(\mathbf{Az} + \mathbf{C}) = E(\mathbf{Az}) + E(\mathbf{C}) = \mathbf{A}E(\mathbf{z}) + \mathbf{C}
+\]</span></p>
+</section>
+<section id="expected-value-of-mathbfaxamathsft" class="level3">
+<h3 class="anchored" data-anchor-id="expected-value-of-mathbfaxamathsft">Expected value of <span class="math inline">\(\mathbf{AXA}\mathsf{^T}\)</span></h3>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n\times p\)</span> matrix of constants and <span class="math inline">\(\mathbf{X}\)</span> a <span class="math inline">\(p \times p\)</span> matrix. Then</p>
+<p><span class="math display">\[
+E(\mathbf{AXA}^\mathsf{T}) = \mathbf{A}E(\mathbf{X})\mathbf{A}^\mathsf{T}
 \]</span></p>
 </section>
 </section>

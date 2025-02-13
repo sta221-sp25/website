@@ -107,6 +107,14 @@ $$
 E(\mathbf{Az} + \mathbf{C}) = E(\mathbf{Az}) + E(\mathbf{C}) = \mathbf{A}E(\mathbf{z}) + \mathbf{C}
 $$
 
+### Expected value of $\mathbf{AXA}\mathsf{^T}$
+
+Let $\mathbf{A}$ be an $n\times p$ matrix of constants and $\mathbf{X}$ a $p \times p$ matrix. Then
+
+$$
+E(\mathbf{AXA}^\mathsf{T}) = \mathbf{A}E(\mathbf{X})\mathbf{A}^\mathsf{T}
+$$
+
 ## Variance
 
 ### Variance of random variable $X$
