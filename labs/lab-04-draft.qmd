@@ -181,12 +181,11 @@ d.  Suppose you wish to test the hypotheses: $H_0: \beta_5 = 0 \text{ vs. }H_a: 
 
 ## Exercise 6
 
-Consider the model that includes `Age` and `Party` and the interaction between the two variables. Get $\mathbf{y}$ and $\mathbf{X}$ from the data.
+Use the `lm()` function to fit the model that includes `Age` and `Party` and the interaction between the two variables. Display the 90% confidence interval for the coefficients.
 
-a.  Use $\mathbf{y}$ and $\mathbf{X}$ to compute the standard error of `AgeSenCit`. State what this value means in the context of the data.
-b.  Compute $\mathbf{y}$ and $\mathbf{X}$ to compute the 90% confidence interval for `AgeSenCit`.
-c.  Interpret the interval in the context of the data.
-d.  Based on the confidence interval, is there evidence the coefficient of `AgeSenCit` is different from 0?
+a.   The standard error for `AgeSenCit` is 0.784. State what this value means in the context of the data.
+b.  Write code to show how the 90% confidence interval for `AgeSenCit` was computed.
+c.  Based on the confidence interval, is there evidence that tables with senior citizen payers tip differently on average than tables with middle age payers?
 
 ## Exercise 7
 
@@ -234,5 +233,7 @@ To submit the AE:
 
 Render the document to produce the PDF with all of your work from today's class.
 
-Push all your work to your AE repo on GitHub. You're done! 🎉
+Push all your work on GitHub. You're done! 🎉
+
+There is no Gradescope submission for this lab.
 :::
