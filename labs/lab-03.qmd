@@ -298,7 +298,7 @@ To submit your assignment:
 
 -   Click on the assignment, and you’ll be prompted to submit it.
 
-- Select all team members’ names, so they receive credit on the assignment. Click here for video on adding team members to assignment on Gradescope.
+-   Select all team members’ names, so they receive credit on the assignment. Click here for video on adding team members to assignment on Gradescope.
 
 -   Mark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).
 
