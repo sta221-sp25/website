@@ -383,6 +383,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#variance-of-random-variable-x" id="toc-variance-of-random-variable-x" class="nav-link" data-scroll-target="#variance-of-random-variable-x">Variance of random variable <span class="math inline">\(X\)</span></a></li>
   <li><a href="#variance-of-vector-mathbfz" id="toc-variance-of-vector-mathbfz" class="nav-link" data-scroll-target="#variance-of-vector-mathbfz">Variance of vector <span class="math inline">\(\mathbf{z}\)</span></a></li>
+  <li><a href="#variance-of-mathbfaz" id="toc-variance-of-mathbfaz" class="nav-link" data-scroll-target="#variance-of-mathbfaz">Variance of <span class="math inline">\(\mathbf{Az}\)</span></a></li>
   </ul></li>
   <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link" data-scroll-target="#probability-distributions">Probability distributions</a>
   <ul class="collapse">
@@ -524,6 +525,16 @@ Var(\mathbf{z}) = E[(\mathbf{z} - E(\mathbf{z}))(\mathbf{z} - E(\mathbf{z}))^\ma
 <p>This produced the variance-covariance matrix</p>
 <p><span class="math inline">\(Var(\mathbf{z}) = \begin{bmatrix}Var(z_1) &amp; Cov(z_1, z_2) &amp; \dots &amp; Cov(z_1, z_p)\\ Cov(z_2, z_1) &amp; Var(z_2) &amp; \dots &amp; Cov(z_2, z_p) \\ \vdots &amp; \vdots &amp; \dots &amp; \cdot \\ Cov(z_p, z_1) &amp; Cov(z_p, z_2) &amp; \dots &amp; Var(z_p)\end{bmatrix}\)</span></p>
 <hr>
+</section>
+<section id="variance-of-mathbfaz" class="level3">
+<h3 class="anchored" data-anchor-id="variance-of-mathbfaz">Variance of <span class="math inline">\(\mathbf{Az}\)</span></h3>
+<p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times p\)</span> matrix of constants and <span class="math inline">\(\mathbf{z}\)</span> a <span class="math inline">\(p \times 1\)</span> vector of random variables. Then</p>
+<p><span class="math display">\[
+\begin{aligned}
+Var(\mathbf{Az}) &amp;= E[(\mathbf{Az} - E(\mathbf{Az}))(\mathbf{Az} - E(\mathbf{Az}))^\mathsf{T}] \\
+&amp; = \mathbf{A}Var(\mathbf{z})\mathbf{A}^\mathsf{T}
+\end{aligned}
+\]</span></p>
 </section>
 </section>
 <section id="probability-distributions" class="level2">
