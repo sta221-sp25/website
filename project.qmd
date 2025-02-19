@@ -70,7 +70,7 @@ Write your responses in `research-topics.qmd` in your team's project GitHub repo
 
 ## Project proposal {#project-proposal}
 
-The purpose of the project proposal is for your team to identify the data set you're interested in analyzing to investigate one of your potential research topics. You will also do some preliminary exploration of the response variable and begin thinking about the modeling strategy. If you're unsure where to find data, you can use the list of potential data sources on the [Tips + resources](https://sta221-fa24.netlify.app/project-tips) page as a starting point.
+The purpose of the project proposal is for your team to identify the data set you're interested in analyzing to investigate one of your potential research topics. You will also do some preliminary exploration of the response variable and begin thinking about the modeling strategy. If you're unsure where to find data, you can use the list of potential data sources on the [Tips + resources](https://sta221-sp25.netlify.app/project-tips) page as a starting point.
 
 ::: callout-important
 You must use the data set(s) in the proposal for the final project, unless instructed otherwise when given feedback.
@@ -132,7 +132,7 @@ Reuse and iterate on the work from the Research Topics milestone.
 
 -   A description of the observations and general characteristics being measured
 
-### Section 3: Data processing 
+### Section 3: Data processing
 
 -   Description of data processing you need to do to prepare for analysis, such as joining multiple data sets, handling missing data, etc.
 
@@ -201,14 +201,21 @@ Write your draft introduction and exploratory data analysis in the `written-repo
 <!-- The anticipated length, including all graphs, tables, narrative, etc. with code, warnings, and messages suppressed is about 4 - 6 pages. -->
 
 <!-- ::: callout-tip -->
+
 <!-- You can suppress code, warnings, and messages by including the following in the YAML: -->
 
 <!-- ``` r -->
+
 <!-- execute:  -->
+
 <!--   echo: false -->
+
 <!--   message: false -->
+
 <!--   warning: false -->
+
 <!-- ``` -->
+
 <!-- ::: -->
 
 <!-- The exploratory data analysis is worth 15 points and will be graded based on accurately and comprehensively addressing the criteria stated above, along with incorporating the feedback from the proposal. Points will be assigned based on a holistic review of the exploratory data analysis. -->
