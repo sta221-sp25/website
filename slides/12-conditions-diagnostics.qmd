@@ -31,7 +31,9 @@ bibliography: references.bib
 
 ## Announcements
 
--   Exam corrections (optional) due Tuesday, March 4 at 11:59pm on Canvas
+-   Exam corrections (optional) due Tuesday, March 4 at 11:59pm
+
+    -   See [assignment on Canvas](https://canvas.duke.edu/courses/51767/assignments/220984)
 
 -   Project proposal due TODAY at 11:59pm
 
@@ -638,7 +640,7 @@ $$
 
 -   Examine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model.
 
-## Back to the influential point 
+## Back to the influential point
 
 ```{r}
 #| echo: false
