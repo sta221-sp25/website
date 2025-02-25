@@ -1466,7 +1466,7 @@
     "href": "slides/12-conditions-diagnostics.html#studentized-residuals",
     "title": "Model conditions + diagnostics",
     "section": "Studentized residuals",
-    "text": "Studentized residuals\n\n\nMSR is an approximation of the variance of the residuals.\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2_{\\epsilon}(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2_{\\epsilon}(1 - h_{ii})\\)\n\nThe studentized residual is the residual rescaled by the more exact calculation for variance\n\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2_{\\epsilon}(1 - h_{ii})}}\n\\]\n\nStandardized and studentized residuals provide similar information about which points are outliers in the response."
+    "text": "Studentized residuals\n\n\nMSR is an approximation of the variance of the residuals.\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2_{\\epsilon}(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2_{\\epsilon}(1 - h_{ii})\\)\n\nThe studentized residual is the residual rescaled by the more exact calculation for variance\n\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2_{\\epsilon}(1 - h_{ii})}}\n\\]\n\nStandardized and studentized residuals provide similar information about which points are outliers in the response.\n\nStudentized residuals are used to compute Cook’s Distance."
   },
   {
     "objectID": "slides/12-conditions-diagnostics.html#using-these-measures",
@@ -1474,6 +1474,13 @@
     "title": "Model conditions + diagnostics",
     "section": "Using these measures",
     "text": "Using these measures\n\nStandardized residuals, leverage, and Cook’s Distance should all be examined together\nExamine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model."
+  },
+  {
+    "objectID": "slides/12-conditions-diagnostics.html#back-to-the-influential-point",
+    "href": "slides/12-conditions-diagnostics.html#back-to-the-influential-point",
+    "title": "Model conditions + diagnostics",
+    "section": "Back to the influential point",
+    "text": "Back to the influential point"
   },
   {
     "objectID": "slides/12-conditions-diagnostics.html#what-to-do-with-outliersinfluential-points",
@@ -1732,7 +1739,7 @@
     "href": "slides/12-conditions-diagnostics-notes.html#studentized-residuals",
     "title": "Model conditions + diagnostics",
     "section": "Studentized residuals",
-    "text": "Studentized residuals\n\n\nMSR is an approximation of the variance of the residuals.\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2_{\\epsilon}(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2_{\\epsilon}(1 - h_{ii})\\)\n\nThe studentized residual is the residual rescaled by the more exact calculation for variance\n\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2_{\\epsilon}(1 - h_{ii})}}\n\\]\n\nStandardized and studentized residuals provide similar information about which points are outliers in the response."
+    "text": "Studentized residuals\n\n\nMSR is an approximation of the variance of the residuals.\nThe variance of the residuals is \\(Var(\\mathbf{e}) = \\sigma^2_{\\epsilon}(\\mathbf{I} - \\mathbf{H})\\)\n\nThe variance of the \\(i^{th}\\) residual is \\(Var(e_i) = \\sigma^2_{\\epsilon}(1 - h_{ii})\\)\n\nThe studentized residual is the residual rescaled by the more exact calculation for variance\n\n\n\\[\nr_i = \\frac{e_{i}}{\\sqrt{\\hat{\\sigma}^2_{\\epsilon}(1 - h_{ii})}}\n\\]\n\nStandardized and studentized residuals provide similar information about which points are outliers in the response.\n\nStudentized residuals are used to compute Cook’s Distance."
   },
   {
     "objectID": "slides/12-conditions-diagnostics-notes.html#using-these-measures",
@@ -1740,6 +1747,13 @@
     "title": "Model conditions + diagnostics",
     "section": "Using these measures",
     "text": "Using these measures\n\nStandardized residuals, leverage, and Cook’s Distance should all be examined together\nExamine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model."
+  },
+  {
+    "objectID": "slides/12-conditions-diagnostics-notes.html#back-to-the-influential-point",
+    "href": "slides/12-conditions-diagnostics-notes.html#back-to-the-influential-point",
+    "title": "Model conditions + diagnostics",
+    "section": "Back to the influential point",
+    "text": "Back to the influential point"
   },
   {
     "objectID": "slides/12-conditions-diagnostics-notes.html#what-to-do-with-outliersinfluential-points",

@@ -730,7 +730,10 @@ std.res_i = \frac{e_i}{\sqrt{MSR}}
 r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2_{\epsilon}(1 - h_{ii})}}
 \]</span></p>
 <ul>
-<li>Standardized and studentized residuals provide similar information about which points are outliers in the response.</li>
+<li>Standardized and studentized residuals provide similar information about which points are outliers in the response.
+<ul>
+<li>Studentized residuals are used to compute Cook’s Distance.</li>
+</ul></li>
 </ul>
 </section>
 <section id="using-these-measures" class="slide level2">
@@ -740,6 +743,10 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2_{\epsilon}(1 - h_{ii})}}
 <li><p>Examine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model.</p></li>
 </ul>
 </section>
+<section id="back-to-the-influential-point" class="slide level2">
+<h2>Back to the influential point</h2>
+
+<img data-src="12-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="what-to-do-with-outliersinfluential-points" class="slide level2">
 <h2>What to do with outliers/influential points?</h2>
 <div>

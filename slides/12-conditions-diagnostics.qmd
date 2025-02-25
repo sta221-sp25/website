@@ -102,7 +102,7 @@ p3 <- ggplot(data = lemurs, aes(x = age_at_wt_mo, y = weight_g)) +
   geom_point() + 
   labs(x = "Age in months",
        y = "Weight in grams", 
-       title = "Weight vs. Age if PCOQ lemurs")
+       title = "Weight vs. Age of PCOQ lemurs")
 
 (p1  + p2)
 
@@ -630,12 +630,30 @@ r_i = \frac{e_{i}}{\sqrt{\hat{\sigma}^2_{\epsilon}(1 - h_{ii})}}
 $$
 
 -   Standardized and studentized residuals provide similar information about which points are outliers in the response.
+    -   Studentized residuals are used to compute Cook's Distance.
 
 ## Using these measures
 
 -   Standardized residuals, leverage, and Cook's Distance should all be examined together
 
 -   Examine plots of the measures to identify observations that are outliers, high leverage, and may potentially impact the model.
+
+## Back to the influential point 
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+lemurs_aug |>
+  mutate(influential = factor(if_else(.cooksd > 1, 0,1))) |>
+ggplot(aes(x = age_at_wt_mo, y = weight_g, color = influential)) + 
+  geom_point(size = 2) +
+  labs(x = "Age in months",
+       y = "Weight in grams", 
+       title = "Weight vs. Age of PCOQ lemurs") + 
+   scale_color_viridis(discrete = T, end = 0.8) +
+  theme(legend.position = "none")
+```
 
 ## What to do with outliers/influential points?
 
