@@ -51,7 +51,7 @@ library(patchwork)
 library(viridis)
 
 # set default theme in ggplot2
-ggplot2::theme_set(ggplot2::theme_bw())
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
 ```
 
 ## Topics
@@ -171,7 +171,7 @@ ggplot(data = lemurs_aug, aes(x = .fitted, y = .resid)) +
 
 <center>**Linearity is** **satisfied**</center>
 
-## Linearity not satisfied
+## Example: Linearity not satisfied
 
 ```{r}
 #| echo: false
@@ -238,7 +238,7 @@ ggplot(data = lemurs_aug, aes(x = .fitted, y = .resid)) +
 
 <center>**Constant variance is** **satisfied**</center>
 
-## Constant variance
+## Example: Constant variance not satisfied
 
 ```{r}
 #| echo: false
@@ -278,7 +278,7 @@ ggplot(data, aes(x = fitted, y = residuals)) +
 
 . . .
 
--   Condition is critical for inference
+-   Constant variance is critical for reliable inference
 
 -   Address violations by applying transformation on the response
 

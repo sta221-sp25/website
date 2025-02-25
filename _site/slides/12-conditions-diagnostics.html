@@ -228,7 +228,7 @@ Prof.&nbsp;Maria Tackett
 <span id="cb1-6"><a></a><span class="fu">library</span>(viridis)</span>
 <span id="cb1-7"><a></a></span>
 <span id="cb1-8"><a></a><span class="co"># set default theme in ggplot2</span></span>
-<span id="cb1-9"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="topics" class="slide level2">
@@ -344,8 +344,8 @@ Prof.&nbsp;Maria Tackett
 </center>
 </div>
 </section>
-<section id="linearity-not-satisfied" class="slide level2">
-<h2>Linearity not satisfied</h2>
+<section id="example-linearity-not-satisfied" class="slide level2">
+<h2>Example: Linearity not satisfied</h2>
 
 <img data-src="12-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
 <ul>
@@ -377,12 +377,12 @@ Prof.&nbsp;Maria Tackett
 </center>
 </div>
 </section>
-<section id="constant-variance-1" class="slide level2">
-<h2>Constant variance</h2>
+<section id="example-constant-variance-not-satisfied" class="slide level2">
+<h2>Example: Constant variance not satisfied</h2>
 
 <img data-src="12-conditions-diagnostics_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
 <ul>
-<li><p>Condition is critical for inference</p></li>
+<li><p>Constant variance is critical for reliable inference</p></li>
 <li><p>Address violations by applying transformation on the response</p></li>
 </ul>
 </div>
