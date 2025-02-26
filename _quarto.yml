@@ -95,12 +95,12 @@ website:
           text: Tips + resources
       - href: links.qmd
         text: Useful links
-   #   - href: https://forms.office.com/r/rvsgNcumRy
-      #  text: Lecture recording request
+      - href: https://forms.office.com/r/rvsgNcumRy
+        text: Lecture recording request
       - href: exam-01-practice.qmd
         text: Exam 01 Practice
-      - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=0b5392d5-d61b-465a-80eb-b25e014a75a9
-        text: Lecture recordings
+    #  - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=0b5392d5-d61b-465a-80eb-b25e014a75a9
+   #     text: Lecture recordings
       - href: math-rules.qmd
         text: Math rules
         
