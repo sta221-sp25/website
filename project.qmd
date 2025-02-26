@@ -14,7 +14,7 @@ library(broom)
 
 [Project proposal](#project-proposal) due Tuesday, February 25
 
-[Exploratory data analysis](#eda) due Tuesday, March 18
+[Exploratory data analysis](#eda) due Thursday, March 20
 
 [Presentation](#presentation) + [Presentation comments](#presentation-comments) Friday, March 28 (in lab)
 
