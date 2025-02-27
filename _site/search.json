@@ -3391,7 +3391,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nGeometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Types of predictors cont'd + Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab: Project research topics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject topics due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject propsal due\n\n\n\nTh\nFeb 27\nMLR: Mulitcollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Variable transformations + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due, Exam 01 corrections due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject EDA due\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period\nMo\nApr 28\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWritten report due\n\n\n\nWe\nApr 30\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject highlights, Repo organzation due\n\n\n\nTh\nMay 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject survey due",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nGeometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Types of predictors cont'd + Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab: Project research topics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject topics due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject propsal due\n\n\n\nTh\nFeb 27\nMLR: Mulitcollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Variable transformations + higher order terms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due, Exam 01 corrections due\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due, Project EDA due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period\nMo\nApr 28\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWritten report due\n\n\n\nWe\nApr 30\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject highlights, Repo organzation due\n\n\n\nTh\nMay 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject survey due",
     "crumbs": [
       "Schedule"
     ]
@@ -3501,39 +3501,53 @@
     "text": "Exercise 6\nIn general, how do\n\nindicators for categorical predictors impact the model equation?\ninteraction terms impact the model equation?"
   },
   {
-    "objectID": "ae/ae-01-model-assessment.html",
-    "href": "ae/ae-01-model-assessment.html",
-    "title": "AE 01: Model assessment",
+    "objectID": "ae/ae-09-exam-02-review.html",
+    "href": "ae/ae-09-exam-02-review.html",
+    "title": "AE 09: Exam 02 review",
     "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-01 repo to get started.\nIf you do not see an ae-01 repo, use the link below to create one:\nhttps://classroom.github.com/a/6jpkfA8n\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\n\nThis AE will not count towards your participation grade.\nlibrary(tidyverse)    # data wrangling and visualization\nlibrary(tidymodels)   # broom and yardstick package\nlibrary(knitr)        # format output"
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-09 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(pROC)\nlibrary(Stat2Data)"
   },
   {
-    "objectID": "ae/ae-01-model-assessment.html#exercise-1",
-    "href": "ae/ae-01-model-assessment.html#exercise-1",
-    "title": "AE 01: Model assessment",
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-1",
+    "href": "ae/ae-09-exam-02-review.html#exercise-1",
+    "title": "AE 09: Exam 02 review",
     "section": "Exercise 1",
-    "text": "Exercise 1\nFit a model using income equality to understand variability in life expectancy. Neatly display the results using 3 digits.\n\n# add code here"
+    "text": "Exercise 1\nSuppose you fit a simple linear regression model.\n\nDraw a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw a scatterplot that contains an observation with a large studentized residual."
   },
   {
-    "objectID": "ae/ae-01-model-assessment.html#exercise-2",
-    "href": "ae/ae-01-model-assessment.html#exercise-2",
-    "title": "AE 01: Model assessment",
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-2",
+    "href": "ae/ae-09-exam-02-review.html#exercise-2",
+    "title": "AE 09: Exam 02 review",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nInterpret the slope in the context of the data.\nDoes it make sense to interpret the intercept? If so, interpret it in the context of the data. Otherwise, explain why not."
+    "text": "Exercise 2\n\nDescribe what it means for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be the maximum likelihood estimator.\nWhat are properties of MLEs?\n\n\n\n\n\n\n\nNote\n\n\n\nUse this data analysis scenario for Exercises 3 - 6.\n\n\nThe data for this analysis is about credit card customers. It can be found in the file credit.csv. The following variables are in the data set:\n\nincome: Income in $1,000’s\nlimit: Credit limit\nrating: Credit rating\ncards: Number of credit cards\nage: Age in years\neducation: Number of years of education\nown: Whether an individual owns their home ( No or Yes )\nstudent: Whether the individual was a student ( No or Yes )\nmarried: Whether the individual was married (No and Yes)\nregion: Region the individual is from ( South, East, and West)\nbalance: Average credit card balance in $.\n\n\ncredit &lt;- read_csv(\"data/credit.csv\") |&gt;\n  mutate(maxed = factor(if_else(balance == 0, 1, 0)))\n\nThe objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had $0 average card balance.\nWe’ll start with a model predicting the odds of maxed = 1 using income, rating, and region.\n\ncredit_fit &lt;- glm(maxed ~ income + rating + region, data = credit, \n                  family = \"binomial\")\n\ntidy(credit_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n9.898\n1.449\n6.829\n0.000\n\n\nincome\n0.113\n0.021\n5.273\n0.000\n\n\nrating\n-0.057\n0.008\n-7.397\n0.000\n\n\nregionSouth\n-0.595\n0.604\n-0.985\n0.324\n\n\nregionWest\n-0.082\n0.649\n-0.126\n0.900"
   },
   {
-    "objectID": "ae/ae-01-model-assessment.html#exercise-3",
-    "href": "ae/ae-01-model-assessment.html#exercise-3",
-    "title": "AE 01: Model assessment",
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-3",
+    "href": "ae/ae-09-exam-02-review.html#exercise-3",
+    "title": "AE 09: Exam 02 review",
     "section": "Exercise 3",
-    "text": "Exercise 3\nFit a model using health_expend to understand variability in life_exp. Compute \\(R^2\\) and \\(RMSE\\) for this model.\n\n# add code here\n\n\nInterpret \\(R^2\\) in the context of the data.\nInterpret \\(RMSE\\) in the context for the data."
+    "text": "Exercise 3\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\)\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc.\nUse R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?"
   },
   {
-    "objectID": "ae/ae-01-model-assessment.html#exercise-4",
-    "href": "ae/ae-01-model-assessment.html#exercise-4",
-    "title": "AE 01: Model assessment",
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-4",
+    "href": "ae/ae-09-exam-02-review.html#exercise-4",
+    "title": "AE 09: Exam 02 review",
     "section": "Exercise 4",
-    "text": "Exercise 4\nWhich measure of healthcare expenditure would you choose as a predictor of life expectancy - health_expend or health_pct_gdp? Briefly explain, using \\(R^2\\) and/or \\(RMSE\\) to support your choice.\n\n# add code here"
+    "text": "Exercise 4\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic are equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data."
+  },
+  {
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-5",
+    "href": "ae/ae-09-exam-02-review.html#exercise-5",
+    "title": "AE 09: Exam 02 review",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nCompute the predicted probabilities, then use those to predict whether individuals maxed out their credit card using a threshold of \\(\\hat{\\pi}   = 0.5\\).\nWhat is the accuracy? What does it mean in the context of the data?\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?"
+  },
+  {
+    "objectID": "ae/ae-09-exam-02-review.html#exercise-6",
+    "href": "ae/ae-09-exam-02-review.html#exercise-6",
+    "title": "AE 09: Exam 02 review",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nConstruct the ROC curve and compute the area under the curve (AUC).\nBased on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.\nSuppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.\nBased on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
   },
   {
     "objectID": "ae/ae-06-prob-odds.html",
@@ -5193,95 +5207,81 @@
     "text": "Coefficient estimates from glm\n\nppe_model &lt;- glm(ppe_access ~ age + sex + years, \n                 data = covid_df, family = binomial)\ntidy(ppe_model, conf.int = TRUE) |&gt;\n  kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-2.127\n0.458\n-4.641\n0.000\n-3.058\n-1.257\n\n\nage\n0.056\n0.017\n3.210\n0.001\n0.023\n0.091\n\n\nsexMale\n0.341\n0.224\n1.524\n0.128\n-0.098\n0.780\n\n\nyears\n0.264\n0.066\n4.010\n0.000\n0.143\n0.401"
   },
   {
-    "objectID": "ae/ae-05-multicollinearity.html",
-    "href": "ae/ae-05-multicollinearity.html",
-    "title": "AE 05: Multicollinearity",
+    "objectID": "ae/ae-01-model-assessment.html",
+    "href": "ae/ae-01-model-assessment.html",
+    "title": "AE 01: Model assessment",
     "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-05 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(rms) #calculate VIF"
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-01 repo to get started.\nIf you do not see an ae-01 repo, use the link below to create one:\nhttps://classroom.github.com/a/6jpkfA8n\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\n\n\nThis AE will not count towards your participation grade.\nlibrary(tidyverse)    # data wrangling and visualization\nlibrary(tidymodels)   # broom and yardstick package\nlibrary(knitr)        # format output"
   },
   {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-1",
-    "href": "ae/ae-05-multicollinearity.html#exercise-1",
-    "title": "AE 05: Multicollinearity",
+    "objectID": "ae/ae-01-model-assessment.html#exercise-1",
+    "href": "ae/ae-01-model-assessment.html#exercise-1",
+    "title": "AE 01: Model assessment",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nFit a model using income equality to understand variability in life expectancy. Neatly display the results using 3 digits.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-01-model-assessment.html#exercise-2",
+    "href": "ae/ae-01-model-assessment.html#exercise-2",
+    "title": "AE 01: Model assessment",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nInterpret the slope in the context of the data.\nDoes it make sense to interpret the intercept? If so, interpret it in the context of the data. Otherwise, explain why not."
+  },
+  {
+    "objectID": "ae/ae-01-model-assessment.html#exercise-3",
+    "href": "ae/ae-01-model-assessment.html#exercise-3",
+    "title": "AE 01: Model assessment",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nFit a model using health_expend to understand variability in life_exp. Compute \\(R^2\\) and \\(RMSE\\) for this model.\n\n# add code here\n\n\nInterpret \\(R^2\\) in the context of the data.\nInterpret \\(RMSE\\) in the context for the data."
+  },
+  {
+    "objectID": "ae/ae-01-model-assessment.html#exercise-4",
+    "href": "ae/ae-01-model-assessment.html#exercise-4",
+    "title": "AE 01: Model assessment",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nWhich measure of healthcare expenditure would you choose as a predictor of life expectancy - health_expend or health_pct_gdp? Briefly explain, using \\(R^2\\) and/or \\(RMSE\\) to support your choice.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-multicollinearity.html",
+    "href": "ae/ae-04-multicollinearity.html",
+    "title": "AE 04: Multicollinearity",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-04 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(rms) #calculate VIF"
+  },
+  {
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-1",
+    "href": "ae/ae-04-multicollinearity.html#exercise-1",
+    "title": "AE 04: Multicollinearity",
     "section": "Exercise 1",
     "text": "Exercise 1\n\nFit the regression model using high temperature, average temperature, season, and precipitation to predict volume.\nAre there any coefficients that may be not what you expected?\n\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-2",
-    "href": "ae/ae-05-multicollinearity.html#exercise-2",
-    "title": "AE 05: Multicollinearity",
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-2",
+    "href": "ae/ae-04-multicollinearity.html#exercise-2",
+    "title": "AE 04: Multicollinearity",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nUse the formula\n\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nto calculate the VIF for avgtemp.\n\n# add code here"
+    "text": "Exercise 2\nUse the formula\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nto calculate the VIF for avgtemp.\n\n# add code here\n\nThen, use the design matrix \\(\\mathbf{X}\\) to check your answer.\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-3",
-    "href": "ae/ae-05-multicollinearity.html#exercise-3",
-    "title": "AE 05: Multicollinearity",
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-3",
+    "href": "ae/ae-04-multicollinearity.html#exercise-3",
+    "title": "AE 04: Multicollinearity",
     "section": "Exercise 3",
     "text": "Exercise 3\nBased on the VIF from the previous exercise, does avgtemp have a linear dependency with one or more other predictors? Explain."
   },
   {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-4",
-    "href": "ae/ae-05-multicollinearity.html#exercise-4",
-    "title": "AE 05: Multicollinearity",
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-4",
+    "href": "ae/ae-04-multicollinearity.html#exercise-4",
+    "title": "AE 04: Multicollinearity",
     "section": "Exercise 4",
     "text": "Exercise 4\n\nFill in the name of the model from Exercise 1 to calculate VIF for all predictors. (Remove #| eval: false after you’ve filled in the code.)\nAre there predictors with linear dependencies? If so, which ones?\n\n\nvif(____)"
   },
   {
-    "objectID": "ae/ae-05-multicollinearity.html#exercise-5",
-    "href": "ae/ae-05-multicollinearity.html#exercise-5",
-    "title": "AE 05: Multicollinearity",
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-5",
+    "href": "ae/ae-04-multicollinearity.html#exercise-5",
+    "title": "AE 04: Multicollinearity",
     "section": "Exercise 5",
-    "text": "Exercise 5\nLet’s try to deal with the mulitcollinearity by removing one of the predictors that are linearly dependent. Choose a final model using this strategy.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html",
-    "href": "ae/ae-09-exam-02-review.html",
-    "title": "AE 09: Exam 02 review",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-09 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(pROC)\nlibrary(Stat2Data)"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-1",
-    "href": "ae/ae-09-exam-02-review.html#exercise-1",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nSuppose you fit a simple linear regression model.\n\nDraw a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw a scatterplot that contains an observation with a large studentized residual."
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-2",
-    "href": "ae/ae-09-exam-02-review.html#exercise-2",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nDescribe what it means for \\(\\tilde{\\boldsymbol{\\beta}}\\) to be the maximum likelihood estimator.\nWhat are properties of MLEs?\n\n\n\n\n\n\n\nNote\n\n\n\nUse this data analysis scenario for Exercises 3 - 6.\n\n\nThe data for this analysis is about credit card customers. It can be found in the file credit.csv. The following variables are in the data set:\n\nincome: Income in $1,000’s\nlimit: Credit limit\nrating: Credit rating\ncards: Number of credit cards\nage: Age in years\neducation: Number of years of education\nown: Whether an individual owns their home ( No or Yes )\nstudent: Whether the individual was a student ( No or Yes )\nmarried: Whether the individual was married (No and Yes)\nregion: Region the individual is from ( South, East, and West)\nbalance: Average credit card balance in $.\n\n\ncredit &lt;- read_csv(\"data/credit.csv\") |&gt;\n  mutate(maxed = factor(if_else(balance == 0, 1, 0)))\n\nThe objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had $0 average card balance.\nWe’ll start with a model predicting the odds of maxed = 1 using income, rating, and region.\n\ncredit_fit &lt;- glm(maxed ~ income + rating + region, data = credit, \n                  family = \"binomial\")\n\ntidy(credit_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n9.898\n1.449\n6.829\n0.000\n\n\nincome\n0.113\n0.021\n5.273\n0.000\n\n\nrating\n-0.057\n0.008\n-7.397\n0.000\n\n\nregionSouth\n-0.595\n0.604\n-0.985\n0.324\n\n\nregionWest\n-0.082\n0.649\n-0.126\n0.900"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-3",
-    "href": "ae/ae-09-exam-02-review.html#exercise-3",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nThe logistic regression model takes the following form:\n\\[\n\\log(\\frac{\\pi_i}{1 - \\pi_i}) = \\beta_0 + \\beta_1 ~ income + \\beta_2 ~ rating + \\beta_3 ~ regionSouth + \\beta_4 ~ regionWest\n\\]\n\nUse the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2, \\beta_3, \\beta_4\\)\nSuppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of \\(\\beta_0, \\beta_1, \\beta_2\\), etc.\nUse R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-4",
-    "href": "ae/ae-09-exam-02-review.html#exercise-4",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nWe consider adding the interaction between region and income to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.\n\nState the null and alternative hypotheses in words and using mathematical notation.\nDescribe what the test statistic \\(G\\) means in the context of the data.\nShow why the degrees of freedom for the test statistic are equal to 2.\nConduct the drop-in-deviance test and state your conclusion in the context of the data."
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-5",
-    "href": "ae/ae-09-exam-02-review.html#exercise-5",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nCompute the predicted probabilities, then use those to predict whether individuals maxed out their credit card using a threshold of \\(\\hat{\\pi}   = 0.5\\).\nWhat is the accuracy? What does it mean in the context of the data?\nWhat is the sensitivity? What does it mean in the context of the data ?\nWhat is the false positive rate? How it is computed given the specificity? What does it mean in the context of the data?"
-  },
-  {
-    "objectID": "ae/ae-09-exam-02-review.html#exercise-6",
-    "href": "ae/ae-09-exam-02-review.html#exercise-6",
-    "title": "AE 09: Exam 02 review",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nUse the model credit_fit that includes the main effects for income, rating, and region.\n\nConstruct the ROC curve and compute the area under the curve (AUC).\nBased on the AUC, do you think this model sufficiently identifies those who will max out their credit card vs. those who will not? Explain.\nSuppose a credit card company uses your model to inform the credit limit to give to new customers. Do you think they would prioritize sensitivity, specificity, or regard both equally? Briefly explain.\nBased on your response to part(c), select a threshold for classifying observations into those likely to max out the credit card and those who are not. What is your threshold in terms of probability? What is the sensitivity? What is the specificity?\n\n\n\n\n\n\n\nSubmission\n\n\n\nTo submit the AE:\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your AE repo on GitHub. You’re done! 🎉"
+    "text": "Exercise 5\nLet’s address the issue of mulitcollinearity. Choose a strategy to address the multicollinearity. Then, select a final model.\n\n# add code here"
   },
   {
     "objectID": "support.html",
@@ -5441,14 +5441,14 @@
     "href": "slides/13-multicollinearity-notes.html",
     "title": "Multicollinearity",
     "section": "",
-    "text": "Exam corrections (optional) due Tuesday, March 4 at 11:59pm\n\nSee assignment on Canvas\n\nTeam Feedback (from TEAMMATES) due Tuesday at 11:59pm (check email)\nStatistics experience due April 22\n\nDataFest announcement"
+    "text": "Exam corrections (optional) due Tuesday, March 4 at 11:59pm\n\nSee assignment on Canvas\n\nTeam Feedback (from TEAMMATES) due Tuesday, March 4 at 11:59pm (check email)\nStatistics experience due April 22"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#announcements",
     "href": "slides/13-multicollinearity-notes.html#announcements",
     "title": "Multicollinearity",
     "section": "",
-    "text": "Exam corrections (optional) due Tuesday, March 4 at 11:59pm\n\nSee assignment on Canvas\n\nTeam Feedback (from TEAMMATES) due Tuesday at 11:59pm (check email)\nStatistics experience due April 22\n\nDataFest announcement"
+    "text": "Exam corrections (optional) due Tuesday, March 4 at 11:59pm\n\nSee assignment on Canvas\n\nTeam Feedback (from TEAMMATES) due Tuesday, March 4 at 11:59pm (check email)\nStatistics experience due April 22"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#computing-set-up",
@@ -5490,7 +5490,21 @@
     "href": "slides/13-multicollinearity-notes.html#eda-relationship-between-predictors-1",
     "title": "Multicollinearity",
     "section": "EDA: Relationship between predictors",
-    "text": "EDA: Relationship between predictors\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "EDA: Relationship between predictors"
+  },
+  {
+    "objectID": "slides/13-multicollinearity-notes.html#eda-correlation-matrix",
+    "href": "slides/13-multicollinearity-notes.html#eda-correlation-matrix",
+    "title": "Multicollinearity",
+    "section": "EDA: Correlation matrix",
+    "text": "EDA: Correlation matrix\nWe can. use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
+  },
+  {
+    "objectID": "slides/13-multicollinearity-notes.html#eda-correlation-matrix-1",
+    "href": "slides/13-multicollinearity-notes.html#eda-correlation-matrix-1",
+    "title": "Multicollinearity",
+    "section": "EDA: Correlation matrix",
+    "text": "EDA: Correlation matrix\n\n\n\n\n\n\n\n\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#multicollinearity-1",
@@ -5500,11 +5514,11 @@
     "text": "Multicollinearity\n\n\nIdeally the predictors are orthogonal, meaning they are completely independent of one another\nIn practice, there is typically some dependence between predictors but it is often not a major issue in the model\nIf there is linear dependence among (a subset of) the predictors, we cannot find estimate \\(\\hat{\\boldsymbol{\\beta}}\\)\nIf there are near-linear dependencies, we can find \\(\\hat{\\boldsymbol{\\beta}}\\) but there may be other issues with the model\nMulticollinearity: near-linear dependence among predictors"
   },
   {
-    "objectID": "slides/13-multicollinearity-notes.html#common-sources-of-multicollinearity",
-    "href": "slides/13-multicollinearity-notes.html#common-sources-of-multicollinearity",
+    "objectID": "slides/13-multicollinearity-notes.html#sources-of-multicollinearity",
+    "href": "slides/13-multicollinearity-notes.html#sources-of-multicollinearity",
     "title": "Multicollinearity",
-    "section": "Common sources of multicollinearity",
-    "text": "Common sources of multicollinearity\n\n\nDependencies that generally occur in the population\nHow the model is defined and the variables that are included\nSample comes from only a subspace of the region of predictors\nThere are more predictor variables than observations"
+    "section": "Sources of multicollinearity",
+    "text": "Sources of multicollinearity\n\n\nData collection method - only sample from a subspace of the region of predictors\nConstraints in the population - e.g., predictors family income and size of house\nChoice of model - e.g., adding high order terms to the model\nOverdefined model - have more predictors than observations\n\n\n\n\nSource: Montgomery, Peck, and Vining (2021)"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#detecting-multicollinearity",
@@ -5521,11 +5535,11 @@
     "text": "Detecting multicollinearity\n\nCommon practice uses threshold \\(VIF &gt; 10\\) as indication of concerning multicollinearity\nVariables with similar values of VIF are typically the ones correlated with each other\nUse the vif() function in the rms R package to calculate VIF"
   },
   {
-    "objectID": "slides/13-multicollinearity-notes.html#effects-of-multicollinearity",
-    "href": "slides/13-multicollinearity-notes.html#effects-of-multicollinearity",
+    "objectID": "slides/13-multicollinearity-notes.html#how-multicollinearity-impacts-model",
+    "href": "slides/13-multicollinearity-notes.html#how-multicollinearity-impacts-model",
     "title": "Multicollinearity",
-    "section": "Effects of multicollinearity",
-    "text": "Effects of multicollinearity\n\n\nLarge variance \\((\\hat{\\sigma}^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1})\\) in the model coefficients\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
+    "section": "How multicollinearity impacts model",
+    "text": "How multicollinearity impacts model\n\n\nLarge variance for the model coefficients that are collinear\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#dealing-with-multicollinearity",
@@ -5546,7 +5560,7 @@
     "href": "slides/13-multicollinearity.html#announcements",
     "title": "Multicollinearity",
     "section": "Announcements",
-    "text": "Announcements\n\nExam corrections (optional) due Tuesday, March 4 at 11:59pm\n\nSee assignment on Canvas\n\nTeam Feedback (from TEAMMATES) due Tuesday at 11:59pm (check email)\nStatistics experience due April 22\n\nDataFest announcement"
+    "text": "Announcements\n\nExam corrections (optional) due Tuesday, March 4 at 11:59pm\n\nSee assignment on Canvas\n\nTeam Feedback (from TEAMMATES) due Tuesday, March 4 at 11:59pm (check email)\nStatistics experience due April 22"
   },
   {
     "objectID": "slides/13-multicollinearity.html#computing-set-up",
@@ -5591,6 +5605,20 @@
     "text": "EDA: Relationship between predictors"
   },
   {
+    "objectID": "slides/13-multicollinearity.html#eda-correlation-matrix",
+    "href": "slides/13-multicollinearity.html#eda-correlation-matrix",
+    "title": "Multicollinearity",
+    "section": "EDA: Correlation matrix",
+    "text": "EDA: Correlation matrix\nWe can. use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
+  },
+  {
+    "objectID": "slides/13-multicollinearity.html#eda-correlation-matrix-1",
+    "href": "slides/13-multicollinearity.html#eda-correlation-matrix-1",
+    "title": "Multicollinearity",
+    "section": "EDA: Correlation matrix",
+    "text": "EDA: Correlation matrix\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
+  },
+  {
     "objectID": "slides/13-multicollinearity.html#multicollinearity-1",
     "href": "slides/13-multicollinearity.html#multicollinearity-1",
     "title": "Multicollinearity",
@@ -5598,11 +5626,11 @@
     "text": "Multicollinearity\n\n\nIdeally the predictors are orthogonal, meaning they are completely independent of one another\nIn practice, there is typically some dependence between predictors but it is often not a major issue in the model\nIf there is linear dependence among (a subset of) the predictors, we cannot find estimate \\(\\hat{\\boldsymbol{\\beta}}\\)\nIf there are near-linear dependencies, we can find \\(\\hat{\\boldsymbol{\\beta}}\\) but there may be other issues with the model\nMulticollinearity: near-linear dependence among predictors"
   },
   {
-    "objectID": "slides/13-multicollinearity.html#common-sources-of-multicollinearity",
-    "href": "slides/13-multicollinearity.html#common-sources-of-multicollinearity",
+    "objectID": "slides/13-multicollinearity.html#sources-of-multicollinearity",
+    "href": "slides/13-multicollinearity.html#sources-of-multicollinearity",
     "title": "Multicollinearity",
-    "section": "Common sources of multicollinearity",
-    "text": "Common sources of multicollinearity\n\n\nData collection method - only sample from a subspace of the region of predictors\nConstraints in the population - e.g., predictors family income and size of house\nChoice of model - e.g., adding high order terms to the model\nOverdefined model - have more predictors than observations\n\n\n\n\nSource: @ montgomery2021introduction"
+    "section": "Sources of multicollinearity",
+    "text": "Sources of multicollinearity\n\n\nData collection method - only sample from a subspace of the region of predictors\nConstraints in the population - e.g., predictors family income and size of house\nChoice of model - e.g., adding high order terms to the model\nOverdefined model - have more predictors than observations\n\n\n\n\nSource: Montgomery, Peck, and Vining (2021)"
   },
   {
     "objectID": "slides/13-multicollinearity.html#detecting-multicollinearity",
@@ -5619,11 +5647,11 @@
     "text": "Detecting multicollinearity\n\nCommon practice uses threshold \\(VIF &gt; 10\\) as indication of concerning multicollinearity\nVariables with similar values of VIF are typically the ones correlated with each other\nUse the vif() function in the rms R package to calculate VIF"
   },
   {
-    "objectID": "slides/13-multicollinearity.html#effects-of-multicollinearity",
-    "href": "slides/13-multicollinearity.html#effects-of-multicollinearity",
+    "objectID": "slides/13-multicollinearity.html#how-multicollinearity-impacts-model",
+    "href": "slides/13-multicollinearity.html#how-multicollinearity-impacts-model",
     "title": "Multicollinearity",
-    "section": "Effects of multicollinearity",
-    "text": "Effects of multicollinearity\n\n\nLarge variance \\((\\hat{\\sigma}^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1})\\) in the model coefficients\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
+    "section": "How multicollinearity impacts model",
+    "text": "How multicollinearity impacts model\n\n\nLarge variance for the model coefficients that are collinear\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
   },
   {
     "objectID": "slides/13-multicollinearity.html#dealing-with-multicollinearity",
@@ -5637,7 +5665,7 @@
     "href": "slides/13-multicollinearity.html#recap",
     "title": "Multicollinearity",
     "section": "Recap",
-    "text": "Recap\n\nIntroduced multicollinearity\n\nDefinition\nHow it impacts the model\nHow to detect it\nWhat to do about it"
+    "text": "Recap\n\nIntroduced multicollinearity\n\nDefinition\nHow it impacts the model\nHow to detect it\nWhat to do about it\n\n\n\n\n\n\nMontgomery, Douglas C, Elizabeth A Peck, and G Geoffrey Vining. 2021. Introduction to Linear Regression Analysis. John Wiley & Sons."
   },
   {
     "objectID": "slides/lab-00.html#meet-your-tas",
@@ -7933,103 +7961,5 @@
       "Computing",
       "Troubleshooting"
     ]
-  },
-  {
-    "objectID": "slides/13-multicollinearity.html#eda-correlation-matrix",
-    "href": "slides/13-multicollinearity.html#eda-correlation-matrix",
-    "title": "Multicollinearity",
-    "section": "EDA: Correlation matrix",
-    "text": "EDA: Correlation matrix\nWe can. use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
-  },
-  {
-    "objectID": "slides/13-multicollinearity.html#eda-correlation-matrix-1",
-    "href": "slides/13-multicollinearity.html#eda-correlation-matrix-1",
-    "title": "Multicollinearity",
-    "section": "EDA: Correlation matrix",
-    "text": "EDA: Correlation matrix\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
-  },
-  {
-    "objectID": "slides/13-multicollinearity.html#how-multicollinearity-impacts-model",
-    "href": "slides/13-multicollinearity.html#how-multicollinearity-impacts-model",
-    "title": "Multicollinearity",
-    "section": "How multicollinearity impacts model",
-    "text": "How multicollinearity impacts model\n\n\nLarge variance for the model coefficients that are collinear\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
-  },
-  {
-    "objectID": "slides/13-multicollinearity.html#sources-of-multicollinearity",
-    "href": "slides/13-multicollinearity.html#sources-of-multicollinearity",
-    "title": "Multicollinearity",
-    "section": "Sources of multicollinearity",
-    "text": "Sources of multicollinearity\n\n\nData collection method - only sample from a subspace of the region of predictors\nConstraints in the population - e.g., predictors family income and size of house\nChoice of model - e.g., adding high order terms to the model\nOverdefined model - have more predictors than observations\n\n\n\n\nSource: @ montgomery2021introduction"
-  },
-  {
-    "objectID": "ae/ae-04-multicollinearity.html",
-    "href": "ae/ae-04-multicollinearity.html",
-    "title": "AE 04: Multicollinearity",
-    "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-04 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(rms) #calculate VIF"
-  },
-  {
-    "objectID": "ae/ae-04-multicollinearity.html#exercise-1",
-    "href": "ae/ae-04-multicollinearity.html#exercise-1",
-    "title": "AE 04: Multicollinearity",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nFit the regression model using high temperature, average temperature, season, and precipitation to predict volume.\nAre there any coefficients that may be not what you expected?\n\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-04-multicollinearity.html#exercise-2",
-    "href": "ae/ae-04-multicollinearity.html#exercise-2",
-    "title": "AE 04: Multicollinearity",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nUse the formula\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nto calculate the VIF for avgtemp.\n\n# add code here\n\nThen, use the design matrix \\(\\mathbf{X}\\) to check your answer.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-04-multicollinearity.html#exercise-3",
-    "href": "ae/ae-04-multicollinearity.html#exercise-3",
-    "title": "AE 04: Multicollinearity",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nBased on the VIF from the previous exercise, does avgtemp have a linear dependency with one or more other predictors? Explain."
-  },
-  {
-    "objectID": "ae/ae-04-multicollinearity.html#exercise-4",
-    "href": "ae/ae-04-multicollinearity.html#exercise-4",
-    "title": "AE 04: Multicollinearity",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nFill in the name of the model from Exercise 1 to calculate VIF for all predictors. (Remove #| eval: false after you’ve filled in the code.)\nAre there predictors with linear dependencies? If so, which ones?\n\n\nvif(____)"
-  },
-  {
-    "objectID": "ae/ae-04-multicollinearity.html#exercise-5",
-    "href": "ae/ae-04-multicollinearity.html#exercise-5",
-    "title": "AE 04: Multicollinearity",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nLet’s address the issue of mulitcollinearity. Choose a strategy to address the multicollinearity. Then, select a final model.\n\n# add code here"
-  },
-  {
-    "objectID": "slides/13-multicollinearity-notes.html#eda-correlation-matrix",
-    "href": "slides/13-multicollinearity-notes.html#eda-correlation-matrix",
-    "title": "Multicollinearity",
-    "section": "EDA: Correlation matrix",
-    "text": "EDA: Correlation matrix\nWe can. use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
-  },
-  {
-    "objectID": "slides/13-multicollinearity-notes.html#eda-correlation-matrix-1",
-    "href": "slides/13-multicollinearity-notes.html#eda-correlation-matrix-1",
-    "title": "Multicollinearity",
-    "section": "EDA: Correlation matrix",
-    "text": "EDA: Correlation matrix\n\n\n\n\n\n\n\n\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
-  },
-  {
-    "objectID": "slides/13-multicollinearity-notes.html#sources-of-multicollinearity",
-    "href": "slides/13-multicollinearity-notes.html#sources-of-multicollinearity",
-    "title": "Multicollinearity",
-    "section": "Sources of multicollinearity",
-    "text": "Sources of multicollinearity\n\n\nData collection method - only sample from a subspace of the region of predictors\nConstraints in the population - e.g., predictors family income and size of house\nChoice of model - e.g., adding high order terms to the model\nOverdefined model - have more predictors than observations\n\n\n\n\nSource: @ montgomery2021introduction"
-  },
-  {
-    "objectID": "slides/13-multicollinearity-notes.html#how-multicollinearity-impacts-model",
-    "href": "slides/13-multicollinearity-notes.html#how-multicollinearity-impacts-model",
-    "title": "Multicollinearity",
-    "section": "How multicollinearity impacts model",
-    "text": "How multicollinearity impacts model\n\n\nLarge variance for the model coefficients that are collinear\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
   }
 ]

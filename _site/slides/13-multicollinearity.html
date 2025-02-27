@@ -93,7 +93,27 @@
     code span.va { color: #111111; } /* Variable */
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-54533a16ec012e338ef0695f960493d1.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -214,11 +234,8 @@ Prof.&nbsp;Maria Tackett
 <ul>
 <li>See <a href="https://canvas.duke.edu/courses/51767/assignments/220984">assignment on Canvas</a></li>
 </ul></li>
-<li><p>Team Feedback (from TEAMMATES) due Tuesday at 11:59pm (check email)</p></li>
-<li><p>Statistics experience due April 22</p>
-<ul>
-<li>DataFest announcement</li>
-</ul></li>
+<li><p>Team Feedback (from TEAMMATES) due Tuesday, March 4 at 11:59pm (check email)</p></li>
+<li><p>Statistics experience due April 22</p></li>
 </ul>
 </section>
 <section id="computing-set-up" class="slide level2">
@@ -342,7 +359,7 @@ Prof.&nbsp;Maria Tackett
 </div>
 
 <aside><div>
-<p>Source: @ montgomery2021introduction</p>
+<p>Source: <span class="citation" data-cites="montgomery2021introduction">Montgomery, Peck, and Vining (<a href="#/recap" role="doc-biblioref" onclick="">2021</a>)</span></p>
 </div></aside></section>
 <section id="detecting-multicollinearity" class="slide level2">
 <h2>Detecting multicollinearity</h2>
@@ -415,7 +432,7 @@ C_{jj} = \frac{1}{1 - R^2_j}
 <p>Part 2</p>
 </div>
 </section>
-<section id="recap" class="slide level2">
+<section id="recap" class="slide level2 smaller scrollable">
 <h2>Recap</h2>
 <ul>
 <li><p>Introduced multicollinearity</p>
@@ -428,6 +445,11 @@ C_{jj} = \frac{1}{1 - R^2_j}
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-montgomery2021introduction" class="csl-entry" role="listitem">
+Montgomery, Douglas C, Elizabeth A Peck, and G Geoffrey Vining. 2021. <em>Introduction to Linear Regression Analysis</em>. John Wiley &amp; Sons.
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

@@ -35,7 +35,7 @@ bibliography: references.bib
 
     -   See [assignment on Canvas](https://canvas.duke.edu/courses/51767/assignments/220984)
 
--   Team Feedback (from TEAMMATES) due Tuesday at 11:59pm (check email)
+-   Team Feedback (from TEAMMATES) due Tuesday, March 4 at 11:59pm (check email)
 
 -   Statistics experience due April 22
 
@@ -184,7 +184,7 @@ What might be a potential concern with a model that uses high temperature, avera
 :::
 
 ::: aside
-Source: @ montgomery2021introduction
+Source: @montgomery2021introduction
 :::
 
 ## Detecting multicollinearity
