@@ -189,17 +189,22 @@ Source: @montgomery2021introduction
 
 ## Detecting multicollinearity
 
--   The diagonal elements of $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$
+-   Recall $Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$
+-   Let $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$. Then $Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}$
+-   When there are near-linear dependencies, the $C_{jj}$ increases and thus $Var(\hat{\beta}_j)$ .
+-   The $C_{jj}$ is associated with how much $Var(\hat{\beta}_j)$ is inflated due to $x_j$ dependencies with other predictors
+
+## Variance inflation factor {.midi}
+
+-   The **variance inflation factor (VIF)** measures how much the linear dependencies impact the variance of the predictors
 
 $$
-C_{jj} = \frac{1}{1 - R^2_j}
+VIF_{j} = \frac{1}{1 - R^2_j}
 $$
 
 where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a linear combination of all the other predictors
 
--   Recall $Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}$
-
--   Then $C_{jj}$ is called the **variance inflation factor (VIF)**, how much the linear dependencies impact the variance of the regressors
+-   When the response and predictors are scaled in a particular way, $C_{jj} = VIF_{j}$. [Click here](variance-inflation-factors.html) to see how.
 
 ## Detecting multicollinearity
 
@@ -209,7 +214,15 @@ where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a lin
 
 -   Use the `vif()` function in the **rms** R package to calculate VIF
 
-## How multicollinearity impacts model
+```{r}
+library(rms)
+
+trail_fit <- lm(volume ~ hightemp + avgtemp + precip, data = rail_trail)
+
+vif(trail_fit)
+```
+
+## How multicollinearity impacts model {.midi}
 
 ::: incremental
 -   Large variance for the model coefficients that are collinear
@@ -266,3 +279,5 @@ Part 2
     -   How to detect it
 
     -   What to do about it
+
+## References
