@@ -35,9 +35,9 @@ bibliography: references.bib
 
     -   See [assignment on Canvas](https://canvas.duke.edu/courses/51767/assignments/220984)
 
--   Team Feedback (from TEAMMATES) due Tuesday, March 4 at 11:59pm (check email)
+-   Team Feedback (email from TEAMMATES) due Tuesday, March 4 at 11:59pm (check email)
 
--   Statistics experience due April 22
+-   DataFest: April 4 - 6 - <https://dukestatsci.github.io/datafest/>
 
 ## Computing set up
 
@@ -193,7 +193,7 @@ Source: @montgomery2021introduction
 -   Recall $Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$
 -   Let $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$. Then $Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}$
 -   When there are near-linear dependencies, $C_{jj}$ increases and thus $Var(\hat{\beta}_j)$ becomes inflated
--    $C_{jj}$ is associated with how much $Var(\hat{\beta}_j)$ is inflated due to $x_j$ dependencies with other predictors
+-   $C_{jj}$ is associated with how much $Var(\hat{\beta}_j)$ is inflated due to $x_j$ dependencies with other predictors
 :::
 
 ## Variance inflation factor {.midi}
