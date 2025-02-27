@@ -229,8 +229,8 @@ Prof.&nbsp;Maria Tackett
 <span id="cb1-3"><a></a><span class="fu">library</span>(tidymodels)  </span>
 <span id="cb1-4"><a></a><span class="fu">library</span>(knitr)       </span>
 <span id="cb1-5"><a></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-6"><a></a><span class="fu">library</span>(GGally) <span class="co">#for pairwise plot matrix</span></span>
-<span id="cb1-7"><a></a></span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(GGally)   <span class="co"># for pairwise plot matrix</span></span>
+<span id="cb1-7"><a></a><span class="fu">library</span>(corrplot) <span class="co"># for correlation matrix</span></span>
 <span id="cb1-8"><a></a></span>
 <span id="cb1-9"><a></a><span class="co"># set default theme in ggplot2</span></span>
 <span id="cb1-10"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -294,7 +294,22 @@ Prof.&nbsp;Maria Tackett
 <section id="eda-relationship-between-predictors-1" class="slide level2 midi">
 <h2>EDA: Relationship between predictors</h2>
 
-<img data-src="13-multicollinearity_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="question">
+<img data-src="13-multicollinearity_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="eda-correlation-matrix" class="slide level2">
+<h2>EDA: Correlation matrix</h2>
+<p>We can. use <code>corrplot()</code> in the <strong>corrplot</strong> R package to make a matrix of pairwise correlations between <u>quantitative</u> predictors</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>correlations <span class="ot">&lt;-</span> rail_trail <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">select</span>(hightemp, avgtemp, precip) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">cor</span>()</span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="fu">corrplot</span>(correlations, <span class="at">method =</span> <span class="st">"number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="eda-correlation-matrix-1" class="slide level2">
+<h2>EDA: Correlation matrix</h2>
+
+<img data-src="13-multicollinearity_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="question">
 <p>What might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?</p>
 </div>
 </section>
@@ -305,34 +320,43 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="multicollinearity-1" class="slide level2">
 <h2>Multicollinearity</h2>
-<ul>
-<li><p>Ideally there is no linear relationship (dependence) between the predictors</p>
-<ul>
-<li>This is generally not the case in practice but is often not a major issue</li>
-</ul></li>
-<li><p><strong>Multicollinearity</strong>: there are near-linear dependencies between predictors</p></li>
-</ul>
-</section>
-<section id="common-sources-of-multicollinearity" class="slide level2">
-<h2>Common sources of multicollinearity</h2>
 <div>
 <ul>
-<li class="fragment"><p>Dependencies that generally occur in the population</p></li>
-<li class="fragment"><p>How the model is defined and the variables that are included</p></li>
-<li class="fragment"><p>Sample comes from only a subspace of the region of predictors</p></li>
-<li class="fragment"><p>There are more predictor variables than observations</p></li>
+<li class="fragment"><p>Ideally the predictors are orthogonal, meaning they are completely independent of one another</p></li>
+<li class="fragment"><p>In practice, there is typically some dependence between predictors but it is often not a major issue in the model</p></li>
+<li class="fragment"><p>If there is linear dependence among (a subset of) the predictors, we cannot find estimate <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></p></li>
+<li class="fragment"><p>If there are near-linear dependencies, we can find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> but there may be other issues with the model</p></li>
+<li class="fragment"><p><strong>Multicollinearity</strong>: near-linear dependence among predictors</p></li>
 </ul>
 </div>
 </section>
+<section id="sources-of-multicollinearity" class="slide level2">
+<h2>Sources of multicollinearity</h2>
+<div>
+<ul>
+<li class="fragment"><p>Data collection method - only sample from a subspace of the region of predictors</p></li>
+<li class="fragment"><p>Constraints in the population - e.g., predictors family income and size of house</p></li>
+<li class="fragment"><p>Choice of model - e.g., adding high order terms to the model</p></li>
+<li class="fragment"><p>Overdefined model - have more predictors than observations</p></li>
+</ul>
+</div>
+
+<aside><div>
+<p>Source: @ montgomery2021introduction</p>
+</div></aside></section>
 <section id="detecting-multicollinearity" class="slide level2">
 <h2>Detecting multicollinearity</h2>
 <ul>
-<li><strong>Variance Inflation Factor (VIF)</strong>: measure of multicollinearity in the regression model</li>
+<li>The diagonal elements of <span class="math inline">\(\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\)</span></li>
 </ul>
 <p><span class="math display">\[
-VIF_j = \frac{1}{1 - R^2_j}
+C_{jj} = \frac{1}{1 - R^2_j}
 \]</span></p>
 <p>where <span class="math inline">\(R^2_j\)</span> is the proportion of variation in <span class="math inline">\(x_j\)</span> that is explained by a linear combination of all the other predictors</p>
+<ul>
+<li><p>Recall <span class="math inline">\(Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}\)</span></p></li>
+<li><p>Then <span class="math inline">\(C_{jj}\)</span> is called the <strong>variance inflation factor (VIF)</strong>, how much the linear dependencies impact the variance of the regressors</p></li>
+</ul>
 </section>
 <section id="detecting-multicollinearity-1" class="slide level2">
 <h2>Detecting multicollinearity</h2>
@@ -342,11 +366,11 @@ VIF_j = \frac{1}{1 - R^2_j}
 <li><p>Use the <code>vif()</code> function in the <strong>rms</strong> R package to calculate VIF</p></li>
 </ul>
 </section>
-<section id="effects-of-multicollinearity" class="slide level2">
-<h2>Effects of multicollinearity</h2>
+<section id="how-multicollinearity-impacts-model" class="slide level2">
+<h2>How multicollinearity impacts model</h2>
 <div>
 <ul>
-<li class="fragment"><p>Large variance <span class="math inline">\((\hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1})\)</span> in the model coefficients</p>
+<li class="fragment"><p>Large variance for the model coefficients that are collinear</p>
 <ul>
 <li class="fragment">Different combinations of coefficient estimates produce equally good model fits</li>
 </ul></li>
@@ -362,9 +386,9 @@ VIF_j = \frac{1}{1 - R^2_j}
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="../ae/ae-05-multicollinearity.html">sta221-fa24.netlify.app/ae/ae-05-multicollinearity</a></p>
+<p>📋 <a href="../ae/ae-04-multicollinearity.html">sta221-sp25.netlify.app/ae/ae-04-multicollinearity.html</a></p>
+<p>Part 1</p>
 </div>
-<p>Selected groups - put responses on your <a href="https://docs.google.com/presentation/d/1pFjNKtvyMo7rd0RJFVNvJf6UcRVsFnXeW4qWOMNeTdU/edit?usp=sharing">Google slide</a>.</p>
 </section>
 <section id="dealing-with-multicollinearity" class="slide level2">
 <h2>Dealing with multicollinearity</h2>
@@ -387,9 +411,9 @@ VIF_j = \frac{1}{1 - R^2_j}
 <section id="application-exercise-1" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="../ae/ae-05-multicollinearity.html">sta221-fa24.netlify.app/ae/ae-05-multicollinearity</a></p>
+<p>📋 <a href="../ae/ae-04-multicollinearity.html">sta221-sp25.netlify.app/ae/ae-04-multicollinearity.html</a></p>
+<p>Part 2</p>
 </div>
-<p>Selected groups - put responses on your <a href="https://docs.google.com/presentation/d/1pFjNKtvyMo7rd0RJFVNvJf6UcRVsFnXeW4qWOMNeTdU/edit?usp=sharing">Google slide</a>.</p>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>

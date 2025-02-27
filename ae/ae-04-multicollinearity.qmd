@@ -1,11 +1,11 @@
 ---
-title: "AE 05: Multicollinearity"
-date: "October 22, 2024"
+title: "AE 04: Multicollinearity"
+date: "February 26, 2025"
 editor: visual
 ---
 
 ::: callout-important
-Go to the course GitHub organization and locate your ae-05 repo to get started.
+Go to the course GitHub organization and locate your ae-04 repo to get started.
 
 Render, commit, and push your responses to GitHub by the end of class to submit your AE.
 :::
@@ -66,7 +66,7 @@ rail_trail <- read_csv("data/rail_trail.csv")
 
 ## Exercise 2
 
--   Use the formula
+Use the formula
 
 $$
 VIF_j = \frac{1}{1 - R^2_j} 
@@ -79,6 +79,14 @@ to calculate the VIF for `avgtemp`.
 
 # add code here
 
+```
+
+Then, use the design matrix $\mathbf{X}$ to check your answer.
+
+```{r}
+#| label: ex-2-pt2
+
+# add code here
 ```
 
 ## Exercise 3
@@ -103,7 +111,7 @@ vif(____)
 
 ## Exercise 5
 
-Let's try to deal with the mulitcollinearity by removing one of the predictors that are linearly dependent. Choose a final model using this strategy.
+Let's address the issue of mulitcollinearity. Choose a strategy to address the multicollinearity. Then, select a final model.
 
 ```{r}
 #| label: ex-5
@@ -114,8 +122,10 @@ Let's try to deal with the mulitcollinearity by removing one of the predictors t
 
 # Submission
 
+::: callout-important
 To submit the AE:
 
 Render the document to produce the PDF with all of your work from today's class.
 
 Push all your work to your AE repo on GitHub. You're done! 🎉
+:::

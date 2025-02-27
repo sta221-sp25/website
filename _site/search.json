@@ -5455,7 +5455,7 @@
     "href": "slides/13-multicollinearity-notes.html#computing-set-up",
     "title": "Multicollinearity",
     "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\nlibrary(GGally) #for pairwise plot matrix\n\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\nlibrary(GGally)   # for pairwise plot matrix\nlibrary(corrplot) # for correlation matrix\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#topics",
@@ -5490,14 +5490,14 @@
     "href": "slides/13-multicollinearity-notes.html#eda-relationship-between-predictors-1",
     "title": "Multicollinearity",
     "section": "EDA: Relationship between predictors",
-    "text": "EDA: Relationship between predictors\n\n\n\n\n\n\n\n\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
+    "text": "EDA: Relationship between predictors\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#multicollinearity-1",
     "href": "slides/13-multicollinearity-notes.html#multicollinearity-1",
     "title": "Multicollinearity",
     "section": "Multicollinearity",
-    "text": "Multicollinearity\n\nIdeally there is no linear relationship (dependence) between the predictors\n\nThis is generally not the case in practice but is often not a major issue\n\nMulticollinearity: there are near-linear dependencies between predictors"
+    "text": "Multicollinearity\n\n\nIdeally the predictors are orthogonal, meaning they are completely independent of one another\nIn practice, there is typically some dependence between predictors but it is often not a major issue in the model\nIf there is linear dependence among (a subset of) the predictors, we cannot find estimate \\(\\hat{\\boldsymbol{\\beta}}\\)\nIf there are near-linear dependencies, we can find \\(\\hat{\\boldsymbol{\\beta}}\\) but there may be other issues with the model\nMulticollinearity: near-linear dependence among predictors"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#common-sources-of-multicollinearity",
@@ -5511,7 +5511,7 @@
     "href": "slides/13-multicollinearity-notes.html#detecting-multicollinearity",
     "title": "Multicollinearity",
     "section": "Detecting multicollinearity",
-    "text": "Detecting multicollinearity\n\nVariance Inflation Factor (VIF): measure of multicollinearity in the regression model\n\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors"
+    "text": "Detecting multicollinearity\n\nThe diagonal elements of \\(\\mathbf{C} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\)\n\n\\[\nC_{jj} = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors\n\nRecall \\(Var(\\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{jj}\\)\nThen \\(C_{jj}\\) is called the variance inflation factor (VIF), how much the linear dependencies impact the variance of the regressors"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#detecting-multicollinearity-1",
@@ -5553,7 +5553,7 @@
     "href": "slides/13-multicollinearity.html#computing-set-up",
     "title": "Multicollinearity",
     "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\nlibrary(GGally) #for pairwise plot matrix\n\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\nlibrary(GGally)   # for pairwise plot matrix\nlibrary(corrplot) # for correlation matrix\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
     "objectID": "slides/13-multicollinearity.html#topics",
@@ -5588,28 +5588,28 @@
     "href": "slides/13-multicollinearity.html#eda-relationship-between-predictors-1",
     "title": "Multicollinearity",
     "section": "EDA: Relationship between predictors",
-    "text": "EDA: Relationship between predictors\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
+    "text": "EDA: Relationship between predictors"
   },
   {
     "objectID": "slides/13-multicollinearity.html#multicollinearity-1",
     "href": "slides/13-multicollinearity.html#multicollinearity-1",
     "title": "Multicollinearity",
     "section": "Multicollinearity",
-    "text": "Multicollinearity\n\nIdeally there is no linear relationship (dependence) between the predictors\n\nThis is generally not the case in practice but is often not a major issue\n\nMulticollinearity: there are near-linear dependencies between predictors"
+    "text": "Multicollinearity\n\n\nIdeally the predictors are orthogonal, meaning they are completely independent of one another\nIn practice, there is typically some dependence between predictors but it is often not a major issue in the model\nIf there is linear dependence among (a subset of) the predictors, we cannot find estimate \\(\\hat{\\boldsymbol{\\beta}}\\)\nIf there are near-linear dependencies, we can find \\(\\hat{\\boldsymbol{\\beta}}\\) but there may be other issues with the model\nMulticollinearity: near-linear dependence among predictors"
   },
   {
     "objectID": "slides/13-multicollinearity.html#common-sources-of-multicollinearity",
     "href": "slides/13-multicollinearity.html#common-sources-of-multicollinearity",
     "title": "Multicollinearity",
     "section": "Common sources of multicollinearity",
-    "text": "Common sources of multicollinearity\n\n\nDependencies that generally occur in the population\nHow the model is defined and the variables that are included\nSample comes from only a subspace of the region of predictors\nThere are more predictor variables than observations"
+    "text": "Common sources of multicollinearity\n\n\nData collection method - only sample from a subspace of the region of predictors\nConstraints in the population - e.g., predictors family income and size of house\nChoice of model - e.g., adding high order terms to the model\nOverdefined model - have more predictors than observations\n\n\n\n\nSource: @ montgomery2021introduction"
   },
   {
     "objectID": "slides/13-multicollinearity.html#detecting-multicollinearity",
     "href": "slides/13-multicollinearity.html#detecting-multicollinearity",
     "title": "Multicollinearity",
     "section": "Detecting multicollinearity",
-    "text": "Detecting multicollinearity\n\nVariance Inflation Factor (VIF): measure of multicollinearity in the regression model\n\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors"
+    "text": "Detecting multicollinearity\n\nThe diagonal elements of \\(\\mathbf{C} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\)\n\n\\[\nC_{jj} = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors\n\nRecall \\(Var(\\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{jj}\\)\nThen \\(C_{jj}\\) is called the variance inflation factor (VIF), how much the linear dependencies impact the variance of the regressors"
   },
   {
     "objectID": "slides/13-multicollinearity.html#detecting-multicollinearity-1",
@@ -7933,5 +7933,103 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "slides/13-multicollinearity.html#eda-correlation-matrix",
+    "href": "slides/13-multicollinearity.html#eda-correlation-matrix",
+    "title": "Multicollinearity",
+    "section": "EDA: Correlation matrix",
+    "text": "EDA: Correlation matrix\nWe can. use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
+  },
+  {
+    "objectID": "slides/13-multicollinearity.html#eda-correlation-matrix-1",
+    "href": "slides/13-multicollinearity.html#eda-correlation-matrix-1",
+    "title": "Multicollinearity",
+    "section": "EDA: Correlation matrix",
+    "text": "EDA: Correlation matrix\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
+  },
+  {
+    "objectID": "slides/13-multicollinearity.html#how-multicollinearity-impacts-model",
+    "href": "slides/13-multicollinearity.html#how-multicollinearity-impacts-model",
+    "title": "Multicollinearity",
+    "section": "How multicollinearity impacts model",
+    "text": "How multicollinearity impacts model\n\n\nLarge variance for the model coefficients that are collinear\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
+  },
+  {
+    "objectID": "slides/13-multicollinearity.html#sources-of-multicollinearity",
+    "href": "slides/13-multicollinearity.html#sources-of-multicollinearity",
+    "title": "Multicollinearity",
+    "section": "Sources of multicollinearity",
+    "text": "Sources of multicollinearity\n\n\nData collection method - only sample from a subspace of the region of predictors\nConstraints in the population - e.g., predictors family income and size of house\nChoice of model - e.g., adding high order terms to the model\nOverdefined model - have more predictors than observations\n\n\n\n\nSource: @ montgomery2021introduction"
+  },
+  {
+    "objectID": "ae/ae-04-multicollinearity.html",
+    "href": "ae/ae-04-multicollinearity.html",
+    "title": "AE 04: Multicollinearity",
+    "section": "",
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-04 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class to submit your AE.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(tidymodels)\nlibrary(rms) #calculate VIF"
+  },
+  {
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-1",
+    "href": "ae/ae-04-multicollinearity.html#exercise-1",
+    "title": "AE 04: Multicollinearity",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nFit the regression model using high temperature, average temperature, season, and precipitation to predict volume.\nAre there any coefficients that may be not what you expected?\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-2",
+    "href": "ae/ae-04-multicollinearity.html#exercise-2",
+    "title": "AE 04: Multicollinearity",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nUse the formula\n\\[\nVIF_j = \\frac{1}{1 - R^2_j}\n\\]\nto calculate the VIF for avgtemp.\n\n# add code here\n\nThen, use the design matrix \\(\\mathbf{X}\\) to check your answer.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-3",
+    "href": "ae/ae-04-multicollinearity.html#exercise-3",
+    "title": "AE 04: Multicollinearity",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nBased on the VIF from the previous exercise, does avgtemp have a linear dependency with one or more other predictors? Explain."
+  },
+  {
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-4",
+    "href": "ae/ae-04-multicollinearity.html#exercise-4",
+    "title": "AE 04: Multicollinearity",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nFill in the name of the model from Exercise 1 to calculate VIF for all predictors. (Remove #| eval: false after you’ve filled in the code.)\nAre there predictors with linear dependencies? If so, which ones?\n\n\nvif(____)"
+  },
+  {
+    "objectID": "ae/ae-04-multicollinearity.html#exercise-5",
+    "href": "ae/ae-04-multicollinearity.html#exercise-5",
+    "title": "AE 04: Multicollinearity",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nLet’s address the issue of mulitcollinearity. Choose a strategy to address the multicollinearity. Then, select a final model.\n\n# add code here"
+  },
+  {
+    "objectID": "slides/13-multicollinearity-notes.html#eda-correlation-matrix",
+    "href": "slides/13-multicollinearity-notes.html#eda-correlation-matrix",
+    "title": "Multicollinearity",
+    "section": "EDA: Correlation matrix",
+    "text": "EDA: Correlation matrix\nWe can. use corrplot() in the corrplot R package to make a matrix of pairwise correlations between quantitative predictors\n\ncorrelations &lt;- rail_trail |&gt;\n  select(hightemp, avgtemp, precip) |&gt;\n  cor()\n\ncorrplot(correlations, method = \"number\")"
+  },
+  {
+    "objectID": "slides/13-multicollinearity-notes.html#eda-correlation-matrix-1",
+    "href": "slides/13-multicollinearity-notes.html#eda-correlation-matrix-1",
+    "title": "Multicollinearity",
+    "section": "EDA: Correlation matrix",
+    "text": "EDA: Correlation matrix\n\n\n\n\n\n\n\n\n\n\nWhat might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?"
+  },
+  {
+    "objectID": "slides/13-multicollinearity-notes.html#sources-of-multicollinearity",
+    "href": "slides/13-multicollinearity-notes.html#sources-of-multicollinearity",
+    "title": "Multicollinearity",
+    "section": "Sources of multicollinearity",
+    "text": "Sources of multicollinearity\n\n\nData collection method - only sample from a subspace of the region of predictors\nConstraints in the population - e.g., predictors family income and size of house\nChoice of model - e.g., adding high order terms to the model\nOverdefined model - have more predictors than observations\n\n\n\n\nSource: @ montgomery2021introduction"
+  },
+  {
+    "objectID": "slides/13-multicollinearity-notes.html#how-multicollinearity-impacts-model",
+    "href": "slides/13-multicollinearity-notes.html#how-multicollinearity-impacts-model",
+    "title": "Multicollinearity",
+    "section": "How multicollinearity impacts model",
+    "text": "How multicollinearity impacts model\n\n\nLarge variance for the model coefficients that are collinear\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
   }
 ]

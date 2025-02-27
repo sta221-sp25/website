@@ -39,8 +39,6 @@ bibliography: references.bib
 
 -   Statistics experience due April 22
 
-    -   DataFest announcement
-
 ## Computing set up
 
 ```{r}
@@ -52,8 +50,8 @@ library(tidyverse)
 library(tidymodels)  
 library(knitr)       
 library(patchwork)
-library(GGally) #for pairwise plot matrix
-
+library(GGally)   # for pairwise plot matrix
+library(corrplot) # for correlation matrix
 
 # set default theme in ggplot2
 ggplot2::theme_set(ggplot2::theme_bw())
@@ -126,6 +124,33 @@ rail_trail |>
   ggpairs()
 ```
 
+## EDA: Correlation matrix
+
+We can. use `corrplot()` in the **corrplot** R package to make a matrix of pairwise correlations between [quantitative]{.underline} predictors
+
+```{r}
+#| eval: false
+correlations <- rail_trail |>
+  select(hightemp, avgtemp, precip) |>
+  cor()
+
+corrplot(correlations, method = "number")
+```
+
+## EDA: Correlation matrix
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+correlations <- rail_trail |>
+  select(hightemp, avgtemp, precip) |>
+  cor()
+
+
+corrplot(correlations, method = "number")
+```
+
 ::: question
 What might be a potential concern with a model that uses high temperature, average temperature, season, and precipitation to predict volume?
 :::
@@ -134,33 +159,47 @@ What might be a potential concern with a model that uses high temperature, avera
 
 ## Multicollinearity
 
--   Ideally there is no linear relationship (dependence) between the predictors
+::: incremental
+-   Ideally the predictors are orthogonal, meaning they are completely independent of one another
 
-    -   This is generally not the case in practice but is often not a major issue
+-   In practice, there is typically some dependence between predictors but it is often not a major issue in the model
 
--   **Multicollinearity**: there are near-linear dependencies between predictors
+-   If there is linear dependence among (a subset of) the predictors, we cannot find estimate $\hat{\boldsymbol{\beta}}$
 
-## Common sources of multicollinearity
+-   If there are near-linear dependencies, we can find $\hat{\boldsymbol{\beta}}$ but there may be other issues with the model
+
+-   **Multicollinearity**: near-linear dependence among predictors
+:::
+
+## Sources of multicollinearity
 
 ::: incremental
--   Dependencies that generally occur in the population
+-   Data collection method - only sample from a subspace of the region of predictors
 
--   How the model is defined and the variables that are included
+-   Constraints in the population - e.g., predictors family income and size of house
 
--   Sample comes from only a subspace of the region of predictors
+-   Choice of model - e.g., adding high order terms to the model
 
--   There are more predictor variables than observations
+-   Overdefined model - have more predictors than observations
+:::
+
+::: aside
+Source: @ montgomery2021introduction
 :::
 
 ## Detecting multicollinearity
 
--   **Variance Inflation Factor (VIF)**: measure of multicollinearity in the regression model
+-   The diagonal elements of $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$
 
 $$
-VIF_j = \frac{1}{1 - R^2_j}
+C_{jj} = \frac{1}{1 - R^2_j}
 $$
 
 where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a linear combination of all the other predictors
+
+-   Recall $Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}$
+
+-   Then $C_{jj}$ is called the **variance inflation factor (VIF)**, how much the linear dependencies impact the variance of the regressors
 
 ## Detecting multicollinearity
 
@@ -170,10 +209,10 @@ where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a lin
 
 -   Use the `vif()` function in the **rms** R package to calculate VIF
 
-## Effects of multicollinearity
+## How multicollinearity impacts model
 
 ::: incremental
--   Large variance $(\hat{\sigma}^2_{\epsilon}(\mathbf{X}^T\mathbf{X})^{-1})$ in the model coefficients
+-   Large variance for the model coefficients that are collinear
 
     -   Different combinations of coefficient estimates produce equally good model fits
 
@@ -187,10 +226,10 @@ where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a lin
 # Application exercise
 
 ::: appex
-📋 [sta221-fa24.netlify.app/ae/ae-05-multicollinearity](../ae/ae-05-multicollinearity.html)
-:::
+📋 [sta221-sp25.netlify.app/ae/ae-04-multicollinearity.html](../ae/ae-04-multicollinearity.html)
 
-Selected groups - put responses on your [Google slide](https://docs.google.com/presentation/d/1pFjNKtvyMo7rd0RJFVNvJf6UcRVsFnXeW4qWOMNeTdU/edit?usp=sharing).
+Part 1
+:::
 
 ## Dealing with multicollinearity
 
@@ -211,10 +250,10 @@ Selected groups - put responses on your [Google slide](https://docs.google.com/p
 # Application exercise
 
 ::: appex
-📋 [sta221-fa24.netlify.app/ae/ae-05-multicollinearity](../ae/ae-05-multicollinearity.html)
-:::
+📋 [sta221-sp25.netlify.app/ae/ae-04-multicollinearity.html](../ae/ae-04-multicollinearity.html)
 
-Selected groups - put responses on your [Google slide](https://docs.google.com/presentation/d/1pFjNKtvyMo7rd0RJFVNvJf6UcRVsFnXeW4qWOMNeTdU/edit?usp=sharing).
+Part 2
+:::
 
 ## Recap
 
