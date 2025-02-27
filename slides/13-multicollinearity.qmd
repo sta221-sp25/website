@@ -189,10 +189,12 @@ Source: @montgomery2021introduction
 
 ## Detecting multicollinearity
 
+::: incremental
 -   Recall $Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$
 -   Let $\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}$. Then $Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}$
--   When there are near-linear dependencies, the $C_{jj}$ increases and thus $Var(\hat{\beta}_j)$ .
--   The $C_{jj}$ is associated with how much $Var(\hat{\beta}_j)$ is inflated due to $x_j$ dependencies with other predictors
+-   When there are near-linear dependencies, $C_{jj}$ increases and thus $Var(\hat{\beta}_j)$ becomes inflated
+-    $C_{jj}$ is associated with how much $Var(\hat{\beta}_j)$ is inflated due to $x_j$ dependencies with other predictors
+:::
 
 ## Variance inflation factor {.midi}
 
@@ -204,11 +206,13 @@ $$
 
 where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a linear combination of all the other predictors
 
+. . .
+
 -   When the response and predictors are scaled in a particular way, $C_{jj} = VIF_{j}$. [Click here](variance-inflation-factors.html) to see how.
 
 ## Detecting multicollinearity
 
--   Common practice uses threshold $VIF > 10$ as indication of concerning multicollinearity
+-   Common practice uses threshold $VIF > 10$ as indication of concerning multicollinearity (some say VIF \> 5 is worth investigation)
 
 -   Variables with similar values of VIF are typically the ones correlated with each other
 

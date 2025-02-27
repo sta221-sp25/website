@@ -631,12 +631,14 @@ window.Quarto = {
 </div></div></section>
 <section id="detecting-multicollinearity" class="level2">
 <h2 class="anchored" data-anchor-id="detecting-multicollinearity">Detecting multicollinearity</h2>
-<ul>
+<div class="incremental">
+<ul class="incremental">
 <li>Recall <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\)</span></li>
 <li>Let <span class="math inline">\(\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\)</span>. Then <span class="math inline">\(Var(\hat{\beta}_j) = \sigma^2_{\epsilon}C_{jj}\)</span></li>
-<li>When there are near-linear dependencies, the <span class="math inline">\(C_{jj}\)</span> increases and thus <span class="math inline">\(Var(\hat{\beta}_j)\)</span> .</li>
-<li>The <span class="math inline">\(C_{jj}\)</span> is associated with how much <span class="math inline">\(Var(\hat{\beta}_j)\)</span> is inflated due to <span class="math inline">\(x_j\)</span> dependencies with other predictors</li>
+<li>When there are near-linear dependencies, <span class="math inline">\(C_{jj}\)</span> increases and thus <span class="math inline">\(Var(\hat{\beta}_j)\)</span> becomes inflated</li>
+<li><span class="math inline">\(C_{jj}\)</span> is associated with how much <span class="math inline">\(Var(\hat{\beta}_j)\)</span> is inflated due to <span class="math inline">\(x_j\)</span> dependencies with other predictors</li>
 </ul>
+</div>
 </section>
 <section id="variance-inflation-factor" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="variance-inflation-factor">Variance inflation factor</h2>
@@ -647,6 +649,7 @@ window.Quarto = {
 VIF_{j} = \frac{1}{1 - R^2_j}
 \]</span></p>
 <p>where <span class="math inline">\(R^2_j\)</span> is the proportion of variation in <span class="math inline">\(x_j\)</span> that is explained by a linear combination of all the other predictors</p>
+<p>. . .</p>
 <ul>
 <li>When the response and predictors are scaled in a particular way, <span class="math inline">\(C_{jj} = VIF_{j}\)</span>. <a href="variance-inflation-factors.html">Click here</a> to see how.</li>
 </ul>
@@ -654,7 +657,7 @@ VIF_{j} = \frac{1}{1 - R^2_j}
 <section id="detecting-multicollinearity-1" class="level2">
 <h2 class="anchored" data-anchor-id="detecting-multicollinearity-1">Detecting multicollinearity</h2>
 <ul>
-<li><p>Common practice uses threshold <span class="math inline">\(VIF &gt; 10\)</span> as indication of concerning multicollinearity</p></li>
+<li><p>Common practice uses threshold <span class="math inline">\(VIF &gt; 10\)</span> as indication of concerning multicollinearity (some say VIF &gt; 5 is worth investigation)</p></li>
 <li><p>Variables with similar values of VIF are typically the ones correlated with each other</p></li>
 <li><p>Use the <code>vif()</code> function in the <strong>rms</strong> R package to calculate VIF</p></li>
 </ul>

@@ -3405,21 +3405,21 @@
     "href": "slides/13-multicollinearity.html#detecting-multicollinearity",
     "title": "Multicollinearity",
     "section": "Detecting multicollinearity",
-    "text": "Detecting multicollinearity\n\nRecall \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2_{\\epsilon}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\)\nLet \\(\\mathbf{C} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\). Then \\(Var(\\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{jj}\\)\nWhen there are near-linear dependencies, the \\(C_{jj}\\) increases and thus \\(Var(\\hat{\\beta}_j)\\) .\nThe \\(C_{jj}\\) is associated with how much \\(Var(\\hat{\\beta}_j)\\) is inflated due to \\(x_j\\) dependencies with other predictors"
+    "text": "Detecting multicollinearity\n\n\nRecall \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2_{\\epsilon}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\)\nLet \\(\\mathbf{C} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\). Then \\(Var(\\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{jj}\\)\nWhen there are near-linear dependencies, \\(C_{jj}\\) increases and thus \\(Var(\\hat{\\beta}_j)\\) becomes inflated\n\\(C_{jj}\\) is associated with how much \\(Var(\\hat{\\beta}_j)\\) is inflated due to \\(x_j\\) dependencies with other predictors"
   },
   {
     "objectID": "slides/13-multicollinearity.html#variance-inflation-factor",
     "href": "slides/13-multicollinearity.html#variance-inflation-factor",
     "title": "Multicollinearity",
     "section": "Variance inflation factor",
-    "text": "Variance inflation factor\n\nThe variance inflation factor (VIF) measures how much the linear dependencies impact the variance of the predictors\n\n\\[\nVIF_{j} = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors\n\nWhen the response and predictors are scaled in a particular way, \\(C_{jj} = VIF_{j}\\). Click here to see how."
+    "text": "Variance inflation factor\n\nThe variance inflation factor (VIF) measures how much the linear dependencies impact the variance of the predictors\n\n\\[\nVIF_{j} = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors\n\n\nWhen the response and predictors are scaled in a particular way, \\(C_{jj} = VIF_{j}\\). Click here to see how."
   },
   {
     "objectID": "slides/13-multicollinearity.html#detecting-multicollinearity-1",
     "href": "slides/13-multicollinearity.html#detecting-multicollinearity-1",
     "title": "Multicollinearity",
     "section": "Detecting multicollinearity",
-    "text": "Detecting multicollinearity\n\nCommon practice uses threshold \\(VIF &gt; 10\\) as indication of concerning multicollinearity\nVariables with similar values of VIF are typically the ones correlated with each other\nUse the vif() function in the rms R package to calculate VIF\n\n\nlibrary(rms)\n\ntrail_fit &lt;- lm(volume ~ hightemp + avgtemp + precip, data = rail_trail)\n\nvif(trail_fit)\n\nhightemp  avgtemp   precip \n7.161882 7.597154 1.193431"
+    "text": "Detecting multicollinearity\n\nCommon practice uses threshold \\(VIF &gt; 10\\) as indication of concerning multicollinearity (some say VIF &gt; 5 is worth investigation)\nVariables with similar values of VIF are typically the ones correlated with each other\nUse the vif() function in the rms R package to calculate VIF\n\n\nlibrary(rms)\n\ntrail_fit &lt;- lm(volume ~ hightemp + avgtemp + precip, data = rail_trail)\n\nvif(trail_fit)\n\nhightemp  avgtemp   precip \n7.161882 7.597154 1.193431"
   },
   {
     "objectID": "slides/13-multicollinearity.html#how-multicollinearity-impacts-model",
@@ -3538,21 +3538,21 @@
     "href": "slides/13-multicollinearity-notes.html#detecting-multicollinearity",
     "title": "Multicollinearity",
     "section": "Detecting multicollinearity",
-    "text": "Detecting multicollinearity\n\nRecall \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2_{\\epsilon}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\)\nLet \\(\\mathbf{C} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\). Then \\(Var(\\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{jj}\\)\nWhen there are near-linear dependencies, the \\(C_{jj}\\) increases and thus \\(Var(\\hat{\\beta}_j)\\) .\nThe \\(C_{jj}\\) is associated with how much \\(Var(\\hat{\\beta}_j)\\) is inflated due to \\(x_j\\) dependencies with other predictors"
+    "text": "Detecting multicollinearity\n\n\nRecall \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\sigma^2_{\\epsilon}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\)\nLet \\(\\mathbf{C} = (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\). Then \\(Var(\\hat{\\beta}_j) = \\sigma^2_{\\epsilon}C_{jj}\\)\nWhen there are near-linear dependencies, \\(C_{jj}\\) increases and thus \\(Var(\\hat{\\beta}_j)\\) becomes inflated\n\\(C_{jj}\\) is associated with how much \\(Var(\\hat{\\beta}_j)\\) is inflated due to \\(x_j\\) dependencies with other predictors"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#variance-inflation-factor",
     "href": "slides/13-multicollinearity-notes.html#variance-inflation-factor",
     "title": "Multicollinearity",
     "section": "Variance inflation factor",
-    "text": "Variance inflation factor\n\nThe variance inflation factor (VIF) measures how much the linear dependencies impact the variance of the predictors\n\n\\[\nVIF_{j} = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors\n\nWhen the response and predictors are scaled in a particular way, \\(C_{jj} = VIF_{j}\\). Click here to see how."
+    "text": "Variance inflation factor\n\nThe variance inflation factor (VIF) measures how much the linear dependencies impact the variance of the predictors\n\n\\[\nVIF_{j} = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors\n. . .\n\nWhen the response and predictors are scaled in a particular way, \\(C_{jj} = VIF_{j}\\). Click here to see how."
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#detecting-multicollinearity-1",
     "href": "slides/13-multicollinearity-notes.html#detecting-multicollinearity-1",
     "title": "Multicollinearity",
     "section": "Detecting multicollinearity",
-    "text": "Detecting multicollinearity\n\nCommon practice uses threshold \\(VIF &gt; 10\\) as indication of concerning multicollinearity\nVariables with similar values of VIF are typically the ones correlated with each other\nUse the vif() function in the rms R package to calculate VIF\n\n\nlibrary(rms)\n\ntrail_fit &lt;- lm(volume ~ hightemp + avgtemp + precip, data = rail_trail)\n\nvif(trail_fit)\n\nhightemp  avgtemp   precip \n7.161882 7.597154 1.193431"
+    "text": "Detecting multicollinearity\n\nCommon practice uses threshold \\(VIF &gt; 10\\) as indication of concerning multicollinearity (some say VIF &gt; 5 is worth investigation)\nVariables with similar values of VIF are typically the ones correlated with each other\nUse the vif() function in the rms R package to calculate VIF\n\n\nlibrary(rms)\n\ntrail_fit &lt;- lm(volume ~ hightemp + avgtemp + precip, data = rail_trail)\n\nvif(trail_fit)\n\nhightemp  avgtemp   precip \n7.161882 7.597154 1.193431"
   },
   {
     "objectID": "slides/13-multicollinearity-notes.html#how-multicollinearity-impacts-model",
