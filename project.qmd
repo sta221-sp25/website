@@ -186,11 +186,11 @@ This section includes the following:
 
 -   Description of the data set and key variables.
 
--   Exploratory data analysis of the response variable and key predictor variables.
+-   Exploratory data analysis of the response variable and key predictor variables. This includes visualizations, summary statistics, and narrative
 
     -   Univariate EDA of the response and key predictor variables.
     -   Bivariate EDA of the response and key predictor variables
-    -   Potential interaction effects.
+    -   Potential interaction effects
 
 ### Submission
 

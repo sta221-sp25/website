@@ -1,12 +1,12 @@
 ---
 title: "Lab 05"
 subtitle: "Expanding multiple linear regression"
-date: "2024-11-04"
+date: "2025-02-28"
 date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 221 - Fall 2024](https://sta221-fa24.netlify.app)"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
@@ -29,37 +29,35 @@ bibliography: references.bib
 
 # Welcome
 
-## Goals
+## Today's lab
 
--   Review AE 06
--   Looking ahead - project presentations
+-   Project
+-   Mid-semester survey
 -   Lab 05: Expanding multiple linear regression
 
-## AE 06
+## Project 
 
-::: appex
-📋 [sta221-fa24.netlify.app/ae/ab-06-prob-odds](https://sta221-fa24.netlify.app/ae/ab-06-prob-odds)
-:::
+-   Feedback on your project proposal is posted as an Issue in your project repo
 
--   Explore the relationship between performance rating and likelihood of promotion
+-   Please let your lab TA know if you have any questions
 
--   We will review Exercises 4 and 5
+-   Next milestone: [Exploratory Data Analysis](https://sta221-sp25.netlify.app/project#eda) due March 20
 
-    -   Responses on [Google Slide](https://docs.google.com/presentation/d/1GQWIYYnJY1zRg_iukcZMnTXWlwuq9k3DoRE8GrsyuF4/edit?usp=sharing)
+    -   Time to work on it in next week's lab
 
-## Next week's lab: Project Presentations
+## Mid-semester feedback
 
--   5 - 8 minute presentation about your project
+-   **Purpose**: To give the teaching team feedback on what is working well (or not as well) in helping you learn the course content
 
-    -   Introduce subject matter and research question
+-   The feedback is **anonymous** and will not be graded
 
-    -   Highlights from exploratory data analysis
+-   It will be available until Sunday, March 2 at 11:59pm
 
-    -   Modeling strategy / initial modeling (if available)
+    -   Please take a few minutes to fill it out during lab today
 
-    -   Any questions you'd like to get feedback on
+**We (the teaching team) appreciate your feedback!**
 
-See [project instructions](https://sta221-fa24.netlify.app/project#presentation) for more detail.
+🔗 <https://duke.qualtrics.com/jfe/form/SV_88lXoqudX60C9cq>
 
 ## Lab 05: Expanding multiple linear regression
 
@@ -69,7 +67,7 @@ This lab focuses on
 
 -   evaluating model diagnostics and conditions.
 
-🔗 <https://sta221-fa24.netlify.app/labs/lab-05>
+🔗 <https://sta221-sp25.netlify.app/labs/lab-05>
 
 ## Reminder: Tips for working on a team
 
