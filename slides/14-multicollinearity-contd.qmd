@@ -1,0 +1,165 @@
+---
+title: "Multicollinearity cont'd"
+author: "Prof. Maria Tackett"
+date: "2025-03-04"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 14-multicollinearity-contd-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Announcements
+
+-   Exam corrections (optional) due TODAY at 11:59pm
+
+    -   See [assignment on Canvas](https://canvas.duke.edu/courses/51767/assignments/220984)
+
+-   Team Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)
+
+-   Next project milestone: Exploratory data analysis due March 20
+
+    -   Work on it in lab March 7
+
+-   DataFest: April 4 - 6 - <https://dukestatsci.github.io/datafest/>
+
+## Computing set up
+
+```{r}
+#| echo: true
+#| message: false
+
+# load packages
+library(tidyverse)  
+library(tidymodels)  
+library(knitr)       
+library(patchwork)
+library(GGally)   # for pairwise plot matrix
+library(corrplot) # for correlation matrix
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+```
+
+## Topics
+
+-   Multicollinearity
+
+    -   Recap
+
+    -   How to deal with issues of multicollinearity
+
+## Data: Trail users {.midi}
+
+-   The Pioneer Valley Planning Commission (PVPC) collected data at the beginning a trail in Florence, MA for ninety days from April 5, 2005 to November 15, 2005.
+-   Data collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+rail_trail <- read_csv(here::here("slides", "data/rail_trail.csv"))
+rail_trail |> slice(1:5)
+```
+
+Source: [Pioneer Valley Planning Commission](http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf) via the **mosaicData** package.
+
+## Variables
+
+**Outcome**:
+
+-   `volume` estimated number of trail users that day (number of breaks recorded)
+
+**Predictors**
+
+-   `hightemp` daily high temperature (in degrees Fahrenheit)
+
+-   `avgtemp` average of daily low and daily high temperature (in degrees Fahrenheit)
+
+-   `season` one of “Fall”, “Spring”, or “Summer”
+
+-   `precip` measure of precipitation (in inches)
+
+## EDA: Relationship between predictors {.midi}
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+rail_trail |>
+  select(hightemp, avgtemp, season, precip) |>
+  ggpairs()
+```
+
+## Multicollinearity {.midi}
+
+-   **Multicollinearity**: near-linear dependence among predictors
+
+-   The **variance inflation factor (VIF)** measures how much the linear dependencies impact the variance of the predictors
+
+$$
+VIF_{j} = \frac{1}{1 - R^2_j}
+$$
+
+where $R^2_j$ is the proportion of variation in $x_j$ that is explained by a linear combination of all the other predictors
+
+-   Thresholds:
+    -   VIF \> 10: concerning multicollinearity
+    -   VIF \> 5: potentially worth further investigation
+
+## How multicollinearity impacts model {.midi}
+
+-   Large variance for the model coefficients that are collinear
+
+    -   Different combinations of coefficient estimates produce equally good model fits
+
+-   Unreliable statistical inference results
+
+    -   May conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response
+
+-   Interpretation of coefficient is no longer "holding all other variables constant", since this would be impossible for correlated predictors
+
+## Dealing with multicollinearity
+
+::: incremental
+-   Collect more data (often not feasible given practical constraints)
+
+-   Redefine the correlated predictors to keep the information from predictors but eliminate collinearity
+
+    -   e.g., if $x_1, x_2, x_3$ are correlated, use a new variable $(x_1 + x_2) / x_3$ in the model
+
+-   For categorical predictors, avoid using levels with very few observations as the baseline
+
+-   Remove one of the correlated variables
+
+    -   Be careful about substantially reducing predictive power of the model
+:::
+
+# Application exercise
+
+::: appex
+📋 [sta221-sp25.netlify.app/ae/ae-04-multicollinearity.html](../ae/ae-04-multicollinearity.html)
+
+Part 2
+:::
