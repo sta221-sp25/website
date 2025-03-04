@@ -6818,7 +6818,7 @@
     "href": "slides/14-variable-transformations-notes.html#model-interpretation",
     "title": "Variable transformations",
     "section": "Model interpretation",
-    "text": "Model interpretation\n\\[\\begin{align}\\hat{y_i} &=  e^{\\mathbf{x}_i\\hat{\\boldsymbol{\\beta}}} \\\\ & = e^{(\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{i1} + \\dots + \\hat{\\beta}_Px_{ip})} \\\\\n&= e^{\\hat{\\beta}_0}e^{\\hat{\\beta}_1x_{i1}}\\dots e^{\\hat{\\beta}_px_{ip}}\\end{align}\\]\n. . .\n\nIntercept: When \\(x_{i1} = \\dots = x_{ip} =0\\), \\(y_i\\) is expected to be \\(e^{\\hat{\\beta}_0}\\)\nCoefficient of \\(X_j\\): For every one unit increase in \\(x_{ij}\\), \\(y_{i}\\) is expected to multiply by a factor of \\(e^{\\hat{\\beta}_j}\\), holding all else constant."
+    "text": "Model interpretation\n\\[\\begin{align}\\hat{y_i} &=  e^{\\mathbf{x}_i\\hat{\\boldsymbol{\\beta}}} \\\\ & = e^{(\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{i1} + \\dots + \\hat{\\beta}_px_{ip})} \\\\\n&= e^{\\hat{\\beta}_0}e^{\\hat{\\beta}_1x_{i1}}\\dots e^{\\hat{\\beta}_px_{ip}}\\end{align}\\]\n. . .\n\nIntercept: When \\(x_{i1} = \\dots = x_{ip} =0\\), \\(y_i\\) is expected to be \\(e^{\\hat{\\beta}_0}\\)\nCoefficient of \\(X_j\\): For every one unit increase in \\(x_{ij}\\), \\(y_{i}\\) is expected to multiply by a factor of \\(e^{\\hat{\\beta}_j}\\), holding all else constant."
   },
   {
     "objectID": "slides/14-variable-transformations-notes.html#model-with-logy",
@@ -7014,7 +7014,7 @@
     "href": "slides/14-variable-transformations.html#model-interpretation",
     "title": "Variable transformations",
     "section": "Model interpretation",
-    "text": "Model interpretation\n\\[\\begin{align}\\hat{y_i} &=  e^{\\mathbf{x}_i\\hat{\\boldsymbol{\\beta}}} \\\\ & = e^{(\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{i1} + \\dots + \\hat{\\beta}_Px_{ip})} \\\\\n&= e^{\\hat{\\beta}_0}e^{\\hat{\\beta}_1x_{i1}}\\dots e^{\\hat{\\beta}_px_{ip}}\\end{align}\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = x_{ip} =0\\), \\(y_i\\) is expected to be \\(e^{\\hat{\\beta}_0}\\)\nCoefficient of \\(X_j\\): For every one unit increase in \\(x_{ij}\\), \\(y_{i}\\) is expected to multiply by a factor of \\(e^{\\hat{\\beta}_j}\\), holding all else constant."
+    "text": "Model interpretation\n\\[\\begin{align}\\hat{y_i} &=  e^{\\mathbf{x}_i\\hat{\\boldsymbol{\\beta}}} \\\\ & = e^{(\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{i1} + \\dots + \\hat{\\beta}_px_{ip})} \\\\\n&= e^{\\hat{\\beta}_0}e^{\\hat{\\beta}_1x_{i1}}\\dots e^{\\hat{\\beta}_px_{ip}}\\end{align}\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = x_{ip} =0\\), \\(y_i\\) is expected to be \\(e^{\\hat{\\beta}_0}\\)\nCoefficient of \\(X_j\\): For every one unit increase in \\(x_{ij}\\), \\(y_{i}\\) is expected to multiply by a factor of \\(e^{\\hat{\\beta}_j}\\), holding all else constant."
   },
   {
     "objectID": "slides/14-variable-transformations.html#model-with-logy",

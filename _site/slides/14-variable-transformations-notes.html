@@ -686,12 +686,12 @@ window.Quarto = {
 </section>
 <section id="model-interpretation" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="model-interpretation">Model interpretation</h2>
-<p><span class="math display">\[\begin{align}\hat{y_i} &amp;=  e^{\mathbf{x}_i\hat{\boldsymbol{\beta}}} \\ &amp; = e^{(\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_Px_{ip})} \\
+<p><span class="math display">\[\begin{align}\hat{y_i} &amp;=  e^{\mathbf{x}_i\hat{\boldsymbol{\beta}}} \\ &amp; = e^{(\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_px_{ip})} \\
 &amp;= e^{\hat{\beta}_0}e^{\hat{\beta}_1x_{i1}}\dots e^{\hat{\beta}_px_{ip}}\end{align}\]</span></p>
 <p>. . .</p>
 <ul>
 <li><p><strong>Intercept</strong>: When <span class="math inline">\(x_{i1} = \dots = x_{ip} =0\)</span>, <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(e^{\hat{\beta}_0}\)</span></p></li>
-<li><p><strong>Coefficient of <span class="math inline">\(X_j\)</span>:</strong> For every one unit increase in <span class="math inline">\(x_{ij}\)</span>, <span class="math inline">\(y_{i}\)</span> is expected to multiply by a factor of <span class="math inline">\(e^{\hat{\beta}_j}\)</span>, holding all else constant.</p></li>
+<li><p><strong>Coefficient of</strong> <span class="math inline">\(X_j\)</span>: For every one unit increase in <span class="math inline">\(x_{ij}\)</span>, <span class="math inline">\(y_{i}\)</span> is expected to multiply by a factor of <span class="math inline">\(e^{\hat{\beta}_j}\)</span>, holding all else constant.</p></li>
 </ul>
 </section>
 <section id="model-with-logy" class="level2">

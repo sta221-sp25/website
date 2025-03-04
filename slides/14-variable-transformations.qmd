@@ -76,9 +76,7 @@ There are `r nrow(health_data)` countries (observations) in the data set.
 [Click here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450) for the original research paper.
 :::
 
-
-
-## Variables 
+## Variables
 
 -   `life_exp`: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
 
@@ -106,8 +104,7 @@ ggplot(data = health_data, aes(x = health_expenditure)) +
 
 ## Exploratory data analysis
 
-**The goal is to use income inequality and education to understand variability in health expenditure** 
-
+**The goal is to use income inequality and education to understand variability in health expenditure**
 
 ```{r}
 #| echo: false
@@ -133,6 +130,7 @@ p1 + p2 + plot_annotation(
 health_fit <- lm(health_expenditure ~ income_inequality + education, 
                      data = health_data)
 ```
+
 ```{r}
 #| echo: false
 
@@ -166,7 +164,7 @@ What model assumption(s) appear to be violated?
 p1 <- ggplot(data=health_data, aes(x=income_inequality, y=health_expenditure)) +
   geom_point(alpha = 0.7) + 
   geom_smooth(method = "lm") +
-  labs(x = "Original")
+  labs(title = "Original")
 
 p2 <- ggplot(data=health_data, aes(x=income_inequality, y=log(health_expenditure))) +
   geom_point(alpha = 0.7) + 
@@ -184,7 +182,8 @@ p3 <- ggplot(data=health_data, aes(x=log(income_inequality), y=health_expenditur
 p4 <- ggplot(data=health_data, aes(x=log(income_inequality), y=log(health_expenditure))) +
   geom_point(alpha = 0.7) + 
   geom_smooth(method = "lm") + 
-    labs(x = "log(income_inequality)", y = "log(health_expenditure)")
+    labs(x = "log(income_inequality)", y = "log(health_expenditure)",
+         title = "Log-transformed response and predictor")
   
 (p1 + p2) / (p3 + p4)
 ```
@@ -234,18 +233,16 @@ $$
 \end{aligned}
 $$
 
-
-
 ## Model interpretation {.midi}
 
-$$\begin{align}\hat{y_i} &=  e^{\mathbf{x}_i\hat{\boldsymbol{\beta}}} \\ & = e^{(\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_Px_{ip})} \\ 
+$$\begin{align}\hat{y_i} &=  e^{\mathbf{x}_i\hat{\boldsymbol{\beta}}} \\ & = e^{(\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_px_{ip})} \\ 
 &= e^{\hat{\beta}_0}e^{\hat{\beta}_1x_{i1}}\dots e^{\hat{\beta}_px_{ip}}\end{align}$$
 
 . . .
 
 -   **Intercept**: When $x_{i1} = \dots = x_{ip} =0$, $y_i$ is expected to be $e^{\hat{\beta}_0}$
 
--   **Coefficient of $X_j$:** For every one unit increase in $x_{ij}$, $y_{i}$ is expected to multiply by a factor of $e^{\hat{\beta}_j}$, holding all else constant.
+-   **Coefficient of** $X_j$: For every one unit increase in $x_{ij}$, $y_{i}$ is expected to multiply by a factor of $e^{\hat{\beta}_j}$, holding all else constant.
 
 ## Model with log(Y)
 
@@ -295,7 +292,7 @@ resid_orig + resid_logy
 
 # Log transformation on a predictor variable
 
-## Variability in life expectancy 
+## Variability in life expectancy
 
 Now let's consider a model using a country's healthcare expenditure, income inequality, and education to predict its life expectancy
 
@@ -322,7 +319,7 @@ p3 <- ggplot(data = health_data, aes(x = education, y = life_exp)) +
 p1 + p2 + p3
 ```
 
-## Original model 
+## Original model
 
 ```{r}
 life_exp_fit <- lm(life_exp ~ health_expenditure + income_inequality + education, 
@@ -351,7 +348,7 @@ life_exp_resid <- ggplot(data = life_exp_aug, aes(x = .fitted, y = .resid)) +
 life_exp_resid
 ```
 
-## Residuals vs. predictors 
+## Residuals vs. predictors
 
 ```{r}
 #| echo: false
@@ -421,7 +418,7 @@ such that $\mathbf{X}$ has a column for $\log(X_j)$ .
 
 . . .
 
-The estimated regression model is 
+The estimated regression model is
 
 $$
 \begin{aligned}
