@@ -5870,7 +5870,7 @@
     "href": "index.html",
     "title": "STA 221 - Regression Analysis: Theory and Applications",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nGeometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Types of predictors cont'd + Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab: Project research topics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject topics due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject propsal due\n\n\n\nTh\nFeb 27\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Multicollinearity cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due, Exam 01 corrections due, Team feedback due\n\n\n\n\n\n\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due, Project EDA due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period\nMo\nApr 28\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWritten report due\n\n\n\nWe\nApr 30\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject highlights, Repo organzation due\n\n\n\nTh\nMay 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject survey due",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 221!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 10\nLab 00: Welcome + Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nTu\nJan 14\nSimple linear regression (SLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSLR: Model assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 17\nLab 01: Computing + linear algebra review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nTu\nJan 21\nSLR: Matrix representation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n\nTh\nJan 23\nGeometric interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nJan 24\nLab 02: Linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nTu\nJan 28\nMLR: Types of predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n\nTh\nJan 30\nMLR: Types of predictors cont'd + Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statstics experience assigned\n\n\n\nF\nJan 31\nLab 03: Multiple linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nTu\nFeb 4\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n\nTh\nFeb 6\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 7\nLab: Project research topics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nTu\nFeb 11\nInference for regression cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject topics due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nF\nFeb 14\nLab 04: Exam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo Lecture: Take-home exam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 21\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nTu\nFeb 25\nMLR: Model conditions + diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject propsal due\n\n\n\nTh\nFeb 27\nMLR: Multicollinearity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nFeb 28\nLab 05: Expanding multiple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nTu\nMar 4\nMLR: Multicollinearity cont'd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due, Exam 01 corrections due, Team feedback due\n\n\n\n\n\n\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nMLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 7\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 14\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nTu\nMar 18\nMaximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 20\nProperties of estimators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due, Project EDA due\n\n\n\nF\nMar 21\nLab 06: Maximum likelihood estimation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nTu\nMar 25\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n\nTh\nMar 27\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nMar 28\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nTu\nApr 1\nLR: Prediction + assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 3\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 4\nLab 07: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nTu\nApr 8\nLogistic regression Inference + Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 07 due\n\n\n\nTh\nApr 10\nLogistic regression overview\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nF\nApr 11\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nApr 18\nProject work day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics experience due\n\n\nExam period\nMo\nApr 28\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWritten report due\n\n\n\nWe\nApr 30\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject highlights, Repo organzation due\n\n\n\nTh\nMay 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject survey due",
     "crumbs": [
       "Schedule"
     ]
@@ -6718,149 +6718,408 @@
   {
     "objectID": "slides/14-variable-transformations-notes.html",
     "href": "slides/14-variable-transformations-notes.html",
-    "title": "Multicollinearity cont’d",
+    "title": "Variable transformations",
     "section": "",
-    "text": "Exam corrections (optional) due TODAY at 11:59pm\n\nSee assignment on Canvas\n\nTeam Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)\nNext project milestone: Exploratory data analysis due March 20\n\nWork on it in lab March 7\n\nDataFest: April 4 - 6 - https://dukestatsci.github.io/datafest/"
-  },
-  {
-    "objectID": "slides/14-variable-transformations-notes.html#announcements",
-    "href": "slides/14-variable-transformations-notes.html#announcements",
-    "title": "Multicollinearity cont’d",
-    "section": "",
-    "text": "Exam corrections (optional) due TODAY at 11:59pm\n\nSee assignment on Canvas\n\nTeam Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)\nNext project milestone: Exploratory data analysis due March 20\n\nWork on it in lab March 7\n\nDataFest: April 4 - 6 - https://dukestatsci.github.io/datafest/"
+    "text": "# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
     "objectID": "slides/14-variable-transformations-notes.html#computing-set-up",
     "href": "slides/14-variable-transformations-notes.html#computing-set-up",
-    "title": "Multicollinearity cont’d",
-    "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\nlibrary(GGally)   # for pairwise plot matrix\nlibrary(corrplot) # for correlation matrix\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "title": "Variable transformations",
+    "section": "",
+    "text": "# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
     "objectID": "slides/14-variable-transformations-notes.html#topics",
     "href": "slides/14-variable-transformations-notes.html#topics",
-    "title": "Multicollinearity cont’d",
+    "title": "Variable transformations",
     "section": "Topics",
-    "text": "Topics\n\nMulticollinearity\n\nRecap\nHow to deal with issues of multicollinearity"
+    "text": "Topics\n\nLog-transformation on the response\nLog-transformation on the predictor"
   },
   {
-    "objectID": "slides/14-variable-transformations-notes.html#data-trail-users",
-    "href": "slides/14-variable-transformations-notes.html#data-trail-users",
-    "title": "Multicollinearity cont’d",
-    "section": "Data: Trail users",
-    "text": "Data: Trail users\n\nThe Pioneer Valley Planning Commission (PVPC) collected data at the beginning a trail in Florence, MA for ninety days from April 5, 2005 to November 15, 2005.\nData collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\n\n\n\n# A tibble: 5 × 7\n  volume hightemp avgtemp season cloudcover precip day_type\n   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n1    501       83    66.5 Summer       7.60  0     Weekday \n2    419       73    61   Summer       6.30  0.290 Weekday \n3    397       74    63   Spring       7.5   0.320 Weekday \n4    385       95    78   Summer       2.60  0     Weekend \n5    200       44    48   Spring      10     0.140 Weekday \n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package."
+    "objectID": "slides/14-variable-transformations-notes.html#data-life-expectancy-in-140-countries",
+    "href": "slides/14-variable-transformations-notes.html#data-life-expectancy-in-140-countries",
+    "title": "Variable transformations",
+    "section": "Data: Life expectancy in 140 countries",
+    "text": "Data: Life expectancy in 140 countries\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\n\nClick here for the original research paper."
   },
   {
     "objectID": "slides/14-variable-transformations-notes.html#variables",
     "href": "slides/14-variable-transformations-notes.html#variables",
-    "title": "Multicollinearity cont’d",
+    "title": "Variable transformations",
     "section": "Variables",
-    "text": "Variables\nOutcome:\n\nvolume estimated number of trail users that day (number of breaks recorded)\n\nPredictors\n\nhightemp daily high temperature (in degrees Fahrenheit)\navgtemp average of daily low and daily high temperature (in degrees Fahrenheit)\nseason one of “Fall”, “Spring”, or “Summer”\nprecip measure of precipitation (in inches)"
+    "text": "Variables\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from Zarulli et al. (2021))"
   },
   {
-    "objectID": "slides/14-variable-transformations-notes.html#eda-relationship-between-predictors",
-    "href": "slides/14-variable-transformations-notes.html#eda-relationship-between-predictors",
-    "title": "Multicollinearity cont’d",
-    "section": "EDA: Relationship between predictors",
-    "text": "EDA: Relationship between predictors"
+    "objectID": "slides/14-variable-transformations-notes.html#variables-1",
+    "href": "slides/14-variable-transformations-notes.html#variables-1",
+    "title": "Variable transformations",
+    "section": "Variables",
+    "text": "Variables\n\neducation: Indicator of whether a country’s education index is above (High) or below (Low) the median index for the 140 countries in the data set.\n\nEducation index: Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima.\n\nhealth_expend: Per capita current spending on on healthcare good sand services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar (from the World Health Organization)"
   },
   {
-    "objectID": "slides/14-variable-transformations-notes.html#multicollinearity",
-    "href": "slides/14-variable-transformations-notes.html#multicollinearity",
-    "title": "Multicollinearity cont’d",
-    "section": "Multicollinearity",
-    "text": "Multicollinearity\n\nMulticollinearity: near-linear dependence among predictors\nThe variance inflation factor (VIF) measures how much the linear dependencies impact the variance of the predictors\n\n\\[\nVIF_{j} = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors\n\nThresholds:\n\nVIF &gt; 10: concerning multicollinearity\nVIF &gt; 5: potentially worth further investigation"
+    "objectID": "slides/14-variable-transformations-notes.html#exploratory-data-analysis",
+    "href": "slides/14-variable-transformations-notes.html#exploratory-data-analysis",
+    "title": "Variable transformations",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis"
   },
   {
-    "objectID": "slides/14-variable-transformations-notes.html#how-multicollinearity-impacts-model",
-    "href": "slides/14-variable-transformations-notes.html#how-multicollinearity-impacts-model",
-    "title": "Multicollinearity cont’d",
-    "section": "How multicollinearity impacts model",
-    "text": "How multicollinearity impacts model\n\nLarge variance for the model coefficients that are collinear\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
+    "objectID": "slides/14-variable-transformations-notes.html#exploratory-data-analysis-1",
+    "href": "slides/14-variable-transformations-notes.html#exploratory-data-analysis-1",
+    "title": "Variable transformations",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\nThe goal is to use income inequality and education to understand variability in health expenditure"
   },
   {
-    "objectID": "slides/14-variable-transformations-notes.html#dealing-with-multicollinearity",
-    "href": "slides/14-variable-transformations-notes.html#dealing-with-multicollinearity",
-    "title": "Multicollinearity cont’d",
-    "section": "Dealing with multicollinearity",
-    "text": "Dealing with multicollinearity\n\n\nCollect more data (often not feasible given practical constraints)\nRedefine the correlated predictors to keep the information from predictors but eliminate collinearity\n\ne.g., if \\(x_1, x_2, x_3\\) are correlated, use a new variable \\((x_1 + x_2) / x_3\\) in the model\n\nFor categorical predictors, avoid using levels with very few observations as the baseline\nRemove one of the correlated variables\n\nBe careful about substantially reducing predictive power of the model"
+    "objectID": "slides/14-variable-transformations-notes.html#original-model",
+    "href": "slides/14-variable-transformations-notes.html#original-model",
+    "title": "Variable transformations",
+    "section": "Original model",
+    "text": "Original model\n\nhealth_fit &lt;- lm(health_expenditure ~ income_inequality + education, \n                     data = health_data)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n2070.599\n534.653\n3.873\n0.000\n\n\nincome_inequality\n-64.346\n18.626\n-3.455\n0.001\n\n\neducationHigh\n1039.298\n359.736\n2.889\n0.004"
   },
   {
-    "objectID": "slides/14-variable-transformations-notes.html#references",
-    "href": "slides/14-variable-transformations-notes.html#references",
-    "title": "Multicollinearity cont’d",
-    "section": "References",
-    "text": "References"
+    "objectID": "slides/14-variable-transformations-notes.html#original-model-residuals-vs.-fitted",
+    "href": "slides/14-variable-transformations-notes.html#original-model-residuals-vs.-fitted",
+    "title": "Variable transformations",
+    "section": "Original model: Residuals vs. fitted",
+    "text": "Original model: Residuals vs. fitted\n\n\n\n\n\n\n\n\n\n\nWhat model assumption(s) appear to be violated?"
   },
   {
-    "objectID": "slides/14-variable-transformations.html#announcements",
-    "href": "slides/14-variable-transformations.html#announcements",
-    "title": "Multicollinearity cont’d",
-    "section": "Announcements",
-    "text": "Announcements\n\nExam corrections (optional) due TODAY at 11:59pm\n\nSee assignment on Canvas\n\nTeam Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)\nNext project milestone: Exploratory data analysis due March 20\n\nWork on it in lab March 7\n\nDataFest: April 4 - 6 - https://dukestatsci.github.io/datafest/"
+    "objectID": "slides/14-variable-transformations-notes.html#consider-different-transformations",
+    "href": "slides/14-variable-transformations-notes.html#consider-different-transformations",
+    "title": "Variable transformations",
+    "section": "Consider different transformations…",
+    "text": "Consider different transformations…"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#identifying-a-need-to-transform-y",
+    "href": "slides/14-variable-transformations-notes.html#identifying-a-need-to-transform-y",
+    "title": "Variable transformations",
+    "section": "Identifying a need to transform Y",
+    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#log-transformation-on-y",
+    "href": "slides/14-variable-transformations-notes.html#log-transformation-on-y",
+    "title": "Variable transformations",
+    "section": "Log transformation on \\(Y\\)",
+    "text": "Log transformation on \\(Y\\)\n\nIf we apply a log transformation to the response variable, we want to estimate the parameters for the statistical model\n\n\\[\n\\log(\\mathbf{Y}) = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\quad \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\]\n\nThe regression equation is\n\n\\[\\widehat{\\log(\\mathbf{Y})} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}\\]"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#log-transformation-on-y-1",
+    "href": "slides/14-variable-transformations-notes.html#log-transformation-on-y-1",
+    "title": "Variable transformations",
+    "section": "Log transformation on \\(Y\\)",
+    "text": "Log transformation on \\(Y\\)\nWe fit the model in terms of \\(\\log(\\mathbf{Y})\\) but want to interpret the model in terms of the original variable \\(Y\\) , so we need to write the regression equation in terms of \\(Y\\)\n\\[\n\\begin{aligned}\n&\\widehat{\\log(\\mathbf{Y})} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} \\\\[8pt]\n\\Rightarrow \\quad &\\hat{\\mathbf{Y}} = e^{\\mathbf{X}\\hat{\\boldsymbol{\\beta}}}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#model-interpretation",
+    "href": "slides/14-variable-transformations-notes.html#model-interpretation",
+    "title": "Variable transformations",
+    "section": "Model interpretation",
+    "text": "Model interpretation\n\\[\\begin{align}\\hat{y_i} &=  e^{\\mathbf{x}_i\\hat{\\boldsymbol{\\beta}}} \\\\ & = e^{(\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{i1} + \\dots + \\hat{\\beta}_Px_{ip})} \\\\\n&= e^{\\hat{\\beta}_0}e^{\\hat{\\beta}_1x_{i1}}\\dots e^{\\hat{\\beta}_px_{ip}}\\end{align}\\]\n. . .\n\nIntercept: When \\(x_{i1} = \\dots = x_{ip} =0\\), \\(y_i\\) is expected to be \\(e^{\\hat{\\beta}_0}\\)\nCoefficient of \\(X_j\\): For every one unit increase in \\(x_{ij}\\), \\(y_{i}\\) is expected to multiply by a factor of \\(e^{\\hat{\\beta}_j}\\), holding all else constant."
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#model-with-logy",
+    "href": "slides/14-variable-transformations-notes.html#model-with-logy",
+    "title": "Variable transformations",
+    "section": "Model with log(Y)",
+    "text": "Model with log(Y)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n7.096\n0.324\n21.895\n0\n\n\nincome_inequality\n-0.065\n0.011\n-5.714\n0\n\n\neducationHigh\n1.117\n0.218\n5.121\n0\n\n\n\n\n\n\n\nInterpret each of the following in terms of health expenditure\n\nIntercept\nincome_inequality\neducation"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#model-with-logy-residuals",
+    "href": "slides/14-variable-transformations-notes.html#model-with-logy-residuals",
+    "title": "Variable transformations",
+    "section": "Model with log(Y): Residuals",
+    "text": "Model with log(Y): Residuals"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#compare-residual-plots",
+    "href": "slides/14-variable-transformations-notes.html#compare-residual-plots",
+    "title": "Variable transformations",
+    "section": "Compare residual plots",
+    "text": "Compare residual plots"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#variability-in-life-expectancy",
+    "href": "slides/14-variable-transformations-notes.html#variability-in-life-expectancy",
+    "title": "Variable transformations",
+    "section": "Variability in life expectancy",
+    "text": "Variability in life expectancy\nNow let’s consider a model using a country’s healthcare expenditure, income inequality, and education to predict its life expectancy"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#original-model-1",
+    "href": "slides/14-variable-transformations-notes.html#original-model-1",
+    "title": "Variable transformations",
+    "section": "Original model",
+    "text": "Original model\n\nlife_exp_fit &lt;- lm(life_exp ~ health_expenditure + income_inequality + education, \n                   data = health_data)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n78.575\n1.775\n44.274\n0.000\n\n\nhealth_expenditure\n0.001\n0.000\n4.522\n0.000\n\n\nincome_inequality\n-0.484\n0.061\n-7.900\n0.000\n\n\neducationHigh\n2.020\n1.168\n1.730\n0.086"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#original-model-residuals",
+    "href": "slides/14-variable-transformations-notes.html#original-model-residuals",
+    "title": "Variable transformations",
+    "section": "Original model: Residuals",
+    "text": "Original model: Residuals"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#residuals-vs.-predictors",
+    "href": "slides/14-variable-transformations-notes.html#residuals-vs.-predictors",
+    "title": "Variable transformations",
+    "section": "Residuals vs. predictors",
+    "text": "Residuals vs. predictors\n\n\n\n\n\n\n\n\n\n. . .\n\nThe non-linear relationship is between health expenditure and life expectancy."
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#log-transformation-on-x",
+    "href": "slides/14-variable-transformations-notes.html#log-transformation-on-x",
+    "title": "Variable transformations",
+    "section": "Log Transformation on \\(X\\)",
+    "text": "Log Transformation on \\(X\\)\nTry a transformation on \\(X\\) if the scatterplot in EDA shows non-linear relationship and residuals vs. predictor make parabola"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#model-with-transformation-on-x_j",
+    "href": "slides/14-variable-transformations-notes.html#model-with-transformation-on-x_j",
+    "title": "Variable transformations",
+    "section": "Model with Transformation on \\(X_j\\)",
+    "text": "Model with Transformation on \\(X_j\\)\nIf we fit a model with predictor \\(\\log(X_j)\\), We fit a model of the form:\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\quad \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\]\nsuch that \\(\\mathbf{X}\\) has a column for \\(\\log(X_j)\\) .\n. . .\nThe estimated regression model is\n\\[\n\\begin{aligned}\n\\hat{\\mathbf{Y}} &= \\mathbf{X}\\hat{\\boldsymbol{\\beta}} \\\\[8pt]\n\\Rightarrow \\quad &\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1x_{i1} + \\ldots + \\hat{\\beta}_j\\log(x_{ij}) + \\dots + \\hat{\\beta}_px_{ip}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#model-interpretation-1",
+    "href": "slides/14-variable-transformations-notes.html#model-interpretation-1",
+    "title": "Variable transformations",
+    "section": "Model interpretation",
+    "text": "Model interpretation\n\\[\n\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1x_{i1} + \\ldots + \\hat{\\beta}_j\\log(x_{ij}) + \\dots + \\hat{\\beta}_px_{ip}\n\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = \\log(x_{ij}) = \\dots = x_{ip} = 0\\) , \\(y_i\\) is expected to be \\(\\hat{\\beta}_0\\), on average, holding all else constant.\n\n\\(\\log(x_{ij}) = 0\\) when \\(x_{ij} = 1\\)\n\nCoefficient of \\(X_j\\): When \\(x_{ij}\\) is multiplied by a factor of \\(C\\), \\(y_i\\) is expected to change by \\(\\hat{\\beta}_1\\log(C)\\) units, on average, holding all else constant.\n\nExample: When \\(x_{ij}\\) is multiplied by a factor of 2, \\(y_i\\) is expected to increase by \\(\\hat{\\beta}_1\\log(2)\\) units, on average, holding all else constant."
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#model-with-logx",
+    "href": "slides/14-variable-transformations-notes.html#model-with-logx",
+    "title": "Variable transformations",
+    "section": "Model with log(X)",
+    "text": "Model with log(X)\n\nlife_exp_logx_fit &lt;- lm(life_exp ~ log(health_expenditure) + income_inequality + education, \n                        data = health_data)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n59.151\n3.184\n18.576\n0.000\n\n\nlog(health_expenditure)\n3.092\n0.396\n7.814\n0.000\n\n\nincome_inequality\n-0.362\n0.058\n-6.225\n0.000\n\n\neducationHigh\n-0.168\n1.103\n-0.152\n0.879\n\n\n\n\n\n\n\n\nInterpret the intercept in the context of the data.\nInterpret the effect of health expenditure in the context of the data.\nInterpret the effect of education in the context of the data."
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#model-with-logx-residuals",
+    "href": "slides/14-variable-transformations-notes.html#model-with-logx-residuals",
+    "title": "Variable transformations",
+    "section": "Model with log(X): Residuals",
+    "text": "Model with log(X): Residuals"
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#learn-more",
+    "href": "slides/14-variable-transformations-notes.html#learn-more",
+    "title": "Variable transformations",
+    "section": "Learn more",
+    "text": "Learn more\nSee Log Transformations in Linear Regression for more details about interpreting regression models with log-transformed variables."
+  },
+  {
+    "objectID": "slides/14-variable-transformations-notes.html#recap",
+    "href": "slides/14-variable-transformations-notes.html#recap",
+    "title": "Variable transformations",
+    "section": "Recap",
+    "text": "Recap\n\nLog-transformation on the response\nLog-transformation on the predictor"
   },
   {
     "objectID": "slides/14-variable-transformations.html#computing-set-up",
     "href": "slides/14-variable-transformations.html#computing-set-up",
-    "title": "Multicollinearity cont’d",
+    "title": "Variable transformations",
     "section": "Computing set up",
-    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\nlibrary(GGally)   # for pairwise plot matrix\nlibrary(corrplot) # for correlation matrix\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "text": "Computing set up\n\n# load packages\nlibrary(tidyverse)  \nlibrary(tidymodels)  \nlibrary(knitr)       \nlibrary(patchwork)\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
     "objectID": "slides/14-variable-transformations.html#topics",
     "href": "slides/14-variable-transformations.html#topics",
-    "title": "Multicollinearity cont’d",
+    "title": "Variable transformations",
     "section": "Topics",
-    "text": "Topics\n\nMulticollinearity\n\nRecap\nHow to deal with issues of multicollinearity"
+    "text": "Topics\n\nLog-transformation on the response\nLog-transformation on the predictor"
   },
   {
-    "objectID": "slides/14-variable-transformations.html#data-trail-users",
-    "href": "slides/14-variable-transformations.html#data-trail-users",
-    "title": "Multicollinearity cont’d",
-    "section": "Data: Trail users",
-    "text": "Data: Trail users\n\nThe Pioneer Valley Planning Commission (PVPC) collected data at the beginning a trail in Florence, MA for ninety days from April 5, 2005 to November 15, 2005.\nData collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\n\n\n\n# A tibble: 5 × 7\n  volume hightemp avgtemp season cloudcover precip day_type\n   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n1    501       83    66.5 Summer       7.60  0     Weekday \n2    419       73    61   Summer       6.30  0.290 Weekday \n3    397       74    63   Spring       7.5   0.320 Weekday \n4    385       95    78   Summer       2.60  0     Weekend \n5    200       44    48   Spring      10     0.140 Weekday \n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package."
+    "objectID": "slides/14-variable-transformations.html#data-life-expectancy-in-140-countries",
+    "href": "slides/14-variable-transformations.html#data-life-expectancy-in-140-countries",
+    "title": "Variable transformations",
+    "section": "Data: Life expectancy in 140 countries",
+    "text": "Data: Life expectancy in 140 countries\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\n\nClick here for the original research paper."
   },
   {
     "objectID": "slides/14-variable-transformations.html#variables",
     "href": "slides/14-variable-transformations.html#variables",
-    "title": "Multicollinearity cont’d",
+    "title": "Variable transformations",
     "section": "Variables",
-    "text": "Variables\nOutcome:\n\nvolume estimated number of trail users that day (number of breaks recorded)\n\nPredictors\n\nhightemp daily high temperature (in degrees Fahrenheit)\navgtemp average of daily low and daily high temperature (in degrees Fahrenheit)\nseason one of “Fall”, “Spring”, or “Summer”\nprecip measure of precipitation (in inches)"
+    "text": "Variables\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from Zarulli et al. (2021))"
   },
   {
-    "objectID": "slides/14-variable-transformations.html#eda-relationship-between-predictors",
-    "href": "slides/14-variable-transformations.html#eda-relationship-between-predictors",
-    "title": "Multicollinearity cont’d",
-    "section": "EDA: Relationship between predictors",
-    "text": "EDA: Relationship between predictors"
+    "objectID": "slides/14-variable-transformations.html#variables-1",
+    "href": "slides/14-variable-transformations.html#variables-1",
+    "title": "Variable transformations",
+    "section": "Variables",
+    "text": "Variables\n\neducation: Indicator of whether a country’s education index is above (High) or below (Low) the median index for the 140 countries in the data set.\n\nEducation index: Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima.\n\nhealth_expend: Per capita current spending on on healthcare good sand services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar (from the World Health Organization)"
   },
   {
-    "objectID": "slides/14-variable-transformations.html#multicollinearity",
-    "href": "slides/14-variable-transformations.html#multicollinearity",
-    "title": "Multicollinearity cont’d",
-    "section": "Multicollinearity",
-    "text": "Multicollinearity\n\nMulticollinearity: near-linear dependence among predictors\nThe variance inflation factor (VIF) measures how much the linear dependencies impact the variance of the predictors\n\n\\[\nVIF_{j} = \\frac{1}{1 - R^2_j}\n\\]\nwhere \\(R^2_j\\) is the proportion of variation in \\(x_j\\) that is explained by a linear combination of all the other predictors\n\nThresholds:\n\nVIF &gt; 10: concerning multicollinearity\nVIF &gt; 5: potentially worth further investigation"
+    "objectID": "slides/14-variable-transformations.html#exploratory-data-analysis",
+    "href": "slides/14-variable-transformations.html#exploratory-data-analysis",
+    "title": "Variable transformations",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis"
   },
   {
-    "objectID": "slides/14-variable-transformations.html#how-multicollinearity-impacts-model",
-    "href": "slides/14-variable-transformations.html#how-multicollinearity-impacts-model",
-    "title": "Multicollinearity cont’d",
-    "section": "How multicollinearity impacts model",
-    "text": "How multicollinearity impacts model\n\nLarge variance for the model coefficients that are collinear\n\nDifferent combinations of coefficient estimates produce equally good model fits\n\nUnreliable statistical inference results\n\nMay conclude coefficients are not statistically significant when there is, in fact, a relationship between the predictors and response\n\nInterpretation of coefficient is no longer “holding all other variables constant”, since this would be impossible for correlated predictors"
+    "objectID": "slides/14-variable-transformations.html#exploratory-data-analysis-1",
+    "href": "slides/14-variable-transformations.html#exploratory-data-analysis-1",
+    "title": "Variable transformations",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\nThe goal is to use income inequality and education to understand variability in health expenditure"
   },
   {
-    "objectID": "slides/14-variable-transformations.html#dealing-with-multicollinearity",
-    "href": "slides/14-variable-transformations.html#dealing-with-multicollinearity",
-    "title": "Multicollinearity cont’d",
-    "section": "Dealing with multicollinearity",
-    "text": "Dealing with multicollinearity\n\n\nCollect more data (often not feasible given practical constraints)\nRedefine the correlated predictors to keep the information from predictors but eliminate collinearity\n\ne.g., if \\(x_1, x_2, x_3\\) are correlated, use a new variable \\((x_1 + x_2) / x_3\\) in the model\n\nFor categorical predictors, avoid using levels with very few observations as the baseline\nRemove one of the correlated variables\n\nBe careful about substantially reducing predictive power of the model"
+    "objectID": "slides/14-variable-transformations.html#original-model",
+    "href": "slides/14-variable-transformations.html#original-model",
+    "title": "Variable transformations",
+    "section": "Original model",
+    "text": "Original model\n\nhealth_fit &lt;- lm(health_expenditure ~ income_inequality + education, \n                     data = health_data)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n2070.599\n534.653\n3.873\n0.000\n\n\nincome_inequality\n-64.346\n18.626\n-3.455\n0.001\n\n\neducationHigh\n1039.298\n359.736\n2.889\n0.004"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#original-model-residuals-vs.-fitted",
+    "href": "slides/14-variable-transformations.html#original-model-residuals-vs.-fitted",
+    "title": "Variable transformations",
+    "section": "Original model: Residuals vs. fitted",
+    "text": "Original model: Residuals vs. fitted\n\n\nWhat model assumption(s) appear to be violated?"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#consider-different-transformations",
+    "href": "slides/14-variable-transformations.html#consider-different-transformations",
+    "title": "Variable transformations",
+    "section": "Consider different transformations…",
+    "text": "Consider different transformations…"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#identifying-a-need-to-transform-y",
+    "href": "slides/14-variable-transformations.html#identifying-a-need-to-transform-y",
+    "title": "Variable transformations",
+    "section": "Identifying a need to transform Y",
+    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#log-transformation-on-y",
+    "href": "slides/14-variable-transformations.html#log-transformation-on-y",
+    "title": "Variable transformations",
+    "section": "Log transformation on \\(Y\\)",
+    "text": "Log transformation on \\(Y\\)\n\nIf we apply a log transformation to the response variable, we want to estimate the parameters for the statistical model\n\n\\[\n\\log(\\mathbf{Y}) = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\quad \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\]\n\nThe regression equation is\n\n\\[\\widehat{\\log(\\mathbf{Y})} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}}\\]"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#log-transformation-on-y-1",
+    "href": "slides/14-variable-transformations.html#log-transformation-on-y-1",
+    "title": "Variable transformations",
+    "section": "Log transformation on \\(Y\\)",
+    "text": "Log transformation on \\(Y\\)\nWe fit the model in terms of \\(\\log(\\mathbf{Y})\\) but want to interpret the model in terms of the original variable \\(Y\\) , so we need to write the regression equation in terms of \\(Y\\)\n\\[\n\\begin{aligned}\n&\\widehat{\\log(\\mathbf{Y})} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} \\\\[8pt]\n\\Rightarrow \\quad &\\hat{\\mathbf{Y}} = e^{\\mathbf{X}\\hat{\\boldsymbol{\\beta}}}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#model-interpretation",
+    "href": "slides/14-variable-transformations.html#model-interpretation",
+    "title": "Variable transformations",
+    "section": "Model interpretation",
+    "text": "Model interpretation\n\\[\\begin{align}\\hat{y_i} &=  e^{\\mathbf{x}_i\\hat{\\boldsymbol{\\beta}}} \\\\ & = e^{(\\hat{\\beta}_0 + \\hat{\\beta}_1 x_{i1} + \\dots + \\hat{\\beta}_Px_{ip})} \\\\\n&= e^{\\hat{\\beta}_0}e^{\\hat{\\beta}_1x_{i1}}\\dots e^{\\hat{\\beta}_px_{ip}}\\end{align}\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = x_{ip} =0\\), \\(y_i\\) is expected to be \\(e^{\\hat{\\beta}_0}\\)\nCoefficient of \\(X_j\\): For every one unit increase in \\(x_{ij}\\), \\(y_{i}\\) is expected to multiply by a factor of \\(e^{\\hat{\\beta}_j}\\), holding all else constant."
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#model-with-logy",
+    "href": "slides/14-variable-transformations.html#model-with-logy",
+    "title": "Variable transformations",
+    "section": "Model with log(Y)",
+    "text": "Model with log(Y)\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n7.096\n0.324\n21.895\n0\n\n\nincome_inequality\n-0.065\n0.011\n-5.714\n0\n\n\neducationHigh\n1.117\n0.218\n5.121\n0\n\n\n\n\n\n\n\nInterpret each of the following in terms of health expenditure\n\nIntercept\nincome_inequality\neducation"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#model-with-logy-residuals",
+    "href": "slides/14-variable-transformations.html#model-with-logy-residuals",
+    "title": "Variable transformations",
+    "section": "Model with log(Y): Residuals",
+    "text": "Model with log(Y): Residuals"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#compare-residual-plots",
+    "href": "slides/14-variable-transformations.html#compare-residual-plots",
+    "title": "Variable transformations",
+    "section": "Compare residual plots",
+    "text": "Compare residual plots"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#variability-in-life-expectancy",
+    "href": "slides/14-variable-transformations.html#variability-in-life-expectancy",
+    "title": "Variable transformations",
+    "section": "Variability in life expectancy",
+    "text": "Variability in life expectancy\nNow let’s consider a model using a country’s healthcare expenditure, income inequality, and education to predict its life expectancy"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#original-model-1",
+    "href": "slides/14-variable-transformations.html#original-model-1",
+    "title": "Variable transformations",
+    "section": "Original model",
+    "text": "Original model\n\nlife_exp_fit &lt;- lm(life_exp ~ health_expenditure + income_inequality + education, \n                   data = health_data)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n78.575\n1.775\n44.274\n0.000\n\n\nhealth_expenditure\n0.001\n0.000\n4.522\n0.000\n\n\nincome_inequality\n-0.484\n0.061\n-7.900\n0.000\n\n\neducationHigh\n2.020\n1.168\n1.730\n0.086"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#original-model-residuals",
+    "href": "slides/14-variable-transformations.html#original-model-residuals",
+    "title": "Variable transformations",
+    "section": "Original model: Residuals",
+    "text": "Original model: Residuals"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#residuals-vs.-predictors",
+    "href": "slides/14-variable-transformations.html#residuals-vs.-predictors",
+    "title": "Variable transformations",
+    "section": "Residuals vs. predictors",
+    "text": "Residuals vs. predictors\n\n\n\nThe non-linear relationship is between health expenditure and life expectancy."
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#log-transformation-on-x",
+    "href": "slides/14-variable-transformations.html#log-transformation-on-x",
+    "title": "Variable transformations",
+    "section": "Log Transformation on \\(X\\)",
+    "text": "Log Transformation on \\(X\\)\nTry a transformation on \\(X\\) if the scatterplot in EDA shows non-linear relationship and residuals vs. predictor make parabola"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#model-with-transformation-on-x_j",
+    "href": "slides/14-variable-transformations.html#model-with-transformation-on-x_j",
+    "title": "Variable transformations",
+    "section": "Model with Transformation on \\(X_j\\)",
+    "text": "Model with Transformation on \\(X_j\\)\nIf we fit a model with predictor \\(\\log(X_j)\\), We fit a model of the form:\n\\[\n\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\quad \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\]\nsuch that \\(\\mathbf{X}\\) has a column for \\(\\log(X_j)\\) .\n\nThe estimated regression model is\n\\[\n\\begin{aligned}\n\\hat{\\mathbf{Y}} &= \\mathbf{X}\\hat{\\boldsymbol{\\beta}} \\\\[8pt]\n\\Rightarrow \\quad &\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1x_{i1} + \\ldots + \\hat{\\beta}_j\\log(x_{ij}) + \\dots + \\hat{\\beta}_px_{ip}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#model-interpretation-1",
+    "href": "slides/14-variable-transformations.html#model-interpretation-1",
+    "title": "Variable transformations",
+    "section": "Model interpretation",
+    "text": "Model interpretation\n\\[\n\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1x_{i1} + \\ldots + \\hat{\\beta}_j\\log(x_{ij}) + \\dots + \\hat{\\beta}_px_{ip}\n\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = \\log(x_{ij}) = \\dots = x_{ip} = 0\\) , \\(y_i\\) is expected to be \\(\\hat{\\beta}_0\\), on average, holding all else constant.\n\n\\(\\log(x_{ij}) = 0\\) when \\(x_{ij} = 1\\)\n\nCoefficient of \\(X_j\\): When \\(x_{ij}\\) is multiplied by a factor of \\(C\\), \\(y_i\\) is expected to change by \\(\\hat{\\beta}_1\\log(C)\\) units, on average, holding all else constant.\n\nExample: When \\(x_{ij}\\) is multiplied by a factor of 2, \\(y_i\\) is expected to increase by \\(\\hat{\\beta}_1\\log(2)\\) units, on average, holding all else constant."
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#model-with-logx",
+    "href": "slides/14-variable-transformations.html#model-with-logx",
+    "title": "Variable transformations",
+    "section": "Model with log(X)",
+    "text": "Model with log(X)\n\nlife_exp_logx_fit &lt;- lm(life_exp ~ log(health_expenditure) + income_inequality + education, \n                        data = health_data)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n59.151\n3.184\n18.576\n0.000\n\n\nlog(health_expenditure)\n3.092\n0.396\n7.814\n0.000\n\n\nincome_inequality\n-0.362\n0.058\n-6.225\n0.000\n\n\neducationHigh\n-0.168\n1.103\n-0.152\n0.879\n\n\n\n\n\n\n\n\nInterpret the intercept in the context of the data.\nInterpret the effect of health expenditure in the context of the data.\nInterpret the effect of education in the context of the data."
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#model-with-logx-residuals",
+    "href": "slides/14-variable-transformations.html#model-with-logx-residuals",
+    "title": "Variable transformations",
+    "section": "Model with log(X): Residuals",
+    "text": "Model with log(X): Residuals"
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#learn-more",
+    "href": "slides/14-variable-transformations.html#learn-more",
+    "title": "Variable transformations",
+    "section": "Learn more",
+    "text": "Learn more\nSee Log Transformations in Linear Regression for more details about interpreting regression models with log-transformed variables."
+  },
+  {
+    "objectID": "slides/14-variable-transformations.html#recap",
+    "href": "slides/14-variable-transformations.html#recap",
+    "title": "Variable transformations",
+    "section": "Recap",
+    "text": "Recap\n\nLog-transformation on the response\nLog-transformation on the predictor"
   },
   {
     "objectID": "slides/14-variable-transformations.html#references",
     "href": "slides/14-variable-transformations.html#references",
-    "title": "Multicollinearity cont’d",
+    "title": "Variable transformations",
     "section": "References",
-    "text": "References"
+    "text": "References\n\n\n\n\nZarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. “Health Care System Efficiency and Life Expectancy: A 140-Country Study.” Edited by Srinivas Goli. PLOS ONE 16 (7): e0253450. https://doi.org/10.1371/journal.pone.0253450."
   },
   {
     "objectID": "slides/lab-project-topics.html#goals",
