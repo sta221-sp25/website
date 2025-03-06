@@ -382,14 +382,14 @@ Have a good spring break! 😎
 <h2>Model with Transformation on <span class="math inline">\(X_j\)</span></h2>
 <p>When we fit a model with predictor <span class="math inline">\(\log(X_j)\)</span>, we fit a model of the form</p>
 <p><span class="math display">\[
-\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
 \]</span></p>
 <p>such that <span class="math inline">\(\mathbf{X}\)</span> has a column for <span class="math inline">\(\log(X_j)\)</span> .</p>
 <div class="fragment">
 <p>The estimated regression model is</p>
 <p><span class="math display">\[
 \begin{aligned}
-\hat{\mathbf{Y}} &amp;= \mathbf{X}\hat{\boldsymbol{\beta}} \\[8pt]
+\hat{\mathbf{y}} &amp;= \mathbf{X}\hat{\boldsymbol{\beta}} \\[8pt]
 \Rightarrow \quad &amp;\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
 \end{aligned}
 \]</span></p>
@@ -402,13 +402,13 @@ Have a good spring break! 😎
 \]</span></p>
 <div>
 <ul>
-<li class="fragment"><p><strong>Intercept:</strong> When <span class="math inline">\(x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0\)</span> , <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(\hat{\beta}_0\)</span>, on average, holding all else constant.</p>
+<li class="fragment"><p><strong>Intercept:</strong> When <span class="math inline">\(x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0\)</span> , <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(\hat{\beta}_0\)</span>, on average.</p>
 <ul>
 <li class="fragment"><span class="math inline">\(\log(x_{ij}) = 0\)</span> when <span class="math inline">\(x_{ij} = 1\)</span></li>
 </ul></li>
-<li class="fragment"><p><strong>Coefficient of</strong> <span class="math inline">\(X_j\)</span><strong>:</strong> When <span class="math inline">\(x_{ij}\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, <span class="math inline">\(y_i\)</span> is expected to change by <span class="math inline">\(\hat{\beta}_1\log(C)\)</span> units, on average, holding all else constant.</p>
+<li class="fragment"><p><strong>Coefficient of</strong> <span class="math inline">\(X_j\)</span><strong>:</strong> When <span class="math inline">\(x_{ij}\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, <span class="math inline">\(y_i\)</span> is expected to change by <span class="math inline">\(\hat{\beta}_j\log(C)\)</span> units, on average, holding all else constant.</p>
 <ul>
-<li class="fragment"><strong>Example</strong>: When <span class="math inline">\(x_{ij}\)</span> is multiplied by a factor of 2, <span class="math inline">\(y_i\)</span> is expected to increase by <span class="math inline">\(\hat{\beta}_1\log(2)\)</span> units, on average, holding all else constant.</li>
+<li class="fragment"><strong>Example</strong>: When <span class="math inline">\(x_{ij}\)</span> is multiplied by a factor of 2, <span class="math inline">\(y_i\)</span> is expected to increase by <span class="math inline">\(\hat{\beta}_j\log(2)\)</span> units, on average, holding all else constant.</li>
 </ul></li>
 </ul>
 </div>

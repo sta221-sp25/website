@@ -238,7 +238,7 @@ ggplot(data = health_data, aes(x = log(health_expenditure), y = life_exp)) +
 When we fit a model with predictor $\log(X_j)$, we fit a model of the form
 
 $$
-\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
 $$
 
 such that $\mathbf{X}$ has a column for $\log(X_j)$ .
@@ -249,7 +249,7 @@ The estimated regression model is
 
 $$
 \begin{aligned}
-\hat{\mathbf{Y}} &= \mathbf{X}\hat{\boldsymbol{\beta}} \\[8pt]
+\hat{\mathbf{y}} &= \mathbf{X}\hat{\boldsymbol{\beta}} \\[8pt]
 \Rightarrow \quad &\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip} 
 \end{aligned}
 $$
@@ -261,13 +261,13 @@ $$
 $$
 
 ::: incremental
--   **Intercept:** When $x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0$ , $y_i$ is expected to be $\hat{\beta}_0$, on average, holding all else constant.
+-   **Intercept:** When $x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0$ , $y_i$ is expected to be $\hat{\beta}_0$, on average.
 
     -   $\log(x_{ij}) = 0$ when $x_{ij} = 1$
 
--   **Coefficient of** $X_j$**:** When $x_{ij}$ is multiplied by a factor of $C$, $y_i$ is expected to change by $\hat{\beta}_1\log(C)$ units, on average, holding all else constant.
+-   **Coefficient of** $X_j$**:** When $x_{ij}$ is multiplied by a factor of $C$, $y_i$ is expected to change by $\hat{\beta}_j\log(C)$ units, on average, holding all else constant.
 
-    -   **Example**: When $x_{ij}$ is multiplied by a factor of 2, $y_i$ is expected to increase by $\hat{\beta}_1\log(2)$ units, on average, holding all else constant.
+    -   **Example**: When $x_{ij}$ is multiplied by a factor of 2, $y_i$ is expected to increase by $\hat{\beta}_j\log(2)$ units, on average, holding all else constant.
 :::
 
 ## Model with log(X) {.midi}
