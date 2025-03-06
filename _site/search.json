@@ -6227,7 +6227,7 @@
     "href": "slides/15-transformations-contd-notes.html#linear-model",
     "title": "Variable transformations cont’d",
     "section": "“Linear” model",
-    "text": "“Linear” model\nWhat does it mean for a model to be a “linear” model?\n\nLinear models are linear in the parameters, i.e. given an observation \\(y_i\\)\n\\[\ny_i = \\beta_0 + \\beta_1f(x_{i1}) + \\dots + \\beta_pf(x_{ip}) + \\epsilon_i\n\\]\nyi=β0+β1f1(xi1)+⋯+βpfp(xip)+ϵi\nThe functions \\(f_1, \\ldots, f_p\\) can be non-linear as long as \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) are linear in \\(Y\\)"
+    "text": "“Linear” model\nWhat does it mean for a model to be a “linear” model?\n\nLinear models are linear in the parameters, i.e. given an observation \\(y_i\\)\n\\[\ny_i = \\beta_0 + \\beta_1f(x_{i1}) + \\dots + \\beta_pf(x_{ip}) + \\epsilon_i\n\\]\nThe functions \\(f_1, \\ldots, f_p\\) can be non-linear as long as \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) are linear in \\(Y\\)"
   },
   {
     "objectID": "slides/15-transformations-contd-notes.html#identify-the-linear-models",
@@ -6381,7 +6381,7 @@
     "href": "slides/15-transformations-contd.html#linear-model",
     "title": "Variable transformations cont’d",
     "section": "“Linear” model",
-    "text": "“Linear” model\nWhat does it mean for a model to be a “linear” model?\n\nLinear models are linear in the parameters, i.e. given an observation \\(y_i\\)\n\\[\ny_i = \\beta_0 + \\beta_1f(x_{i1}) + \\dots + \\beta_pf(x_{ip}) + \\epsilon_i\n\\]\nyi=β0+β1f1(xi1)+⋯+βpfp(xip)+ϵi\nThe functions \\(f_1, \\ldots, f_p\\) can be non-linear as long as \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) are linear in \\(Y\\)"
+    "text": "“Linear” model\nWhat does it mean for a model to be a “linear” model?\n\nLinear models are linear in the parameters, i.e. given an observation \\(y_i\\)\n\\[\ny_i = \\beta_0 + \\beta_1f(x_{i1}) + \\dots + \\beta_pf(x_{ip}) + \\epsilon_i\n\\]\nThe functions \\(f_1, \\ldots, f_p\\) can be non-linear as long as \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\) are linear in \\(Y\\)"
   },
   {
     "objectID": "slides/15-transformations-contd.html#identify-the-linear-models",

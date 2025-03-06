@@ -325,7 +325,7 @@ logx_resid <- resid_logx <- ggplot(data = life_exp_logx_aug, aes(x = .fitted, y 
 orig_resid + logx_resid
 ```
 
----
+------------------------------------------------------------------------
 
 <center>
 
@@ -344,8 +344,6 @@ What does it mean for a model to be a “linear” model?
     $$
     y_i = \beta_0 + \beta_1f(x_{i1}) + \dots + \beta_pf(x_{ip}) + \epsilon_i
     $$
-
-    yi=β0+β1f1(xi1)+⋯+βpfp(xip)+ϵi
 
 -   The functions $f_1, \ldots, f_p$ can be non-linear as long as $\beta_0, \beta_1, \ldots, \beta_p$ are linear in $Y$
 
@@ -374,7 +372,7 @@ See [Log Transformations in Linear Regression](https://github.com/sta210-sp20/su
 -   Introduced log-transformation on the predictor
 -   Identified linear models
 
-## Remaining questions? 
+## Remaining questions?
 
 Please submit any questions you have about multicollinearity and variable transformations.
 
