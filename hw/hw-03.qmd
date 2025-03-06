@@ -221,7 +221,7 @@ c.  It is assumed that some of the votes for Buchanan in that county were actual
 
     -   If yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).
 
-## Submission
+# Submission
 
 ::: callout-warning
 Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.
