@@ -6220,7 +6220,7 @@
     "href": "slides/15-transformations-contd-notes.html#comparing-residual-plots",
     "title": "Variable transformations cont’d",
     "section": "Comparing residual plots",
-    "text": "Comparing residual plots\n\norig_resid &lt;- ggplot(data = life_exp_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(alpha = 0.7) + \n  geom_hline(yintercept=0, color=\"red\") +\n  labs(x=\"Predicted\", y=\"Residuals\",\n       title=\"Original Model: Residuals vs. Predicted\")\n\nlogx_resid &lt;- resid_logx &lt;- ggplot(data = life_exp_logx_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(alpha = 0.7) + \n  geom_hline(yintercept=0, color=\"red\") +\n  labs(x=\"Predicted\", y=\"Residuals\",\n       title=\"Transformed Model: Residuals vs. Predicted\")\n\norig_resid + logx_resid\n\n\n\n\n\n\n\n\n\n\n\nIs a model with log-transfromed response and/or predictor still a “linear” model?"
+    "text": "Comparing residual plots\n\n\n\n\n\n\n\n\n\n\n\n\nIs a model with log-transfromed response and/or predictor still a “linear” model?"
   },
   {
     "objectID": "slides/15-transformations-contd-notes.html#linear-model",
@@ -6374,7 +6374,7 @@
     "href": "slides/15-transformations-contd.html#comparing-residual-plots",
     "title": "Variable transformations cont’d",
     "section": "Comparing residual plots",
-    "text": "Comparing residual plots\n\norig_resid &lt;- ggplot(data = life_exp_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(alpha = 0.7) + \n  geom_hline(yintercept=0, color=\"red\") +\n  labs(x=\"Predicted\", y=\"Residuals\",\n       title=\"Original Model: Residuals vs. Predicted\")\n\nlogx_resid &lt;- resid_logx &lt;- ggplot(data = life_exp_logx_aug, aes(x = .fitted, y = .resid)) +\n  geom_point(alpha = 0.7) + \n  geom_hline(yintercept=0, color=\"red\") +\n  labs(x=\"Predicted\", y=\"Residuals\",\n       title=\"Transformed Model: Residuals vs. Predicted\")\n\norig_resid + logx_resid"
+    "text": "Comparing residual plots"
   },
   {
     "objectID": "slides/15-transformations-contd.html#linear-model",

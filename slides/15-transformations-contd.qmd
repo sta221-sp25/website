@@ -309,7 +309,7 @@ resid_logx
 ## Comparing residual plots
 
 ```{r}
-
+#| echo: false
 orig_resid <- ggplot(data = life_exp_aug, aes(x = .fitted, y = .resid)) +
   geom_point(alpha = 0.7) + 
   geom_hline(yintercept=0, color="red") +
