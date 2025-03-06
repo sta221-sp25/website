@@ -123,7 +123,7 @@ p2 <- ggplot(data = health_data, aes(x = income_inequality, y = life_exp)) +
        y = "Life expectancy")
 
 p3 <- ggplot(data = health_data, aes(x = education, y = life_exp)) + 
-  geom_boxplot() + 
+  geom_boxplot(fill = "steelblue", color = "black") + 
   labs(x = "Education",
        y = "Life expectancy")
 
@@ -160,6 +160,10 @@ life_exp_resid <- ggplot(data = life_exp_aug, aes(x = .fitted, y = .resid)) +
 life_exp_resid
 ```
 
+::: question
+Look at residuals vs. each predictor to determine which variable has non-linear relationship with life expectancy.
+:::
+
 ## Residuals vs. predictors
 
 ```{r}
@@ -178,7 +182,7 @@ resid2 <-  ggplot(data = life_exp_aug, aes(x = income_inequality, y = .resid)) +
        title="")
 
 resid3 <-  ggplot(data = life_exp_aug, aes(x = education, y = .resid)) +
-  geom_boxplot() + 
+  geom_boxplot(fill = "steelblue", color = "black") + 
   geom_hline(yintercept=0, color="red") +
   labs(x="Education", y="Residuals",
        title="")
@@ -329,8 +333,12 @@ orig_resid + logx_resid
 
 <center>
 
+<br>
+
+<br>
+
 ::: question
-Is a model with log-transfromed response and/or predictor still a "linear" model?
+Is a model with log-transformed response and/or predictor still a "linear" model?
 :::
 
 </center>

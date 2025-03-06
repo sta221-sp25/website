@@ -194,7 +194,7 @@ p4 <- ggplot(data=health_data, aes(x=log(income_inequality), y=log(health_expend
 ::: incremental
 -   Typically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y
 
-    -   There are multiple ways to transform a variable, e.g., $Y$, $1/Y$, $\log(Y)$ . These are called **variance stabilizing transformations**
+    -   There are multiple ways to transform a variable, e.g., $Y^{1/2}$, $1/Y$, $\log(Y)$ . These are called **variance stabilizing transformations**
 
     -   $\log(Y)$ the most straightforward to interpret, so we use that transformation when possible
 

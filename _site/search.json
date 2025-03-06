@@ -6164,7 +6164,7 @@
     "href": "slides/15-transformations-contd-notes.html#original-model-residuals",
     "title": "Variable transformations cont’d",
     "section": "Original model: Residuals",
-    "text": "Original model: Residuals"
+    "text": "Original model: Residuals\n\n\n\n\n\n\n\n\n\n\nLook at residuals vs. each predictor to determine which variable has non-linear relationship with life expectancy."
   },
   {
     "objectID": "slides/15-transformations-contd-notes.html#residuals-vs.-predictors",
@@ -6220,7 +6220,7 @@
     "href": "slides/15-transformations-contd-notes.html#comparing-residual-plots",
     "title": "Variable transformations cont’d",
     "section": "Comparing residual plots",
-    "text": "Comparing residual plots\n\n\n\n\n\n\n\n\n\n\n\n\nIs a model with log-transfromed response and/or predictor still a “linear” model?"
+    "text": "Comparing residual plots\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs a model with log-transformed response and/or predictor still a “linear” model?"
   },
   {
     "objectID": "slides/15-transformations-contd-notes.html#linear-model",
@@ -6318,7 +6318,7 @@
     "href": "slides/15-transformations-contd.html#original-model-residuals",
     "title": "Variable transformations cont’d",
     "section": "Original model: Residuals",
-    "text": "Original model: Residuals"
+    "text": "Original model: Residuals\n\n\nLook at residuals vs. each predictor to determine which variable has non-linear relationship with life expectancy."
   },
   {
     "objectID": "slides/15-transformations-contd.html#residuals-vs.-predictors",
@@ -7284,7 +7284,7 @@
     "href": "slides/14-variable-transformations-notes.html#identifying-a-need-to-transform-y",
     "title": "Variable transformations",
     "section": "Identifying a need to transform Y",
-    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
+    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y^{1/2}\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
   },
   {
     "objectID": "slides/14-variable-transformations-notes.html#log-transformation-on-y",
@@ -7417,7 +7417,7 @@
     "href": "slides/14-variable-transformations.html#identifying-a-need-to-transform-y",
     "title": "Variable transformations",
     "section": "Identifying a need to transform Y",
-    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
+    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y^{1/2}\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
   },
   {
     "objectID": "slides/14-variable-transformations.html#log-transformation-on-y",
