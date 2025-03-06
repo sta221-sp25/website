@@ -25,7 +25,7 @@ In this assignment, you will…
 
 # **Getting started**
 
--   Go to the [sta221-sp25](https://www.github.com/sta221-sp25) organization on GitHub. Click on the repo with the prefix **hw-01**. It contains the starter documents you need to complete the lab.
+-   Go to the [sta221-sp25](https://www.github.com/sta221-sp25) organization on GitHub. Click on the repo with the prefix **hw-02**. It contains the starter documents you need to complete the lab.
 
 -   Clone the repo and start a new project in RStudio. See the [Lab 00 instructions](https://sta221-sp25.netlify.app/labs/lab-00.html#getting-started) for details on cloning a repo and starting a new project in R.
 

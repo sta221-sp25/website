@@ -4219,9 +4219,174 @@
   {
     "objectID": "hw/hw-03.html",
     "href": "hw/hw-03.html",
-    "title": "HW 03",
+    "title": "HW 03: Conditions and variable transformations",
     "section": "",
-    "text": "To be posted.",
+    "text": "Due date\n\n\n\nThis assignment is due on Thursday, March 20 at 11:59pm.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#instructions",
+    "href": "hw/hw-03.html#instructions",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Instructions",
+    "text": "Instructions\nThe conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.\n\nYou may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-1",
+    "href": "hw/hw-03.html#exercise-1",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nSuppose we have a model of the form\n\\[\n\\log(y_i) =\\beta_0 + \\beta_1\\log(x_i) + \\epsilon_i \\hspace{10mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\nDescribe the expected change in \\(y_i\\) when \\(x_i\\) is multiplied by a constant \\(C\\). Show the work used to obtain the expected change.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-2",
+    "href": "hw/hw-03.html#exercise-2",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nSuppose we have a model of the form\n\\[\ny_i = \\beta_0 + \\beta_1x_i + \\epsilon_i, \\quad \\epsilon_i \\sim N(0, \\sigma^2_\\epsilon x_i^2)\n\\]\n\nThis model violates which model assumption? Briefly explain why.\nSuppose you refit the model with the transformation on \\(y\\), \\(y^\\prime = y / x\\) . Show that this is a variance-stabilizing transformation, i.e., that the variance of the response does not depend on \\(x\\).",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-3",
+    "href": "hw/hw-03.html#exercise-3",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nFor each of the following regression models, state whether it can be expressed in the form of a linear model by applying a suitable transformation to both sides of the equation. If so, write the equation for the transformed model.\n\n\\(y_i = \\log(\\beta_1x_{i1}) + \\beta_2x_{i2} + \\epsilon_i\\)\n\\(y_i = [1 + e^{(\\beta_0 + \\beta_1x_{i1} + \\epsilon_i)}]^{-1}\\)",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#instructions-1",
+    "href": "hw/hw-03.html#instructions-1",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Instructions",
+    "text": "Instructions\nThe applied exercises are focused on applying the concepts to analyze data.\nAll work for the applied exercises must be typed in your Quarto document following a reproducible workflow.\nWrite all narrative using complete sentences and include informative axis labels / titles on visualizations.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#data-age-of-abalones",
+    "href": "hw/hw-03.html#data-age-of-abalones",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Data: Age of abalones",
+    "text": "Data: Age of abalones\nThe data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in Warwick et al. (1994). Click here for the publication.\nThe 4177 abalones in this study can be reasonably treated as a random sample.\nThe data are available in the file abalone.csv in the data folder. This analysis will focus on the following variables:\n\nSex: Male (M), Female (F), Infant (I)\nLength: Longest shell measurement (in millimeters)\nDiameter: Measured perpendicular to length (in millimeters)\nHeight : Measured with meat in shell (in millimeters)\nWhole_Weight: Total weight of abalone (in grams)\nAge: Age (in year)\n\nThe goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-4",
+    "href": "hw/hw-03.html#exercise-4",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nFit a model using Sex, Length, Diameter, Height and Whole_Weight to understand variability in Age. Neatly display the model using 3 digits.\nCheck the four model conditions - Linearity, Constant Variance, Normality, and Independence. For each condition: (1) state whether or not it is satisfied; (2) explain your response showing any visualizations and/or statistics used to make your assessment.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-5",
+    "href": "hw/hw-03.html#exercise-5",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nNow let’s take a look at the model diagnostics.\n\nAre there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.\nConsider the observation with the highest value for Cook’s distance. What is the value of leverage for this observation? Does this observation have large leverage? Briefly explain, showing any work or output used to make the determination.\nAgain consider the observation with the highest value for Cook’s distance. What is the standardized residual for this observation? Is this observation an outlier? Briefly explain showing any work or output used to make the determination.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-6",
+    "href": "hw/hw-03.html#exercise-6",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nNow let’s look at the relationship between predictors.\n\nCompute the Variance Inflation Factors (VIF) for the model from Exercise 4. Display the results.\nUse the equation for VIF to “manually” compute the VIF for Whole_Weight.\nWhat predictors appear to be collinear?\nSelect a strategy to fit a model that does not have an issue with multicollinearity.\n\nBriefly describe your strategy.\nSelect a final model.\nBriefly explain your selection, showing the work and statistics used to choose a final model.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#data-2000-u.s.-presidential-election2",
+    "href": "hw/hw-03.html#data-2000-u.s.-presidential-election2",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Data: 2000 U.S. Presidential Election2",
+    "text": "Data: 2000 U.S. Presidential Election2\n\nWe will examine data about the 2000 U.S. presidential election between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous butterfly ballots. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.\nThe variables in the data are\n\nCounty: County name\nBush2000: Number of votes for George W. Bush\nBuchanan2000: Number of votes for Pat Buchanan\n\nThe data are available in the file florida-votes-2000.csv in the data folder of your repo.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-7",
+    "href": "hw/hw-03.html#exercise-7",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nThe goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.\n\nVisualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.\nWhat is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. You will use this updated data frame for the remainder of this exercise and Exercise 8.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-8",
+    "href": "hw/hw-03.html#exercise-8",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nNow let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:\n\n\n\nModel\nResponse variable\nPredictor variable\n\n\n\n\n1\nBuchanan2000\nBush2000\n\n\n2\nlog(Buchanan2000)\nBush2000\n\n\n3\nBuchanan2000\nlog(Bush2000)\n\n\n4\nlog(Buchanan2000)\nlog(Bush2000)\n\n\n\nWhich model best fits the data? Briefly explain, showing any work and output used to determine the response. (Note: Use the data set without the outlying county to find the candidate models.)",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-9",
+    "href": "hw/hw-03.html#exercise-9",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nNow we will use the model to predict the expected number of Buchanan votes for the outlier county.\nSuppose the observed value of the predictor for this county (a new observation) is \\(x_0\\). We define \\(\\mathbf{x}_0^\\mathsf{T} = [1, x_0]\\)\nThen the predicted response is\n\\[\n\\hat{y}_0 = \\mathbf{x}_0^\\mathsf{T}\\hat{\\boldsymbol{\\beta}}\n\\]\nWhere \\(\\hat{\\boldsymbol{\\beta}}\\) is the vector of estimated model coefficients.\nJust as there is uncertainty in our model coefficients, there is uncertainty in our predictions as well. We use a confidence interval to quantify the uncertainty for a model coefficient, and we can use a prediction interval to quantify the uncertainty in the prediction for a new observation.\nThe \\(C\\%\\) prediction interval for the new observation is\n\\[\n\\hat{y}_0 \\pm t^*_{n - p - 1}\\sqrt{\\hat{\\sigma}^2_\\epsilon(1 + \\mathbf{x}_0^\\mathsf{T}(\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\mathbf{x}_0)}\n\\]\nwhere \\(t^*_{n-p-1}\\) is the critical value obtained from the \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom, \\(\\mathbf{X}\\) is the design matrix for the model, and \\(\\hat{\\sigma}^2_\\epsilon\\) is the estimated variability about the regression line.\n\nUse the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 7. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nUse the formula above to “manually” compute the 95% prediction interval for this county (do not obtain the interval using the predict function) . If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?\n\nIf no, briefly explain.\nIf yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#submission",
+    "href": "hw/hw-03.html#submission",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Submission",
+    "text": "Submission\n\n\n\n\n\n\nWarning\n\n\n\nBefore you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.\nRemember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.\nIf you write your responses to conceptual exercises by hand, you will need to combine your written work to the completed PDF for the applied exercises before submitting on Gradescope.\nInstructions to combine PDFs:\n\nPreview (Mac): support.apple.com/guide/preview/combine-pdfs-prvw43696/mac\nAdobe (Mac or PC): helpx.adobe.com/acrobat/using/merging-files-single-pdf.html\n\nGet free access to Adobe Acrobat as a Duke student: oit.duke.edu/help/articles/kb0030141/\n\n\n\n\nTo submit your assignment:\n\nAccess Gradescope through the menu on the STA 221 Canvas site.\nClick on the assignment, and you’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).\nSelect the first page of your .PDF submission to be associated with the “Workflow & formatting” section.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#footnotes",
+    "href": "hw/hw-03.html#footnotes",
+    "title": "HW 03: Conditions and variable transformations",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nExercise 2 is adapted from Montgomery, Peck, and Vining (2021) .↩︎\nThis analysis was motivated by exercises in (ledolter2003statistical?).↩︎",
     "crumbs": [
       "Homework",
       "HW 03"
