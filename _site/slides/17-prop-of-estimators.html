@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <title>STA 221 - Spring 2025 – Maximum likelihood estimation</title>
+  <title>STA 221 - Spring 2025 – Properties of estimators</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,27 +28,7 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-54533a16ec012e338ef0695f960493d1.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -150,7 +130,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Maximum likelihood estimation</h1>
+  <h1 class="title">Properties of estimators</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -160,197 +140,21 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">Mar 18, 2025</p>
+  <p class="date">Mar 20, 2025</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li><p>HW 03 due March 20 at 11:59pm</p></li>
-<li><p>Project exploratory data analysis due March 20 at 11:59pm</p></li>
+<li><p>HW 03 due TODAY at 11:59pm</p></li>
+<li><p>Project exploratory data analysis due TODAY at 11:59pm</p></li>
 <li><p>Statistics experience due April 22</p></li>
 </ul>
 </section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
 <ul>
-<li><p>Likelihood</p></li>
-<li><p>Maximum likelihood estimation</p></li>
-<li><p>MLE for linear regression</p></li>
+<li>Properties of the least squares estimator</li>
 </ul>
-</section>
-<section id="motivation" class="slide level2 midi">
-<h2>Motivation</h2>
-<ul>
-<li>We can find the estimators of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span> for the model</li>
-</ul>
-<p><span class="math display">\[
-\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{10mm} \boldsymbol{\epsilon} \sim N(0, \sigma^2_\epsilon\mathbf{I})
-\]</span>using least-squares estimation</p>
-<ul>
-<li><p>Today we will introduce another way to find these estimators - <strong>maximum likelihood estimation.</strong> We will see…</p>
-<ul>
-<li>the least-squares estimator is equal to the maximum likelihood estimator when certain assumptions hold</li>
-</ul></li>
-</ul>
-</section>
-<section>
-<section id="maximum-likelihood-estimation" class="title-slide slide level1 center">
-<h1>Maximum likelihood estimation</h1>
-
-</section>
-<section id="example-shooting-free-throws" class="slide level2">
-<h2>Example: Shooting free throws</h2>
-<p>Suppose a basketball player shoots a single free throw, such that the probability of making a basket is <span class="math inline">\(p\)</span></p>
-<div class="fragment">
-<div>
-<ul>
-<li class="fragment"><p>What is the probability distribution for this random phenomenon?</p></li>
-<li class="fragment"><p>Suppose the probability is <span class="math inline">\(p = 0.5\)</span>? What is the probability the player makes a single shot, given this value of <span class="math inline">\(p\)</span>?</p></li>
-<li class="fragment"><p>Suppose the probability is <span class="math inline">\(p = 0.8\)</span>? What is the probability the player makes a single shot, given this value of <span class="math inline">\(p\)</span>?</p></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="shooting-three-free-throws" class="slide level2">
-<h2>Shooting three free throws</h2>
-<p>Suppose the player shoots three free throws. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each shot.</p>
-<p>Let <span class="math inline">\(B\)</span> represent a made basket, and <span class="math inline">\(M\)</span> represent a missed basket. The player shoots three free throws with the outcome <span class="math inline">\(BBM\)</span>.</p>
-<div class="fragment">
-<div>
-<ul>
-<li class="fragment"><p>Suppose the probability is <span class="math inline">\(p = 0.5\)</span>? What is the probability of observing the data <span class="math inline">\(BBM\)</span>, given this value of <span class="math inline">\(p\)</span>?</p></li>
-<li class="fragment"><p>Suppose the probability is <span class="math inline">\(p = 0.3\)</span>? What is the probability of observing the data <span class="math inline">\(BBM\)</span>, given this value of <span class="math inline">\(p\)</span> ?</p></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="shooting-three-free-throws-1" class="slide level2">
-<h2>Shooting three free throws</h2>
-<p>Suppose the player shoots three free throws. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each shot.</p>
-<p>The player shoots three free throws with the outcome <span class="math inline">\(BBM\)</span>.</p>
-<div class="fragment">
-<div>
-<ul>
-<li class="fragment"><p>How would you describe in words the probabilities we previously calculated? <!--# Not sure what we're getting at. Maybe just say what the question is--></p></li>
-<li class="fragment"><p><strong>New question:</strong> What parameter value of <span class="math inline">\(p\)</span> do you think maximizes the probability of observing this data?</p></li>
-<li class="fragment"><p>We will use a <strong>likelihood</strong> function to answer this question.</p></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="likelihood" class="slide level2">
-<h2>Likelihood</h2>
-<div>
-<ul>
-<li class="fragment"><p>A <strong>likelihood function</strong> is a measure of how likely we are to observe our data under each possible value of the parameter(s)</p></li>
-<li class="fragment"><p>Note that this is <strong>not</strong> the same as the probability function.</p></li>
-<li class="fragment"><p><strong>Probability function</strong>: Fixed parameter value(s) + input possible outcomes</p>
-<ul>
-<li class="fragment"><em>Given</em> <span class="math inline">\(p=0.8\)</span> , <em>what is the probability of observing</em> <span class="math inline">\(BBM\)</span> <em>in three free throws?</em></li>
-</ul></li>
-<li class="fragment"><p><strong>Likelihood function</strong>: Fixed data + input possible parameter values</p>
-<ul>
-<li class="fragment"><em>Given we’ve observed</em> <span class="math inline">\(BBM\)</span>, <em>what is the most plausible value of</em> <span class="math inline">\(p\)</span>?</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="likelihood-shooting-3-free-throws" class="slide level2">
-<h2>Likelihood: shooting 3 free throws</h2>
-<p>The likelihood function for the probability of a basket <span class="math inline">\(p\)</span> given we observed <span class="math inline">\(BBM\)</span> when shooting three independent free throws is <span class="math display">\[
-L(p|BBM) = p \times p \times (1 - p)
-\]</span></p>
-<p><br></p>
-<div class="fragment">
-<p>Thus, if the likelihood for <span class="math inline">\(p = 0.8\)</span> is</p>
-<p><span class="math display">\[
-L(p = 0.8|BBM) = 0.8 \times 0.8 \times (1 - 0.8) = 0.128
-\]</span></p>
-</div>
-</section>
-<section id="likelihood-shooting-3-free-throws-1" class="slide level2">
-<h2>Likelihood: shooting 3 free throws</h2>
-<p><br></p>
-<div class="question">
-<ul>
-<li><p>What is the general formula for the likelihood function for <span class="math inline">\(p\)</span> given the observed data <span class="math inline">\(BBM\)</span>?</p></li>
-<li><p>How does assuming independence simply things?</p></li>
-<li><p>How does having identically distributed data simplify things?</p></li>
-</ul>
-</div>
-</section>
-<section id="likelihood-shooting-three-free-throws" class="slide level2 midi">
-<h2>Likelihood: shooting three free throws</h2>
-<p>The likelihood function for <span class="math inline">\(p\)</span> given the data <span class="math inline">\(BBM\)</span> is</p>
-<p><span class="math display">\[
-L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
-\]</span></p>
-<div class="fragment">
-<div>
-<ul>
-<li class="fragment"><p>We want of the value of <span class="math inline">\(p\)</span> that maximizes this likelihood function, i.e., the value of <span class="math inline">\(p\)</span> that is most likely given the observed data.</p></li>
-<li class="fragment"><p>The process of finding this value is <strong>maximum likelihood estimation</strong>.</p></li>
-<li class="fragment"><p>There are three primary ways to find the maximum likelihood estimator</p>
-<ul>
-<li class="fragment"><p>Approximate using a graph</p></li>
-<li class="fragment"><p>Using calculus</p></li>
-<li class="fragment"><p>Numerical approximation</p></li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="finding-the-mle-using-graphs" class="slide level2">
-<h2>Finding the MLE using graphs</h2>
-
-<img data-src="16-mle_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><div class="question">
-<p>What do you think is the approximate value of the MLE of <span class="math inline">\(p\)</span> given the data?</p>
-</div>
-</section>
-<section id="finding-the-mle-using-calculus" class="slide level2">
-<h2>Finding the MLE using calculus</h2>
-<ul>
-<li>Find the MLE using the first derivative of the likelihood function.</li>
-</ul>
-<!-- -->
-<ul>
-<li>This can be tricky because of the product rule, so we can maximize the <strong>log(Likelihood)</strong> instead. The same value maximizes the likelihood and log(Likelihood).</li>
-</ul>
-<div class="question">
-<p>Use calculus to find the MLE of <span class="math inline">\(p\)</span> given the data <span class="math inline">\(BBM\)</span>.</p>
-</div>
-</section>
-<section id="shooting-n-free-throws" class="slide level2">
-<h2>Shooting <span class="math inline">\(n\)</span> free throws</h2>
-<p>Suppose the player shoots <span class="math inline">\(n\)</span> free throws. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each shot.</p>
-<p>Suppose the player makes <span class="math inline">\(k\)</span> baskets out of the <span class="math inline">\(n\)</span> free throws. This is the observed data.</p>
-<div class="fragment">
-<div class="question">
-<ul>
-<li>What is the formula for the probability distribution to describe this random phenomenon?</li>
-<li>What is the formula for the likelihood function for <span class="math inline">\(p\)</span> given the observed data?</li>
-<li>For what value of <span class="math inline">\(p\)</span> do we maximize the likelihood given the observed data? Use calculus to find the response.</li>
-</ul>
-</div>
-</div>
-</section></section>
-<section>
-<section id="mle-in-linear-regression" class="title-slide slide level1 midi center">
-<h1>MLE in linear regression</h1>
-
-</section>
-<section id="why-maximum-likelihood-estimation" class="slide level2 midi">
-<h2>Why maximum likelihood estimation?</h2>
-<ul>
-<li><p><em>“Maximum likelihood estimation is, by far, the most popular technique for deriving estimators.”</em> <span class="citation" data-cites="casella2024statistical">(<a href="#/references" role="doc-biblioref" onclick="">Casella and Berger 2024, 315</a>)</span></p></li>
-<li><p>MLEs have nice statistical properties (more on this in a future class). They are</p>
-<ul>
-<li><p>Consistent</p></li>
-<li><p>Efficient</p></li>
-<li><p>Asymptotically normal</p></li>
-</ul></li>
-</ul>
-<div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -360,177 +164,404 @@ L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>If the normality assumption holds, the least squares estimator is the maximum likelihood estimator for <span class="math inline">\(\beta\)</span>. Therefore, it has all these properties of the MLE.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="linear-regression" class="slide level2">
-<h2>Linear regression</h2>
-<p>Recall the linear model</p>
-<p><span class="math display">\[
-\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{10mm} \boldsymbol{\epsilon} \sim N(\mathbf{0}, \sigma^2_{\epsilon}\mathbf{I})
-\]</span></p>
-<div class="fragment">
-<div>
+<p>This is not a mathematical statistics class. There are semester-long courses that will go into these topics in much more detail; we will barely scratch the surface in this course.</p>
+<p>Our goals are to understand</p>
 <ul>
-<li class="fragment">We have discussed least-squares estimation to find <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> and <span class="math inline">\(\hat{\sigma}_\epsilon^2\)</span></li>
-<li class="fragment">We have used the fact that <span class="math inline">\(\hat{\boldsymbol{\beta}} \sim N(\boldsymbol{\beta}, \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1})\)</span> when doing hypothesis testing and confidence intervals.</li>
-<li class="fragment">Now we will discuss how we know <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is normally distributed, as we introduce MLE for linear regression</li>
+<li><p>Estimators have properties</p></li>
+<li><p>A few properties of the least squares estimator and why they are useful</p></li>
 </ul>
 </div>
 </div>
-</section>
-<section id="simple-linear-regression-model" class="slide level2">
-<h2>Simple linear regression model</h2>
-<p>Suppose we have the simple linear regression (SLR) model</p>
-<p><span class="math display">\[
-y_i = \beta_0 + \beta_1x_i + \epsilon_i, \hspace{10mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})
-\]</span></p>
-<p>such that <span class="math inline">\(\epsilon_i\)</span> are independently and identically distributed.</p>
-<p><br></p>
-<div class="fragment">
-<p>We can write this model in the form below and use this to find the MLE</p>
-<p><span class="math display">\[
-y_i | x_i \sim N(\beta_0 + \beta_1 x_i, \sigma^2_{\epsilon})
-\]</span></p>
 </div>
 </section>
-<section id="side-note-normal-distribution" class="slide level2" data-background-color="#ccddeb">
-<h2>Side note: Normal distribution</h2>
-<p>Let <span class="math inline">\(Z\)</span> be a random variable, such that <span class="math inline">\(Z \sim N(\mu, \sigma^2)\)</span>. Then the probability function is</p>
-<p><span class="math display">\[
-P(Z = z | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(z - \mu)^2}\Big\}
-\]</span></p>
-</section>
-<section id="slr-likelihood-for-beta_0-beta_1-sigma2_epsilon" class="slide level2">
-<h2>SLR: Likelihood for <span class="math inline">\(\beta_0, \beta_1, \sigma^2_{\epsilon}\)</span></h2>
-<p>The likelihood function for <span class="math inline">\(\beta_0, \beta_1, \sigma^2_{\epsilon}\)</span> is</p>
-<p><span class="math display">\[
-\begin{aligned}
-L(\beta_0, \beta_1, \sigma^2_{\epsilon} &amp;| x_1, \ldots, x_n, y_1, \ldots, y_n)  = p(y_1|x_1, \beta_0, \beta_1, \sigma^2_{\epsilon}) \dots  p(y_n|x_n, \beta_0, \beta_1, \sigma^2_{\epsilon}) \\[5pt]
-&amp; = \prod_{i=1}^n p(y_i | x_i, \beta_0, \beta_1, \sigma^2_{\epsilon}) \\[5pt]
-&amp;= \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_
-\epsilon^2}}\exp\Big\{{-\frac{1}{2\sigma_\epsilon^2}(y_i - [\beta_0 + \beta_1x_i])^2}\Big\} \\[10pt]
-&amp; = (2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}
-\end{aligned}
-\]</span></p>
-</section>
-<section id="log-likelihood-for-beta_0-beta_1-sigma2_epsilon" class="slide level2">
-<h2>Log-Likelihood for <span class="math inline">\(\beta_0, \beta_1, \sigma^2_{\epsilon}\)</span></h2>
-<p>The log-likelihood function for <span class="math inline">\(\beta_0, \beta_1, \sigma^2_{\epsilon}\)</span> is</p>
-<p><span class="math display">\[
-\begin{aligned}
-\log &amp;L(\beta_0, \beta_1, \sigma^2_{\epsilon} | x_1, \ldots, x_n, y_1, \ldots, y_n) \\[8pt]
-&amp; = \log\Big[(2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}\Big] \\[8pt]
-&amp; = -\frac{n}{2}\log(2\pi\sigma^2_{\epsilon}) -\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2
-\end{aligned}
-\]</span></p>
-<p><br></p>
-<div class="fragment">
-<p>We will use the log-likelihood function to find the MLEs</p>
-</div>
-</section>
-<section id="mle-for-beta_0" class="slide level2">
-<h2>MLE for <span class="math inline">\(\beta_0\)</span></h2>
-<p>1️⃣ Take derivative of <span class="math inline">\(\log L\)</span> with respect to <span class="math inline">\(\beta_0\)</span> and set it equal to 0</p>
-<p><span class="math display">\[
-\frac{\partial \log L}{\partial \beta_0} = -\frac{2}{2\sigma^2_\epsilon}\sum_{i=1}^n (y_i - \beta_0 - \beta_1x_i)(-1) = 0
-\]</span></p>
-</section>
-<section id="mle-for-beta_0-1" class="slide level2 midi">
-<h2>MLE for <span class="math inline">\(\beta_0\)</span></h2>
-<p>2️⃣ Find the <span class="math inline">\(\tilde{\beta}_0\)</span> that satisfies the equality on the previous slide</p>
-<div class="fragment">
-<p>After a few steps…</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\Rightarrow \sum_{i=1}^ny_i - n\tilde{\beta}_0 - \tilde{\beta}_1\sum_{i=1}^n x_i = 0 \\[8pt]
-&amp;\Rightarrow \sum_{i=1}^ny_i  - \tilde{\beta}_1\sum_{i=1}^n x_i = n\tilde{\beta}_0 \\[8pt]
-&amp;\Rightarrow \frac{1}{n}\sum_{i=1}^ny_i  - \frac{1}{n}\tilde{\beta}_1\sum_{i=1}^n x_i = \tilde{\beta}_0
-\end{aligned}
-\]</span></p>
-</div>
-</section>
-<section id="mle-for-beta_0-2" class="slide level2 midi">
-<h2>MLE for <span class="math inline">\(\beta_0\)</span></h2>
-<p>3️⃣ We can use the second derivative to show we’ve found the maximum</p>
-<p><span class="math display">\[
-\frac{\partial^2 \log L}{\partial \beta_0^2} = -\frac{n}{2\tilde{\sigma}^2_\epsilon}  &lt; 0
-\]</span></p>
-<p><br></p>
-<div class="fragment">
-<p>Therefore, we have found the maximum. Thus, MLE for <span class="math inline">\(\beta_0\)</span> is</p>
-<p><span class="math display">\[
-\tilde{\beta}_0 = \bar{y} - \tilde{\beta}_1\bar{x}
-\]</span></p>
-</div>
-<div class="fragment">
-<p>Note that <span class="math inline">\(\tilde{\beta}_0\)</span> is equal to <span class="math inline">\(\hat{\beta}_0\)</span>, the least-squares estimate</p>
-</div>
-</section>
-<section id="mle-for-beta_1-and-sigma2_epsilon" class="slide level2">
-<h2>MLE for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span></h2>
-<p>We can use a similar process to find the MLEs for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span></p>
-<p><span class="math display">\[
-\tilde{\beta}_1 = \frac{\sum_{i=1}^n (y_i - \bar{y})(x_i - \bar{x})}{\sum_{i=1}^n(x_i - \bar{x})^2}
-\]</span> <br></p>
-<div class="fragment">
-<p><span class="math display">\[
-\tilde{\sigma}^2_{\epsilon} = \frac{\sum_{i=1}^n(y_i - \tilde{\beta}_0 - \tilde{\beta}_1x_i)^2}{n} = \frac{\sum_{i=1}^ne_i^2}{n}
-\]</span></p>
-</div>
-<div class="fragment">
-<p>Note: <span class="math inline">\(\tilde{\beta}_1 = \hat{\beta}_1\)</span> and <span class="math inline">\(\tilde{\sigma}^2_{\epsilon} \approx \hat{\sigma}^2_{\epsilon}\)</span></p>
-</div>
-</section></section>
 <section>
-<section id="mle-in-matrix-form" class="title-slide slide level1 center">
-<h1>MLE in matrix form</h1>
+<section id="properties-of-hatboldsymbolbeta" class="title-slide slide level1 center">
+<h1>Properties of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h1>
 
 </section>
-<section id="mle-for-linear-regression-in-matrix-form" class="slide level2 midi">
-<h2>MLE for linear regression in matrix form</h2>
-<p><span class="math display">\[
-L(\boldsymbol{\beta}, \sigma^2_{\epsilon} | \mathbf{X}, \mathbf{y}) = \frac{1}{(2\pi)^{n/2}\sigma^n_{\epsilon}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\Big\}
-\]</span> <br></p>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<div>
+<ul>
+<li class="fragment"><p>We have discussed how to use least squares to find an estimator of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></p></li>
+<li class="fragment"><p>How do we know whether our least squares estimator (or MLE) is a “good” estimator?</p></li>
+<li class="fragment"><p>When we consider what makes an estimator “good”, we’ll look at three criteria:</p>
+<ul>
+<li class="fragment">Bias</li>
+<li class="fragment">Variance</li>
+<li class="fragment">Mean squared error</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="bias-and-variance" class="slide level2">
+<h2>Bias and variance</h2>
+<p>Suppose you are throwing darts at a target</p>
 <div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/10/bias-variance.webp"></p>
+<figcaption>Image source: <a href="https://medium.com/analytics-vidhya/bias-variance-tradeoff-regularization-5543d2d1ad8a">Analytics Vidhya</a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p><strong>Unbiased</strong>: Darts distributed around the target</p></li>
+<li><p><strong>Biased</strong>: Darts systematically away from the target</p></li>
+<li><p><strong>Variance</strong>: Darts could be widely spread (high variance) or generally clustered together (low variance)</p></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="bias-and-variance-1" class="slide level2">
+<h2>Bias and variance</h2>
+<ul>
+<li><p><strong>Ideal scenario</strong>: Darts are clustered around the target (unbiased and low variance)</p></li>
+<li><p><strong>Worst case scenario</strong>: Darts are widely spread out and systematically far from the target (high bias and high variance)</p></li>
+<li><p><strong>Acceptable scenario:</strong> There’s some trade-off between the bias and variance. For example, it may be acceptable for the darts to be clustered around a point that is close to the target (low bias and low variance)</p></li>
+</ul>
+</section>
+<section id="bias-and-variance-2" class="slide level2">
+<h2>Bias and variance</h2>
+<div>
+<ul>
+<li class="fragment"><p>Each time we take a sample of size <span class="math inline">\(n\)</span>, we can find the least squares estimator (throw dart at target)</p></li>
+<li class="fragment"><p>Suppose we take many independent samples of size <span class="math inline">\(n\)</span> and find the least squares estimator for each sample (throw many darts at the target). Ideally,</p>
+<ul>
+<li class="fragment"><p>The estimators are centered at the true parameter (unbiased)</p></li>
+<li class="fragment"><p>The estimators are clustered around the true parameter (unbiased with low variance)</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="properties-of-hatboldsymbolbeta-1" class="slide level2">
+<h2>Properties of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
+<p><strong>Finite sample (</strong> <span class="math inline">\(n\)</span> <strong>)</strong> <strong>properties</strong></p>
+<ul>
+<li><p>Unbiased estimator</p></li>
+<li><p>Best Linear Unbiased Estimator (BLUE)</p></li>
+</ul>
+<p><br></p>
+<p><strong>Asymptotic (</strong> <span class="math inline">\(n \rightarrow \infty\)</span> <strong>) properties</strong></p>
+<ul>
+<li><p>Consistent estimator</p></li>
+<li><p>Efficient estimator</p></li>
+<li><p>Asymptotic normality</p></li>
+</ul>
+</section></section>
+<section>
+<section id="finite-sample-properties" class="title-slide slide level1 center">
+<h1>Finite sample properties</h1>
+
+</section>
+<section id="unbiased-estimator" class="slide level2">
+<h2>Unbiased estimator</h2>
+<p>The <strong>bias</strong> of an estimator is the difference between the estimator’s expected value and the true value of the parameter</p>
+<p>Let <span class="math inline">\(\hat{\theta}\)</span> be an estimator of the parameter <span class="math inline">\(\theta\)</span>. Then</p>
+<p><span class="math display">\[
+Bias(\hat{\theta}) = E(\hat{\theta}) - \theta
+\]</span></p>
+<p>An estimator is <strong>unbiased</strong> if the bias is 0 and thus <span class="math inline">\(E(\hat{\theta}) = \theta\)</span></p>
+</section>
+<section id="expected-value-of-hatboldsymbolbeta" class="slide level2">
+<h2>Expected value of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
+<p>Let’s take a look at the expected value of least-squares estimator:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\log L(\boldsymbol{\beta}, \sigma^2_\epsilon &amp;| \mathbf{X}, \mathbf{y}) \\
-&amp; = -\frac{n}{2}\log(2\pi) - n \log(\sigma_{\epsilon}) - \frac{1}{2\sigma^2_{\epsilon}}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\mathbf{\beta})
+E(\hat{\boldsymbol{\beta}}) &amp;= E[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}] \\[8pt]
+&amp; = \class{fragment}{(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}E[\mathbf{y}]} \\[8pt]
+&amp; = \class{fragment}{(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{X}\boldsymbol{\beta}}\\[8pt]
+&amp; = \class{fragment}{\boldsymbol{\beta}}
 \end{aligned}
-\]</span> <br></p>
+\]</span></p>
+</section>
+<section id="expected-value-of-hatboldsymbolbeta-1" class="slide level2">
+<h2>Expected value of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
+<p>The least squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is an <em>unbiased</em> estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span></p>
+<p><span class="math display">\[
+E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}
+\]</span></p>
+</section>
+<section id="variance-of-hatboldsymbolbeta" class="slide level2">
+<h2>Variance of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
+<p><span class="math display">\[
+\begin{aligned}
+Var(\hat{\boldsymbol{\beta}}) &amp;= Var((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{y}) \\[8pt]
+&amp; = \class{fragment}{[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}]Var(\mathbf{y})[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}]^\mathsf{T} }\\[8pt]
+&amp; = \class{fragment}{[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}]\sigma^2_{\epsilon}\mathbf{I}[\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}]} \\[8pt]
+&amp; = \class{fragment}{\sigma^2_{\epsilon}[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}]} \\[8pt]
+&amp; = \class{fragment}{\sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}}
+\end{aligned}
+\]</span></p>
+<div class="fragment">
+<p>We will show that <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the “best” estimator (has the lowest variance) among the class of linear unbiased estimators</p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><strong>Gauss-Markov Theorem</strong></strong></p>
+</div>
+<div class="callout-content">
+<p>The least-squares estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span> in the model <span class="math inline">\(\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\)</span> is given by <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>. Given the errors have mean <span class="math inline">\(\mathbf{0}\)</span> and variance <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{I}\)</span> , then <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is <strong>BLUE (best linear unbiased estimator)</strong>.</p>
+<p>“Best” means <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> has the smallest variance among all linear unbiased estimators for <span class="math inline">\(\boldsymbol{\beta}\)</span> .</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="gauss-markov-theorem-proof" class="slide level2">
+<h2>Gauss-Markov Theorem Proof</h2>
+<p>Suppose <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> is another linear unbiased estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span> that can be expressed as <span class="math inline">\(\tilde{\boldsymbol{\beta}} = \mathbf{Cy}\)</span> , such that <span class="math inline">\(\hat{\mathbf{y}} = \mathbf{X}\tilde{\boldsymbol{\beta}} = \mathbf{XCy}\)</span></p>
+<p><br></p>
+<p>Let <span class="math inline">\(\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B}\)</span> for a non-zero matrix <span class="math inline">\(\mathbf{B}\)</span>.</p>
+<p><br></p>
+<div class="question">
+<p>What is the dimension of <span class="math inline">\(\mathbf{B}\)</span>?</p>
+</div>
+</section>
+<section id="gauss-markov-theorem-proof-1" class="slide level2">
+<h2>Gauss-Markov Theorem Proof</h2>
+<p><span class="math display">\[
+\tilde{\boldsymbol{\beta}} = \mathbf{Cy} = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}
+\]</span></p>
+<p>We need to show</p>
+<ul>
+<li><p><span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> is unbiased</p></li>
+<li><p><span class="math inline">\(Var(\tilde{\boldsymbol{\beta}}) &gt; Var(\hat{\boldsymbol{\beta}})\)</span></p></li>
+</ul>
+</section>
+<section id="gauss-markov-theorem-proof-2" class="slide level2">
+<h2>Gauss-Markov Theorem Proof</h2>
+<p><span class="math display">\[
+\begin{aligned}
+E(\tilde{\boldsymbol{\beta}}) &amp; = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\
+&amp; = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})(\mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon})] \\
+&amp; = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})(\mathbf{X}\boldsymbol{\beta})] \\
+&amp; = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})(\mathbf{X}\boldsymbol{\beta}) \\
+&amp; = (\mathbf{I} + \mathbf{BX})\boldsymbol{\beta}
+\end{aligned}
+\]</span></p>
+<div class="question">
+<ul>
+<li><p>What assumption(s) of the Gauss-Markov Theorem did we use?</p></li>
+<li><p>What must be true for <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> to be unbiased?</p></li>
+</ul>
+</div>
+</section>
+<section id="gauss-markov-theorem-proof-3" class="slide level2">
+<h2>Gauss-Markov Theorem Proof</h2>
+<ul>
+<li><p><span class="math inline">\(\mathbf{BX}\)</span> must be the <span class="math inline">\(\mathbf{0}\)</span> matrix (dimension = <span class="math inline">\((p+1) \times (p+1)\)</span>) in order for <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> to be unbiased</p></li>
+<li><p>Now we need to find <span class="math inline">\(Var(\tilde{\boldsymbol{\beta}})\)</span> and see how it compares to <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span></p></li>
+</ul>
+</section>
+<section id="gauss-markov-theorem-proof-4" class="slide level2 midi">
+<h2>Gauss-Markov Theorem Proof</h2>
+<p><span class="math display">\[
+\begin{aligned}
+Var(\tilde{\boldsymbol{\beta}}) &amp;= Var[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\[8pt]
+&amp; = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})Var(\mathbf{y})((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})^\mathsf{T} \\[8pt]
+&amp; = \small{\sigma^2_{\epsilon}[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} \mathbf{B}^\mathsf{T} + \mathbf{BX}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \mathbf{BB}^\mathsf{T}]}\\[8pt]
+&amp; = \sigma^2_\epsilon(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \sigma^2_{\epsilon}\mathbf{BB}^\mathsf{T}\end{aligned}
+\]</span></p>
+<div class="question">
+<p>What assumption(s) of the Gauss-Markov Theorem did we use?</p>
+</div>
+<!--# add math rule-->
+</section>
+<section id="gauss-markov-theorem-proof-5" class="slide level2">
+<h2>Gauss-Markov Theorem Proof</h2>
+<p>We have</p>
+<p><span class="math display">\[
+Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \sigma^2_\epsilon \mathbf{BB}^\mathsf{T}
+\]</span></p>
+<div class="fragment">
+<p>We know that <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{BB}^\mathsf{T} \geq \mathbf{0}\)</span>.</p>
+<p><br></p>
 </div>
 <div class="fragment">
 <div class="question">
-<ol type="1">
-<li>For a fixed value of <span class="math inline">\(\sigma_\epsilon\)</span> , we know that <span class="math inline">\(\log L\)</span> is maximized when what is true about <span class="math inline">\((\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\)</span> ?</li>
-<li>What does this tell us about the relationship between the MLE and least-squares estimator for <span class="math inline">\(\boldsymbol{\beta}\)</span>?</li>
-</ol>
+<p>When is <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{BB}^\mathsf{T} = \mathbf{0}\)</span>?</p>
+</div>
+</div>
+<div class="fragment">
+<p>Therefore, we have shown that <span class="math inline">\(Var(\tilde{\boldsymbol{\beta}}) &gt; Var(\hat{\boldsymbol{\beta}})\)</span> and have completed the proof.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><strong>Gauss-Markov Theorem</strong></strong></p>
+</div>
+<div class="callout-content">
+<p>The least-squares estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span> in the model <span class="math inline">\(\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}\)</span> is given by <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>. Given the errors have mean <span class="math inline">\(\mathbf{0}\)</span> and variance <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{I}\)</span> , then <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is <strong>BLUE (best linear unbiased estimator)</strong>.</p>
+<p>“Best” means <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> has the smallest variance among all linear unbiased estimators for <span class="math inline">\(\boldsymbol{\beta}\)</span> .</p>
+</div>
 </div>
 </div>
 </section>
-<section id="putting-it-all-together" class="slide level2">
-<h2>Putting it all together</h2>
+<section id="properties-of-hatboldsymbolbeta-2" class="slide level2">
+<h2>Properties of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
+<p><strong>Finite sample (</strong> <span class="math inline">\(n\)</span> <strong>)</strong> <strong>properties</strong></p>
+<ul>
+<li><p>Unbiased estimator ✅</p></li>
+<li><p>Best Linear Unbiased Estimator (BLUE) ✅</p></li>
+</ul>
+<p><br></p>
+<p><strong>Asymptotic (</strong> <span class="math inline">\(n \rightarrow \infty\)</span> <strong>) properties</strong></p>
+<ul>
+<li><p>Consistent estimator</p></li>
+<li><p>Efficient estimator</p></li>
+<li><p>Asymptotic normality</p></li>
+</ul>
+</section></section>
+<section>
+<section id="asymptotic-properties" class="title-slide slide level1 center">
+<h1>Asymptotic properties</h1>
+
+</section>
+<section id="properties-from-the-mle" class="slide level2">
+<h2>Properties from the MLE</h2>
+<ul>
+<li><p>Recall that the least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is equal to the Maximum Likelihood Estimator <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span></p></li>
+<li><p>Maximum likelihood estimators have nice statistical properties and the <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> inherits all of these properties</p></li>
+<li><p>Consistency</p></li>
+<li><p>Efficiency</p></li>
+<li><p>Asymptotic normality</p></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>We will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference</p>
+</div>
+</div>
+</div>
+</section>
+<section id="mean-squared-error" class="slide level2">
+<h2>Mean squared error</h2>
+<p>The <strong>mean squared error (MSE)</strong> is the squared difference between the estimator and parameter.</p>
+<div class="fragment">
+<p>Let <span class="math inline">\(\hat{\theta}\)</span> be an estimator of the parameter <span class="math inline">\(\theta\)</span>. Then</p>
+<p><span class="math display">\[
+\begin{aligned}
+MSE(\hat{\theta}) &amp;= E[(\hat{\theta} - \theta)^2] \\
+&amp; = E(\hat{\theta}^2 - 2\hat{\theta}\theta + \theta^2) \\
+&amp; = E(\hat{\theta}^2) - 2\theta E(\hat{\theta}) + \theta^2 \\
+&amp; = \underbrace{E(\hat{\theta}^2) -  E(\hat{\theta})^2}_{Var(\hat{\theta})} + \underbrace{E(\hat{\theta})^2 - 2\theta E(\hat{\theta}) + \theta^2}_{Bias(\theta)^2}
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="mean-squared-error-1" class="slide level2">
+<h2>Mean squared error</h2>
+<p><span class="math display">\[
+MSE(\hat{\theta}) = Var(\hat{\theta}) + Bias(\hat{\theta})^2
+\]</span></p>
+<p><br></p>
+<div class="fragment">
+<p>The least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is unbiased, so <span class="math display">\[MSE(\hat{\boldsymbol{\beta}}) = Var(\hat{\boldsymbol{\beta}})\]</span></p>
+</div>
+</section>
+<section id="consistency" class="slide level2">
+<h2>Consistency</h2>
+<p>An estimator <span class="math inline">\(\hat{\theta}\)</span> is a consistent estimator of a parameter <span class="math inline">\(\theta\)</span> if it converges in probability to <span class="math inline">\(\theta\)</span>. Given a sequence of estimators <span class="math inline">\(\hat{\theta}_1, \hat{\theta}_2, . . .\)</span>, then for every <span class="math inline">\(\epsilon &gt; 0\)</span>,</p>
+<p><span class="math display">\[
+\displaystyle \lim_{n\to\infty} P(|\hat{\theta}_n - \theta| \geq \epsilon) = 0
+\]</span></p>
+<div class="fragment">
+<p>This means that as the sample size goes to <span class="math inline">\(\infty\)</span> (and thus the sample information gets better and better), the estimator will be arbitrarily close to the parameter with high probability.</p>
+<!--# casella berger pg. 468-->
+<div class="question">
+<p>Why is this a useful property of an estimator?</p>
+</div>
+</div>
+</section>
+<section id="consistency-1" class="slide level2">
+<h2>Consistency</h2>
+<p><br></p>
+<p><br></p>
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Theorem</strong></p>
+<p>An estimator <span class="math inline">\(\hat{\theta}\)</span> is a consistent estimator of the parameter <span class="math inline">\(\theta\)</span> if the sequence of estimators <span class="math inline">\(\hat{\theta}_1, \hat{\theta}_2, \ldots\)</span> satisfies</p>
+<ul>
+<li><p><span class="math inline">\(\lim_{n \to \infty} Var(\hat{\theta}) = 0\)</span></p></li>
+<li><p><span class="math inline">\(\lim_{n \to \infty} Bias(\hat{\theta}) = 0\)</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="consistency-of-hatboldsymbolbeta" class="slide level2">
+<h2>Consistency of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
+<p><span class="math inline">\(Bias(\hat{\boldsymbol{\beta}}) = \mathbf{0}\)</span>, so <span class="math inline">\(\lim_{n \to \infty} Bias(\hat{\boldsymbol{\beta}}) = \mathbf{0}\)</span></p>
+<p><br></p>
+<div class="fragment">
+<p>Now we need to show that <span class="math inline">\(\lim_{n \to \infty} Var(\hat{\boldsymbol{\beta}}) = \mathbf{0}\)</span></p>
+<div class="question">
+<ul>
+<li><p>What is <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>?</p></li>
+<li><p>Show <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}) \to \mathbf{0}\)</span> as <span class="math inline">\(n \to \infty\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<p>Therefore <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is a consistent estimator.</p>
+</div>
+</section>
+<section id="efficiency" class="slide level2">
+<h2>Efficiency</h2>
 <div>
 <ul>
-<li class="fragment"><p>The MLE <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> is equivalent to the least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> , when the errors follow independent and identical normal distributions</p></li>
-<li class="fragment"><p>MLEs have nice properites, so this means the least-squares estimator <span class="math inline">\(\hat{\mathbf{\boldsymbol{\beta}}}\)</span> inherits all the nice properties of MLEs</p></li>
-<li class="fragment"><p>The MLE <span class="math inline">\(\tilde{\sigma}^2_{\epsilon}\)</span> is approximately equal to the least-squares estimator <span class="math inline">\(\hat{\sigma}_\epsilon\)</span>. When <span class="math inline">\(n &gt;&gt; p\)</span>, the difference is trivial</p></li>
+<li class="fragment"><p>An estimator if <strong>efficient</strong> if it has the smallest variance among a class of estimators as <span class="math inline">\(n \rightarrow \infty\)</span></p></li>
+<li class="fragment"><p>By the Gauss-Markov Theorem, we have shown that the least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the most efficient among linear unbiased estimators.</p></li>
+<li class="fragment"><p>Maximum Likelihood Estimators are the most efficient among all unbiased estimators.</p></li>
+<li class="fragment"><p>Therefore, <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the most efficient among all unbiased estimators of <span class="math inline">\(\boldsymbol{\beta}\)</span></p></li>
 </ul>
 </div>
 </section>
-<section id="references" class="slide level2 smaller scrollable">
-<h2>References</h2>
+<section id="asymptotic-normality" class="slide level2">
+<h2>Asymptotic normality</h2>
+<ul>
+<li><p>Maximum Likelihood Estimators are <strong>asymptotically normal</strong>, meaning the distribution of an MLE is normal as <span class="math inline">\(n \rightarrow \infty\)</span></p></li>
+<li><p>Therefore, we know the distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is normal when <span class="math inline">\(n\)</span> is large, regardless of the underlying data</p></li>
+</ul>
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<p><strong>Finite sample (</strong> <span class="math inline">\(n\)</span> <strong>)</strong> <strong>properties</strong></p>
+<ul>
+<li><p>Unbiased estimator ✅</p></li>
+<li><p>Best Linear Unbiased Estimator (BLUE) ✅</p></li>
+</ul>
+<p><br></p>
+<p><strong>Asymptotic (</strong> <span class="math inline">\(n \rightarrow \infty\)</span> <strong>) properties</strong></p>
+<ul>
+<li><p>Consistent estimator ✅</p></li>
+<li><p>Efficient estimator ✅</p></li>
+<li><p>Asymptotic normality ✅</p></li>
+</ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-casella2024statistical" class="csl-entry" role="listitem">
-Casella, George, and Roger Berger. 2024. <em>Statistical Inference</em>. CRC Press.
-</div>
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

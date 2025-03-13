@@ -31,9 +31,11 @@ bibliography: references.bib
 
 ## Announcements
 
--   HW 03 March 20 at 11:59pm
+-   HW 03 due March 20 at 11:59pm
 
--   Project exploratory data analysis due March 20
+-   Project exploratory data analysis due March 20 at 11:59pm
+
+-   Statistics experience due April 22
 
 ## Topics
 
@@ -108,11 +110,11 @@ The player shoots three free throws with the outcome $BBM$.
 
 -   Note that this is **not** the same as the probability function.
 
--   **Probability function**: Fixed parameter value(s) + input possible outcomes 
+-   **Probability function**: Fixed parameter value(s) + input possible outcomes
 
     -   *Given* $p=0.8$ , *what is the probability of observing* $BBM$ *in three free throws?*
 
--   **Likelihood function**: Fixed data + input possible parameter values 
+-   **Likelihood function**: Fixed data + input possible parameter values
 
     -   *Given we've observed* $BBM$, *what is the most plausible value of* $p$?
 :::
@@ -138,7 +140,6 @@ $$
 <br>
 
 ::: question
-
 -   What is the general formula for the likelihood function for $p$ given the observed data $BBM$?
 
 -   How does assuming independence simply things?
@@ -229,7 +230,6 @@ Suppose the player makes $k$ baskets out of the $n$ free throws. This is the obs
 
 # MLE in linear regression {.midi}
 
-
 ## Why maximum likelihood estimation? {.midi}
 
 -   *"Maximum likelihood estimation is, by far, the most popular technique for deriving estimators."* [@casella2024statistical, pp. 315]
@@ -247,7 +247,6 @@ Suppose the player makes $k$ baskets out of the $n$ free throws. This is the obs
 ::: callout-note
 If the normality assumption holds, the least squares estimator is the maximum likelihood estimator for $\beta$. Therefore, it has all these properties of the MLE.
 :::
-
 
 ## Linear regression
 
@@ -293,7 +292,7 @@ $$
 P(Z = z | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(z - \mu)^2}\Big\}
 $$
 
-## SLR: Likelihood for $\beta_0, \beta_1, \sigma^2_{\epsilon}$ 
+## SLR: Likelihood for $\beta_0, \beta_1, \sigma^2_{\epsilon}$
 
 The likelihood function for $\beta_0, \beta_1, \sigma^2_{\epsilon}$ is
 
@@ -307,7 +306,7 @@ L(\beta_0, \beta_1, \sigma^2_{\epsilon} &| x_1, \ldots, x_n, y_1, \ldots, y_n)  
 \end{aligned}
 $$
 
-## Log-Likelihood for $\beta_0, \beta_1, \sigma^2_{\epsilon}$ 
+## Log-Likelihood for $\beta_0, \beta_1, \sigma^2_{\epsilon}$
 
 The log-likelihood function for $\beta_0, \beta_1, \sigma^2_{\epsilon}$ is
 
@@ -377,10 +376,9 @@ We can use a similar process to find the MLEs for $\beta_1$ and $\sigma^2_{\epsi
 
 $$
 \tilde{\beta}_1 = \frac{\sum_{i=1}^n (y_i - \bar{y})(x_i - \bar{x})}{\sum_{i=1}^n(x_i - \bar{x})^2}
-$$
-<br>
+$$ <br>
 
-. . . 
+. . .
 
 $$
 \tilde{\sigma}^2_{\epsilon} = \frac{\sum_{i=1}^n(y_i - \tilde{\beta}_0 - \tilde{\beta}_1x_i)^2}{n} = \frac{\sum_{i=1}^ne_i^2}{n}
@@ -388,17 +386,15 @@ $$
 
 . . .
 
+Note: $\tilde{\beta}_1 = \hat{\beta}_1$ and $\tilde{\sigma}^2_{\epsilon} \approx \hat{\sigma}^2_{\epsilon}$
 
-Note: $\tilde{\beta}_1 = \hat{\beta}_1$ and $\tilde{\sigma}^2_{\epsilon} \approx \hat{\sigma}^2_{\epsilon}$ 
-
-# MLE in matrix form 
+# MLE in matrix form
 
 ## MLE for linear regression in matrix form {.midi}
 
 $$
 L(\boldsymbol{\beta}, \sigma^2_{\epsilon} | \mathbf{X}, \mathbf{y}) = \frac{1}{(2\pi)^{n/2}\sigma^n_{\epsilon}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})\Big\}
-$$
-<br>
+$$ <br>
 
 . . .
 
@@ -407,8 +403,7 @@ $$
 \log L(\boldsymbol{\beta}, \sigma^2_\epsilon &| \mathbf{X}, \mathbf{y}) \\ 
 & = -\frac{n}{2}\log(2\pi) - n \log(\sigma_{\epsilon}) - \frac{1}{2\sigma^2_{\epsilon}}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\mathbf{\beta})
 \end{aligned}
-$$
-<br>
+$$ <br>
 
 . . .
 
@@ -417,17 +412,14 @@ $$
 2.  What does this tell us about the relationship between the MLE and least-squares estimator for $\boldsymbol{\beta}$?
 :::
 
-
-
 ## Putting it all together
 
 ::: incremental
 -   The MLE $\tilde{\boldsymbol{\beta}}$ is equivalent to the least-squares estimator $\hat{\boldsymbol{\beta}}$ , when the errors follow independent and identical normal distributions
 
 -   MLEs have nice properites, so this means the least-squares estimator $\hat{\mathbf{\boldsymbol{\beta}}}$ inherits all the nice properties of MLEs
-    
-- The MLE $\tilde{\sigma}^2_{\epsilon}$ is approximately equal to the least-squares estimator $\hat{\sigma}_\epsilon$. When $n >> p$, the difference is trivial 
 
+-   The MLE $\tilde{\sigma}^2_{\epsilon}$ is approximately equal to the least-squares estimator $\hat{\sigma}_\epsilon$. When $n >> p$, the difference is trivial
 :::
 
 ## References
