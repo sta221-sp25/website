@@ -35,49 +35,51 @@ bibliography: references.bib
 
 -   Project exploratory data analysis due March 20 at 11:59pm
 
+    -   Next milestone: Project presentations in lab March 28
+
 -   Statistics experience due April 22
 
 ## Topics
 
 -   Likelihood
 
--   Maximum likelihood estimation
+-   Maximum likelihood estimation (MLE)
 
 -   MLE for linear regression
 
 ## Motivation {.midi}
 
--   We can find the estimators of $\boldsymbol{\beta}$ and $\sigma^2_{\epsilon}$ for the model
+-   We've discussed how to find the estimators of $\boldsymbol{\beta}$ and $\sigma^2_{\epsilon}$ for the model
 
 $$
 \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{10mm} \boldsymbol{\epsilon} \sim N(0, \sigma^2_\epsilon\mathbf{I})
 $$using least-squares estimation
 
--   Today we will introduce another way to find these estimators - **maximum likelihood estimation.** We will see...
+-   Today we will introduce another way to find these estimators - **maximum likelihood estimation.**
 
-    -   the least-squares estimator is equal to the maximum likelihood estimator when certain assumptions hold
+-   We will see the least-squares estimator is equal to the maximum likelihood estimator when certain assumptions hold
 
 # Maximum likelihood estimation
 
-## Example: Shooting free throws
+## Example: Basketball shots 
 
-Suppose a basketball player shoots a single free throw, such that the probability of making a basket is $p$
+Suppose the a basketball player shoots the ball, such that the probability of making the basket (successfully making the shot) is $p$
 
 . . .
 
 ::: incremental
 -   What is the probability distribution for this random phenomenon?
 
--   Suppose the probability is $p = 0.5$? What is the probability the player makes a single shot, given this value of $p$?
+-   Suppose the probability is $p = 0.5$? What is the probability the player makes a single basket, given this value of $p$?
 
--   Suppose the probability is $p = 0.8$? What is the probability the player makes a single shot, given this value of $p$?
+-   Suppose the probability is $p = 0.8$? What is the probability the player makes a single basket, given this value of $p$?
 :::
 
-## Shooting three free throws
+## Shooting the ball three times
 
-Suppose the player shoots three free throws. They are all independent and the player has the same probability $p$ of making each shot.
+Suppose the player shoots the ball three times. They are all independent and the player has the same probability $p$ of making each basket.
 
-Let $B$ represent a made basket, and $M$ represent a missed basket. The player shoots three free throws with the outcome $BBM$.
+Let $B$ represent a made basket, and $M$ represent a missed basket. The player shoots the ball three times with the outcome $BBM$.
 
 . . .
 
@@ -87,23 +89,21 @@ Let $B$ represent a made basket, and $M$ represent a missed basket. The player s
 -   Suppose the probability is $p = 0.3$? What is the probability of observing the data $BBM$, given this value of $p$ ?
 :::
 
-## Shooting three free throws
+## Shooting the ball three times
 
-Suppose the player shoots three free throws. They are all independent and the player has the same probability $p$ of making each shot.
+Suppose the player shoots the ball three times. They are all independent and the player has the same probability \$p\$ of making each basket.
 
-The player shoots three free throws with the outcome $BBM$.
+The player shoots the ball three times with the outcome $BBM$.
 
 . . .
 
 ::: incremental
--   How would you describe in words the probabilities we previously calculated? <!--# Not sure what we're getting at. Maybe just say what the question is-->
-
 -   **New question:** What parameter value of $p$ do you think maximizes the probability of observing this data?
 
 -   We will use a **likelihood** function to answer this question.
 :::
 
-## Likelihood
+## Likelihood {.midi}
 
 ::: incremental
 -   A **likelihood function** is a measure of how likely we are to observe our data under each possible value of the parameter(s)
@@ -112,16 +112,16 @@ The player shoots three free throws with the outcome $BBM$.
 
 -   **Probability function**: Fixed parameter value(s) + input possible outcomes
 
-    -   *Given* $p=0.8$ , *what is the probability of observing* $BBM$ *in three free throws?*
+    -   *Given* $p=0.8$ , *what is the probability of observing* $BBM$ *in three basketball shots?*
 
 -   **Likelihood function**: Fixed data + input possible parameter values
 
     -   *Given we've observed* $BBM$, *what is the most plausible value of* $p$?
 :::
 
-## Likelihood: shooting 3 free throws
+## Likelihood: Three basketball shots
 
-The likelihood function for the probability of a basket $p$ given we observed $BBM$ when shooting three independent free throws is $$
+The likelihood function for the probability of a basket $p$ given we observed $BBM$ when shooting the ball three independent times $$
 L(p|BBM) = p \times p \times (1 - p)
 $$
 
@@ -135,7 +135,7 @@ $$
 L(p = 0.8|BBM) = 0.8 \times 0.8 \times (1 - 0.8) = 0.128
 $$
 
-## Likelihood: shooting 3 free throws
+## Likelihood: Three basketball shots
 
 <br>
 
@@ -147,7 +147,7 @@ $$
 -   How does having identically distributed data simplify things?
 :::
 
-## Likelihood: shooting three free throws {.midi}
+## Likelihood: Three basketball shots {.midi}
 
 The likelihood function for $p$ given the data $BBM$ is
 
@@ -214,11 +214,11 @@ What do you think is the approximate value of the MLE of $p$ given the data?
 Use calculus to find the MLE of $p$ given the data $BBM$.
 :::
 
-## Shooting $n$ free throws
+## Shooting the ball $n$ times
 
-Suppose the player shoots $n$ free throws. They are all independent and the player has the same probability $p$ of making each shot.
+Suppose the player shoots the ball $n$ times. They are all independent and the player has the same probability $p$ of making each one.
 
-Suppose the player makes $k$ baskets out of the $n$ free throws. This is the observed data.
+Suppose the player makes $k$ baskets out of the $n$ shots. This is the observed data.
 
 . . .
 
@@ -228,13 +228,13 @@ Suppose the player makes $k$ baskets out of the $n$ free throws. This is the obs
 -   For what value of $p$ do we maximize the likelihood given the observed data? Use calculus to find the response.
 :::
 
-# MLE in linear regression {.midi}
+# MLE in linear regression
 
 ## Why maximum likelihood estimation? {.midi}
 
 -   *"Maximum likelihood estimation is, by far, the most popular technique for deriving estimators."* [@casella2024statistical, pp. 315]
 
--   MLEs have nice statistical properties (more on this in a future class). They are
+-   MLEs have nice statistical properties (more on this next class)
 
     -   Consistent
 
@@ -245,7 +245,7 @@ Suppose the player makes $k$ baskets out of the $n$ free throws. This is the obs
 . . .
 
 ::: callout-note
-If the normality assumption holds, the least squares estimator is the maximum likelihood estimator for $\beta$. Therefore, it has all these properties of the MLE.
+If the normality assumption holds, the least squares estimator is the maximum likelihood estimator for $\beta$. Therefore, it has all the properties of the MLE.
 :::
 
 ## Linear regression
@@ -292,17 +292,17 @@ $$
 P(Z = z | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(z - \mu)^2}\Big\}
 $$
 
-## SLR: Likelihood for $\beta_0, \beta_1, \sigma^2_{\epsilon}$
+## SLR: Likelihood for $\beta_0, \beta_1, \sigma^2_{\epsilon}$ {.midi}
 
 The likelihood function for $\beta_0, \beta_1, \sigma^2_{\epsilon}$ is
 
 $$
 \begin{aligned}
-L(\beta_0, \beta_1, \sigma^2_{\epsilon} &| x_1, \ldots, x_n, y_1, \ldots, y_n)  = p(y_1|x_1, \beta_0, \beta_1, \sigma^2_{\epsilon}) \dots  p(y_n|x_n, \beta_0, \beta_1, \sigma^2_{\epsilon}) \\[5pt]
-& = \prod_{i=1}^n p(y_i | x_i, \beta_0, \beta_1, \sigma^2_{\epsilon}) \\[5pt]
- &= \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_
-\epsilon^2}}\exp\Big\{{-\frac{1}{2\sigma_\epsilon^2}(y_i - [\beta_0 + \beta_1x_i])^2}\Big\} \\[10pt]
-& = (2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}
+L(\beta_0, \beta_1, \sigma^2_{\epsilon} &| x_1, \ldots, x_n, y_1, \ldots, y_n) \\ &= p(y_1|x_1, \beta_0, \beta_1, \sigma^2_{\epsilon}) \dots  p(y_n|x_n, \beta_0, \beta_1, \sigma^2_{\epsilon}) \\[5pt]
+& = \class{fragment}{\prod_{i=1}^n p(y_i | x_i, \beta_0, \beta_1, \sigma^2_{\epsilon})} \\[5pt]
+ &= \class{fragment}{\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_
+\epsilon^2}}\exp\Big\{{-\frac{1}{2\sigma_\epsilon^2}(y_i - [\beta_0 + \beta_1x_i])^2}\Big\}} \\[10pt]
+& = \class{fragment}{(2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}}
 \end{aligned}
 $$
 
@@ -313,16 +313,10 @@ The log-likelihood function for $\beta_0, \beta_1, \sigma^2_{\epsilon}$ is
 $$
 \begin{aligned}
 \log &L(\beta_0, \beta_1, \sigma^2_{\epsilon} | x_1, \ldots, x_n, y_1, \ldots, y_n) \\[8pt]
-& = \log\Big[(2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}\Big] \\[8pt]
-& = -\frac{n}{2}\log(2\pi\sigma^2_{\epsilon}) -\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2
+& = \class{fragment}{\log\Big((2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}\Big)} \\[8pt]
+& = \class{fragment}{-\frac{n}{2}\log(2\pi\sigma^2_{\epsilon}) -\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2}
 \end{aligned}
 $$
-
-<br>
-
-. . .
-
-We will use the log-likelihood function to find the MLEs
 
 ## MLE for $\beta_0$
 
@@ -342,9 +336,9 @@ After a few steps...
 
 $$
 \begin{aligned}
-&\Rightarrow \sum_{i=1}^ny_i - n\tilde{\beta}_0 - \tilde{\beta}_1\sum_{i=1}^n x_i = 0 \\[8pt]
-&\Rightarrow \sum_{i=1}^ny_i  - \tilde{\beta}_1\sum_{i=1}^n x_i = n\tilde{\beta}_0 \\[8pt]
-&\Rightarrow \frac{1}{n}\sum_{i=1}^ny_i  - \frac{1}{n}\tilde{\beta}_1\sum_{i=1}^n x_i = \tilde{\beta}_0
+&\Rightarrow \class{fragment}{\sum_{i=1}^ny_i - n\tilde{\beta}_0 - \tilde{\beta}_1\sum_{i=1}^n x_i = 0} \\[8pt]
+&\Rightarrow \class{fragment}{\sum_{i=1}^ny_i  - \tilde{\beta}_1\sum_{i=1}^n x_i = n\tilde{\beta}_0} \\[8pt]
+&\Rightarrow \class{fragment}{ \frac{1}{n}\sum_{i=1}^ny_i  - \frac{1}{n}\tilde{\beta}_1\sum_{i=1}^n x_i = \tilde{\beta}_0}
 \end{aligned}
 $$
 
@@ -403,7 +397,7 @@ $$
 \log L(\boldsymbol{\beta}, \sigma^2_\epsilon &| \mathbf{X}, \mathbf{y}) \\ 
 & = -\frac{n}{2}\log(2\pi) - n \log(\sigma_{\epsilon}) - \frac{1}{2\sigma^2_{\epsilon}}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\mathbf{\beta})
 \end{aligned}
-$$ <br>
+$$ 
 
 . . .
 
@@ -417,7 +411,7 @@ $$ <br>
 ::: incremental
 -   The MLE $\tilde{\boldsymbol{\beta}}$ is equivalent to the least-squares estimator $\hat{\boldsymbol{\beta}}$ , when the errors follow independent and identical normal distributions
 
--   MLEs have nice properites, so this means the least-squares estimator $\hat{\mathbf{\boldsymbol{\beta}}}$ inherits all the nice properties of MLEs
+-   MLEs have nice properties, so this means the least-squares estimator $\hat{\mathbf{\boldsymbol{\beta}}}$ inherits all the nice properties of MLEs
 
 -   The MLE $\tilde{\sigma}^2_{\epsilon}$ is approximately equal to the least-squares estimator $\hat{\sigma}_\epsilon$. When $n >> p$, the difference is trivial
 :::

@@ -68,15 +68,14 @@ Our goals are to understand
 -   A few properties of the least squares estimator and why they are useful
 :::
 
-
 # Properties of $\hat{\boldsymbol{\beta}}$
 
-## Motivation 
+## Motivation
 
 ::: incremental
 -   We have discussed how to use least squares to find an estimator of $\hat{\boldsymbol{\beta}}$
 
--   How do we know whether our least squares estimator (or MLE)  is a "good" estimator?
+-   How do we know whether our least squares estimator (or MLE) is a "good" estimator?
 
 -   When we consider what makes an estimator "good", we'll look at three criteria:
 
@@ -141,8 +140,7 @@ Suppose you are throwing darts at a target
 
 -   Efficient estimator
 
-- Asymptotic normality 
-
+-   Asymptotic normality
 
 # Finite sample properties
 
@@ -158,7 +156,6 @@ $$
 
 An estimator is **unbiased** if the bias is 0 and thus $E(\hat{\theta}) = \theta$
 
-
 ## Expected value of $\hat{\boldsymbol{\beta}}$
 
 Let's take a look at the expected value of least-squares estimator:
@@ -172,7 +169,6 @@ E(\hat{\boldsymbol{\beta}}) &= E[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X
 \end{aligned}
 $$
 
-
 ## Expected value of $\hat{\boldsymbol{\beta}}$
 
 The least squares estimator $\hat{\boldsymbol{\beta}}$ is an *unbiased* estimator of $\boldsymbol{\beta}$
@@ -180,8 +176,6 @@ The least squares estimator $\hat{\boldsymbol{\beta}}$ is an *unbiased* estimato
 $$
 E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}
 $$
-
-
 
 ## Variance of $\hat{\boldsymbol{\beta}}$
 
@@ -198,8 +192,6 @@ $$
 . . .
 
 We will show that $\hat{\boldsymbol{\beta}}$ is the "best" estimator (has the lowest variance) among the class of linear unbiased estimators
-
-
 
 <br>
 
@@ -321,7 +313,6 @@ The least-squares estimator of $\boldsymbol{\beta}$ in the model $\mathbf{y} = \
 "Best" means $\hat{\boldsymbol{\beta}}$ has the smallest variance among all linear unbiased estimators for $\boldsymbol{\beta}$ .
 :::
 
-
 ## Properties of $\hat{\boldsymbol{\beta}}$
 
 **Finite sample (** $n$ **)** **properties**
@@ -338,26 +329,24 @@ The least-squares estimator of $\boldsymbol{\beta}$ in the model $\mathbf{y} = \
 
 -   Efficient estimator
 
-- Asymptotic normality 
+-   Asymptotic normality
 
 # Asymptotic properties
 
 ## Properties from the MLE
 
-- Recall that the least-squares estimator $\hat{\boldsymbol{\beta}}$ is equal to the Maximum Likelihood Estimator $\tilde{\boldsymbol{\beta}}$ 
+-   Recall that the least-squares estimator $\hat{\boldsymbol{\beta}}$ is equal to the Maximum Likelihood Estimator $\tilde{\boldsymbol{\beta}}$
 
-- Maximum likelihood estimators have nice statistical properties and the $\hat{\boldsymbol{\beta}}$ inherits all of these properties 
+-   Maximum likelihood estimators have nice statistical properties and the $\hat{\boldsymbol{\beta}}$ inherits all of these properties
 
-- Consistency
+-   Consistency
 
-- Efficiency 
+-   Efficiency
 
-- Asymptotic normality 
+-   Asymptotic normality
 
 ::: callout-note
-
 We will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference
-
 :::
 
 ## Mean squared error
@@ -441,29 +430,27 @@ Now we need to show that $\lim_{n \to \infty} Var(\hat{\boldsymbol{\beta}}) = \m
 -   Show $Var(\hat{\boldsymbol{\beta}}) \to \mathbf{0}$ as $n \to \infty$.
 :::
 
-. . . 
+. . .
 
-Therefore $\hat{\boldsymbol{\beta}}$ is a consistent estimator. 
+Therefore $\hat{\boldsymbol{\beta}}$ is a consistent estimator.
 
 ## Efficiency
 
 ::: incremental
-
--   An estimator if **efficient** if it has the smallest variance among a class of estimators as $n \rightarrow \infty$ 
+-   An estimator if **efficient** if it has the smallest variance among a class of estimators as $n \rightarrow \infty$
 
 -   By the Gauss-Markov Theorem, we have shown that the least-squares estimator $\hat{\boldsymbol{\beta}}$ is the most efficient among linear unbiased estimators.
 
-- Maximum Likelihood Estimators are the most efficient among all unbiased estimators. 
+-   Maximum Likelihood Estimators are the most efficient among all unbiased estimators.
 
-- Therefore, $\hat{\boldsymbol{\beta}}$ is the most efficient among all unbiased estimators of $\boldsymbol{\beta}$
-
+-   Therefore, $\hat{\boldsymbol{\beta}}$ is the most efficient among all unbiased estimators of $\boldsymbol{\beta}$
 :::
 
-## Asymptotic normality 
+## Asymptotic normality
 
-- Maximum Likelihood Estimators are **asymptotically normal**, meaning the distribution of an MLE is normal as $n \rightarrow \infty$ 
+-   Maximum Likelihood Estimators are **asymptotically normal**, meaning the distribution of an MLE is normal as $n \rightarrow \infty$
 
-- Therefore, we know the distribution of $\hat{\boldsymbol{\beta}}$ is normal when $n$ is large, regardless of the underlying data
+-   Therefore, we know the distribution of $\hat{\boldsymbol{\beta}}$ is normal when $n$ is large, regardless of the underlying data
 
 ## Recap
 
@@ -481,4 +468,4 @@ Therefore $\hat{\boldsymbol{\beta}}$ is a consistent estimator.
 
 -   Efficient estimator ✅
 
-- Asymptotic normality ✅
+-   Asymptotic normality ✅

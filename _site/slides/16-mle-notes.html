@@ -389,16 +389,16 @@ window.Quarto = {
   <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a></li>
   <li><a href="#maximum-likelihood-estimation" id="toc-maximum-likelihood-estimation" class="nav-link" data-scroll-target="#maximum-likelihood-estimation">Maximum likelihood estimation</a>
   <ul class="collapse">
-  <li><a href="#example-shooting-free-throws" id="toc-example-shooting-free-throws" class="nav-link" data-scroll-target="#example-shooting-free-throws">Example: Shooting free throws</a></li>
-  <li><a href="#shooting-three-free-throws" id="toc-shooting-three-free-throws" class="nav-link" data-scroll-target="#shooting-three-free-throws">Shooting three free throws</a></li>
-  <li><a href="#shooting-three-free-throws-1" id="toc-shooting-three-free-throws-1" class="nav-link" data-scroll-target="#shooting-three-free-throws-1">Shooting three free throws</a></li>
+  <li><a href="#example-basketball-shots" id="toc-example-basketball-shots" class="nav-link" data-scroll-target="#example-basketball-shots">Example: Basketball shots</a></li>
+  <li><a href="#shooting-the-ball-three-times" id="toc-shooting-the-ball-three-times" class="nav-link" data-scroll-target="#shooting-the-ball-three-times">Shooting the ball three times</a></li>
+  <li><a href="#shooting-the-ball-three-times-1" id="toc-shooting-the-ball-three-times-1" class="nav-link" data-scroll-target="#shooting-the-ball-three-times-1">Shooting the ball three times</a></li>
   <li><a href="#likelihood" id="toc-likelihood" class="nav-link" data-scroll-target="#likelihood">Likelihood</a></li>
-  <li><a href="#likelihood-shooting-3-free-throws" id="toc-likelihood-shooting-3-free-throws" class="nav-link" data-scroll-target="#likelihood-shooting-3-free-throws">Likelihood: shooting 3 free throws</a></li>
-  <li><a href="#likelihood-shooting-3-free-throws-1" id="toc-likelihood-shooting-3-free-throws-1" class="nav-link" data-scroll-target="#likelihood-shooting-3-free-throws-1">Likelihood: shooting 3 free throws</a></li>
-  <li><a href="#likelihood-shooting-three-free-throws" id="toc-likelihood-shooting-three-free-throws" class="nav-link" data-scroll-target="#likelihood-shooting-three-free-throws">Likelihood: shooting three free throws</a></li>
+  <li><a href="#likelihood-three-basketball-shots" id="toc-likelihood-three-basketball-shots" class="nav-link" data-scroll-target="#likelihood-three-basketball-shots">Likelihood: Three basketball shots</a></li>
+  <li><a href="#likelihood-three-basketball-shots-1" id="toc-likelihood-three-basketball-shots-1" class="nav-link" data-scroll-target="#likelihood-three-basketball-shots-1">Likelihood: Three basketball shots</a></li>
+  <li><a href="#likelihood-three-basketball-shots-2" id="toc-likelihood-three-basketball-shots-2" class="nav-link" data-scroll-target="#likelihood-three-basketball-shots-2">Likelihood: Three basketball shots</a></li>
   <li><a href="#finding-the-mle-using-graphs" id="toc-finding-the-mle-using-graphs" class="nav-link" data-scroll-target="#finding-the-mle-using-graphs">Finding the MLE using graphs</a></li>
   <li><a href="#finding-the-mle-using-calculus" id="toc-finding-the-mle-using-calculus" class="nav-link" data-scroll-target="#finding-the-mle-using-calculus">Finding the MLE using calculus</a></li>
-  <li><a href="#shooting-n-free-throws" id="toc-shooting-n-free-throws" class="nav-link" data-scroll-target="#shooting-n-free-throws">Shooting <span class="math inline">\(n\)</span> free throws</a></li>
+  <li><a href="#shooting-the-ball-n-times" id="toc-shooting-the-ball-n-times" class="nav-link" data-scroll-target="#shooting-the-ball-n-times">Shooting the ball <span class="math inline">\(n\)</span> times</a></li>
   </ul></li>
   <li><a href="#mle-in-linear-regression" id="toc-mle-in-linear-regression" class="nav-link" data-scroll-target="#mle-in-linear-regression">MLE in linear regression</a>
   <ul class="collapse">
@@ -460,7 +460,10 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
 <li><p>HW 03 due March 20 at 11:59pm</p></li>
-<li><p>Project exploratory data analysis due March 20 at 11:59pm</p></li>
+<li><p>Project exploratory data analysis due March 20 at 11:59pm</p>
+<ul>
+<li>Next milestone: Project presentations in lab March 28</li>
+</ul></li>
 <li><p>Statistics experience due April 22</p></li>
 </ul>
 </section>
@@ -468,43 +471,41 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
 <ul>
 <li><p>Likelihood</p></li>
-<li><p>Maximum likelihood estimation</p></li>
+<li><p>Maximum likelihood estimation (MLE)</p></li>
 <li><p>MLE for linear regression</p></li>
 </ul>
 </section>
 <section id="motivation" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="motivation">Motivation</h2>
 <ul>
-<li>We can find the estimators of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span> for the model</li>
+<li>We’ve discussed how to find the estimators of <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma^2_{\epsilon}\)</span> for the model</li>
 </ul>
 <p><span class="math display">\[
 \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \hspace{10mm} \boldsymbol{\epsilon} \sim N(0, \sigma^2_\epsilon\mathbf{I})
 \]</span>using least-squares estimation</p>
 <ul>
-<li><p>Today we will introduce another way to find these estimators - <strong>maximum likelihood estimation.</strong> We will see…</p>
-<ul>
-<li>the least-squares estimator is equal to the maximum likelihood estimator when certain assumptions hold</li>
-</ul></li>
+<li><p>Today we will introduce another way to find these estimators - <strong>maximum likelihood estimation.</strong></p></li>
+<li><p>We will see the least-squares estimator is equal to the maximum likelihood estimator when certain assumptions hold</p></li>
 </ul>
 </section>
 <section id="maximum-likelihood-estimation" class="level1">
 <h1>Maximum likelihood estimation</h1>
-<section id="example-shooting-free-throws" class="level2">
-<h2 class="anchored" data-anchor-id="example-shooting-free-throws">Example: Shooting free throws</h2>
-<p>Suppose a basketball player shoots a single free throw, such that the probability of making a basket is <span class="math inline">\(p\)</span></p>
+<section id="example-basketball-shots" class="level2">
+<h2 class="anchored" data-anchor-id="example-basketball-shots">Example: Basketball shots</h2>
+<p>Suppose the a basketball player shoots the ball, such that the probability of making the basket (successfully making the shot) is <span class="math inline">\(p\)</span></p>
 <p>. . .</p>
 <div class="incremental">
 <ul class="incremental">
 <li><p>What is the probability distribution for this random phenomenon?</p></li>
-<li><p>Suppose the probability is <span class="math inline">\(p = 0.5\)</span>? What is the probability the player makes a single shot, given this value of <span class="math inline">\(p\)</span>?</p></li>
-<li><p>Suppose the probability is <span class="math inline">\(p = 0.8\)</span>? What is the probability the player makes a single shot, given this value of <span class="math inline">\(p\)</span>?</p></li>
+<li><p>Suppose the probability is <span class="math inline">\(p = 0.5\)</span>? What is the probability the player makes a single basket, given this value of <span class="math inline">\(p\)</span>?</p></li>
+<li><p>Suppose the probability is <span class="math inline">\(p = 0.8\)</span>? What is the probability the player makes a single basket, given this value of <span class="math inline">\(p\)</span>?</p></li>
 </ul>
 </div>
 </section>
-<section id="shooting-three-free-throws" class="level2">
-<h2 class="anchored" data-anchor-id="shooting-three-free-throws">Shooting three free throws</h2>
-<p>Suppose the player shoots three free throws. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each shot.</p>
-<p>Let <span class="math inline">\(B\)</span> represent a made basket, and <span class="math inline">\(M\)</span> represent a missed basket. The player shoots three free throws with the outcome <span class="math inline">\(BBM\)</span>.</p>
+<section id="shooting-the-ball-three-times" class="level2">
+<h2 class="anchored" data-anchor-id="shooting-the-ball-three-times">Shooting the ball three times</h2>
+<p>Suppose the player shoots the ball three times. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each basket.</p>
+<p>Let <span class="math inline">\(B\)</span> represent a made basket, and <span class="math inline">\(M\)</span> represent a missed basket. The player shoots the ball three times with the outcome <span class="math inline">\(BBM\)</span>.</p>
 <p>. . .</p>
 <div class="incremental">
 <ul class="incremental">
@@ -513,28 +514,27 @@ window.Quarto = {
 </ul>
 </div>
 </section>
-<section id="shooting-three-free-throws-1" class="level2">
-<h2 class="anchored" data-anchor-id="shooting-three-free-throws-1">Shooting three free throws</h2>
-<p>Suppose the player shoots three free throws. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each shot.</p>
-<p>The player shoots three free throws with the outcome <span class="math inline">\(BBM\)</span>.</p>
+<section id="shooting-the-ball-three-times-1" class="level2">
+<h2 class="anchored" data-anchor-id="shooting-the-ball-three-times-1">Shooting the ball three times</h2>
+<p>Suppose the player shoots the ball three times. They are all independent and the player has the same probability $p$ of making each basket.</p>
+<p>The player shoots the ball three times with the outcome <span class="math inline">\(BBM\)</span>.</p>
 <p>. . .</p>
 <div class="incremental">
 <ul class="incremental">
-<li><p>How would you describe in words the probabilities we previously calculated? <!--# Not sure what we're getting at. Maybe just say what the question is--></p></li>
 <li><p><strong>New question:</strong> What parameter value of <span class="math inline">\(p\)</span> do you think maximizes the probability of observing this data?</p></li>
 <li><p>We will use a <strong>likelihood</strong> function to answer this question.</p></li>
 </ul>
 </div>
 </section>
-<section id="likelihood" class="level2">
-<h2 class="anchored" data-anchor-id="likelihood">Likelihood</h2>
+<section id="likelihood" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="likelihood">Likelihood</h2>
 <div class="incremental">
 <ul class="incremental">
 <li><p>A <strong>likelihood function</strong> is a measure of how likely we are to observe our data under each possible value of the parameter(s)</p></li>
 <li><p>Note that this is <strong>not</strong> the same as the probability function.</p></li>
 <li><p><strong>Probability function</strong>: Fixed parameter value(s) + input possible outcomes</p>
 <ul class="incremental">
-<li><em>Given</em> <span class="math inline">\(p=0.8\)</span> , <em>what is the probability of observing</em> <span class="math inline">\(BBM\)</span> <em>in three free throws?</em></li>
+<li><em>Given</em> <span class="math inline">\(p=0.8\)</span> , <em>what is the probability of observing</em> <span class="math inline">\(BBM\)</span> <em>in three basketball shots?</em></li>
 </ul></li>
 <li><p><strong>Likelihood function</strong>: Fixed data + input possible parameter values</p>
 <ul class="incremental">
@@ -543,9 +543,9 @@ window.Quarto = {
 </ul>
 </div>
 </section>
-<section id="likelihood-shooting-3-free-throws" class="level2">
-<h2 class="anchored" data-anchor-id="likelihood-shooting-3-free-throws">Likelihood: shooting 3 free throws</h2>
-<p>The likelihood function for the probability of a basket <span class="math inline">\(p\)</span> given we observed <span class="math inline">\(BBM\)</span> when shooting three independent free throws is <span class="math display">\[
+<section id="likelihood-three-basketball-shots" class="level2">
+<h2 class="anchored" data-anchor-id="likelihood-three-basketball-shots">Likelihood: Three basketball shots</h2>
+<p>The likelihood function for the probability of a basket <span class="math inline">\(p\)</span> given we observed <span class="math inline">\(BBM\)</span> when shooting the ball three independent times <span class="math display">\[
 L(p|BBM) = p \times p \times (1 - p)
 \]</span></p>
 <p><br></p>
@@ -555,8 +555,8 @@ L(p|BBM) = p \times p \times (1 - p)
 L(p = 0.8|BBM) = 0.8 \times 0.8 \times (1 - 0.8) = 0.128
 \]</span></p>
 </section>
-<section id="likelihood-shooting-3-free-throws-1" class="level2">
-<h2 class="anchored" data-anchor-id="likelihood-shooting-3-free-throws-1">Likelihood: shooting 3 free throws</h2>
+<section id="likelihood-three-basketball-shots-1" class="level2">
+<h2 class="anchored" data-anchor-id="likelihood-three-basketball-shots-1">Likelihood: Three basketball shots</h2>
 <p><br></p>
 <div class="question">
 <ul>
@@ -566,8 +566,8 @@ L(p = 0.8|BBM) = 0.8 \times 0.8 \times (1 - 0.8) = 0.128
 </ul>
 </div>
 </section>
-<section id="likelihood-shooting-three-free-throws" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="likelihood-shooting-three-free-throws">Likelihood: shooting three free throws</h2>
+<section id="likelihood-three-basketball-shots-2" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="likelihood-three-basketball-shots-2">Likelihood: Three basketball shots</h2>
 <p>The likelihood function for <span class="math inline">\(p\)</span> given the data <span class="math inline">\(BBM\)</span> is</p>
 <p><span class="math display">\[
 L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
@@ -614,10 +614,10 @@ L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
 <p>Use calculus to find the MLE of <span class="math inline">\(p\)</span> given the data <span class="math inline">\(BBM\)</span>.</p>
 </div>
 </section>
-<section id="shooting-n-free-throws" class="level2">
-<h2 class="anchored" data-anchor-id="shooting-n-free-throws">Shooting <span class="math inline">\(n\)</span> free throws</h2>
-<p>Suppose the player shoots <span class="math inline">\(n\)</span> free throws. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each shot.</p>
-<p>Suppose the player makes <span class="math inline">\(k\)</span> baskets out of the <span class="math inline">\(n\)</span> free throws. This is the observed data.</p>
+<section id="shooting-the-ball-n-times" class="level2">
+<h2 class="anchored" data-anchor-id="shooting-the-ball-n-times">Shooting the ball <span class="math inline">\(n\)</span> times</h2>
+<p>Suppose the player shoots the ball <span class="math inline">\(n\)</span> times. They are all independent and the player has the same probability <span class="math inline">\(p\)</span> of making each one.</p>
+<p>Suppose the player makes <span class="math inline">\(k\)</span> baskets out of the <span class="math inline">\(n\)</span> shots. This is the observed data.</p>
 <p>. . .</p>
 <div class="question">
 <ul>
@@ -628,13 +628,13 @@ L(p|BBM) = p \times p \times (1 - p) = p^2 \times (1 - p)
 </div>
 </section>
 </section>
-<section id="mle-in-linear-regression" class="level1 midi">
-<h1 class="midi">MLE in linear regression</h1>
+<section id="mle-in-linear-regression" class="level1">
+<h1>MLE in linear regression</h1>
 <section id="why-maximum-likelihood-estimation" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="why-maximum-likelihood-estimation">Why maximum likelihood estimation?</h2>
 <ul>
 <li><p><em>“Maximum likelihood estimation is, by far, the most popular technique for deriving estimators.”</em> <span class="citation" data-cites="casella2024statistical">(<a href="#ref-casella2024statistical" role="doc-biblioref">Casella and Berger 2024, 315</a>)</span></p></li>
-<li><p>MLEs have nice statistical properties (more on this in a future class). They are</p>
+<li><p>MLEs have nice statistical properties (more on this next class)</p>
 <ul>
 <li><p>Consistent</p></li>
 <li><p>Efficient</p></li>
@@ -652,7 +652,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If the normality assumption holds, the least squares estimator is the maximum likelihood estimator for <span class="math inline">\(\beta\)</span>. Therefore, it has all these properties of the MLE.</p>
+<p>If the normality assumption holds, the least squares estimator is the maximum likelihood estimator for <span class="math inline">\(\beta\)</span>. Therefore, it has all the properties of the MLE.</p>
 </div>
 </div>
 </section>
@@ -692,16 +692,16 @@ y_i | x_i \sim N(\beta_0 + \beta_1 x_i, \sigma^2_{\epsilon})
 P(Z = z | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big\{-{\frac{1}{2\sigma^2}(z - \mu)^2}\Big\}
 \]</span></p>
 </section>
-<section id="slr-likelihood-for-beta_0-beta_1-sigma2_epsilon" class="level2">
-<h2 class="anchored" data-anchor-id="slr-likelihood-for-beta_0-beta_1-sigma2_epsilon">SLR: Likelihood for <span class="math inline">\(\beta_0, \beta_1, \sigma^2_{\epsilon}\)</span></h2>
+<section id="slr-likelihood-for-beta_0-beta_1-sigma2_epsilon" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="slr-likelihood-for-beta_0-beta_1-sigma2_epsilon">SLR: Likelihood for <span class="math inline">\(\beta_0, \beta_1, \sigma^2_{\epsilon}\)</span></h2>
 <p>The likelihood function for <span class="math inline">\(\beta_0, \beta_1, \sigma^2_{\epsilon}\)</span> is</p>
 <p><span class="math display">\[
 \begin{aligned}
-L(\beta_0, \beta_1, \sigma^2_{\epsilon} &amp;| x_1, \ldots, x_n, y_1, \ldots, y_n)  = p(y_1|x_1, \beta_0, \beta_1, \sigma^2_{\epsilon}) \dots  p(y_n|x_n, \beta_0, \beta_1, \sigma^2_{\epsilon}) \\[5pt]
-&amp; = \prod_{i=1}^n p(y_i | x_i, \beta_0, \beta_1, \sigma^2_{\epsilon}) \\[5pt]
-&amp;= \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_
-\epsilon^2}}\exp\Big\{{-\frac{1}{2\sigma_\epsilon^2}(y_i - [\beta_0 + \beta_1x_i])^2}\Big\} \\[10pt]
-&amp; = (2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}
+L(\beta_0, \beta_1, \sigma^2_{\epsilon} &amp;| x_1, \ldots, x_n, y_1, \ldots, y_n) \\ &amp;= p(y_1|x_1, \beta_0, \beta_1, \sigma^2_{\epsilon}) \dots  p(y_n|x_n, \beta_0, \beta_1, \sigma^2_{\epsilon}) \\[5pt]
+&amp; = \class{fragment}{\prod_{i=1}^n p(y_i | x_i, \beta_0, \beta_1, \sigma^2_{\epsilon})} \\[5pt]
+&amp;= \class{fragment}{\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_
+\epsilon^2}}\exp\Big\{{-\frac{1}{2\sigma_\epsilon^2}(y_i - [\beta_0 + \beta_1x_i])^2}\Big\}} \\[10pt]
+&amp; = \class{fragment}{(2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}}
 \end{aligned}
 \]</span></p>
 </section>
@@ -711,13 +711,10 @@ L(\beta_0, \beta_1, \sigma^2_{\epsilon} &amp;| x_1, \ldots, x_n, y_1, \ldots, y_
 <p><span class="math display">\[
 \begin{aligned}
 \log &amp;L(\beta_0, \beta_1, \sigma^2_{\epsilon} | x_1, \ldots, x_n, y_1, \ldots, y_n) \\[8pt]
-&amp; = \log\Big[(2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}\Big] \\[8pt]
-&amp; = -\frac{n}{2}\log(2\pi\sigma^2_{\epsilon}) -\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2
+&amp; = \class{fragment}{\log\Big((2\pi\sigma^2_{\epsilon})^{-\frac{n}{2}}\exp\Big\{-\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2\Big\}\Big)} \\[8pt]
+&amp; = \class{fragment}{-\frac{n}{2}\log(2\pi\sigma^2_{\epsilon}) -\frac{1}{2\sigma^2_{\epsilon}}\sum_{i=1}^n(y_i - \beta_0 - \beta_1x_i)^2}
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p>. . .</p>
-<p>We will use the log-likelihood function to find the MLEs</p>
 </section>
 <section id="mle-for-beta_0" class="level2">
 <h2 class="anchored" data-anchor-id="mle-for-beta_0">MLE for <span class="math inline">\(\beta_0\)</span></h2>
@@ -733,9 +730,9 @@ L(\beta_0, \beta_1, \sigma^2_{\epsilon} &amp;| x_1, \ldots, x_n, y_1, \ldots, y_
 <p>After a few steps…</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\Rightarrow \sum_{i=1}^ny_i - n\tilde{\beta}_0 - \tilde{\beta}_1\sum_{i=1}^n x_i = 0 \\[8pt]
-&amp;\Rightarrow \sum_{i=1}^ny_i  - \tilde{\beta}_1\sum_{i=1}^n x_i = n\tilde{\beta}_0 \\[8pt]
-&amp;\Rightarrow \frac{1}{n}\sum_{i=1}^ny_i  - \frac{1}{n}\tilde{\beta}_1\sum_{i=1}^n x_i = \tilde{\beta}_0
+&amp;\Rightarrow \class{fragment}{\sum_{i=1}^ny_i - n\tilde{\beta}_0 - \tilde{\beta}_1\sum_{i=1}^n x_i = 0} \\[8pt]
+&amp;\Rightarrow \class{fragment}{\sum_{i=1}^ny_i  - \tilde{\beta}_1\sum_{i=1}^n x_i = n\tilde{\beta}_0} \\[8pt]
+&amp;\Rightarrow \class{fragment}{ \frac{1}{n}\sum_{i=1}^ny_i  - \frac{1}{n}\tilde{\beta}_1\sum_{i=1}^n x_i = \tilde{\beta}_0}
 \end{aligned}
 \]</span></p>
 </section>
@@ -781,7 +778,7 @@ L(\boldsymbol{\beta}, \sigma^2_{\epsilon} | \mathbf{X}, \mathbf{y}) = \frac{1}{(
 \log L(\boldsymbol{\beta}, \sigma^2_\epsilon &amp;| \mathbf{X}, \mathbf{y}) \\
 &amp; = -\frac{n}{2}\log(2\pi) - n \log(\sigma_{\epsilon}) - \frac{1}{2\sigma^2_{\epsilon}}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\mathbf{\beta})
 \end{aligned}
-\]</span> <br></p>
+\]</span></p>
 <p>. . .</p>
 <div class="question">
 <ol type="1">
@@ -795,7 +792,7 @@ L(\boldsymbol{\beta}, \sigma^2_{\epsilon} | \mathbf{X}, \mathbf{y}) = \frac{1}{(
 <div class="incremental">
 <ul class="incremental">
 <li><p>The MLE <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> is equivalent to the least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> , when the errors follow independent and identical normal distributions</p></li>
-<li><p>MLEs have nice properites, so this means the least-squares estimator <span class="math inline">\(\hat{\mathbf{\boldsymbol{\beta}}}\)</span> inherits all the nice properties of MLEs</p></li>
+<li><p>MLEs have nice properties, so this means the least-squares estimator <span class="math inline">\(\hat{\mathbf{\boldsymbol{\beta}}}\)</span> inherits all the nice properties of MLEs</p></li>
 <li><p>The MLE <span class="math inline">\(\tilde{\sigma}^2_{\epsilon}\)</span> is approximately equal to the least-squares estimator <span class="math inline">\(\hat{\sigma}_\epsilon\)</span>. When <span class="math inline">\(n &gt;&gt; p\)</span>, the difference is trivial</p></li>
 </ul>
 </div>

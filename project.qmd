@@ -196,37 +196,32 @@ This section includes the following:
 
 Write your draft introduction and exploratory data analysis in the `written-report.qmd` file in your team's GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline.
 
-<!-- ### Grading -->
+### Grading
 
-<!-- The anticipated length, including all graphs, tables, narrative, etc. with code, warnings, and messages suppressed is about 4 - 6 pages. -->
+The anticipated length, including all graphs, tables, narrative, etc. with code, warnings, and messages suppressed is about 4 - 6 pages (It is OK to be over this page limit at this stage in the project.)
 
-<!-- ::: callout-tip -->
+::: callout-tip 
 
-<!-- You can suppress code, warnings, and messages by including the following in the YAML: -->
+You can save space by suppressing code, warnings, and messages by including the following in the YAML:
 
-<!-- ``` r -->
+``` r
+execute:
+  echo: false
+  message: false
+  warning: false
+```
 
-<!-- execute:  -->
+:::
 
-<!--   echo: false -->
+The exploratory data analysis is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above, along with incorporating the feedback from the proposal. Points will be assigned based on a holistic review of the exploratory data analysis.
 
-<!--   message: false -->
+-   **Excellent (9 - 10 points) :** All required elements are completed and are accurate. There is a thorough exploration of the data as described above, and the team has demonstrated a careful and thoughtful approach exploring the data and preparing it for analysis. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.
 
-<!--   warning: false -->
+-   **Strong: (7 - 8 points):** Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some revision of the work required before team is ready for modeling.
 
-<!-- ``` -->
+-   **Satisfactory (5 - 6 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling.
 
-<!-- ::: -->
-
-<!-- The exploratory data analysis is worth 15 points and will be graded based on accurately and comprehensively addressing the criteria stated above, along with incorporating the feedback from the proposal. Points will be assigned based on a holistic review of the exploratory data analysis. -->
-
-<!-- -   **Excellent (14 - 15 points) :** All required elements are completed and are accurate. There is a thorough exploration of the data as described above, and the team has demonstrated a careful and thoughtful approach exploring the data and preparing it for analysis. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting. -->
-
-<!-- -   **Strong: (11 - 13 points):** Requirements are mostly met, but there are some elements that are incomplete or inaccurate. Some revision of the work required before team is ready for modeling. -->
-
-<!-- -   **Satisfactory (8 - 10 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling. -->
-
-<!-- -   **Needs Improvement (7 or fewer points points):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling. -->
+-   **Needs Improvement (4 or fewer points points):** Requirements are largely unmet, and there are large elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling.
 
 ## Presentation {#presentation}
 
