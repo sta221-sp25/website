@@ -200,8 +200,7 @@ Write your draft introduction and exploratory data analysis in the `written-repo
 
 The anticipated length, including all graphs, tables, narrative, etc. with code, warnings, and messages suppressed is about 4 - 6 pages (It is OK to be over this page limit at this stage in the project.)
 
-::: callout-tip 
-
+::: callout-tip
 You can save space by suppressing code, warnings, and messages by including the following in the YAML:
 
 ``` r
@@ -210,7 +209,6 @@ execute:
   message: false
   warning: false
 ```
-
 :::
 
 The exploratory data analysis is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above, along with incorporating the feedback from the proposal. Points will be assigned based on a holistic review of the exploratory data analysis.
@@ -233,7 +231,7 @@ Your team will do an in-person presentation that summarizes and showcases the wo
 
 You can create your slides with any software you like (e.g., Keynote, PowerPoint, Google Slides, etc.). You can also use Quarto to make your slides! While we won't be covering making slides with Quarto in the class, we would be happy to help you with it in office hours. It's no different than writing other documents with Quarto, so the learning curve will not be steep!
 
-The presentation is expected to be between 5 to 8 minutes. It may [**not exceed 8 minutes**]{.underline}, due to the limited time during lab.
+The presentation is expected to be between 5 to 6 minutes. It may [**not exceed 6 minutes**]{.underline}, due to the limited time during lab.
 
 **Every team member is expected to speak in the presentation.** Part of the grade will be whether every team member had a meaningful speaking role in the presentation.
 
@@ -249,7 +247,7 @@ The slide deck should have no more than 6 content slides + 1 title slide to ensu
 
 -   Slide 3 - 4: Highlights from the EDA (be sure to include EDA for the response variable!)
 
--   Slide 5: Initial modeling strategies / results
+-   Slide 5: Initial modeling strategies / results (if applicable)
 
 -   Slide 6: Next steps and any questions you'd like to get feedback on
 
