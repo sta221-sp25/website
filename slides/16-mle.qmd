@@ -61,7 +61,7 @@ $$using least-squares estimation
 
 # Maximum likelihood estimation
 
-## Example: Basketball shots 
+## Example: Basketball shots
 
 Suppose the a basketball player shoots the ball, such that the probability of making the basket (successfully making the shot) is $p$
 
@@ -70,9 +70,9 @@ Suppose the a basketball player shoots the ball, such that the probability of ma
 ::: incremental
 -   What is the probability distribution for this random phenomenon?
 
--   Suppose the probability is $p = 0.5$? What is the probability the player makes a single basket, given this value of $p$?
+-   Suppose the probability is $p = 0.5$. What is the probability the player makes a single basket, given this value of $p$?
 
--   Suppose the probability is $p = 0.8$? What is the probability the player makes a single basket, given this value of $p$?
+-   Suppose the probability is $p = 0.8$. What is the probability the player makes a single basket, given this value of $p$?
 :::
 
 ## Shooting the ball three times
@@ -84,14 +84,14 @@ Let $B$ represent a made basket, and $M$ represent a missed basket. The player s
 . . .
 
 ::: incremental
--   Suppose the probability is $p = 0.5$? What is the probability of observing the data $BBM$, given this value of $p$?
+-   Suppose the probability is $p = 0.5$. What is the probability of observing the data $BBM$, given this value of $p$?
 
--   Suppose the probability is $p = 0.3$? What is the probability of observing the data $BBM$, given this value of $p$ ?
+-   Suppose the probability is $p = 0.3$. What is the probability of observing the data $BBM$, given this value of $p$ ?
 :::
 
 ## Shooting the ball three times
 
-Suppose the player shoots the ball three times. They are all independent and the player has the same probability \$p\$ of making each basket.
+Suppose the player shoots the ball three times. They are all independent and the player has the same probability $p$ of making each basket.
 
 The player shoots the ball three times with the outcome $BBM$.
 
@@ -142,7 +142,7 @@ $$
 ::: question
 -   What is the general formula for the likelihood function for $p$ given the observed data $BBM$?
 
--   How does assuming independence simply things?
+-   How does assuming independence simplify things?
 
 -   How does having identically distributed data simplify things?
 :::
@@ -397,7 +397,7 @@ $$
 \log L(\boldsymbol{\beta}, \sigma^2_\epsilon &| \mathbf{X}, \mathbf{y}) \\ 
 & = -\frac{n}{2}\log(2\pi) - n \log(\sigma_{\epsilon}) - \frac{1}{2\sigma^2_{\epsilon}}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\mathsf{T}(\mathbf{y} - \mathbf{X}\mathbf{\beta})
 \end{aligned}
-$$ 
+$$
 
 . . .
 
@@ -413,7 +413,7 @@ $$
 
 -   MLEs have nice properties, so this means the least-squares estimator $\hat{\mathbf{\boldsymbol{\beta}}}$ inherits all the nice properties of MLEs
 
--   The MLE $\tilde{\sigma}^2_{\epsilon}$ is approximately equal to the least-squares estimator $\hat{\sigma}_\epsilon$. When $n >> p$, the difference is trivial
+-   The MLE $\tilde{\sigma}^2_{\epsilon}$ is approximately equal to the least-squares estimator $\hat{\sigma}^2_\epsilon$. When $n >> p$, the difference is trivial
 :::
 
 ## References

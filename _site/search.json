@@ -8239,21 +8239,21 @@
     "href": "slides/16-mle-notes.html#example-basketball-shots",
     "title": "Maximum likelihood estimation",
     "section": "Example: Basketball shots",
-    "text": "Example: Basketball shots\nSuppose the a basketball player shoots the ball, such that the probability of making the basket (successfully making the shot) is \\(p\\)\n. . .\n\n\nWhat is the probability distribution for this random phenomenon?\nSuppose the probability is \\(p = 0.5\\)? What is the probability the player makes a single basket, given this value of \\(p\\)?\nSuppose the probability is \\(p = 0.8\\)? What is the probability the player makes a single basket, given this value of \\(p\\)?"
+    "text": "Example: Basketball shots\nSuppose the a basketball player shoots the ball, such that the probability of making the basket (successfully making the shot) is \\(p\\)\n. . .\n\n\nWhat is the probability distribution for this random phenomenon?\nSuppose the probability is \\(p = 0.5\\). What is the probability the player makes a single basket, given this value of \\(p\\)?\nSuppose the probability is \\(p = 0.8\\). What is the probability the player makes a single basket, given this value of \\(p\\)?"
   },
   {
     "objectID": "slides/16-mle-notes.html#shooting-the-ball-three-times",
     "href": "slides/16-mle-notes.html#shooting-the-ball-three-times",
     "title": "Maximum likelihood estimation",
     "section": "Shooting the ball three times",
-    "text": "Shooting the ball three times\nSuppose the player shoots the ball three times. They are all independent and the player has the same probability \\(p\\) of making each basket.\nLet \\(B\\) represent a made basket, and \\(M\\) represent a missed basket. The player shoots the ball three times with the outcome \\(BBM\\).\n. . .\n\n\nSuppose the probability is \\(p = 0.5\\)? What is the probability of observing the data \\(BBM\\), given this value of \\(p\\)?\nSuppose the probability is \\(p = 0.3\\)? What is the probability of observing the data \\(BBM\\), given this value of \\(p\\) ?"
+    "text": "Shooting the ball three times\nSuppose the player shoots the ball three times. They are all independent and the player has the same probability \\(p\\) of making each basket.\nLet \\(B\\) represent a made basket, and \\(M\\) represent a missed basket. The player shoots the ball three times with the outcome \\(BBM\\).\n. . .\n\n\nSuppose the probability is \\(p = 0.5\\). What is the probability of observing the data \\(BBM\\), given this value of \\(p\\)?\nSuppose the probability is \\(p = 0.3\\). What is the probability of observing the data \\(BBM\\), given this value of \\(p\\) ?"
   },
   {
     "objectID": "slides/16-mle-notes.html#shooting-the-ball-three-times-1",
     "href": "slides/16-mle-notes.html#shooting-the-ball-three-times-1",
     "title": "Maximum likelihood estimation",
     "section": "Shooting the ball three times",
-    "text": "Shooting the ball three times\nSuppose the player shoots the ball three times. They are all independent and the player has the same probability $p$ of making each basket.\nThe player shoots the ball three times with the outcome \\(BBM\\).\n. . .\n\n\nNew question: What parameter value of \\(p\\) do you think maximizes the probability of observing this data?\nWe will use a likelihood function to answer this question."
+    "text": "Shooting the ball three times\nSuppose the player shoots the ball three times. They are all independent and the player has the same probability \\(p\\) of making each basket.\nThe player shoots the ball three times with the outcome \\(BBM\\).\n. . .\n\n\nNew question: What parameter value of \\(p\\) do you think maximizes the probability of observing this data?\nWe will use a likelihood function to answer this question."
   },
   {
     "objectID": "slides/16-mle-notes.html#likelihood",
@@ -8274,7 +8274,7 @@
     "href": "slides/16-mle-notes.html#likelihood-three-basketball-shots-1",
     "title": "Maximum likelihood estimation",
     "section": "Likelihood: Three basketball shots",
-    "text": "Likelihood: Three basketball shots\n\n\n\nWhat is the general formula for the likelihood function for \\(p\\) given the observed data \\(BBM\\)?\nHow does assuming independence simply things?\nHow does having identically distributed data simplify things?"
+    "text": "Likelihood: Three basketball shots\n\n\n\nWhat is the general formula for the likelihood function for \\(p\\) given the observed data \\(BBM\\)?\nHow does assuming independence simplify things?\nHow does having identically distributed data simplify things?"
   },
   {
     "objectID": "slides/16-mle-notes.html#likelihood-three-basketball-shots-2",
@@ -8386,7 +8386,7 @@
     "href": "slides/16-mle-notes.html#putting-it-all-together",
     "title": "Maximum likelihood estimation",
     "section": "Putting it all together",
-    "text": "Putting it all together\n\n\nThe MLE \\(\\tilde{\\boldsymbol{\\beta}}\\) is equivalent to the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) , when the errors follow independent and identical normal distributions\nMLEs have nice properties, so this means the least-squares estimator \\(\\hat{\\mathbf{\\boldsymbol{\\beta}}}\\) inherits all the nice properties of MLEs\nThe MLE \\(\\tilde{\\sigma}^2_{\\epsilon}\\) is approximately equal to the least-squares estimator \\(\\hat{\\sigma}_\\epsilon\\). When \\(n &gt;&gt; p\\), the difference is trivial"
+    "text": "Putting it all together\n\n\nThe MLE \\(\\tilde{\\boldsymbol{\\beta}}\\) is equivalent to the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) , when the errors follow independent and identical normal distributions\nMLEs have nice properties, so this means the least-squares estimator \\(\\hat{\\mathbf{\\boldsymbol{\\beta}}}\\) inherits all the nice properties of MLEs\nThe MLE \\(\\tilde{\\sigma}^2_{\\epsilon}\\) is approximately equal to the least-squares estimator \\(\\hat{\\sigma}^2_\\epsilon\\). When \\(n &gt;&gt; p\\), the difference is trivial"
   },
   {
     "objectID": "slides/16-mle.html#announcements",
@@ -8414,21 +8414,21 @@
     "href": "slides/16-mle.html#example-basketball-shots",
     "title": "Maximum likelihood estimation",
     "section": "Example: Basketball shots",
-    "text": "Example: Basketball shots\nSuppose the a basketball player shoots the ball, such that the probability of making the basket (successfully making the shot) is \\(p\\)\n\n\n\nWhat is the probability distribution for this random phenomenon?\nSuppose the probability is \\(p = 0.5\\)? What is the probability the player makes a single basket, given this value of \\(p\\)?\nSuppose the probability is \\(p = 0.8\\)? What is the probability the player makes a single basket, given this value of \\(p\\)?"
+    "text": "Example: Basketball shots\nSuppose the a basketball player shoots the ball, such that the probability of making the basket (successfully making the shot) is \\(p\\)\n\n\n\nWhat is the probability distribution for this random phenomenon?\nSuppose the probability is \\(p = 0.5\\). What is the probability the player makes a single basket, given this value of \\(p\\)?\nSuppose the probability is \\(p = 0.8\\). What is the probability the player makes a single basket, given this value of \\(p\\)?"
   },
   {
     "objectID": "slides/16-mle.html#shooting-the-ball-three-times",
     "href": "slides/16-mle.html#shooting-the-ball-three-times",
     "title": "Maximum likelihood estimation",
     "section": "Shooting the ball three times",
-    "text": "Shooting the ball three times\nSuppose the player shoots the ball three times. They are all independent and the player has the same probability \\(p\\) of making each basket.\nLet \\(B\\) represent a made basket, and \\(M\\) represent a missed basket. The player shoots the ball three times with the outcome \\(BBM\\).\n\n\n\nSuppose the probability is \\(p = 0.5\\)? What is the probability of observing the data \\(BBM\\), given this value of \\(p\\)?\nSuppose the probability is \\(p = 0.3\\)? What is the probability of observing the data \\(BBM\\), given this value of \\(p\\) ?"
+    "text": "Shooting the ball three times\nSuppose the player shoots the ball three times. They are all independent and the player has the same probability \\(p\\) of making each basket.\nLet \\(B\\) represent a made basket, and \\(M\\) represent a missed basket. The player shoots the ball three times with the outcome \\(BBM\\).\n\n\n\nSuppose the probability is \\(p = 0.5\\). What is the probability of observing the data \\(BBM\\), given this value of \\(p\\)?\nSuppose the probability is \\(p = 0.3\\). What is the probability of observing the data \\(BBM\\), given this value of \\(p\\) ?"
   },
   {
     "objectID": "slides/16-mle.html#shooting-the-ball-three-times-1",
     "href": "slides/16-mle.html#shooting-the-ball-three-times-1",
     "title": "Maximum likelihood estimation",
     "section": "Shooting the ball three times",
-    "text": "Shooting the ball three times\nSuppose the player shoots the ball three times. They are all independent and the player has the same probability $p$ of making each basket.\nThe player shoots the ball three times with the outcome \\(BBM\\).\n\n\n\nNew question: What parameter value of \\(p\\) do you think maximizes the probability of observing this data?\nWe will use a likelihood function to answer this question."
+    "text": "Shooting the ball three times\nSuppose the player shoots the ball three times. They are all independent and the player has the same probability \\(p\\) of making each basket.\nThe player shoots the ball three times with the outcome \\(BBM\\).\n\n\n\nNew question: What parameter value of \\(p\\) do you think maximizes the probability of observing this data?\nWe will use a likelihood function to answer this question."
   },
   {
     "objectID": "slides/16-mle.html#likelihood",
@@ -8449,7 +8449,7 @@
     "href": "slides/16-mle.html#likelihood-three-basketball-shots-1",
     "title": "Maximum likelihood estimation",
     "section": "Likelihood: Three basketball shots",
-    "text": "Likelihood: Three basketball shots\n\n\n\nWhat is the general formula for the likelihood function for \\(p\\) given the observed data \\(BBM\\)?\nHow does assuming independence simply things?\nHow does having identically distributed data simplify things?"
+    "text": "Likelihood: Three basketball shots\n\n\n\nWhat is the general formula for the likelihood function for \\(p\\) given the observed data \\(BBM\\)?\nHow does assuming independence simplify things?\nHow does having identically distributed data simplify things?"
   },
   {
     "objectID": "slides/16-mle.html#likelihood-three-basketball-shots-2",
@@ -8561,7 +8561,7 @@
     "href": "slides/16-mle.html#putting-it-all-together",
     "title": "Maximum likelihood estimation",
     "section": "Putting it all together",
-    "text": "Putting it all together\n\n\nThe MLE \\(\\tilde{\\boldsymbol{\\beta}}\\) is equivalent to the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) , when the errors follow independent and identical normal distributions\nMLEs have nice properties, so this means the least-squares estimator \\(\\hat{\\mathbf{\\boldsymbol{\\beta}}}\\) inherits all the nice properties of MLEs\nThe MLE \\(\\tilde{\\sigma}^2_{\\epsilon}\\) is approximately equal to the least-squares estimator \\(\\hat{\\sigma}_\\epsilon\\). When \\(n &gt;&gt; p\\), the difference is trivial"
+    "text": "Putting it all together\n\n\nThe MLE \\(\\tilde{\\boldsymbol{\\beta}}\\) is equivalent to the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) , when the errors follow independent and identical normal distributions\nMLEs have nice properties, so this means the least-squares estimator \\(\\hat{\\mathbf{\\boldsymbol{\\beta}}}\\) inherits all the nice properties of MLEs\nThe MLE \\(\\tilde{\\sigma}^2_{\\epsilon}\\) is approximately equal to the least-squares estimator \\(\\hat{\\sigma}^2_\\epsilon\\). When \\(n &gt;&gt; p\\), the difference is trivial"
   },
   {
     "objectID": "slides/16-mle.html#references",
