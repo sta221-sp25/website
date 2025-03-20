@@ -52,7 +52,19 @@ options(scipen=999)
 
 -   Project exploratory data analysis due TODAY at 11:59pm
 
+    -   Next project milestone: Presentations in March 28 lab
+
 -   Statistics experience due April 22
+
+## Questions from this week's content? 
+
+<center>
+
+```{=html}
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUQ1JTSFBZNlFMWUJZSDcwTUdaVzgwWUhBMC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+```
+
+</center>
 
 ## Topics
 
@@ -73,9 +85,9 @@ Our goals are to understand
 ## Motivation
 
 ::: incremental
--   We have discussed how to use least squares to find an estimator of $\hat{\boldsymbol{\beta}}$
+-   We have discussed how to use least squares and maximum likelihood estimation to find estimators for $\beta$
 
--   How do we know whether our least squares estimator (or MLE) is a "good" estimator?
+-   How do we know whether our least squares estimator (and MLE) is a "good" estimator?
 
 -   When we consider what makes an estimator "good", we'll look at three criteria:
 
@@ -171,7 +183,7 @@ $$
 
 ## Expected value of $\hat{\boldsymbol{\beta}}$
 
-The least squares estimator $\hat{\boldsymbol{\beta}}$ is an *unbiased* estimator of $\boldsymbol{\beta}$
+The least squares estimator (and MLE) $\hat{\boldsymbol{\beta}}$ is an *unbiased* estimator of $\boldsymbol{\beta}$
 
 $$
 E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}
@@ -193,6 +205,8 @@ $$
 
 We will show that $\hat{\boldsymbol{\beta}}$ is the "best" estimator (has the lowest variance) among the class of linear unbiased estimators
 
+---
+
 <br>
 
 <br>
@@ -209,7 +223,7 @@ The least-squares estimator of $\boldsymbol{\beta}$ in the model $\mathbf{y} = \
 
 ## Gauss-Markov Theorem Proof
 
-Suppose $\tilde{\boldsymbol{\beta}}$ is another linear unbiased estimator of $\boldsymbol{\beta}$ that can be expressed as $\tilde{\boldsymbol{\beta}} = \mathbf{Cy}$ , such that $\hat{\mathbf{y}} = \mathbf{X}\tilde{\boldsymbol{\beta}} = \mathbf{XCy}$
+Suppose $\hat{\boldsymbol{\beta}}^\prime$ is another linear unbiased estimator of $\boldsymbol{\beta}$ that can be expressed as $\hat{\boldsymbol{\beta}}^\prime = \mathbf{Cy}$ , such that $\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}^\prime = \mathbf{XCy}$
 
 <br>
 
@@ -224,20 +238,20 @@ What is the dimension of $\mathbf{B}$?
 ## Gauss-Markov Theorem Proof
 
 $$
-\tilde{\boldsymbol{\beta}} = \mathbf{Cy} = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}
+\hat{\boldsymbol{\beta}}^\prime = \mathbf{Cy} = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}
 $$
 
 We need to show
 
--   $\tilde{\boldsymbol{\beta}}$ is unbiased
+-   $\hat{\boldsymbol{\beta}}^\prime$ is unbiased
 
--   $Var(\tilde{\boldsymbol{\beta}}) > Var(\hat{\boldsymbol{\beta}})$
+-   $Var(\hat{\boldsymbol{\beta}}^\prime) > Var(\hat{\boldsymbol{\beta}})$
 
 ## Gauss-Markov Theorem Proof
 
 $$
 \begin{aligned}
-E(\tilde{\boldsymbol{\beta}}) & = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\
+E(\hat{\boldsymbol{\beta}}^\prime) & = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\
 & = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})(\mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon})] \\
 & = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})(\mathbf{X}\boldsymbol{\beta})] \\
 & = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})(\mathbf{X}\boldsymbol{\beta}) \\
@@ -248,20 +262,20 @@ $$
 ::: question
 -   What assumption(s) of the Gauss-Markov Theorem did we use?
 
--   What must be true for $\tilde{\boldsymbol{\beta}}$ to be unbiased?
+-   What must be true for $\hat{\boldsymbol{\beta}}^\prime$ to be unbiased?
 :::
 
 ## Gauss-Markov Theorem Proof
 
--   $\mathbf{BX}$ must be the $\mathbf{0}$ matrix (dimension = $(p+1) \times (p+1)$) in order for $\tilde{\boldsymbol{\beta}}$ to be unbiased
+-   $\mathbf{BX}$ must be the $\mathbf{0}$ matrix (dimension = $(p+1) \times (p+1)$) in order for $\hat{\boldsymbol{\beta}}^\prime$ to be unbiased
 
--   Now we need to find $Var(\tilde{\boldsymbol{\beta}})$ and see how it compares to $Var(\hat{\boldsymbol{\beta}})$
+-   Now we need to find $Var(\hat{\boldsymbol{\beta}}^\prime)$ and see how it compares to $Var(\hat{\boldsymbol{\beta}})$
 
 ## Gauss-Markov Theorem Proof {.midi}
 
 $$
 \begin{aligned}
-Var(\tilde{\boldsymbol{\beta}}) &= Var[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\[8pt]
+Var(\hat{\boldsymbol{\beta}}^\prime) &= Var[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\[8pt]
 & = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})Var(\mathbf{y})((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})^\mathsf{T} \\[8pt]
 & = \small{\sigma^2_{\epsilon}[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} \mathbf{B}^\mathsf{T} + \mathbf{BX}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \mathbf{BB}^\mathsf{T}]}\\[8pt]
 & = \sigma^2_\epsilon(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \sigma^2_{\epsilon}\mathbf{BB}^\mathsf{T}\end{aligned}
@@ -278,7 +292,7 @@ What assumption(s) of the Gauss-Markov Theorem did we use?
 We have
 
 $$
-Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \sigma^2_\epsilon \mathbf{BB}^\mathsf{T}
+Var(\hat{\boldsymbol{\beta}}^\prime) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \sigma^2_\epsilon \mathbf{BB}^\mathsf{T}
 $$
 
 . . .
@@ -295,7 +309,7 @@ When is $\sigma^2_{\epsilon}\mathbf{BB}^\mathsf{T} = \mathbf{0}$?
 
 . . .
 
-Therefore, we have shown that $Var(\tilde{\boldsymbol{\beta}}) > Var(\hat{\boldsymbol{\beta}})$ and have completed the proof.
+Therefore, we have shown that $Var(\hat{\boldsymbol{\beta}}^\prime) > Var(\hat{\boldsymbol{\beta}})$ and have completed the proof.
 
 ------------------------------------------------------------------------
 
@@ -335,15 +349,13 @@ The least-squares estimator of $\boldsymbol{\beta}$ in the model $\mathbf{y} = \
 
 ## Properties from the MLE
 
--   Recall that the least-squares estimator $\hat{\boldsymbol{\beta}}$ is equal to the Maximum Likelihood Estimator $\tilde{\boldsymbol{\beta}}$
+-   Recall that the least-squares estimator $\hat{\boldsymbol{\beta}}$ is equal to the Maximum Likelihood Estimator $\hat{\boldsymbol{\beta}}^\prime$
 
 -   Maximum likelihood estimators have nice statistical properties and the $\hat{\boldsymbol{\beta}}$ inherits all of these properties
 
--   Consistency
-
--   Efficiency
-
--   Asymptotic normality
+    -   Consistency
+    -   Efficiency
+    -   Asymptotic normality
 
 ::: callout-note
 We will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference
@@ -434,7 +446,7 @@ Now we need to show that $\lim_{n \to \infty} Var(\hat{\boldsymbol{\beta}}) = \m
 
 Therefore $\hat{\boldsymbol{\beta}}$ is a consistent estimator.
 
-## Efficiency
+## Efficiency {.midi}
 
 ::: incremental
 -   An estimator if **efficient** if it has the smallest variance among a class of estimators as $n \rightarrow \infty$
@@ -446,11 +458,19 @@ Therefore $\hat{\boldsymbol{\beta}}$ is a consistent estimator.
 -   Therefore, $\hat{\boldsymbol{\beta}}$ is the most efficient among all unbiased estimators of $\boldsymbol{\beta}$
 :::
 
+::: callout-note
+Proof of this in a later statistics class.
+:::
+
 ## Asymptotic normality
 
 -   Maximum Likelihood Estimators are **asymptotically normal**, meaning the distribution of an MLE is normal as $n \rightarrow \infty$
 
 -   Therefore, we know the distribution of $\hat{\boldsymbol{\beta}}$ is normal when $n$ is large, regardless of the underlying data
+
+::: callout-note
+Proof of this in a later statistics class.
+:::
 
 ## Recap
 
@@ -469,3 +489,13 @@ Therefore $\hat{\boldsymbol{\beta}}$ is a consistent estimator.
 -   Efficient estimator ✅
 
 -   Asymptotic normality ✅
+
+## Questions from this week's content? 
+
+<center>
+
+```{=html}
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUQ1JTSFBZNlFMWUJZSDcwTUdaVzgwWUhBMC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+```
+
+</center>

@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Prof.&nbsp;Maria Tackett">
 
-<title>Properties of estimators – STA 221 - Spring 2025</title>
+<title>STA 221 - Spring 2025 - Properties of estimators</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,23 +36,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-793ea0c4d0690c2a17f3a272f48e0ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -61,42 +55,14 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -106,13 +72,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Properties of estimators</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Properties of estimators</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -121,17 +87,17 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/sta221-sp25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
-    <a href="https://edstem.org/us/courses/70811" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-chat-dots-fill"></i></a>
+    <a href="https://github.com/sta221-sp25" rel="" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" rel="" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
+    <a href="https://edstem.org/us/courses/70811" rel="" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-chat-dots-fill"></i></a>
     <div class="dropdown">
-      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-check-square-fill"></i></a>
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-check-square-fill"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/51767">
@@ -180,9 +146,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Computing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -209,9 +175,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Homework</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -250,9 +216,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -309,9 +275,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -357,7 +323,7 @@ window.Quarto = {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -365,6 +331,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#questions-from-this-weeks-content" id="toc-questions-from-this-weeks-content" class="nav-link" data-scroll-target="#questions-from-this-weeks-content">Questions from this week’s content?</a></li>
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
   <li><a href="#properties-of-hatboldsymbolbeta" id="toc-properties-of-hatboldsymbolbeta" class="nav-link" data-scroll-target="#properties-of-hatboldsymbolbeta">Properties of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></a>
   <ul class="collapse">
@@ -399,9 +366,10 @@ window.Quarto = {
   <li><a href="#efficiency" id="toc-efficiency" class="nav-link" data-scroll-target="#efficiency">Efficiency</a></li>
   <li><a href="#asymptotic-normality" id="toc-asymptotic-normality" class="nav-link" data-scroll-target="#asymptotic-normality">Asymptotic normality</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#questions-from-this-weeks-content-1" id="toc-questions-from-this-weeks-content-1" class="nav-link" data-scroll-target="#questions-from-this-weeks-content-1">Questions from this week’s content?</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="17-prop-of-estimators.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="17-prop-of-estimators.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -433,17 +401,24 @@ window.Quarto = {
   </div>
   
 
-
 </header>
-
 
 <section id="announcements" class="level2">
 <h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
 <li><p>HW 03 due TODAY at 11:59pm</p></li>
-<li><p>Project exploratory data analysis due TODAY at 11:59pm</p></li>
+<li><p>Project exploratory data analysis due TODAY at 11:59pm</p>
+<ul>
+<li>Next project milestone: Presentations in March 28 lab</li>
+</ul></li>
 <li><p>Statistics experience due April 22</p></li>
 </ul>
+</section>
+<section id="questions-from-this-weeks-content" class="level2">
+<h2 class="anchored" data-anchor-id="questions-from-this-weeks-content">Questions from this week’s content?</h2>
+<center>
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUQ1JTSFBZNlFMWUJZSDcwTUdaVzgwWUhBMC4u&amp;embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
+</center>
 </section>
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
@@ -475,8 +450,8 @@ Note
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
 <div class="incremental">
 <ul class="incremental">
-<li><p>We have discussed how to use least squares to find an estimator of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></p></li>
-<li><p>How do we know whether our least squares estimator (or MLE) is a “good” estimator?</p></li>
+<li><p>We have discussed how to use least squares and maximum likelihood estimation to find estimators for <span class="math inline">\(\beta\)</span></p></li>
+<li><p>How do we know whether our least squares estimator (and MLE) is a “good” estimator?</p></li>
 <li><p>When we consider what makes an estimator “good”, we’ll look at three criteria:</p>
 <ul class="incremental">
 <li>Bias</li>
@@ -495,7 +470,7 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/10/bias-variance.webp" class="img-fluid figure-img"></p>
-<figcaption>Image source: <a href="https://medium.com/analytics-vidhya/bias-variance-tradeoff-regularization-5543d2d1ad8a">Analytics Vidhya</a></figcaption>
+<figcaption class="figure-caption">Image source: <a href="https://medium.com/analytics-vidhya/bias-variance-tradeoff-regularization-5543d2d1ad8a">Analytics Vidhya</a></figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -569,7 +544,7 @@ E(\hat{\boldsymbol{\beta}}) &amp;= E[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\math
 </section>
 <section id="expected-value-of-hatboldsymbolbeta-1" class="level2">
 <h2 class="anchored" data-anchor-id="expected-value-of-hatboldsymbolbeta-1">Expected value of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
-<p>The least squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is an <em>unbiased</em> estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span></p>
+<p>The least squares estimator (and MLE) <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is an <em>unbiased</em> estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span></p>
 <p><span class="math display">\[
 E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}
 \]</span></p>
@@ -587,6 +562,7 @@ Var(\hat{\boldsymbol{\beta}}) &amp;= Var((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\
 \]</span></p>
 <p>. . .</p>
 <p>We will show that <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the “best” estimator (has the lowest variance) among the class of linear unbiased estimators</p>
+<hr>
 <p><br></p>
 <p><br></p>
 <p><br></p>
@@ -607,7 +583,7 @@ Var(\hat{\boldsymbol{\beta}}) &amp;= Var((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\
 </section>
 <section id="gauss-markov-theorem-proof" class="level2">
 <h2 class="anchored" data-anchor-id="gauss-markov-theorem-proof">Gauss-Markov Theorem Proof</h2>
-<p>Suppose <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> is another linear unbiased estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span> that can be expressed as <span class="math inline">\(\tilde{\boldsymbol{\beta}} = \mathbf{Cy}\)</span> , such that <span class="math inline">\(\hat{\mathbf{y}} = \mathbf{X}\tilde{\boldsymbol{\beta}} = \mathbf{XCy}\)</span></p>
+<p>Suppose <span class="math inline">\(\hat{\boldsymbol{\beta}}^\prime\)</span> is another linear unbiased estimator of <span class="math inline">\(\boldsymbol{\beta}\)</span> that can be expressed as <span class="math inline">\(\hat{\boldsymbol{\beta}}^\prime = \mathbf{Cy}\)</span> , such that <span class="math inline">\(\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}}^\prime = \mathbf{XCy}\)</span></p>
 <p><br></p>
 <p>Let <span class="math inline">\(\mathbf{C} = (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B}\)</span> for a non-zero matrix <span class="math inline">\(\mathbf{B}\)</span>.</p>
 <p><br></p>
@@ -618,19 +594,19 @@ Var(\hat{\boldsymbol{\beta}}) &amp;= Var((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\
 <section id="gauss-markov-theorem-proof-1" class="level2">
 <h2 class="anchored" data-anchor-id="gauss-markov-theorem-proof-1">Gauss-Markov Theorem Proof</h2>
 <p><span class="math display">\[
-\tilde{\boldsymbol{\beta}} = \mathbf{Cy} = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}
+\hat{\boldsymbol{\beta}}^\prime = \mathbf{Cy} = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}
 \]</span></p>
 <p>We need to show</p>
 <ul>
-<li><p><span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> is unbiased</p></li>
-<li><p><span class="math inline">\(Var(\tilde{\boldsymbol{\beta}}) &gt; Var(\hat{\boldsymbol{\beta}})\)</span></p></li>
+<li><p><span class="math inline">\(\hat{\boldsymbol{\beta}}^\prime\)</span> is unbiased</p></li>
+<li><p><span class="math inline">\(Var(\hat{\boldsymbol{\beta}}^\prime) &gt; Var(\hat{\boldsymbol{\beta}})\)</span></p></li>
 </ul>
 </section>
 <section id="gauss-markov-theorem-proof-2" class="level2">
 <h2 class="anchored" data-anchor-id="gauss-markov-theorem-proof-2">Gauss-Markov Theorem Proof</h2>
 <p><span class="math display">\[
 \begin{aligned}
-E(\tilde{\boldsymbol{\beta}}) &amp; = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\
+E(\hat{\boldsymbol{\beta}}^\prime) &amp; = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\
 &amp; = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})(\mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon})] \\
 &amp; = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})(\mathbf{X}\boldsymbol{\beta})] \\
 &amp; = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})(\mathbf{X}\boldsymbol{\beta}) \\
@@ -640,22 +616,22 @@ E(\tilde{\boldsymbol{\beta}}) &amp; = E[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\
 <div class="question">
 <ul>
 <li><p>What assumption(s) of the Gauss-Markov Theorem did we use?</p></li>
-<li><p>What must be true for <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> to be unbiased?</p></li>
+<li><p>What must be true for <span class="math inline">\(\hat{\boldsymbol{\beta}}^\prime\)</span> to be unbiased?</p></li>
 </ul>
 </div>
 </section>
 <section id="gauss-markov-theorem-proof-3" class="level2">
 <h2 class="anchored" data-anchor-id="gauss-markov-theorem-proof-3">Gauss-Markov Theorem Proof</h2>
 <ul>
-<li><p><span class="math inline">\(\mathbf{BX}\)</span> must be the <span class="math inline">\(\mathbf{0}\)</span> matrix (dimension = <span class="math inline">\((p+1) \times (p+1)\)</span>) in order for <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span> to be unbiased</p></li>
-<li><p>Now we need to find <span class="math inline">\(Var(\tilde{\boldsymbol{\beta}})\)</span> and see how it compares to <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{BX}\)</span> must be the <span class="math inline">\(\mathbf{0}\)</span> matrix (dimension = <span class="math inline">\((p+1) \times (p+1)\)</span>) in order for <span class="math inline">\(\hat{\boldsymbol{\beta}}^\prime\)</span> to be unbiased</p></li>
+<li><p>Now we need to find <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}^\prime)\)</span> and see how it compares to <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span></p></li>
 </ul>
 </section>
 <section id="gauss-markov-theorem-proof-4" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="gauss-markov-theorem-proof-4">Gauss-Markov Theorem Proof</h2>
 <p><span class="math display">\[
 \begin{aligned}
-Var(\tilde{\boldsymbol{\beta}}) &amp;= Var[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\[8pt]
+Var(\hat{\boldsymbol{\beta}}^\prime) &amp;= Var[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})\mathbf{y}] \\[8pt]
 &amp; = ((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})Var(\mathbf{y})((\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} + \mathbf{B})^\mathsf{T} \\[8pt]
 &amp; = \small{\sigma^2_{\epsilon}[(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T}\mathbf{X}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + (\mathbf{X}^\mathsf{T}\mathbf{X})^{-1}\mathbf{X}^\mathsf{T} \mathbf{B}^\mathsf{T} + \mathbf{BX}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \mathbf{BB}^\mathsf{T}]}\\[8pt]
 &amp; = \sigma^2_\epsilon(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \sigma^2_{\epsilon}\mathbf{BB}^\mathsf{T}\end{aligned}
@@ -669,7 +645,7 @@ Var(\tilde{\boldsymbol{\beta}}) &amp;= Var[((\mathbf{X}^\mathsf{T}\mathbf{X})^{-
 <h2 class="anchored" data-anchor-id="gauss-markov-theorem-proof-5">Gauss-Markov Theorem Proof</h2>
 <p>We have</p>
 <p><span class="math display">\[
-Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \sigma^2_\epsilon \mathbf{BB}^\mathsf{T}
+Var(\hat{\boldsymbol{\beta}}^\prime) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\mathbf{X})^{-1} + \sigma^2_\epsilon \mathbf{BB}^\mathsf{T}
 \]</span></p>
 <p>. . .</p>
 <p>We know that <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{BB}^\mathsf{T} \geq \mathbf{0}\)</span>.</p>
@@ -679,7 +655,7 @@ Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\math
 <p>When is <span class="math inline">\(\sigma^2_{\epsilon}\mathbf{BB}^\mathsf{T} = \mathbf{0}\)</span>?</p>
 </div>
 <p>. . .</p>
-<p>Therefore, we have shown that <span class="math inline">\(Var(\tilde{\boldsymbol{\beta}}) &gt; Var(\hat{\boldsymbol{\beta}})\)</span> and have completed the proof.</p>
+<p>Therefore, we have shown that <span class="math inline">\(Var(\hat{\boldsymbol{\beta}}^\prime) &gt; Var(\hat{\boldsymbol{\beta}})\)</span> and have completed the proof.</p>
 <hr>
 <p><br></p>
 <p><br></p>
@@ -720,11 +696,13 @@ Var(\tilde{\boldsymbol{\beta}}) = \sigma^2_{\epsilon}(\mathbf{X}^\mathsf{T}\math
 <section id="properties-from-the-mle" class="level2">
 <h2 class="anchored" data-anchor-id="properties-from-the-mle">Properties from the MLE</h2>
 <ul>
-<li><p>Recall that the least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is equal to the Maximum Likelihood Estimator <span class="math inline">\(\tilde{\boldsymbol{\beta}}\)</span></p></li>
-<li><p>Maximum likelihood estimators have nice statistical properties and the <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> inherits all of these properties</p></li>
-<li><p>Consistency</p></li>
-<li><p>Efficiency</p></li>
-<li><p>Asymptotic normality</p></li>
+<li><p>Recall that the least-squares estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is equal to the Maximum Likelihood Estimator <span class="math inline">\(\hat{\boldsymbol{\beta}}^\prime\)</span></p></li>
+<li><p>Maximum likelihood estimators have nice statistical properties and the <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> inherits all of these properties</p>
+<ul>
+<li>Consistency</li>
+<li>Efficiency</li>
+<li>Asymptotic normality</li>
+</ul></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -815,8 +793,8 @@ Important
 <p>. . .</p>
 <p>Therefore <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is a consistent estimator.</p>
 </section>
-<section id="efficiency" class="level2">
-<h2 class="anchored" data-anchor-id="efficiency">Efficiency</h2>
+<section id="efficiency" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="efficiency">Efficiency</h2>
 <div class="incremental">
 <ul class="incremental">
 <li><p>An estimator if <strong>efficient</strong> if it has the smallest variance among a class of estimators as <span class="math inline">\(n \rightarrow \infty\)</span></p></li>
@@ -825,6 +803,19 @@ Important
 <li><p>Therefore, <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the most efficient among all unbiased estimators of <span class="math inline">\(\boldsymbol{\beta}\)</span></p></li>
 </ul>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Proof of this in a later statistics class.</p>
+</div>
+</div>
 </section>
 <section id="asymptotic-normality" class="level2">
 <h2 class="anchored" data-anchor-id="asymptotic-normality">Asymptotic normality</h2>
@@ -832,6 +823,19 @@ Important
 <li><p>Maximum Likelihood Estimators are <strong>asymptotically normal</strong>, meaning the distribution of an MLE is normal as <span class="math inline">\(n \rightarrow \infty\)</span></p></li>
 <li><p>Therefore, we know the distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is normal when <span class="math inline">\(n\)</span> is large, regardless of the underlying data</p></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Proof of this in a later statistics class.</p>
+</div>
+</div>
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>
@@ -847,6 +851,12 @@ Important
 <li><p>Efficient estimator ✅</p></li>
 <li><p>Asymptotic normality ✅</p></li>
 </ul>
+</section>
+<section id="questions-from-this-weeks-content-1" class="level2">
+<h2 class="anchored" data-anchor-id="questions-from-this-weeks-content-1">Questions from this week’s content?</h2>
+<center>
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUQ1JTSFBZNlFMWUJZSDcwTUdaVzgwWUhBMC4u&amp;embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
+</center>
 
 
 </section>
@@ -926,7 +936,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -958,48 +979,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/sta221-sp25\.netlify\.app");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1009,17 +993,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1031,129 +1006,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -1197,7 +1050,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1223,32 +1075,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1311,18 +1137,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>© Copyright 2025, Maria Tackett</p>
-</div>   
+    <div class="nav-footer-left">© Copyright 2025, Maria Tackett</div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
-    <div class="nav-footer-right">
-<p>This site is built with <a href="https://quarto.org/">Quarto</a></p>
-</div>
+    </div>
+    <div class="nav-footer-right">This site is built with <a href="https://quarto.org/">Quarto</a></div>
   </div>
 </footer>
-
 
 
 
