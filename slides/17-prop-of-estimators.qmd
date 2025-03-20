@@ -349,7 +349,7 @@ The least-squares estimator of $\boldsymbol{\beta}$ in the model $\mathbf{y} = \
 
 ## Properties from the MLE
 
--   Recall that the least-squares estimator $\hat{\boldsymbol{\beta}}$ is equal to the Maximum Likelihood Estimator $\hat{\boldsymbol{\beta}}^\prime$
+-   Recall that the least-squares estimator $\hat{\boldsymbol{\beta}}$ is equal to the Maximum Likelihood Estimator $\tilde{\boldsymbol{\beta}}$
 
 -   Maximum likelihood estimators have nice statistical properties and the $\hat{\boldsymbol{\beta}}$ inherits all of these properties
 

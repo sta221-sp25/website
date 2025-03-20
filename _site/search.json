@@ -9254,7 +9254,7 @@
     "href": "slides/17-prop-of-estimators-notes.html#properties-from-the-mle",
     "title": "Properties of estimators",
     "section": "Properties from the MLE",
-    "text": "Properties from the MLE\n\nRecall that the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is equal to the Maximum Likelihood Estimator \\(\\hat{\\boldsymbol{\\beta}}^\\prime\\)\nMaximum likelihood estimators have nice statistical properties and the \\(\\hat{\\boldsymbol{\\beta}}\\) inherits all of these properties\n\nConsistency\nEfficiency\nAsymptotic normality\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference"
+    "text": "Properties from the MLE\n\nRecall that the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is equal to the Maximum Likelihood Estimator \\(\\tilde{\\boldsymbol{\\beta}}\\)\nMaximum likelihood estimators have nice statistical properties and the \\(\\hat{\\boldsymbol{\\beta}}\\) inherits all of these properties\n\nConsistency\nEfficiency\nAsymptotic normality\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference"
   },
   {
     "objectID": "slides/17-prop-of-estimators-notes.html#mean-squared-error",
@@ -9457,7 +9457,7 @@
     "href": "slides/17-prop-of-estimators.html#properties-from-the-mle",
     "title": "Properties of estimators",
     "section": "Properties from the MLE",
-    "text": "Properties from the MLE\n\nRecall that the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is equal to the Maximum Likelihood Estimator \\(\\hat{\\boldsymbol{\\beta}}^\\prime\\)\nMaximum likelihood estimators have nice statistical properties and the \\(\\hat{\\boldsymbol{\\beta}}\\) inherits all of these properties\n\nConsistency\nEfficiency\nAsymptotic normality\n\n\n\n\n\n\n\n\nNote\n\n\nWe will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference"
+    "text": "Properties from the MLE\n\nRecall that the least-squares estimator \\(\\hat{\\boldsymbol{\\beta}}\\) is equal to the Maximum Likelihood Estimator \\(\\tilde{\\boldsymbol{\\beta}}\\)\nMaximum likelihood estimators have nice statistical properties and the \\(\\hat{\\boldsymbol{\\beta}}\\) inherits all of these properties\n\nConsistency\nEfficiency\nAsymptotic normality\n\n\n\n\n\n\n\n\nNote\n\n\nWe will define the properties here, and you will explore them in much more depth in STA 332: Statistical Inference"
   },
   {
     "objectID": "slides/17-prop-of-estimators.html#mean-squared-error",
