@@ -9702,5 +9702,126 @@
       "Computing",
       "Troubleshooting"
     ]
+  },
+  {
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "",
+    "text": "Due date\n\n\n\nThis lab is due on Tuesday, March 25 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-1",
+    "href": "labs/lab-06.html#exercise-1",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWe’ll start with exploratory data analysis focused on the relationship between the response and predictor variables.\n\nVisualize the relationship between the response variable bill_depth_mm and predictor bill_length_mm .\nNow, visualize the relationship between bill_depth_mm and bill_length_mm by species. Use geom_smooth(method = \"lm\", se = FALSE) to add lines and more clearly visualize the relationship for each species.\nBased on these visualizations, why is it important to include species when in the model of the relationship between bill depth and length? Briefly explain.\nBased on these visualizations, would you include an interaction term between the two predictors? Briefly explain?",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-2",
+    "href": "labs/lab-06.html#exercise-2",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nWe will fit the main effects model using bill length and species to understand variability in the bill depth.\n\nWrite the form of the statistical (population-level) model in matrix form.\nWrite the dimensions for \\(\\mathbf{y}, \\mathbf{X}, \\boldsymbol{\\beta}, \\boldsymbol{\\epsilon}\\) specific for this problem.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-3",
+    "href": "labs/lab-06.html#exercise-3",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nConsider the regression model described in Exercise 2.\n\nWrite the likelihood function \\(L(\\boldsymbol{\\beta}, \\sigma^2_{\\epsilon} | \\mathbf{y}, \\mathbf{X})\\) in matrix form.\nDescribe how each of the four model assumptions is necessary for the form of the likelihood function.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-4",
+    "href": "labs/lab-06.html#exercise-4",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nBriefly explain how the process of finding the maximum likelihood estimators for the likelihood function in Exercise 3 is related to the process of finding the least-squares estimators for the model in Exercise 2.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-5",
+    "href": "labs/lab-06.html#exercise-5",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nFor the next few exercises, we will compare the results of the maximum likelihood and least-squares procedures.\n\nFit the least-squares regression model described in Exercise 2. Neatly display the results using three digits.\nDescribe the estimated effect of bill length on bill depth in the context of the data.\nDescribe the estimated effect of species on bill depth in the context of the data. Include discussion about whether there is statistical evidence of a difference between species.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-6",
+    "href": "labs/lab-06.html#exercise-6",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nUse matrix/vector operations to compute the maximum likelihood estimators \\(\\tilde{\\beta}\\) for the model in Exercise 2.\nHow do these estimators compare to the least-squares estimators in the previous exercise?",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-7",
+    "href": "labs/lab-06.html#exercise-7",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nThe maximum likelihood estimation procedure also produces an estimator for the variance about the regression line, \\(\\sigma^2_\\epsilon\\), which we can write as\n\\[\n\\tilde{\\sigma}^2_{\\epsilon} = \\frac{1}{n} \\mathbf{e}^\\mathsf{T}\\mathbf{e}\n\\]\nWe know that the maximum likelihood estimator and least-squares estimator for \\(\\sigma^2_{\\epsilon}\\) are not equal. Additionally, the least-squares estimator \\(\\hat{\\sigma}^2_{\\epsilon}\\) is unbiased. We want to find a scaling factor \\(c\\) such that the maximum likelihood estimator is unbiased.\nUsing the data and regression estimates for this analysis, compute both the maximum likelihood and least-squares estimators for \\(\\sigma_{\\epsilon}^2\\), and then find \\(c\\) by solving the equation \\[ \\hat\\sigma^2_{\\epsilon} = c \\cdot \\tilde\\sigma^2_{\\epsilon} \\]You can do this last step either computationally or algebraically.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-8",
+    "href": "labs/lab-06.html#exercise-8",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nNow we will look into the last property of the maximum likelihood estimator for \\(\\boldsymbol{\\beta}\\), and thus of least-squares estimator - asymptotic normality.\nIn words, this property says that, when the number of samples \\(n\\) is large compared to the number of predictors \\(p\\), the maximum likelihood estimator \\(\\tilde{\\boldsymbol\\beta}\\) follows a (multivariate) normal distribution \\(N\\big(\\boldsymbol\\beta, \\sigma_\\epsilon^2 (\\mathbf{X}^\\mathsf{T}\\mathbf{X})^{-1}\\big)\\). Let’s use this to construct an approximate confidence interval for \\(\\beta_j\\), the coefficient for speciesChinstrap.\n\nUse \\(\\tilde{\\sigma}^2_{\\epsilon}\\), the maximum likelihood estimator, to compute the approximate confidence interval for \\(\\beta_j\\) . The approximate 95% confidence interval may be computed as\n\n\\[\n\\tilde{\\beta}_j\\pm 2 \\times SE(\\tilde{\\beta}_j)\n\\]\n\nThen interpret this interval in the context of the data.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-9",
+    "href": "labs/lab-06.html#exercise-9",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nCompute the exact (based on the \\(t\\)-distribution) confidence interval for \\(\\beta_j\\), the coefficient of speciesChinstrap.\nCompare the center and width of the this exact interval with the one you computed in Exercise 8. Do they differ? By how much? Which one is wider, indicating more uncertainty?",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-10",
+    "href": "labs/lab-06.html#exercise-10",
+    "title": "Lab 06: Maximum likelihood estimation",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nTo wrap up, we have seen that both the OLS and the maximum likelihood procedures for linear regression produce the same coefficient estimates, but lead to different estimators for the variance \\(\\sigma_\\epsilon^2\\) and allow for different types of uncertainty quantification.\nBased on the work in this lab, do you think performing inference based on either method would have changed your conclusion about the the relationship between bill depth and Chinstrap species?",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
   }
 ]
