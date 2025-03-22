@@ -1,7 +1,7 @@
 ---
 title: "Probabilities, odds, odds ratios"
 author: "Prof. Maria Tackett"
-date: "2025-03-18"
+date: "2025-03-24"
 date-format: "MMM DD, YYYY"
 footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
 logo: "../images/logo.png"
@@ -15,7 +15,7 @@ format:
     chalkboard: true
     include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
   html: 
-    output-file: 16-prob-odds-notes.html
+    output-file: 18-prob-odds-notes.html
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -37,8 +37,6 @@ knitr::opts_chunk$set(
   fig.width = 10, fig.asp = 0.618, out.width = "90%",
   fig.retina = 3, dpi = 300, fig.align = "center"
 )
-
-library(countdown)
 ```
 
 ## Announcements
@@ -75,15 +73,60 @@ library(Stat2Data) #contains sleep data set
 ggplot2::theme_set(ggplot2::theme_bw())
 ```
 
-# Collinearity vs. interations
+## Review: Multicollinearity vs. interactions {.midi}
 
-## Collineairty 
+Suppose we fit a model using flipper length and bill length to understand variability in body mass for Palmer Penguins. We make the plots below as part of the EDA.
 
-\[use palmer penguin data set\]
+```{r}
+#| echo: false
+#| fig-width: 11
 
-## Interactions
+library(palmerpenguins)
+library(viridis)
 
-## Comparison
+penguins <- penguins |>
+  drop_na(flipper_length_mm, bill_length_mm, body_mass_g) 
+
+penguins <- penguins |>
+  mutate(bill_length_cat = case_when(
+    bill_length_mm <= quantile(penguins$bill_length_mm, 0.25) ~ "[32.1, 39.2]", 
+    bill_length_mm <= quantile(penguins$bill_length_mm, 0.5) ~ "(39.2, 44.5]",
+    bill_length_mm <= quantile(penguins$bill_length_mm, 0.75) ~ "(44.5, 48.5]",
+    TRUE ~ "(48.5, 59.6]"
+  ))
+
+p1 <- ggplot(data = penguins, aes(x = flipper_length_mm, y = bill_length_mm)) + 
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Flipper length (mm)",
+       y = "Bill length (mm)",
+       title = "Plot 1") +
+  theme(plot.title = element_text(size=24),
+        axis.title.x = element_text(size = 16),
+        axis.title.y = element_text(size = 16))
+
+p2 <- ggplot(data = penguins, aes(x = flipper_length_mm, 
+                                  y = body_mass_g, color = bill_length_cat)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Bill length",
+       title = "Plot 2") +
+  scale_color_viridis_d(end = 0.9) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(size=24),
+        axis.title.x = element_text(size = 16),
+        axis.title.y = element_text(size = 16)
+        )
+
+p1 + p2
+
+```
+
+::: question
+What are we checking in Plot 1? In Plot 2?
+:::
 
 # Predicting categorical outcomes
 

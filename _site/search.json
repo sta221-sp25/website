@@ -10096,5 +10096,19 @@
     "title": "Probabilities, odds, odds ratios",
     "section": "Recap",
     "text": "Recap\n\nIntroduced logistic regression for binary response variable\nShowed the relationship between odds and probabilities\nIntroduced odds ratios"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#penguins-data",
+    "href": "slides/18-prob-odds.html#penguins-data",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Penguins data",
+    "text": "Penguins data\nSuppose we fit a model using flipper length and bill length to understand variability in body mass for Palmer Penguins. We make the plots below as part of the EDA.\n\n\nWhat are we checking in Plot 1? In Plot 2?"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#review-multicollinearity-vs.-interactions",
+    "href": "slides/18-prob-odds.html#review-multicollinearity-vs.-interactions",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Review: Multicollinearity vs. interactions",
+    "text": "Review: Multicollinearity vs. interactions\nSuppose we fit a model using flipper length and bill length to understand variability in body mass for Palmer Penguins. We make the plots below as part of the EDA.\n\n\nWhat are we checking in Plot 1? In Plot 2?"
   }
 ]
