@@ -43,13 +43,11 @@ library(countdown)
 
 ## Announcements
 
--   HW 03 due TODAY at 11:59pm
+-   Project Presentations in lab on Friday, March 28
 
--   Exploratory data analysis due March 20
+-   Lab 06 due TODAY at 11:59pm
 
-    -   Next milestone: Project presentations March 31 in lab
-
--   Statistics experience due April 15
+-   Statistics experience due April 22
 
 ## Topics
 
