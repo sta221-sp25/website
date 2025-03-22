@@ -9823,5 +9823,278 @@
       "Labs",
       "Lab 06"
     ]
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#announcements",
+    "href": "slides/18-prob-odds.html#announcements",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 03 due TODAY at 11:59pm\nExploratory data analysis due March 20\n\nNext milestone: Project presentations March 31 in lab\n\nStatistics experience due April 15"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#topics",
+    "href": "slides/18-prob-odds.html#topics",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Topics",
+    "text": "Topics\n\nReview: Collinearity vs. interaction effects\nLogistic regression for binary response variable\nRelationship between odds and probabilities\nOdds ratios"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#computational-setup",
+    "href": "slides/18-prob-odds.html#computational-setup",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(patchwork)\nlibrary(Stat2Data) #contains sleep data set\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#collineairty",
+    "href": "slides/18-prob-odds.html#collineairty",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Collineairty",
+    "text": "Collineairty\n[use palmer penguin data set]"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#interactions",
+    "href": "slides/18-prob-odds.html#interactions",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Interactions",
+    "text": "Interactions"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#comparison",
+    "href": "slides/18-prob-odds.html#comparison",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Comparison",
+    "text": "Comparison"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#types-of-outcome-variables",
+    "href": "slides/18-prob-odds.html#types-of-outcome-variables",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Types of outcome variables",
+    "text": "Types of outcome variables\nQuantitative outcome variable:\n\nSales price of a house in Duke Forest\nModel: Expected sales price given the number of bedrooms, lot size, etc.\n\n\nCategorical outcome variable:\n\nIndicator of being high risk of getting coronary heart disease in the next 10 years\nModel: Probability an adult is high risk of heart disease in the next 10 years given their age, total cholesterol, etc."
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#models-for-categorical-outcomes",
+    "href": "slides/18-prob-odds.html#models-for-categorical-outcomes",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Models for categorical outcomes",
+    "text": "Models for categorical outcomes\n\n\nLogistic regression\n2 Outcomes\n1: Yes, 0: No\n\nMultinomial logistic regression\n3+ Outcomes\n1: Democrat, 2: Republican, 3: Independent"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#example-win-probability",
+    "href": "slides/18-prob-odds.html#example-win-probability",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Example: Win probability",
+    "text": "Example: Win probability\n[UPDATE THIS TO CURRENT TOURNAMENT GAMES]\n\nESPN Analytics win probability for Duke vs. Louisville (March 15, 2025)"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#do-teenagers-get-7-hours-of-sleep",
+    "href": "slides/18-prob-odds.html#do-teenagers-get-7-hours-of-sleep",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Do teenagers get 7+ hours of sleep?",
+    "text": "Do teenagers get 7+ hours of sleep?\n\n\nStudents in grades 9 - 12 were surveyed about health risk behaviors including whether they usually get 7 or more hours of sleep.\nSleep7\n1: yes\n0: no\n\n\n\n# A tibble: 446 × 2\n     Age Sleep7\n   &lt;int&gt;  &lt;int&gt;\n 1    16      1\n 2    17      0\n 3    18      0\n 4    17      1\n 5    15      0\n 6    17      0\n 7    17      1\n 8    16      1\n 9    16      1\n10    18      0\n# ℹ 436 more rows"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#plot-the-data",
+    "href": "slides/18-prob-odds.html#plot-the-data",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Plot the data",
+    "text": "Plot the data\n\nggplot(sleep, aes(x = Age, y = Sleep7)) +\n  geom_point() + \n  labs(y = \"Getting 7+ hours of sleep\")"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#lets-fit-a-linear-regression-model",
+    "href": "slides/18-prob-odds.html#lets-fit-a-linear-regression-model",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Let’s fit a linear regression model",
+    "text": "Let’s fit a linear regression model\nOutcome: \\(Y\\) = 1: yes, 0: no"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#lets-use-proportions",
+    "href": "slides/18-prob-odds.html#lets-use-proportions",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Let’s use proportions",
+    "text": "Let’s use proportions\nOutcome: Probability of getting 7+ hours of sleep"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#what-happens-if-we-zoom-out",
+    "href": "slides/18-prob-odds.html#what-happens-if-we-zoom-out",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "What happens if we zoom out?",
+    "text": "What happens if we zoom out?\nOutcome: Probability of getting 7+ hours of sleep\n\n🛑 This model produces predictions outside of 0 and 1."
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#lets-try-another-model",
+    "href": "slides/18-prob-odds.html#lets-try-another-model",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Let’s try another model",
+    "text": "Let’s try another model\n\n✅ This model (called a logistic regression model) only produces predictions between 0 and 1."
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#the-code",
+    "href": "slides/18-prob-odds.html#the-code",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "The code",
+    "text": "The code\n\nggplot(sleep_age, aes(x = Age, y = prop)) +\n  geom_point() + \n  geom_hline(yintercept = c(0,1), lty = 2) + \n  stat_smooth(method =\"glm\", method.args = list(family = \"binomial\"), \n              fullrange = TRUE, se = FALSE) +\n  labs(y = \"P(7+ hours of sleep)\") +\n  xlim(1, 40) +\n  ylim(-0.5, 1.5)"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#different-types-of-models",
+    "href": "slides/18-prob-odds.html#different-types-of-models",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Different types of models",
+    "text": "Different types of models\n\n\n\n\n\n\n\n\nMethod\nOutcome\nModel\n\n\n\n\nLinear regression\nQuantitative\n\\[\n\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon}\n\\]\n\n\nLinear regression (transform Y)\nQuantitative\n\\[\n\\log(\\mathbf{y}) = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{\\epsilon}\n\\]\n\n\nLogistic regression\nBinary\n\\[\n\\log\\Big(\\frac{\\boldsymbol{\\pi}}{1 - \\boldsymbol{\\pi}}\\Big) = \\mathbf{X}\\boldsymbol{\\beta}\n\\]"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#linear-vs.-logistic-regression",
+    "href": "slides/18-prob-odds.html#linear-vs.-logistic-regression",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Linear vs. logistic regression",
+    "text": "Linear vs. logistic regression\n\nState whether a linear regression model or logistic regression model is more appropriate for each scenario.\n\nUse age and political party to predict if a randomly selected person will vote in the next election.\nUse budget and run time (in minutes) to predict a movie’s total revenue.\nUse age and sex to calculate the probability a randomly selected adult will visit Duke Health in the next year."
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#data-concern-about-rising-ai",
+    "href": "slides/18-prob-odds.html#data-concern-about-rising-ai",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Data: Concern about rising AI",
+    "text": "Data: Concern about rising AI\nThis data comes from the 2023 Pew Research Center’s American Trends Panel. The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from 11201 respondents in Wave 132 of the survey conducted July 31 - August 6, 2023.\n\nThe goal of this analysis is to understand the relationship between age, how much someone has heard about artificial intelligence (AI), and concern about the increased use of AI in daily life.\n\nA more complete analysis on this topic can be found in the Pew Research Center article Growing public concern about the role of artificial intelligence in daily life by Alec Tyson and Emma Kikuchi."
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#variables",
+    "href": "slides/18-prob-odds.html#variables",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Variables",
+    "text": "Variables\n\nai_concern: Whether a respondent said they are “more concerned than excited” about in the increased use of AI in daily life (1: yes, 0: no)\n\n\nSource: Pew Research"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#variables-1",
+    "href": "slides/18-prob-odds.html#variables-1",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Variables",
+    "text": "Variables\n\nai_heard : Response to the question “How much have you heard or read about AI?”\n\nA lot\nA little\nNothing at all\nRefused\n\nage_cat: Age category\n\n18-29\n30-49\n50-64\n65+\nRefused"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#data-prep",
+    "href": "slides/18-prob-odds.html#data-prep",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Data prep",
+    "text": "Data prep\n\n# change variable names and recode categories\npew_data &lt;- pew_data |&gt;\n  mutate(ai_concern = if_else(CNCEXC_W132 == 2, 1, 0),\n         age_cat = case_when(F_AGECAT == 1 ~ \"18-29\",\n                             F_AGECAT == 2 ~ \"30-49\",\n                             F_AGECAT == 3 ~ \"50-64\",\n                             F_AGECAT == 4 ~ \"65+\",\n                             TRUE ~ \"Refused\"), \n         ai_heard = case_when(AI_HEARD_W132 == 1 ~ \"A lot\",\n                              AI_HEARD_W132 == 2 ~ \"A little\",\n                              AI_HEARD_W132 == 3 ~ \"Nothing at all\",\n                              TRUE ~ \"Refused\"\n                              ))\n\n# Make factors and  relevel \npew_data &lt;- pew_data |&gt;\n  mutate(ai_concern = factor(ai_concern),\n         age_cat = factor(age_cat), \n         ai_heard = factor(ai_heard, levels = c(\"A lot\", \"A little\", \"Nothing at all\", \"Refused\"))\n  )"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#univariate-eda",
+    "href": "slides/18-prob-odds.html#univariate-eda",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Univariate EDA",
+    "text": "Univariate EDA"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#binary-response-variable",
+    "href": "slides/18-prob-odds.html#binary-response-variable",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Binary response variable",
+    "text": "Binary response variable\n\n\n\\(Y = 1: \\text{ yes (success), } 0: \\text{ no (failure)}\\)\n\\(\\pi\\): probability that \\(Y=1\\), i.e., \\(P(Y = 1)\\)\n\\(\\frac{\\pi}{1-\\pi}\\): odds that \\(Y = 1\\)\n\\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\): log odds\nGo from \\(p\\) to \\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\) using the logit transformation"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#example",
+    "href": "slides/18-prob-odds.html#example",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Example",
+    "text": "Example\n\nSuppose there is a 70% chance it will rain tomorrow\n\nProbability it will rain is \\(\\mathbf{\\pi = 0.7}\\)\nProbability it won’t rain is \\(\\mathbf{1 - \\pi = 0.3}\\)\nOdds it will rain are 7 to 3, 7:3, \\(\\mathbf{\\frac{0.7}{0.3} \\approx 2.33}\\)"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#concerned-about-ai-in-daily-life",
+    "href": "slides/18-prob-odds.html#concerned-about-ai-in-daily-life",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Concerned about AI in daily life?",
+    "text": "Concerned about AI in daily life?\n\npew_data |&gt;\n  count(ai_concern) |&gt;\n  mutate(p = round(n / sum(n), 3))\n\n# A tibble: 2 × 3\n  ai_concern     n     p\n  &lt;fct&gt;      &lt;int&gt; &lt;dbl&gt;\n1 0           5245 0.468\n2 1           5956 0.532\n\n\n\n\n\\(P(\\text{Concerned about AI}) = P(Y = 1) = \\pi = 0.532\\)\n\n\n\\(P(\\text{Not concerned about AI}) = P(Y = 0) = 1 - \\pi = 0.468\\)\n\n\n\\(\\text{Odds of being concerned about AI} = \\frac{0.532}{0.468} = 1.137\\)"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#from-odds-to-probabilities",
+    "href": "slides/18-prob-odds.html#from-odds-to-probabilities",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "From odds to probabilities",
+    "text": "From odds to probabilities\n\n\nodds\n\\[\\text{odds} = \\omega =  \\frac{\\pi}{1-\\pi}\\]\n\nprobability\n\\[\\pi = \\frac{\\omega}{1 + \\omega}\\]"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#concern-about-ai-vs.-age",
+    "href": "slides/18-prob-odds.html#concern-about-ai-vs.-age",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Concern about AI vs. age",
+    "text": "Concern about AI vs. age\n\n\n\n\n\nAge\nNot Concerned\nConcerned\n\n\n\n\n18-29\n550\n416\n\n\n30-49\n1898\n1681\n\n\n50-64\n1398\n1818\n\n\n65+\n1376\n2013\n\n\nRefused\n23\n28"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#compare-the-odds-for-two-groups",
+    "href": "slides/18-prob-odds.html#compare-the-odds-for-two-groups",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Compare the odds for two groups",
+    "text": "Compare the odds for two groups\n\n\n\n\n\nAge\nNot Concerned\nConcerned\n\n\n\n\n18-29\n550\n416\n\n\n30-49\n1898\n1681\n\n\n50-64\n1398\n1818\n\n\n65+\n1376\n2013\n\n\nRefused\n23\n28\n\n\n\n\n\n\nWe want to compare concern about increased use of AI in daily life between individuals who are 18-29 years old to those who are 65+ years old"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#compare-the-odds-for-two-groups-1",
+    "href": "slides/18-prob-odds.html#compare-the-odds-for-two-groups-1",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Compare the odds for two groups",
+    "text": "Compare the odds for two groups\n\n\n\n\n\nAge\nNot Concerned\nConcerned\n\n\n\n\n18-29\n550\n416\n\n\n30-49\n1898\n1681\n\n\n50-64\n1398\n1818\n\n\n65+\n1376\n2013\n\n\nRefused\n23\n28\n\n\n\n\n\nWe’ll use the odds to compare the two groups\n\\[\n\\text{odds} = \\frac{P(\\text{success})}{P(\\text{failure})} = \\frac{\\text{# of successes}}{\\text{# of failures}}\n\\]"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#compare-the-odds-for-two-groups-2",
+    "href": "slides/18-prob-odds.html#compare-the-odds-for-two-groups-2",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Compare the odds for two groups",
+    "text": "Compare the odds for two groups\n\n\n\n\n\nAge\nNot Concerned\nConcerned\n\n\n\n\n18-29\n550\n416\n\n\n30-49\n1898\n1681\n\n\n50-64\n1398\n1818\n\n\n65+\n1376\n2013\n\n\nRefused\n23\n28\n\n\n\n\n\n\n\nOdds of being concerned with increased use of AI in daily life for 18-29 year olds: \\(\\frac{416}{550} = 0.756\\)\nOdds of being concerned with increased use of AI in daily life for those who are 65+ years old: \\(\\frac{2013}{1376} = 1.463\\)\nBased on this, we see that individuals 65+ years old are more likely to be concerned about the increased use of AI in daily life than 18-29 year olds."
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#odds-ratio-or",
+    "href": "slides/18-prob-odds.html#odds-ratio-or",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Odds ratio (OR)",
+    "text": "Odds ratio (OR)\n\n\n\n\n\nAge\nNot Concerned\nConcerned\n\n\n\n\n18-29\n550\n416\n\n\n30-49\n1898\n1681\n\n\n50-64\n1398\n1818\n\n\n65+\n1376\n2013\n\n\nRefused\n23\n28\n\n\n\n\n\nLet’s summarize the relationship between the two groups. To do so, we’ll use the odds ratio (OR).\n\\[\nOR = \\frac{\\text{odds}_1}{\\text{odds}_2} = \\frac{\\omega_1}{\\omega_2}\n\\]"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#or-ai-concern-by-age",
+    "href": "slides/18-prob-odds.html#or-ai-concern-by-age",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "OR: AI concern by age",
+    "text": "OR: AI concern by age\n\n\n\n\n\nAge\nNot Concerned\nConcerned\n\n\n\n\n18-29\n550\n416\n\n\n30-49\n1898\n1681\n\n\n50-64\n1398\n1818\n\n\n65+\n1376\n2013\n\n\nRefused\n23\n28\n\n\n\n\n\n\\[OR = \\frac{\\omega_{18-29}}{\\omega_{65+}} = \\frac{0.756}{1.463} = \\mathbf{0.517}\\]\n\nThe odds an 18-29 year old is concerned about increased use of AI in daily life are 0.517 times the odds a 65+ year old is concerned."
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#more-natural-interpretation",
+    "href": "slides/18-prob-odds.html#more-natural-interpretation",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "More natural interpretation",
+    "text": "More natural interpretation\n\nIt’s more natural to interpret the odds ratio with a statement with the odds ratio greater than 1.\nThe odds a 65+ year old is concerned about increased use of AI in daily life are 1.934 (1/0.517) times the odds an 18-29 year old is concerned."
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#code-to-make-table",
+    "href": "slides/18-prob-odds.html#code-to-make-table",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Code to make table",
+    "text": "Code to make table\n\npew_data |&gt;\n  count(age_cat, ai_concern)\n\n# A tibble: 10 × 3\n   age_cat ai_concern     n\n   &lt;fct&gt;   &lt;fct&gt;      &lt;int&gt;\n 1 18-29   0            550\n 2 18-29   1            416\n 3 30-49   0           1898\n 4 30-49   1           1681\n 5 50-64   0           1398\n 6 50-64   1           1818\n 7 65+     0           1376\n 8 65+     1           2013\n 9 Refused 0             23\n10 Refused 1             28"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#code-to-make-table-1",
+    "href": "slides/18-prob-odds.html#code-to-make-table-1",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Code to make table",
+    "text": "Code to make table\n\npew_data |&gt;\n  count(age_cat, ai_concern) |&gt;\n  pivot_wider(names_from = ai_concern, values_from = n)\n\n# A tibble: 5 × 3\n  age_cat   `0`   `1`\n  &lt;fct&gt;   &lt;int&gt; &lt;int&gt;\n1 18-29     550   416\n2 30-49    1898  1681\n3 50-64    1398  1818\n4 65+      1376  2013\n5 Refused    23    28"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#code-to-make-table-2",
+    "href": "slides/18-prob-odds.html#code-to-make-table-2",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Code to make table",
+    "text": "Code to make table\n\npew_data |&gt;\n  count(age_cat, ai_concern) |&gt;\n  pivot_wider(names_from = ai_concern, values_from = n) |&gt;\n  kable()\n\n\n\n\nage_cat\n0\n1\n\n\n\n\n18-29\n550\n416\n\n\n30-49\n1898\n1681\n\n\n50-64\n1398\n1818\n\n\n65+\n1376\n2013\n\n\nRefused\n23\n28"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#code-to-make-table-3",
+    "href": "slides/18-prob-odds.html#code-to-make-table-3",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Code to make table",
+    "text": "Code to make table\n\npew_data |&gt;\n  count(age_cat, ai_concern) |&gt;\n  pivot_wider(names_from = ai_concern, values_from = n) |&gt;\n  kable(col.names = c(\"Age\", \"Not concerned\", \"Concerned\"))\n\n\n\n\nAge\nNot concerned\nConcerned\n\n\n\n\n18-29\n550\n416\n\n\n30-49\n1898\n1681\n\n\n50-64\n1398\n1818\n\n\n65+\n1376\n2013\n\n\nRefused\n23\n28"
+  },
+  {
+    "objectID": "slides/18-prob-odds.html#recap",
+    "href": "slides/18-prob-odds.html#recap",
+    "title": "Probabilities, odds, odds ratios",
+    "section": "Recap",
+    "text": "Recap\n\nIntroduced logistic regression for binary response variable\nShowed the relationship between odds and probabilities\nIntroduced odds ratios"
   }
 ]

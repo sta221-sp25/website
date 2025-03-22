@@ -1,0 +1,559 @@
+---
+title: "Probabilities, odds, odds ratios"
+author: "Prof. Maria Tackett"
+date: "2025-03-18"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 16-prob-odds-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+
+# figure options
+knitr::opts_chunk$set(
+  fig.width = 10, fig.asp = 0.618, out.width = "90%",
+  fig.retina = 3, dpi = 300, fig.align = "center"
+)
+
+library(countdown)
+```
+
+## Announcements
+
+-   HW 03 due TODAY at 11:59pm
+
+-   Exploratory data analysis due March 20
+
+    -   Next milestone: Project presentations March 31 in lab
+
+-   Statistics experience due April 15
+
+## Topics
+
+-   Review: Collinearity vs. interaction effects
+
+-   Logistic regression for binary response variable
+
+-   Relationship between odds and probabilities
+
+-   Odds ratios
+
+## Computational setup
+
+```{r}
+#| warning: false
+
+# load packages
+library(tidyverse)
+library(tidymodels)
+library(knitr)
+library(patchwork)
+library(Stat2Data) #contains sleep data set
+
+# set default theme in ggplot2
+ggplot2::theme_set(ggplot2::theme_bw())
+```
+
+# Collinearity vs. interations
+
+## Collineairty 
+
+\[use palmer penguin data set\]
+
+## Interactions
+
+## Comparison
+
+# Predicting categorical outcomes
+
+## Types of outcome variables
+
+**Quantitative outcome variable**:
+
+-   Sales price of a house in Duke Forest
+-   **Model**: Expected sales price given the number of bedrooms, lot size, etc.
+
+. . .
+
+**Categorical outcome variable**:
+
+-   Indicator of being high risk of getting coronary heart disease in the next 10 years
+-   **Model**: Probability an adult is high risk of heart disease in the next 10 years given their age, total cholesterol, etc.
+
+## Models for categorical outcomes
+
+::::: columns
+::: {.column width="50%"}
+**Logistic regression**
+
+2 Outcomes
+
+1: Yes, 0: No
+:::
+
+::: {.column width="50%"}
+**Multinomial logistic regression**
+
+3+ Outcomes
+
+1: Democrat, 2: Republican, 3: Independent
+:::
+:::::
+
+## Example: Win probability
+
+\[UPDATE THIS TO CURRENT TOURNAMENT GAMES\]
+
+![[ESPN Analytics win probability for Duke vs. Louisville (March 15, 2025)](https://www.espn.com/mens-college-basketball/game/_/gameId/401743776/louisville-duke)](images/16/duke-win-probability.png){fig-align="center" width="80%"}
+
+## Do teenagers get 7+ hours of sleep? {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+Students in grades 9 - 12 were surveyed about health risk behaviors including whether they usually get 7 or more hours of sleep.
+
+`Sleep7`
+
+1: yes
+
+0: no
+:::
+
+::: {.column width="60%"}
+```{r}
+#| echo: false
+data(YouthRisk2009) #from Stat2Data package
+sleep <- YouthRisk2009 |>
+  as_tibble() |>
+  filter(!is.na(Age), !is.na(Sleep7))
+sleep |>
+  select(Age, Sleep7)
+```
+:::
+:::::
+
+## Plot the data
+
+```{r}
+ggplot(sleep, aes(x = Age, y = Sleep7)) +
+  geom_point() + 
+  labs(y = "Getting 7+ hours of sleep")
+```
+
+## Let's fit a linear regression model
+
+**Outcome:** $Y$ = 1: yes, 0: no
+
+```{r}
+#| echo: false
+
+ggplot(sleep, aes(x = Age, y = Sleep7)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(y = "Getting 7+ hours of sleep")
+```
+
+## Let's use proportions
+
+**Outcome:** Probability of getting 7+ hours of sleep
+
+```{r}
+#| echo: false
+
+sleep_age <- sleep |>
+  group_by(Age) |>
+  summarise(prop = mean(Sleep7))
+
+ggplot(sleep_age, aes(x = Age, y = prop)) +
+  geom_point() + 
+  geom_hline(yintercept = c(0,1), lty = 2) + 
+  stat_smooth(method = "lm",fullrange = TRUE, se = FALSE) +
+  labs(y = "P(7+ hours of sleep)")
+```
+
+## What happens if we zoom out?
+
+**Outcome:** Probability of getting 7+ hours of sleep
+
+```{r}
+#| echo: false
+
+ggplot(sleep_age, aes(x = Age, y = prop)) +
+  geom_point() + 
+  geom_hline(yintercept = c(0,1), lty = 2) + 
+  stat_smooth(method = "lm",fullrange = TRUE, se = FALSE) +
+  labs(y = "P(7+ hours of sleep)") +
+  xlim(1, 40) +
+  ylim(-1, 2)
+```
+
+🛑 *This model produces predictions outside of 0 and 1.*
+
+## Let's try another model
+
+```{r}
+#| label: logistic-model-plot
+#| echo: false
+
+ggplot(sleep_age, aes(x = Age, y = prop)) +
+  geom_point() + 
+  geom_hline(yintercept = c(0,1), lty = 2) + 
+  stat_smooth(method ="glm", method.args = list(family = "binomial"), 
+              fullrange = TRUE, se = FALSE) +
+  labs(y = "P(7+ hours of sleep)") +
+  xlim(1, 40) +
+  ylim(-0.5, 1.5)
+```
+
+*✅ This model (called a **logistic regression model**) only produces predictions between 0 and 1.*
+
+## The code
+
+```{r}
+#| ref.label: logistic-model-plot
+#| echo: true
+#| fig-show: hide
+```
+
+## Different types of models
+
+| Method | Outcome | Model |
+|------------------------|---------------|------------------------|
+| Linear regression | Quantitative | $$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
+$$ |
+| Linear regression (transform Y) | Quantitative | $$
+\log(\mathbf{y}) = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
+$$ |
+| Logistic regression | Binary | $$
+\log\Big(\frac{\boldsymbol{\pi}}{1 - \boldsymbol{\pi}}\Big) = \mathbf{X}\boldsymbol{\beta}
+$$ |
+
+## Linear vs. logistic regression
+
+::: question
+State whether a linear regression model or logistic regression model is more appropriate for each scenario.
+
+1.  Use age and political party to predict if a randomly selected person will vote in the next election.
+
+2.  Use budget and run time (in minutes) to predict a movie's total revenue.
+
+3.  Use age and sex to calculate the probability a randomly selected adult will visit Duke Health in the next year.
+:::
+
+# Probabilities and odds
+
+## Data: Concern about rising AI {.midi}
+
+```{r}
+#| echo: false
+pew_data <- read_csv("data/pew-atp-w132.csv")
+```
+
+This data comes from the 2023 [Pew Research Center's American Trends Panel](https://www.pewresearch.org/the-american-trends-panel/). The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from `r nrow(pew_data)` respondents in Wave 132 of the survey conducted July 31 - August 6, 2023.
+
+<br>
+
+**The goal of this analysis is to understand the relationship between age, how much someone has heard about artificial intelligence (AI), and concern about the increased use of AI in daily life.**
+
+<br>
+
+A more complete analysis on this topic can be found in the Pew Research Center article [*Growing public concern about the role of artificial intelligence in daily life*](https://www.pewresearch.org/short-reads/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/) by Alec Tyson and Emma Kikuchi.
+
+## Variables
+
+-   `ai_concern`: Whether a respondent said they are "more concerned than excited" about in the increased use of AI in daily life (1: yes, 0: no)
+
+![Source: Pew Research](images/18/survey-question.png){fig-align="center"}
+
+## Variables {.midi}
+
+-   `ai_heard` : Response to the question "How much have you heard or read about AI?"
+
+    -   A lot
+    -   A little
+    -   Nothing at all
+    -   Refused
+
+-   `age_cat`: Age category
+
+    -   18-29
+    -   30-49
+    -   50-64
+    -   65+
+    -   Refused
+
+## Data prep
+
+```{r}
+# change variable names and recode categories
+pew_data <- pew_data |>
+  mutate(ai_concern = if_else(CNCEXC_W132 == 2, 1, 0),
+         age_cat = case_when(F_AGECAT == 1 ~ "18-29",
+                             F_AGECAT == 2 ~ "30-49",
+                             F_AGECAT == 3 ~ "50-64",
+                             F_AGECAT == 4 ~ "65+",
+                             TRUE ~ "Refused"), 
+         ai_heard = case_when(AI_HEARD_W132 == 1 ~ "A lot",
+                              AI_HEARD_W132 == 2 ~ "A little",
+                              AI_HEARD_W132 == 3 ~ "Nothing at all",
+                              TRUE ~ "Refused"
+                              ))
+
+# Make factors and  relevel 
+pew_data <- pew_data |>
+  mutate(ai_concern = factor(ai_concern),
+         age_cat = factor(age_cat), 
+         ai_heard = factor(ai_heard, levels = c("A lot", "A little", "Nothing at all", "Refused"))
+  )
+
+```
+
+## Univariate EDA
+
+```{r}
+#| echo: false
+
+p1 <- ggplot(data = pew_data, aes(x = ai_concern)) + 
+  geom_bar(fill = "darkcyan", color = "black") +
+  labs(x = "", 
+       title = "Concerned about increased use of AI in daily life?")
+
+p2 <- ggplot(data = pew_data, aes(x = age_cat)) + 
+  geom_bar(fill = "darkcyan", color = "black") +
+  labs(x = "", 
+       title = "Age")
+
+p3 <- ggplot(data = pew_data, aes(x = ai_heard)) + 
+  geom_bar(fill = "darkcyan", color = "black") +
+  labs(x = "", 
+       title = "Heard about AI") +
+  coord_flip()
+
+p1 / (p2 + p3)
+```
+
+## Binary response variable
+
+::: incremental
+-   $Y = 1: \text{ yes (success), } 0: \text{ no (failure)}$
+
+-   $\pi$: **probability** that $Y=1$, i.e., $P(Y = 1)$
+
+-   $\frac{\pi}{1-\pi}$: **odds** that $Y = 1$
+
+-   $\log\big(\frac{\pi}{1-\pi}\big)$: **log odds**
+
+-   Go from $p$ to $\log\big(\frac{\pi}{1-\pi}\big)$ using the **logit transformation**
+:::
+
+## Example
+
+::: incremental
+Suppose there is a **70% chance** it will rain tomorrow
+
+-   Probability it will rain is $\mathbf{\pi = 0.7}$
+-   Probability it won't rain is $\mathbf{1 - \pi = 0.3}$
+-   Odds it will rain are **7 to 3**, **7:3**, $\mathbf{\frac{0.7}{0.3} \approx 2.33}$
+:::
+
+## Concerned about AI in daily life?
+
+```{r}
+pew_data |>
+  count(ai_concern) |>
+  mutate(p = round(n / sum(n), 3))
+```
+
+<br>
+
+. . .
+
+$P(\text{Concerned about AI}) = P(Y = 1) = \pi = 0.532$
+
+. . .
+
+$P(\text{Not concerned about AI}) = P(Y = 0) = 1 - \pi = 0.468$
+
+. . .
+
+$\text{Odds of being concerned about AI} = \frac{0.532}{0.468} = 1.137$
+
+## From odds to probabilities
+
+::::: columns
+::: {.column width="50%"}
+**odds**
+
+$$\text{odds} = \omega =  \frac{\pi}{1-\pi}$$
+:::
+
+::: {.column width="50%"}
+**probability**
+
+$$\pi = \frac{\omega}{1 + \omega}$$
+:::
+:::::
+
+# Odds ratios
+
+## Concern about AI vs. age
+
+```{r}
+#| label: age-ai-concern-table
+#| echo: false
+
+pew_data |>
+  count(age_cat, ai_concern) |>
+  pivot_wider(names_from = ai_concern, values_from = n) |>
+  kable(col.names = c("Age", "Not Concerned", "Concerned"))
+```
+
+## Compare the odds for two groups {.midi}
+
+```{r}
+#| ref.label: age-ai-concern-table
+#| echo: false
+```
+
+. . .
+
+We want to compare concern about increased use of AI in daily life between individuals who are 18-29 years old to those who are 65+ years old
+
+## Compare the odds for two groups
+
+```{r}
+#| ref.label: age-ai-concern-table
+#| echo: false
+```
+
+We'll use the **odds** to compare the two groups
+
+$$
+\text{odds} = \frac{P(\text{success})}{P(\text{failure})} = \frac{\text{# of successes}}{\text{# of failures}}
+$$
+
+## Compare the odds for two groups {.midi}
+
+```{r}
+#| ref.label: age-ai-concern-table
+#| echo: false
+```
+
+::: incremental
+-   Odds of being concerned with increased use of AI in daily life for 18-29 year olds: $\frac{416}{550} = 0.756$
+
+-   Odds of being concerned with increased use of AI in daily life for those who are 65+ years old: $\frac{2013}{1376} = 1.463$
+
+-   Based on this, we see that individuals 65+ years old are more likely to be concerned about the increased use of AI in daily life than 18-29 year olds.
+:::
+
+## Odds ratio (OR) {.midi}
+
+```{r}
+#| ref.label: age-ai-concern-table
+#| echo: false
+```
+
+Let's summarize the relationship between the two groups. To do so, we'll use the **odds ratio (OR)**.
+
+$$
+OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
+$$
+
+## OR: AI concern by age {.midi}
+
+```{r}
+#| ref.label: age-ai-concern-table
+#| echo: false
+```
+
+$$OR = \frac{\omega_{18-29}}{\omega_{65+}} = \frac{0.756}{1.463} = \mathbf{0.517}$$
+
+. . .
+
+The odds an 18-29 year old is concerned about increased use of AI in daily life are 0.517 times the odds a 65+ year old is concerned.
+
+## More natural interpretation
+
+-   It's more natural to interpret the odds ratio with a statement with the odds ratio greater than 1.
+
+-   The odds a 65+ year old is concerned about increased use of AI in daily life are 1.934 (1/0.517) times the odds an 18-29 year old is concerned.
+
+## Code to make table
+
+```{r}
+pew_data |>
+  count(age_cat, ai_concern)
+```
+
+## Code to make table
+
+```{r}
+#| code-line-numbers: "3"
+
+pew_data |>
+  count(age_cat, ai_concern) |>
+  pivot_wider(names_from = ai_concern, values_from = n)
+```
+
+## Code to make table
+
+```{r}
+#| code-line-numbers: "4"
+
+pew_data |>
+  count(age_cat, ai_concern) |>
+  pivot_wider(names_from = ai_concern, values_from = n) |>
+  kable()
+```
+
+## Code to make table
+
+```{r}
+#| code-line-numbers: "4"
+
+pew_data |>
+  count(age_cat, ai_concern) |>
+  pivot_wider(names_from = ai_concern, values_from = n) |>
+  kable(col.names = c("Age", "Not concerned", "Concerned"))
+```
+
+# Application exercise
+
+::: appex
+📋 [sta210-sp25.netlify.app/ae/ae-09-prob-odds.html](../ae/ae-09-prob-odds.html) \[UPDATE LINK\]
+:::
+
+[Click here](https://docs.google.com/presentation/d/1uqGeyJVz6if6TNWGaT-9XamY9QrL9_1Grd2lAVRIQvc/edit?usp=sharing) to add your response to the Google Slide.
+
+## Recap
+
+-   Introduced logistic regression for binary response variable
+
+-   Showed the relationship between odds and probabilities
+
+-   Introduced odds ratios
