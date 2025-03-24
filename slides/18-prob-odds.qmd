@@ -3,7 +3,7 @@ title: "Probabilities, odds, odds ratios"
 author: "Prof. Maria Tackett"
 date: "2025-03-24"
 date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
   revealjs: 
@@ -46,6 +46,8 @@ knitr::opts_chunk$set(
 -   Lab 06 due TODAY at 11:59pm
 
 -   Statistics experience due April 22
+
+## Statistics classes - Fall 2025
 
 ## Topics
 
@@ -164,11 +166,25 @@ What are we checking in Plot 1? In Plot 2?
 :::
 :::::
 
-## Example: Win probability
+## Example: Win probabilities 
 
-\[UPDATE THIS TO CURRENT TOURNAMENT GAMES\]
+**Duke in 2nd round of NCCA March Madness Tournaments**
 
-![[ESPN Analytics win probability for Duke vs. Louisville (March 15, 2025)](https://www.espn.com/mens-college-basketball/game/_/gameId/401743776/louisville-duke)](images/16/duke-win-probability.png){fig-align="center" width="80%"}
+<br>
+
+::::: columns
+::: {.column width="50%"}
+<center><b>Men's Basketball</b></center>
+
+![Source: [ESPN Gamecast](https://www.espn.com/mens-college-basketball/game/_/gameId/401746049/baylor-duke)](images/18/duke-mens-basketball.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+<center><b>Women's Basketball</b></center>
+
+![Source: [ESPN Gamecast](https://www.espn.com/womens-college-basketball/game/_/gameId/401746023/oregon-duke)](images/18/duke-womens-basketball.png){fig-align="center"}
+:::
+:::::
 
 ## Do teenagers get 7+ hours of sleep? {.smaller}
 
@@ -282,7 +298,7 @@ ggplot(sleep_age, aes(x = Age, y = prop)) +
 ## Different types of models
 
 | Method | Outcome | Model |
-|------------------------|---------------|------------------------|
+|---------------------------|------------------|---------------------------|
 | Linear regression | Quantitative | $$
 \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
 $$ |
@@ -426,7 +442,7 @@ Suppose there is a **70% chance** it will rain tomorrow
 ```{r}
 pew_data |>
   count(ai_concern) |>
-  mutate(p = round(n / sum(n), 3))
+  mutate(pi = round(n / sum(n), 3))
 ```
 
 <br>
@@ -449,13 +465,13 @@ $\text{Odds of being concerned about AI} = \frac{0.532}{0.468} = 1.137$
 ::: {.column width="50%"}
 **odds**
 
-$$\text{odds} = \omega =  \frac{\pi}{1-\pi}$$
+$$\text{odds} =  \frac{\pi}{1-\pi}$$
 :::
 
 ::: {.column width="50%"}
 **probability**
 
-$$\pi = \frac{\omega}{1 + \omega}$$
+$$\pi = \frac{\text{odds}}{1 + \text{odds}}$$
 :::
 :::::
 
@@ -522,7 +538,7 @@ $$
 Let's summarize the relationship between the two groups. To do so, we'll use the **odds ratio (OR)**.
 
 $$
-OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
+OR = \frac{\text{odds}_1}{\text{odds}_2}
 $$
 
 ## OR: AI concern by age {.midi}
@@ -532,7 +548,7 @@ $$
 #| echo: false
 ```
 
-$$OR = \frac{\omega_{18-29}}{\omega_{65+}} = \frac{0.756}{1.463} = \mathbf{0.517}$$
+$$OR = \frac{\text{odds}_{18-29}}{\text{odds}_{65+}} = \frac{0.756}{1.463} = \mathbf{0.517}$$
 
 . . .
 
@@ -586,10 +602,8 @@ pew_data |>
 # Application exercise
 
 ::: appex
-📋 [sta210-sp25.netlify.app/ae/ae-09-prob-odds.html](../ae/ae-09-prob-odds.html) \[UPDATE LINK\]
+📋 [sta221-sp25.netlify.app/ae/ae-05-prob-odds.html](../ae/ae-05-prob-odds.html)
 :::
-
-[Click here](https://docs.google.com/presentation/d/1uqGeyJVz6if6TNWGaT-9XamY9QrL9_1Grd2lAVRIQvc/edit?usp=sharing) to add your response to the Google Slide.
 
 ## Recap
 

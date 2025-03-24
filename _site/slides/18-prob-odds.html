@@ -215,6 +215,9 @@ Prof.&nbsp;Maria Tackett
 <li><p>Statistics experience due April 22</p></li>
 </ul>
 </section>
+<section id="statistics-classes---fall-2025" class="slide level2">
+<h2>Statistics classes - Fall 2025</h2>
+</section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
 <ul>
@@ -279,11 +282,33 @@ Prof.&nbsp;Maria Tackett
 <p>1: Democrat, 2: Republican, 3: Independent</p>
 </div></div>
 </section>
-<section id="example-win-probability" class="slide level2">
-<h2>Example: Win probability</h2>
-<p>[UPDATE THIS TO CURRENT TOURNAMENT GAMES]</p>
-
-<img data-src="images/16/duke-win-probability.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401743776/louisville-duke">ESPN Analytics win probability for Duke vs.&nbsp;Louisville (March 15, 2025)</a></p></section>
+<section id="example-win-probabilities" class="slide level2">
+<h2>Example: Win probabilities</h2>
+<p><strong>Duke in 2nd round of NCCA March Madness Tournaments</strong></p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<center>
+<b>Men’s Basketball</b>
+</center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/18/duke-mens-basketball.png"></p>
+<figcaption>Source: <a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401746049/baylor-duke">ESPN Gamecast</a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<center>
+<b>Women’s Basketball</b>
+</center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/18/duke-womens-basketball.png"></p>
+<figcaption>Source: <a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401746023/oregon-duke">ESPN Gamecast</a></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
 <section id="do-teenagers-get-7-hours-of-sleep" class="slide level2 smaller">
 <h2>Do teenagers get 7+ hours of sleep?</h2>
 <div class="columns">
@@ -360,9 +385,9 @@ Prof.&nbsp;Maria Tackett
 <h2>Different types of models</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 38%">
-<col style="width: 23%">
-<col style="width: 38%">
+<col style="width: 37%">
+<col style="width: 25%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -504,10 +529,10 @@ Prof.&nbsp;Maria Tackett
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a></a>  <span class="fu">count</span>(ai_concern) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a></a>  <span class="fu">mutate</span>(<span class="at">p =</span> <span class="fu">round</span>(n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a></a>  <span class="fu">mutate</span>(<span class="at">pi =</span> <span class="fu">round</span>(n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
-  ai_concern     n     p
+  ai_concern     n    pi
   &lt;fct&gt;      &lt;int&gt; &lt;dbl&gt;
 1 0           5245 0.468
 2 1           5956 0.532</code></pre>
@@ -529,10 +554,10 @@ Prof.&nbsp;Maria Tackett
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>odds</strong></p>
-<p><span class="math display">\[\text{odds} = \omega =  \frac{\pi}{1-\pi}\]</span></p>
+<p><span class="math display">\[\text{odds} =  \frac{\pi}{1-\pi}\]</span></p>
 </div><div class="column" style="width:50%;">
 <p><strong>probability</strong></p>
-<p><span class="math display">\[\pi = \frac{\omega}{1 + \omega}\]</span></p>
+<p><span class="math display">\[\pi = \frac{\text{odds}}{1 + \text{odds}}\]</span></p>
 </div></div>
 </section></section>
 <section>
@@ -770,7 +795,7 @@ Prof.&nbsp;Maria Tackett
 </div>
 <p>Let’s summarize the relationship between the two groups. To do so, we’ll use the <strong>odds ratio (OR)</strong>.</p>
 <p><span class="math display">\[
-OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
+OR = \frac{\text{odds}_1}{\text{odds}_2}
 \]</span></p>
 </section>
 <section id="or-ai-concern-by-age" class="slide level2 midi">
@@ -815,7 +840,7 @@ OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
 </table>
 </div>
 </div>
-<p><span class="math display">\[OR = \frac{\omega_{18-29}}{\omega_{65+}} = \frac{0.756}{1.463} = \mathbf{0.517}\]</span></p>
+<p><span class="math display">\[OR = \frac{\text{odds}_{18-29}}{\text{odds}_{65+}} = \frac{0.756}{1.463} = \mathbf{0.517}\]</span></p>
 <div class="fragment">
 <p>The odds an 18-29 year old is concerned about increased use of AI in daily life are 0.517 times the odds a 65+ year old is concerned.</p>
 </div>
@@ -965,9 +990,8 @@ OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="../ae/ae-09-prob-odds.html">sta210-sp25.netlify.app/ae/ae-09-prob-odds.html</a> [UPDATE LINK]</p>
+<p>📋 <a href="../ae/ae-05-prob-odds.html">sta221-sp25.netlify.app/ae/ae-05-prob-odds.html</a></p>
 </div>
-<p><a href="https://docs.google.com/presentation/d/1uqGeyJVz6if6TNWGaT-9XamY9QrL9_1Grd2lAVRIQvc/edit?usp=sharing">Click here</a> to add your response to the Google Slide.</p>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
@@ -983,7 +1007,7 @@ OR = \frac{\text{odds}_1}{\text{odds}_2} = \frac{\omega_1}{\omega_2}
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta210-sp25.netlify.app">🔗 STA 210 - Spring 2025</a></p>
+<p><a href="https://sta221-sp25.netlify.app">🔗 STA 221 - Spring 2025</a></p>
 </div>
 </div></div>
 

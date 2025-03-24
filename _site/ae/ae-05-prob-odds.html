@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-31">
+<meta name="dcterms.date" content="2025-03-25">
 
-<title>AE 06: Probabilities, Odds, Odds ratios – STA 221 - Spring 2025</title>
+<title>AE 05: Probabilities, Odds, Odds ratios – STA 221 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,7 +143,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 06: Probabilities, Odds, Odds ratios</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 05: Probabilities, Odds, Odds ratios</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -398,7 +398,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta221-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -407,7 +414,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">AE 06: Probabilities, Odds, Odds ratios</h1>
+<h1 class="title">AE 05: Probabilities, Odds, Odds ratios</h1>
 </div>
 
 
@@ -418,7 +425,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 31, 2024</p>
+      <p class="date">March 25, 2025</p>
     </div>
   </div>
   
@@ -440,7 +447,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Go to the course GitHub organization and locate your ae-06 repo to get started.</p>
+<p>Go to the course GitHub organization and locate your ae-05 repo to get started.</p>
 <p>Render, commit, and push your responses to GitHub by the end of class to submit your AE.</p>
 </div>
 </div>
@@ -451,114 +458,76 @@ Important
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p><em>You are an analyst for a large company consisting of regional sales teams across the country. Twice every year, this company promotes some of its salespeople. Promotion is at the discretion of the head of each regional sales team, taking into consideration financial performance, customer satisfaction ratings, recent performance ratings and personal judgment.</em></p>
-<p><em>You are asked by the management of the company to conduct an analysis to determine how the factors of financial performance, customer ratings and performance ratings influence the likelihood of a given salesperson being promoted. You are provided with a data set containing data for the last three years of salespeople considered for promotion.</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p><strong>For this analysis, you will focus on understanding the association between performance rating and promotion using the following variables:</strong></p>
+<p>This data comes from the 2023 <a href="https://www.pewresearch.org/the-american-trends-panel/">Pew Research Center’s American Trends Panel</a>. The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from 11201 respondents in Wave 132 of the survey conducted July 31 - August 6, 2023.</p>
+<p>A more complete analysis on this topic can be found in the Pew Research Center article <a href="https://www.pewresearch.org/short-reads/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/"><em>Growing public concern about the role of artificial intelligence in daily life</em></a> by Alec Tyson and Emma Kikuchi.</p>
+<p><strong>The goal of this analysis is to understand the relationship between how much an respondent has heard about artificial intelligence (AI) and how concerned they are about increased use of AI in daily life.</strong></p>
+<p>You will use the following variables:</p>
 <ul>
-<li><p><code>promoted</code>: A binary value indicating 1 if the individual was promoted and 0 if not</p></li>
-<li><p><code>performance</code>: the most recent performance rating prior to promotion, from 1 (lowest) to 4 (highest)</p></li>
-</ul>
-<p><a href="https://peopleanalytics-regression-book.org/bin-log-reg.html#walkthrough-logit">Click here</a> to see the full data dictionary.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://peopleanalytics-regression-book.org/data/salespeople.csv"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>employees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url) <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(performance) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">promoted =</span> <span class="fu">factor</span>(promoted),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">performance =</span> <span class="fu">factor</span>(performance))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 1
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<li><code>ai_heard</code> : Response to the question “How much have you heard or read about AI?”
 <ul>
-<li><p>What is the probability a randomly selected employee got promoted in the last three years?</p></li>
-<li><p>What is the probability a randomly selected employee got the highest rating on the performance review in the last three years?</p></li>
-<li><p>What are the odds a randomly selected employee got the highest rating on the performance review in the last three years?</p></li>
+<li>A lot</li>
+<li>A little</li>
+<li>Nothing at all</li>
+<li>Refused</li>
+</ul></li>
+<li><code>ai_concern</code>: Whether a respondent said they are “more concerned than excited” about in the increased use of AI in daily life (1: yes, 0: no)</li>
 </ul>
-</div>
-</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pew_data <span class="ot">&lt;-</span> pew_data <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ai_concern =</span> <span class="fu">if_else</span>(CNCEXC_W132 <span class="sc">==</span> <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">ai_heard =</span> <span class="fu">case_when</span>(AI_HEARD_W132 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"A lot"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                              AI_HEARD_W132 <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"A little"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                              AI_HEARD_W132 <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"Nothing at all"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                              <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Refused"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                              ))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Make factors and  relevel </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>pew_data <span class="ot">&lt;-</span> pew_data <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ai_concern =</span> <span class="fu">factor</span>(ai_concern),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">ai_heard =</span> <span class="fu">factor</span>(ai_heard, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"A lot"</span>, <span class="st">"A little"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">"Nothing at all"</span>, <span class="st">"Refused"</span>))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
 <ul>
-<li><p>What is the probability a randomly selected employee who got the lowest performance rating was promoted in the last three years?</p></li>
-<li><p>What are the odds a randomly selected employee who got the lowest performance rating was promoted in the last three years?</p></li>
+<li><p>What is the probability a randomly selected respondent has heard a lot about AI?</p></li>
+<li><p>What are the odds a randomly selected respondent has heard a lot about AI?</p></li>
 </ul>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Make a plot to visualize the relationship between being promoted and performance review. Use the plot to describe the relationship between the two variables.</p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 4
-</div>
-</div>
-<div class="callout-body-container callout-body">
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
 <ul>
-<li><p>How do the odds a randomly selected employee with the highest performance rating got promoted in the last three years compare to the odds for an employee with the lowest performance rating?</p></li>
-<li><p>How do the odds a randomly selected employee with a performance rating of 2 got promoted in the last three years compare to the odds for an employee with the lowest performance rating?</p></li>
+<li><p>What is the probability a randomly selected respondent who is concerned about increased use of AI in daily life has heard a lot about AI?</p></li>
+<li><p>What are the odds a randomly selected respondent who is concerned about increased use of AI in daily life has heard a lot about AI?</p></li>
 </ul>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise 5
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We can use a logistic regression model to understand the relationship between performance rating and promotion. (We will discuss this in detail next class, but will get a preview for now.)</p>
-<p>Let <span class="math inline">\(\pi\)</span> be the probability a randomly selected employee was promoted in the last three years. The statistical model is</p>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>Make a plot to visualize the relationship between how much a respondent has heard about AI and being concerned with increased use of AI in daily life. Use the plot to describe the relationship between the two variables.</p>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<ul>
+<li><p>How do the odds of being concerned about increased use of AI in daily life for a randomly selected respondent who has heard nothing about AI compare to the odds for a randomly selected respondent who has heard a lot about AI?</p></li>
+<li><p>How do the odds of being concerned about increased use of AI in daily life for a randomly selected respondent who has heard a little about AI compare to the odds for a randomly selected respondent who has heard a lot about AI?</p></li>
+</ul>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>We can use a logistic regression model to understand the relationship between how much someone has heard about AI and whether they are concerned about increased use of AI in daily life. (We will discuss this in detail next class, but will get a preview for now.)</p>
+<p>Let <span class="math inline">\(p\)</span> be the probability a randomly selected respondent is concerned about increased use of AI in daily life. The statistical model is</p>
 <p><span class="math display">\[
-\log\Big(\frac{\pi_i}{1-\pi_i}\Big) = \beta_0 + \beta_1\boldsymbol{1}(performance_i = 2) + \beta_2\mathbf{1}(performance_i= 3) + \beta_3\mathbf{1}(performance_i = 4)
+\begin{aligned}
+\log\Big(\frac{p_i}{1-p_i}\Big) = \beta_0 &amp;+ \beta_1\boldsymbol{1}(ai\_heard_i = \text{A little}) \\ &amp;+ \beta_2\mathbf{1}(ai\_heard_i = \text{Nothing}) \\  &amp;+ \beta_3\mathbf{1}(ai\_heard_i = \text{Refused})
+\end{aligned}
 \]</span></p>
 <p>The code and output to fit this model is shown below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>promotion_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(promoted <span class="sc">~</span> performance, <span class="at">data =</span> employees, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(promotion_fit) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ai_concern_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(ai_concern <span class="sc">~</span> ai_heard, <span class="at">data =</span> pew_data,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(ai_concern_fit) <span class="sc">|&gt;</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -573,44 +542,41 @@ Exercise 5
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-1.609</td>
-<td style="text-align: right;">0.346</td>
-<td style="text-align: right;">-4.646</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">-0.065</td>
+<td style="text-align: right;">0.031</td>
+<td style="text-align: right;">-2.082</td>
+<td style="text-align: right;">0.037</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">performance2</td>
-<td style="text-align: right;">0.386</td>
-<td style="text-align: right;">0.414</td>
-<td style="text-align: right;">0.931</td>
-<td style="text-align: right;">0.352</td>
+<td style="text-align: left;">ai_heardA little</td>
+<td style="text-align: right;">0.383</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">9.504</td>
+<td style="text-align: right;">0.000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">performance3</td>
-<td style="text-align: right;">1.137</td>
-<td style="text-align: right;">0.392</td>
-<td style="text-align: right;">2.899</td>
-<td style="text-align: right;">0.004</td>
+<td style="text-align: left;">ai_heardNothing at all</td>
+<td style="text-align: right;">-0.276</td>
+<td style="text-align: right;">0.079</td>
+<td style="text-align: right;">-3.505</td>
+<td style="text-align: right;">0.000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">performance4</td>
-<td style="text-align: right;">1.792</td>
-<td style="text-align: right;">0.440</td>
-<td style="text-align: right;">4.075</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: left;">ai_heardRefused</td>
+<td style="text-align: right;">-0.697</td>
+<td style="text-align: right;">0.459</td>
+<td style="text-align: right;">-1.520</td>
+<td style="text-align: right;">0.129</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <ul>
-<li><p>Interpret the intercept in the context of the data in terms of the log-odds of being promoted.</p></li>
-<li><p>Interpret the coefficient of <code>performance2</code> in the context of the data in terms of the log-odds of being promoted.</p></li>
-<li><p>Interpret the coefficient of <code>performance2</code> in the context of the data in terms of the odds of being promoted. How does this compare to your response to Exercise 4.</p></li>
+<li><p>Interpret the intercept in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.</p></li>
+<li><p>Interpret the coefficient of <code>ai_heardA little</code> in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.</p></li>
+<li><p>Interpret the coefficient of <code>ai_heardNothing at all</code> in the context of the data in terms of the odds of being concerned about the increased use of AI in daily life. How does this compare to your response to Exercise 4?</p></li>
 </ul>
-</div>
-</div>
-<p>[add response here]</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -629,14 +595,9 @@ Submission
 
 
 </section>
+</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Excerpt from Chapter 5 of <a href="https://peopleanalytics-regression-book.org/bin-log-reg.html"><em>Handbook of Regression Modeling in People Analytics</em></a> by Keith McNulty.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
