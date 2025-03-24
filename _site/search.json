@@ -9686,18 +9686,11 @@
     "text": "Project Presentations in lab on Friday, March 28\nLab 06 due TODAY at 11:59pm\nStatistics experience due April 22"
   },
   {
-    "objectID": "slides/18-prob-odds-notes.html#statistics-classes---fall-2025",
-    "href": "slides/18-prob-odds-notes.html#statistics-classes---fall-2025",
-    "title": "Probabilities, odds, odds ratios",
-    "section": "Statistics classes - Fall 2025",
-    "text": "Statistics classes - Fall 2025"
-  },
-  {
     "objectID": "slides/18-prob-odds-notes.html#topics",
     "href": "slides/18-prob-odds-notes.html#topics",
     "title": "Probabilities, odds, odds ratios",
     "section": "Topics",
-    "text": "Topics\n\nReview: Collinearity vs. interaction effects\nLogistic regression for binary response variable\nRelationship between odds and probabilities\nOdds ratios"
+    "text": "Topics\n\nReview: Multicollinearity vs. interaction effects\nLogistic regression for binary response variable\nRelationship between odds and probabilities\nOdds ratios"
   },
   {
     "objectID": "slides/18-prob-odds-notes.html#computational-setup",
@@ -9952,18 +9945,11 @@
     "text": "Announcements\n\nProject Presentations in lab on Friday, March 28\nLab 06 due TODAY at 11:59pm\nStatistics experience due April 22"
   },
   {
-    "objectID": "slides/18-prob-odds.html#statistics-classes---fall-2025",
-    "href": "slides/18-prob-odds.html#statistics-classes---fall-2025",
-    "title": "Probabilities, odds, odds ratios",
-    "section": "Statistics classes - Fall 2025",
-    "text": "Statistics classes - Fall 2025"
-  },
-  {
     "objectID": "slides/18-prob-odds.html#topics",
     "href": "slides/18-prob-odds.html#topics",
     "title": "Probabilities, odds, odds ratios",
     "section": "Topics",
-    "text": "Topics\n\nReview: Collinearity vs. interaction effects\nLogistic regression for binary response variable\nRelationship between odds and probabilities\nOdds ratios"
+    "text": "Topics\n\nReview: Multicollinearity vs. interaction effects\nLogistic regression for binary response variable\nRelationship between odds and probabilities\nOdds ratios"
   },
   {
     "objectID": "slides/18-prob-odds.html#computational-setup",

@@ -47,11 +47,9 @@ knitr::opts_chunk$set(
 
 -   Statistics experience due April 22
 
-## Statistics classes - Fall 2025
-
 ## Topics
 
--   Review: Collinearity vs. interaction effects
+-   Review: Multicollinearity vs. interaction effects
 
 -   Logistic regression for binary response variable
 
