@@ -53,6 +53,24 @@ knitr::opts_chunk$set(
 Drop-in Peer Advising will be happening Wednesday, March 26, from 6:30-8:30 PM in Bostock Lounge for students to stop by with any questions they have around STA/CS/MATH classes, major pathways, or other general advice since shopping carts just opened. 
 :::
 
+## Fall 2025 STA classes  {.small}
+
+-   STA 240: Probability for Statistical Inference, Modeling, and Data Analysis (or STA 230 or STA 231)
+
+-   STA 322: Study Design: Design of Surveys and Causal Studies
+
+-   STA 323: Statistical Computing
+
+-   STA 325: Machine Learning and Data Mining (need STA 230/231/240)
+
+-   STA 332: Statistical Inference (need STA 230/231/240)
+
+-   STA 344: Introduction to Statistical Modeling of Spatial and Time Series data (need STA 230/231/240)
+
+-   STA 402: Bayesian Statistical Modeling and Data Analysis (need STA 332)
+
+-   STA 465: Introduction to High Dimensional Data Analysis
+
 ## Topics
 
 -   Review: Multicollinearity vs. interaction effects
