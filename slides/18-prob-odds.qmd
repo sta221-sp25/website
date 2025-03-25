@@ -47,6 +47,12 @@ knitr::opts_chunk$set(
 
 -   Statistics experience due April 22
 
+<br>
+
+::: question
+Drop-in Peer Advising will be happening Wednesday, March 26, from 6:30-8:30 PM in Bostock Lounge for students to stop by with any questions they have around STA/CS/MATH classes, major pathways, or other general advice since shopping carts just opened. 
+:::
+
 ## Topics
 
 -   Review: Multicollinearity vs. interaction effects
@@ -164,7 +170,7 @@ What are we checking in Plot 1? In Plot 2?
 :::
 :::::
 
-## Example: Win probabilities 
+## Example: Win probabilities
 
 **Duke in 2nd round of NCCA March Madness Tournaments**
 
