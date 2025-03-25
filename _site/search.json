@@ -9830,7 +9830,7 @@
     "href": "slides/18-prob-odds-notes.html#binary-response-variable",
     "title": "Probabilities, odds, odds ratios",
     "section": "Binary response variable",
-    "text": "Binary response variable\n\n\n\\(Y = 1: \\text{ yes (success), } 0: \\text{ no (failure)}\\)\n\\(\\pi\\): probability that \\(Y=1\\), i.e., \\(P(Y = 1)\\)\n\\(\\frac{\\pi}{1-\\pi}\\): odds that \\(Y = 1\\)\n\\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\): log odds\nGo from \\(p\\) to \\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\) using the logit transformation"
+    "text": "Binary response variable\n\n\n\\(Y = 1: \\text{ yes (success), } 0: \\text{ no (failure)}\\)\n\\(\\pi\\): probability that \\(Y=1\\), i.e., \\(P(Y = 1)\\)\n\\(\\frac{\\pi}{1-\\pi}\\): odds that \\(Y = 1\\)\n\\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\): log odds\nGo from \\(\\pi\\) to \\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\) using the logit transformation"
   },
   {
     "objectID": "slides/18-prob-odds-notes.html#example",
@@ -10089,7 +10089,7 @@
     "href": "slides/18-prob-odds.html#binary-response-variable",
     "title": "Probabilities, odds, odds ratios",
     "section": "Binary response variable",
-    "text": "Binary response variable\n\n\n\\(Y = 1: \\text{ yes (success), } 0: \\text{ no (failure)}\\)\n\\(\\pi\\): probability that \\(Y=1\\), i.e., \\(P(Y = 1)\\)\n\\(\\frac{\\pi}{1-\\pi}\\): odds that \\(Y = 1\\)\n\\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\): log odds\nGo from \\(p\\) to \\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\) using the logit transformation"
+    "text": "Binary response variable\n\n\n\\(Y = 1: \\text{ yes (success), } 0: \\text{ no (failure)}\\)\n\\(\\pi\\): probability that \\(Y=1\\), i.e., \\(P(Y = 1)\\)\n\\(\\frac{\\pi}{1-\\pi}\\): odds that \\(Y = 1\\)\n\\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\): log odds\nGo from \\(\\pi\\) to \\(\\log\\big(\\frac{\\pi}{1-\\pi}\\big)\\) using the logit transformation"
   },
   {
     "objectID": "slides/18-prob-odds.html#example",
