@@ -53,7 +53,7 @@ knitr::opts_chunk$set(
 Drop-in Peer Advising will be happening Wednesday, March 26, from 6:30-8:30 PM in Bostock Lounge for students to stop by with any questions they have around STA/CS/MATH classes, major pathways, or other general advice since shopping carts just opened. 
 :::
 
-## Fall 2025 STA classes  {.midi}
+## Fall 2025 STA classes {.midi}
 
 -   STA 240: Probability for Statistical Inference, Modeling, and Data Analysis (or STA 230 or STA 231)
 
@@ -320,7 +320,7 @@ ggplot(sleep_age, aes(x = Age, y = prop)) +
 ## Different types of models
 
 | Method | Outcome | Model |
-|---------------------------|------------------|---------------------------|
+|----|----|----|
 | Linear regression | Quantitative | $$
 \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{\epsilon}
 $$ |
