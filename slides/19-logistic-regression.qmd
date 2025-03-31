@@ -420,7 +420,7 @@ p3 <- ggplot(heart_disease, aes(x = education)) +
 p1  + (p2 / p3)
 ```
 
-## Bivariate EDA 
+## Bivariate EDA
 
 ```{r}
 #| echo: false
