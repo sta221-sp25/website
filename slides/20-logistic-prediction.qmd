@@ -576,7 +576,7 @@ heart_disease_aug |>
   annotate("point", x = 1, y = 0, color = "#8F2D56") +
   annotate("point", x = 1, y = 0, color = "#8F2D56", size = 3, shape = "circle open") +
   annotate(
-    "label", x = 0.98, y = 0.01, label = "All high risk classifed as not high risk,\nall not high risk classified as high risk", hjust = 1, color = "#8F2D56", fontface = "bold", vjust = 0, fill = "white"
+    "label", x = 0.98, y = 0.01, label = "All high risk classified as not high risk,\nall not high risk classified as high risk", hjust = 1, color = "#8F2D56", fontface = "bold", vjust = 0, fill = "white"
   ) +
   annotate(
     "segment", color = "#5b708c", x = 0, y = 0, xend = 1, yend = 1, size = 2, alpha = 0.6
