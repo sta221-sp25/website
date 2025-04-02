@@ -121,8 +121,6 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/kePrint/kePrint.js"></script>
-<link href="../site_libs/lightable/lightable.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
@@ -421,12 +419,11 @@ window.Quarto = {
    
   <ul>
   <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#questions-about-the-lecture" id="toc-questions-about-the-lecture" class="nav-link" data-scroll-target="#questions-about-the-lecture">Questions about the lecture</a></li>
+  <li><a href="#questions-from-this-weeks-content" id="toc-questions-from-this-weeks-content" class="nav-link" data-scroll-target="#questions-from-this-weeks-content">Questions from this week’s content?</a></li>
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
   <li><a href="#computational-setup" id="toc-computational-setup" class="nav-link" data-scroll-target="#computational-setup">Computational setup</a></li>
   <li><a href="#risk-of-coronary-heart-disease" id="toc-risk-of-coronary-heart-disease" class="nav-link" data-scroll-target="#risk-of-coronary-heart-disease">Risk of coronary heart disease</a></li>
   <li><a href="#modeling-risk-of-coronary-heart-disease" id="toc-modeling-risk-of-coronary-heart-disease" class="nav-link" data-scroll-target="#modeling-risk-of-coronary-heart-disease">Modeling risk of coronary heart disease</a></li>
-  <li><a href="#modeling-risk-of-coronary-heart-disease-1" id="toc-modeling-risk-of-coronary-heart-disease-1" class="nav-link" data-scroll-target="#modeling-risk-of-coronary-heart-disease-1">Modeling risk of coronary heart disease</a></li>
   <li><a href="#review-roc-curve-model-fit" id="toc-review-roc-curve-model-fit" class="nav-link" data-scroll-target="#review-roc-curve-model-fit">Review: ROC Curve + Model fit</a></li>
   <li><a href="#review-classification" id="toc-review-classification" class="nav-link" data-scroll-target="#review-classification">Review: Classification</a></li>
   <li><a href="#review-classification-1" id="toc-review-classification-1" class="nav-link" data-scroll-target="#review-classification-1">Review: Classification</a></li>
@@ -441,43 +438,31 @@ window.Quarto = {
   <li><a href="#comparing-the-models-using-aic" id="toc-comparing-the-models-using-aic" class="nav-link" data-scroll-target="#comparing-the-models-using-aic">Comparing the models using AIC</a></li>
   <li><a href="#comparing-the-models-using-bic" id="toc-comparing-the-models-using-bic" class="nav-link" data-scroll-target="#comparing-the-models-using-bic">Comparing the models using BIC</a></li>
   </ul></li>
-  <li><a href="#drop-in-deviance-test" id="toc-drop-in-deviance-test" class="nav-link" data-scroll-target="#drop-in-deviance-test">Drop-in-deviance test</a></li>
-  <li><a href="#test-for-overall-significance" id="toc-test-for-overall-significance" class="nav-link" data-scroll-target="#test-for-overall-significance">Test for overall significance</a>
+  <li><a href="#drop-in-deviance-test" id="toc-drop-in-deviance-test" class="nav-link" data-scroll-target="#drop-in-deviance-test">Drop-in-deviance test</a>
   <ul class="collapse">
-  <li><a href="#likelihood-ratio-test" id="toc-likelihood-ratio-test" class="nav-link" data-scroll-target="#likelihood-ratio-test">Likelihood ratio test</a></li>
-  <li><a href="#likelihood-ratio-test-statistic" id="toc-likelihood-ratio-test-statistic" class="nav-link" data-scroll-target="#likelihood-ratio-test-statistic">Likelihood ratio test statistic</a></li>
-  <li><a href="#likelihood-ratio-test-statistic-1" id="toc-likelihood-ratio-test-statistic-1" class="nav-link" data-scroll-target="#likelihood-ratio-test-statistic-1">Likelihood ratio test statistic</a></li>
+  <li><a href="#drop-in-deviance-test-1" id="toc-drop-in-deviance-test-1" class="nav-link" data-scroll-target="#drop-in-deviance-test-1">Drop-in-deviance test</a></li>
+  <li><a href="#log-likelihood" id="toc-log-likelihood" class="nav-link" data-scroll-target="#log-likelihood">Log-Likelihood</a></li>
+  <li><a href="#deviance" id="toc-deviance" class="nav-link" data-scroll-target="#deviance">Deviance</a></li>
   <li><a href="#chi2-distribution" id="toc-chi2-distribution" class="nav-link" data-scroll-target="#chi2-distribution"><span class="math inline">\(\chi^2\)</span> distribution</a></li>
+  <li><a href="#test-for-overall-significance" id="toc-test-for-overall-significance" class="nav-link" data-scroll-target="#test-for-overall-significance">Test for overall significance</a></li>
+  <li><a href="#drop-in-deviance-test-statistic" id="toc-drop-in-deviance-test-statistic" class="nav-link" data-scroll-target="#drop-in-deviance-test-statistic">Drop-in-deviance test statistic</a></li>
+  <li><a href="#drop-in-deviance-test-statistic-1" id="toc-drop-in-deviance-test-statistic-1" class="nav-link" data-scroll-target="#drop-in-deviance-test-statistic-1">Drop-in-deviance test statistic</a></li>
+  <li><a href="#heart-disease-model-drop-in-deviance-test" id="toc-heart-disease-model-drop-in-deviance-test" class="nav-link" data-scroll-target="#heart-disease-model-drop-in-deviance-test">Heart disease model: drop-in-deviance test</a></li>
+  <li><a href="#heart-disease-model-drop-in-deviance-test-1" id="toc-heart-disease-model-drop-in-deviance-test-1" class="nav-link" data-scroll-target="#heart-disease-model-drop-in-deviance-test-1">Heart disease model: drop-in-deviance test</a></li>
   <li><a href="#heart-disease-model-likelihood-ratio-test" id="toc-heart-disease-model-likelihood-ratio-test" class="nav-link" data-scroll-target="#heart-disease-model-likelihood-ratio-test">Heart disease model: likelihood ratio test</a></li>
-  <li><a href="#heart-disease-model-likelihood-ratio-test-1" id="toc-heart-disease-model-likelihood-ratio-test-1" class="nav-link" data-scroll-target="#heart-disease-model-likelihood-ratio-test-1">Heart disease model: likelihood ratio test</a></li>
-  <li><a href="#heart-disease-model-likelihood-ratio-test-2" id="toc-heart-disease-model-likelihood-ratio-test-2" class="nav-link" data-scroll-target="#heart-disease-model-likelihood-ratio-test-2">Heart disease model: likelihood ratio test</a></li>
+  <li><a href="#why-use-overall-test" id="toc-why-use-overall-test" class="nav-link" data-scroll-target="#why-use-overall-test">Why use overall test?</a></li>
   </ul></li>
   <li><a href="#test-a-subset-of-coefficients" id="toc-test-a-subset-of-coefficients" class="nav-link" data-scroll-target="#test-a-subset-of-coefficients">Test a subset of coefficients</a>
   <ul class="collapse">
   <li><a href="#testing-a-subset-of-coefficients" id="toc-testing-a-subset-of-coefficients" class="nav-link" data-scroll-target="#testing-a-subset-of-coefficients">Testing a subset of coefficients</a></li>
-  <li><a href="#deviance" id="toc-deviance" class="nav-link" data-scroll-target="#deviance">Deviance</a></li>
-  <li><a href="#drop-in-deviance-test-1" id="toc-drop-in-deviance-test-1" class="nav-link" data-scroll-target="#drop-in-deviance-test-1">Drop-in-deviance test</a></li>
-  <li><a href="#heart-disease-model-drop-in-deviance-test" id="toc-heart-disease-model-drop-in-deviance-test" class="nav-link" data-scroll-target="#heart-disease-model-drop-in-deviance-test">Heart disease model: drop-in-deviance test</a></li>
-  <li><a href="#heart-disease-model-drop-in-deviance-test-1" id="toc-heart-disease-model-drop-in-deviance-test-1" class="nav-link" data-scroll-target="#heart-disease-model-drop-in-deviance-test-1">Heart disease model: drop-in-deviance test</a></li>
-  <li><a href="#heart-disease-model-drop-in-deviance-test-2" id="toc-heart-disease-model-drop-in-deviance-test-2" class="nav-link" data-scroll-target="#heart-disease-model-drop-in-deviance-test-2">Heart disease model: drop-in-deviance test</a></li>
+  <li><a href="#drop-in-deviance-test-2" id="toc-drop-in-deviance-test-2" class="nav-link" data-scroll-target="#drop-in-deviance-test-2">Drop-in-deviance test</a></li>
+  <li><a href="#example-include-education" id="toc-example-include-education" class="nav-link" data-scroll-target="#example-include-education">Example: Include <code>education</code>?</a></li>
+  <li><a href="#example-include-education-1" id="toc-example-include-education-1" class="nav-link" data-scroll-target="#example-include-education-1">Example: Include <code>education</code>?</a></li>
+  <li><a href="#example-include-education-2" id="toc-example-include-education-2" class="nav-link" data-scroll-target="#example-include-education-2">Example: Include <code>education</code>?</a></li>
   <li><a href="#drop-in-deviance-test-in-r" id="toc-drop-in-deviance-test-in-r" class="nav-link" data-scroll-target="#drop-in-deviance-test-in-r">Drop-in-deviance test in R</a></li>
-  <li><a href="#aic-and-bic" id="toc-aic-and-bic" class="nav-link" data-scroll-target="#aic-and-bic">AIC and BIC</a></li>
-  <li><a href="#compare-models-using-aic" id="toc-compare-models-using-aic" class="nav-link" data-scroll-target="#compare-models-using-aic">Compare models using AIC</a></li>
-  <li><a href="#compare-models-using-bic" id="toc-compare-models-using-bic" class="nav-link" data-scroll-target="#compare-models-using-bic">Compare models using BIC</a></li>
-  </ul></li>
-  <li><a href="#test-for-a-single-coefficient" id="toc-test-for-a-single-coefficient" class="nav-link" data-scroll-target="#test-for-a-single-coefficient">Test for a single coefficient</a>
-  <ul class="collapse">
-  <li><a href="#distribution-of-hatboldsymbolbeta" id="toc-distribution-of-hatboldsymbolbeta" class="nav-link" data-scroll-target="#distribution-of-hatboldsymbolbeta">Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></a></li>
-  <li><a href="#distribution-of-hatboldsymbolbeta-1" id="toc-distribution-of-hatboldsymbolbeta-1" class="nav-link" data-scroll-target="#distribution-of-hatboldsymbolbeta-1">Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></a></li>
-  <li><a href="#test-for-a-single-coefficient-1" id="toc-test-for-a-single-coefficient-1" class="nav-link" data-scroll-target="#test-for-a-single-coefficient-1">Test for a single coefficient</a></li>
-  <li><a href="#confidence-interval-for-beta_j" id="toc-confidence-interval-for-beta_j" class="nav-link" data-scroll-target="#confidence-interval-for-beta_j">Confidence interval for <span class="math inline">\(\beta_j\)</span></a></li>
-  <li><a href="#interpretation-in-terms-of-the-odds" id="toc-interpretation-in-terms-of-the-odds" class="nav-link" data-scroll-target="#interpretation-in-terms-of-the-odds">Interpretation in terms of the odds</a></li>
-  <li><a href="#coefficient-for-age" id="toc-coefficient-for-age" class="nav-link" data-scroll-target="#coefficient-for-age">Coefficient for <code>age</code></a></li>
-  <li><a href="#coefficient-for-age-1" id="toc-coefficient-for-age-1" class="nav-link" data-scroll-target="#coefficient-for-age-1">Coefficient for <code>age</code></a></li>
-  <li><a href="#coefficient-for-age-2" id="toc-coefficient-for-age-2" class="nav-link" data-scroll-target="#coefficient-for-age-2">Coefficient for <code>age</code></a></li>
-  <li><a href="#coefficient-for-age-3" id="toc-coefficient-for-age-3" class="nav-link" data-scroll-target="#coefficient-for-age-3">Coefficient for <code>age</code></a></li>
-  <li><a href="#ci-for-age" id="toc-ci-for-age" class="nav-link" data-scroll-target="#ci-for-age">CI for <code>age</code></a></li>
-  <li><a href="#overview-of-testing-coefficients" id="toc-overview-of-testing-coefficients" class="nav-link" data-scroll-target="#overview-of-testing-coefficients">Overview of testing coefficients</a></li>
+  <li><a href="#add-interactions-with-currentsmoker" id="toc-add-interactions-with-currentsmoker" class="nav-link" data-scroll-target="#add-interactions-with-currentsmoker">Add interactions with <code>currentSmoker</code>?</a></li>
+  <li><a href="#questions-from-this-weeks-content-1" id="toc-questions-from-this-weeks-content-1" class="nav-link" data-scroll-target="#questions-from-this-weeks-content-1">Questions from this week’s content?</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -526,8 +511,11 @@ window.Quarto = {
 <li><p>Statistics experience due April 22</p></li>
 </ul>
 </section>
-<section id="questions-about-the-lecture" class="level2">
-<h2 class="anchored" data-anchor-id="questions-about-the-lecture">Questions about the lecture</h2>
+<section id="questions-from-this-weeks-content" class="level2">
+<h2 class="anchored" data-anchor-id="questions-from-this-weeks-content">Questions from this week’s content?</h2>
+<center>
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUQ1JTSFBZNlFMWUJZSDcwTUdaVzgwWUhBMC4u&amp;embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
+</center>
 </section>
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
@@ -566,79 +554,6 @@ window.Quarto = {
 </section>
 <section id="modeling-risk-of-coronary-heart-disease" class="level2">
 <h2 class="anchored" data-anchor-id="modeling-risk-of-coronary-heart-disease">Modeling risk of coronary heart disease</h2>
-<p>Using <code>age</code>, <code>totChol</code>, <code>currentSmoker</code></p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>heart_disease_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> totChol <span class="sc">+</span> currentSmoker, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> heart_disease, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(heart_disease_fit, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 12%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 11%">
-<col style="width: 12%">
-<col style="width: 14%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-6.673</td>
-<td style="text-align: right;">0.378</td>
-<td style="text-align: right;">-17.647</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-7.423</td>
-<td style="text-align: right;">-5.940</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">age</td>
-<td style="text-align: right;">0.082</td>
-<td style="text-align: right;">0.006</td>
-<td style="text-align: right;">14.344</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.071</td>
-<td style="text-align: right;">0.094</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">totChol</td>
-<td style="text-align: right;">0.002</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">1.940</td>
-<td style="text-align: right;">0.052</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.004</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">currentSmoker1</td>
-<td style="text-align: right;">0.443</td>
-<td style="text-align: right;">0.094</td>
-<td style="text-align: right;">4.733</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.260</td>
-<td style="text-align: right;">0.627</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="modeling-risk-of-coronary-heart-disease-1" class="level2">
-<h2 class="anchored" data-anchor-id="modeling-risk-of-coronary-heart-disease-1">Modeling risk of coronary heart disease</h2>
 <p>Using <code>age</code>, <code>totChol</code>, and <code>currentSmoker</code></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -708,14 +623,13 @@ window.Quarto = {
 <section id="review-roc-curve-model-fit" class="level2">
 <h2 class="anchored" data-anchor-id="review-roc-curve-model-fit">Review: ROC Curve + Model fit</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>high_risk_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(high_risk_fit)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>roc_curve_data <span class="ot">&lt;-</span> high_risk_aug <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">roc_curve</span>(high_risk, .fitted, <span class="at">event_level =</span> <span class="st">"second"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#calculate AUC</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>high_risk_aug <span class="sc">|&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">roc_auc</span>(high_risk, .fitted, <span class="at">event_level =</span> <span class="st">"second"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="21-logistic-comparison_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+</figure>
+</div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   .metric .estimator .estimate
@@ -731,7 +645,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="21-logistic-comparison_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+<p><img src="21-logistic-comparison_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
 </figure>
 </div>
 </div>
@@ -743,7 +657,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="21-logistic-comparison_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+<p><img src="21-logistic-comparison_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
 </figure>
 </div>
 </div>
@@ -848,7 +762,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="aic-bic">AIC &amp; BIC</h2>
 <p>Estimators of prediction error and <em>relative</em> quality of models:</p>
 <p>. . .</p>
-<p><strong>Akaike’s Information Criterion (AIC)</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: <span class="math display">\[AIC = -2\log L + 2(p+1)\]</span></p>
+<p><strong>Akaike’s Information Criterion (AIC)</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: <span class="math display">\[AIC = -2\log L + 2 (p+1)\]</span></p>
 <p>. . .</p>
 <p><strong>Schwarz’s Bayesian Information Criterion (BIC)</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>: <span class="math display">\[ BIC = -2\log L + \log(n)\times(p+1)\]</span></p>
 </section>
@@ -868,7 +782,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="aic-bic-2">AIC &amp; BIC</h2>
 <p><span class="math display">\[
 \begin{aligned} &amp; AIC = -2\log L  + \color{blue}{2(p+1)} \\
-&amp; BIC = -2\log L + \color{blue}{\log(n)\times(p+1)}
+&amp; BIC = -2\log L + \color{blue}{\log(n)\times (p+1)}
 \end{aligned}
 \]</span></p>
 <p><br></p>
@@ -890,7 +804,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="aic-from-the-glance-function">AIC from the <code>glance()</code> function</h2>
 <p>Let’s look at the AIC for the model that includes <code>age</code>, <code>totChol</code>, and <code>currentSmoker</code></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3232.812</code></pre>
 </div>
@@ -899,7 +813,7 @@ window.Quarto = {
 <p>. . .</p>
 <p><strong>Calculating AIC</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">glance</span>(high_risk_fit)<span class="sc">$</span>logLik <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">3</span> <span class="sc">+</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">glance</span>(high_risk_fit)<span class="sc">$</span>logLik <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">3</span> <span class="sc">+</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3232.812</code></pre>
 </div>
@@ -909,11 +823,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="comparing-the-models-using-aic">Comparing the models using AIC</h2>
 <p>Let’s compare the full and reduced models using AIC.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit_reduced)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit_reduced)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3232.812</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit_full)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit_full)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3231.6</code></pre>
 </div>
@@ -927,11 +841,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="comparing-the-models-using-bic">Comparing the models using BIC</h2>
 <p>Let’s compare the full and reduced models using BIC</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit_reduced)<span class="sc">$</span>BIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit_reduced)<span class="sc">$</span>BIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3258.074</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit_full)<span class="sc">$</span>BIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(high_risk_fit_full)<span class="sc">$</span>BIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3275.807</code></pre>
 </div>
@@ -944,42 +858,36 @@ window.Quarto = {
 </section>
 <section id="drop-in-deviance-test" class="level1">
 <h1>Drop-in-deviance test</h1>
+<section id="drop-in-deviance-test-1" class="level2">
+<h2 class="anchored" data-anchor-id="drop-in-deviance-test-1">Drop-in-deviance test</h2>
+<p>We will use a <strong>drop-in-deviance test</strong> (aka Likelihood Ratio Test) to test</p>
+<ul>
+<li><p>the overall statistical significance of a logistic regression model</p></li>
+<li><p>the statistical significance of a subset of coefficients in the model</p></li>
+</ul>
 </section>
-<section id="test-for-overall-significance" class="level1">
-<h1>Test for overall significance</h1>
-<section id="likelihood-ratio-test" class="level2">
-<h2 class="anchored" data-anchor-id="likelihood-ratio-test">Likelihood ratio test</h2>
-<p>Similar to linear regression, we can test the overall significance for a logistic regression model, i.e., whether there is at least one non-zero coefficient in the model</p>
+<section id="log-likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="log-likelihood">Log-Likelihood</h2>
+<p>Recall the log-likelihood function</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;H_0: \beta_1 = \dots = \beta_p = 0 \\
-&amp;H_a: \beta_j \neq 0 \text{ for at least one } j
+\log L&amp;(\boldsymbol{\beta}|x_1, \ldots, x_n, y_1, \dots, y_n) \\
+&amp;= \sum\limits_{i=1}^n[y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i)]
 \end{aligned}
 \]</span></p>
-<p>. . .</p>
-<p>The <strong>likelihood ratio test</strong> compares the fit of a model with no predictors to the current model.</p>
+<p>where <span class="math inline">\(\pi_i = \frac{\exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}\)</span></p>
 </section>
-<section id="likelihood-ratio-test-statistic" class="level2">
-<h2 class="anchored" data-anchor-id="likelihood-ratio-test-statistic">Likelihood ratio test statistic</h2>
-<p>Let <span class="math inline">\(L_0\)</span> and <span class="math inline">\(L_a\)</span> be the likelihood functions of the model under <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span>, respectively. The <strong>likelihood ratio test statistic</strong> is</p>
+<section id="deviance" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="deviance">Deviance</h2>
+<p>The <strong>deviance</strong> is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a “saturated” model)</p>
+<p>In logistic regression,</p>
 <p><span class="math display">\[
-G = -2[\log L_0 - \log L_a] = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+D = -2 \log L
 \]</span></p>
-<p>where <span class="math inline">\(\hat{\pi}^0\)</span> is the predicted probability under <span class="math inline">\(H_0\)</span> and <span class="math inline">\(\hat{\pi}_i^a = \frac{\exp \{x_i^T\boldsymbol{\beta}\}}{1 + \exp \{x_i^T\boldsymbol{\beta}\}}\)</span> is the predicted probability under <span class="math inline">\(H_a\)</span> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-</section>
-<section id="likelihood-ratio-test-statistic-1" class="level2">
-<h2 class="anchored" data-anchor-id="likelihood-ratio-test-statistic-1">Likelihood ratio test statistic</h2>
-<p><span class="math display">\[
-G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
-\]</span></p>
-<p>. . .</p>
-<div class="incremental">
-<ul class="incremental">
-<li><p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(G \sim \chi^2_p\)</span>, ( <span class="math inline">\(G\)</span> follows a Chi-square distribution with <span class="math inline">\(p\)</span> degrees of freedom)</p></li>
-<li><p>The p-value is calculated as <span class="math inline">\(\text{p-value} = P(\chi^2 &gt; G)\)</span></p></li>
-<li><p>Large values of <span class="math inline">\(G\)</span> (small p-values) indicate at least one <span class="math inline">\(\beta_j\)</span> is non-zero</p></li>
-</ul>
-</div>
+<p><br></p>
+<p><span class="math inline">\(D \sim \chi^2_{n - p - 1}\)</span> ( <span class="math inline">\(D\)</span> follows a Chi-square distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom)</p>
+<p><br></p>
+<p>Note: <span class="math inline">\(n - p - 1\)</span> a the degrees of freedom associated with the error in the model (like residuals)</p>
 </section>
 <section id="chi2-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="chi2-distribution"><span class="math inline">\(\chi^2\)</span> distribution</h2>
@@ -987,27 +895,63 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="21-logistic-comparison_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+<p><img src="21-logistic-comparison_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="heart-disease-model-likelihood-ratio-test" class="level2">
-<h2 class="anchored" data-anchor-id="heart-disease-model-likelihood-ratio-test">Heart disease model: likelihood ratio test</h2>
+<section id="test-for-overall-significance" class="level2">
+<h2 class="anchored" data-anchor-id="test-for-overall-significance">Test for overall significance</h2>
+<p>We can test the overall significance for a logistic regression model, i.e., whether there is at least one predictor with a non-zero coefficient</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;H_0: \beta_1 = \dots = \beta_p = 0 \\
+&amp;H_a: \beta_j \neq 0 \text{ for at least one } j
+\end{aligned}
+\]</span></p>
+<p>. . .</p>
+<p>The <strong>drop-in-deviance test for overall significance</strong> compares the fit of a model with no predictors to the current model.</p>
+</section>
+<section id="drop-in-deviance-test-statistic" class="level2">
+<h2 class="anchored" data-anchor-id="drop-in-deviance-test-statistic">Drop-in-deviance test statistic</h2>
+<p>Let <span class="math inline">\(L_0\)</span> and <span class="math inline">\(L_a\)</span> be the likelihood functions of the model under <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span>, respectively. The <strong>test statistic</strong> is</p>
+<p><span class="math display">\[
+\begin{aligned}
+G = D_0 - D_a &amp;= (-2\log L_0) - (-2\log L_a)\\[5pt]
+&amp; = -2(\log L_0 - \log L_a) \\[5pt]
+&amp;= -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(\hat{\pi}^0\)</span> is the predicted probability under <span class="math inline">\(H_0\)</span> and <span class="math inline">\(\hat{\pi}_i^a = \frac{\exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}\)</span> is the predicted probability under <span class="math inline">\(H_a\)</span> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+</section>
+<section id="drop-in-deviance-test-statistic-1" class="level2">
+<h2 class="anchored" data-anchor-id="drop-in-deviance-test-statistic-1">Drop-in-deviance test statistic</h2>
+<p><span class="math display">\[
+G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+\]</span></p>
+<p>. . .</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(G \sim \chi^2_p\)</span>, ( <span class="math inline">\(G\)</span> follows a Chi-square distribution with <span class="math inline">\(p\)</span> degrees of freedom)</p></li>
+<li><p>The p-value is calculated as <span class="math inline">\(P(\chi^2 &gt; G)\)</span></p></li>
+<li><p>Large values of <span class="math inline">\(G\)</span> (small p-values) indicate at least one <span class="math inline">\(\beta_j\)</span> is non-zero</p></li>
+</ul>
+</div>
+</section>
+<section id="heart-disease-model-drop-in-deviance-test" class="level2">
+<h2 class="anchored" data-anchor-id="heart-disease-model-drop-in-deviance-test">Heart disease model: drop-in-deviance test</h2>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;H_0: \beta_{age} = \beta_{totChol} = \beta_{currentSmoker} = 0 \\
 &amp;H_a: \beta_j \neq 0 \text{ for at least one }j
 \end{aligned}\]</span></p>
 <p>. . .</p>
-<p><strong>Fit the null model</strong></p>
-<p>(we’ve already fit the alternative model)</p>
+<p><strong>Fit the null model</strong> (we’ve already fit the alternative model)</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>null_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> heart_disease, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(null_model) <span class="sc">|&gt;</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>null_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> heart_disease, <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -1032,15 +976,15 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 </div>
 </div>
 </section>
-<section id="heart-disease-model-likelihood-ratio-test-1" class="level2">
-<h2 class="anchored" data-anchor-id="heart-disease-model-likelihood-ratio-test-1">Heart disease model: likelihood ratio test</h2>
+<section id="heart-disease-model-drop-in-deviance-test-1" class="level2">
+<h2 class="anchored" data-anchor-id="heart-disease-model-drop-in-deviance-test-1">Heart disease model: drop-in-deviance test</h2>
 <p><strong>Calculate the log-likelihood for the null and alternative models</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(L_0 <span class="ot">&lt;-</span> <span class="fu">glance</span>(null_model)<span class="sc">$</span>logLik)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(L_0 <span class="ot">&lt;-</span> <span class="fu">glance</span>(null_model)<span class="sc">$</span>logLik)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -1737.735</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(L_a <span class="ot">&lt;-</span> <span class="fu">glance</span>(heart_disease_fit)<span class="sc">$</span>logLik)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(L_a <span class="ot">&lt;-</span> <span class="fu">glance</span>(high_risk_fit)<span class="sc">$</span>logLik)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -1612.406</code></pre>
 </div>
@@ -1048,25 +992,40 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 <p>. . .</p>
 <p><strong>Calculate the likelihood ratio test statistic</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>(G <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> (L_0 <span class="sc">-</span> L_a))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(G <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> (L_0 <span class="sc">-</span> L_a))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 250.6572</code></pre>
 </div>
 </div>
 <p>. . .</p>
 </section>
-<section id="heart-disease-model-likelihood-ratio-test-2" class="level2">
-<h2 class="anchored" data-anchor-id="heart-disease-model-likelihood-ratio-test-2">Heart disease model: likelihood ratio test</h2>
+<section id="heart-disease-model-likelihood-ratio-test" class="level2">
+<h2 class="anchored" data-anchor-id="heart-disease-model-likelihood-ratio-test">Heart disease model: likelihood ratio test</h2>
 <p><strong>Calculate the p-value</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>(p_value <span class="ot">&lt;-</span> <span class="fu">pchisq</span>(G, <span class="at">df =</span> <span class="dv">3</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>(p_value <span class="ot">&lt;-</span> <span class="fu">pchisq</span>(G, <span class="at">df =</span> <span class="dv">3</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4.717158e-54</code></pre>
 </div>
 </div>
 <p>. . .</p>
 <p><strong>Conclusion</strong></p>
-<p>The p-value is small, so we reject <span class="math inline">\(H_0\)</span>. The data provide evidence of at least one non-zero model coefficient in the model.</p>
+<p>The p-value is small, so we reject <span class="math inline">\(H_0\)</span>. The data provide evidence that at least one predictor in the model has a non-zero coefficient.</p>
+</section>
+<section id="why-use-overall-test" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="why-use-overall-test">Why use overall test?</h2>
+<p>Why do we use a test for overall significance instead of just looking at the test for individual coefficients?<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>. . .</p>
+<p>Suppose we have a model such that <span class="math inline">\(p = 100\)</span> and <span class="math inline">\(H_0: \beta_1 = \dots = \beta_{100} = 0\)</span> is true</p>
+<p>. . .</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p>About 5% of the p-values for individual coefficients will be below 0.05 by chance.</p></li>
+<li><p>So we expect to see 5 small p-values if even no linear association actually exists.</p></li>
+<li><p>Therefore, it is very likely we will see at least one small p-value by chance.</p></li>
+<li><p>The overall test of significance does not have this problem. There is only a 5% chance we will get a p-value below 0.05, if a relationship truly does not exist.</p></li>
+</ul>
+</div>
 </section>
 </section>
 <section id="test-a-subset-of-coefficients" class="level1">
@@ -1079,7 +1038,7 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 <li><p>Reduced Model: includes predictors <span class="math inline">\(x_1, \ldots, x_q\)</span></p></li>
 <li><p>Full Model: includes predictors <span class="math inline">\(x_1, \ldots, x_q, x_{q+1}, \ldots, x_p\)</span></p></li>
 </ul></li>
-<li><p>We can use the likelihood ratios to see if any of the new predictors are useful</p></li>
+<li><p>We can use a <strong>drop-in-deviance test</strong> to determine if any of the new predictors are useful</p></li>
 </ul>
 <p>. . .</p>
 <p><span class="math display">\[
@@ -1088,24 +1047,9 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 &amp;H_a: \beta_j \neq 0 \text{ for at least one }j
 \end{aligned}
 \]</span></p>
-<p>. . .</p>
-<p>This is called a <strong>drop-in-deviance</strong> test (also known as nested likelihood ratio test)</p>
 </section>
-<section id="deviance" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="deviance">Deviance</h2>
-<p>The <strong>deviance</strong> is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a “saturated” model)</p>
-<p><br></p>
-<p>In logistic regression,</p>
-<p><span class="math display">\[
-D = -2 \log L
-\]</span></p>
-<p><br></p>
-<p><span class="math inline">\(D \sim \chi^2_{n - p - 1}\)</span> ( <span class="math inline">\(D\)</span> follows a Chi-square distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom)</p>
-<p><br></p>
-<p>Note: <span class="math inline">\(n - p - 1\)</span> a the degrees of freedom associated with the error in the model (like residuals)</p>
-</section>
-<section id="drop-in-deviance-test-1" class="level2">
-<h2 class="anchored" data-anchor-id="drop-in-deviance-test-1">Drop-in-deviance test</h2>
+<section id="drop-in-deviance-test-2" class="level2">
+<h2 class="anchored" data-anchor-id="drop-in-deviance-test-2">Drop-in-deviance test</h2>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;H_0: \beta_{q+1} = \dots = \beta_p = 0\\
@@ -1116,16 +1060,16 @@ D = -2 \log L
 <p>The test statistic is</p>
 <p><span class="math display">\[
 \begin{aligned}
-G = D_{reduced} - D_{full} &amp;= -2\log L_{reduced} - (-2 \log L_{full}) \\
+G = D_{reduced} - D_{full} &amp;= (-2\log L_{reduced}) - (-2 \log L_{full}) \\
 &amp;= -2(\log L_{reduced} - \log L_{full})
 \end{aligned}
 \]</span></p>
 <p>. . .</p>
 <p>The p-value is calculated using a <span class="math inline">\(\chi_{\Delta df}^2\)</span> distribution, where <span class="math inline">\(\Delta df\)</span> is the number of parameters being tested (the difference in number of parameters between the full and reduced model).</p>
 </section>
-<section id="heart-disease-model-drop-in-deviance-test" class="level2">
-<h2 class="anchored" data-anchor-id="heart-disease-model-drop-in-deviance-test">Heart disease model: drop-in-deviance test</h2>
-<p>Should we add <code>education</code> to the model?</p>
+<section id="example-include-education" class="level2">
+<h2 class="anchored" data-anchor-id="example-include-education">Example: Include <code>education</code>?</h2>
+<p>Should we include <code>education</code> in the model?</p>
 <ul>
 <li><p>Reduced model: <code>age</code>, <code>totChol</code>, <code>currentSmoker</code></p></li>
 <li><p>Full model: <code>age</code>, <code>totChol</code>, <code>currentSmoker</code> , <code>education</code></p></li>
@@ -1133,28 +1077,28 @@ G = D_{reduced} - D_{full} &amp;= -2\log L_{reduced} - (-2 \log L_{full}) \\
 <p>. . .</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;H_0: \beta_{ed1} = \beta_{ed2} = \beta_{ed3} = 0 \\
+&amp;H_0: \beta_{ed2} = \beta_{ed3} = \beta_{ed4} = 0 \\
 &amp;H_a: \beta_j \neq 0 \text{ for at least one }j
 \end{aligned}
 \]</span></p>
 </section>
-<section id="heart-disease-model-drop-in-deviance-test-1" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="heart-disease-model-drop-in-deviance-test-1">Heart disease model: drop-in-deviance test</h2>
+<section id="example-include-education-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-include-education-1">Example: Include <code>education</code>?</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>reduced_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> totChol <span class="sc">+</span> currentSmoker, </span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> heart_disease, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>full_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> totChol <span class="sc">+</span> currentSmoker <span class="sc">+</span> education, </span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> heart_disease, <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>reduced_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> totChol <span class="sc">+</span> currentSmoker, </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> heart_disease, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>full_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> totChol <span class="sc">+</span> currentSmoker <span class="sc">+</span> education, </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> heart_disease, <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>. . .</p>
 <p><strong>Calculate deviances</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>(deviance_reduced <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">glance</span>(reduced_model)<span class="sc">$</span>logLik)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>(deviance_reduced <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">glance</span>(reduced_model)<span class="sc">$</span>logLik)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3224.812</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(deviance_full <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">glance</span>(full_model)<span class="sc">$</span>logLik)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>(deviance_full <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">glance</span>(full_model)<span class="sc">$</span>logLik)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3217.6</code></pre>
 </div>
@@ -1162,17 +1106,17 @@ G = D_{reduced} - D_{full} &amp;= -2\log L_{reduced} - (-2 \log L_{full}) \\
 <p>. . .</p>
 <p><strong>Calculate test statistic</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>(G <span class="ot">&lt;-</span> deviance_reduced <span class="sc">-</span> deviance_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(G <span class="ot">&lt;-</span> deviance_reduced <span class="sc">-</span> deviance_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7.212113</code></pre>
 </div>
 </div>
 </section>
-<section id="heart-disease-model-drop-in-deviance-test-2" class="level2">
-<h2 class="anchored" data-anchor-id="heart-disease-model-drop-in-deviance-test-2">Heart disease model: drop-in-deviance test</h2>
+<section id="example-include-education-2" class="level2">
+<h2 class="anchored" data-anchor-id="example-include-education-2">Example: Include <code>education</code>?</h2>
 <p><strong>Calculate p-value</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(G, <span class="at">df =</span> <span class="dv">3</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(G, <span class="at">df =</span> <span class="dv">3</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.06543567</code></pre>
 </div>
@@ -1187,9 +1131,9 @@ G = D_{reduced} - D_{full} &amp;= -2\log L_{reduced} - (-2 \log L_{full}) \\
 <h2 class="midi anchored" data-anchor-id="drop-in-deviance-test-in-r">Drop-in-deviance test in R</h2>
 <p>Conduct the drop-in-deviance test using the <code>anova()</code> function in R with option <code>test = "Chisq"</code></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(reduced_model, full_model, <span class="at">test =</span> <span class="st">"Chisq"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(reduced_model, full_model, <span class="at">test =</span> <span class="st">"Chisq"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
@@ -1232,455 +1176,66 @@ G = D_{reduced} - D_{full} &amp;= -2\log L_{reduced} - (-2 \log L_{full}) \\
 </div>
 </div>
 </section>
-<section id="aic-and-bic" class="level2">
-<h2 class="anchored" data-anchor-id="aic-and-bic">AIC and BIC</h2>
-<p>Similar to linear regression, we can use AIC and BIC to compare models.</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;AIC = -2 \log L + 2(p+1) \\
-&amp;BIC = -2 \log L + \log(n)(p + 1)
-\end{aligned}
-\]</span></p>
-<p>You want to select the model that minimizes AIC / BIC</p>
-</section>
-<section id="compare-models-using-aic" class="level2">
-<h2 class="anchored" data-anchor-id="compare-models-using-aic">Compare models using AIC</h2>
-<p>AIC for reduced model (<code>age</code>, <code>totChol</code>, <code>currentSmoker</code>)</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(reduced_model)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3232.812</code></pre>
-</div>
-</div>
-<p><br></p>
-<p>. . .</p>
-<p>AIC for full model (<code>age</code>, <code>totChol</code>, <code>currentSmoker</code>, <code>education</code>)</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(full_model)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3231.6</code></pre>
-</div>
-</div>
-</section>
-<section id="compare-models-using-bic" class="level2">
-<h2 class="anchored" data-anchor-id="compare-models-using-bic">Compare models using BIC</h2>
-<p>BIC for reduced model (<code>age</code>, <code>totChol</code>, <code>currentSmoker</code>)</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(reduced_model)<span class="sc">$</span>BIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3258.074</code></pre>
-</div>
-</div>
-<p><br></p>
-<p>. . .</p>
-<p>BIC for full model (<code>age</code>, <code>totChol</code>, <code>currentSmoker</code>, <code>education</code>)</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(full_model)<span class="sc">$</span>BIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3275.807</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="test-for-a-single-coefficient" class="level1">
-<h1>Test for a single coefficient</h1>
-<section id="distribution-of-hatboldsymbolbeta" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-of-hatboldsymbolbeta">Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
-<p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>, the estimated coefficients of the logistic regression model, is approximately normal.</p>
-<p><br></p>
-<div class="question">
-<p>How do we know the distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is normal for large <span class="math inline">\(n\)</span>?</p>
-</div>
-</section>
-<section id="distribution-of-hatboldsymbolbeta-1" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-of-hatboldsymbolbeta-1">Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
-<p>The expected value of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the true parameter, <span class="math inline">\(\boldsymbol{\beta}\)</span>, i.e., <span class="math inline">\(E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}\)</span></p>
-<p>. . .</p>
-<p><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>, the matrix of variances and covariances between estimators, is found by taking the second partial derivatives of the log-likelihood function (Hessian matrix)</p>
-<p><span class="math display">\[
-Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^T\mathbf{V}\mathbf{X})^{-1}
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{V}\)</span> is a <span class="math inline">\(n\times n\)</span> diagonal matrix such that <span class="math inline">\(V_{ii}\)</span> is the estimated variance for the <span class="math inline">\(i^{th}\)</span> observation</p>
-</section>
-<section id="test-for-a-single-coefficient-1" class="level2">
-<h2 class="anchored" data-anchor-id="test-for-a-single-coefficient-1">Test for a single coefficient</h2>
-<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: \beta_j = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_j \neq 0\)</span>, given the other variables in the model</p>
-<p>. . .</p>
-<p><strong>(Wald) Test Statistic:</strong> <span class="math display">\[z = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)}\]</span></p>
-<p>where <span class="math inline">\(SE(\hat{\beta}_j)\)</span> is the square root of the <span class="math inline">\(j^{th}\)</span> diagonal element of <span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span></p>
-<p>. . .</p>
-<p><strong>P-value:</strong> <span class="math inline">\(P(|Z| &gt; |z|)\)</span>, where <span class="math inline">\(Z \sim N(0, 1)\)</span>, the Standard Normal distribution</p>
-</section>
-<section id="confidence-interval-for-beta_j" class="level2">
-<h2 class="anchored" data-anchor-id="confidence-interval-for-beta_j">Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
-<p>We can calculate the <strong>C% confidence interval</strong> for <span class="math inline">\(\beta_j\)</span> as the following:</p>
-<p><span class="math display">\[
-\Large{\hat{\beta}_j \pm z^* SE(\hat{\beta}_j)}
-\]</span></p>
-<p>where <span class="math inline">\(z^*\)</span> is calculated from the <span class="math inline">\(N(0,1)\)</span> distribution</p>
-<p>. . .</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is an interval for the change in the log-odds for every one unit increase in <span class="math inline">\(x_j\)</span></p>
-</div>
-</div>
-</section>
-<section id="interpretation-in-terms-of-the-odds" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation-in-terms-of-the-odds">Interpretation in terms of the odds</h2>
-<p>The change in <strong>odds</strong> for every one unit increase in <span class="math inline">\(x_j\)</span>.</p>
-<p><span class="math display">\[
-\Large{\exp\{\hat{\beta}_j \pm z^* SE(\hat{\beta}_j)\}}
-\]</span></p>
-<p>. . .</p>
-<p><strong>Interpretation:</strong> We are <span class="math inline">\(C\%\)</span> confident that for every one unit increase in <span class="math inline">\(x_j\)</span>, the odds multiply by a factor of <span class="math inline">\(\exp\{\hat{\beta}_j - z^* SE(\hat{\beta}_j)\}\)</span> to <span class="math inline">\(\exp\{\hat{\beta}_j + z^* SE(\hat{\beta}_j)\}\)</span>, holding all else constant.</p>
-</section>
-<section id="coefficient-for-age" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="coefficient-for-age">Coefficient for <code>age</code></h2>
+<section id="add-interactions-with-currentsmoker" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="add-interactions-with-currentsmoker">Add interactions with <code>currentSmoker</code>?</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 64%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 2%">
+<col style="width: 6%">
+<col style="width: 5%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">df.residual</th>
+<th style="text-align: right;">residual.deviance</th>
+<th style="text-align: right;">df</th>
+<th style="text-align: right;">deviance</th>
+<th style="text-align: right;">p.value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-6.673</td>
-<td style="text-align: right;">0.378</td>
-<td style="text-align: right;">-17.647</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-7.423</td>
-<td style="text-align: right;">-5.940</td>
+<td style="text-align: left;">high_risk ~ age + totChol + currentSmoker</td>
+<td style="text-align: right;">4082</td>
+<td style="text-align: right;">3224.812</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
 </tr>
 <tr class="even">
-<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">age</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.082</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.006</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">14.344</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.000</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.071</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.094</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">totChol</td>
-<td style="text-align: right;">0.002</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">1.940</td>
-<td style="text-align: right;">0.052</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.004</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">currentSmoker1</td>
-<td style="text-align: right;">0.443</td>
-<td style="text-align: right;">0.094</td>
-<td style="text-align: right;">4.733</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.260</td>
-<td style="text-align: right;">0.627</td>
+<td style="text-align: left;">high_risk ~ age + totChol + currentSmoker + currentSmoker * age + currentSmoker * totChol</td>
+<td style="text-align: right;">4080</td>
+<td style="text-align: right;">3222.377</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2.435</td>
+<td style="text-align: right;">0.296</td>
 </tr>
 </tbody>
 </table>
-
-
-</div>
-</div>
-<p>. . .</p>
-<p><strong>Hypotheses:</strong></p>
-<p><span class="math display">\[
-H_0: \beta_{age} = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_{age} \neq 0
-\]</span>, given total cholesterol and smoking status are in the model.</p>
-</section>
-<section id="coefficient-for-age-1" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="coefficient-for-age-1">Coefficient for <code>age</code></h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-6.673</td>
-<td style="text-align: right;">0.378</td>
-<td style="text-align: right;">-17.647</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-7.423</td>
-<td style="text-align: right;">-5.940</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">age</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.082</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.006</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">14.344</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.000</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.071</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.094</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">totChol</td>
-<td style="text-align: right;">0.002</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">1.940</td>
-<td style="text-align: right;">0.052</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.004</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">currentSmoker1</td>
-<td style="text-align: right;">0.443</td>
-<td style="text-align: right;">0.094</td>
-<td style="text-align: right;">4.733</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.260</td>
-<td style="text-align: right;">0.627</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<p><strong>Test statistic:</strong></p>
-<p><span class="math display">\[z = \frac{ 0.0825  - 0}{0.00575} = 14.34
-\]</span></p>
-</section>
-<section id="coefficient-for-age-2" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="coefficient-for-age-2">Coefficient for <code>age</code></h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-6.673</td>
-<td style="text-align: right;">0.378</td>
-<td style="text-align: right;">-17.647</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-7.423</td>
-<td style="text-align: right;">-5.940</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">age</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.082</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.006</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">14.344</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.000</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.071</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.094</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">totChol</td>
-<td style="text-align: right;">0.002</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">1.940</td>
-<td style="text-align: right;">0.052</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.004</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">currentSmoker1</td>
-<td style="text-align: right;">0.443</td>
-<td style="text-align: right;">0.094</td>
-<td style="text-align: right;">4.733</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.260</td>
-<td style="text-align: right;">0.627</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<p><strong>P-value:</strong></p>
-<p><span class="math display">\[P(|Z| &gt; |14.34|) \approx 0
-\]</span></p>
-<p>. . .</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="fl">14.34</span>,<span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.230554e-46</code></pre>
 </div>
 </div>
 </section>
-<section id="coefficient-for-age-3" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="coefficient-for-age-3">Coefficient for <code>age</code></h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-6.673</td>
-<td style="text-align: right;">0.378</td>
-<td style="text-align: right;">-17.647</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-7.423</td>
-<td style="text-align: right;">-5.940</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">age</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.082</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.006</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">14.344</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.000</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.071</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.094</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">totChol</td>
-<td style="text-align: right;">0.002</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">1.940</td>
-<td style="text-align: right;">0.052</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.004</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">currentSmoker1</td>
-<td style="text-align: right;">0.443</td>
-<td style="text-align: right;">0.094</td>
-<td style="text-align: right;">4.733</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.260</td>
-<td style="text-align: right;">0.627</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<p><strong>Conclusion:</strong></p>
-<p>The p-value is very small, so we reject <span class="math inline">\(H_0\)</span>. The data provide sufficient evidence that age is a statistically significant predictor of whether someone is high risk of having heart disease, after accounting for total cholesterol and smoking status.</p>
+<section id="questions-from-this-weeks-content-1" class="level2">
+<h2 class="anchored" data-anchor-id="questions-from-this-weeks-content-1">Questions from this week’s content?</h2>
+<center>
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUQ1JTSFBZNlFMWUJZSDcwTUdaVzgwWUhBMC4u&amp;embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
+</center>
 </section>
-<section id="ci-for-age" class="level2">
-<h2 class="anchored" data-anchor-id="ci-for-age">CI for <code>age</code></h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-6.673</td>
-<td style="text-align: right;">0.378</td>
-<td style="text-align: right;">-17.647</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-7.423</td>
-<td style="text-align: right;">-5.940</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">age</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.082</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.006</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">14.344</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.000</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.071</td>
-<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.094</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">totChol</td>
-<td style="text-align: right;">0.002</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">1.940</td>
-<td style="text-align: right;">0.052</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.004</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">currentSmoker1</td>
-<td style="text-align: right;">0.443</td>
-<td style="text-align: right;">0.094</td>
-<td style="text-align: right;">4.733</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.260</td>
-<td style="text-align: right;">0.627</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<div class="question">
-<p>Interpret the 95% confidence interval for <code>age</code> in terms of the <strong>odds</strong> of being high risk for heart disease.</p>
-</div>
-</section>
-<section id="overview-of-testing-coefficients" class="level2">
-<h2 class="anchored" data-anchor-id="overview-of-testing-coefficients">Overview of testing coefficients</h2>
-<p><strong>Test a single coefficient</strong></p>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <ul>
-<li><p>Likelihood ratio test</p></li>
-<li><p>Drop-in-deviance test</p></li>
-<li><p>Wald hypothesis test and confidence interval</p></li>
-</ul>
-<p>. . .</p>
-<p><strong>Test a subset of coefficients</strong></p>
+<li><p>Introduced model comparison for logistic regression using</p>
 <ul>
-<li><p>Likelihood ratio test</p></li>
+<li><p>AIC and BIC</p></li>
 <li><p>Drop-in-deviance test</p></li>
+</ul></li>
 </ul>
-<p>. . .</p>
-<p>Can use AIC and BIC to compare models in both scenarios</p>
 </section>
 <section id="references" class="level2">
 
@@ -1701,6 +1256,7 @@ Wilks, SS. 1935. <span>“The Likelihood Test of Independence in Contingency Tab
 <li id="fn1"><p>Akaike, Hirotugu. <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=1100705">“A new look at the statistical model identification.”</a> <em>IEEE transactions on automatic control</em> 19.6 (1974): 716-723.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Schwarz, Gideon. <a href="https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2Faos%2F1176344136">“Estimating the dimension of a model.”</a> <em>The annals of statistics</em> (1978): 461-464.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#ref-wilks1935likelihood" role="doc-biblioref">1935</a>)</span> for explanation of why -2 is included.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Example from <em>Introduction to Statistical Learning</em><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 

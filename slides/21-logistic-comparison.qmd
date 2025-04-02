@@ -50,7 +50,15 @@ knitr::opts_chunk$set(
 
 -   Statistics experience due April 22
 
-## Questions about the lecture
+## Questions from this week's content?
+
+<center>
+
+```{=html}
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUQ1JTSFBZNlFMWUJZSDcwTUdaVzgwWUhBMC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+```
+
+</center>
 
 ## Topics
 
@@ -111,18 +119,6 @@ heart_disease <- read_csv("data/framingham.csv") |>
 
 ## Modeling risk of coronary heart disease
 
-Using `age`, `totChol`, `currentSmoker`
-
-```{r}
-heart_disease_fit <- glm(high_risk ~ age + totChol + currentSmoker, 
-              data = heart_disease, family = "binomial")
-
-tidy(heart_disease_fit, conf.int = TRUE) |> 
-  kable(digits = 3)
-```
-
-## Modeling risk of coronary heart disease
-
 Using `age`, `totChol`, and `currentSmoker`
 
 ```{r}
@@ -140,10 +136,13 @@ tidy(high_risk_fit, conf.int = TRUE) |>
 ## Review: ROC Curve + Model fit
 
 ```{r}
+#| echo: false
 high_risk_aug <- augment(high_risk_fit)
 
 roc_curve_data <- high_risk_aug |>
   roc_curve(high_risk, .fitted, event_level = "second")
+
+autoplot(roc_curve_data)
 
 #calculate AUC
 high_risk_aug |>
@@ -230,7 +229,7 @@ Estimators of prediction error and *relative* quality of models:
 
 . . .
 
-**Akaike's Information Criterion (AIC)**[^1]: $$AIC = -2\log L + 2(p+1)$$
+**Akaike's Information Criterion (AIC)**[^1]: $$AIC = -2\log L + 2 (p+1)$$
 
 [^1]: Akaike, Hirotugu. ["A new look at the statistical model identification."](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1100705) *IEEE transactions on automatic control* 19.6 (1974): 716-723.
 
@@ -259,7 +258,7 @@ First Term: Decreases as *p* increases
 
 $$
 \begin{aligned} & AIC = -2\log L  + \color{blue}{2(p+1)} \\
-& BIC = -2\log L + \color{blue}{\log(n)\times(p+1)} 
+& BIC = -2\log L + \color{blue}{\log(n)\times (p+1)} 
 \end{aligned}
 $$
 
@@ -337,50 +336,44 @@ Based on BIC, which model would you choose?
 
 # Drop-in-deviance test
 
-# Test for overall significance
+## Drop-in-deviance test
 
-## Likelihood ratio test
+We will use a **drop-in-deviance test** (aka Likelihood Ratio Test) to test
 
-Similar to linear regression, we can test the overall significance for a logistic regression model, i.e., whether there is at least one non-zero coefficient in the model
+-   the overall statistical significance of a logistic regression model
+
+-   the statistical significance of a subset of coefficients in the model
+
+## Log-Likelihood 
+
+Recall the log-likelihood function
 
 $$
 \begin{aligned}
-&H_0: \beta_1 = \dots = \beta_p = 0 \\
-&H_a: \beta_j \neq 0 \text{ for at least one } j
+\log L&(\boldsymbol{\beta}|x_1, \ldots, x_n, y_1, \dots, y_n) \\
+&= \sum\limits_{i=1}^n[y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i)]
 \end{aligned}
 $$
 
-. . .
+where $\pi_i = \frac{\exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}$
 
-The **likelihood ratio test** compares the fit of a model with no predictors to the current model.
+## Deviance {.midi}
 
-## Likelihood ratio test statistic
+The **deviance** is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a "saturated" model)
 
-Let $L_0$ and $L_a$ be the likelihood functions of the model under $H_0$ and $H_a$, respectively. The **likelihood ratio test statistic** is
-
-$$
-G = -2[\log L_0 - \log L_a] = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
-$$
-
-where $\hat{\pi}^0$ is the predicted probability under $H_0$ and $\hat{\pi}_i^a = \frac{\exp \{x_i^T\boldsymbol{\beta}\}}{1 + \exp \{x_i^T\boldsymbol{\beta}\}}$ is the predicted probability under $H_a$ [^3]
-
-[^3]: See @wilks1935likelihood for explanation of why -2 is included.
-
-## Likelihood ratio test statistic
+In logistic regression,
 
 $$
-G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+D = -2 \log L 
 $$
 
-. . .
+<br>
 
-::: incremental
--   When $n$ is large, $G \sim \chi^2_p$, ( $G$ follows a Chi-square distribution with $p$ degrees of freedom)
+$D \sim \chi^2_{n - p - 1}$ ( $D$ follows a Chi-square distribution with $n - p - 1$ degrees of freedom)
 
--   The p-value is calculated as $\text{p-value} = P(\chi^2 > G)$
+<br>
 
--   Large values of $G$ (small p-values) indicate at least one $\beta_j$ is non-zero
-:::
+Note: $n - p - 1$ a the degrees of freedom associated with the error in the model (like residuals)
 
 ## $\chi^2$ distribution
 
@@ -409,7 +402,54 @@ legend("topright",
        col = c(1, 2, 3, 4), lty = 1)
 ```
 
-## Heart disease model: likelihood ratio test
+## Test for overall significance
+
+We can test the overall significance for a logistic regression model, i.e., whether there is at least one predictor with a non-zero coefficient
+
+$$
+\begin{aligned}
+&H_0: \beta_1 = \dots = \beta_p = 0 \\
+&H_a: \beta_j \neq 0 \text{ for at least one } j
+\end{aligned}
+$$
+
+. . .
+
+The **drop-in-deviance test for overall significance** compares the fit of a model with no predictors to the current model.
+
+## Drop-in-deviance test statistic
+
+Let $L_0$ and $L_a$ be the likelihood functions of the model under $H_0$ and $H_a$, respectively. The **test statistic** is
+
+$$
+\begin{aligned}
+G = D_0 - D_a &= (-2\log L_0) - (-2\log L_a)\\[5pt] 
+& = -2(\log L_0 - \log L_a) \\[5pt]
+&= -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+\end{aligned}
+$$
+
+where $\hat{\pi}^0$ is the predicted probability under $H_0$ and $\hat{\pi}_i^a = \frac{\exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}$ is the predicted probability under $H_a$ [^3]
+
+[^3]: See @wilks1935likelihood for explanation of why -2 is included.
+
+## Drop-in-deviance test statistic
+
+$$
+G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
+$$
+
+. . .
+
+::: incremental
+-   When $n$ is large, $G \sim \chi^2_p$, ( $G$ follows a Chi-square distribution with $p$ degrees of freedom)
+
+-   The p-value is calculated as $P(\chi^2 > G)$
+
+-   Large values of $G$ (small p-values) indicate at least one $\beta_j$ is non-zero
+:::
+
+## Heart disease model: drop-in-deviance test
 
 $$
 \begin{aligned}
@@ -419,26 +459,28 @@ $$
 
 . . .
 
-**Fit the null model**
-
-(we've already fit the alternative model)
+**Fit the null model** (we've already fit the alternative model)
 
 ```{r}
 #| echo: true
 
 null_model <- glm(high_risk ~ 1, data = heart_disease, family = "binomial")
+```
+
+```{r}
+#| echo: false
 
 tidy(null_model) |>
   kable()
 ```
 
-## Heart disease model: likelihood ratio test
+## Heart disease model: drop-in-deviance test
 
 **Calculate the log-likelihood for the null and alternative models**
 
 ```{r}
 (L_0 <- glance(null_model)$logLik)
-(L_a <- glance(heart_disease_fit)$logLik)
+(L_a <- glance(high_risk_fit)$logLik)
 ```
 
 . . .
@@ -463,7 +505,29 @@ tidy(null_model) |>
 
 **Conclusion**
 
-The p-value is small, so we reject $H_0$. The data provide evidence of at least one non-zero model coefficient in the model.
+The p-value is small, so we reject $H_0$. The data provide evidence that at least one predictor in the model has a non-zero coefficient.
+
+## Why use overall test? {.midi}
+
+Why do we use a test for overall significance instead of just looking at the test for individual coefficients?[^4]
+
+[^4]: Example from *Introduction to Statistical Learning*
+
+. . .
+
+Suppose we have a model such that $p = 100$ and $H_0: \beta_1 = \dots = \beta_{100} = 0$ is true
+
+. . .
+
+::: incremental
+-   About 5% of the p-values for individual coefficients will be below 0.05 by chance.
+
+-   So we expect to see 5 small p-values if even no linear association actually exists.
+
+-   Therefore, it is very likely we will see at least one small p-value by chance.
+
+-   The overall test of significance does not have this problem. There is only a 5% chance we will get a p-value below 0.05, if a relationship truly does not exist.
+:::
 
 # Test a subset of coefficients
 
@@ -475,7 +539,7 @@ The p-value is small, so we reject $H_0$. The data provide evidence of at least 
 
     -   Full Model: includes predictors $x_1, \ldots, x_q, x_{q+1}, \ldots, x_p$
 
--   We can use the likelihood ratios to see if any of the new predictors are useful
+-   We can use a **drop-in-deviance test** to determine if any of the new predictors are useful
 
 . . .
 
@@ -485,30 +549,6 @@ $$
 &H_a: \beta_j \neq 0 \text{ for at least one }j
 \end{aligned}
 $$
-
-. . .
-
-This is called a **drop-in-deviance** test (also known as nested likelihood ratio test)
-
-## Deviance {.midi}
-
-The **deviance** is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a "saturated" model)
-
-<br>
-
-In logistic regression,
-
-$$
-D = -2 \log L 
-$$
-
-<br>
-
-$D \sim \chi^2_{n - p - 1}$ ( $D$ follows a Chi-square distribution with $n - p - 1$ degrees of freedom)
-
-<br>
-
-Note: $n - p - 1$ a the degrees of freedom associated with the error in the model (like residuals)
 
 ## Drop-in-deviance test
 
@@ -525,7 +565,7 @@ The test statistic is
 
 $$
 \begin{aligned}
-G = D_{reduced} - D_{full} &= -2\log L_{reduced} - (-2 \log L_{full}) \\
+G = D_{reduced} - D_{full} &= (-2\log L_{reduced}) - (-2 \log L_{full}) \\
 &= -2(\log L_{reduced} - \log L_{full})
 \end{aligned}
 $$
@@ -534,9 +574,9 @@ $$
 
 The p-value is calculated using a $\chi_{\Delta df}^2$ distribution, where $\Delta df$ is the number of parameters being tested (the difference in number of parameters between the full and reduced model).
 
-## Heart disease model: drop-in-deviance test
+## Example: Include `education`?
 
-Should we add `education` to the model?
+Should we include `education` in the model?
 
 -   Reduced model: `age`, `totChol`, `currentSmoker`
 
@@ -546,12 +586,12 @@ Should we add `education` to the model?
 
 $$
 \begin{aligned}
-&H_0: \beta_{ed1} = \beta_{ed2} = \beta_{ed3} = 0 \\
+&H_0: \beta_{ed2} = \beta_{ed3} = \beta_{ed4} = 0 \\
 &H_a: \beta_j \neq 0 \text{ for at least one }j
 \end{aligned}
 $$
 
-## Heart disease model: drop-in-deviance test {.midi}
+## Example: Include `education`?
 
 ```{r}
 reduced_model <- glm(high_risk ~ age + totChol + currentSmoker, 
@@ -578,7 +618,7 @@ full_model <- glm(high_risk ~ age + totChol + currentSmoker + education,
 (G <- deviance_reduced - deviance_full)
 ```
 
-## Heart disease model: drop-in-deviance test
+## Example: Include `education`?
 
 **Calculate p-value**
 
@@ -604,214 +644,35 @@ anova(reduced_model, full_model, test = "Chisq") |>
   kable(digits = 3)
 ```
 
-## AIC and BIC
-
-Similar to linear regression, we can use AIC and BIC to compare models.
-
-$$
-\begin{aligned}
-&AIC = -2 \log L + 2(p+1) \\
-&BIC = -2 \log L + \log(n)(p + 1)
-\end{aligned}
-$$
-
-You want to select the model that minimizes AIC / BIC
-
-## Compare models using AIC
-
-AIC for reduced model (`age`, `totChol`, `currentSmoker`)
-
-```{r}
-glance(reduced_model)$AIC
-```
-
-<br>
-
-. . .
-
-AIC for full model (`age`, `totChol`, `currentSmoker`, `education`)
-
-```{r}
-glance(full_model)$AIC
-```
-
-## Compare models using BIC
-
-BIC for reduced model (`age`, `totChol`, `currentSmoker`)
-
-```{r}
-glance(reduced_model)$BIC
-```
-
-<br>
-
-. . .
-
-BIC for full model (`age`, `totChol`, `currentSmoker`, `education`)
-
-```{r}
-glance(full_model)$BIC
-```
-
-# Test for a single coefficient
-
-## Distribution of $\hat{\boldsymbol{\beta}}$
-
-When $n$ is large, $\hat{\boldsymbol{\beta}}$, the estimated coefficients of the logistic regression model, is approximately normal.
-
-<br>
-
-::: question
-How do we know the distribution of $\hat{\boldsymbol{\beta}}$ is normal for large $n$?
-:::
-
-## Distribution of $\hat{\boldsymbol{\beta}}$
-
-The expected value of $\hat{\boldsymbol{\beta}}$ is the true parameter, $\boldsymbol{\beta}$, i.e., $E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}$
-
-. . .
-
-$Var(\hat{\boldsymbol{\beta}})$, the matrix of variances and covariances between estimators, is found by taking the second partial derivatives of the log-likelihood function (Hessian matrix)
-
-$$
-Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^T\mathbf{V}\mathbf{X})^{-1}
-$$
-
-where $\mathbf{V}$ is a $n\times n$ diagonal matrix such that $V_{ii}$ is the estimated variance for the $i^{th}$ observation
-
-## Test for a single coefficient
-
-**Hypotheses:** $H_0: \beta_j = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_j \neq 0$, given the other variables in the model
-
-. . .
-
-**(Wald) Test Statistic:** $$z = \frac{\hat{\beta}_j - 0}{SE(\hat{\beta}_j)}$$
-
-where $SE(\hat{\beta}_j)$ is the square root of the $j^{th}$ diagonal element of $Var(\hat{\boldsymbol{\beta}})$
-
-. . .
-
-**P-value:** $P(|Z| > |z|)$, where $Z \sim N(0, 1)$, the Standard Normal distribution
-
-## Confidence interval for $\beta_j$
-
-We can calculate the **C% confidence interval** for $\beta_j$ as the following:
-
-$$
-\Large{\hat{\beta}_j \pm z^* SE(\hat{\beta}_j)}
-$$
-
-where $z^*$ is calculated from the $N(0,1)$ distribution
-
-. . .
-
-::: callout-note
-This is an interval for the change in the log-odds for every one unit increase in $x_j$
-:::
-
-## Interpretation in terms of the odds
-
-The change in **odds** for every one unit increase in $x_j$.
-
-$$
-\Large{\exp\{\hat{\beta}_j \pm z^* SE(\hat{\beta}_j)\}}
-$$
-
-. . .
-
-**Interpretation:** We are $C\%$ confident that for every one unit increase in $x_j$, the odds multiply by a factor of $\exp\{\hat{\beta}_j - z^* SE(\hat{\beta}_j)\}$ to $\exp\{\hat{\beta}_j + z^* SE(\hat{\beta}_j)\}$, holding all else constant.
-
-## Coefficient for `age` {.midi}
-
-```{r}
-#| label: risk-model-age-highlight
-#| echo: false
-
-tidy(heart_disease_fit, conf.int = TRUE) |> 
-  kable(digits = 3) |>
-  row_spec(2, background = "#D9E3E4")
-```
-
-. . .
-
-**Hypotheses:**
-
-$$
-H_0: \beta_{age} = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_{age} \neq 0
-$$, given total cholesterol and smoking status are in the model.
-
-## Coefficient for `age` {.midi}
+## Add interactions with `currentSmoker`?  {.midi}
 
 ```{r}
 #| echo: false
-#| ref.label: risk-model-age-highlight
+
+new_model <- glm(high_risk ~ age + totChol + currentSmoker + currentSmoker*age + currentSmoker * totChol, data = heart_disease, family = "binomial")
+
+anova(reduced_model, new_model, test = "Chisq") |>
+  tidy() |>
+  kable(digits = 3)
+
 ```
 
-**Test statistic:**
+## Questions from this week's content?
 
-$$z = \frac{ 0.0825  - 0}{0.00575} = 14.34
-$$
+<center>
 
-## Coefficient for `age` {.midi}
-
-```{r}
-#| echo: false
-#| ref.label: risk-model-age-highlight
+```{=html}
+<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=TsVyyzFKnk2xSh6jbfrJTBw0r2_bKCVMs9lST1_-2sxUQ1JTSFBZNlFMWUJZSDcwTUdaVzgwWUhBMC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 ```
 
-**P-value:**
+</center>
 
-$$P(|Z| > |14.34|) \approx 0
-$$
+## Recap 
 
-. . .
+-   Introduced model comparison for logistic regression using
 
-```{r}
-2 * pnorm(14.34,lower.tail = FALSE)
-```
+    -   AIC and BIC
 
-## Coefficient for `age` {.midi}
-
-```{r}
-#| echo: false
-#| ref.label: risk-model-age-highlight
-```
-
-**Conclusion:**
-
-The p-value is very small, so we reject $H_0$. The data provide sufficient evidence that age is a statistically significant predictor of whether someone is high risk of having heart disease, after accounting for total cholesterol and smoking status.
-
-## CI for `age`
-
-```{r}
-#| echo: false
-#| ref.label: risk-model-age-highlight
-```
-
-::: question
-Interpret the 95% confidence interval for `age` in terms of the **odds** of being high risk for heart disease.
-:::
-
-## Overview of testing coefficients
-
-**Test a single coefficient**
-
--   Likelihood ratio test
-
--   Drop-in-deviance test
-
--   Wald hypothesis test and confidence interval
-
-. . .
-
-**Test a subset of coefficients**
-
--   Likelihood ratio test
-
--   Drop-in-deviance test
-
-. . .
-
-Can use AIC and BIC to compare models in both scenarios
+    -   Drop-in-deviance test
 
 ## References
