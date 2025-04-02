@@ -390,13 +390,10 @@ Accuracy is 0.848 and the misclassification rate is 0.152.
 
 ## True/false positive/negative {.midi}
 
-+----------------------------------------------------------------------------+---------------------------+-----------------------+
-|                                                                            | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
-+============================================================================+===========================+=======================+
-| **Classified** **not** **high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN)        | False negative (FN)   |
-+----------------------------------------------------------------------------+---------------------------+-----------------------+
-| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$                | False positive (FP)       | True positive (TP)    |
-+----------------------------------------------------------------------------+---------------------------+-----------------------+
+|   | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
+|----|----|----|
+| **Classified** **not** **high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN) | False negative (FN) |
+| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$ | False positive (FP) | True positive (TP) |
 
 <br>
 
@@ -406,13 +403,10 @@ Accuracy is 0.848 and the misclassification rate is 0.152.
 
 ## False negative rate {.midi}
 
-+--------------------------------------------------------------------+---------------------------+-----------------------+
-|                                                                    | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
-+====================================================================+===========================+=======================+
-| **Classified not high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN)        | False negative (FN)   |
-+--------------------------------------------------------------------+---------------------------+-----------------------+
-| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$        | False positive (FP)       | True positive (TP)    |
-+--------------------------------------------------------------------+---------------------------+-----------------------+
+|   | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
+|----|----|----|
+| **Classified not high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN) | False negative (FN) |
+| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$ | False positive (FP) | True positive (TP) |
 
 <br>
 
@@ -424,13 +418,10 @@ Accuracy is 0.848 and the misclassification rate is 0.152.
 
 ## False positive rate {.midi}
 
-+--------------------------------------------------------------------+---------------------------+-----------------------+
-|                                                                    | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
-+====================================================================+===========================+=======================+
-| **Classified not high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN)        | False negative (FN)   |
-+--------------------------------------------------------------------+---------------------------+-----------------------+
-| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$        | False positive (FP)       | True positive (TP)    |
-+--------------------------------------------------------------------+---------------------------+-----------------------+
+|   | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
+|----|----|----|
+| **Classified not high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN) | False negative (FN) |
+| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$ | False positive (FP) | True positive (TP) |
 
 <br>
 
@@ -442,13 +433,10 @@ Accuracy is 0.848 and the misclassification rate is 0.152.
 
 ## Sensitivity {.midi}
 
-+--------------------------------------------------------------------+---------------------------+-----------------------+
-|                                                                    | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
-+====================================================================+===========================+=======================+
-| **Classified not high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN)        | False negative (FN)   |
-+--------------------------------------------------------------------+---------------------------+-----------------------+
-| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$        | False positive (FP)       | True positive (TP)    |
-+--------------------------------------------------------------------+---------------------------+-----------------------+
+|   | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
+|----|----|----|
+| **Classified not high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN) | False negative (FN) |
+| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$ | False positive (FP) | True positive (TP) |
 
 <br>
 
@@ -462,13 +450,10 @@ Accuracy is 0.848 and the misclassification rate is 0.152.
 
 ## Specificity {.midi}
 
-+--------------------------------------------------------------------+---------------------------+-----------------------+
-|                                                                    | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
-+====================================================================+===========================+=======================+
-| **Classified not high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN)        | False negative (FN)   |
-+--------------------------------------------------------------------+---------------------------+-----------------------+
-| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$        | False positive (FP)       | True positive (TP)    |
-+--------------------------------------------------------------------+---------------------------+-----------------------+
+|   | Not high risk $(y_i = 0)$ | High risk $(y_i = 1)$ |
+|----|----|----|
+| **Classified not high risk** $(\hat{\pi}_i \leq \text{threshold})$ | True negative (TN) | False negative (FN) |
+| **Classified high risk** $(\hat{\pi}_i > \text{threshold})$ | False positive (FP) | True positive (TP) |
 
 <br>
 

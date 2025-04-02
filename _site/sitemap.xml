@@ -17,36 +17,36 @@
     <lastmod>2025-03-20T01:13:44.108Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/17-prop-of-estimators.html</loc>
-    <lastmod>2025-03-20T14:03:46.851Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/17-compare-models.html</loc>
+    <lastmod>2024-11-24T19:55:36.000Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/17-prop-of-estimators-notes.html</loc>
-    <lastmod>2025-03-20T14:03:46.851Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/slides/05-mlr.html</loc>
+    <loc>https://sta221-sp25.netlify.app/slides/06-mlr-pt2.html</loc>
     <lastmod>2025-03-20T01:13:44.140Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/05-mlr-notes.html</loc>
+    <loc>https://sta221-sp25.netlify.app/slides/06-mlr-pt2-notes.html</loc>
     <lastmod>2025-03-20T01:13:44.140Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/03-slr-model-assessment.html</loc>
-    <lastmod>2025-03-20T01:13:44.110Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/19-logistic-regression.html</loc>
+    <lastmod>2025-03-31T14:06:24.762Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/03-slr-model-assessment-notes.html</loc>
-    <lastmod>2025-03-20T01:13:44.110Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/19-logistic-regression-notes.html</loc>
+    <lastmod>2025-03-31T14:06:24.762Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/14-multicollinearity-contd.html</loc>
-    <lastmod>2025-03-20T01:13:44.164Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/11-exam-01-review.html</loc>
+    <lastmod>2025-03-20T01:13:44.162Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/14-multicollinearity-contd-notes.html</loc>
-    <lastmod>2025-03-20T01:13:44.164Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/11-exam-01-review-notes.html</loc>
+    <lastmod>2025-03-20T01:13:44.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/slides/project-peer-review-lab.html</loc>
+    <lastmod>2025-03-20T01:13:44.207Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/slides/04-slr-matrix.html</loc>
@@ -205,6 +205,10 @@
     <lastmod>2025-03-20T01:13:44.107Z</lastmod>
   </url>
   <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-07-draft.html</loc>
+    <lastmod>2025-04-02T16:39:25.036Z</lastmod>
+  </url>
+  <url>
     <loc>https://sta221-sp25.netlify.app/labs/lab-01.html</loc>
     <lastmod>2025-03-20T01:13:44.106Z</lastmod>
   </url>
@@ -278,11 +282,11 @@
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/slides/20-logistic-prediction-notes.html</loc>
-    <lastmod>2025-04-01T12:54:07.698Z</lastmod>
+    <lastmod>2025-04-02T14:23:10.999Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/slides/20-logistic-prediction.html</loc>
-    <lastmod>2025-04-01T12:54:07.698Z</lastmod>
+    <lastmod>2025-04-02T14:23:10.999Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/slides/lab-01.html</loc>
@@ -337,32 +341,44 @@
     <lastmod>2025-03-20T01:13:44.164Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/project-peer-review-lab.html</loc>
-    <lastmod>2025-03-20T01:13:44.207Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/21-logistic-comparison-notes.html</loc>
+    <lastmod>2025-04-02T16:39:43.563Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/11-exam-01-review-notes.html</loc>
-    <lastmod>2025-03-20T01:13:44.162Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/21-logistic-comparison.html</loc>
+    <lastmod>2025-04-02T16:39:43.563Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/11-exam-01-review.html</loc>
-    <lastmod>2025-03-20T01:13:44.162Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/14-multicollinearity-contd-notes.html</loc>
+    <lastmod>2025-03-20T01:13:44.164Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/19-logistic-regression-notes.html</loc>
-    <lastmod>2025-03-31T14:06:24.762Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/14-multicollinearity-contd.html</loc>
+    <lastmod>2025-03-20T01:13:44.164Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/19-logistic-regression.html</loc>
-    <lastmod>2025-03-31T14:06:24.762Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/03-slr-model-assessment-notes.html</loc>
+    <lastmod>2025-03-20T01:13:44.110Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/06-mlr-pt2-notes.html</loc>
+    <loc>https://sta221-sp25.netlify.app/slides/03-slr-model-assessment.html</loc>
+    <lastmod>2025-03-20T01:13:44.110Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/slides/05-mlr-notes.html</loc>
     <lastmod>2025-03-20T01:13:44.140Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/06-mlr-pt2.html</loc>
+    <loc>https://sta221-sp25.netlify.app/slides/05-mlr.html</loc>
     <lastmod>2025-03-20T01:13:44.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/slides/17-prop-of-estimators-notes.html</loc>
+    <lastmod>2025-03-20T14:03:46.851Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/slides/17-prop-of-estimators.html</loc>
+    <lastmod>2025-03-20T14:03:46.851Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/slides/18-prob-odds-notes.html</loc>
