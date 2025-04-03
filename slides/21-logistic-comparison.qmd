@@ -223,6 +223,19 @@ tidy(high_risk_fit2) |>
 :::
 :::::
 
+## Log-Likelihood
+
+Recall the log-likelihood function
+
+$$
+\begin{aligned}
+\log L&(\boldsymbol{\beta}|x_1, \ldots, x_n, y_1, \dots, y_n) \\
+&= \sum\limits_{i=1}^n[y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i)]
+\end{aligned}
+$$
+
+where $\pi_i = \frac{\exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}$
+
 ## AIC & BIC
 
 Estimators of prediction error and *relative* quality of models:
@@ -344,19 +357,6 @@ We will use a **drop-in-deviance test** (aka Likelihood Ratio Test) to test
 
 -   the statistical significance of a subset of coefficients in the model
 
-## Log-Likelihood 
-
-Recall the log-likelihood function
-
-$$
-\begin{aligned}
-\log L&(\boldsymbol{\beta}|x_1, \ldots, x_n, y_1, \dots, y_n) \\
-&= \sum\limits_{i=1}^n[y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i)]
-\end{aligned}
-$$
-
-where $\pi_i = \frac{\exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}$
-
 ## Deviance {.midi}
 
 The **deviance** is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a "saturated" model)
@@ -369,7 +369,9 @@ $$
 
 <br>
 
-$D \sim \chi^2_{n - p - 1}$ ( $D$ follows a Chi-square distribution with $n - p - 1$ degrees of freedom)
+$D \sim \chi^2_{n - p - 1}$ ( $D$ follows a Chi-square distribution with $n - p - 1$ degrees of freedom)[^3]
+
+[^3]: See @wilks1935likelihood for explanation of why -2 is included.
 
 <br>
 
@@ -429,9 +431,9 @@ G = D_0 - D_a &= (-2\log L_0) - (-2\log L_a)\\[5pt]
 \end{aligned}
 $$
 
-where $\hat{\pi}^0$ is the predicted probability under $H_0$ and $\hat{\pi}_i^a = \frac{\exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}$ is the predicted probability under $H_a$ [^3]
+where $\hat{\pi}^0$ is the predicted probability under $H_0$ and $\hat{\pi}_i^a = \frac{\exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}$ is the predicted probability under $H_a$ [^4]
 
-[^3]: See @wilks1935likelihood for explanation of why -2 is included.
+[^4]: See @wilks1935likelihood for explanation of why -2 is included.
 
 ## Drop-in-deviance test statistic
 
@@ -509,9 +511,9 @@ The p-value is small, so we reject $H_0$. The data provide evidence that at leas
 
 ## Why use overall test? {.midi}
 
-Why do we use a test for overall significance instead of just looking at the test for individual coefficients?[^4]
+Why do we use a test for overall significance instead of just looking at the test for individual coefficients?[^5]
 
-[^4]: Example from *Introduction to Statistical Learning*
+[^5]: Example from *Introduction to Statistical Learning*
 
 . . .
 
@@ -644,7 +646,7 @@ anova(reduced_model, full_model, test = "Chisq") |>
   kable(digits = 3)
 ```
 
-## Add interactions with `currentSmoker`?  {.midi}
+## Add interactions with `currentSmoker`? {.midi}
 
 ```{r}
 #| echo: false
@@ -667,7 +669,7 @@ anova(reduced_model, new_model, test = "Chisq") |>
 
 </center>
 
-## Recap 
+## Recap
 
 -   Introduced model comparison for logistic regression using
 

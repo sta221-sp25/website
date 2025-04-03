@@ -463,6 +463,17 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div></div>
 </section>
+<section id="log-likelihood" class="slide level2">
+<h2>Log-Likelihood</h2>
+<p>Recall the log-likelihood function</p>
+<p><span class="math display">\[
+\begin{aligned}
+\log L&amp;(\boldsymbol{\beta}|x_1, \ldots, x_n, y_1, \dots, y_n) \\
+&amp;= \sum\limits_{i=1}^n[y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i)]
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(\pi_i = \frac{\exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}\)</span></p>
+</section>
 <section id="aic-bic" class="slide level2">
 <h2>AIC &amp; BIC</h2>
 <p>Estimators of prediction error and <em>relative</em> quality of models:</p>
@@ -577,17 +588,6 @@ Prof.&nbsp;Maria Tackett
 <li><p>the statistical significance of a subset of coefficients in the model</p></li>
 </ul>
 </section>
-<section id="log-likelihood" class="slide level2">
-<h2>Log-Likelihood</h2>
-<p>Recall the log-likelihood function</p>
-<p><span class="math display">\[
-\begin{aligned}
-\log L&amp;(\boldsymbol{\beta}|x_1, \ldots, x_n, y_1, \dots, y_n) \\
-&amp;= \sum\limits_{i=1}^n[y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i)]
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(\pi_i = \frac{\exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}\)</span></p>
-</section>
 <section id="deviance" class="slide level2 midi">
 <h2>Deviance</h2>
 <p>The <strong>deviance</strong> is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a “saturated” model)</p>
@@ -596,10 +596,10 @@ Prof.&nbsp;Maria Tackett
 D = -2 \log L
 \]</span></p>
 <p><br></p>
-<p><span class="math inline">\(D \sim \chi^2_{n - p - 1}\)</span> ( <span class="math inline">\(D\)</span> follows a Chi-square distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom)</p>
+<p><span class="math inline">\(D \sim \chi^2_{n - p - 1}\)</span> ( <span class="math inline">\(D\)</span> follows a Chi-square distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom)<sup>1</sup></p>
 <p><br></p>
 <p>Note: <span class="math inline">\(n - p - 1\)</span> a the degrees of freedom associated with the error in the model (like residuals)</p>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#/references" role="doc-biblioref" onclick="">1935</a>)</span> for explanation of why -2 is included.</p></li></ol></aside></section>
 <section id="chi2-distribution" class="slide level2">
 <h2><span class="math inline">\(\chi^2\)</span> distribution</h2>
 
@@ -628,7 +628,7 @@ G = D_0 - D_a &amp;= (-2\log L_0) - (-2\log L_a)\\[5pt]
 \end{aligned}
 \]</span></p>
 <p>where <span class="math inline">\(\hat{\pi}^0\)</span> is the predicted probability under <span class="math inline">\(H_0\)</span> and <span class="math inline">\(\hat{\pi}_i^a = \frac{\exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}\)</span> is the predicted probability under <span class="math inline">\(H_a\)</span> <sup>1</sup></p>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#/references" role="doc-biblioref" onclick="">1935</a>)</span> for explanation of why -2 is included.</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#/references" role="doc-biblioref" onclick="">1935</a>)</span> for explanation of why -2 is included.</p></li></ol></aside></section>
 <section id="drop-in-deviance-test-statistic-1" class="slide level2">
 <h2>Drop-in-deviance test statistic</h2>
 <p><span class="math display">\[
@@ -735,7 +735,7 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 </ul>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn4"><p>Example from <em>Introduction to Statistical Learning</em></p></li></ol></aside></section></section>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>Example from <em>Introduction to Statistical Learning</em></p></li></ol></aside></section></section>
 <section>
 <section id="test-a-subset-of-coefficients" class="title-slide slide level1 center">
 <h1>Test a subset of coefficients</h1>

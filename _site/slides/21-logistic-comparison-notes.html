@@ -430,6 +430,7 @@ window.Quarto = {
   <li><a href="#model-comparison" id="toc-model-comparison" class="nav-link" data-scroll-target="#model-comparison">Model comparison</a>
   <ul class="collapse">
   <li><a href="#which-model-do-we-choose" id="toc-which-model-do-we-choose" class="nav-link" data-scroll-target="#which-model-do-we-choose">Which model do we choose?</a></li>
+  <li><a href="#log-likelihood" id="toc-log-likelihood" class="nav-link" data-scroll-target="#log-likelihood">Log-Likelihood</a></li>
   <li><a href="#aic-bic" id="toc-aic-bic" class="nav-link" data-scroll-target="#aic-bic">AIC &amp; BIC</a></li>
   <li><a href="#aic-bic-1" id="toc-aic-bic-1" class="nav-link" data-scroll-target="#aic-bic-1">AIC &amp; BIC</a></li>
   <li><a href="#aic-bic-2" id="toc-aic-bic-2" class="nav-link" data-scroll-target="#aic-bic-2">AIC &amp; BIC</a></li>
@@ -441,7 +442,6 @@ window.Quarto = {
   <li><a href="#drop-in-deviance-test" id="toc-drop-in-deviance-test" class="nav-link" data-scroll-target="#drop-in-deviance-test">Drop-in-deviance test</a>
   <ul class="collapse">
   <li><a href="#drop-in-deviance-test-1" id="toc-drop-in-deviance-test-1" class="nav-link" data-scroll-target="#drop-in-deviance-test-1">Drop-in-deviance test</a></li>
-  <li><a href="#log-likelihood" id="toc-log-likelihood" class="nav-link" data-scroll-target="#log-likelihood">Log-Likelihood</a></li>
   <li><a href="#deviance" id="toc-deviance" class="nav-link" data-scroll-target="#deviance">Deviance</a></li>
   <li><a href="#chi2-distribution" id="toc-chi2-distribution" class="nav-link" data-scroll-target="#chi2-distribution"><span class="math inline">\(\chi^2\)</span> distribution</a></li>
   <li><a href="#test-for-overall-significance" id="toc-test-for-overall-significance" class="nav-link" data-scroll-target="#test-for-overall-significance">Test for overall significance</a></li>
@@ -758,6 +758,17 @@ window.Quarto = {
 </div>
 </div>
 </section>
+<section id="log-likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="log-likelihood">Log-Likelihood</h2>
+<p>Recall the log-likelihood function</p>
+<p><span class="math display">\[
+\begin{aligned}
+\log L&amp;(\boldsymbol{\beta}|x_1, \ldots, x_n, y_1, \dots, y_n) \\
+&amp;= \sum\limits_{i=1}^n[y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i)]
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(\pi_i = \frac{\exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}\)</span></p>
+</section>
 <section id="aic-bic" class="level2">
 <h2 class="anchored" data-anchor-id="aic-bic">AIC &amp; BIC</h2>
 <p>Estimators of prediction error and <em>relative</em> quality of models:</p>
@@ -866,17 +877,6 @@ window.Quarto = {
 <li><p>the statistical significance of a subset of coefficients in the model</p></li>
 </ul>
 </section>
-<section id="log-likelihood" class="level2">
-<h2 class="anchored" data-anchor-id="log-likelihood">Log-Likelihood</h2>
-<p>Recall the log-likelihood function</p>
-<p><span class="math display">\[
-\begin{aligned}
-\log L&amp;(\boldsymbol{\beta}|x_1, \ldots, x_n, y_1, \dots, y_n) \\
-&amp;= \sum\limits_{i=1}^n[y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i)]
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(\pi_i = \frac{\exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp\{x_i^\mathsf{T}\boldsymbol{\beta}\}}\)</span></p>
-</section>
 <section id="deviance" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="deviance">Deviance</h2>
 <p>The <strong>deviance</strong> is a measure of the degree to which the predicted values are different from the observed values (compares the current model to a “saturated” model)</p>
@@ -885,7 +885,7 @@ window.Quarto = {
 D = -2 \log L
 \]</span></p>
 <p><br></p>
-<p><span class="math inline">\(D \sim \chi^2_{n - p - 1}\)</span> ( <span class="math inline">\(D\)</span> follows a Chi-square distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom)</p>
+<p><span class="math inline">\(D \sim \chi^2_{n - p - 1}\)</span> ( <span class="math inline">\(D\)</span> follows a Chi-square distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p><br></p>
 <p>Note: <span class="math inline">\(n - p - 1\)</span> a the degrees of freedom associated with the error in the model (like residuals)</p>
 </section>
@@ -923,7 +923,7 @@ G = D_0 - D_a &amp;= (-2\log L_0) - (-2\log L_a)\\[5pt]
 &amp;= -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + (1 - y_i)\log \Big(\frac{1-\hat{\pi}^0}{1-\hat{\pi}^a_i}\Big)\Big]
 \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(\hat{\pi}^0\)</span> is the predicted probability under <span class="math inline">\(H_0\)</span> and <span class="math inline">\(\hat{\pi}_i^a = \frac{\exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}\)</span> is the predicted probability under <span class="math inline">\(H_a\)</span> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>where <span class="math inline">\(\hat{\pi}^0\)</span> is the predicted probability under <span class="math inline">\(H_0\)</span> and <span class="math inline">\(\hat{\pi}_i^a = \frac{\exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}{1 + \exp \{x_i^\mathsf{T}\boldsymbol{\beta}\}}\)</span> is the predicted probability under <span class="math inline">\(H_a\)</span> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 </section>
 <section id="drop-in-deviance-test-statistic-1" class="level2">
 <h2 class="anchored" data-anchor-id="drop-in-deviance-test-statistic-1">Drop-in-deviance test statistic</h2>
@@ -1014,7 +1014,7 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 </section>
 <section id="why-use-overall-test" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="why-use-overall-test">Why use overall test?</h2>
-<p>Why do we use a test for overall significance instead of just looking at the test for individual coefficients?<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>Why do we use a test for overall significance instead of just looking at the test for individual coefficients?<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 <p>. . .</p>
 <p>Suppose we have a model such that <span class="math inline">\(p = 100\)</span> and <span class="math inline">\(H_0: \beta_1 = \dots = \beta_{100} = 0\)</span> is true</p>
 <p>. . .</p>
@@ -1256,7 +1256,8 @@ Wilks, SS. 1935. <span>“The Likelihood Test of Independence in Contingency Tab
 <li id="fn1"><p>Akaike, Hirotugu. <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=1100705">“A new look at the statistical model identification.”</a> <em>IEEE transactions on automatic control</em> 19.6 (1974): 716-723.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Schwarz, Gideon. <a href="https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2Faos%2F1176344136">“Estimating the dimension of a model.”</a> <em>The annals of statistics</em> (1978): 461-464.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#ref-wilks1935likelihood" role="doc-biblioref">1935</a>)</span> for explanation of why -2 is included.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Example from <em>Introduction to Statistical Learning</em><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#ref-wilks1935likelihood" role="doc-biblioref">1935</a>)</span> for explanation of why -2 is included.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Example from <em>Introduction to Statistical Learning</em><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 
