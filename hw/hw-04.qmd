@@ -59,17 +59,19 @@ The conceptual exercises are focused on explaining concepts and showing results 
 
 ## Exercise 1
 
-<!--# from Ex 7.11 (pg. 356 in Casella Berger-->
+<!--# Ex 7.19 (pg. 358) of Casella Berger-->
 
-Let $x_1, \ldots, x_n$ be independently and identically distributed (i.i.d.) sample observations from a distribution where
+Suppose you have the linear regression model
 
 $$
-f(x | \theta) = \theta x^{\theta - 1} \hspace{8mm} 0\leq x\leq 1, \hspace{3mm} 0 < \theta < \infty
+y_i = \beta x_i + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})
 $$
 
-a.  Find the maximum likelihood estimator (MLE) of $\theta$.
-b.  Is the estimator unbiased? Show your work and briefly explain.
-c.  Is the estimator consistent? Show your work and briefly explain.
+such that $\epsilon_i$ are i.i.d. and there is no intercept.
+
+a.  Find $\tilde{\beta}$ , the MLE of $\beta$.
+b.  Show that the MLE is unbiased. (Note: You must show this directly and may not use the result from part(c).)
+c.  Show mathematically how $\tilde{\beta}$ relates to the least-squares estimator.
 
 ## Exercise 2
 

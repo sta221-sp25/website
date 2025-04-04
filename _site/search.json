@@ -6222,7 +6222,7 @@
     "href": "hw/hw-04.html#exercise-1",
     "title": "HW 04: Logistic regression",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nLet \\(x_1, \\ldots, x_n\\) be independently and identically distributed (i.i.d.) sample observations from a distribution where\n\\[\nf(x | \\theta) = \\theta x^{\\theta - 1} \\hspace{8mm} 0\\leq x\\leq 1, \\hspace{3mm} 0 &lt; \\theta &lt; \\infty\n\\]\n\nFind the maximum likelihood estimator (MLE) of \\(\\theta\\).\nIs the estimator unbiased? Show your work and briefly explain.\nIs the estimator consistent? Show your work and briefly explain.",
+    "text": "Exercise 1\n\nSuppose you have the linear regression model\n\\[\ny_i = \\beta x_i + \\epsilon_i \\hspace{8mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\nsuch that \\(\\epsilon_i\\) are i.i.d. and there is no intercept.\n\nFind \\(\\tilde{\\beta}\\) , the MLE of \\(\\beta\\).\nShow that the MLE is unbiased. (Note: You must show this directly and may not use the result from part(c).)\nShow mathematically how \\(\\tilde{\\beta}\\) relates to the least-squares estimator.",
     "crumbs": [
       "Homework",
       "HW 04"

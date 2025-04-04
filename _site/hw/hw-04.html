@@ -526,15 +526,16 @@ Due date
 </section>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<!--# from Ex 7.11 (pg. 356 in Casella Berger-->
-<p>Let <span class="math inline">\(x_1, \ldots, x_n\)</span> be independently and identically distributed (i.i.d.) sample observations from a distribution where</p>
+<!--# Ex 7.19 (pg. 358) of Casella Berger-->
+<p>Suppose you have the linear regression model</p>
 <p><span class="math display">\[
-f(x | \theta) = \theta x^{\theta - 1} \hspace{8mm} 0\leq x\leq 1, \hspace{3mm} 0 &lt; \theta &lt; \infty
+y_i = \beta x_i + \epsilon_i \hspace{8mm} \epsilon_i \sim N(0, \sigma^2_{\epsilon})
 \]</span></p>
+<p>such that <span class="math inline">\(\epsilon_i\)</span> are i.i.d. and there is no intercept.</p>
 <ol type="a">
-<li>Find the maximum likelihood estimator (MLE) of <span class="math inline">\(\theta\)</span>.</li>
-<li>Is the estimator unbiased? Show your work and briefly explain.</li>
-<li>Is the estimator consistent? Show your work and briefly explain.</li>
+<li>Find <span class="math inline">\(\tilde{\beta}\)</span> , the MLE of <span class="math inline">\(\beta\)</span>.</li>
+<li>Show that the MLE is unbiased. (Note: You must show this directly and may not use the result from part(c).)</li>
+<li>Show mathematically how <span class="math inline">\(\tilde{\beta}\)</span> relates to the least-squares estimator.</li>
 </ol>
 </section>
 <section id="exercise-2" class="level2">
