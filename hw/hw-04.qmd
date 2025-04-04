@@ -67,9 +67,9 @@ $$
 f(x | \theta) = \theta x^{\theta - 1} \hspace{8mm} 0\leq x\leq 1, \hspace{3mm} 0 < \theta < \infty
 $$
 
-1.  Find the maximum likelihood estimator (MLE) of $\theta$.
-2.  Is the estimator unbiased? Show your work and briefly explain.
-3.  Is the estimator consistent? Show your work and briefly explain.
+a.  Find the maximum likelihood estimator (MLE) of $\theta$.
+b.  Is the estimator unbiased? Show your work and briefly explain.
+c.  Is the estimator consistent? Show your work and briefly explain.
 
 ## Exercise 2
 
