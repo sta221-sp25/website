@@ -13,7 +13,7 @@ bibliography: references.bib
 ::: callout-important
 # Due date
 
-This lab is due on **Tuesday, April 4 at 11:59pm.** To be considered on time, the following must be done by the due date:
+This lab is due on **Tuesday, April 8 at 11:59pm.** To be considered on time, the following must be done by the due date:
 
 -   Final `.qmd` and `.pdf` files pushed to your team's GitHub repo
 -   Final `.pdf` file submitted on Gradescope
