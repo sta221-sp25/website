@@ -6198,9 +6198,152 @@
   {
     "objectID": "hw/hw-04.html",
     "href": "hw/hw-04.html",
-    "title": "HW 04",
+    "title": "HW 04: Logistic regression",
     "section": "",
-    "text": "To be posted.",
+    "text": "Due date\n\n\n\nThis assignment is due on Thursday, April 10 at 11:59pm.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#instructions",
+    "href": "hw/hw-04.html#instructions",
+    "title": "HW 04: Logistic regression",
+    "section": "Instructions",
+    "text": "Instructions\nThe conceptual exercises are focused on explaining concepts and showing results mathematically. Show your work for each question.\n\nYou may write the answers and associated work for conceptual exercises by hand or type them in your Quarto document.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-1",
+    "href": "hw/hw-04.html#exercise-1",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nLet \\(x_1, \\ldots, x_n\\) be independently and identically distributed (i.i.d.) sample observations from a distribution where\n\\[\nf(x | \\theta) = \\theta x^{\\theta - 1} \\hspace{8mm} 0\\leq x\\leq 1, \\hspace{3mm} 0 &lt; \\theta &lt; \\infty\n\\]\n\nFind the maximum likelihood estimator (MLE) of \\(\\theta\\).\nIs the estimator unbiased? Show your work and briefly explain.\nIs the estimator consistent? Show your work and briefly explain.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-2",
+    "href": "hw/hw-04.html#exercise-2",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nSuppose there are \\(n\\) observations, such that each \\(y_i\\) is generated from \\(x_i\\) based on the linear model\n\\[\ny_i = \\beta_0 + \\beta_1 x_i + \\epsilon_i, \\hspace{8mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\n\\]\nsuch that \\(\\epsilon_i\\) are i.i.d.\nThe model is reparameterized (redefined) as\n\\[\ny_i = \\beta^{\\prime}_0 + \\beta^{\\prime}_1(x_i - \\bar{x}) + \\epsilon_i\n\\]\nsuch that \\(\\epsilon_i\\) follows the same distribution as the original model.\n\nShow that the MLE of \\(\\beta^{\\prime}_1\\) is equal to the MLE of \\(\\beta_1\\).\nShow that the MLE of \\(\\beta^{\\prime}_0\\) is not equal to the MLE of \\(\\beta_0\\).\n\n\n\n\n\n\n\nTip\n\n\n\nYou do not need to derive the MLEs for \\(\\beta_0\\) and \\(\\beta_1\\). You may use the results from the notes.\nYou do need to show your work / explain your reasoning to get the MLEs for \\(\\beta^{\\prime}_0\\) and \\(\\beta^{\\prime}_1\\) .",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-31",
+    "href": "hw/hw-04.html#exercise-31",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 31",
+    "text": "Exercise 31\n\nBerry (2001) examined the effect of a player’s draft position among the pool of potential players in a given year to the probability on eventually being named an all star.\nLet \\(d\\) be the draft position \\((d = 1, 2, 3, \\ldots)\\) and \\(\\pi\\) be the probability of eventually being named an all star. The researcher modeled the relationship between \\(d\\) and \\(\\pi\\) using the following model:\n\\[\n\\log\\Big(\\frac{\\pi_i}{1-\\pi_i}\\Big) = \\beta_0 + \\beta_1 \\log d_i\n\\]\n\nUsing this model, show that the odds of being named an all star are \\(e^{\\beta_0}d^{\\beta_1}\\) . Then, show how to calculate \\(\\pi_i\\) based on this model.\nShow that the odds of being named an all star for a first draft pick are \\(e^{\\beta_0}\\) .\nIn the study, Berry reported that for professional basketball \\(\\hat{\\beta}_0 = 2.3\\) and \\(\\hat{\\beta}_1 = -1.1\\), and for professional baseball \\(\\hat{\\beta}_0 = 0.7\\) and \\(\\hat{\\beta}_1 = -0.6\\) . Explain why this suggests that (1) being a first draft pick is more crucial for being an all star in basketball than in baseball and (2) players picked in high draft positions are relatively less likely to be all stars.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-4",
+    "href": "hw/hw-04.html#exercise-4",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nIn the paper “Employing Standardized Risk Assessment in Pretrial Release Decisions: Association With Criminal Justice Outcomes and Racial Equity” Marlowe et al. (2020) analyze the risk predictions produced by a black-box algorithm used to determine whether a defendant is considered “high risk” of being rearrested if they are released while awaiting trial. Such algorithms are used by judges in some states to help determine whether or not defendants are released while awaiting trial.\nThe authors examine the algorithm’s risk predictions and whether a person was rearrested for over 500 defendants released pretrial in a southern state. For each person, the algorithm produced one of the following predictions: “High Risk” or “Low Risk”. The observed outcome was “Rearrested” (coded as 1) or “Not Rearrested” (coded as 0). Below are some results from the analysis:\n\nSensitivity: 86%\nSpecificity: 24%\nPositive predictive power (Precision): 57%\nNegative predictive power: 60%\n\n\n\n\n\n\n\nTip\n\n\n\n\nPositive Predictive Power (Precision): P(Y = 1 | Y classified as 1 from the model)\nNegative Predictive Power: P(Y = 0 | Y classified as 0 from the model)\n\n\n\n\nExplain what each of the following mean in the context of the analysis:\n\nSensitivity\nSpecificity\nPositive predictive power (Precision)\nNegative predictive power\n\nWhat is the false positive rate? What does this value mean in the context of the analysis?",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#instructions-1",
+    "href": "hw/hw-04.html#instructions-1",
+    "title": "HW 04: Logistic regression",
+    "section": "Instructions",
+    "text": "Instructions\nThe applied exercises are focused on applying the concepts to analyze data.\nAll work for the applied exercises must be typed in your Quarto document following a reproducible workflow.\nWrite all narrative using complete sentences and include informative axis labels / titles on visualizations.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#data-understanding-pro-environmental-behavior",
+    "href": "hw/hw-04.html#data-understanding-pro-environmental-behavior",
+    "title": "HW 04: Logistic regression",
+    "section": "Data: Understanding pro-environmental behavior",
+    "text": "Data: Understanding pro-environmental behavior\nIbanez and Roussel (2022) conducted an experiment to understand the impact of watching a nature documentary on pro-environmental behavior. The researchers randomly assigned the 113 participants to watch an video about architecture in NYC (control) or a video about Yellowstone National Park (treatment). As part of the experiment, participants played a game in which they had an opportunity to donate to an environmental organization.\nThe data set is available in nature-experiment.csv in the data folder. We will use the following variables:\n\ndonation_binary:\n\n1 - participant donated to environmental organization\n0 - participant did not donate\n\nage: Age in years\ngender: Participant’s reported gender\n\n1 - male\n0 - non-male\n\ntreatment:\n\n“URBAN (T1)” - the control group\n“NATURE (T2)” - the treatment group\n\nnep_high:\n\n1 - score of 4 or higher on the New Ecological Paradigm (NEP)\n0 - score less than 4\n\n\n\n\n\n\n\n\nTip\n\n\n\nSee the Introduction and Methods sections of Ibanez and Roussel (2022) for more detail about the variables.\nClick here to access the paper online.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-5",
+    "href": "hw/hw-04.html#exercise-5",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\n\nCreate a visualization of the relationship between donating and treatment. Use the visualization to describe the relationship between the two variables.\nCreate a visualization of the relationship between donating and age. Use the visualization to describe the relationship between the two variables.\nWe would like to use the mean-centered value of age in the model. Create a new variable age_cent that contains the mean-centered ages.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-6",
+    "href": "hw/hw-04.html#exercise-6",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nFit a logistic regression model using age_cent, gender, treatment, and nep_high to predict the likelihood of donating. Neatly display the model using 3 digits.\nThe researchers are most interested in the effect of watching the nature documentary. Describe the effect of treatment in terms of the odds of donating.\nWhat group of participants is described by the intercept? What is the predicted probability a randomly selected individual in this group donates?",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-7",
+    "href": "hw/hw-04.html#exercise-7",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nProduce the ROC curve for the model from the previous exercise and calculate the area under curve (AUC). Write 1 - 2 sentences describing how well the model fits the data.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-8",
+    "href": "hw/hw-04.html#exercise-8",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nThe authors include an interaction effect between nep_high and treatment in one of their models.\n\nExplain what an interaction between nep_high and treatment means in the context of the data.\nCreate a visualization to explore the potential of an interaction effect between these two variables. Based on the visualization, do you think there is an interaction effect? Briefly explain.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#exercise-9",
+    "href": "hw/hw-04.html#exercise-9",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nConduct a drop-in-deviance test to determine if the interaction between nep_high and treatment should be added to the model fit in Exercise 7. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data.",
+    "crumbs": [
+      "Homework",
+      "HW 04"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04.html#footnotes",
+    "href": "hw/hw-04.html#footnotes",
+    "title": "HW 04: Logistic regression",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nExercise adapted froman exercise in Categorical Data Analysis by Agresti.↩︎",
     "crumbs": [
       "Homework",
       "HW 04"
