@@ -4,161 +4,230 @@
     "href": "exam-02-practice.html",
     "title": "Exam 02 practice",
     "section": "",
-    "text": "Important\n\n\n\nThis page contains practice problems to help prepare for Exam 02. This set of practice problems is not comprehensive. You should review these study tips as you prepare for the exam.\n\nThere is no answer key for these problems. You may ask questions in office hours and on Ed Discussion."
+    "text": "Important\n\n\n\nThis page contains practice problems to help prepare for Exam 02. This set of practice problems is not comprehensive. You should review these study tips as you prepare for the exam.\n\nThere is no answer key for these problems. You may ask questions in office hours and on Ed Discussion.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-1",
     "href": "exam-02-practice.html#exercise-1",
     "title": "Exam 02 practice",
     "section": "Exercise 1",
-    "text": "Exercise 1\nGiven the simple linear regression model\n\\[y_i = \\beta_0 + \\beta_1x_i + \\epsilon_i, \\hspace{10mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\\]\nWrite the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of \\(\\beta_0\\), \\(\\beta_1\\), and \\(\\sigma^2_{\\epsilon}\\) are of the form shown on this slide."
+    "text": "Exercise 1\nGiven the simple linear regression model\n\\[y_i = \\beta_0 + \\beta_1x_i + \\epsilon_i, \\hspace{10mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\\]\nWrite the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of \\(\\beta_0\\), \\(\\beta_1\\), and \\(\\sigma^2_{\\epsilon}\\) are of the form shown on this slide.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-2",
     "href": "exam-02-practice.html#exercise-2",
     "title": "Exam 02 practice",
     "section": "Exercise 2",
-    "text": "Exercise 2\nGiven the linear regression model\n\\[\n\\mathbf{y}  = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon} \\hspace{10mm} \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\]\nWrite the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of \\(\\boldsymbol{\\beta}\\) and \\(\\sigma^2_{\\epsilon}\\) are\n\\[\n\\tilde{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} \\hspace{10mm} \\tilde{\\sigma}^2_{\\epsilon} = \\frac{1}{n}(\\mathbf{y} - \\mathbf{X}\\tilde{\\boldsymbol{\\beta}})^T(\\mathbf{y} - \\mathbf{X}\\tilde{\\boldsymbol{\\beta}})\n\\]"
+    "text": "Exercise 2\nGiven the linear regression model\n\\[\n\\mathbf{y}  = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon} \\hspace{10mm} \\boldsymbol{\\epsilon} \\sim N(\\mathbf{0}, \\sigma^2_{\\epsilon}\\mathbf{I})\n\\]\nWrite the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of \\(\\boldsymbol{\\beta}\\) and \\(\\sigma^2_{\\epsilon}\\) are\n\\[\n\\tilde{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} \\hspace{10mm} \\tilde{\\sigma}^2_{\\epsilon} = \\frac{1}{n}(\\mathbf{y} - \\mathbf{X}\\tilde{\\boldsymbol{\\beta}})^T(\\mathbf{y} - \\mathbf{X}\\tilde{\\boldsymbol{\\beta}})\n\\]",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-3",
     "href": "exam-02-practice.html#exercise-3",
     "title": "Exam 02 practice",
     "section": "Exercise 3",
-    "text": "Exercise 3\nGiven the logistic regression model\n\\[\n\\log\\Big(\\frac{\\pi}{1-\\pi}\\Big) = \\mathbf{X}\\boldsymbol{\\beta}\n\\]\n\nWrite the likelihood function\nRework the derivation from the November 7 lecture to show the derivative solved to find the MLEs is of the form on this slide. (You can check your answer using the board work posted in Canvas)."
+    "text": "Exercise 3\nGiven the logistic regression model\n\\[\n\\log\\Big(\\frac{\\pi}{1-\\pi}\\Big) = \\mathbf{X}\\boldsymbol{\\beta}\n\\]\n\nWrite the likelihood function\nRework the derivation from the November 7 lecture to show the derivative solved to find the MLEs is of the form on this slide. (You can check your answer using the board work posted in Canvas).",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-4",
     "href": "exam-02-practice.html#exercise-4",
     "title": "Exam 02 practice",
     "section": "Exercise 4",
-    "text": "Exercise 4\nSuppose \\(Y_1, \\ldots, Y_n\\) are an independent and identically distributed (iid) sample from some distribution\n\\[f_Y(y) = \\theta(1 - \\theta)^{y-1}\\]\nsuch that \\(y\\) takes on positive integer values and \\(0 &lt; \\theta &lt; 1\\). Show that the MLE for \\(\\theta^{-1}\\) is \\(\\frac{1}{n}\\sum_{i=1}^n y_i\\) ."
+    "text": "Exercise 4\nSuppose \\(Y_1, \\ldots, Y_n\\) are an independent and identically distributed (iid) sample from some distribution\n\\[f_Y(y) = \\theta(1 - \\theta)^{y-1}\\]\nsuch that \\(y\\) takes on positive integer values and \\(0 &lt; \\theta &lt; 1\\). Show that the MLE for \\(\\theta^{-1}\\) is \\(\\frac{1}{n}\\sum_{i=1}^n y_i\\) .",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-5",
     "href": "exam-02-practice.html#exercise-5",
     "title": "Exam 02 practice",
     "section": "Exercise 5",
-    "text": "Exercise 5\nRework Exercises 1 - 3 in HW 03."
+    "text": "Exercise 5\nRework Exercises 1 - 3 in HW 03.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-6",
     "href": "exam-02-practice.html#exercise-6",
     "title": "Exam 02 practice",
     "section": "Exercise 6",
-    "text": "Exercise 6\nSuppose we fit a linear model with a log transformation on the response variable, i.e.,\n\\[\n\\widehat{\\log(y_i)} = \\hat{\\beta}_0 + \\hat{\\beta}_1x_1 + \\dots + \\hat{\\beta}_p x_p\n\\]\n\nShow mathematically why the slope for \\(x_j\\) and intercept are interpreted in terms of \\(y\\) as shown on this slide.\nShow how \\(y\\) is expected to change if \\(x_j\\) increases by \\(t\\) units."
+    "text": "Exercise 6\nSuppose we fit a linear model with a log transformation on the response variable, i.e.,\n\\[\n\\widehat{\\log(y_i)} = \\hat{\\beta}_0 + \\hat{\\beta}_1x_1 + \\dots + \\hat{\\beta}_p x_p\n\\]\n\nShow mathematically why the slope for \\(x_j\\) and intercept are interpreted in terms of \\(y\\) as shown on this slide.\nShow how \\(y\\) is expected to change if \\(x_j\\) increases by \\(t\\) units.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-7",
     "href": "exam-02-practice.html#exercise-7",
     "title": "Exam 02 practice",
     "section": "Exercise 7",
-    "text": "Exercise 7\nSuppose we fit a linear model with a log transformation on one predictor variable, i.e.,\n\\[\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1\\log (x_1) + \\dots + \\hat{\\beta}_p x_p\n\\]\n\nShow mathematically why the slope and intercept are interpreted similarly as shown on this slide when \\(x\\) is multiplied by a factor \\(C\\).\nExplain why we need “holding all else constant” in this interpretation but not for the one shown in the lecture slides."
+    "text": "Exercise 7\nSuppose we fit a linear model with a log transformation on one predictor variable, i.e.,\n\\[\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1\\log (x_1) + \\dots + \\hat{\\beta}_p x_p\n\\]\n\nShow mathematically why the slope and intercept are interpreted similarly as shown on this slide when \\(x\\) is multiplied by a factor \\(C\\).\nExplain why we need “holding all else constant” in this interpretation but not for the one shown in the lecture slides.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-8",
     "href": "exam-02-practice.html#exercise-8",
     "title": "Exam 02 practice",
     "section": "Exercise 8",
-    "text": "Exercise 8\nRework Exercise 4 in HW 03."
+    "text": "Exercise 8\nRework Exercise 4 in HW 03.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-9",
     "href": "exam-02-practice.html#exercise-9",
     "title": "Exam 02 practice",
     "section": "Exercise 9",
-    "text": "Exercise 9\nRecall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\hat{\\sigma}^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1}\\). One of the effects of multicollinearity is that the model coefficients will have large variances. Explain why."
+    "text": "Exercise 9\nRecall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\hat{\\sigma}^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1}\\). One of the effects of multicollinearity is that the model coefficients will have large variances. Explain why.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-10",
     "href": "exam-02-practice.html#exercise-10",
     "title": "Exam 02 practice",
     "section": "Exercise 10",
-    "text": "Exercise 10\nSuppose you fit a simple linear regression model.\n\nDraw a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw a scatterplot that contains an observation with a large studentized residual."
+    "text": "Exercise 10\nSuppose you fit a simple linear regression model.\n\nDraw a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw a scatterplot that contains an observation with a large studentized residual.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-11",
     "href": "exam-02-practice.html#exercise-11",
     "title": "Exam 02 practice",
     "section": "Exercise 11",
-    "text": "Exercise 11\n\nWhat is an advantage of examining a plot of studentized residuals vs. fitted values rather than using the raw residuals?\nExplain what is measured by Cook’s distance. You don’t need to memorize the formula but rather describe what the formula is quantifying for each observation. Click here for the formula (slide also contains the solution)."
+    "text": "Exercise 11\n\nWhat is an advantage of examining a plot of studentized residuals vs. fitted values rather than using the raw residuals?\nExplain what is measured by Cook’s distance. You don’t need to memorize the formula but rather describe what the formula is quantifying for each observation. Click here for the formula (slide also contains the solution).",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-12",
     "href": "exam-02-practice.html#exercise-12",
     "title": "Exam 02 practice",
     "section": "Exercise 12",
-    "text": "Exercise 12\nConsider the hypotheses being tested in the Nested F Test on this slide. The output produced by the anova() function for the Nested F test is shown here. Explain how each value in the table is computed."
+    "text": "Exercise 12\nConsider the hypotheses being tested in the Nested F Test on this slide. The output produced by the anova() function for the Nested F test is shown here. Explain how each value in the table is computed.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-13",
     "href": "exam-02-practice.html#exercise-13",
     "title": "Exam 02 practice",
     "section": "Exercise 13",
-    "text": "Exercise 13\n\nWhat is an advantage of using a Nested F test instead of AIC (or BIC) to compare linear regression models?\nWhat is an advantage of using AIC (or BIC) instead of a Nested F test to compare linear regression models?"
+    "text": "Exercise 13\n\nWhat is an advantage of using a Nested F test instead of AIC (or BIC) to compare linear regression models?\nWhat is an advantage of using AIC (or BIC) instead of a Nested F test to compare linear regression models?",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-141",
     "href": "exam-02-practice.html#exercise-141",
     "title": "Exam 02 practice",
     "section": "Exercise 141",
-    "text": "Exercise 141\n\nOn average, what fraction of people with an odds of 0.37 of defaulting on their credit card payment will in fact default?\nSuppose an individual has a 16% chance of defaulting on their credit card payment. What are the odds they will default?"
+    "text": "Exercise 141\n\nOn average, what fraction of people with an odds of 0.37 of defaulting on their credit card payment will in fact default?\nSuppose an individual has a 16% chance of defaulting on their credit card payment. What are the odds they will default?",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-15",
     "href": "exam-02-practice.html#exercise-15",
     "title": "Exam 02 practice",
     "section": "Exercise 15",
-    "text": "Exercise 15\nRecall the model using age and education to predict odds of being high risk for heart disease.\n\nShow mathematically why the interpretation for the slope for age in terms of the log-odds is in the form shown on this slide.\nShow mathematically why the interpretation for the slope of age in terms of the odds is in the form shown on this slide."
+    "text": "Exercise 15\nRecall the model using age and education to predict odds of being high risk for heart disease.\n\nShow mathematically why the interpretation for the slope for age in terms of the log-odds is in the form shown on this slide.\nShow mathematically why the interpretation for the slope of age in terms of the odds is in the form shown on this slide.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-16",
     "href": "exam-02-practice.html#exercise-16",
     "title": "Exam 02 practice",
     "section": "Exercise 16",
-    "text": "Exercise 16\nRecall the model using age and education to predict odds of being high risk for heart disease.\n\nShow mathematically why the interpretation for the slope for education4 in terms of the log-odds is in the form shown on this slide.\nShow mathematically why the interpretation for the slope of education4in terms of the odds is in the form shown on this slide."
+    "text": "Exercise 16\nRecall the model using age and education to predict odds of being high risk for heart disease.\n\nShow mathematically why the interpretation for the slope for education4 in terms of the log-odds is in the form shown on this slide.\nShow mathematically why the interpretation for the slope of education4in terms of the odds is in the form shown on this slide.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-17",
     "href": "exam-02-practice.html#exercise-17",
     "title": "Exam 02 practice",
     "section": "Exercise 17",
-    "text": "Exercise 17\nExplain why the slope of the logistic regression model is called the Adjusted Odds Ratio (or just Odds Ratio if there is one predictor)."
+    "text": "Exercise 17\nExplain why the slope of the logistic regression model is called the Adjusted Odds Ratio (or just Odds Ratio if there is one predictor).",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-18",
     "href": "exam-02-practice.html#exercise-18",
     "title": "Exam 02 practice",
     "section": "Exercise 18",
-    "text": "Exercise 18\n\nDraw an example of an ROC curve such that the AUC is about 0.55\nDraw an example of an ROC curve such that the AUC is about 0.9.\nExplain what each point on an ROC curve represents."
+    "text": "Exercise 18\n\nDraw an example of an ROC curve such that the AUC is about 0.55\nDraw an example of an ROC curve such that the AUC is about 0.9.\nExplain what each point on an ROC curve represents.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-19",
     "href": "exam-02-practice.html#exercise-19",
     "title": "Exam 02 practice",
     "section": "Exercise 19",
-    "text": "Exercise 19\nConsider the drop-in-deviance test from lecture testing whether education should be added to a model that already includes age, totChol, and currentSmoker to predict the odds a person is high risk for heart disease.\nThe anova() output for the drop-in-deviance test is shown on this slide. Explain how each value in the table is computed."
+    "text": "Exercise 19\nConsider the drop-in-deviance test from lecture testing whether education should be added to a model that already includes age, totChol, and currentSmoker to predict the odds a person is high risk for heart disease.\nThe anova() output for the drop-in-deviance test is shown on this slide. Explain how each value in the table is computed.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#exercise-20",
     "href": "exam-02-practice.html#exercise-20",
     "title": "Exam 02 practice",
     "section": "Exercise 20",
-    "text": "Exercise 20\nRecall this empirical logit plot to check the linearity condition for the model using age , sex, and years of experience to predict access to PPE for employees at food establishments in Summer 2020.\nThere is a point on the plot around (20, -0.5). Explain what these coordinates mean in the context of the data."
+    "text": "Exercise 20\nRecall this empirical logit plot to check the linearity condition for the model using age , sex, and years of experience to predict access to PPE for employees at food establishments in Summer 2020.\nThere is a point on the plot around (20, -0.5). Explain what these coordinates mean in the context of the data.",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#relevant-assignments-and-aes",
     "href": "exam-02-practice.html#relevant-assignments-and-aes",
     "title": "Exam 02 practice",
     "section": "Relevant assignments and AEs",
-    "text": "Relevant assignments and AEs\nThe following assignments and AEs cover Exam 02 content. Ask yourself “why” questions as your review your answers, process, and derivations on these assignments. It may also be helpful to explain your process to others.\n\nHW 03, HW 04\nLab 04, Lab 05, Lab 06\nAE 05, AE 06, AE 07, AE 08"
+    "text": "Relevant assignments and AEs\nThe following assignments and AEs cover Exam 02 content. Ask yourself “why” questions as your review your answers, process, and derivations on these assignments. It may also be helpful to explain your process to others.\n\nHW 03, HW 04\nLab 04, Lab 05, Lab 06\nAE 05, AE 06, AE 07, AE 08",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "exam-02-practice.html#footnotes",
     "href": "exam-02-practice.html#footnotes",
     "title": "Exam 02 practice",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nFrom Introduction to Statistical Learning.↩︎"
+    "text": "Footnotes\n\n\nFrom Introduction to Statistical Learning.↩︎",
+    "crumbs": [
+      "Exam 02 Practice"
+    ]
   },
   {
     "objectID": "project.html",
@@ -11189,14 +11258,14 @@
     "href": "slides/22-logistic-inference-notes.html",
     "title": "Logistic Regression: Inference",
     "section": "",
-    "text": "Lab 07 due TODAY at 11:59pm\nTeam Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)\nHW 04 due April 10 at 11:59pm\nNext project milestone: Draft and peer review in Friday’s lab\nExam 02 - April 17 (same format as Exam 01)\nStatistics experience due April 22"
+    "text": "Lab 07 due TODAY at 11:59pm\nTeam Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)\nHW 04 due April 10 at 11:59pm\nNext project milestone: Draft and peer review in Friday’s lab\nExam 02 - April 17 (same format as Exam 01)\n\nExam 02 practice + lecture recordings available\n\nStatistics experience due April 22"
   },
   {
     "objectID": "slides/22-logistic-inference-notes.html#announcements",
     "href": "slides/22-logistic-inference-notes.html#announcements",
     "title": "Logistic Regression: Inference",
     "section": "",
-    "text": "Lab 07 due TODAY at 11:59pm\nTeam Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)\nHW 04 due April 10 at 11:59pm\nNext project milestone: Draft and peer review in Friday’s lab\nExam 02 - April 17 (same format as Exam 01)\nStatistics experience due April 22"
+    "text": "Lab 07 due TODAY at 11:59pm\nTeam Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)\nHW 04 due April 10 at 11:59pm\nNext project milestone: Draft and peer review in Friday’s lab\nExam 02 - April 17 (same format as Exam 01)\n\nExam 02 practice + lecture recordings available\n\nStatistics experience due April 22"
   },
   {
     "objectID": "slides/22-logistic-inference-notes.html#questions-from-this-weeks-content",
@@ -11364,7 +11433,7 @@
     "href": "slides/22-logistic-inference-notes.html#distribution-of-hatboldsymbolbeta-1",
     "title": "Logistic Regression: Inference",
     "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe expected value of \\(\\hat{\\boldsymbol{\\beta}}\\) is the true parameter, \\(\\boldsymbol{\\beta}\\), i.e., \\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n. . .\n\\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWhen \\(n\\) is large…\nThe expected value of \\(\\hat{\\boldsymbol{\\beta}}\\) is the true parameter, \\(\\boldsymbol{\\beta}\\), i.e., \\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n. . .\n\\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
   },
   {
     "objectID": "slides/22-logistic-inference-notes.html#test-for-a-single-coefficient-1",
@@ -11448,14 +11517,14 @@
     "href": "slides/22-logistic-inference-notes.html#footnotes",
     "title": "Logistic Regression: Inference",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nSee Wilks (1935) for theoretical underpinnings↩︎\nBased on Wilk’s Theorem (Wilks 1935)↩︎\nExample from Introduction to Statistical Learning↩︎\nBased on Wilk’s Theorem [@wilks1935likelihood]↩︎"
+    "text": "Footnotes\n\n\nSee Wilks (1935) for theoretical underpinnings↩︎\nBased on Wilk’s Theorem (Wilks 1935)↩︎\nExample from Introduction to Statistical Learning↩︎\nBased on Wilk’s Theorem (Wilks 1935)↩︎"
   },
   {
     "objectID": "slides/22-logistic-inference.html#announcements",
     "href": "slides/22-logistic-inference.html#announcements",
     "title": "Logistic Regression: Inference",
     "section": "Announcements",
-    "text": "Announcements\n\nLab 07 due TODAY at 11:59pm\nTeam Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)\nHW 04 due April 10 at 11:59pm\nNext project milestone: Draft and peer review in Friday’s lab\nExam 02 - April 17 (same format as Exam 01)\nStatistics experience due April 22"
+    "text": "Announcements\n\nLab 07 due TODAY at 11:59pm\nTeam Feedback (email from TEAMMATES) due TODAY at 11:59pm (check email)\nHW 04 due April 10 at 11:59pm\nNext project milestone: Draft and peer review in Friday’s lab\nExam 02 - April 17 (same format as Exam 01)\n\nExam 02 practice + lecture recordings available\n\nStatistics experience due April 22"
   },
   {
     "objectID": "slides/22-logistic-inference.html#questions-from-this-weeks-content",
@@ -11574,7 +11643,7 @@
     "href": "slides/22-logistic-inference.html#drop-in-deviance-test-2",
     "title": "Logistic Regression: Inference",
     "section": "Drop-in-deviance test",
-    "text": "Drop-in-deviance test\n\\[\n\\begin{aligned}\n&H_0: \\beta_{q+1} = \\dots = \\beta_p = 0\\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\n\\]\n\nThe test statistic is\n\\[\n\\begin{aligned}\nG = D_{reduced} - D_{full} &= (-2\\log L_{reduced}) - (-2 \\log L_{full}) \\\\\n&= -2(\\log L_{reduced} - \\log L_{full})\n\\end{aligned}\n\\]\n\n\nThe p-value is calculated using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).1\n\nBased on Wilk’s Theorem [@wilks1935likelihood]"
+    "text": "Drop-in-deviance test\n\\[\n\\begin{aligned}\n&H_0: \\beta_{q+1} = \\dots = \\beta_p = 0\\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\n\\]\n\nThe test statistic is\n\\[\n\\begin{aligned}\nG = D_{reduced} - D_{full} &= (-2\\log L_{reduced}) - (-2 \\log L_{full}) \\\\\n&= -2(\\log L_{reduced} - \\log L_{full})\n\\end{aligned}\n\\]\n\n\nThe p-value is calculated using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).1\n\nBased on Wilk’s Theorem (Wilks 1935)"
   },
   {
     "objectID": "slides/22-logistic-inference.html#example-include-education",
@@ -11623,7 +11692,7 @@
     "href": "slides/22-logistic-inference.html#distribution-of-hatboldsymbolbeta-1",
     "title": "Logistic Regression: Inference",
     "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe expected value of \\(\\hat{\\boldsymbol{\\beta}}\\) is the true parameter, \\(\\boldsymbol{\\beta}\\), i.e., \\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n\n\\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWhen \\(n\\) is large…\nThe expected value of \\(\\hat{\\boldsymbol{\\beta}}\\) is the true parameter, \\(\\boldsymbol{\\beta}\\), i.e., \\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n\n\\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
   },
   {
     "objectID": "slides/22-logistic-inference.html#test-for-a-single-coefficient-1",

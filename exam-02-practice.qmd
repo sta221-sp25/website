@@ -3,12 +3,12 @@ title: Exam 02 practice
 ---
 
 ::: callout-important
-This page contains practice problems to help prepare for Exam 02. This set of practice problems is <u>**not**</u> comprehensive. You should review these [study tips](https://sta221-fa24.netlify.app/slides/23-logistic-regression-review#/tips-for-studying) as you prepare for the exam. \
+This page contains practice problems to help prepare for Exam 02. This set of practice problems is <u>**not**</u> comprehensive. You should review these [study tips](https://sta221-fa24.netlify.app/slides/23-logistic-regression-review#/tips-for-studying) as you prepare for the exam.\
 \
 There is no answer key for these problems. You may ask questions in office hours and on Ed Discussion.
 :::
 
-# Maximum likelihood estimation 
+# Maximum likelihood estimation
 
 ## Exercise 1
 

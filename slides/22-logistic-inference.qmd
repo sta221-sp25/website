@@ -52,6 +52,8 @@ knitr::opts_chunk$set(
 
 -   Exam 02 - April 17 (same format as Exam 01)
 
+    -   Exam 02 practice + lecture recordings available
+
 -   Statistics experience due April 22
 
 ## Questions from this week's content?
@@ -366,7 +368,7 @@ $$
 
 The p-value is calculated using a $\chi_{\Delta df}^2$ distribution, where $\Delta df$ is the number of parameters being tested (the difference in number of parameters between the full and reduced model).[^4]
 
-[^4]: Based on Wilk's Theorem \[\@wilks1935likelihood\]
+[^4]: Based on Wilk's Theorem [@wilks1935likelihood]
 
 ## Example: Include `education`?
 
@@ -464,6 +466,8 @@ How do we know the distribution of $\hat{\boldsymbol{\beta}}$ is normal for larg
 :::
 
 ## Distribution of $\hat{\boldsymbol{\beta}}$
+
+When $n$ is large...
 
 The expected value of $\hat{\boldsymbol{\beta}}$ is the true parameter, $\boldsymbol{\beta}$, i.e., $E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}$
 
