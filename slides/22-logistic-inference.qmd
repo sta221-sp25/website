@@ -232,14 +232,14 @@ $$
 . . .
 
 ::: incremental
--   When $n$ is large, $G \sim \chi^2_p$, ( $G$ follows a Chi-square distribution with $p$ degrees of freedom)
+-   When $n$ is large, $G \sim \chi^2_p$, ( $G$ follows a Chi-square distribution with $p$ degrees of freedom)[^2]
 
--   The p-value is calculated as $P(\chi^2 > G)$[^2]
+-   The p-value is calculated as $P(\chi^2 > G)$
 
 -   Large values of $G$ (small p-values) indicate at least one $\beta_j$ is non-zero
 :::
 
-[^2]: See @wilks1935likelihood for theoretical underpinnings
+[^2]: Based on Wilk's Theorem [@wilks1935likelihood]
 
 ## Heart disease model: drop-in-deviance test
 
@@ -366,7 +366,7 @@ $$
 
 The p-value is calculated using a $\chi_{\Delta df}^2$ distribution, where $\Delta df$ is the number of parameters being tested (the difference in number of parameters between the full and reduced model).[^4]
 
-[^4]: See @wilks1935likelihood for theoretical underpinnings
+[^4]: Based on Wilk's Theorem \[\@wilks1935likelihood\]
 
 ## Example: Include `education`?
 
@@ -469,7 +469,7 @@ The expected value of $\hat{\boldsymbol{\beta}}$ is the true parameter, $\boldsy
 
 . . .
 
-$Var(\hat{\boldsymbol{\beta}})$, the matrix of variances and covariances between estimators, is found by taking the second partial derivatives of the log-likelihood function (Hessian matrix)
+$Var(\hat{\boldsymbol{\beta}})$, the matrix of variances and covariances between estimators
 
 $$
 Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}

@@ -689,8 +689,8 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 <p>. . .</p>
 <div class="incremental">
 <ul class="incremental">
-<li><p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(G \sim \chi^2_p\)</span>, ( <span class="math inline">\(G\)</span> follows a Chi-square distribution with <span class="math inline">\(p\)</span> degrees of freedom)</p></li>
-<li><p>The p-value is calculated as <span class="math inline">\(P(\chi^2 &gt; G)\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
+<li><p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(G \sim \chi^2_p\)</span>, ( <span class="math inline">\(G\)</span> follows a Chi-square distribution with <span class="math inline">\(p\)</span> degrees of freedom)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
+<li><p>The p-value is calculated as <span class="math inline">\(P(\chi^2 &gt; G)\)</span></p></li>
 <li><p>Large values of <span class="math inline">\(G\)</span> (small p-values) indicate at least one <span class="math inline">\(\beta_j\)</span> is non-zero</p></li>
 </ul>
 </div>
@@ -992,7 +992,7 @@ G = D_{reduced} - D_{full} &amp;= (-2\log L_{reduced}) - (-2 \log L_{full}) \\
 <h2 class="anchored" data-anchor-id="distribution-of-hatboldsymbolbeta-1">Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
 <p>The expected value of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the true parameter, <span class="math inline">\(\boldsymbol{\beta}\)</span>, i.e., <span class="math inline">\(E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}\)</span></p>
 <p>. . .</p>
-<p><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>, the matrix of variances and covariances between estimators, is found by taking the second partial derivatives of the log-likelihood function (Hessian matrix)</p>
+<p><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>, the matrix of variances and covariances between estimators</p>
 <p><span class="math display">\[
 Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}
 \]</span></p>
@@ -1406,9 +1406,9 @@ Wilks, SS. 1935. <span>“The Likelihood Test of Independence in Contingency Tab
 
 <ol>
 <li id="fn1"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#ref-wilks1935likelihood" role="doc-biblioref">1935</a>)</span> for theoretical underpinnings<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#ref-wilks1935likelihood" role="doc-biblioref">1935</a>)</span> for theoretical underpinnings<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Based on Wilk’s Theorem <span class="citation" data-cites="wilks1935likelihood">(<a href="#ref-wilks1935likelihood" role="doc-biblioref">Wilks 1935</a>)</span><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Example from <em>Introduction to Statistical Learning</em><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#ref-wilks1935likelihood" role="doc-biblioref">1935</a>)</span> for theoretical underpinnings<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Based on Wilk’s Theorem [@wilks1935likelihood]<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 

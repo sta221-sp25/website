@@ -11273,7 +11273,7 @@
     "href": "slides/22-logistic-inference-notes.html#drop-in-deviance-test-statistic-1",
     "title": "Logistic Regression: Inference",
     "section": "Drop-in-deviance test statistic",
-    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n. . .\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\nThe p-value is calculated as \\(P(\\chi^2 &gt; G)\\)2\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
+    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n. . .\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)2\nThe p-value is calculated as \\(P(\\chi^2 &gt; G)\\)\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero"
   },
   {
     "objectID": "slides/22-logistic-inference-notes.html#heart-disease-model-drop-in-deviance-test",
@@ -11364,7 +11364,7 @@
     "href": "slides/22-logistic-inference-notes.html#distribution-of-hatboldsymbolbeta-1",
     "title": "Logistic Regression: Inference",
     "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe expected value of \\(\\hat{\\boldsymbol{\\beta}}\\) is the true parameter, \\(\\boldsymbol{\\beta}\\), i.e., \\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n. . .\n\\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators, is found by taking the second partial derivatives of the log-likelihood function (Hessian matrix)\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe expected value of \\(\\hat{\\boldsymbol{\\beta}}\\) is the true parameter, \\(\\boldsymbol{\\beta}\\), i.e., \\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n. . .\n\\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
   },
   {
     "objectID": "slides/22-logistic-inference-notes.html#test-for-a-single-coefficient-1",
@@ -11448,7 +11448,7 @@
     "href": "slides/22-logistic-inference-notes.html#footnotes",
     "title": "Logistic Regression: Inference",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nSee Wilks (1935) for theoretical underpinnings↩︎\nSee Wilks (1935) for theoretical underpinnings↩︎\nExample from Introduction to Statistical Learning↩︎\nSee Wilks (1935) for theoretical underpinnings↩︎"
+    "text": "Footnotes\n\n\nSee Wilks (1935) for theoretical underpinnings↩︎\nBased on Wilk’s Theorem (Wilks 1935)↩︎\nExample from Introduction to Statistical Learning↩︎\nBased on Wilk’s Theorem [@wilks1935likelihood]↩︎"
   },
   {
     "objectID": "slides/22-logistic-inference.html#announcements",
@@ -11532,7 +11532,7 @@
     "href": "slides/22-logistic-inference.html#drop-in-deviance-test-statistic-1",
     "title": "Logistic Regression: Inference",
     "section": "Drop-in-deviance test statistic",
-    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)\nThe p-value is calculated as \\(P(\\chi^2 &gt; G)\\)1\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero\n\n\n\nSee Wilks (1935) for theoretical underpinnings"
+    "text": "Drop-in-deviance test statistic\n\\[\nG = -2\\sum_{i=1}^n \\Big[ y_i \\log \\Big(\\frac{\\hat{\\pi}^0}{\\hat{\\pi}^a_i}\\Big) + (1 - y_i)\\log \\Big(\\frac{1-\\hat{\\pi}^0}{1-\\hat{\\pi}^a_i}\\Big)\\Big]\n\\]\n\n\n\nWhen \\(n\\) is large, \\(G \\sim \\chi^2_p\\), ( \\(G\\) follows a Chi-square distribution with \\(p\\) degrees of freedom)1\nThe p-value is calculated as \\(P(\\chi^2 &gt; G)\\)\nLarge values of \\(G\\) (small p-values) indicate at least one \\(\\beta_j\\) is non-zero\n\n\n\nBased on Wilk’s Theorem (Wilks 1935)"
   },
   {
     "objectID": "slides/22-logistic-inference.html#heart-disease-model-drop-in-deviance-test",
@@ -11574,7 +11574,7 @@
     "href": "slides/22-logistic-inference.html#drop-in-deviance-test-2",
     "title": "Logistic Regression: Inference",
     "section": "Drop-in-deviance test",
-    "text": "Drop-in-deviance test\n\\[\n\\begin{aligned}\n&H_0: \\beta_{q+1} = \\dots = \\beta_p = 0\\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\n\\]\n\nThe test statistic is\n\\[\n\\begin{aligned}\nG = D_{reduced} - D_{full} &= (-2\\log L_{reduced}) - (-2 \\log L_{full}) \\\\\n&= -2(\\log L_{reduced} - \\log L_{full})\n\\end{aligned}\n\\]\n\n\nThe p-value is calculated using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).1\n\nSee Wilks (1935) for theoretical underpinnings"
+    "text": "Drop-in-deviance test\n\\[\n\\begin{aligned}\n&H_0: \\beta_{q+1} = \\dots = \\beta_p = 0\\\\\n&H_a: \\beta_j \\neq 0 \\text{ for at least one }j\n\\end{aligned}\n\\]\n\nThe test statistic is\n\\[\n\\begin{aligned}\nG = D_{reduced} - D_{full} &= (-2\\log L_{reduced}) - (-2 \\log L_{full}) \\\\\n&= -2(\\log L_{reduced} - \\log L_{full})\n\\end{aligned}\n\\]\n\n\nThe p-value is calculated using a \\(\\chi_{\\Delta df}^2\\) distribution, where \\(\\Delta df\\) is the number of parameters being tested (the difference in number of parameters between the full and reduced model).1\n\nBased on Wilk’s Theorem [@wilks1935likelihood]"
   },
   {
     "objectID": "slides/22-logistic-inference.html#example-include-education",
@@ -11623,7 +11623,7 @@
     "href": "slides/22-logistic-inference.html#distribution-of-hatboldsymbolbeta-1",
     "title": "Logistic Regression: Inference",
     "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
-    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe expected value of \\(\\hat{\\boldsymbol{\\beta}}\\) is the true parameter, \\(\\boldsymbol{\\beta}\\), i.e., \\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n\n\\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators, is found by taking the second partial derivatives of the log-likelihood function (Hessian matrix)\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe expected value of \\(\\hat{\\boldsymbol{\\beta}}\\) is the true parameter, \\(\\boldsymbol{\\beta}\\), i.e., \\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n\n\\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^\\mathsf{T}\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix, such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
   },
   {
     "objectID": "slides/22-logistic-inference.html#test-for-a-single-coefficient-1",

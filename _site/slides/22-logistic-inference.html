@@ -411,13 +411,13 @@ G = -2\sum_{i=1}^n \Big[ y_i \log \Big(\frac{\hat{\pi}^0}{\hat{\pi}^a_i}\Big) + 
 <div class="fragment">
 <div>
 <ul>
-<li class="fragment"><p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(G \sim \chi^2_p\)</span>, ( <span class="math inline">\(G\)</span> follows a Chi-square distribution with <span class="math inline">\(p\)</span> degrees of freedom)</p></li>
-<li class="fragment"><p>The p-value is calculated as <span class="math inline">\(P(\chi^2 &gt; G)\)</span><sup>1</sup></p></li>
+<li class="fragment"><p>When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(G \sim \chi^2_p\)</span>, ( <span class="math inline">\(G\)</span> follows a Chi-square distribution with <span class="math inline">\(p\)</span> degrees of freedom)<sup>1</sup></p></li>
+<li class="fragment"><p>The p-value is calculated as <span class="math inline">\(P(\chi^2 &gt; G)\)</span></p></li>
 <li class="fragment"><p>Large values of <span class="math inline">\(G\)</span> (small p-values) indicate at least one <span class="math inline">\(\beta_j\)</span> is non-zero</p></li>
 </ul>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#/references" role="doc-biblioref" onclick="">1935</a>)</span> for theoretical underpinnings</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Based on Wilk’s Theorem <span class="citation" data-cites="wilks1935likelihood">(<a href="#/references" role="doc-biblioref" onclick="">Wilks 1935</a>)</span></p></li></ol></aside></section>
 <section id="heart-disease-model-drop-in-deviance-test" class="slide level2">
 <h2>Heart disease model: drop-in-deviance test</h2>
 <p><span class="math display">\[
@@ -554,7 +554,7 @@ G = D_{reduced} - D_{full} &amp;= (-2\log L_{reduced}) - (-2 \log L_{full}) \\
 <div class="fragment">
 <p>The p-value is calculated using a <span class="math inline">\(\chi_{\Delta df}^2\)</span> distribution, where <span class="math inline">\(\Delta df\)</span> is the number of parameters being tested (the difference in number of parameters between the full and reduced model).<sup>1</sup></p>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn4"><p>See <span class="citation" data-cites="wilks1935likelihood">Wilks (<a href="#/references" role="doc-biblioref" onclick="">1935</a>)</span> for theoretical underpinnings</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>Based on Wilk’s Theorem [@wilks1935likelihood]</p></li></ol></aside></section>
 <section id="example-include-education" class="slide level2">
 <h2>Example: Include <code>education</code>?</h2>
 <p>Should we include <code>education</code> in the model?</p>
@@ -730,7 +730,7 @@ G = D_{reduced} - D_{full} &amp;= (-2\log L_{reduced}) - (-2 \log L_{full}) \\
 <h2>Distribution of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span></h2>
 <p>The expected value of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the true parameter, <span class="math inline">\(\boldsymbol{\beta}\)</span>, i.e., <span class="math inline">\(E(\hat{\boldsymbol{\beta}}) = \boldsymbol{\beta}\)</span></p>
 <div class="fragment">
-<p><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>, the matrix of variances and covariances between estimators, is found by taking the second partial derivatives of the log-likelihood function (Hessian matrix)</p>
+<p><span class="math inline">\(Var(\hat{\boldsymbol{\beta}})\)</span>, the matrix of variances and covariances between estimators</p>
 <p><span class="math display">\[
 Var(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\mathsf{T}\mathbf{V}\mathbf{X})^{-1}
 \]</span></p>
