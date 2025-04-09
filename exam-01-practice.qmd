@@ -117,7 +117,7 @@ See January 23 lecture ["Geometric interpretation of least-squares regression"](
 
 Explain why we say "holding all else constant" when interpreting the coefficients in a multiple linear regression model.
 
-## Exercise 13 
+## Exercise 13
 
 Suppose we have two models:
 
@@ -135,7 +135,7 @@ Rework Exercises 1 - 5 in [HW 01](/hw/hw-01.html) for more practice with theory 
 
 Rework Exercises 1 - 5 in [HW 02](/hw/hw-02.html) for more practice with theory and math.
 
-## Relevant lectures, assignments and AEs 
+## Relevant lectures, assignments and AEs
 
 Ask yourself "why" questions as you the slides, review your answers, process, and derivations on these assignments. It may also be helpful to explain your process to others.
 

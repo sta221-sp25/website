@@ -14,7 +14,7 @@
     "href": "exam-02-practice.html#exercise-1",
     "title": "Exam 02 practice",
     "section": "Exercise 1",
-    "text": "Exercise 1\nGiven the simple linear regression model\n\\[y_i = \\beta_0 + \\beta_1x_i + \\epsilon_i, \\hspace{10mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\\]\nWrite the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of \\(\\beta_0\\), \\(\\beta_1\\), and \\(\\sigma^2_{\\epsilon}\\) are of the form shown on this slide.",
+    "text": "Exercise 1\nGiven the simple linear regression model\n\\[y_i = \\beta_0 + \\beta_1x_i + \\epsilon_i, \\hspace{10mm} \\epsilon_i \\sim N(0, \\sigma^2_{\\epsilon})\\]\nWrite the likelihood function and use it to show that the maximum likelihood estimators (MLEs) of \\(\\beta_0\\), \\(\\beta_1\\), and \\(\\sigma^2_{\\epsilon}\\) are of the form shown on this slide \\((\\tilde{\\beta}_0)\\) and this slide \\((\\tilde{\\beta}_1, \\tilde{\\sigma}^2_{\\epsilon})\\) .",
     "crumbs": [
       "Exam 02 Practice"
     ]
@@ -34,7 +34,7 @@
     "href": "exam-02-practice.html#exercise-3",
     "title": "Exam 02 practice",
     "section": "Exercise 3",
-    "text": "Exercise 3\nGiven the logistic regression model\n\\[\n\\log\\Big(\\frac{\\pi}{1-\\pi}\\Big) = \\mathbf{X}\\boldsymbol{\\beta}\n\\]\n\nWrite the likelihood function\nRework the derivation from the November 7 lecture to show the derivative solved to find the MLEs is of the form on this slide. (You can check your answer using the board work posted in Canvas).",
+    "text": "Exercise 3\nGiven the logistic regression model\n\\[\n\\log\\Big(\\frac{\\pi}{1-\\pi}\\Big) = \\mathbf{X}\\boldsymbol{\\beta}\n\\]\n\nWrite the likelihood function\nRework the derivation from the March 27 lecture to show the derivative solved to find the MLEs is of the form on this slide. (You can check your answer using the board work posted in Canvas).",
     "crumbs": [
       "Exam 02 Practice"
     ]
@@ -54,7 +54,7 @@
     "href": "exam-02-practice.html#exercise-5",
     "title": "Exam 02 practice",
     "section": "Exercise 5",
-    "text": "Exercise 5\nRework Exercises 1 - 3 in HW 03.",
+    "text": "Exercise 5\nRework Exercises 1 - 2 in HW 04.",
     "crumbs": [
       "Exam 02 Practice"
     ]
@@ -84,7 +84,7 @@
     "href": "exam-02-practice.html#exercise-8",
     "title": "Exam 02 practice",
     "section": "Exercise 8",
-    "text": "Exercise 8\nRework Exercise 4 in HW 03.",
+    "text": "Exercise 8\nRework Exercise 1 in HW 03.",
     "crumbs": [
       "Exam 02 Practice"
     ]
@@ -94,7 +94,7 @@
     "href": "exam-02-practice.html#exercise-9",
     "title": "Exam 02 practice",
     "section": "Exercise 9",
-    "text": "Exercise 9\nRecall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\hat{\\sigma}^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1}\\). One of the effects of multicollinearity is that the model coefficients will have large variances. Explain why.",
+    "text": "Exercise 9\nRecall that for the linear regression, the variance of the estimated coefficients are the diagonal elements of \\(Var(\\hat{\\boldsymbol{\\beta}}) = \\hat{\\sigma}^2_{\\epsilon}(\\mathbf{X}^T\\mathbf{X})^{-1}\\). One of the impacts of multicollinearity is that the model coefficients will have large variances. Explain why.",
     "crumbs": [
       "Exam 02 Practice"
     ]
@@ -124,7 +124,7 @@
     "href": "exam-02-practice.html#exercise-12",
     "title": "Exam 02 practice",
     "section": "Exercise 12",
-    "text": "Exercise 12\nConsider the hypotheses being tested in the Nested F Test on this slide. The output produced by the anova() function for the Nested F test is shown here. Explain how each value in the table is computed.",
+    "text": "Exercise 12\nWrite the hypotheses being tested in the drop-in-deviance test output on this slide. Explain how each value in the table is computed.",
     "crumbs": [
       "Exam 02 Practice"
     ]
@@ -134,7 +134,7 @@
     "href": "exam-02-practice.html#exercise-13",
     "title": "Exam 02 practice",
     "section": "Exercise 13",
-    "text": "Exercise 13\n\nWhat is an advantage of using a Nested F test instead of AIC (or BIC) to compare linear regression models?\nWhat is an advantage of using AIC (or BIC) instead of a Nested F test to compare linear regression models?",
+    "text": "Exercise 13\n\nWhat is an advantage of using a drop-in-deviance test instead of AIC (or BIC) to compare regression models?\nWhat is an advantage of using AIC (or BIC) instead of a drop-in-deviance test to compare regression models?",
     "crumbs": [
       "Exam 02 Practice"
     ]
@@ -185,36 +185,6 @@
     "title": "Exam 02 practice",
     "section": "Exercise 18",
     "text": "Exercise 18\n\nDraw an example of an ROC curve such that the AUC is about 0.55\nDraw an example of an ROC curve such that the AUC is about 0.9.\nExplain what each point on an ROC curve represents.",
-    "crumbs": [
-      "Exam 02 Practice"
-    ]
-  },
-  {
-    "objectID": "exam-02-practice.html#exercise-19",
-    "href": "exam-02-practice.html#exercise-19",
-    "title": "Exam 02 practice",
-    "section": "Exercise 19",
-    "text": "Exercise 19\nConsider the drop-in-deviance test from lecture testing whether education should be added to a model that already includes age, totChol, and currentSmoker to predict the odds a person is high risk for heart disease.\nThe anova() output for the drop-in-deviance test is shown on this slide. Explain how each value in the table is computed.",
-    "crumbs": [
-      "Exam 02 Practice"
-    ]
-  },
-  {
-    "objectID": "exam-02-practice.html#exercise-20",
-    "href": "exam-02-practice.html#exercise-20",
-    "title": "Exam 02 practice",
-    "section": "Exercise 20",
-    "text": "Exercise 20\nRecall this empirical logit plot to check the linearity condition for the model using age , sex, and years of experience to predict access to PPE for employees at food establishments in Summer 2020.\nThere is a point on the plot around (20, -0.5). Explain what these coordinates mean in the context of the data.",
-    "crumbs": [
-      "Exam 02 Practice"
-    ]
-  },
-  {
-    "objectID": "exam-02-practice.html#relevant-assignments-and-aes",
-    "href": "exam-02-practice.html#relevant-assignments-and-aes",
-    "title": "Exam 02 practice",
-    "section": "Relevant assignments and AEs",
-    "text": "Relevant assignments and AEs\nThe following assignments and AEs cover Exam 02 content. Ask yourself “why” questions as your review your answers, process, and derivations on these assignments. It may also be helpful to explain your process to others.\n\nHW 03, HW 04\nLab 04, Lab 05, Lab 06\nAE 05, AE 06, AE 07, AE 08",
     "crumbs": [
       "Exam 02 Practice"
     ]
