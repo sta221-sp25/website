@@ -1,14 +1,14 @@
 ---
-title: "AE 07: Newton Raphson"
-date: "November 19, 2024"
+title: "AE 06: Newton Raphson"
+date: "April 10, 2025"
 editor: visual
 bibliography: references.bib
 ---
 
 ::: callout-important
-Go to the course GitHub organization and locate your ae-07 repo to get started.
+Go to the course GitHub organization and locate your ae-06 repo to get started.
 
-Render, commit, and push your responses to GitHub by the end of class to submit your AE.
+You do not need to submit this AE.
 :::
 
 ```{r}
@@ -51,7 +51,7 @@ covid_df <- read_csv("data/covid-prevention-study.csv") |>
 ## Functions for Newton-Raphson
 
 ```{r}
-## Calculate the first derivative of logL (score function)
+## Calculate the gradient of logL (score function)
 
 calc_first_deriv <- function(beta, X, y){
   first_deriv <- rep(0, length(beta))
@@ -61,7 +61,7 @@ calc_first_deriv <- function(beta, X, y){
   return(colSums(first_deriv)) #return values as a vector 
 }
 
-## Calculate the second derivative of logL (Hessian)
+## Calculate the Hessian matrix 
 
 calc_second_deriv <- function(beta, X, y){
   second_deriv <- matrix(0, nrow = length(beta), ncol = length(beta))
@@ -74,7 +74,7 @@ calc_second_deriv <- function(beta, X, y){
 }
 ```
 
-## Get starting values
+## Starting values
 
 ```{r}
 

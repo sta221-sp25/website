@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-11-19">
+<meta name="dcterms.date" content="2025-04-10">
 
-<title>AE 07: Newton Raphson – STA 221 - Spring 2025</title>
+<title>AE 06: Newton Raphson – STA 221 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -163,7 +163,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 07: Newton Raphson</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 06: Newton Raphson</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -428,7 +428,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#covid-19-infection-prevention-practices-at-food-establishments" id="toc-covid-19-infection-prevention-practices-at-food-establishments" class="nav-link" data-scroll-target="#covid-19-infection-prevention-practices-at-food-establishments">COVID-19 infection prevention practices at food establishments</a></li>
   <li><a href="#functions-for-newton-raphson" id="toc-functions-for-newton-raphson" class="nav-link" data-scroll-target="#functions-for-newton-raphson">Functions for Newton-Raphson</a></li>
-  <li><a href="#get-starting-values" id="toc-get-starting-values" class="nav-link" data-scroll-target="#get-starting-values">Get starting values</a></li>
+  <li><a href="#starting-values" id="toc-starting-values" class="nav-link" data-scroll-target="#starting-values">Starting values</a></li>
   <li><a href="#estimate-boldsymbolbeta" id="toc-estimate-boldsymbolbeta" class="nav-link" data-scroll-target="#estimate-boldsymbolbeta">Estimate <span class="math inline">\(\boldsymbol{\beta}\)</span></a></li>
   <li><a href="#show-results" id="toc-show-results" class="nav-link" data-scroll-target="#show-results">Show results</a></li>
   <li><a href="#coefficient-estimates-from-glm" id="toc-coefficient-estimates-from-glm" class="nav-link" data-scroll-target="#coefficient-estimates-from-glm">Coefficient estimates from <code>glm</code></a></li>
@@ -442,7 +442,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">AE 07: Newton Raphson</h1>
+<h1 class="title">AE 06: Newton Raphson</h1>
 </div>
 
 
@@ -453,7 +453,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 19, 2024</p>
+      <p class="date">April 10, 2025</p>
     </div>
   </div>
   
@@ -475,8 +475,8 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Go to the course GitHub organization and locate your ae-07 repo to get started.</p>
-<p>Render, commit, and push your responses to GitHub by the end of class to submit your AE.</p>
+<p>Go to the course GitHub organization and locate your ae-06 repo to get started.</p>
+<p>You do not need to submit this AE.</p>
 </div>
 </div>
 <div class="cell">
@@ -505,7 +505,7 @@ Important
 <section id="functions-for-newton-raphson" class="level2">
 <h2 class="anchored" data-anchor-id="functions-for-newton-raphson">Functions for Newton-Raphson</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calculate the first derivative of logL (score function)</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calculate the gradient of logL (score function)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>calc_first_deriv <span class="ot">&lt;-</span> <span class="cf">function</span>(beta, X, y){</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  first_deriv <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(beta))</span>
@@ -515,7 +515,7 @@ Important
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">colSums</span>(first_deriv)) <span class="co">#return values as a vector </span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Calculate the second derivative of logL (Hessian)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Calculate the Hessian matrix </span></span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>calc_second_deriv <span class="ot">&lt;-</span> <span class="cf">function</span>(beta, X, y){</span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  second_deriv <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> <span class="fu">length</span>(beta), <span class="at">ncol =</span> <span class="fu">length</span>(beta))</span>
@@ -528,8 +528,8 @@ Important
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="get-starting-values" class="level2">
-<h2 class="anchored" data-anchor-id="get-starting-values">Get starting values</h2>
+<section id="starting-values" class="level2">
+<h2 class="anchored" data-anchor-id="starting-values">Starting values</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># design matrix</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(<span class="sc">~</span> age <span class="sc">+</span> sex <span class="sc">+</span> years, <span class="at">data =</span> covid_df)</span>
