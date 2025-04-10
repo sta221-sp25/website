@@ -8701,14 +8701,14 @@
     "href": "slides/23-logistic-assumptions-notes.html",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "",
-    "text": "HW 04 due TODAY at 11:59pm\nProject draft due at beginning of lab tomorrow\nExam 02 - April 17 (same format as Exam 01)\n\nExam 02 practice + lecture recordings available\n\nStatistics experience due April 22"
+    "text": "HW 04 due TODAY at 11:59pm\nProject draft due at beginning of lab tomorrow\n\nPeer review in lab\n\nExam 02 - April 17 (same format as Exam 01)\n\nExam 02 practice + lecture recordings available\n\nStatistics experience due April 22"
   },
   {
     "objectID": "slides/23-logistic-assumptions-notes.html#announcements",
     "href": "slides/23-logistic-assumptions-notes.html#announcements",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "",
-    "text": "HW 04 due TODAY at 11:59pm\nProject draft due at beginning of lab tomorrow\nExam 02 - April 17 (same format as Exam 01)\n\nExam 02 practice + lecture recordings available\n\nStatistics experience due April 22"
+    "text": "HW 04 due TODAY at 11:59pm\nProject draft due at beginning of lab tomorrow\n\nPeer review in lab\n\nExam 02 - April 17 (same format as Exam 01)\n\nExam 02 practice + lecture recordings available\n\nStatistics experience due April 22"
   },
   {
     "objectID": "slides/23-logistic-assumptions-notes.html#questions-from-this-weeks-content",
@@ -8722,7 +8722,7 @@
     "href": "slides/23-logistic-assumptions-notes.html#topics",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Topics",
-    "text": "Topics\n\nConditions for logistic regression\nEstimating coefficients for logistic regression model"
+    "text": "Topics\n\nConfidence intervals for logistic regression\nConditions for logistic regression\nEstimating coefficients for logistic regression model"
   },
   {
     "objectID": "slides/23-logistic-assumptions-notes.html#computational-setup",
@@ -8792,7 +8792,7 @@
     "href": "slides/23-logistic-assumptions-notes.html#eda-potential-interaction-effect",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "EDA: Potential interaction effect",
-    "text": "EDA: Potential interaction effect\n\n#| echo: false\n#| fig-align: center\n\nggplot(data = covid_df, aes(x = ppe_access, y = age)) + \n  geom_boxplot(fill = \"steelblue\", color = \"black\")  +\n  labs(x = \"PPE Access\",\n       y = \"Age (in years)\", \n       title = \"PPE Access vs. Age\",\n       subtitle = \"by sex\") + \n  coord_flip() + \n  facet_wrap(~ sex)"
+    "text": "EDA: Potential interaction effect"
   },
   {
     "objectID": "slides/23-logistic-assumptions-notes.html#empirical-logit",
@@ -8806,7 +8806,7 @@
     "href": "slides/23-logistic-assumptions-notes.html#calculating-empirical-logit-categorical-predictor",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Calculating empirical logit (categorical predictor)",
-    "text": "Calculating empirical logit (categorical predictor)\nIf the predictor is categorical, we can calculate the empirical logit for each level of the predictor.\n\ncovid_df |&gt;\n  count(sex, ppe_access) |&gt;\n  group_by(sex) |&gt;\n  mutate(prop = n/sum(n)) |&gt;\n # filter(ppe_access == \"1\") |&gt;\n  mutate(emp_logit = log(prop/(1-prop)))\n\n# A tibble: 4 × 5\n# Groups:   sex [2]\n  sex    ppe_access     n  prop emp_logit\n  &lt;fct&gt;  &lt;fct&gt;      &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 Female 0            114 0.525     0.101\n2 Female 1            103 0.475    -0.101\n3 Male   0             65 0.353    -0.605\n4 Male   1            119 0.647     0.605"
+    "text": "Calculating empirical logit (categorical predictor)\nIf the predictor is categorical, we can calculate the empirical logit for each level of the predictor.\n\ncovid_df |&gt;\n  count(sex, ppe_access) |&gt;\n  group_by(sex) |&gt;\n  mutate(prop = n/sum(n)) |&gt;\n  mutate(emp_logit = log(prop/(1-prop)))\n\n# A tibble: 4 × 5\n# Groups:   sex [2]\n  sex    ppe_access     n  prop emp_logit\n  &lt;fct&gt;  &lt;fct&gt;      &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 Female 0            114 0.525     0.101\n2 Female 1            103 0.475    -0.101\n3 Male   0             65 0.353    -0.605\n4 Male   1            119 0.647     0.605"
   },
   {
     "objectID": "slides/23-logistic-assumptions-notes.html#calculating-empirical-logit-quantitative-predictor",
@@ -8967,7 +8967,7 @@
     "href": "slides/23-logistic-assumptions.html#announcements",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Announcements",
-    "text": "Announcements\n\nHW 04 due TODAY at 11:59pm\nProject draft due at beginning of lab tomorrow\nExam 02 - April 17 (same format as Exam 01)\n\nExam 02 practice + lecture recordings available\n\nStatistics experience due April 22"
+    "text": "Announcements\n\nHW 04 due TODAY at 11:59pm\nProject draft due at beginning of lab tomorrow\n\nPeer review in lab\n\nExam 02 - April 17 (same format as Exam 01)\n\nExam 02 practice + lecture recordings available\n\nStatistics experience due April 22"
   },
   {
     "objectID": "slides/23-logistic-assumptions.html#questions-from-this-weeks-content",
@@ -8981,7 +8981,7 @@
     "href": "slides/23-logistic-assumptions.html#topics",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Topics",
-    "text": "Topics\n\nConditions for logistic regression\nEstimating coefficients for logistic regression model"
+    "text": "Topics\n\nConfidence intervals for logistic regression\nConditions for logistic regression\nEstimating coefficients for logistic regression model"
   },
   {
     "objectID": "slides/23-logistic-assumptions.html#computational-setup",
@@ -9051,7 +9051,7 @@
     "href": "slides/23-logistic-assumptions.html#eda-potential-interaction-effect",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "EDA: Potential interaction effect",
-    "text": "EDA: Potential interaction effect\n\n#| echo: false\n#| fig-align: center\n\nggplot(data = covid_df, aes(x = ppe_access, y = age)) + \n  geom_boxplot(fill = \"steelblue\", color = \"black\")  +\n  labs(x = \"PPE Access\",\n       y = \"Age (in years)\", \n       title = \"PPE Access vs. Age\",\n       subtitle = \"by sex\") + \n  coord_flip() + \n  facet_wrap(~ sex)"
+    "text": "EDA: Potential interaction effect"
   },
   {
     "objectID": "slides/23-logistic-assumptions.html#empirical-logit",
@@ -9065,7 +9065,7 @@
     "href": "slides/23-logistic-assumptions.html#calculating-empirical-logit-categorical-predictor",
     "title": "Logistic Regression: Assumptions + Estimation",
     "section": "Calculating empirical logit (categorical predictor)",
-    "text": "Calculating empirical logit (categorical predictor)\nIf the predictor is categorical, we can calculate the empirical logit for each level of the predictor.\n\ncovid_df |&gt;\n  count(sex, ppe_access) |&gt;\n  group_by(sex) |&gt;\n  mutate(prop = n/sum(n)) |&gt;\n # filter(ppe_access == \"1\") |&gt;\n  mutate(emp_logit = log(prop/(1-prop)))\n\n# A tibble: 4 × 5\n# Groups:   sex [2]\n  sex    ppe_access     n  prop emp_logit\n  &lt;fct&gt;  &lt;fct&gt;      &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 Female 0            114 0.525     0.101\n2 Female 1            103 0.475    -0.101\n3 Male   0             65 0.353    -0.605\n4 Male   1            119 0.647     0.605"
+    "text": "Calculating empirical logit (categorical predictor)\nIf the predictor is categorical, we can calculate the empirical logit for each level of the predictor.\n\ncovid_df |&gt;\n  count(sex, ppe_access) |&gt;\n  group_by(sex) |&gt;\n  mutate(prop = n/sum(n)) |&gt;\n  mutate(emp_logit = log(prop/(1-prop)))\n\n# A tibble: 4 × 5\n# Groups:   sex [2]\n  sex    ppe_access     n  prop emp_logit\n  &lt;fct&gt;  &lt;fct&gt;      &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 Female 0            114 0.525     0.101\n2 Female 1            103 0.475    -0.101\n3 Male   0             65 0.353    -0.605\n4 Male   1            119 0.647     0.605"
   },
   {
     "objectID": "slides/23-logistic-assumptions.html#calculating-empirical-logit-quantitative-predictor",

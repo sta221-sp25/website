@@ -46,6 +46,8 @@ knitr::opts_chunk$set(
 
 -   Project draft due at beginning of lab tomorrow
 
+    -   Peer review in lab
+
 -   Exam 02 - April 17 (same format as Exam 01)
 
     -   Exam 02 practice + lecture recordings available
@@ -63,6 +65,8 @@ knitr::opts_chunk$set(
 </center>
 
 ## Topics
+
+-   Confidence intervals for logistic regression
 
 -   Conditions for logistic regression
 
@@ -185,7 +189,6 @@ ggplot(data = covid_df, aes(x = ppe_access, y = age)) +
 ## EDA: Potential interaction effect
 
 ```{r}
-
 #| echo: false
 #| fig-align: center
 
@@ -194,7 +197,7 @@ ggplot(data = covid_df, aes(x = ppe_access, y = age)) +
   labs(x = "PPE Access",
        y = "Age (in years)", 
        title = "PPE Access vs. Age",
-       subtitle = "by sex") + 
+       subtitle = "by Sex") + 
   coord_flip() + 
   facet_wrap(~ sex)
 ```
@@ -216,7 +219,6 @@ covid_df |>
   count(sex, ppe_access) |>
   group_by(sex) |>
   mutate(prop = n/sum(n)) |>
- # filter(ppe_access == "1") |>
   mutate(emp_logit = log(prop/(1-prop)))
 ```
 
