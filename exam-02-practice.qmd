@@ -77,9 +77,7 @@ Suppose we fit a linear model with a log transformation on one predictor variabl
 $$\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1\log (x_1) + \dots + \hat{\beta}_p x_p
 $$
 
--   Show mathematically why the slope and intercept are interpreted similarly as shown on [this slide](https://sta221-sp25.netlify.app/slides/15-transformations-contd#/model-interpretation) when $x$ is multiplied by a factor $C$.
-
--   Explain why we need "holding all else constant" in this interpretation but not for the one shown in the lecture slides.
+Show mathematically why the slope and intercept are interpreted as shown on [this slide](https://sta221-sp25.netlify.app/slides/15-transformations-contd#/model-interpretation) when $x$ is multiplied by a factor $C$.
 
 ## Exercise 8
 

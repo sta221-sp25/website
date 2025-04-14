@@ -74,7 +74,7 @@
     "href": "exam-02-practice.html#exercise-7",
     "title": "Exam 02 practice",
     "section": "Exercise 7",
-    "text": "Exercise 7\nSuppose we fit a linear model with a log transformation on one predictor variable, i.e.,\n\\[\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1\\log (x_1) + \\dots + \\hat{\\beta}_p x_p\n\\]\n\nShow mathematically why the slope and intercept are interpreted similarly as shown on this slide when \\(x\\) is multiplied by a factor \\(C\\).\nExplain why we need “holding all else constant” in this interpretation but not for the one shown in the lecture slides.",
+    "text": "Exercise 7\nSuppose we fit a linear model with a log transformation on one predictor variable, i.e.,\n\\[\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1\\log (x_1) + \\dots + \\hat{\\beta}_p x_p\n\\]\nShow mathematically why the slope and intercept are interpreted as shown on this slide when \\(x\\) is multiplied by a factor \\(C\\).",
     "crumbs": [
       "Exam 02 Practice"
     ]
