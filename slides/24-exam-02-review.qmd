@@ -66,9 +66,7 @@ Course evaluations are open now until April 26 at 11:59pm.
 
 -   Optional project meetings April 22 and 23
 
-    -   [Click here](https://docs.google.com/spreadsheets/d/1FRyDXyAf06QAqxxir_ie0K8uYRSrzd7nqNqWvL7pRsY/edit?usp=sharing) to sign up (one time slot per team)
-
-<!-- -->
+    -   [Click here](https://docs.google.com/spreadsheets/d/1FRyDXyAf06QAqxxir_ie0K8uYRSrzd7nqNqWvL7pRsY/edit?usp=sharing) to sign up (one time slot per team) by April 21 at 9pm
 
 -   Written report due April 28
 
@@ -84,11 +82,11 @@ Reminders and updates sent through Canvas announcements.
 
 -   50 points total
 
-    -   in-class: 35 points
+    -   In-class: 35 points
 
-    -   take-home: 15 points
+    -   Take-home: 15 points
 
--   In-class: 75 minutes during April 15 lecture
+-   In-class: 75 minutes during April 17 lecture
 
     -   See email for classroom assignment
 
