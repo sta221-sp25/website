@@ -1,0 +1,171 @@
+---
+title: "Exam 02 review"
+author: "Prof. Maria Tackett"
+date: "2025-04-15"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 24-exam-02-review-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+	fig.align = "center",
+	fig.height =5,
+	fig.width = 8,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+## Announcements
+
+-   Statistics experience due April 22 at 11:59pm
+
+-   Exam 02 on Thursday during lecture
+
+    -   Ed Discussion will be read-only once exam starts
+
+    -   No office hours Thursday and Friday
+
+## Course evaluations
+
+Please share your feedback about the course!
+
+Course evaluations are open now until April 26 at 11:59pm.
+
+-   If the response rate is at least 80%, everyone in the class will receive 0.5 points (out of 50) on their Exam 02 grade.
+
+-   Should receive emails with links to course evaluations.
+
+## Project
+
+-   See peer feedback in the Issues of GitHub repo
+
+-   Optional project meetings April 22 and 23
+
+    -   [Click here](https://docs.google.com/spreadsheets/d/1FRyDXyAf06QAqxxir_ie0K8uYRSrzd7nqNqWvL7pRsY/edit?usp=sharing) to sign up (one time slot per team)
+
+<!-- -->
+
+-   Written report due April 28
+
+-   Project highlights & final repo due April 30
+
+-   Project survey & team feedback due May 1
+
+::: callout-note
+Reminders and updates sent through Canvas announcements.
+:::
+
+## Exam 02 format
+
+-   50 points total
+
+    -   in-class: 35 points
+
+    -   take-home: 15 points
+
+-   In-class: 75 minutes during April 15 lecture
+
+    -   See email for classroom assignment
+
+-   Take-home: due Sunday, April 20 at 11:59pm
+
+-   Official university documentation or note from your academic dean required to excuse any part of the exam
+
+## Exam 02 content {.midi}
+
+Concepts from the first half of the semester continue to apply, but the exam will focus on new content since Exam 01.
+
+::::: columns
+::: {.column width="50%"}
+-   Model diagnostics
+
+-   Multicollinearity
+
+-   Variable transformations
+
+-   Likelihood functions and Maximum likelihood estimation
+
+-   Properties of estimators
+
+-   Probabilities, odds, odds ratios
+:::
+
+::: {.column width="50%"}
+-   Fitting and interpreting logistic model
+
+<!-- -->
+
+-   Predicted probabilities and classes
+
+-   ROC curve and AUC
+
+-   Inference for logistic regression
+
+-   Assumptions for logistic regression
+
+-   Model comparison
+
+-   [**Not on the exam**]{.underline}: Newton-Raphson method
+:::
+:::::
+
+## Tips for studying {.midi}
+
+-   Rework derivations from assignments and lecture notes
+
+-   Review exercises in AEs and assignments, asking "why" as you review your process and reasoning
+
+-   Understand similarities and differences between linear and logistic regression
+
+    -   How are interpretations for logistic regression similar to interpretations for linear regression with response $\log(y)$? How are they different?
+
+-   Focus on understanding not memorization
+
+-   Explain concepts / process to others
+
+-   Ask questions in office hours
+
+-   Review lecture recordings as needed (available until start of in-class exam)
+
+## Resources
+
+-   Lecture notes, AEs, labs, homework
+
+-   Lecture recordings available until start of the exam (link in course website menu)
+
+-   HW and lab assignments
+
+    -   Keys Lab 06 and HW 04 on Gradescope
+
+-   Exam 02 practice problems (link in course website menu)
+
+# Application exercise
+
+::: appex
+📋 [sta221-sp25.netlify.app/ae/ae-07-exam-02-review](https://sta221-sp25.netlify.app/ae/ae-07-exam-02-review)
+:::

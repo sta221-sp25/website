@@ -1,6 +1,6 @@
 ---
-title: "AE 09: Exam 02 review"
-date: "December 2, 2024"
+title: "AE 07: Exam 02 review"
+date: "April 15, 2025"
 editor: visual
 bibliography: references.bib
 execute: 
@@ -9,7 +9,7 @@ execute:
 ---
 
 ::: callout-important
-Go to the course GitHub organization and locate your ae-09 repo to get started.
+Go to the course GitHub organization and locate your ae-07 repo to get started.
 
 Render, commit, and push your responses to GitHub by the end of class to submit your AE.
 :::
@@ -85,11 +85,11 @@ $$
  \log(\frac{\pi_i}{1 - \pi_i}) = \beta_0 + \beta_1 ~ income + \beta_2 ~ rating + \beta_3 ~ regionSouth + \beta_4 ~ regionWest
 $$
 
-a.  Use the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of $\beta_0, \beta_1, \beta_2, \beta_3, \beta_4$
+a.  Write the interpretation of `income` in terms of the odds of maxing out a credit card.
 
-b.  Suppose there are two individuals. Individual 1 has an income of \$64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of \$135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of $\beta_0, \beta_1, \beta_2$, etc.
+b.  Use the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of $\beta_0, \beta_1, \beta_2, \beta_3, \beta_4$.
 
-c.  Use R to compute the odds for each individual. How do the odds compare? Is this consistent with your response to part (b)?
+c.  Suppose there are two individuals. Individual 1 has an income of \$64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of \$135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of $\beta_0, \beta_1, \beta_2$, etc.
 
 ## Exercise 4
 

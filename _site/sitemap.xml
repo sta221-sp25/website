@@ -121,123 +121,55 @@
     <lastmod>2025-03-20T01:13:44.207Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/20-logistic-prediction.html</loc>
-    <lastmod>2025-04-02T14:23:10.999Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/13-multicollinearity.html</loc>
+    <lastmod>2025-03-20T01:13:44.162Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/20-logistic-prediction-notes.html</loc>
-    <lastmod>2025-04-02T14:23:10.999Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/13-multicollinearity-notes.html</loc>
+    <lastmod>2025-03-20T01:13:44.162Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/lab-03.html</loc>
+    <loc>https://sta221-sp25.netlify.app/slides/15-transformations-contd.html</loc>
+    <lastmod>2025-03-20T01:13:44.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/slides/15-transformations-contd-notes.html</loc>
+    <lastmod>2025-03-20T01:13:44.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/slides/lab-02.html</loc>
     <lastmod>2025-03-20T01:13:44.207Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/index.html</loc>
-    <lastmod>2025-03-20T01:13:44.095Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/computing-access.html</loc>
+    <lastmod>2025-03-20T01:13:44.088Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/computing-r-resources.html</loc>
-    <lastmod>2025-03-20T01:13:44.088Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/support.html</loc>
+    <lastmod>2025-03-20T01:13:44.208Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/ae/ae-02-mlr.html</loc>
     <lastmod>2025-03-20T01:13:44.086Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/ae/ae-09-exam-02-review.html</loc>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-06-newton-raphson.html</loc>
+    <lastmod>2025-04-10T00:37:12.347Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-05-prob-odds.html</loc>
+    <lastmod>2025-03-24T14:33:17.254Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-04-exam-01-review.html</loc>
+    <lastmod>2025-03-20T01:13:44.086Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-08-logistic-review.html</loc>
     <lastmod>2025-03-20T01:13:44.087Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/ae/ae-01-model-assessment.html</loc>
-    <lastmod>2025-03-20T01:13:44.086Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/ae/ae-06-prob-odds.html</loc>
-    <lastmod>2025-03-20T01:13:44.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/ae/ae-03-inference.html</loc>
-    <lastmod>2025-03-20T01:13:44.086Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec03.html</loc>
-    <lastmod>2025-03-20T01:13:44.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec05.html</loc>
-    <lastmod>2025-03-20T01:13:44.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec09.html</loc>
-    <lastmod>2025-03-20T01:13:44.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec20.html</loc>
-    <lastmod>2025-03-31T14:30:22.752Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/hw/stats-experience.html</loc>
-    <lastmod>2025-03-20T01:13:44.094Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/hw/hw-03.html</loc>
-    <lastmod>2025-03-20T01:13:44.093Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/hw/hw-04.html</loc>
-    <lastmod>2025-04-04T01:56:06.967Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-06.html</loc>
-    <lastmod>2025-03-20T23:47:50.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-05.html</loc>
-    <lastmod>2025-03-20T23:54:50.239Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-00.html</loc>
-    <lastmod>2025-03-20T01:13:44.106Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-03.html</loc>
-    <lastmod>2025-03-20T01:13:44.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-02.html</loc>
-    <lastmod>2025-03-20T01:13:44.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-01.html</loc>
-    <lastmod>2025-03-20T01:13:44.106Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-04.html</loc>
-    <lastmod>2025-03-20T01:13:44.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/labs/lab-07.html</loc>
-    <lastmod>2025-04-04T00:40:23.318Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/overview.html</loc>
-    <lastmod>2025-03-20T01:13:44.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/hw/hw-01.html</loc>
-    <lastmod>2025-03-20T01:13:44.093Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/hw/hw-02.html</loc>
-    <lastmod>2025-03-20T01:13:44.093Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/exam-01-practice.html</loc>
-    <lastmod>2025-04-09T18:00:15.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec08.html</loc>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec02.html</loc>
     <lastmod>2025-03-20T01:13:44.108Z</lastmod>
   </url>
   <url>
@@ -245,56 +177,132 @@
     <lastmod>2025-03-20T01:13:44.108Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec02.html</loc>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec08.html</loc>
     <lastmod>2025-03-20T01:13:44.108Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/ae/ae-08-logistic-review.html</loc>
-    <lastmod>2025-03-20T01:13:44.087Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/exam-01-practice.html</loc>
+    <lastmod>2025-04-09T18:00:15.690Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/ae/ae-04-exam-01-review.html</loc>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-02.html</loc>
+    <lastmod>2025-03-20T01:13:44.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-01.html</loc>
+    <lastmod>2025-03-20T01:13:44.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/overview.html</loc>
+    <lastmod>2025-03-20T01:13:44.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-07.html</loc>
+    <lastmod>2025-04-04T00:40:23.318Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-04.html</loc>
+    <lastmod>2025-03-20T01:13:44.107Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-01.html</loc>
+    <lastmod>2025-03-20T01:13:44.106Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-02.html</loc>
+    <lastmod>2025-03-20T01:13:44.107Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-03.html</loc>
+    <lastmod>2025-03-20T01:13:44.107Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-00.html</loc>
+    <lastmod>2025-03-20T01:13:44.106Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-05.html</loc>
+    <lastmod>2025-03-20T23:54:50.239Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/labs/lab-06.html</loc>
+    <lastmod>2025-03-20T23:47:50.194Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-04.html</loc>
+    <lastmod>2025-04-04T01:56:06.967Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/hw/hw-03.html</loc>
+    <lastmod>2025-03-20T01:13:44.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/hw/stats-experience.html</loc>
+    <lastmod>2025-03-20T01:13:44.094Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec20.html</loc>
+    <lastmod>2025-03-31T14:30:22.752Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec09.html</loc>
+    <lastmod>2025-03-20T01:13:44.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec05.html</loc>
+    <lastmod>2025-03-20T01:13:44.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/prepare/prepare-lec03.html</loc>
+    <lastmod>2025-03-20T01:13:44.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-03-inference.html</loc>
     <lastmod>2025-03-20T01:13:44.086Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/ae/ae-05-prob-odds.html</loc>
-    <lastmod>2025-03-24T14:33:17.254Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-06-prob-odds.html</loc>
+    <lastmod>2025-03-20T01:13:44.000Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/ae/ae-06-newton-raphson.html</loc>
-    <lastmod>2025-04-10T00:37:12.347Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-01-model-assessment.html</loc>
+    <lastmod>2025-03-20T01:13:44.086Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/ae/ae-04-multicollinearity.html</loc>
     <lastmod>2025-03-20T01:13:44.087Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/support.html</loc>
-    <lastmod>2025-03-20T01:13:44.208Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/ae/ae-07-exam-02-review.html</loc>
+    <lastmod>2025-04-15T02:26:59.598Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/computing-access.html</loc>
+    <loc>https://sta221-sp25.netlify.app/computing-r-resources.html</loc>
     <lastmod>2025-03-20T01:13:44.088Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/lab-02.html</loc>
+    <loc>https://sta221-sp25.netlify.app/index.html</loc>
+    <lastmod>2025-03-20T01:13:44.095Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta221-sp25.netlify.app/slides/lab-03.html</loc>
     <lastmod>2025-03-20T01:13:44.207Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/15-transformations-contd-notes.html</loc>
-    <lastmod>2025-03-20T01:13:44.164Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/20-logistic-prediction-notes.html</loc>
+    <lastmod>2025-04-02T14:23:10.999Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/15-transformations-contd.html</loc>
-    <lastmod>2025-03-20T01:13:44.164Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/20-logistic-prediction.html</loc>
+    <lastmod>2025-04-02T14:23:10.999Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/13-multicollinearity-notes.html</loc>
-    <lastmod>2025-03-20T01:13:44.162Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/24-exam-02-review-notes.html</loc>
+    <lastmod>2025-04-15T02:45:26.839Z</lastmod>
   </url>
   <url>
-    <loc>https://sta221-sp25.netlify.app/slides/13-multicollinearity.html</loc>
-    <lastmod>2025-03-20T01:13:44.162Z</lastmod>
+    <loc>https://sta221-sp25.netlify.app/slides/24-exam-02-review.html</loc>
+    <lastmod>2025-04-15T02:45:26.839Z</lastmod>
   </url>
   <url>
     <loc>https://sta221-sp25.netlify.app/slides/lab-00.html</loc>
