@@ -164,7 +164,7 @@ The proposal is worth 5 points and will be graded based on accurately and compre
 
 -   **Satisfactory (2 points):** Requirements partially met, but there are some elements that are incomplete and/or inaccurate. Major revision of the work required before team is ready for modeling.
 
--   **Needs Improvement (1 point):** Requirements are largely unmet, and there arem major elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling.
+-   **Needs Improvement (1 point):** Requirements are largely unmet, and there are major elements that are incomplete and/or inaccurate. Substantial revisions of the work required before team is ready for modeling.
 
 ## Exploratory data analysis {#eda}
 
@@ -401,53 +401,87 @@ Before you finalize your write up, make sure the code chunks are not visible and
 
 This section includes an introduction to the project motivation, data, and research question. Describe the data and definitions of key variables. It should also include some exploratory data analysis. All of the EDA won't fit in the paper, so focus on the EDA for the response variable and a few other interesting variables and relationships.
 
-<!-- #### Grading criteria -->
+#### Grading criteria
 
-<!-- The research question and motivation are clearly stated in the introduction, including citations for the data source and any external research. The data are clearly described, including a description about how the data were originally collected and a concise definition of the variables relevant to understanding the report. The data cleaning process is clearly described, including any decisions made in the process (e.g., creating new variables, removing observations, etc.) The explanatory data analysis helps the reader better understand the observations in the data along with interesting and relevant relationships between the variables. It incorporates appropriate visualizations and summary statistics. -->
+The research question and motivation are clearly stated in the introduction, including citations for the data source and any external research. The data are clearly described, including a description about how the data were originally collected and a concise definition of the variables relevant to understanding the report. The data cleaning process is clearly described, including any decisions made in the process (e.g., creating new variables, removing observations, etc.) The explanatory data analysis helps the reader better understand the observations in the data along with interesting and relevant relationships between the variables. It incorporates appropriate visualizations and summary statistics.
 
 ### Methodology
 
 This section includes a brief description of your modeling process. Explain the reasoning for the type of model you're fitting, predictor variables considered for the model including any interactions. Additionally, show how you arrived at the final model by describing the model selection process, interactions considered, variable transformations (if needed), assessment of conditions and diagnostics, and any other relevant considerations that were part of the model fitting process.
 
-<!-- #### Grading criteria -->
+#### Grading criteria
 
-<!-- The analysis steps are appropriate for the data and research question. The group used a thorough and careful approach to select the variables in the final model; the approach is clearly described in the report. The model selection process took into account potential interaction effects and addressed any violations in model conditions. If violations of model conditions are still present, there was a reasonable attempt to address the violations based on the course content. -->
+The analysis steps are appropriate for the data and research question. The group used a thorough and careful approach to select the variables in the final model; the approach is clearly described in the report. The model selection process took into account potential interaction effects and addressed any violations in model conditions. If violations of model conditions are still present, there was a reasonable attempt to address the violations based on the course content.
 
 ### Results
 
-<!-- This is where you will output the final model with any relevant model fit statistics, conditions, and diagnostics. -->
+This is where you will output and discuss the final model.
 
 Describe the key results from the model. The goal is not to interpret every single variable in the model but rather to show that you are proficient in using the model output to address the research questions, using the interpretations to support your conclusions. Focus on the variables that help you answer the research question and that provide relevant context for the reader.
 
-<!-- #### Grading criteria -->
+#### Grading criteria 
 
-<!-- The model fit is clearly assessed, and interesting findings from the model are clearly described. The model conditions and diagnostics are thoroughly and accurately assessed for their model. Interpretations of model coefficients are used to support the key findings and conclusions, rather than merely listing the interpretation of every model coefficient. If the primary modeling objective is prediction, the model's predictive power is thoroughly assessed. -->
+The model fit is clearly assessed, and interesting findings from the model are clearly described. The model conditions and diagnostics are thoroughly and accurately assessed for the final model, if not previously discussed in the methodology. Interpretations of model coefficients are used to support the key findings and conclusions, rather than merely listing the interpretation of every model coefficient. If the primary modeling objective is prediction, the model's predictive power is thoroughly assessed.
 
 ### Discussion + Conclusion
 
 In this section you'll include a summary of what you have learned about your research question along with statistical arguments supporting your conclusions. In addition, discuss the limitations of your analysis and provide suggestions on ways the analysis could be improved. Any potential issues pertaining to the reliability and validity of your data and appropriateness of the statistical analysis should also be discussed here. Lastly, this section will include ideas for future work.
 
-<!-- #### Grading criteria -->
+#### Grading criteria
 
-<!-- Overall conclusions from analysis are clearly described, and the model results are put into the larger context of the subject matter and original research question. There is thoughtful consideration of potential limitations of the data and/or analysis, and ideas for future work are clearly described. -->
+Overall conclusions from analysis are clearly described, and the model results are put into the larger context of the subject matter and original research question. There is thoughtful consideration of potential limitations of the data and/or analysis, and ideas for future work are clearly described.
 
 ### Organization + formatting
 
 This is an assessment of the overall presentation and formatting of the written report.
 
-<!-- #### Grading criteria -->
+#### Grading criteria 
 
-<!-- The report neatly written and organized with clear section headers and appropriately sized figures with informative labels. Numerical results are displayed with a reasonable number of digits, and all visualizations are neatly formatted and labeled. All citations and links are properly formatted. If there is an appendix, it is reasonably organized and easy for the reader to find relevant information. All code, warnings, and messages are suppressed. The main body of the written report (not including the appendix) is no longer than 10 pages. -->
+The report neatly written and organized with clear section headers and appropriately sized figures with informative labels. Numerical results are displayed with a reasonable number of digits, and all visualizations are neatly formatted and labeled. All citations and links are properly formatted. If there is an appendix, it is reasonably organized and easy for the reader to find relevant information. All code, warnings, and messages are suppressed. The main body of the written report (not including the appendix) is no longer than 10 pages.
 
 ## Project highlights
 
-This is an opportunity to share your final analysis results with your peers! You will post highlights in Canvas discussion forum using one fo the following formats:
+::: callout-important
+Your project highlights will be posted as a reply to the "Final project highlights" thread under the **Discussions** tab on Canvas.
 
-1.  A detailed abstract
-2.  Slides summarizing your project results
-3.  Short video summarizing your project results
+You are welcome to but not required to put the highlights in your project repo.
+:::
 
-More detail about these highlight formats and posting in Canvas to come.
+The project highlights are an opportunity to share an overview of your project and final results with your peers! Choose one of the following formats to share your highlights:
+
+#### Option 1: Structured Abstract
+
+A structured abstract extends on a traditional abstract by separating the content into separate sections. The abstract will be about 200 - 400 words and will be split into the following sections:
+
+1.  Project title
+2.  Background (also called Objectives in some journals)
+3.  Methods
+4.  Results
+5.  Conclusions
+
+Below are some examples of structured abstracts. These examples are here to give you an idea of what a structured abstract looks like; you are not required (or expected) to exactly replicate any one of these abstracts. \
+
+-   [Structured abstract example 1](https://pubs.asha.org/doi/full/10.1044/2021_JSLHR-21-00309?casa_token=H0wAWl_5ebIAAAAA%3AEOFu-_DLS_p0JGfAv7dZ1Khy3Db48h7y76Z753Gm58qneU8GpPJ8s55TkZUy-scOgw6OAb5hMF493pHx)
+-   [Structured abstract example 2](https://www.demographic-research.org/authors/SubmissionGuidelinesExample1)
+-   [Tips for writing abstracts](https://writing.wisc.edu/handbook/assignments/writing-an-abstract-for-your-research-paper/) (see Example Abstract 4: A Structured Abstract)
+
+#### Option 2: Summary slides
+
+This is a good option if you would like to include some visualizations and output along with a short narrative describing the project highlights. These slides can be organized similarly as the structured abstract (option 1) with a slide for each section:
+
+1.  Title slide
+2.  Background
+3.  Methods
+4.  Results
+5.  Conclusions
+
+#### Option 3: Summary video
+
+This is a good option if you would like to record a short presentation sharing your project highlights. You may use slides following a similar structure as Option 2 or find another creative way to present your results! The video should be no longer that 3 minutes.
+
+#### Grading criteria
+
+The project highlights will be graded based on how clarity of the summary and neatly done abstracts, slides, or video.
 
 ## Reproducibility + organization {#reproducibility-organization}
 
@@ -455,7 +489,9 @@ All written work (with exception of presentation slides) should be reproducible,
 
 The GitHub repo should have the following structure:
 
--   `README`: Short project description and data dictionary
+-   `README`: Project title and team name
+
+    -   Optional: Short project summary
 
 -   `written-report.qmd` & `written-report.pdf`: Final written report
 
@@ -464,6 +500,8 @@ The GitHub repo should have the following structure:
 -   `research-topics.qmd` & `research-topics.pdf`: Proposed research questions
 
 -   `/data`: Folder that contains the data set for the final project.
+
+    -   `/data/README.md`: Data dictionary and source for data set
 
 -   `project.Rproj`: File specifying the RStudio project
 
@@ -481,7 +519,7 @@ Points for reproducibility + organization will be based on the reproducibility o
 
 ## Final project survey
 
-You will complete a short survey about the project. More details to come.
+You will complete a short survey about the project. You will receive the survey via email.
 
 ## Peer teamwork evaluation
 
@@ -504,29 +542,29 @@ The grade breakdown is as follows:
 | Reproducibility + organization | 3 pts   |
 | Project survey                 | 2 pts   |
 
-<!-- ### Grading summary -->
+### Grading summary 
 
-<!-- Grading of the project will take into account the following: -->
+Grading of the project will take into account the following:
 
-<!-- -   Content - What is the quality of research and/or policy question and relevancy of data to those questions? -->
+-   Content - What is the quality of research and/or policy question and relevancy of data to those questions?
 
-<!-- -   Correctness - Are statistical procedures carried out and explained correctly? -->
+-   Correctness - Are statistical procedures carried out and explained correctly?
 
-<!-- -   Writing and Presentation - What is the quality of the statistical presentation, writing, and explanations? -->
+-   Writing and Presentation - What is the quality of the statistical presentation, writing, and explanations?
 
-<!-- -   Creativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project? -->
+-   Creativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?
 
-<!-- A general breakdown of scoring is as follows: -->
+-   A general breakdown of scoring is as follows:
 
-<!-- -   *90%-100%*: Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others. -->
+    -   90%-100%: Outstanding effort. Team understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.
 
-<!-- -   *80%-89%*: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others. -->
+    -   80%-89%: Good effort. Team understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.
 
-<!-- -   *70%-79%*: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear. -->
+    -   70%-79%: Passing effort. Team has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.
 
-<!-- -   *60%-69%*: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear. -->
+    -   60%-69%: Struggling effort. Team is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.
 
-<!-- -   *Below 60%*: Student is not making a sufficient effort. -->
+    -   Below 60%\*: Team is not making a sufficient effort.
 
 ## Late work policy
 

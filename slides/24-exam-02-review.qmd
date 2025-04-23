@@ -50,6 +50,8 @@ knitr::opts_chunk$set(
 
     -   No office hours Thursday and Friday
 
+-   
+
 ## Course evaluations
 
 Please share your feedback about the course!
